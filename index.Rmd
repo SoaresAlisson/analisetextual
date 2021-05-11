@@ -1,0 +1,19 @@
+--- 
+title: "Introdução Análise Textual aplicada à Sociologia"
+author: "Alisson Soares"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto."
+#cover-image: imagens/
+lang: "pt-br"
+---
+
+
+
+
+

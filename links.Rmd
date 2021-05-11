@@ -1,0 +1,144 @@
+# Links úteis
+Segue aqui uma lista com links para livros, artigos, sites, manutais, tutoriais, vídeos e canais de vídeos. A maioria e a prioridade é de material gratuito, sobre temas gerais relacionados a humanidades digitais e em especial, à sociologia. Há também sugestões mais focadas nos assuntos específicos nos capítulos. 
+O critério de seleção aqui foi o de contribuição para esclarecer o potencial das humanidades digitais para quem inicia na área de humanidades digitais/sociologia digital.
+Os itens não foram selecionados tanto pela contribuição científica, mas com base no critério de exemplos que podem ajudar a esclarecer o potencial das humanidades digitais para quem inicia.
+
+
+## Humanidades digitais
+- [Introduction to Digital Humanities Textbook](https://issuu.com/imansalehian/docs/introductiontodigitalhumanities_tex)
+A digital textbook designed for UCLA's Introduction to Digital Humanities course website. (ebook disponível gratuito online)
+- Jennifer Edmond. [Digital Technology and the Practices of Humanities Research](https://www.openbookpublishers.com/product/1108). (Livro gratuito)
+- [The Data Journalism Handbook](https://library.oapen.org/handle/20.500.12657/47509). Towards a Critical Data Practice. 415p. 2021. ISBN 9789048542079. (Livro GRATUITO).
+- Bauer, Paul C. [Computational Social Science: Theory & Application](https://bookdown.org/paul/2021_computational_social_science/). (livro online grátis).
+
+## Análise de redes sociais
+- [Ver sugestões](#SugestaoLinksredes) no capítulo "Análise de Redes Sociais".
+
+## Textos sobre análise textual
+- GRIMMER, Justin.STEWART, Brandom. [Text as Data: The Promise and Pitfalls of Automatic ContentAnalysis Methods for Political Texts](http://stanford.edu/~jgrimmer/tad2.pdf). Political  Analysis(2013) pp. 1–31. doi:10.1093/pan/mps028.
+- Castelfranchi, Yurij. [A análise de textos auxiliada pelo computador: um laboratório a céu aberto para as ciências sociais](https://jcom.sissa.it/sites/default/files/documents/JCOM_1602_2017_C04_pt.pdf). Journal of Science Communication 16(02)(2017)C04
+- TREADWELL, Donald. [Content Analysis: Understanding Text and Image in Numbers](https://us.sagepub.com/sites/default/files/upm-binaries/53216_ch_12.pdf). Understanding Text and Image in Numbers. In  __ Introducing Communication Research: paths of Inquiry. Sage. 2014. (Capítulo sobre análise de conteúdo)
+
+### Sociologia Digital
+- KATEMBERA, Serge. ["Sociologia digital ou sociologia do digital?"](https://periodicos.ufpb.br/index.php/rappgs/article/view/53720/30907) V. 2 N. 1 (2020): Dossiê Ambiente e Sociedade. (Artigo)
+- 	NASCIMENTO, Leonardo F. [Sociologia digital : uma breve introdução](https://repositorio.ufba.br/ri/handle/ri/32746/). EDUFBA. 2020. (Livro gratuito em PDF e epub)
+- Podcast "New Work in Digital Humanities". Episódio: Neil Selwyn, ["What is Digital Sociology?"](https://newbooksnetwork.com/category/arts-letters/digital-humanities/) (Polity, 2019) 
+- BERNAU, John A. [Text Analysis with JSTOR Archives](https://journals.sagepub.com/doi/full/10.1177/2378023118809264).  November 12, 2018  https://doi.org/10.1177/2378023118809264. (Aplicação de métodos de humanidades digitais, usando a base do Jstor, para uma rápida análise de variação temática em revistas sociológicas).
+- Pete Fussey e Silke Roth (ed.) [Digitizing Sociology ](https://journals.sagepub.com/page/soc/collections/e-specials/2020-may). edição da revista "Sociology" da  British Sociological Association.
+<!-- - Houtman, Dick & Achterberg, Peter. (2014). [Quantitative Analysis in Cultural Sociology:](https://www.researchgate.net/publication/265163539_Quantitative_Analysis_in_Cultural_Sociology_Why_It_Should_Be_Done_How_It_Can_Be_Done): Why It Should Be Done, How It Can Be Done. -->
+<!-- LUPTON, Debora. [Digital Sociology](https://edisciplinas.usp.br/pluginfile.php/4408475/mod_resource/content/1/Lupton-Digital%20Sociology%282014%29.pdf).-->
+
+#### Netnografia, etnografia digital
+- Annette N. Markham. 2013. Fieldwork in Social Media. Qualitative Communication Research 2, 4 (Dec. 2013), 434–446. https://doi.org/10.1525/qcr.2013.2.4.434
+<!-- Youtube: Tata CTS [Autoetnografia, Netnografia e Ciências Sociais Computacionais](https://www.youtube.com/watch?v=BcoFbRxIosk). Debate sobre metodologias de pesquisa para o mundo digital. Realizado pelas pesquisadoras Priscilla Normando e Camilla Santana. -->
+- SHAFFER, David Williamson. [Quantitative Etnography](http://quantitativeethnography.org/wp-content/uploads/sites/5/2017/03/QuantitativeEthnography_SampleChapter.pdf). Boswell Press. 2017. 
+  - _“This is a book about understanding why, in the digital age, the old distinctions between qualitative and quantitative research methods, between the sciences and humanities, and between numbers and understanding, limit the kinds of questions we can ask, in some cases, and lead us accept superficial answers in others. Quantitative Ethnography is a research method that goes beyond those distinctions to help us understand how to make sense of our increasingly data-rich world…_". (PDF da Introdução disponível gratuitamente)
+
+## Processamento Linguagem Natural (PLN ou NLP)
+- JURAFSKY, D.; MARTIN, J. Speech and language processing: An introduction to speech recognition, computational linguistics and natural language processing. Upper Saddle River, NJ: Prentice Hall, 2020. [link pdf dos capítulos individuais](https://web.stanford.edu/~jurafsky/slp3/), [link livro completo](https://web.stanford.edu/~jurafsky/slp3/ed3book_dec302020.pdf). (Um manual bastante extenso e mais teórico sobre PLN)
+- BIRD, S.; KLEIN, E.; LOPER., E. [Natural language processing with Python](https://www.nltk.org/book/) – analyzing text with the natural language toolkit. (Livro online gratuito, baseado em Python 3.)
+
+## Revistas / Journals
+- SIGCAS  [Computers and Society](https://dblp.org/db/journals/sigcas/index.html) da Association for Computing Machinery
+- [Digital Scholarship in the Humanities](https://academic.oup.com/dsh). Revista da Universidade de Oxford. [Sessão com artigos gratuitos](https://academic.oup.com/dsh/search-results?page=1&f_ContentType=Journal+Article&fl_SiteID=5447&access_openaccess=true)
+- Journal: [Digital humanities Quartely](http://digitalhumanities.org/dhq/)
+- [International Journal of Digital Humanities](https://www.springer.com/journal/42803/?utm_source=twitter&utm_medium=social&utm_content=organic&utm_campaign=SRMT_2_HS01_GL_AO%20IJDH)
+- Socius: Sociological Research for a Dynamic World. [Special Collection: Data Visualization](https://journals.sagepub.com/topic/collections-srd/srd-1_special_collection_data_visualization/srd). Jornal de acesso livre
+- [International Journal of Humanities and Arts Computing](https://www.euppublishing.com/loi/ijhac) (Universidade de Edimburgo)
+- [magazén](https://edizionicafoscari.unive.it/it/edizioni4/riviste/magazen/) International Journal for Digital and Public Humanities. (open access). Revista do Dipartimento di Studi Umanistici da Università Ca’ Foscari de Veneza
+- [Journal of Digital Social Research](https://www.jdsr.io/). Open Access
+- [Reviews in Digital Humanities](https://reviewsindh.pubpub.org/). (O Review já não publica desde 2014)
+- [Journal of Digital Humanities](http://journalofdigitalhumanities.org/). (O Journal of DH tem uma sessão de resenha de novas ferramentas disponíveis).
+- [Journal of Cultural Analytics](https://culturalanalytics.org/).  Department of Languages, Literatures, and Cultures at McGill University, Canada. _open-access journal dedicated to the computational study of culture_
+
+
+## Dados Abertos
+- [5 estrelas dos dados abertos](https://5stardata.info/pt-BR/) (Tim Berners-Lee, criador do terom "dados abertos". Site explica o que são dados abertos e seus 5 níveis. Em português)
+- [Busca do Google por base de dados Abertos](https://www.google.com.br/publicdata/directory?hl=pt-BR#)
+- [Dados abertos](https://dadosabertos.social/c/onde-encontrar/). (Se não sabe onde encontrar algum dado específico que você procura,veja aqui)
+- SHIKIDA, Claudio D., MONASTERIO, Leonardo, NER, Pedro Fernando. [Guia Brasileiro de Análise de Dados:](https://repositorio.enap.gov.br/bitstream/1/6039/1/Guia%20BR%20de%20Ana%cc%81lise%20de%20Dados.pdf)  Armadilhas e Soluções. Brasília. 2021. ( Tópicos: Causalidade, Pobreza e Desigualdade, Análise de dados em Saúde, Educação, Crimes e Violência, Macroeconomia, Mercado e Trabalho e Opinião Pública.)
+- [dados abertos](https://dadosabertos.social): Fórum de discussão. 
+<!-- - [Ckan](https://ckan.org). CKAN, the world’s leading Open Source data portal platform CKAN is a powerful data management system that makes data accessible – by providing tools to streamline publishing, sharing, finding and using data. [User guide](https://docs.ckan.org/en/latest/user-guide.html) _CKAN is a tool for making open data websites. (Think of a content management system like WordPress - but for data, instead of pages and blog posts.) It helps you manage and publish collections of data. It is used by national and local governments, research institutions, and other organizations who collect a lot of data. Once your data is published, users can use its faceted search features to browse and find the data they need, and preview it using maps, graphs and tables - whether they are developers, journalists, researchers, NGOs, citizens, or even your own staff._ -->
+- Workshop do Henrique Xavier, no canal "Base dos Dados" sobre [como explorar os dados do Diário Oficial da União](https://youtube.com/watch?v=dGF3FRTTG6M).
+
+
+## Vídeos
+- Vídeos do 1º Summerschool of Digital Humanities da Universidade de Heidelberg, Alemanha, ocorrido em 2017. [link](https://heibox.uni-heidelberg.de/d/1c606b33d5/). (Em inglês)
+
+## Sites / Blogs
+- [Text analysis info](http://www.textanalysis.info)
+- [Textual Analysis - University of Notre Dame](https://sraf.nd.edu/textual-analysis/)
+- Site [Digital Humanities Now](https://digitalhumanitiesnow.org/). (Agrega oportunidade de emprego, notícias, bolsas de pesquisa). 
+- site [Go Digital Humanities](https://dghumanity.wordpress.com/). (Novidades sobre humanidades digitais, como eventos).
+- Blog [Digital Society Blog](https://www.hiig.de/en/blog/). (Blog do Institut für Internet und Gesellschaft da Alexander von Humboldt).
+
+## Organizações
+- [Alliance of Digital Humanities Organizations (ADHO)](https://adho.org/).
+- [Global Network of Internet and Society Research Centers (NoC) i](https://networkofcenters.net/). (Catálogo com grupos de pesquisa sobre internet e sociedade ao redor do mundo).
+
+## Podcasts
+- Complexity: Peter Dodds on [Text-Based Timeline Analysis & New Instruments for The Science of Stories](https://complexity.simplecast.com/episodes/48-m2OkoDWG)
+- [New Work in Digital Humanities]([https://open.spotify.com/show/1ieZjwu7sHBHEwg6hkOiCj). New Books Network. Interviews with digital humanists about their new work.
+- Lista com mais [podcasts dedicados às digital humanities](https://dhcommons.hypotheses.org/451)
+
+## Programação
+### R introdução
+- Caio Lente. [zen do R](https://curso-r.github.io/zen-do-r/git-github.html). "O objetivo deste livro é ensinar ao leitor que não costuma programar algumas formas simples de melhorar a organização de seus projetos de análise de dados em R". (Livro online gratuito).
+- AQUINO, Jackson A.. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus, BA: EDITUS, 2014. 157 p. ISBN: 978-85-7455-369-6. (PDF gratuito)
+- FERREIRA, E.B.;. de OLIVEIRA, M.S. [Introdução à Estatística com R](https://www.unifal-mg.edu.br/bibliotecas/system/files/imce/EBR_Unifal.pdf). Unifal. 2020. (PDF gratuito).
+- [Livro Curso-R](https://livro.curso-r.com) (em construção)
+- [Blog: Curso-R](https://blog.curso-r.com/)
+- KUBRUSLY, Jessica. [Uma Introdução à Programação com o R](https://bookdown.org/jessicakubrusly/programacao-estatistica/). (ebook online em português)
+- Sergio Miranda Freire. [Introdução ao R](http://www.lampada.uerj.br/arquivosdb/_book2/introducaoR.html). (Livro online, no formato bookdown)
+- WICKHAM, Hadley. [Advanced R](https://adv-r.hadley.nz/index.html).2nd edition. (Livro online gratuito, no formato bookdown em inglês, para entender melhor os conceitos do R)
+
+### R - tópicos específicos
+- WICKHAM, H. GROLEMUND, Garret. [R for Data Science](https://r4ds.had.co.nz/). O'Reilly. 2017. (Livro Online, em inglês).
+- IRIZARRY, Rafael A. [Introduction to Data Science](https://rafalab.github.io/dsbook/). Livro Online, em inglês, feito como notas de aulas da [HarvardX Data Science Series](https://www.edx.org/professional-certificate/harvardx-data-science)
+- CLARK, Michael. [R & Social Science](https://m-clark.github.io/docs/RSocialScience.pdf). Getting Started with applied use of R in the Social Sciences. (pequeno manual em PDF da Universidade de Notre Dame)
+- [ggplot2](https://ggplot2-book.org/)  on-line version of work-in-progress 3rd edition of “ggplot2: elegant graphics for data analysis” 
+- SILGE, Julia,  ROBINSON, David  [Text Mining with R](https://www.tidytextmining.com/). (ebook online)
+- RYDBERG-COX, Jeff. [Statistical Methods for Studying Literature Using R](https://www.chlt.org/StatisticalMethods/index.html) da Universidade Missouri-Kansas City.
+- [R-tutor](http://www.r-tutor.com/sitemap)An R Introduction to Statistics.  Site com tutoriais diversos sobre R. Em Inglês.
+- Diversos links para livros gratuitos de R no [bookdown](https://www.bookdown.org/home/archive/).
+
+### Python
+- HEINOLD, Brian. [A Practical Introduction to Python Programming](https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf). 2012. 263 p. (PDF de introdução ao Python)
+<!-- GRUS, Joel. [Data Science from Scratch](http://math.ecnu.edu.cn/~lfzhou/seminar/[Joel_Grus]_Data_Science_from_Scratch_First_Princ.pdf). First Principles with Python. 2015. 464p. -->
+- Jake VanderPlas. [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/): Essential Tools for Working with data. (livro online).
+
+
+### Python - tópicos específicos
+- KARSDORP, Folgert. [Python Programming for the Humanities](http://www.karsdorp.io/python-course/). Livro online.
+- [Pyhton Humanities](https://pythonhumanities.com). Site com introdução às DH em Python, com alguns tutoriais.
+- [Constellate](https://docs.constellate.org/) What do you want to learn today?. 
+  - (Projeto Constellate da JStor junto a diversas universidades. Conta com sessão com tutoriais sobre análise textual, a maioria em Python.
+
+<!-- - Mais de 100 links para livros de Data Science [link](https://www.theinsaneapp.com/2020/12/free-data-science-books-pdf.html). -->
+
+## Cursos
+- [EdX](https://learning.edx.org/), 
+Cursos online de Universidades como Harvard, MIT, etc. gratuitos como ouvinte. Paga-se pelo certificado.
+Há cursos grautuitos, como "Introducing Text Analytics and Natural Language Processing with Python", "Introduction to Digital Humanities", "Data Science: Visualization", "Using Python for Research".
+- [DataCamp](https://learn.datacamp.com/). Cursos mais práticos, em R, Python, SQL, com exercícios, totalmente online (não é necessário instalar nada em seu computador). As partes iniciais dos cursos costumam ser gratuitas, mas há parte paga com anuidades.
+- [Udemy](https://www.udemy.com/) Possui cursos gratuitos e cursos pagos. É possível encontrar cursos pagos por volta de R$20,00.
+- [Coursera](https://pt.coursera.org/). Possui parceria com mais de 200 universidades e empresas como o Google e IBM.
+- [Cognitive Class](https://cognitiveclass.ai/courses) Da IBM, Cursos gratuitos em data science, alguns gratuitos com certificado. Cursos em inglês e espanhol. Possui cursos como "Data Visualization with R".
+- [Big Data University](http://bigdatauniversity.com.br/). Cursos em Portugues.
+- Curso gratuito de [Estatística e probabilidade](https://pt.khanacademy.org/math/statistics-probability) da Khan Academy, em português. Inclui teste de hipótese, regressão.
+
+## Grupos de discussão/Forum
+### Telegram
+- [Processamento de Linguagem Natural em Português](t.me/nlpbr)
+- [PT-Br Data Science - Python](https://t.me/datasciencepython)
+- [R Brasil](https://t.me/rbrasiloficial)
+- [R humanidades](https://t.me/R_humanidades)
+- [Análise Textual-Humanidades Digitais](https://t.me/humanidadesdigitiais)
+
+## Cheat-sheet
+"Cheat sheets" seriam a tradução para "cola", aquela feita para consulta em exames na escola. Em programação, refere-se a uma tabela muito bem resumida, com o que há de essencial em determinado assunto.
+
+- [Text Analysis Glossary](https://docs.constellate.org/key-terms/)
+- Lista com mais de 100 cheat-sheets em R e Python, sobre Machine Learning: [link](https://www.theinsaneapp.com/2020/12/machine-learning-and-data-science-cheat-sheets-pdf.html)
+- [Git-GitHub](https://education.github.com/git-cheat-sheet-education.pdf), [Git-Gitlab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf),
+

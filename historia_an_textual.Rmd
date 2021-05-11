@@ -1,0 +1,113 @@
+# História da Análise Textual
+  
+  > _“May we hope that when things come to such a crisis, human labor of the literary sort may be in part superseded by machinery? Machinery has done wonders, and when we think of what literature is becoming, it is certainly to be wished that we could read it by machinery, and by machinery digest it”_ (Andrew Stauffer In London’s Daily News.  15 de Setembro de 1869 _apud_ [Catherine DeRose](https://orderofm.com/conversation/from-victorian-novels-to-data-visualization-a-conversation-with-catherine-derose/).)
+
+A análise textual abarca campos do conhecimento bem variados, como psicologia, ciências da computação, ciências da informação, linguística, ciência política, sociologia, etc. Apresentamos aqui uma linha do tempo com alguns dos principais eventos relacionados à análise textual, bem como ao seu uso com computadores.
+De modo resumido, podemos pensar nos primeiros desenvolvimentos ao final do século XIX, a introdução do computador e mais recentemente, a introdução da inteligência artificial como pontos marcantes nesta cronologia. Fizemos aqui uma breve cronologia, que não pretende ser extensiva, com todos eventos importantes, mas apenas demarcar alguns pontos interessantes, para ajudar a dar alguma ideia àqueles que iniciam no campo das humanidades digitais e na sociologia digital.
+
+## Linha do tempo da história da Análise Textual
+<!-- https://youtu.be/-FV5NF5E5ws?t=361 06:00-->
+- 1887 Medenhall. Anaisa o comprimento de palavras:
+  -  MENDENHALL, T. C. . [The characteristic curves of composition](https://science.sciencemag.org/content/ns-9/214S/237).
+Science.Vol ns-9, Issue 214S. 11 March 1887. [baixar pdf](https://www.jstor.org/stable/pdf/1764604.pdf)
+<!---31:15
+https://heibox.uni-heidelberg.de/d/1c606b33d5/files/?p=%2FDr.%20Christof%20Sch%C3%B6ch%3A%20The%20Convergence%20of%20Quantitative%20and%20Qualitative%20Approaches%2FSch%C3%B6ch.mp4
+-->
+- 1897. Wincenty Lutoslawski. Análise de palavras raras na obra de Platão. Cunhou o termo "estilometria"
+  - Lutoslawski's Origin and Growth of Plato's Logic - The Origin and Growth of Plato's Logic, 
+- 1888 Benjamin Bourdon (1860-1943, psicólogo e professor da Université de Rennes): Ao pesquisar sobre a expressão de emoções através de palavras, analisou o livro "Exodus" da Bíblia e calculou frequências, classificou e eliminou as stopwords. 
+  - "_In 1888, in a research on the expression of emotions through words, Benjamin Bourdon analysed the Exodus of the Bible and calculated the frequencies by rearranging and classifying them, eliminating the stop words_" [fonte]( https://books.google.com.br/books?id=nzMLEAAAQBAJ&pg=PA4&lpg=PA4&dq=In+1888,+in+a+research+on+the+expression+of+emotions+through+words,+Benjamin+Bourdon+analysed+the+Exodus+of+the+Bible+and+calculated+the+frequencies+by+rearranging+and+classifying+them,+eliminating+the+stop+words&source=bl&ots=LDUsl7XepV&sig=ACfU3U0IGaiU6KIXVMvpTXGZttSDeazH7g&hl=pt-BR&sa=X&ved=2ahUKEwiF_fWJzanvAhXLILkGHXiyDSkQ6AEwAHoECAUQAw#v=onepage&q=In%201888%2C%20in%20a%20research%20on%20the%20expression%20of%20emotions%20through%20words%2C%20Benjamin%20Bourdon%20analysed%20the%20Exodus%20of%20the%20Bible%20and%20calculated%20the%20frequencies%20by%20rearranging%20and%20classifying%20them%2C%20eliminating%20the%20stop%20words&f=false).
+- 1888 Friedrich Kaeding (1855 - 1929), cria índices de frequência para estruturação de sistemas estenográficos (sistema de escrita por abreviações para que a escrita seja tão rápida como a fala).
+- 1934 [Harold Laswell](https://www.britannica.com/biography/Harold-Lasswell) (1902-1978, cientista político) produz a primeira contagem de palavras chave.
+- 1934 Vygostky produz a primeira análise quantitativa de narrativa
+- 1949 Robert Busa (padre jesuíta) junto à IBM com o projeto _Index Thomisticus_, que levou 34 anos, envolveu cerca de 70 pessoas, sobre as obras de São Tomás de Aquino.
+_"The IBM... considered this first enterprise of using a computer for linguistic and lexicographic goals as a pilot-project"_ [fonte](https://www.jstor.org/stable/23576117?seq=1), indexando mais de 10 milhões de palavras.
+    - Busa, R. (1980). ["The Annals of Humanities Computing: The Index Thomisticus"](https://www.jstor.org/stable/30207304?seq=1). Computers and the Humanities. 14 (2): 83–90. doi:10.1007/BF02403798. ISSN 0010-4817.
+    - ROCKWELL, Geoffrey; PASSAROTTI, Marco (2019-05-27). ["The Index Thomisticus as a Big Data Project"](https://umanisticadigitale.unibo.it/article/view/8575). Umanistica Digitale (5). doi:10.6092/issn.2532-8816/8575.
+- 1950 Gottschalk usa Content Analysis para rastrear temas freudianos. 
+    - GOTTSCHALK, Louis A. The Measurement of Psychological States Through the Content Analysis of Verbal Behavior. University of California Press. 1969. 317p.
+    - Gottschalk-Gleser Content Analysis Method of Measuring the Magnitude of Psychological Dimensions
+- 1950 Alan Turing aplica Inteligência Artificial a textos.
+- 1952 Bereleson publica o primeiro manual de análise de conteúdo. 
+    - BERELSON, B. (1952). Content analysis in communication research. New York: Hafner. <!--        - listing 17 types of application of content analysis         - quantitative/qualitative studies-->
+<!-- - 1954 Guiraud. Vocabulary.Interessado na ruiqueza de palavras-->
+- 1954 Primeira tradução automática de texto (_Georgetown–IBM experiment_) do russo ao inglês.
+    - HUTCHINS, John. [The first public demonstration of machine translation: the Georgetown-IBM system, 7th January 1954](http://www.hutchinsweb.me.uk/GU-IBM-2005.pdf). 2006.
+    - [Press Release da IBM](https://www.ibm.com/ibm/history/exhibits/701/701_translator.html)
+- 1963 Mosteller e Wallace analisam a autoria dos Federalist Papers.
+    - MOSTELLER, F., WALLACE, D. L.. 1963. Inference in an authorship problem. Journal of the American Statistical Association 58:275–309. 
+- 1965 Tomashevsky formaliza análise quantitativa de narrativa.
+    - TOMASHEVSKY, B. (1965). Thematics. In L T. Lemon & M. I. Reis (Eds. & Trans.), Russian formalist criticism: Four essays (pp. 61-95). Lincoln: University of Nebraska Press. (Original de 1925)
+- 1966 Stones e Bales usam computador para medir propriedades psicométricas de textos na RAND.
+- 1980 Declínio do formalismo chomskyano; nascimento do Processamento de Linguagem Natural (PLN).
+- 1980 Aplicação de Aprendizado de máquinas (Machine Learning) ao Processamento de Linguagem Natural
+- 1981 Walter Weintraub e a contagem de parts-of-speech.
+    - WEINTRAUB, Walter. [Verbal Behavior](https://archive.org/details/verbalbehaviorad0000wein): adaptation and psychopathology. Springer:NY. 1981.
+- SOBEL, Dava. [Language patterns reveal problems in personality](https://www.nytimes.com/1981/10/27/science/language-patterns-reveal-problems-in-personality.html). NYT. Oct. 27,1981.
+- 1985 [Schrodt](https://www.researchgate.net/profile/Philip-Schrodt-2) introduz codificação automática de eventos (Automated Event Coding).
+    - SCHRODT, Philip A. Automated Coding Of International Event Data Using Sparse Parsing Techniques. 2000.
+- 1986 [James W. Pennebaker](https://liberalarts.utexas.edu/psychology/faculty/pennebak) desenvolve LIWC (Linguistic Inquiry and Word Count).
+- 1989 [Roberto Franzosi](http://sociology.emory.edu/home/people/faculty/franzosi-roberto.html) (perfil no [Research Gate](https://www.researchgate.net/profile/Roberto-Franzosi)) (sociólogo) traz a análise de narrativa quantitativa (_quantitative Narrative Analysis_) para as Ciências Sociais.
+- 1998 Primeiro desenvolvimento de Topic Models.
+- 1998 [John W Mohr](https://ucsb.academia.edu/JohnMohr) conduz a primeira análise quantitativa de visões de mundo.
+- 1999 [Peter Bearman](https://sociology.columbia.edu/content/peter-bearman) (sociólogo) et al. aplicam métodos de rede a narrativas "Narrative network".
+- 2001 [David M. Blei](http://www.cs.columbia.edu/~blei/topicmodeling.html) et al desenvolvem a LDA (Latent Dirichlet Allocation).
+    - David M. Blei, Andrew Y. Ng, Michael I. Jordan. [Latent Dirichlet Allocation](http://www.cs.columbia.edu/~blei/papers/BleiNgJordan2003.pdf). Journal of Machine Learning Research 3 (2003) 993-1022.
+    - [github Blei Lab ](https://github.com/Blei-Lab).
+- 2003 [MALLET](http://mallet.cs.umass.edu/) (MAchine Learning for LanguagE Toolkit), um dos primeiros sistemas de topic models, é criado.
+    - _"MALLET is a Java-based package for statistical natural language processing, document classification, clustering, topic modeling, information extraction, and other machine learning applications to text. MALLET includes sophisticated tools for document classification: efficient routines for converting text to "features", a wide variety of algorithms (including Naïve Bayes, Maximum Entropy, and Decision Trees), and code for evaluating classifier performance using several commonly used metrics."_
+- 2005 Quin et al analisam discursos políticos usando topic models.
+    - Kevin M Quinn, Burt L Monroe, Michael Colaresi,Michael H Crespin, and Dragomir R Radev. 2010. [How to analyze political attention with minimal assumptions and costs](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-5907.2009.00427.x). American Journal of Political Science54(1):209–228
+- 2010 Gary King e Daniel Hopkins trazem Topic Models ao mainstream.
+    - Hopkins, Daniel, and Gary King. 2010. “A Method of Auto-mated Nonparametric Content Analysis for Social Science.”American Journal of Political Science54(1): 229–47.
+    
+<!-- - 2010 Ferramentas para Workshop textual em Washington -->
+**Fonte**: Versão ampliada, baseado parcialmente em: "SICSS 2018 - History of Quantitative Text Analysis" 
+[slides](https://sicss.io/2019/materials/day3-text-analysis/history-text-analysis/Introduction_to_Text_as_Data.html#/6), 
+[video](https://youtu.be/-FV5NF5E5ws?t=361).
+
+
+::: {.infobox .history data-latex="{history}"}
+Pretende-se posteriormente expandir esta seção, explicando em mais detalhes alguns dos exemplos acima
+:::
+
+<!--
+# História da análise textual
+
+## História da análise textual: Técnicas antes do uso de computadores
+
+
+
+information overload, infodemia. 
+
+stenografia
+
+## História da análise textual: Análise Textual com auxílio de computadores
+
+projeto: a questão da relação entre educação e conspiração. No geral, há relação, mas áreas?
+
+### O problema das "digitais linguísticas" (_linguistic fingerprint_)
+
+Mosteller, F., and D. L. Wallace. 1963. Inference in an authorship problem. Journal of the American Statistical Association 58:275–309. 
+
+ ###################  
+# Classificação de textos
+Text Classification
+Geralmente, há tipos 3 tipos de categorias: conteúdo, sentimento e autoria.
+
+---
+Weintraub
+https://www.nytimes.com/1981/10/27/science/language-patterns-reveal-problems-in-personality.html
+mpulsive individuals, who plan decisions poorly and then reverse themselves as soon as they take action, have been shown to overuse the verbal constructions ''but,'' ''although'' and ''nevertheless.''
+Dr. Weintraub reached these conclusions after studying speech samples from some 250 individuals 5 to 85 years old, including both normal subjects and groups of hospitalized psychiatric patients classified as impulsives, delusionals, depressives, compulsives and alcoholics. His book ''Verbal Behavior,'' published this year by the Springer Publishing Company, describes how he approached the relationship of speech to other forms of behavior through these experiments. Proof Was Lacking
+---
+
+# Similaridade de textos
+São ferramentas não supervisionadas.
+
+## História da análise textual: A inteligência artificial, machine learning
+
+---
+Representing a strong link between research in Humanities and the incorporation of methods and tools of Digital Technologies, the term “Digital Humanities” was coined internationally just over a decade ago. Apparently, it was first used by John Unsworth, an American university professor, in 2002, but it was the publication of the book Companion to Digital Humanities, in 2004, that marked the beginning of its large-scale use.
+https://dghumanity.wordpress.com/category/digital-humanities/what-is-it/
+-->

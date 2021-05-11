@@ -1,0 +1,148 @@
+# Análise de Redes Sociais
+
+O R possui diversos pacotes para análise de rede, como o [`igraph`](https://igraph.org/r/), `ggraph`, [statnet](https://cran.r-project.org/web/packages/statnet/index.html).
+
+## O pacote Igraph
+
+Instalando o pacote `igraph`:
+
+```{r, eval=FALSE, results='hide'}
+install.packages("igraph") # instalando o pacote
+```
+
+chamando o pacote já instalado
+```{r, results='hide', collapse = TRUE}
+library(igraph) # chamando o pacote já instalado
+```
+
+A partir da ajuda do `igraph` --- no caso, digitando ` ?igraph.plotting` no console do R, e correndo até o final da ajuda ---  temos alguns exemplos de grafos com o Igraph. Por exemplo, construindo um anel:
+
+```{r}
+ g <- make_ring(10)
+     g$layout <- layout_in_circle
+     plot(g)
+```
+É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos.
+
+Mas vamos a algo mais prático. Pegando o famoso poema:
+
+> "João amava Teresa que amava Raimundo que amava Maria que amava Joaquim que amava Lili que não amava ninguém"
+
+```{r}
+library(igraph) 
+g <- graph.empty(directed=TRUE) # "directed" implica distinguir entre "de" e "para" na relação entre os nós.
+
+#  Adicionando os vértices. 
+g <- g + vertex("João") 
+g <- g + vertex("Teresa") 
+g <- g + vertex("Raimundo") 
+g <- g + vertex("Maria") 
+g <- g + vertex("Joaquim") 
+g <- g + vertex("Lili") 
+
+#  Especificando as relações entres os vértices, os edges
+g <- g + edges("João", "Teresa")
+g <- g + edges("Teresa", "Raimundo")
+g <- g + edges("Raimundo", "Maria")
+g <- g + edges("Maria", "Joaquim")
+g <- g + edges("Joaquim", "Lili")
+
+plot.igraph(g) # plotando o grafo
+```
+
+Neste caso, poderíamos ter feito este mesmo gráfico de modo mais compacto:
+
+```{r}
+library(igraph) 
+g <- graph.empty(directed=TRUE) 
+
+#  Adicionando os vértices. 
+g <- g + vertex(c("João", "Teresa", "Raimundo", "Maria", "Joaquim", "Lili"))
+
+#  Adicionando os edges em pares
+g <- g + edges(c("João", "Teresa", "Teresa", "Raimundo", "Raimundo", "Maria","Maria", "Joaquim","Joaquim", "Lili"))
+
+plot.igraph(g)
+```
+
+Se o grafo sobe ou desce, pouco importa para nós aqui, importa as pessoas e as relações entre elas.
+Repare que os edges são entendidos aos pares. Se fizéssemos um vetor sem as devidas repetições, teríamos um gráfico errado das relações:
+
+```{r}
+g <- graph.empty(directed=TRUE) 
+g <- g + vertex(c("João", "Teresa", "Raimundo", "Maria", "Joaquim", "Lili"))
+g <- g + edges(c("João", "Teresa", "Raimundo", "Maria","Joaquim", "Lili"))
+plot.igraph(g)
+```
+
+<!-- Vamos a outro exemplo: -->
+
+<!-- ```{r} -->
+<!-- library(igraph)  -->
+<!-- g <- graph.empty(directed=TRUE)  -->
+
+<!-- #  manually add our data.  -->
+<!-- g <- g + vertex("Elizabeth II")  -->
+<!-- g <- g + vertex("Philip")  -->
+<!-- g <- g + vertex("Charles")  -->
+<!-- g <- g + vertex("Diana")  -->
+<!-- g <- g + vertex("William")  -->
+<!-- g <- g + vertex("Harry")  -->
+<!-- g <- g + vertex("Catherine")  -->
+<!-- g <- g + vertex("George") -->
+
+<!-- g <- g + edges("Elizabeth II", "Charles") -->
+<!-- g <- g + edges("Philip", "Charles") -->
+<!-- g <- g + edges("Charles", "William") -->
+<!-- g <- g + edges("Diana", "William") -->
+<!-- g <- g + edges("Charles", "Harry") -->
+<!-- g <- g + edges("Diana", "Harry") -->
+<!-- g <- g + edges("William", "George") -->
+<!-- g <- g + edges("Catherine", "George")  -->
+
+<!-- g -->
+<!-- ``` 
+ ```{r}
+ plot.igraph(g)
+ ```
+
+-->
+
+# O pacote `ggraph`
+
+_A ser elaborado_
+<!-- 
+O pacote [ggraph](https://ggraph.data-imaginist.com/) é um pacote elaborado por Thomas Lin Pedersen, o mesmo do ggplot2, e pretende ser uma extensão do ggplot, mas focado em redes.
+install.packages('ggraph')
+-->
+
+
+## Redes de palavras
+_A ser elaborado_
+
+## Redes de citação
+
+<!-- 6.3 Citation Networks -->
+_A ser elaborado_
+
+## Gráfico de centralidade
+
+<!-- 6.4 Graph Centrality -->
+
+_A ser elaborado_
+
+## Comunidades
+
+<!-- 6.5 Graph Communities -->
+
+_A ser elaborado_
+
+## Sugestões de links {#SugestaoLinksredes}
+- [Manual online do ipgraph para R](https://igraph.org/r/doc/); [PDF do Manual do igraph para R](https://igraph.org/r/doc/igraph.pdf) (ambos em inglês)
+- d’ANDRÉA, Carlos Frederico de Brito. [Pesquisando plataformas online: conceitos e métodos](https://t.co/M6K92IaynT?amp=1). EDUFBA. 2020. 
+  - _A obra visa introduzir os Estudos de Plataforma, um campo de estudos que, desde o início da década de 2010, discute as especificidades políticas e materiais das mídias sociais e de outras plataformas online. Datificação, algoritmos, governança e os modelos de negócio das plataformas são algumas das dimensões sintetizadas no livro. De modo didático, o autor apresenta um conjunto de leituras e de experimentações metodológicas conduzidas com um diversificado grupo de colaboradoras(es) no país e no exterior_. (ebook PDF e Epub gratuitos)
+- RECUERO, Raquel. [Introdução à análise de redes sociais online](https://repositorio.ufba.br/ri/handle/ri/24759). EDUFBA.2017. 
+  - _A Análise de Redes Sociais (ARS) é uma abordagem de pesquisa cuja popularidade tem aumentado nos últimos anos, principalmente, entre os pesquisadores da área de Comunicação. É nesse âmbito que várias obras, entre artigos e livros, vêm surgindo e introduzindo o estudo dessas estruturas a partir da análise de redes e da compreensão da representação dessas redes sociais na internet. Este livro é uma pequena compilação dos principais conceitos e elementos para a compreensão e a aplicação da ARS. É baseado em uma breve apresentação e histórico do paradigma, os principais conceitos, suas métricas e, finalmente, suas formas de representação e visualização_. (ebook PDF e Epub gratuitos).
+- LIZARDO Omar; JILBERT Isaac. [Social Networks: An Introduction](http://olizardo.bol.ucla.edu/classes/soc-111/textbook/_book/). 2021. (ebook online)
+- AQUINO, Jackson A. "Análise de redes sociais",  capítulo 12 de ___. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus, BA: EDITUS, 2014. 157 p. ISBN: 978-85-7455-369-6. (PDF gratuito)
+

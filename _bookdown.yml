@@ -1,0 +1,15 @@
+output_dir: "docs"
+book_filename: "analise_textual_sociologia"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Capítulo "
+rmd_files: [
+"index.Rmd",
+"01-intro.Rmd",
+"historia_an_textual.Rmd",
+"estrutura_dados.Rmd",
+# "03-method.Rmd",
+"redes.Rmd",
+"links.Rmd", 
+"06-references.Rmd"]    

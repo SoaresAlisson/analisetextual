@@ -1,0 +1,73 @@
+
+# Objetivos deste manual {-}
+Sou Alisson Soares, sociólogo, e comecei há pouco tempo no campo das humanidades digitais. Achei por bem montar este manual como uma forma de compartilhar o que venho aprendendo. Algumas ferramentas, softwares serão de modo gráfico, mas por vezes vamos recorrer à programação. A principal linguagem aqui será o R, mas o uso de Python não está completamente excluído.
+
+O objetivo deste manual é:
+
+- Ser um livro em progresso constante.
+- Ser introdutório, mas também sempre indicar bons materiais para maior aprofundamento dos temas tratados.
+- Sempre que possível, oferecer material em português, apesar de nem sempre isto ser possível.
+- Oferecer uma introdução às ferramentas computacionais utilizadas em pesquisa das ciências sociais.
+- Usar preferencialmente ferramentas gratuitas e de código aberto.
+<!-- - Oferecer exemplos em mais de uma linguagem de programação -->
+- Sempre que possível, apresentar exemplos de pesquisa e ciência social utilizando estas ferramentas.
+
+
+## Plano do livro {-}
+Os capítulos planejados até o momento, muito já em elaboração:
+
+- História da Análise Textual
+- Rápida introdução à programação (conceitos básicos como variável, loops, condicionais if-else, função, etc.)
+- Normalização e expressões regulares.
+- Rápida introdução ao R (tipos de dados, estrutura de dados, importação de dados)
+- Introdução à análise textual via computador
+  - Frequência de termos (bag of words, n-grams, skipgrams, TF-IDF)
+  - dendogramas
+  - Correlação, tipos de distâncias
+- Introdução à análise de redes.
+- Inteligência Artificial: clusterização; topic modelling
+- Análise de sentimentos.
+
+
+# Introdução {#intro}
+<!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
+
+
+> _"the best digital theory-building of the past decade stems from social and computational origins. As such, it is increasingly apparent that digital sociologists need to develop a computational as well as a sociological imagination."_
+
+
+## O termo "humanidade digitais"
+Segundo um [estudo do LinkedIn](https://www.weforum.org/agenda/2021/02/digital-ecommerce-jobs-linkedin-report) em 15 países, prevendo 150 milhões de vagas nos próximos 5 anos, das áreas de trabalhos digitais em alta e 2021, duas se relacionam a Humanidades Digitais: Big data Analytics (segundo lugar) e "Text, image and voice processing" (6º lugar). Profissionalmente, pode ser interessante entrar nesta área.
+
+Existem diversos termos correlatos a 
+"Humanidades digitais" (“Digital humanities”), como
+“E-humanities, 
+"Cultural Analytics",
+ "ciências sociais computacionais", "sociologia digital", "história digital",
+"etnografia digital", "etnografia quantitativa",
+"Análise cultural quantitativa" (quantitative cultural analysis)
+"cultural analytics",
+"humanities data science", "humanities data analysis"
+<!-- computational ___ studies -->
+"humanities computing",
+"distant reading",
+"computational social science",
+etc.
+
+Humanidades digitais inclui a análise de:
+
+- sons/música, 
+- imagens. 
+<!-- - dados geográficos/geo-localizados. -->
+- textos.
+	- Nosso objetivo aqui
+
+
+```{r}
+valores <-  c(12, 34, 13)
+# atribuindo nomes ao vetor acima
+nomes <- c("banana", "uva", "abacate") # criando o vetor
+names(valores) <- nomes
+names
+```
+
