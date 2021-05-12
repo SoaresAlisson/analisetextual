@@ -135,7 +135,7 @@ Há cursos grautuitos, como "Introducing Text Analytics and Natural Language Pro
 - [R humanidades](https://t.me/R_humanidades)
 - [Análise Textual-Humanidades Digitais](https://t.me/humanidadesdigitiais)
 
-## Cheat-sheet
+## Links de Cheat-sheets
 "Cheat sheets" seriam a tradução para "cola", aquela feita para consulta em exames na escola. Em programação, refere-se a uma tabela muito bem resumida, com o que há de essencial em determinado assunto.
 
 - [Text Analysis Glossary](https://docs.constellate.org/key-terms/)

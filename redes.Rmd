@@ -22,6 +22,7 @@ A partir da ajuda do `igraph` --- no caso, digitando ` ?igraph.plotting` no cons
      g$layout <- layout_in_circle
      plot(g)
 ```
+
 É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos.
 
 Mas vamos a algo mais prático. Pegando o famoso poema:
