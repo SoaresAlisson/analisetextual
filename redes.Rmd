@@ -108,7 +108,7 @@ plot.igraph(g)
 
 -->
 
-# O pacote `ggraph`
+## O pacote `ggraph`
 
 _A ser elaborado_
 <!-- 

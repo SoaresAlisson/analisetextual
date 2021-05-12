@@ -4,5 +4,18 @@
 .httr-oauth
 .DS_Store
 
-.03-methods.Rmd
+packages.bib
+preamble.tex
+
+index.Rmd  
+01-intro.Rmd       
+02-literature.Rmd  
+03-method.Rmd       
+04-application.Rmd  
+05-summary.Rmd     
+06-references.Rmd  
+estrutura_dados.Rmd      
+redes.Rmd
+historia_an_textual.Rmd  
+links.Rmd
 _bookdown_files
