@@ -4,4 +4,6 @@
 - Usar preferencialmente ferramentas gratuitas e de código aberto.
 - Sempre que possível, apresentar exemplos de pesquisa e ciência social utilizando estas ferramentas.
 
+- O link para o livro/site em bookdown pode ser acessado [por aqui](https://soaresalisson.github.io/analisetextual/)
+
 This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
