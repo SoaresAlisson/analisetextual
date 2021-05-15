@@ -85,14 +85,15 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 
 ## Links Programação
 ### R introdução
-- Caio Lente. [zen do R](https://curso-r.github.io/zen-do-r/git-github.html). "O objetivo deste livro é ensinar ao leitor que não costuma programar algumas formas simples de melhorar a organização de seus projetos de análise de dados em R". (Livro online gratuito).
+- LENTE, Caio. [Zen do R](https://curso-r.github.io/zen-do-r/git-github.html). 
+  - "O objetivo deste livro é ensinar ao leitor que não costuma programar algumas formas simples de melhorar a organização de seus projetos de análise de dados em R". (Livro online gratuito).
 - AQUINO, Jackson A.. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus, BA: EDITUS, 2014. 157 p. ISBN: 978-85-7455-369-6. (PDF gratuito)
 - FERREIRA, E.B.;. de OLIVEIRA, M.S. [Introdução à Estatística com R](https://www.unifal-mg.edu.br/bibliotecas/system/files/imce/EBR_Unifal.pdf). Unifal. 2020. (PDF gratuito).
 - [Livro Curso-R](https://livro.curso-r.com) (em construção)
 - [Blog: Curso-R](https://blog.curso-r.com/)
 - KUBRUSLY, Jessica. [Uma Introdução à Programação com o R](https://bookdown.org/jessicakubrusly/programacao-estatistica/). (ebook online em português)
-- Sergio Miranda Freire. [Introdução ao R](http://www.lampada.uerj.br/arquivosdb/_book2/introducaoR.html). (Livro online, no formato bookdown)
-- WICKHAM, Hadley. [Advanced R](https://adv-r.hadley.nz/index.html).2nd edition. (Livro online gratuito, no formato bookdown em inglês, para entender melhor os conceitos do R)
+- FREIRE, Sergio Miranda. [Introdução ao R](http://www.lampada.uerj.br/arquivosdb/_book2/introducaoR.html). (Livro online, no formato bookdown)
+- WICKHAM, Hadley. [Advanced R](https://adv-r.hadley.nz/index.html). 2nd edition. (Livro online gratuito, no formato bookdown, em inglês, para entender melhor os conceitos do R).
 
 ### R - tópicos específicos
 - WICKHAM, H. GROLEMUND, Garret. [R for Data Science](https://r4ds.had.co.nz/). O'Reilly. 2017. (Livro Online, em inglês).
@@ -101,7 +102,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - [ggplot2](https://ggplot2-book.org/)  on-line version of work-in-progress 3rd edition of “ggplot2: elegant graphics for data analysis” 
 - SILGE, Julia,  ROBINSON, David  [Text Mining with R](https://www.tidytextmining.com/). (ebook online)
 - RYDBERG-COX, Jeff. [Statistical Methods for Studying Literature Using R](https://www.chlt.org/StatisticalMethods/index.html) da Universidade Missouri-Kansas City.
-- [R-tutor](http://www.r-tutor.com/sitemap)An R Introduction to Statistics.  Site com tutoriais diversos sobre R. Em Inglês.
+- [R-tutor](http://www.r-tutor.com/sitemap)- An R Introduction to Statistics.  Site com tutoriais diversos sobre R. Em Inglês.
 - Diversos links para livros gratuitos de R no [bookdown](https://www.bookdown.org/home/archive/).
 
 ### Links Python
@@ -140,7 +141,7 @@ Há cursos grautuitos, como "Introducing Text Analytics and Natural Language Pro
 ## Links de folhas de dicas (_Cheat-sheets_)
 "Cheat sheets" seriam a tradução para "cola", aquela feita para consulta em exames na escola. Em programação, refere-se a uma tabela muito bem resumida, com o que há de essencial em determinado assunto.
 
-- [Text Analysis Glossary](https://docs.constellate.org/key-terms/) Um glossário de termos usados na análise textual, em inglês.
+- [Text Analysis Glossary](https://docs.constellate.org/key-terms/) Um glossário de termos usados na análise textual, em inglês, do projeto Constellate (JStor e diversas universidades)
 - Lista com mais de 100 cheat-sheets em R e Python, sobre Machine Learning: [link](https://www.theinsaneapp.com/2020/12/machine-learning-and-data-science-cheat-sheets-pdf.html)
 - [Git-GitHub](https://education.github.com/git-cheat-sheet-education.pdf), [Git-Gitlab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf),
 - Cheatsheets do R como:
