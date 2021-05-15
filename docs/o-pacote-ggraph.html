@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 6 O pacote ggraph | Introdução Análise Textual aplicada à Sociologia</title>
+  <title>Capítulo 5 O pacote ggraph | Introdução Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 6 O pacote ggraph | Introdução Análise Textual aplicada à Sociologia" />
+  <meta property="og:title" content="Capítulo 5 O pacote ggraph | Introdução Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 6 O pacote ggraph | Introdução Análise Textual aplicada à Sociologia" />
+  <meta name="twitter:title" content="Capítulo 5 O pacote ggraph | Introdução Análise Textual aplicada à Sociologia" />
   
   <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Alisson Soares" />
 
 
-<meta name="date" content="2021-05-11" />
+<meta name="date" content="2021-05-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,16 +53,6 @@
 
 <link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.2/htmlwidgets.js"></script>
-<script src="libs/d3-3.3.8/d3.min.js"></script>
-<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
-<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
-<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/chromatography-0.1/chromatography.js"></script>
-<script src="libs/DiagrammeR-binding-1.0.6.1/DiagrammeR.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
 <style type="text/css">
@@ -143,7 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Análise Textual</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
@@ -170,50 +160,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>4</b> Methods</a>
+<li class="chapter" data-level="4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>4</b> Análise de Redes Sociais</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="methods.html"><a href="methods.html#prerequisites"><i class="fa fa-check"></i><b>4.1</b> Prerequisites</a></li>
+<li class="chapter" data-level="4.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>4.1</b> O pacote Igraph</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>5</b> Análise de Redes Sociais</a>
+<li class="chapter" data-level="5" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html"><i class="fa fa-check"></i><b>5</b> O pacote <code>ggraph</code></a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>5.1</b> O pacote Igraph</a></li>
+<li class="chapter" data-level="5.1" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#redes-de-palavras"><i class="fa fa-check"></i><b>5.1</b> Redes de palavras</a></li>
+<li class="chapter" data-level="5.2" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#redes-de-citação"><i class="fa fa-check"></i><b>5.2</b> Redes de citação</a></li>
+<li class="chapter" data-level="5.3" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>5.3</b> Gráfico de centralidade</a></li>
+<li class="chapter" data-level="5.4" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#comunidades"><i class="fa fa-check"></i><b>5.4</b> Comunidades</a></li>
+<li class="chapter" data-level="5.5" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>5.5</b> Sugestões de links</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html"><i class="fa fa-check"></i><b>6</b> O pacote <code>ggraph</code></a>
+<li class="chapter" data-level="6" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>6</b> Links úteis</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#redes-de-palavras"><i class="fa fa-check"></i><b>6.1</b> Redes de palavras</a></li>
-<li class="chapter" data-level="6.2" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#redes-de-citação"><i class="fa fa-check"></i><b>6.2</b> Redes de citação</a></li>
-<li class="chapter" data-level="6.3" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>6.3</b> Gráfico de centralidade</a></li>
-<li class="chapter" data-level="6.4" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#comunidades"><i class="fa fa-check"></i><b>6.4</b> Comunidades</a></li>
-<li class="chapter" data-level="6.5" data-path="o-pacote-ggraph.html"><a href="o-pacote-ggraph.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>6.5</b> Sugestões de links</a></li>
+<li class="chapter" data-level="6.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>6.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="6.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>6.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="6.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>6.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital"><i class="fa fa-check"></i><b>6.3.1</b> Sociologia Digital</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>7</b> Links úteis</a>
+<li class="chapter" data-level="6.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>6.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="6.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals"><i class="fa fa-check"></i><b>6.5</b> Revistas / Journals</a></li>
+<li class="chapter" data-level="6.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>6.6</b> Dados Abertos</a></li>
+<li class="chapter" data-level="6.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>6.7</b> Vídeos</a></li>
+<li class="chapter" data-level="6.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>6.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="6.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>6.9</b> Organizações</a></li>
+<li class="chapter" data-level="6.10" data-path="links-úteis.html"><a href="links-úteis.html#podcasts"><i class="fa fa-check"></i><b>6.10</b> Podcasts</a></li>
+<li class="chapter" data-level="6.11" data-path="links-úteis.html"><a href="links-úteis.html#programação"><i class="fa fa-check"></i><b>6.11</b> Programação</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>7.1</b> Humanidades digitais</a></li>
-<li class="chapter" data-level="7.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>7.2</b> Análise de redes sociais</a></li>
-<li class="chapter" data-level="7.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>7.3</b> Textos sobre análise textual</a>
-<ul>
-<li class="chapter" data-level="7.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital"><i class="fa fa-check"></i><b>7.3.1</b> Sociologia Digital</a></li>
+<li class="chapter" data-level="6.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>6.11.1</b> R introdução</a></li>
+<li class="chapter" data-level="6.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>6.11.2</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="6.11.3" data-path="links-úteis.html"><a href="links-úteis.html#python"><i class="fa fa-check"></i><b>6.11.3</b> Python</a></li>
+<li class="chapter" data-level="6.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>6.11.4</b> Python - tópicos específicos</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>7.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
-<li class="chapter" data-level="7.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals"><i class="fa fa-check"></i><b>7.5</b> Revistas / Journals</a></li>
-<li class="chapter" data-level="7.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>7.6</b> Dados Abertos</a></li>
-<li class="chapter" data-level="7.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>7.7</b> Vídeos</a></li>
-<li class="chapter" data-level="7.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>7.8</b> Sites / Blogs</a></li>
-<li class="chapter" data-level="7.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>7.9</b> Organizações</a></li>
-<li class="chapter" data-level="7.10" data-path="links-úteis.html"><a href="links-úteis.html#podcasts"><i class="fa fa-check"></i><b>7.10</b> Podcasts</a></li>
-<li class="chapter" data-level="7.11" data-path="links-úteis.html"><a href="links-úteis.html#programação"><i class="fa fa-check"></i><b>7.11</b> Programação</a>
+<li class="chapter" data-level="6.12" data-path="links-úteis.html"><a href="links-úteis.html#cursos"><i class="fa fa-check"></i><b>6.12</b> Cursos</a></li>
+<li class="chapter" data-level="6.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>6.13</b> Grupos de discussão/Forum</a>
 <ul>
-<li class="chapter" data-level="7.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>7.11.1</b> R introdução</a></li>
-<li class="chapter" data-level="7.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>7.11.2</b> R - tópicos específicos</a></li>
-<li class="chapter" data-level="7.11.3" data-path="links-úteis.html"><a href="links-úteis.html#python"><i class="fa fa-check"></i><b>7.11.3</b> Python</a></li>
-<li class="chapter" data-level="7.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>7.11.4</b> Python - tópicos específicos</a></li>
+<li class="chapter" data-level="6.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>6.13.1</b> Telegram</a></li>
 </ul></li>
-<li class="chapter" data-level="7.12" data-path="links-úteis.html"><a href="links-úteis.html#cursos"><i class="fa fa-check"></i><b>7.12</b> Cursos</a></li>
-<li class="chapter" data-level="7.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>7.13</b> Grupos de discussão/Forum</a>
-<ul>
-<li class="chapter" data-level="7.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>7.13.1</b> Telegram</a></li>
-</ul></li>
-<li class="chapter" data-level="7.14" data-path="links-úteis.html"><a href="links-úteis.html#cheat-sheet"><i class="fa fa-check"></i><b>7.14</b> Cheat-sheet</a></li>
+<li class="chapter" data-level="6.14" data-path="links-úteis.html"><a href="links-úteis.html#cheat-sheet"><i class="fa fa-check"></i><b>6.14</b> Cheat-sheet</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="referências.html"><a href="referências.html"><i class="fa fa-check"></i>Referências</a></li>
 <li class="divider"></li>
@@ -236,34 +222,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="o-pacote-ggraph" class="section level1" number="6">
-<h1><span class="header-section-number">Capítulo 6</span> O pacote <code>ggraph</code></h1>
+<div id="o-pacote-ggraph" class="section level1" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> O pacote <code>ggraph</code></h1>
 <p><em>A ser elaborado</em>
 <!-- 
 O pacote [ggraph](https://ggraph.data-imaginist.com/) é um pacote elaborado por Thomas Lin Pedersen, o mesmo do ggplot2, e pretende ser uma extensão do ggplot, mas focado em redes.
 install.packages('ggraph')
 --></p>
-<div id="redes-de-palavras" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Redes de palavras</h2>
+<div id="redes-de-palavras" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Redes de palavras</h2>
 <p><em>A ser elaborado</em></p>
 </div>
-<div id="redes-de-citação" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Redes de citação</h2>
+<div id="redes-de-citação" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Redes de citação</h2>
 <!-- 6.3 Citation Networks -->
 <p><em>A ser elaborado</em></p>
 </div>
-<div id="gráfico-de-centralidade" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> Gráfico de centralidade</h2>
+<div id="gráfico-de-centralidade" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Gráfico de centralidade</h2>
 <!-- 6.4 Graph Centrality -->
 <p><em>A ser elaborado</em></p>
 </div>
-<div id="comunidades" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> Comunidades</h2>
+<div id="comunidades" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Comunidades</h2>
 <!-- 6.5 Graph Communities -->
 <p><em>A ser elaborado</em></p>
 </div>
-<div id="SugestaoLinksredes" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Sugestões de links</h2>
+<div id="SugestaoLinksredes" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Sugestões de links</h2>
 <ul>
 <li><a href="https://igraph.org/r/doc/">Manual online do ipgraph para R</a>; <a href="https://igraph.org/r/doc/igraph.pdf">PDF do Manual do igraph para R</a> (ambos em inglês)</li>
 <li>d’ANDRÉA, Carlos Frederico de Brito. <a href="https://t.co/M6K92IaynT?amp=1">Pesquisando plataformas online: conceitos e métodos</a>. EDUFBA. 2020.
@@ -336,20 +322,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

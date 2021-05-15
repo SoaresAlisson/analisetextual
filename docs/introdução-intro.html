@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introdução Análise Textual aplicada à Sociologia</title>
+  <title>Introdução {#intro} | Introdução Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introdução Análise Textual aplicada à Sociologia" />
+  <meta property="og:title" content="Introdução {#intro} | Introdução Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introdução Análise Textual aplicada à Sociologia" />
+  <meta name="twitter:title" content="Introdução {#intro} | Introdução Análise Textual aplicada à Sociologia" />
   
   <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html"/>
+<link rel="prev" href="objetivos-deste-manual.html"/>
+<link rel="next" href="história-da-análise-textual.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -140,9 +140,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
+<li class="chapter" data-level="" data-path="introdução-intro.html"><a href="introdução-intro.html"><i class="fa fa-check"></i>Introdução {#intro}</a>
 <ul>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#o-termo-humanidade-digitais"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
+<li class="chapter" data-level="0.1" data-path="introdução-intro.html"><a href="introdução-intro.html#o-termo-humanidade-digitais"><i class="fa fa-check"></i><b>0.1</b> O termo “humanidade digitais”</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
 <ul>
@@ -236,42 +236,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introdução Análise Textual aplicada à Sociologia</h1>
-<p class="author"><em>Alisson Soares</em></p>
-<p class="date"><em>2021-05-15</em></p>
-</div>
-<div id="objetivos-deste-manual" class="section level1 unnumbered">
-<h1>Objetivos deste manual</h1>
-<p>Sou Alisson Soares, sociólogo, e comecei há pouco tempo no campo das humanidades digitais. Achei por bem montar este manual como uma forma de compartilhar o que venho aprendendo. Algumas ferramentas, softwares serão de modo gráfico, mas por vezes vamos recorrer à programação. A principal linguagem aqui será o R, mas o uso de Python não está completamente excluído.</p>
-<p>O objetivo deste manual é:</p>
+<div id="introdução-intro" class="section level1 unnumbered">
+<h1>Introdução {#intro}</h1>
+<!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
+<blockquote>
+<p><em>“the best digital theory-building of the past decade stems from social and computational origins. As such, it is increasingly apparent that digital sociologists need to develop a computational as well as a sociological imagination.”</em></p>
+</blockquote>
+<div id="o-termo-humanidade-digitais" class="section level2" number="0.1">
+<h2><span class="header-section-number">0.1</span> O termo “humanidade digitais”</h2>
+<p>Segundo um <a href="https://www.weforum.org/agenda/2021/02/digital-ecommerce-jobs-linkedin-report">estudo do LinkedIn</a> em 15 países, prevendo 150 milhões de vagas nos próximos 5 anos, das áreas de trabalhos digitais em alta e 2021, duas se relacionam a Humanidades Digitais: Big data Analytics (segundo lugar) e “Text, image and voice processing” (6º lugar). Profissionalmente, pode ser interessante entrar nesta área.</p>
+<p>Existem diversos termos correlatos a
+“Humanidades digitais” (“Digital humanities”), como
+“E-humanities,”Cultural Analytics“,”ciências sociais computacionais“,”sociologia digital“,”história digital“,”etnografia digital“,”etnografia quantitativa“,”Análise cultural quantitativa" (quantitative cultural analysis)
+“cultural analytics”,
+“humanities data science”, “humanities data analysis”
+<!-- computational ___ studies -->
+“humanities computing”,
+“distant reading”,
+“computational social science”,
+etc.</p>
+<p>Humanidades digitais inclui a análise de:</p>
 <ul>
-<li>Ser um livro em progresso constante.</li>
-<li>Ser introdutório, mas também sempre indicar bons materiais para maior aprofundamento dos temas tratados.</li>
-<li>Sempre que possível, oferecer material em português, apesar de nem sempre isto ser possível.</li>
-<li>Oferecer uma introdução às ferramentas computacionais utilizadas em pesquisa das ciências sociais.</li>
-<li>Usar preferencialmente ferramentas gratuitas e de código aberto.
-<!-- - Oferecer exemplos em mais de uma linguagem de programação --></li>
-<li>Sempre que possível, apresentar exemplos de pesquisa e ciência social utilizando estas ferramentas.</li>
-</ul>
-<div id="plano-do-livro" class="section level2 unnumbered">
-<h2>Plano do livro</h2>
-<p>Os capítulos planejados até o momento, muito já em elaboração:</p>
+<li>sons/música,</li>
+<li>imagens.
+<!-- - dados geográficos/geo-localizados. --></li>
+<li>textos.
 <ul>
-<li>História da Análise Textual</li>
-<li>Rápida introdução à programação (conceitos básicos como variável, loops, condicionais if-else, função, etc.)</li>
-<li>Normalização e expressões regulares.</li>
-<li>Rápida introdução ao R (tipos de dados, estrutura de dados, importação de dados)</li>
-<li>Introdução à análise textual via computador
-<ul>
-<li>Frequência de termos (bag of words, n-grams, skipgrams, TF-IDF)</li>
-<li>dendogramas</li>
-<li>Correlação, tipos de distâncias</li>
+<li>Nosso objetivo aqui</li>
 </ul></li>
-<li>Introdução à análise de redes.</li>
-<li>Inteligência Artificial: clusterização; topic modelling</li>
-<li>Análise de sentimentos.</li>
 </ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="introdução-intro.html#cb1-1" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">34</span>, <span class="dv">13</span>)</span>
+<span id="cb1-2"><a href="introdução-intro.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># atribuindo nomes ao vetor acima</span></span>
+<span id="cb1-3"><a href="introdução-intro.html#cb1-3" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;uva&quot;</span>, <span class="st">&quot;abacate&quot;</span>) <span class="co"># criando o vetor</span></span>
+<span id="cb1-4"><a href="introdução-intro.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(valores) <span class="ot">&lt;-</span> nomes</span>
+<span id="cb1-5"><a href="introdução-intro.html#cb1-5" aria-hidden="true" tabindex="-1"></a>names</span></code></pre></div>
+<pre><code>## function (x)  .Primitive(&quot;names&quot;)</code></pre>
+
 </div>
 </div>
             </section>
@@ -279,8 +279,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="objetivos-deste-manual.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="história-da-análise-textual.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

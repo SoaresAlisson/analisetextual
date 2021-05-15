@@ -31,14 +31,14 @@ Os capítulos planejados até o momento, muito já em elaboração:
 - Análise de sentimentos.
 
 
-# Introdução {#intro}
+# Introdução {#intro -} 
 <!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
 
 
 > _"the best digital theory-building of the past decade stems from social and computational origins. As such, it is increasingly apparent that digital sociologists need to develop a computational as well as a sociological imagination."_
 
 
-## O termo "humanidade digitais"
+## O termo "humanidade digitais" {-}
 Segundo um [estudo do LinkedIn](https://www.weforum.org/agenda/2021/02/digital-ecommerce-jobs-linkedin-report) em 15 países, prevendo 150 milhões de vagas nos próximos 5 anos, das áreas de trabalhos digitais em alta e 2021, duas se relacionam a Humanidades Digitais: Big data Analytics (segundo lugar) e "Text, image and voice processing" (6º lugar). Profissionalmente, pode ser interessante entrar nesta área.
 
 Existem diversos termos correlatos a 

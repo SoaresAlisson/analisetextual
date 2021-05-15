@@ -8,6 +8,7 @@ rmd_files: [
 "index.Rmd",
 "01-intro.Rmd",
 "historia_an_textual.Rmd",
+"exemplos_pesquisas_DH.Rmd",
 "estrutura_dados.Rmd",
 # "03-method.Rmd",
 "redes.Rmd",

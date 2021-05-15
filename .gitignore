@@ -7,15 +7,15 @@
 packages.bib
 preamble.tex
 
-index.Rmd  
-01-intro.Rmd       
+# Ignore all text files
+# index.Rmd  
+# 01-intro.Rmd       
 02-literature.Rmd  
 03-method.Rmd       
-04-application.Rmd  
-05-summary.Rmd     
-06-references.Rmd  
-estrutura_dados.Rmd      
-redes.Rmd
-historia_an_textual.Rmd  
-links.Rmd
+# 05-summary.Rmd     
+# 06-references.Rmd  
+# estrutura_dados.Rmd      
+# redes.Rmd
+# historia_an_textual.Rmd  
+# links.Rmd
 _bookdown_files

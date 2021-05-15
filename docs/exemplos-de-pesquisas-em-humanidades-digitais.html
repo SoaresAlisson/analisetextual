@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 2 Exemplos de Pesquisas em Humanidades Digitais | Introdução Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 2 Exemplos de Pesquisas em Humanidades Digitais | Introdução Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 2 Exemplos de Pesquisas em Humanidades Digitais | Introdução Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+<meta name="date" content="2021-05-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="história-da-análise-textual.html"/>
+<link rel="next" href="organização-dos-dados-quanto-a-sua-estrutura.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#o-termo-humanidade-digitais"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-da-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências da filosofia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-google-trends-como-proxy-para-epidemias"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras</a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical</a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização</a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html"><i class="fa fa-check"></i><b>3</b> Organização dos dados quanto a sua estrutura</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> 1) Dados estruturados</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> 2) Dados não estruturados</a></li>
+<li class="chapter" data-level="3.3" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> 3.Dados semi-estruturados</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>4</b> Análise de Redes Sociais</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>4.1</b> O pacote Igraph</a></li>
+<li class="chapter" data-level="4.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-ggraph"><i class="fa fa-check"></i><b>4.2</b> O pacote <code>ggraph</code></a></li>
+<li class="chapter" data-level="4.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>4.3</b> Redes de palavras</a></li>
+<li class="chapter" data-level="4.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>4.4</b> Redes de citação</a></li>
+<li class="chapter" data-level="4.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>4.5</b> Gráfico de centralidade</a></li>
+<li class="chapter" data-level="4.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>4.6</b> Comunidades</a></li>
+<li class="chapter" data-level="4.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>4.7</b> Sugestões de links</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>5</b> Links úteis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>5.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="5.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>5.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="5.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>5.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital"><i class="fa fa-check"></i><b>5.3.1</b> Sociologia Digital</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>5.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="5.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>5.5</b> Revistas / Journals acadêmicos</a></li>
+<li class="chapter" data-level="5.6" data-path="links-úteis.html"><a href="links-úteis.html#links-sobre-dados-abertos"><i class="fa fa-check"></i><b>5.6</b> Links sobre Dados Abertos</a></li>
+<li class="chapter" data-level="5.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>5.7</b> Vídeos</a></li>
+<li class="chapter" data-level="5.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>5.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="5.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>5.9</b> Organizações</a></li>
+<li class="chapter" data-level="5.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>5.10</b> Links de Podcasts sobre Digital Humanities</a></li>
+<li class="chapter" data-level="5.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>5.11</b> Links Programação</a>
+<ul>
+<li class="chapter" data-level="5.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>5.11.1</b> R introdução</a></li>
+<li class="chapter" data-level="5.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>5.11.2</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="5.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>5.11.3</b> Links Python</a></li>
+<li class="chapter" data-level="5.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>5.11.4</b> Python - tópicos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>5.12</b> Links de Cursos Online</a></li>
+<li class="chapter" data-level="5.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>5.13</b> Grupos de discussão/Forum</a>
+<ul>
+<li class="chapter" data-level="5.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>5.13.1</b> Telegram</a></li>
+</ul></li>
+<li class="chapter" data-level="5.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>5.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exemplos-de-pesquisas-em-humanidades-digitais" class="section level1" number="2">
+<h1><span class="header-section-number">Capítulo 2</span> Exemplos de Pesquisas em Humanidades Digitais</h1>
+<p>Para entender os potenciais das humanidades digitais para pesquisa, nada melhor que observarmos exemplos de pesquisas. Aqui seguem alguns de exemplos, selecionados pelo potencial de integração entre humanidades e métodos digitais, mais que quanto ao possível mérito/demérito científico.</p>
+<div id="bibliometria-cientometria-cienciometria" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Bibliometria / cientometria / cienciometria</h2>
+<p>O estudo das citações, das rede de citações em artigos científicos foi talvez um dos pioneiros no uso de algumas das técnicas aqui descritas, existindo já há décadas. Chamada de “bibliometria”, “cientometria” ou “cienciometria”, ela conta citações de determinados autores em artigos científicos e tenta avaliar o quão influentes estes são.</p>
+<div id="exemplo-filósofos-da-ciência-na-sociologia" class="section level3" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Exemplo: Filósofos da ciência na Sociologia</h3>
+<p>Por exemplo, HEDSTRÖM et al (1998), buscando saber a influência dos principais filósofos da ciência (Hempel, Kuhn, Popper e Wittgenstein) na sociologia em diferentes países e regiões (países nórdicos, EUA, Grã Bretanha, Alemanha e França), analisou o número de artigos nas principais revistas sociológicas que os citaram.</p>
+<p><img src="imagens/Hedstrom.philosophers_science_in_sociological_journals.png" alt="Tabela: citações de filósofos em revistas sociológicas" />
+(Fonte: HEDSTRÖM et al. 1998. p. 343)</p>
+<p>Pelos dados ali apresentados, Popper seria o filósofo mais influente na Europa, principalmente nos países de língua alemã, ao passo que Kuhn seria mais dominante nos EUA.</p>
+<ul>
+<li>HEDSTRÖM, Peter; SWEDBERG; and UDÉHN, Lars. Popper’s Situational Analysis and Contemporary Sociology. Philosophy of the Social Sciences 1998; 28; 339-64]</li>
+</ul>
+</div>
+<div id="exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann" class="section level3" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</h3>
+<p>Stephen Roth analisou a chamada diferenciação funcional dos subsistemas da sociedade mundial, isto é, como os subssitemas como política, economia, religião, ciência, direito, meios de comunicação de massa, etc. se autonomizam em relação aos outros, entre os anos de 1800 e 2000, e para tal utilizou dados do Google Ngram viewer, que por sua vez se baseia no Google Books (mais detalhes sobre estas ferramentes na seção sobre frequência de palavras). Ele encontrou, por exemplo, declínio da presença relativa (isto é, proporcional a cada ano) da palavra “Deus” (<em>god</em>) nos livros em inglês ao longo do tempo.</p>
+<p><img src="imagens/SRoth.2014.Religion.png" /> Fonte: Roth (2014, p.46).</p>
+<p>E se examinarmos os termos relacionados aos Meios de Comunicação de Massa, podemos ver a importância relativa do termo “imprensa” (<em>press</em>) aumentando ao longo do tempo.</p>
+<p><img src="imagens/SRoth.2014.MassMedia.png" /> Fonte: Roth(2014, p.47).</p>
+<ul>
+<li>Roth, Steffen. 2014. <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.692.7206&amp;rep=rep1&amp;type=pdf">“Fashionable Functions: A Google Ngram View of Trends in Functional Differentiation (1800-2000)”</a> International Journal of Technology and Human Interaction, 34–58.</li>
+</ul>
+<p>Uma versão posterior, um pouco mais elaborada em:</p>
+<ul>
+<li>Steffen Roth, Carlton Clark, Nikolay Trofimov, Artur Mkrtichyan, Markus Heidingsfelder, Laura Appignanesi, Miguel Pérez-Valls, Jan Berkel, Jari Kaivo-oja. <a href="https://www.sciencedirect.com/science/article/abs/pii/S004016251730269X?via%3Dihub">Futures of a distributed memory. A global brain wave measurement (1800–2000)</a>. Technological Forecasting &amp; Social Change 118 (2017) 307–323</li>
+</ul>
+</div>
+<div id="exemplo-tendência-de-termos-chave-da-sociologia" class="section level3" number="2.1.3">
+<h3><span class="header-section-number">2.1.3</span> Exemplo: Tendência de termos chave da Sociologia</h3>
+<!-- Este tipo de pesquisa foi facilitada com a computação. -->
+<p>Além de contar citação nas referências, pode-se contar as palavras mais frequentes no corpo do texto e compará-las. Bernau (2018), por exemplo, coletou dados do <a href="https://www.jstor.org/dfr/">JSTOR’s Data for Research</a> e plotou um gráfico longitudinal (ao longo do tempo) de frequência de palavas com termos chaves da sociologia, como “classe”, “raça” e “gênero” da revista American Sociological Review.</p>
+<p><img src="imagens/AmericanSociologicalReview_WordFrequency_Class_Gender_Race.png" /></p>
+<p>Ele também disponibilizou o <a href="https://github.com/johnbernau/jstor_dfr">script em R que desenvolveu</a> para esta análise.</p>
+<ul>
+<li>BERNAU, John A. <a href="https://journals.sagepub.com/doi/full/10.1177/2378023118809264">Text Analysis with JSTOR Archives</a>. November 12, 2018. <a href="https://doi.org/10.1177/2378023118809264" class="uri">https://doi.org/10.1177/2378023118809264</a></li>
+</ul>
+</div>
+<div id="exemplo-tendências-da-filosofia" class="section level3" number="2.1.4">
+<h3><span class="header-section-number">2.1.4</span> Exemplo: Tendências da filosofia</h3>
+<p>Inspirado neste trabalho, Brian Weatherson usou também o pacote <code>jstor_dfr</code>, baixou dados da filosofia, e os clusterizou através de topic modeling. Podemos ver as tendências gerais de vários ramos da filosofia ao longo do tempo:</p>
+<div class="figure">
+<img src="imagens/history_philosophy_trends.jpg" alt="" />
+<p class="caption">Tendencias na história da filosofia</p>
+</div>
+<p>O resultado e mais informações estão em seu livro online:</p>
+<ul>
+<li>WEATHERSON, Brian . <a href="http://www-personal.umich.edu/~weath/lda/">A History of Philosophy Journals</a>. Volume 1: Evidence from Topic Modeling, 1876-2013)</li>
+</ul>
+</div>
+</div>
+<div id="exemplo-google-trends-como-proxy-para-epidemias" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Exemplo: Google Trends como Proxy para epidemias</h2>
+<p>A busca no Google por certos sintomas de doenças, ou melhor, a variação na busca por certas doenças e sintomas correlatos pode indicar que variação real da doença.
+Isso acontece, por exemplo, com sintomas de gripe. Um pico no aumento das buscas pelos sintomas indica um prenúncio do aumento das infecções, a ser checado/validado posteriormente.
+No artigo <a href="https://academic.oup.com/cid/article/49/10/1557/298019">Google Trends: A Web-Based Tool for Real-Time Surveillance of Disease Outbreaks.</a>, os autores explicam que a ferramenta lançada em 2018:
+&gt; “Google Flu Trends can detect regional outbreaks of influenza 7–10 days before conventional Centers for Disease Control and Prevention surveillance systems”
+Para funcionar, há certas pré-condições sociais.</p>
+<p>Vale para gripe, e a ferramenta também prevê aumentos da Covid-19.
+Na reportagem da Piaui “<a href="https://piaui.folha.uol.com.br/no-carnaval-buscas-por-sintomas-covid-voltaram-subir-sete-dias-depois-numero-de-novos-casos-bateu-recorde/">No carnaval, buscas por “sintomas covid” voltaram a subir; sete dias depois, número de novos casos bateu recorde</a>” de 09 de março de 2021 compara as buscas no google com casos reais.</p>
+<div class="figure">
+<img src="imagens/Piaui-GoogleCovid.jpg" alt="" />
+<p class="caption">Gráfico: buscas por “sintomas Covid no Google” versus casos reais</p>
+</div>
+<p>ver também <a href="https://smreputationmetrics.wordpress.com/2021/04/11/sintomas-covid-en-google-trends-un-indicador-alternativo-para-el-seguimiento-de-la-incidencia-de-casos/">“Sintomas Covid” en Google trends:.Un indicador alternativo para el seguimiento de la incidencia de casos.</a> com exemplos da Espanha, México, Chile e Argentina.</p>
+<!-- Exemplo de validação, de buscas no Google por "sintomas covid" e novos casos.
+[Piaui:Buscas sintomas Google](https://piaui.folha.uol.com.br/wp-content/uploads/2021/03/minipost2_googlecovid_interna.jpg).-->
+<p>No entanto, a ferramenta que parecia promissora falhou em prever o pico de gripe de 2013, sobrestimando por 140%. A empresa achou melhor terminar o projeto, conforme um <a href="https://www.wired.com/2015/10/can-learn-epic-failure-google-flu-trends/">artigo da Wired</a> de 2015. Mais detalhes podem lidos no artigo <a href="https://dash.harvard.edu/bitstream/handle/1/12016836/The%20Parable%20of%20Google%20Flu%20%28WP-Final%29.pdf?sequence=1">The Parable of Google Flu: Traps in Big Data Analysis</a>.
+O Instituto de Ciências Cognitvas de Osnabrück leva a ideia adiante, com modelo mais complexo, utilizando dados de redes sociais como Twitter e através do Watson da IBM.(<a href="https://www.ikw.uni-osnabrueck.de/en/research_groups/neuroinformatics/overview/flu_prediction.html">site do projeto</a>).</p>
+</div>
+<div id="exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</h2>
+<p>O relatório de 23/11/2020 sobre isolamento científico, intitulado “<a href="https://laut.org.br/scientific-self-isolation/">scientific [self] isolation</a>” do <a href="https://laut.org.br/">Laut</a>, Centro de Análise da Liberdade e do Autoritarismo,
+cruzou as checagens de fake news de 129 países diferentes (há uma plataforma que traduz as reportagens de fact checking de todo mundo para o inglês) e investigou a distribuição de notícias falsas sobre os tratamentos da Covid19. Os pesquisadores procederam então uma distribuição num plano das discussões nos países conforme sua semelhança. Quanto mais próximos, mais semelhantes os debates ao redor do tema. Encontraram então que o Brasil é o país mais isolado em sua discussão envolvendo certos medicamentos, no canto superior direito.
+<!-- , ele identifica e se aprofunda sobre especificidades do debate público brasileiro, que se distancia da discussão internacional.--></p>
+<div class="figure">
+<img src="imagens/Laut.Relative_proximity.png" alt="" />
+<p class="caption">grafico</p>
+</div>
+</div>
+<div id="exemplo-mudança-de-significado-de-palavras" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Exemplo: Mudança de significado de palavras</h2>
+<p>Kulkarni et al (2015) mostraram como através de ferramentas computacionais é possível identificar a mudança de significado de termos, seja ao longo de um século (com dados do Google NGram), seja em dinâmicas mais rápidas, como no twitter. Um dos termos analisado foi o “gay”:</p>
+<div class="figure">
+<img src="imagens/LinguisticChange-Gay.png" alt="" />
+<p class="caption">Linguistic Change da palavra “gay”</p>
+</div>
+<p>Várias outras palavras foram analisadas, como “tape” que significava “fita adesiva”, mas passou a significar também “fita cassete” nos anos 1970; ou “apple” e “windows” que ganharam novo significado com a indústria da computação.</p>
+<ul>
+<li>KULKARNI, V., Al-Rfou, R; PEROZZI, B e SKIENA, S. <a href="http://viveksck.github.io/langchangetrack/data/kulkarni.pdf">Statistically Significant Detection of Linguistic Change</a>. WWW 2015, May 18–22, 2015. <a href="http://dx.doi.org/10.1145/2736277.2741627" class="uri">http://dx.doi.org/10.1145/2736277.2741627</a> .</li>
+</ul>
+</div>
+<div id="exemplo-análise-de-complexidade-musical" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Exemplo: Análise de complexidade musical</h2>
+<p>A reportagem da Folha de São Paulo
+<a href="https://www1.folha.uol.com.br/ilustrada/2017/08/1910208-musica-brasileira-foi-simplificada-ao-longo-das-decadas-diz-pesquisa.shtml">Música brasileira foi simplificada ao longo das décadas, diz pesquisa</a>
+cita o trabalho do cientista de dados Leonardo Sales (<a href="leosalesblog.wordpress.com">blog do autor</a>), que analisou os acordes e vocabulário das letras, com base em 44 mil cifras e 102 mil letras raspadas de sites como cifras.com.br e letras.com.br em uma série de postagens: <a href="https://leosalesblog.wordpress.com/2017/04/21/analise-da-musica-brasileira-parte-1/">parte 1</a>, <a href="https://leosalesblog.wordpress.com/2017/04/21/analise-da-musica-brasileira-parte-2/">parte 2</a>, <a href="https://leosalesblog.wordpress.com/2017/04/26/analise-da-musica-brasileira-parte-3/">parte 3</a> sobre as letras, <a href="https://leosalesblog.wordpress.com/2017/06/18/analise-a-musica-brasileira-parte-4/">parte 4</a>. Os códigos para raspagem de dados destes sites estão disponíveis em Python.</p>
+<div class="figure">
+<img src="imagens/complexidade_musical.png" alt="" />
+<p class="caption">grafico</p>
+</div>
+<p>Como quase toda notação, há vantagens e desvantagens. Uma desvantagem, que levantou críticas, é que a análise se baseia em cifra, muito utilizada em músicas mais populares, mas inadequada para estilos mais complexos, como jazz.
+<!-- complexidade harmônica relativa d --></p>
+<!--
+## Riqueza vocabulário
+Comparando riqueza vocabular em diferentes estilos musicais.
+-->
+</div>
+<div id="exemplo-polarização" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Exemplo: Polarização</h2>
+<p>Uma boa parte de pesquisas em política com métodos digitais se dedicou a analisar o fenômeno da polarização política.</p>
+<ul>
+<li>Christopher A. Bail, Lisa P. Argyle, Taylor W. Brown, John P. Bumpus, Haohan Chen, M. B. Fallin Hunzaker, Jaemin Lee, Marcus Mann, Friedolin Merhout, and Alexander Volfovsky. 2018. Exposure to opposing views on social media can increase political polarization. Proceedings of the National Academy of Sciences 115, 37 (Sept. 2018), 9216–9221. <a href="https://doi.org/10.1073/pnas.1804840115" class="uri">https://doi.org/10.1073/pnas.1804840115</a> Publisher: National Academy of Sciences Section: Social Sciences.</li>
+</ul>
+<p>Parte do trabalho de Franzosi descrevemos na <a href="https://soaresalisson.github.io/SociologiaDigital/estrutura_dados.html#markup">seção sobre dados estruturados</a>.</p>
+<ul>
+<li>Roberto P. Franzosi. <a href="https://www.researchgate.net/publication/226976976_Sociology_narrative_and_the_quality_versus_quantity_debate_Goethe_versus_Newton_Can_computer-assisted_story_grammars_help_us_understand_the_rise_of_Italian_fascism_1919-1922">Sociology, narrative, and the quality versus quantity debate (Goethe versus Newton): Can computer-assisted story grammars help us understand the rise of Italian fascism (1919–1922)?</a> . Theor Soc (2010) 39:593–629 DOI 10.1007/s11186-010-9131-3</li>
+</ul>
+<!-- Usando uma abordagem estrutural de narrativa/gramática de histórias com auxílio computacional e coletando e analisando jornais, sendo 20 mil artigos de jornais fascistas, 32 mil de jornais socialistas.
+
+I used PC-ACE to collect data on the rise of Italian fascism (1919–22), on the processes of working-class mobilization (1919–20, the “red years”) and fascist counter-mobilization (1921–22, the “black years”). I coded over 15,000 and over 17,000 newspaper articles from the socialist newspapers Il lavoro and Avanti!, and nearly 20,000 from the fascist newspaper Il Popolo d’Italia. The three databases resulted in over 17,000 semantic triplets from Il Lavoro, nearly 140,000 from Avanti!, and nearly 100,000 from Il Popolo d’Italia. 
+
+Franzosi os codificou e extraiu triplets semânticos, utilizando o programa  PC-ACE.
+As ações (verbos) mais frequentes, perpetradas por fascistas, em jornais socialistas,  são relacionados à violência (atirar, ferir, assaltar, bater, matar)
+Ao separar sujeito, ação, objeto, encontrou que os típicos agentes de violência contra a esquerda eram os fascistas e a polícia.
+
+Uso de PLN para verificar se havia agenda-setting no impeachment de Dilma Roussef.
+ALL THE ROADS LEAD TO IMPEACHMENT: AGENDA SETTING AND DILMA ROUSSEFF’S PRESIDENTIAL CRISIS (2013-2016)
+http://bibliotecadigital.fgv.br/dspace/handle/10438/29925
+Pegando o gancho da Vaza Jato: na minha tese, defendida em out/2020, eu quis ver se a tal da agenda-setting colava no impeachment da Dilma. Sim: dados de PLN comprovam. E mostram que as menções a Lula superaram à Dilma o tempo TODO 
+
+o tempo todo de análise (jan 2013- dez 2016) - com um pico exorbitante em março de 2016, mês dos históricos protestos de março de 2016. estas são menções na grande mídia, extraídas online para o período.
+uma das coisas que as análises mostram, contraintuitivamente, é que a marca Lava Jato em si não tinha a importância esperada, mas aparecia dissolvida ao longo do range de análise em subagendas como corrupção, por exemplo
+portanto, colegues jornalistas, grandes veículos, a barafunda Vaza Jato, o impeachment de Dilma e o assassinato da reputação do Lula são, em GRANDE MEDIDA, fruto do agendamento. não tem como falar de imparcialidade, nem razoabilidade. infelizmente.
+-->
+</div>
+<div id="exemplo-de-integração-quali-quanti-complementando-dados-qualitativos" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Exemplo de integração quali-quanti: Complementando dados qualitativos</h2>
+<p>Uma dica de integração quali-quanti (qualitativo e quantitativo) usando análise textual vem do PEW Research. Aqui explicam como a partir de uma análise de grupos focais feita em 2019 com grupos dos EUA e da Grã Bretanha sobre atitudes frente a globalização/nacionalismo, complementaram com pesquisa quantitativa de análise textual, analisando as diferenças entre os grupos de cada país. Usaram técnicas como frequência de palavras, correlação de palavras e Topic modelling. Através destas análises, encontraram tópicos que se mostraram relevantes a serem incorporados em surveys futuros.</p>
+<ul>
+<li>DEVLIN, Kat.<a href="https://medium.com/pew-research-center-decoded/when-working-with-focus-groups-quantitative-methods-can-help-6ad39475ae5f">“How quantitative methods can supplement a qualitative approach when working with focus groups”</a>. medium.
+Dec 18, 2020.</li>
+</ul>
+</div>
+<div id="exemplo-de-integração-quali-quanti-depurando-dados-quantitativos" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Exemplo de integração quali-quanti: Depurando dados quantitativos</h2>
+<p>Nem sempre uma tabela de dados estruturados tem tudo estruturado, do modo que a sua pergunta de pesquisa necessite. Dentro de um campo específico de uma tabela pode-se precisar de desmembrar ainda mais os dados. Eis aqui um exemplo. Os pesquisadores do <a href="https://medium.com/dadoscope">Dadoscope</a> queriam investigar se houve aumento na abertura de igrejas evangélicas durante os anos Lula e Dilma. Os pesquisadores baixaram dados da Receita Federal referente ao Cadastro Nacional de Pessoa Jurídica e filtraram por “94.91–0–00 — Atividades de organizações religiosas ou filosóficas” no campo “Classificação Nacional de Atividades Econômicas”. O problema é que isto agrega não só igrejas evangélicas, como também católicas e de outras religiões e até agremiações filosóficas e institutos de psicanálise.
+Aqui entra a integração:</p>
+<blockquote>
+<p>Para tentarmos realizar a classificação das 150 mil igrejas evangélicas de maneira semi-supervisionada nós usamos Snorkel, uma biblioteca escrita em Python… foi preciso treinar um algoritmo de classificação usando uma amostra dos dados. De forma sucinta, os dados são separados em amostras que são usadas para treino, teste e validação da classificação. Para classificar os mais de 150 mil nomes únicos presentes na amostra de treino, criamos funções que classificam de forma grosseira as igrejas (e.g., se a palavra “assembleia” estiver presente, classificar a igreja como “evangélica”). Depois de escrever dezenas dessas funções, comparamos sua acurácia com uma amostra de teste de 5% dos nomes únicos, manualmente classificados por dois pesquisadores. Feito isso, usamos uma rede neural que combina em camadas estas funções e <em>voilá</em>: 91.8% de acurácia. Sabemos que este resultado não é perfeito, mas ele torna o trabalho de classificação viável.</p>
+</blockquote>
+<ul>
+<li>O artigo completo “Exclusivo: Igrejas evangélicas pentecostais tiveram boom de crescimento nos governos Lula e Dilma” pode ser lido aqui: <a href="https://revistaforum.com.br/blogs/dadoscope/exclusivo-igrejas-evangelicas-pentecostais-tiveram-boom-de-crescimento-nos-governos-lula-e-dilma/">artigo na Forum</a> e o <a href="https://medium.com/dadoscope/o-crescimento-das-igrejas-pentecostais-nos-governos-de-lula-e-dilma-a7c40b5669bd">mesmo artigo na Medium</a>.</li>
+<li><a href="https://github.com/dadoscope/igrejasevangelicas">Caderno de notas no dadoscope</a> para entender melhor como o processo foi realizado.</li>
+<li>Sobre a ferramenta utilizada, a Snorkel, ver a <a href="https://github.com/snorkel-team/snorkel">página do Github</a>, <a href="https://www.snorkel.org/use-cases/">introdução (em inglês) ao Snorkel</a>.</li>
+</ul>
+<p>Por fim, outra dica para pensar a integração de dados quantitativos e qualitatovs é a palestra de <a href="https://heibox.uni-heidelberg.de/d/1c606b33d5/?p=%2FDr.%20Christof%20Sch%C3%B6ch%3A%20The%20Convergence%20of%20Quantitative%20and%20Qualitative%20Approaches&amp;mode=list">Dr. Christof Schöch: The Convergence of Quantitative and Qualitative Approaches</a>, ocorrida no 1st Summerschool of Digital Humanities: Distant Reading - Potentials and Applications, em inglês.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="história-da-análise-textual.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="organização-dos-dados-quanto-a-sua-estrutura.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["analise_textual_sociologia.pdf", "analise_textual_sociologia.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
