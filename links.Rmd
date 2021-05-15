@@ -141,6 +141,8 @@ Há cursos grautuitos, como "Introducing Text Analytics and Natural Language Pro
 ## Links de folhas de dicas (_Cheat-sheets_)
 "Cheat sheets" seriam a tradução para "cola", aquela feita para consulta em exames na escola. Em programação, refere-se a uma tabela muito bem resumida, com o que há de essencial em determinado assunto.
 
+<!-- Cheat quer dizer fraude, engano, trapacear, colar e Sheet é folha impressa, jornal, folhas. Juntando tudo é uma Folha de Cola, uma cola para alguma prova, exame. -->
+
 - [Text Analysis Glossary](https://docs.constellate.org/key-terms/) Um glossário de termos usados na análise textual, em inglês, do projeto Constellate (JStor e diversas universidades)
 - Lista com mais de 100 cheat-sheets em R e Python, sobre Machine Learning: [link](https://www.theinsaneapp.com/2020/12/machine-learning-and-data-science-cheat-sheets-pdf.html)
 - [Git-GitHub](https://education.github.com/git-cheat-sheet-education.pdf), [Git-Gitlab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf),
