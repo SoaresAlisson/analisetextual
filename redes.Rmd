@@ -15,17 +15,20 @@ chamando o pacote já instalado
 library(igraph) # chamando o pacote já instalado
 ```
 
-A partir da ajuda do `igraph` --- no caso, digitando ` ?igraph.plotting` no console do R, e correndo até o final da ajuda ---  temos alguns exemplos de grafos com o Igraph. Por exemplo, construindo um anel:
+<!-- A partir da ajuda do `igraph` --- no caso, digitando ` ?igraph.plotting` no console do R, e correndo até o final da ajuda ---  temos alguns exemplos de grafos com o Igraph. Por exemplo, construindo um anel: 
 
 ```{r}
  g <- make_ring(10)
      g$layout <- layout_in_circle
      plot(g)
 ```
+-->
 
-É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático. Pegando o famoso poema de Drummond:
+É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático, pegando o famoso poema de Drummond:
 
 > "João amava Teresa que amava Raimundo que amava Maria que amava Joaquim que amava Lili que não amava ninguém"
+
+E o transformando em um grafo (os "gráficos" em análise de rede recebem este nome):
 
 ```{r}
 library(igraph) 
@@ -74,6 +77,15 @@ g <- g + edges(c("João", "Teresa", "Raimundo", "Maria","Joaquim", "Lili"))
 plot.igraph(g)
 ```
 
+Ou de modo mais econômico ainda: 
+
+```{r}
+g <- graph.formula(
+    João --+ Teresa --+ Raimundo --+ Maria --+ Joaquim --+ Lili
+)
+plot(g)
+```
+
 <!-- Vamos a outro exemplo: -->
 
 <!-- ```{r} -->
@@ -108,10 +120,11 @@ plot.igraph(g)
 -->
 
 ## O pacote `ggraph`
-
-_A ser elaborado_
-<!-- 
 O pacote [ggraph](https://ggraph.data-imaginist.com/) é um pacote elaborado por Thomas Lin Pedersen, o mesmo do ggplot2, e pretende ser uma extensão do ggplot, mas focado em redes.
+
+_CAPÍTULO A SER EXPANDIDO_
+
+<!-- 
 install.packages('ggraph')
 -->
 

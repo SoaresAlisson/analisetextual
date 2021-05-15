@@ -57,9 +57,9 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 ## Links sobre Dados Abertos
 - [5 estrelas dos dados abertos](https://5stardata.info/pt-BR/) (Tim Berners-Lee, criador do termo "dados abertos". Site explica o que são dados abertos e seus 5 níveis. Em português)
 - [Busca do Google por base de dados Abertos](https://www.google.com.br/publicdata/directory?hl=pt-BR#)
-- [Dados abertos](https://dadosabertos.social/c/onde-encontrar/). (Se não sabe onde encontrar algum dado específico que você procura,veja aqui)
+- [Dados abertos](https://dadosabertos.social/c/onde-encontrar/). (Se não sabe onde encontrar algum dado específico que você procura, veja aqui)
 - SHIKIDA, Claudio D., MONASTERIO, Leonardo, NER, Pedro Fernando. [Guia Brasileiro de Análise de Dados:](https://repositorio.enap.gov.br/bitstream/1/6039/1/Guia%20BR%20de%20Ana%cc%81lise%20de%20Dados.pdf)  Armadilhas e Soluções. Brasília. 2021. ( Tópicos: Causalidade, Pobreza e Desigualdade, Análise de dados em Saúde, Educação, Crimes e Violência, Macroeconomia, Mercado e Trabalho e Opinião Pública.)
-- [dados abertos](https://dadosabertos.social): Fórum de discussão. 
+- [Dados Abertos](https://dadosabertos.social): Fórum de discussão. 
 <!-- - [Ckan](https://ckan.org). CKAN, the world’s leading Open Source data portal platform CKAN is a powerful data management system that makes data accessible – by providing tools to streamline publishing, sharing, finding and using data. [User guide](https://docs.ckan.org/en/latest/user-guide.html) _CKAN is a tool for making open data websites. (Think of a content management system like WordPress - but for data, instead of pages and blog posts.) It helps you manage and publish collections of data. It is used by national and local governments, research institutions, and other organizations who collect a lot of data. Once your data is published, users can use its faceted search features to browse and find the data they need, and preview it using maps, graphs and tables - whether they are developers, journalists, researchers, NGOs, citizens, or even your own staff._ -->
 - Workshop do Henrique Xavier, no canal "Base dos Dados" sobre [como explorar os dados do Diário Oficial da União](https://youtube.com/watch?v=dGF3FRTTG6M).
 
@@ -148,7 +148,7 @@ Há cursos grautuitos, como "Introducing Text Analytics and Natural Language Pro
 - [Git-GitHub](https://education.github.com/git-cheat-sheet-education.pdf), [Git-Gitlab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf),
 - Cheatsheets do R como:
 [Base R](), [Base R em portguês](https://github.com/rstudio/cheatsheets/raw/master/translations/portuguese/base-r-cheatsheet-pt-BRA.pdf),
-[Data-table em português](https://github.com/rstudio/cheatsheets/raw/master/translations/portuguese/datatable-pt-BRA.pdf)
+[Data-table em português](https://github.com/rstudio/cheatsheets/raw/master/translations/portuguese/datatable-pt-BRA.pdf),
 [Data Import](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf),
 Data e horários com [Lubridate](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf),
 trabalhe com mais facilidade com listas e funções com o [purr](https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf),

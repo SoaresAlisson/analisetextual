@@ -253,54 +253,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb13-7"><a href="análise-de-redes-sociais.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:base&#39;:</span></span>
 <span id="cb13-8"><a href="análise-de-redes-sociais.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
 <span id="cb13-9"><a href="análise-de-redes-sociais.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="do">##     union</span></span></code></pre></div>
-<p>A partir da ajuda do <code>igraph</code> — no caso, digitando <code>?igraph.plotting</code> no console do R, e correndo até o final da ajuda — temos alguns exemplos de grafos com o Igraph. Por exemplo, construindo um anel:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="análise-de-redes-sociais.html#cb14-1" aria-hidden="true" tabindex="-1"></a> g <span class="ot">&lt;-</span> <span class="fu">make_ring</span>(<span class="dv">10</span>)</span>
-<span id="cb14-2"><a href="análise-de-redes-sociais.html#cb14-2" aria-hidden="true" tabindex="-1"></a>     g<span class="sc">$</span>layout <span class="ot">&lt;-</span> layout_in_circle</span>
-<span id="cb14-3"><a href="análise-de-redes-sociais.html#cb14-3" aria-hidden="true" tabindex="-1"></a>     <span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p>É possível ainda plotar com os comandos <code>tkplot(g)</code> e <code>rglplot(g)</code>. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático. Pegando o famoso poema de Drummond:</p>
+<!-- A partir da ajuda do `igraph` --- no caso, digitando ` ?igraph.plotting` no console do R, e correndo até o final da ajuda ---  temos alguns exemplos de grafos com o Igraph. Por exemplo, construindo um anel: 
+
+
+```r
+ g <- make_ring(10)
+     g$layout <- layout_in_circle
+     plot(g)
+```
+
+<img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-4-1.png" width="672" />
+-->
+<p>É possível ainda plotar com os comandos <code>tkplot(g)</code> e <code>rglplot(g)</code>. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático, pegando o famoso poema de Drummond:</p>
 <blockquote>
 <p>“João amava Teresa que amava Raimundo que amava Maria que amava Joaquim que amava Lili que não amava ninguém”</p>
 </blockquote>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="análise-de-redes-sociais.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
-<span id="cb15-2"><a href="análise-de-redes-sociais.html#cb15-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) <span class="co"># &quot;directed&quot; implica distinguir entre &quot;de&quot; e &quot;para&quot; na relação entre os nós.</span></span>
-<span id="cb15-3"><a href="análise-de-redes-sociais.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-4"><a href="análise-de-redes-sociais.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
-<span id="cb15-5"><a href="análise-de-redes-sociais.html#cb15-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;João&quot;</span>) </span>
-<span id="cb15-6"><a href="análise-de-redes-sociais.html#cb15-6" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Teresa&quot;</span>) </span>
-<span id="cb15-7"><a href="análise-de-redes-sociais.html#cb15-7" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Raimundo&quot;</span>) </span>
-<span id="cb15-8"><a href="análise-de-redes-sociais.html#cb15-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Maria&quot;</span>) </span>
-<span id="cb15-9"><a href="análise-de-redes-sociais.html#cb15-9" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Joaquim&quot;</span>) </span>
-<span id="cb15-10"><a href="análise-de-redes-sociais.html#cb15-10" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Lili&quot;</span>) </span>
-<span id="cb15-11"><a href="análise-de-redes-sociais.html#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-12"><a href="análise-de-redes-sociais.html#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  Especificando as relações entres os vértices, os edges</span></span>
-<span id="cb15-13"><a href="análise-de-redes-sociais.html#cb15-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>)</span>
-<span id="cb15-14"><a href="análise-de-redes-sociais.html#cb15-14" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>)</span>
-<span id="cb15-15"><a href="análise-de-redes-sociais.html#cb15-15" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>)</span>
-<span id="cb15-16"><a href="análise-de-redes-sociais.html#cb15-16" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>)</span>
-<span id="cb15-17"><a href="análise-de-redes-sociais.html#cb15-17" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>)</span>
-<span id="cb15-18"><a href="análise-de-redes-sociais.html#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-19"><a href="análise-de-redes-sociais.html#cb15-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g) <span class="co"># plotando o grafo</span></span></code></pre></div>
+<p>E o transformando em um grafo (os “gráficos” em análise de rede recebem este nome):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="análise-de-redes-sociais.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
+<span id="cb14-2"><a href="análise-de-redes-sociais.html#cb14-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) <span class="co"># &quot;directed&quot; implica distinguir entre &quot;de&quot; e &quot;para&quot; na relação entre os nós.</span></span>
+<span id="cb14-3"><a href="análise-de-redes-sociais.html#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="análise-de-redes-sociais.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
+<span id="cb14-5"><a href="análise-de-redes-sociais.html#cb14-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;João&quot;</span>) </span>
+<span id="cb14-6"><a href="análise-de-redes-sociais.html#cb14-6" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Teresa&quot;</span>) </span>
+<span id="cb14-7"><a href="análise-de-redes-sociais.html#cb14-7" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Raimundo&quot;</span>) </span>
+<span id="cb14-8"><a href="análise-de-redes-sociais.html#cb14-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Maria&quot;</span>) </span>
+<span id="cb14-9"><a href="análise-de-redes-sociais.html#cb14-9" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Joaquim&quot;</span>) </span>
+<span id="cb14-10"><a href="análise-de-redes-sociais.html#cb14-10" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Lili&quot;</span>) </span>
+<span id="cb14-11"><a href="análise-de-redes-sociais.html#cb14-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-12"><a href="análise-de-redes-sociais.html#cb14-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  Especificando as relações entres os vértices, os edges</span></span>
+<span id="cb14-13"><a href="análise-de-redes-sociais.html#cb14-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>)</span>
+<span id="cb14-14"><a href="análise-de-redes-sociais.html#cb14-14" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>)</span>
+<span id="cb14-15"><a href="análise-de-redes-sociais.html#cb14-15" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>)</span>
+<span id="cb14-16"><a href="análise-de-redes-sociais.html#cb14-16" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>)</span>
+<span id="cb14-17"><a href="análise-de-redes-sociais.html#cb14-17" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>)</span>
+<span id="cb14-18"><a href="análise-de-redes-sociais.html#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="análise-de-redes-sociais.html#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g) <span class="co"># plotando o grafo</span></span></code></pre></div>
 <p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Neste caso, poderíamos ter feito este mesmo gráfico com código mais compacto:</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="análise-de-redes-sociais.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
-<span id="cb16-2"><a href="análise-de-redes-sociais.html#cb16-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
-<span id="cb16-3"><a href="análise-de-redes-sociais.html#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="análise-de-redes-sociais.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
-<span id="cb16-5"><a href="análise-de-redes-sociais.html#cb16-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb16-6"><a href="análise-de-redes-sociais.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-7"><a href="análise-de-redes-sociais.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os edges em pares</span></span>
-<span id="cb16-8"><a href="análise-de-redes-sociais.html#cb16-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb16-9"><a href="análise-de-redes-sociais.html#cb16-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-10"><a href="análise-de-redes-sociais.html#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="análise-de-redes-sociais.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
+<span id="cb15-2"><a href="análise-de-redes-sociais.html#cb15-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
+<span id="cb15-3"><a href="análise-de-redes-sociais.html#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="análise-de-redes-sociais.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
+<span id="cb15-5"><a href="análise-de-redes-sociais.html#cb15-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb15-6"><a href="análise-de-redes-sociais.html#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="análise-de-redes-sociais.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os edges em pares</span></span>
+<span id="cb15-8"><a href="análise-de-redes-sociais.html#cb15-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb15-9"><a href="análise-de-redes-sociais.html#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="análise-de-redes-sociais.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
 <p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>Se o grafo sobe ou desce, pouco importa para nós aqui, importa as pessoas e as relações entre elas.
 Repare que os edges são entendidos aos pares. Se fizéssemos um vetor sem as devidas repetições, teríamos um gráfico errado das relações:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="análise-de-redes-sociais.html#cb17-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
-<span id="cb17-2"><a href="análise-de-redes-sociais.html#cb17-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb17-3"><a href="análise-de-redes-sociais.html#cb17-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb17-4"><a href="análise-de-redes-sociais.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="análise-de-redes-sociais.html#cb16-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
+<span id="cb16-2"><a href="análise-de-redes-sociais.html#cb16-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb16-3"><a href="análise-de-redes-sociais.html#cb16-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb16-4"><a href="análise-de-redes-sociais.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
 <p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Ou de modo mais econômico ainda:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="análise-de-redes-sociais.html#cb17-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.formula</span>(</span>
+<span id="cb17-2"><a href="análise-de-redes-sociais.html#cb17-2" aria-hidden="true" tabindex="-1"></a>    João <span class="sc">--+</span> Teresa <span class="sc">--+</span> Raimundo <span class="sc">--+</span> Maria <span class="sc">--+</span> Joaquim <span class="sc">--+</span> Lili</span>
+<span id="cb17-3"><a href="análise-de-redes-sociais.html#cb17-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-4"><a href="análise-de-redes-sociais.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <!-- Vamos a outro exemplo: -->
 <!-- ```{r} -->
 <!-- library(igraph)  -->
@@ -329,17 +342,17 @@ Repare que os edges são entendidos aos pares. Se fizéssemos um vetor sem as de
  plot.igraph(g)
  ```
  
- <img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-8-1.png" width="672" />
+ <img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-9-1.png" width="672" />
 
 -->
 </div>
 <div id="o-pacote-ggraph" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> O pacote <code>ggraph</code></h2>
-<p><em>A ser elaborado</em>
+<p>O pacote <a href="https://ggraph.data-imaginist.com/">ggraph</a> é um pacote elaborado por Thomas Lin Pedersen, o mesmo do ggplot2, e pretende ser uma extensão do ggplot, mas focado em redes.</p>
+<p><em>CAPÍTULO A SER EXPANDIDO</em></p>
 <!-- 
-O pacote [ggraph](https://ggraph.data-imaginist.com/) é um pacote elaborado por Thomas Lin Pedersen, o mesmo do ggplot2, e pretende ser uma extensão do ggplot, mas focado em redes.
 install.packages('ggraph')
---></p>
+-->
 </div>
 <div id="redes-de-palavras" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Redes de palavras</h2>
@@ -428,7 +441,8 @@ gitbook.start({
 },
 "download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "section",
+"scroll_highlight": true
 }
 });
 });

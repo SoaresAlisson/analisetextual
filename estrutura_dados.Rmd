@@ -1,4 +1,9 @@
 # Organização dos dados quanto a sua estrutura
+
+> Objetivos do capítulo:
+1) Apresentar a distinção entre dados estruturados, dados não estruturados e dados semi estruturados
+2) Apresentar alguns formatos de arquivos frequentes na análise textual.
+
   Podemos pensar a organização de dados quanto à sua estrutura de três formas: dados estruturados, dados semi estruturados e dados não estruturados.
   <!-- De modo resumido, podemos dizer que dados estruturados são como tabelas -->
   
