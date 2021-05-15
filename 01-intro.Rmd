@@ -1,3 +1,5 @@
+Este livro/manual está sob a licença: Creative Commons Attribution-NonCommercial-ShareAlike 
+<!-- Este livro é distribuído de acordo com a licença Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). -->
 
 # Objetivos deste manual {-}
 Sou Alisson Soares, sociólogo, e comecei há pouco tempo no campo das humanidades digitais. Achei por bem montar este manual como uma forma de compartilhar o que venho aprendendo. Algumas ferramentas, softwares serão de modo gráfico, mas por vezes vamos recorrer à programação. A principal linguagem aqui será o R, mas o uso de Python não está completamente excluído.

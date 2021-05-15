@@ -23,9 +23,7 @@ A partir da ajuda do `igraph` --- no caso, digitando ` ?igraph.plotting` no cons
      plot(g)
 ```
 
-É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos.
-
-Mas vamos a algo mais prático. Pegando o famoso poema:
+É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático. Pegando o famoso poema de Drummond:
 
 > "João amava Teresa que amava Raimundo que amava Maria que amava Joaquim que amava Lili que não amava ninguém"
 
@@ -51,7 +49,7 @@ g <- g + edges("Joaquim", "Lili")
 plot.igraph(g) # plotando o grafo
 ```
 
-Neste caso, poderíamos ter feito este mesmo gráfico de modo mais compacto:
+Neste caso, poderíamos ter feito este mesmo gráfico com código mais compacto:
 
 ```{r}
 library(igraph) 

@@ -20,6 +20,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - TREADWELL, Donald. [Content Analysis: Understanding Text and Image in Numbers](https://us.sagepub.com/sites/default/files/upm-binaries/53216_ch_12.pdf). Understanding Text and Image in Numbers. In  __ Introducing Communication Research: paths of Inquiry. Sage. 2014. (Capítulo sobre análise de conteúdo)
 
 ### Sociologia Digital
+
 - KATEMBERA, Serge. ["Sociologia digital ou sociologia do digital?"](https://periodicos.ufpb.br/index.php/rappgs/article/view/53720/30907) V. 2 N. 1 (2020): Dossiê Ambiente e Sociedade. (Artigo)
 - 	NASCIMENTO, Leonardo F. [Sociologia digital : uma breve introdução](https://repositorio.ufba.br/ri/handle/ri/32746/). EDUFBA. 2020. (Livro gratuito em PDF e epub)
 - Podcast "New Work in Digital Humanities". Episódio: Neil Selwyn, ["What is Digital Sociology?"](https://newbooksnetwork.com/category/arts-letters/digital-humanities/) (Polity, 2019) 
@@ -29,6 +30,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 <!-- LUPTON, Debora. [Digital Sociology](https://edisciplinas.usp.br/pluginfile.php/4408475/mod_resource/content/1/Lupton-Digital%20Sociology%282014%29.pdf).-->
 
 #### Netnografia, etnografia digital
+
 - MARKHAM, Annette N. 2013. Fieldwork in Social Media. Qualitative Communication Research 2, 4 (Dec. 2013), 434–446. https://doi.org/10.1525/qcr.2013.2.4.434
 <!-- Youtube: Tata CTS [Autoetnografia, Netnografia e Ciências Sociais Computacionais](https://www.youtube.com/watch?v=BcoFbRxIosk). Debate sobre metodologias de pesquisa para o mundo digital. Realizado pelas pesquisadoras Priscilla Normando e Camilla Santana. -->
 - SHAFFER, David Williamson. [Quantitative Etnography](http://quantitativeethnography.org/wp-content/uploads/sites/5/2017/03/QuantitativeEthnography_SampleChapter.pdf). Boswell Press. 2017. 
@@ -38,7 +40,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - JURAFSKY, D.; MARTIN, J. Speech and language processing: An introduction to speech recognition, computational linguistics and natural language processing. Upper Saddle River, NJ: Prentice Hall, 2020. [link pdf dos capítulos individuais](https://web.stanford.edu/~jurafsky/slp3/), [link livro completo](https://web.stanford.edu/~jurafsky/slp3/ed3book_dec302020.pdf). (Um manual bastante extenso e mais teórico sobre PLN)
 - BIRD, S.; KLEIN, E.; LOPER., E. [Natural language processing with Python](https://www.nltk.org/book/) – analyzing text with the natural language toolkit. (Livro online gratuito, baseado em Python 3.)
 
-## Revistas / Journals
+## Revistas / Journals acadêmicos
 - SIGCAS  [Computers and Society](https://dblp.org/db/journals/sigcas/index.html) da Association for Computing Machinery
 - [Digital Scholarship in the Humanities](https://academic.oup.com/dsh). Revista da Universidade de Oxford. [Sessão com artigos gratuitos](https://academic.oup.com/dsh/search-results?page=1&f_ContentType=Journal+Article&fl_SiteID=5447&access_openaccess=true)
 - Journal: [Digital humanities Quartely](http://digitalhumanities.org/dhq/)
@@ -52,7 +54,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - [Journal of Cultural Analytics](https://culturalanalytics.org/).  Department of Languages, Literatures, and Cultures at McGill University, Canada. _open-access journal dedicated to the computational study of culture_
 
 
-## Dados Abertos
+## Links sobre Dados Abertos
 - [5 estrelas dos dados abertos](https://5stardata.info/pt-BR/) (Tim Berners-Lee, criador do termo "dados abertos". Site explica o que são dados abertos e seus 5 níveis. Em português)
 - [Busca do Google por base de dados Abertos](https://www.google.com.br/publicdata/directory?hl=pt-BR#)
 - [Dados abertos](https://dadosabertos.social/c/onde-encontrar/). (Se não sabe onde encontrar algum dado específico que você procura,veja aqui)
@@ -76,12 +78,12 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - [Alliance of Digital Humanities Organizations (ADHO)](https://adho.org/).
 - [Global Network of Internet and Society Research Centers (NoC) i](https://networkofcenters.net/). (Catálogo com grupos de pesquisa sobre internet e sociedade ao redor do mundo).
 
-## Podcasts
+## Links de Podcasts sobre Digital Humanities
 - Complexity: Peter Dodds on [Text-Based Timeline Analysis & New Instruments for The Science of Stories](https://complexity.simplecast.com/episodes/48-m2OkoDWG)
 - [New Work in Digital Humanities]([https://open.spotify.com/show/1ieZjwu7sHBHEwg6hkOiCj). New Books Network. Interviews with digital humanists about their new work.
 - Lista com mais [podcasts dedicados às digital humanities](https://dhcommons.hypotheses.org/451)
 
-## Programação
+## Links Programação
 ### R introdução
 - Caio Lente. [zen do R](https://curso-r.github.io/zen-do-r/git-github.html). "O objetivo deste livro é ensinar ao leitor que não costuma programar algumas formas simples de melhorar a organização de seus projetos de análise de dados em R". (Livro online gratuito).
 - AQUINO, Jackson A.. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus, BA: EDITUS, 2014. 157 p. ISBN: 978-85-7455-369-6. (PDF gratuito)
@@ -102,7 +104,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - [R-tutor](http://www.r-tutor.com/sitemap)An R Introduction to Statistics.  Site com tutoriais diversos sobre R. Em Inglês.
 - Diversos links para livros gratuitos de R no [bookdown](https://www.bookdown.org/home/archive/).
 
-### Python
+### Links Python
 - HEINOLD, Brian. [A Practical Introduction to Python Programming](https://www.brianheinold.net/python/A_Practical_Introduction_to_Python_Programming_Heinold.pdf). 2012. 263 p. (PDF de introdução ao Python)
 <!-- GRUS, Joel. [Data Science from Scratch](http://math.ecnu.edu.cn/~lfzhou/seminar/[Joel_Grus]_Data_Science_from_Scratch_First_Princ.pdf). First Principles with Python. 2015. 464p. -->
 - Jake VanderPlas. [Python Data Science Handbook](https://jakevdp.github.io/PythonDataScienceHandbook/): Essential Tools for Working with data. (livro online).
@@ -116,7 +118,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 
 <!-- - Mais de 100 links para livros de Data Science [link](https://www.theinsaneapp.com/2020/12/free-data-science-books-pdf.html). -->
 
-## Cursos
+## Links de Cursos Online
 - [EdX](https://learning.edx.org/), 
 Cursos online de Universidades como Harvard, MIT, etc. gratuitos como ouvinte. Paga-se pelo certificado.
 Há cursos grautuitos, como "Introducing Text Analytics and Natural Language Processing with Python", "Introduction to Digital Humanities", "Data Science: Visualization", "Using Python for Research".
@@ -135,10 +137,25 @@ Há cursos grautuitos, como "Introducing Text Analytics and Natural Language Pro
 - [R humanidades](https://t.me/R_humanidades)
 - [Análise Textual-Humanidades Digitais](https://t.me/humanidadesdigitiais)
 
-## Links de Cheat-sheets
+## Links de folhas de dicas (_Cheat-sheets_)
 "Cheat sheets" seriam a tradução para "cola", aquela feita para consulta em exames na escola. Em programação, refere-se a uma tabela muito bem resumida, com o que há de essencial em determinado assunto.
 
-- [Text Analysis Glossary](https://docs.constellate.org/key-terms/)
+- [Text Analysis Glossary](https://docs.constellate.org/key-terms/) Um glossário de termos usados na análise textual, em inglês.
 - Lista com mais de 100 cheat-sheets em R e Python, sobre Machine Learning: [link](https://www.theinsaneapp.com/2020/12/machine-learning-and-data-science-cheat-sheets-pdf.html)
 - [Git-GitHub](https://education.github.com/git-cheat-sheet-education.pdf), [Git-Gitlab](https://about.gitlab.com/images/press/git-cheat-sheet.pdf),
+- Cheatsheets do R como:
+[Base R](), [Base R em portguês](https://github.com/rstudio/cheatsheets/raw/master/translations/portuguese/base-r-cheatsheet-pt-BRA.pdf),
+[Data-table em português](https://github.com/rstudio/cheatsheets/raw/master/translations/portuguese/datatable-pt-BRA.pdf)
+[Data Import](https://github.com/rstudio/cheatsheets/raw/master/data-import.pdf),
+Data e horários com [Lubridate](https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf),
+trabalhe com mais facilidade com listas e funções com o [purr](https://github.com/rstudio/cheatsheets/raw/master/purrr.pdf),
+[stringr](https://github.com/rstudio/cheatsheets/raw/master/strings.pdf),
+[dplyr](https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf),
+[R Reference Card](https://cran.r-project.org/doc/contrib/Short-refcard.pdf), 
+Usar Python no R com [reticulate](https://raw.githubusercontent.com/rstudio/cheatsheets/master/reticulate.pdf),
+[ggplot](https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf),
+R Markdown com o [R Markdown Cheatsheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) ou o [Reference Guide](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf),
+[Regular Expressions](https://github.com/rstudio/cheatsheets/raw/master/regex.pdf),
+[R Programming](http://datasciencefree.com/advancedR.pdf) por Arianne Colton e Sean Chen,
+- Uma lista com estes e outros cheatsheets aqui do Rstudio [aqui](https://www.rstudio.com/resources/cheatsheets/).
 
