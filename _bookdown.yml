@@ -1,6 +1,8 @@
 output_dir: "docs"
 book_filename: "analise_textual_sociologia"
 delete_merged_file: true
+#date: "Last compiled on `r format(Sys.time(), '%d %B, %Y')`"
+# date: "Última compilação em `r format(Sys.time(), '%d %B, %Y')`"
 language:
   ui:
     chapter_name: "Capítulo "

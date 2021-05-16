@@ -7,7 +7,7 @@
   Podemos pensar a organização de dados quanto à sua estrutura de três formas: dados estruturados, dados semi estruturados e dados não estruturados.
   <!-- De modo resumido, podemos dizer que dados estruturados são como tabelas -->
   
-## 1) Dados estruturados
+## Dados estruturados
   
   Formatos de arquivos estruturados são
 csv,xml, json, xls, xlsx, etc.
@@ -55,7 +55,7 @@ Mas é possível encontrar arquivo csv, porém com separador tipo "\t" ou ";".
   </note>
   ```-->
   
-## 2) Dados não estruturados
+## Dados não estruturados
 Os dados não estruturados são a forma como encontramos em livros impressos, artigos, são a forma como humanos lêem textos.
 
 > "Algum tempo hesitei se devia abrir estas memorias pelo principio ou pelo fim, isto é, se poria em primeiro logar o meu nascimento ou a minha morte. Supposto o uso vulgar seja começar pelo nascimento, duas considerações me levaram a adoptar differente methodo: a primeira é que eu não sou propriamente um autor defunto, mas um defunto autor, para quem a campa foi outro berço; a segunda é que o escripto ficaria assim mais galante e mais novo. Moysés, que tambem contou a sua morte, não a poz no introito, mas no cabo: differença radical entre este livro e o Pentateuco...."
@@ -63,8 +63,8 @@ Os dados não estruturados são a forma como encontramos em livros impressos, ar
 Este tipo de texto, não estruturado, é alvo do Processamento de linguagem natural (PLN)/ _Natural Language Process_ (NLP)
 
 
-## 3.Dados semi-estruturados
-Dados semi-estruturados são um meio termo entre os estruturados e os semi estruturados. Por vezes são chamados de "auto-descritivos"
+## Dados semi-estruturados
+Dados semi-estruturados são um meio termo entre os estruturados e os semi estruturados. Por vezes são chamados de "auto-descritivos".
 
 ### Exemplos de dados semi-estruturados
 #### O formato Json
@@ -83,7 +83,7 @@ Por exemplo, ao separarmos primeiro nome `firstName` de sobrenome `lastName` no 
 ```
 ou ainda-->
 
-```
+```{r, engine = 'js', eval=FALSE, echo =TRUE, include=TRUE}
 {"employees":[
   { "firstName":"João", "lastName":"da Silva" },
   { "firstName":"Ana", "lastName":"Maria" },
@@ -105,7 +105,7 @@ Caso queira mais detalhes sobre este formato:
 #### Markup
 Códigos especiais, ou linguagem “markup” é uma notação de documento que tem duas apresentações, uma simplificada como texto normal para humanos, e outra com os "markup" para que o computador entenda. 
 
-##### O formato Markdown
+##### O formato Markdown {#formatoMarkdown}
 Um exemplo bem simples de markup é o `Mardown`, usado na escrita rápida de textos. 
 
 ![Exemplo de markdown](imagens/markdown.png)
@@ -115,25 +115,27 @@ O YAML é um padrão de serialização de dados que prima por ser "human friendl
 Em arquivos `markdown` tem-se usado o `yaml` como cabeçalho, com informações para a renderização do pdf, como título, subtítulo, resumo, palavras chave, etc. Ao converter markdown para o formato final, o computador irá interpretar estas informações.
 Um exemplo de yaml no arquivo markdown:
   
-  ```
+```{r, eval=FALSE, echo =TRUE, include=TRUE}
 ---
-  title: "Título do meu pdf"
+title: "Título do meu pdf"
 subtitle: subtitulo qualquer
 author: Fulano de Tal
+# comentário qualquer
 fontsize: 12pt
 urlcolor: blue
 geometry: margin=2.5cm
 abstract: >
   meu resumo bla bla bla bla
 ---
-  # Titulo 
-  Texto texto  texto  texto  texto  texto  texto 
+# Titulo 
+Texto texto  texto  texto  texto  texto  texto 
 
 ## Subtitulo 
 Texto texto  texto  texto  texto  texto  texto 
 ```
 
 O cabeçalho em yaml é delimitado no seu início e fim por três traços consecutivos `---`.
+Repare que o símbolo tralha `#` dentro do yml é interepretado como comentário, já no markdown, indica capítulo.
 
 <!--
   # Título
@@ -152,7 +154,7 @@ Aqui podemos colocar mais texto, ou fazer tabelas:
   | ble | ble |
   -->
   
-#### O Formato LaTex
+#### O Formato LaTex {#formatoLatex}
 O LaTex é uma linguagem usada na confecção, principalmente de textos (livros, artigos) acadêmicos, bem como apresentações. O formato LaTex permite grande flexibilidade, e é muito usado para escrever fórmulas matemáticas e gerar as referências bibliográficas automaticamente. Por isso, o LaTex é muito usado no contexto acadêmico. O seu formato mínimo pode ser visto assim:
   
   <!--
@@ -195,22 +197,72 @@ bla bla bla bla bla ble ble ble bli bli bloblo blu blublub.
 \end{document}
 -->
 
-``` 
+```{r, eval=FALSE, echo =TRUE, include=TRUE}
 \documentclass{article}
 \begin{document}
 Olá Mundo
 \end{document}
 ```
 
-![Exemplo de LaTex](imagens/LaTex.png)
+![Exemplo simples de texto em LaTex e sua renderização](imagens/LaTex.png)
 
 Ou em um exemplo um pouco mais elaborado:
 
-![Exemplo de LaTex](imagens/LaTex2.png)
+![Exemplo de LaTex com o software Gummi no Linux](imagens/LaTex2.png)
 
 Perceba que antes de `\begin{document}`, isto é, no cabeçalho do documento temos várias informações, entre elas o título do artigo na linha 5 em `title{}`, e em `\author{}`, nas linhas de 6 a 8, temos os autores. Temos também delimitados os capítulos ou seções, no caso ali em `section{}`. 
 
-#### Os formatos xml e html
+#### O formato BibTex {#formatoBibtex}
+Um formato "irmão" do LaTex e markdown é o BibTex, um formato estruturado, com dados bibliográficos usado como fonte para gerar automaticamente a bibliografia ao final do texto renderizado em formatos como Tex, LaTex e markdown. As referências nesse formato ficam salvos num grande arquivo `.bib`.
+Um exemplo de citação dentro do bib:
+
+<!-- \documentclass[11pt]{article}
+\usepackage[alf]{abntex2cite} % Citações padrão ABNT
+\renewcommand{\refname}{Referências Bibliográficas} % Renomeando "references" para "Referência bibliográfica".
+\begin{document}
+
+
+Citando o artigo \cite{BaeckerSysNetCulture} no meio do texto. 
+E agora citando um livro \cite{Coleman:IntroMathSociology}. A referência ao final é gerada automaticamente.
+
+\bibliography{/home/alisson/Dropbox/bib.bib}{}  % indicando o caminho do meu arquivo bib
+\end{document} -->
+
+
+<!-- @article{BaeckerSysNetCulture,
+	author = {Dirk Baecker},
+	journal = {Soziale Systeme},
+	owner = {alisson},
+	pages = {271–287},
+	timestamp = {2015.09.28},
+	title = {Systems, Network, and Culture},
+	url = {http://ssrn.com/abstract=1867444},
+	volume = {15},
+	year = {2009}
+} -->
+
+<!-- {highlight, eval=FALSE, echo=TRUE} -->
+
+```{r, eval=FALSE, echo =TRUE, include=TRUE}
+@book{Coleman:IntroMathSociology,
+	address = {New York},
+	pages = {570},
+	publisher = {The Free Press of Glencoe Collie, Macmillan Limited},
+	title = {Introduction to Mathematical Sociology},
+	year = {1964}
+}
+```
+
+O `@book` indica o tipo, podendo ser também, por exemplo, `@article` para artigos, `@inbook` para parte de um livro, `@phdthesis` para tese de phd (há mais opções). Para uma lista completa, ver [The 14 BibTeX entry types](https://www.bibtex.com/e/entry-types/).
+O `Coleman:IntroMathSociology` é o ID, a identificação única, que é também usado na citação do LaTex (Por exemplo, usando `\cite{Coleman:IntroMathSociology}` dentro do Tex) ou do Markdown (usando `[@IntroMathSociology]` dentro do texto) para que o compilador saiba qual texto está sendo citado no texto.
+
+![Exemplo de citação usando bibtex no LaTex](imagens/Latex-BibTex.png)
+
+Este arquivo bib que contém as referências bibliográficas, como é texto puro, pode ser editado num editor de texto comum, como o notepad, Gedit, etc. Mas o mais indicado é usar um software gestor de bibliografia, como o [JabRef](https://www.jabref.org/) ou o [KBibTex](https://apps.kde.org/pt-br/kbibtex/). O KBibTex possui menos recursos que o JabRef mas dá plenamente conta do recado, sendo inclusive o gerenciador que utilizo.
+
+Além de ser usado para gerar pdfs com as referências, o formato também pode ser usado em pesquisas bibliométricas. 
+
+#### Os formatos xml e html {#formatosXmlHtml}
 No caso, nome seria "FirstName" e seu valor seria "João", nome seria "lastName" e seu valor "da Silva"
 E esses mesmos dados no formato xml:
 
@@ -245,7 +297,7 @@ O html tem por base o xml. O html possui basicamente a seguinte estrutura
     </body>
   </html>
 ```
-Se você copiar o conteúdo acima e salvar num arquivo com o nome, digamos `teste.html` e abrí-lo com seu navegador de internet (firefox, Chrome, Opera, etc.), verá como funciona esta ideia de markup.
+Se você copiar o conteúdo acima e salvar num arquivo com o nome, digamos `teste.html` e abrí-lo com seu navegador de internet (Firefox, Chrome, Opera, etc.), verá como funciona esta ideia de markup.
 No caso do html, os valores são delimitados por tags, por exemplo:
 > `<ALGO>`conteudo`</ALGO>`
 
@@ -265,7 +317,8 @@ Temos duas partes no html:
 
 
 Um outro exemplo:
-```
+
+```{r, eval=FALSE, echo =TRUE, include=TRUE}
  <name>Joaquim José da Silva Xavier</name>, 
  o Tiradentes (<local>Fazenda do Pombal</local>,
  batizado em <data>12 de novembro de 1746</data> — 
@@ -284,7 +337,7 @@ Por exemplo, Franzosi (2010) ao fazer análise da narrativa de jornais italianos
 
 Para o seguinte formato:
 
-```
+```{r, eval=FALSE, echo =TRUE, include=TRUE}
 [Semantic triplet 1: [Participant: [Actor: republicans]] [[Process: [[Verb: plunge]
 	[Circumstances: [Space: [City: Bissone di S. Cristina] [[Location: pub]
 	[Name: Prati]]]] [[Time: [Date: 05/07/1921] [Hour: 10pm]]]]]

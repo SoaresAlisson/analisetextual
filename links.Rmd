@@ -39,6 +39,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 ## Processamento Linguagem Natural (PLN ou NLP)
 - JURAFSKY, D.; MARTIN, J. Speech and language processing: An introduction to speech recognition, computational linguistics and natural language processing. Upper Saddle River, NJ: Prentice Hall, 2020. [link pdf dos capítulos individuais](https://web.stanford.edu/~jurafsky/slp3/), [link livro completo](https://web.stanford.edu/~jurafsky/slp3/ed3book_dec302020.pdf). (Um manual bastante extenso e mais teórico sobre PLN)
 - BIRD, S.; KLEIN, E.; LOPER., E. [Natural language processing with Python](https://www.nltk.org/book/) – analyzing text with the natural language toolkit. (Livro online gratuito, baseado em Python 3.)
+- Playlist no Youtube das [aulas da Stanford University sobre PLN](https://www.youtube.com/playlist?list=PLLssT5z_DsK8HbD2sPcUIDfQ7zmBarMYv)
 
 ## Revistas / Journals acadêmicos
 - SIGCAS  [Computers and Society](https://dblp.org/db/journals/sigcas/index.html) da Association for Computing Machinery
