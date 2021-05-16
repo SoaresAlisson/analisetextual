@@ -1,8 +1,11 @@
 # Organização dos dados quanto a sua estrutura
 
-> Objetivos do capítulo:
-1) Apresentar a distinção entre dados estruturados, dados não estruturados e dados semi estruturados
-2) Apresentar alguns formatos de arquivos frequentes na análise textual.
+::: {.infobox .objetivo data-latex="{objetivo}"}
+Objetivos do capítulo:
+
+- 1) Apresentar a distinção entre dados estruturados, dados não estruturados e dados semi estruturados
+- 2) Apresentar alguns formatos de arquivos frequentes na análise textual e humanidades digitais, como csv e tsv, Json, markdown, yaml, LaTex, BibTex, xml e html.
+:::
 
   Podemos pensar a organização de dados quanto à sua estrutura de três formas: dados estruturados, dados semi estruturados e dados não estruturados.
   <!-- De modo resumido, podemos dizer que dados estruturados são como tabelas -->
@@ -54,23 +57,8 @@ Mas é possível encontrar arquivo csv, porém com separador tipo "\t" ou ";".
   <body>Não esqueça de trazer pão!</body>
   </note>
   ```-->
-  
-## Dados não estruturados
-Os dados não estruturados são a forma como encontramos em livros impressos, artigos, são a forma como humanos lêem textos.
-
-> "Algum tempo hesitei se devia abrir estas memorias pelo principio ou pelo fim, isto é, se poria em primeiro logar o meu nascimento ou a minha morte. Supposto o uso vulgar seja começar pelo nascimento, duas considerações me levaram a adoptar differente methodo: a primeira é que eu não sou propriamente um autor defunto, mas um defunto autor, para quem a campa foi outro berço; a segunda é que o escripto ficaria assim mais galante e mais novo. Moysés, que tambem contou a sua morte, não a poz no introito, mas no cabo: differença radical entre este livro e o Pentateuco...."
-
-Este tipo de texto, não estruturado, é alvo do Processamento de linguagem natural (PLN)/ _Natural Language Process_ (NLP)
-
-
-## Dados semi-estruturados
-Dados semi-estruturados são um meio termo entre os estruturados e os semi estruturados. Por vezes são chamados de "auto-descritivos".
-
-### Exemplos de dados semi-estruturados
-#### O formato Json
-O [Json](https://www.json.org/json-pt.html) ("JavaScript Object Notation", isto é "Notação de Objetos JavaScript"), 
-é organizado no esquema de pares nome/valor.
-
+#### O formato Json {#formatoJson}
+O [Json](https://www.json.org/json-pt.html) ("JavaScript Object Notation", isto é "Notação de Objetos JavaScript"), é organizado no esquema de pares nome/valor.
 Por exemplo, ao separarmos primeiro nome `firstName` de sobrenome `lastName` no Json:
   
   <!--```
@@ -96,11 +84,28 @@ ou ainda-->
 - os dados são representados no esquema nome/valor ``"nome": "valor"`. 
 - estes são separados por vírgula.
 
-Caso queira mais detalhes sobre este formato: 
+
+::: {.infobox .note data-latex="{dica}"}
+**DICA:** Caso queira mais detalhes sobre o formato Json: 
   
-- Um video introdutório sobre o formato Json do canal Código Fonte TV [JSON // Dicionário do Programador](https://www.youtube.com/watch?v=P81dE-tkaaA).
-- Um video introdutório mais prático sobre Json, [JSON em 6 minutos](https://www.youtube.com/watch?v=3MREC-YEQG4) do canal "Canal TI".
+- Video introdutório sobre o formato Json do canal Código Fonte TV [JSON // Dicionário do Programador](https://www.youtube.com/watch?v=P81dE-tkaaA).
+- Video introdutório, porém mais prático, focado na estrutura do mesmo: [JSON em 6 minutos](https://www.youtube.com/watch?v=3MREC-YEQG4) do canal "Canal TI".
 - Para ver as [regras de sintaxe do Json](https://www.w3schools.com/js/js_json_syntax.asp).
+:::
+
+  
+## Dados não estruturados
+Os dados não estruturados são a forma como encontramos em livros impressos, artigos, são a forma como humanos lêem textos.
+
+> "Algum tempo hesitei se devia abrir estas memorias pelo principio ou pelo fim, isto é, se poria em primeiro logar o meu nascimento ou a minha morte. Supposto o uso vulgar seja começar pelo nascimento, duas considerações me levaram a adoptar differente methodo: a primeira é que eu não sou propriamente um autor defunto, mas um defunto autor, para quem a campa foi outro berço; a segunda é que o escripto ficaria assim mais galante e mais novo. Moysés, que tambem contou a sua morte, não a poz no introito, mas no cabo: differença radical entre este livro e o Pentateuco...."
+
+Este tipo de texto, não estruturado, é alvo do Processamento de linguagem natural (PLN)/ _Natural Language Process_ (NLP)
+
+
+## Dados semi-estruturados
+Dados semi-estruturados são um meio termo entre os estruturados e os semi estruturados. Por vezes são chamados de "auto-descritivos".
+
+### Exemplos de dados semi-estruturados
 
 #### Markup
 Códigos especiais, ou linguagem “markup” é uma notação de documento que tem duas apresentações, uma simplificada como texto normal para humanos, e outra com os "markup" para que o computador entenda. 
@@ -110,8 +115,8 @@ Um exemplo bem simples de markup é o `Mardown`, usado na escrita rápida de tex
 
 ![Exemplo de markdown](imagens/markdown.png)
 
-#### O formato YAML
-O YAML é um padrão de serialização de dados que prima por ser "human friendly", isto é, de fácil leittura também para humanos.
+#### O formato YAML {#formatoYaml}
+O [YAML](http://yaml.org/) ("YAML Ain't Markup Language") é um padrão de serialização de dados que prima por ser "human friendly", isto é, de fácil leittura também para humanos.
 Em arquivos `markdown` tem-se usado o `yaml` como cabeçalho, com informações para a renderização do pdf, como título, subtítulo, resumo, palavras chave, etc. Ao converter markdown para o formato final, o computador irá interpretar estas informações.
 Um exemplo de yaml no arquivo markdown:
   
@@ -136,6 +141,12 @@ Texto texto  texto  texto  texto  texto  texto
 
 O cabeçalho em yaml é delimitado no seu início e fim por três traços consecutivos `---`.
 Repare que o símbolo tralha `#` dentro do yml é interepretado como comentário, já no markdown, indica capítulo.
+
+
+::: {.infobox .note data-latex="{dica}"}
+**DICA:** <br>
+Um modo prático de trabalhar na elaboração de textos - principalmente acadêmicos -  com markdown e yaml é renderizá-lo com o [pandoc](https://pandoc.org/), que é um canivete suíço na transformação de formatos de texto. Com ele, pode-se criar pdfs, html, doc, docs, odt, etc. a partir de seu arquivo markdown. Pandoc funciona via linha de comando.
+:::
 
 <!--
   # Título
@@ -211,6 +222,15 @@ Ou em um exemplo um pouco mais elaborado:
 ![Exemplo de LaTex com o software Gummi no Linux](imagens/LaTex2.png)
 
 Perceba que antes de `\begin{document}`, isto é, no cabeçalho do documento temos várias informações, entre elas o título do artigo na linha 5 em `title{}`, e em `\author{}`, nas linhas de 6 a 8, temos os autores. Temos também delimitados os capítulos ou seções, no caso ali em `section{}`. 
+
+
+::: {.infobox .note data-latex="{dica}"}
+**DICA:** <br>
+Para renderizar textos .tex em pdfs deve-se usar um interpretador. O [pandoc](https://pandoc.org/MANUAL.html) é uma opção. Embora seja possível usar apenas o interpretador/conversor e um bloco de notas, o mais comum em Tex e LaTex é usar algum programa focado. O [TeXstudio](https://www.texstudio.org/) é uma boa opção. 
+Caso use Linux e queria a renderização à medida que edita o texto, olhe o [Gummi](https://www.gummi.app/). 
+Caso queira fazer os documentos em LaTex sem ter de "programar", dê uma olhada no [LyX](https://www.lyx.org/). 
+Há também editores de LaTex online, como o [overleaf](https://www.overleaf.com/), que possibilita trabalhar em equipe, observando as alterações feitas por cada pessoa
+:::
 
 #### O formato BibTex {#formatoBibtex}
 Um formato "irmão" do LaTex e markdown é o BibTex, um formato estruturado, com dados bibliográficos usado como fonte para gerar automaticamente a bibliografia ao final do texto renderizado em formatos como Tex, LaTex e markdown. As referências nesse formato ficam salvos num grande arquivo `.bib`.
@@ -299,7 +319,8 @@ O html tem por base o xml. O html possui basicamente a seguinte estrutura
 ```
 Se você copiar o conteúdo acima e salvar num arquivo com o nome, digamos `teste.html` e abrí-lo com seu navegador de internet (Firefox, Chrome, Opera, etc.), verá como funciona esta ideia de markup.
 No caso do html, os valores são delimitados por tags, por exemplo:
-> `<ALGO>`conteudo`</ALGO>`
+
+`<ALGO>conteudo</ALGO>`
 
 onde `</` indica que estamos fechando a tag. Assim:
 
@@ -330,7 +351,10 @@ Um outro exemplo:
  que atuou nas capitanias de <local>Minas Gerais</local> e <local>Rio de Janeiro</local>.
 ```
 Onde podemos ver tags como `<name>`, `<local>`, `<data>`, etc. ao redor de certas informações, o que torna possível ao computador encontrar estas informações.
-Grande parte do trabalho em análise textual trata-se passar do formato não-estruturado para o semi-estruturado ou estruturado, para que possamos trabalhar programaticamente.
+
+#### Formatos mais raros
+Há ainda a possibilidade de uso de estruturação de texto não muito comuns e com fins bem específicos.
+<!-- Grande parte do trabalho em análise textual trata-se passar do formato não-estruturado para o semi-estruturado ou estruturado, para que possamos trabalhar programaticamente. -->
 Por exemplo, Franzosi (2010) ao fazer análise da narrativa de jornais italianos da época de ascensão do Fascismo, passou textos não estruturados como este:
 
 > Republicans plunged in Bissone di S. Cristina around 10pm of this month at the pub Prati. A guy, who went by the name of “captain,” took out a list of names and did the roll call loudly.
@@ -345,29 +369,37 @@ Para o seguinte formato:
 	call] [Circumstances: [Type of action: loudly] [Instrument: list]]]
 	[Participant: [Actor: workers]]
 ```
-Para tal, Franzosi desenvolveu um software para análise de narrativas textuais, o [PC-ACE](http://www.pc-ace.com) (Program for Computer-Assisted Coding of Events) e pôde ter uma noção da violência cotidiana na época:
 
-![Tabela de Franzosi.  List of daily occurences of triplets of violence in the Avanti! database](imagens/FRANZOSI.Table4.SubjectObject.violence.png)
+Para tal, Franzosi desenvolveu um software para análise de narrativas textuais, o [PC-ACE](http://www.pc-ace.com) (Program for Computer-Assisted Coding of Events) e pôde ter uma noção melhor da violência cotidiana na época, gerado tabelas como esta:
 
-(FRANZOSI, p.607)
+![Lista da ocorrências diárias de triplets de violência, obtidas no jornal  Avanti! (FRANZOSI, p.607)](imagens/FRANZOSI.Table4.SubjectObject.violence.png)
 
-![ Frequency distribution of triplets of violence in the Avanti! database](imagens/FRANZOSI.Table5.SubjectObject.violence.png)
+<!-- of daily occurences of triplets of violence in the Avanti! -->
 
-(FRANZOSI, p.607)
+
+![Frequência da distribuição dos triplets de violência no jornal Avanti! (FRANZOSI, p.607) ](imagens/FRANZOSI.Table5.SubjectObject.violence.png)
+
 
 E ainda fez um "mapa de calor" ("heat map") com a localização da violência fascista na Itália
-![Franzosi, Hot spots map of fascist actions of violence and fascist institution building](imagens/FRANZOSI.HeatMap.png)
 
-(FRANZOSI, p.609)
+![Mapa de calor de ações fascistas de violência e localização de suas sedes insittucionais (FRANZOSI, p.609)](imagens/FRANZOSI.HeatMap.png)
+
+<!-- ![Franzosi, Hot spots map of fascist actions of violence and fascist institution building](imagens/FRANZOSI.HeatMap.png) -->
 
 
-Referência:
+
+
+**Referência:**
 
 - FRANZOSI, Roberto P.. _Sociology, narrative, and the quality versus quantity debate (Goethe versus Newton): Can computer-assisted story grammars help us understand the rise of Italian fascism (1919–1922)?_. Theor Soc (2010) 39:593–629. DOI 10.1007/s11186-010-9131-3 
 
 
-Os dados semi-estruturados não tem, portanto, formato de tabela, mas contêm indicações de informações mais abstratas, através de tags ou outras marcações. Com base nestas informações que faremos análises de texto.
+### Observações finais
+Os dados semi-estruturados não tem, portanto, formato de tabela, mas contêm indicações de informações mais abstratas, através de tags ou outras marcações. Com base nestas informações que faremos análises de texto de modo computacional.
 Este processo de transformação de dados não estruturados em estruturados é chamado de "datificação".
+
+Os formatos como Json, csv, tsv, xml são importantes pois ao solicitar dados em diversos sites, muitos APIs retornam dados nestes formatos.
+
 <!-- This process of transforming unstructured data, like text, into structured data that is in turn leveraged to create new forms of value has sometimes been termed datafication (O’Neil & Schutt 2013). -->
 
 <!-- > "All software for text analysis transforms unstructured data into structured information; but there are many different ways of achieving this…" -->

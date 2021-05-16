@@ -30,16 +30,22 @@ div.NOTA {
   border: 3px solid orange;
   border-radius: 10px;
   background: #e8e8e8 5px center/3em no-repeat;
+  font-size: 0.900em;
 }
 .obra {
   background-image: url("images/construction-worker-svgrepo-com.svg");
 }
 
 .note {
+  font-size: 0.750em;
   background-image: url("images/note.png");
 }
 
 .history {
   background-image: url("images/history_pergaminho.svg");
+}
+
+.objetivo {
+  background-image: url("images/thefreeforty_target_icon-icons.com_66342.svg");
 }
 

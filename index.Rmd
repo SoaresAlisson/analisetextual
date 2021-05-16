@@ -1,5 +1,5 @@
 --- 
-title: "Introdução Análise Textual aplicada à Sociologia"
+title: "Introdução à Análise Textual aplicada à Sociologia"
 author: "Alisson Soares"
 date: "Primeira versão em 22 de abril de 2021. Última atualização em `r format(Sys.time(), '%d %B de %Y')`"
 #date: "`r Sys.Date()`"

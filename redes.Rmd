@@ -26,9 +26,10 @@ library(igraph) # chamando o pacote já instalado
      g$layout <- layout_in_circle
      plot(g)
 ```
+É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático, 
 -->
 
-É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático, pegando o famoso poema de Drummond:
+Pegando o famoso poema de Drummond:
 
 > "João amava Teresa que amava Raimundo que amava Maria que amava Joaquim que amava Lili que não amava ninguém"
 
@@ -56,7 +57,7 @@ g <- g + edges("Joaquim", "Lili")
 plot.igraph(g) # plotando o grafo
 ```
 
-Neste caso, poderíamos ter feito este mesmo gráfico com código mais compacto:
+Neste caso, poderíamos ter feito este mesmo grafo com código mais compacto:
 
 ```{r}
 library(igraph) 
@@ -81,7 +82,7 @@ g <- g + edges(c("João", "Teresa", "Raimundo", "Maria","Joaquim", "Lili"))
 plot.igraph(g)
 ```
 
-Ou de modo mais econômico ainda: 
+Ou com código modo mais econômico ainda: 
 
 ```{r}
 g <- graph.formula(
@@ -125,7 +126,11 @@ plot(g)
 
 ### Clusterização
 
-__Em elaboração__
+
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
+
 
 ## Os pacotes `ggraph` e `tidygraph` . Construindo grafos com o `tidyverse`.
 
@@ -153,9 +158,9 @@ library(tidygraph)
 <!-- install.packages('ggraph') #instalando # instalando o pacote -->
 
 
-Seguindo o exemplo na página do criador do GGraph
-[Thomas Lin Pedersen](https://github.com/thomasp85/ggraph),
-vamos usar o dataset `highschool` do `ggraph`, que contém dados sobre a evolução da amizade entre garotos numa escola do ensino médio no Illinois, nos anos de 1957 e 1958, que responderam à pergunta:
+Seguindo [o exemplo](https://github.com/thomasp85/ggraph) na página do criador do GGraph
+[Thomas Lin Pedersen](https://github.com/thomasp85/),
+vamos usar o dataset `highschool` do `ggraph`, que contém dados sobre a evolução da amizade entre garotos numa escola do ensino médio no Illinois, que nos anos de 1957 e 1958 responderam à pergunta:
 "Com que colegas desta escola você anda mais frequentemente?". Esta pesquisa apareceu originalmente nos livros "Introduction to Mathematical Sociology" e "The Adolescent Society", ambos do sociólogo James Coleman.
 <!-- - Coleman, J. S. Introduction to Mathematical Sociology. New York: Free Press, pp.450-453. -->
 <!-- - Coleman, J. S. The Adolescent Society (New York:The Free Press of Glenco e,1961). -->
@@ -189,7 +194,6 @@ grafo
 
 Plotando o grafo:
 
-
 ```{r}
 ggraph(grafo, layout = 'kk') + 
     geom_edge_fan(aes(colour = stat(index)), show.legend = FALSE) + 
@@ -198,17 +202,17 @@ ggraph(grafo, layout = 'kk') +
     facet_edges(~year) + 
     theme_graph(foreground = 'steelblue', fg_text_colour = 'yellow') +
     labs(title = "Evolução da amizade entre adolescentes de uma escola no Illinóis", 
-         caption = "Fonte: Elaboração própria a partir dos dados de Coleman(1961)")
+         caption = "Fonte: Elaboração própria a partir dos dados de Coleman(1961) apud ggraph (v.2.0.5; Pedersen)")
 ```
 
 - `layout` define como os nós serão alocados. O layout do ggraph possui os mesmos do igraph e outros mais como, hive plots, treemaps e circle packing. `kk` indica que está sendo usado o algortimo Kamada-Kawai para dispersar os nós e facilitar nossa visualização.
 <!-- The Nodes are the connected entities in the relational structure. These can be plotted using the geom_node_*() family of geoms. Some node geoms make more sense for certain layouts, e.g. geom_node_tile() for treemaps and icicle plots, while others are more general purpose, e.g. geom_node_point(). -->
 <!-- The Edges are the connections between the entities in the relational structure. These can be visualized using the geom_edge_*() family of geoms that contain a lot of different edge types for different scenarios. Sometimes the edges are implied by the layout (e.g. with treemaps) and need not be plotted, but often some sort of line is warranted. -->
 - `geom_edge_fan()` desenha os laços de modo curvo. Há diversas outras opções possíveis neste caso, como:
-`geom_edge_arc`, `geom_edge_bend`, `geom_edge_diagonal`,`geom_edge_elbow`, `geom_edge_fan`, `geom_edge_hive`, `geom_edge_link`, `geom_edge_parallel`. <!-- Já `alpha` indica transparência. -->
+`geom_edge_arc`, `geom_edge_bend`, `geom_edge_diagonal`,`geom_edge_elbow`, `geom_edge_fan`, `geom_edge_hive`, `geom_edge_link`, `geom_edge_parallel`. Substitua `geom_edge_fan()` por alguns estes e vjea a diferença no grafo.  <!-- Já `alpha` indica transparência. -->
 `colour` indica que a intensidade das ligações será por um gradiente de cor,
 `stat()` indica que segue ali uma informação estatística.
-- `geom_node_point()` msostra os nós como pontos/círculos e permite que sejam plotados em diferentes tamanhos, cores e formas em `aes()`. `size = Popularidade` indica que o tamanho dos nós é controlado pela variável "Popularidade" que criamos. `colour = Popularidade` indica que além do tamanho, a cor também vaira conforme a popularidade. Para mais opções, digite `?geom_node_point()` no console ou consulte a [documentação do ggraph](https://cran.r-project.org/web/packages/ggraph/ggraph.pdf).
+- `geom_node_point()` mostra os nós como pontos/círculos e permite que sejam plotados em diferentes tamanhos, cores e formas em `aes()`. `size = Popularidade` indica que o tamanho dos nós é controlado pela variável "Popularidade" que criamos. `colour = Popularidade` indica que além do tamanho, a cor também vaira conforme a popularidade. Para mais opções, digite `?geom_node_point()` no console ou consulte a [documentação do ggraph](https://cran.r-project.org/web/packages/ggraph/ggraph.pdf).
 - `scale_colour_gradient(low = "steelblue", high = "black")` é opcional, podendo ser retirada. Especifica o gradiente de cores do comando anterior (no caso, nós), qual o valor mais baixo até o mais elevado. Sua informação é redundante com relação ao tamanho dos nós, mas ajuda a reforçar tal informação.
 - `facet_edges()`  função de "faceting", de criar facetas, gráficos multiplos, e o símbolo de til `~` seguido de `year` indica que o critério aqui são as categorias dentro de ano, que no caso, são 1957 e 1958. Os nós são repetidos em cada painel.
 <!-- Create small multiples based on edge attributes. Nodes are repeated in every panel.  -->

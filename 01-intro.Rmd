@@ -16,16 +16,17 @@ O objetivo deste manual é:
 
 
 ## Plano do livro {-}
-Os capítulos planejados até o momento, muito já em elaboração:
+Os seguintes capítulos serão incorporados futuramente e estão em elaboração:
 
-- História da Análise Textual
 - Rápida introdução à programação (conceitos básicos como variável, loops, condicionais if-else, função, etc.)
 - Normalização e expressões regulares.
-- Rápida introdução ao R (tipos de dados, estrutura de dados, importação de dados)
+- Rápida introdução ao R (tipos de dados, estrutura de dados, importação de dados, ambientes virtuais)
 - Introdução à análise textual via computador
   - Frequência de termos (bag of words, n-grams, skipgrams, TF-IDF)
   - dendogramas
   - Correlação, tipos de distâncias
+  - parts-of-speech
+  - keyword extraction
 - Introdução à análise de redes.
 - Inteligência Artificial: clusterização; topic modelling
 - Análise de sentimentos.
@@ -38,7 +39,7 @@ Os capítulos planejados até o momento, muito já em elaboração:
 > _"the best digital theory-building of the past decade stems from social and computational origins. As such, it is increasingly apparent that digital sociologists need to develop a computational as well as a sociological imagination."_
 
 
-## O termo "humanidade digitais" {-}
+## O termo "humanidade digitais" {#HD -}
 Segundo um [estudo do LinkedIn](https://www.weforum.org/agenda/2021/02/digital-ecommerce-jobs-linkedin-report) em 15 países, prevendo 150 milhões de vagas nos próximos 5 anos, das áreas de trabalhos digitais em alta e 2021, duas se relacionam a Humanidades Digitais: Big data Analytics (segundo lugar) e "Text, image and voice processing" (6º lugar). Profissionalmente, pode ser interessante entrar nesta área.
 
 Existem diversos termos correlatos a 
@@ -56,7 +57,13 @@ Existem diversos termos correlatos a
 "computational social science",
 etc.
 
-Humanidades digitais inclui a análise de:
+Embora estes termos não sejam todos sinônimos entre si, há diversos pontos de contato. Em quase todos eles há a junção de algo de humanidades e algo de digital, demonstrando seu caráter transdisciplinar. A área possui contribuições de diversas áreas, como das ciências da informação, linguística, ciências da computação, história, sociologia, comunicação, etc.
+O termo é controverso mesmo entre os participantes, uma vez que é amplo demais. 
+Uma definição ampla define o termo como intersecção entre humanidades e computação. Porém, uma busca no Google por um texto já configura uso de ferramenta digital.
+Outra definição mais restrita envolveria aprender a pensar como o computador e a partir disto extrair diversas novas possibilidades.
+Uma introdução aos diferentes significados do termo pode ser vista no artigo [“Humanidades digitais"](https://humanidadesdigitais.org/o-que-sao-humanidades-digitais/) do grupo de pesquisas da USP.
+
+Em termos mais práticos, Humanidades digitais inclui a análise de:
 
 - sons/música, 
 - imagens. 
@@ -64,12 +71,6 @@ Humanidades digitais inclui a análise de:
 - textos.
 	- Nosso objetivo aqui
 
+Há todo um repertório de ferramentas comuns utilizados tanto por cientistas de dados como por humanistas digitais, com diferentes fins. Nosso foco será aprender diversas destas ferramentas de uso comum, mas focando em seu uso na sociologia.
 
-```{r}
-valores <-  c(12, 34, 13)
-# atribuindo nomes ao vetor acima
-nomes <- c("banana", "uva", "abacate") # criando o vetor
-names(valores) <- nomes
-names
-```
 
