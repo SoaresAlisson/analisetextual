@@ -201,7 +201,7 @@ ggraph(grafo, layout = 'kk') +
          caption = "Fonte: Elaboração própria a partir dos dados de Coleman(1961)")
 ```
 
-- `layout` define como os nós serão alocados. O layout do ggraph possui os mesmos do igraph e outros mais como, hive plots, treemaps e circle packing. `kk` indica que está sendo usado o algortimo Kamada-Kawai para dispersar os nós para facilitar nossa visualização.
+- `layout` define como os nós serão alocados. O layout do ggraph possui os mesmos do igraph e outros mais como, hive plots, treemaps e circle packing. `kk` indica que está sendo usado o algortimo Kamada-Kawai para dispersar os nós e facilitar nossa visualização.
 <!-- The Nodes are the connected entities in the relational structure. These can be plotted using the geom_node_*() family of geoms. Some node geoms make more sense for certain layouts, e.g. geom_node_tile() for treemaps and icicle plots, while others are more general purpose, e.g. geom_node_point(). -->
 <!-- The Edges are the connections between the entities in the relational structure. These can be visualized using the geom_edge_*() family of geoms that contain a lot of different edge types for different scenarios. Sometimes the edges are implied by the layout (e.g. with treemaps) and need not be plotted, but often some sort of line is warranted. -->
 - `geom_edge_fan()` desenha os laços de modo curvo. Há diversas outras opções possíveis neste caso, como:
@@ -225,32 +225,46 @@ ggraph(grafo, layout = 'kk') +
 - Para ver os diferentes layouts possíves do ggraph e seus respectivos códigos, para além dos grafos [clique aqui](https://ggraph.data-imaginist.com/articles/Layouts.html)
 
 
-
-
+::: {.infobox .obra data-latex="{obra}"}
 _CAPÍTULO A SER EXPANDIDO_
+:::
+
+
 
 
 
 
 ## Redes de palavras
-_A ser elaborado_
+
+
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
+
 
 ## Redes de citação
 
 <!-- 6.3 Citation Networks -->
-_A ser elaborado_
+
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
 
 ## Gráfico de centralidade
 
 <!-- 6.4 Graph Centrality -->
 
-_A ser elaborado_
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
 
 ## Comunidades
 
 <!-- 6.5 Graph Communities -->
 
-_A ser elaborado_
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
 
 ## Sugestões de links {#SugestaoLinksredes}
 - AQUINO, Jackson A. "Análise de redes sociais",  capítulo 12 de ___. [R para cientistas sociais](http://www.uesc.br/editora/livrosdigitais_20140513/r_cientistas.pdf). Ilhéus, BA: EDITUS, 2014. 157 p. ISBN: 978-85-7455-369-6. (PDF gratuito bem introdutório com R)

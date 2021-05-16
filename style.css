@@ -31,6 +31,10 @@ div.NOTA {
   border-radius: 10px;
   background: #e8e8e8 5px center/3em no-repeat;
 }
+.obra {
+  background-image: url("images/construction-worker-svgrepo-com.svg");
+}
+
 .note {
   background-image: url("images/note.png");
 }
@@ -38,3 +42,4 @@ div.NOTA {
 .history {
   background-image: url("images/history_pergaminho.svg");
 }
+

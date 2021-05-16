@@ -7,7 +7,7 @@ De modo resumido, podemos pensar nos primeiros desenvolvimentos ao final do séc
 
 ## Linha do tempo da história da Análise Textual
 <!-- https://youtu.be/-FV5NF5E5ws?t=361 06:00-->
-- 1887 Medenhall. Anaisa o comprimento de palavras:
+- 1887 Medenhall. Analisa o comprimento de palavras:
   -  MENDENHALL, T. C. . [The characteristic curves of composition](https://science.sciencemag.org/content/ns-9/214S/237).
 Science.Vol ns-9, Issue 214S. 11 March 1887. [baixar pdf](https://www.jstor.org/stable/pdf/1764604.pdf)
 <!---31:15
