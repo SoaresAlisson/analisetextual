@@ -1,3 +1,4 @@
+fig:unnamed-chunk-5
 história-da-análise-textual
 linha-do-tempo-da-história-da-análise-textual
 exemplos-de-pesquisas-em-humanidades-digitais
@@ -28,6 +29,12 @@ formatoBibtex
 formatosXmlHtml
 formatos-mais-raros
 observações-finais
+r-introdução
+obtendo-ajuda
+obtendo-ajuda-com-o-r-commander-rcmdr
+tipos-de-dados-no-r-data-types
+estrutura-de-dados-no-r-data-structures
+a-suíte-de-pacotes-do-tidyverse
 análise-de-redes-sociais
 o-pacote-igraph
 clusterização
@@ -51,7 +58,7 @@ sites-blogs
 organizações
 links-de-podcasts-sobre-digital-humanities
 links-programação
-r-introdução
+r-introdução-1
 r---tópicos-específicos
 links-python
 python---tópicos-específicos

@@ -1,0 +1,74 @@
+# R introdução
+
+::: {.infobox .objetivo data-latex="{objetivo}"}
+Objetivos do capítulo:
+
+- 1) Apresentar como obter ajuda no R
+- 2) Apresentar os tipos de dados e as estruturas de dados no R
+- 3) Apresentar a suíte de pacotes do tidyverse
+:::
+
+Supondo que já tenha o R e o RStudio instalados (há diversos tutoriais de instalação no Youtube), vamos aos primeiros passos.
+
+## Obtendo ajuda
+A primeira coisa a se aprender é como conseguir ajuda, como conseguir a informação que precisamos. 
+A busca por ajuda é uma constante, mesmo entre os mais experiente. 
+
+|Comando|Descrição|Exemplo|
+|---|---|---|
+|`help("função")` ou `?funcao()`|Acesso à documentação de funções, data sets e outros. Caso abra no console, uma vez dentro da página de ajuda, `q` para sair, e `/` para realizar busca dentro dele|`?getwd` ou `help(getwd)`|
+|`help(função, package="NOME_PACOTE")`| para obter ajudar de um pacote que não foi cerregado|`help(rlm, package="MASS")` Ajuda para a função rlm() do pacote MASS|
+|`help(package = 'NOME_PACOTE')`|Mostra um índice de páginas de ajuda para o pacote|`help(package = 'dplyr'`|
+|`example()`|Mostra exemplos de uso |`example(grep)`|
+|`help.search()` ou `??busca`|Para busca mais vaga. Caso não se lembre do nome exato da função, ou caso busque uma função que faça determinada tarefa|`??regression` mostra diversas funções de diversos pacotes que contém a palavra "regression"|
+|`RSiteSearch()`|Busca em sites especializados em R||
+|`args()`|mostra os argumentos que uma função pode receber.|`args(grep)`|
+|`apropos()`|Busca pelo nome de uma função|`apropos("grep")`|
+
+Fonte: [Getting Help with R](https://www.r-project.org/help.html).
+
+Outra dica é buscar a documentação do pacote no [site do cran](https://cran.r-project.org/search.html) ou o site [stack overflow](https://stackoverflow.com/).
+
+### Obtendo ajuda com o R Commander (Rcmdr)
+Quem está aprendendo estatística no R, uma boa dica é usar o pacote R-commander. 
+Ao rodá-lo, uma janela aparece onde escolhemos o tipo de operação, e ele mostra o código para tal.
+O Rcmdr ensina como importar dados (SPSS, Excell, Stata, ruls, etc.), como realizar diversas operações estatísticas, como plotar gráficos.
+
+```
+install.packages('Rcmdr') # instalando o pacote
+library(Rcmdr) # carregando o pacote R Commander
+```
+
+Ao rodar o Rcmdr pela primeira vez, pacotes adicionais serão instalados.
+
+Caso feche a janela do RCommander, rodar `library(Rcmdr)` novamente não abrirá a janela, uma vez que o pacote já está carregado.  A solução é rodar então `Commander()` para ter a janela novamente.
+
+
+::: {.infobox .note data-latex="{dica}"}
+**Dicas**: RCommander
+
+- LAURETTO, Marcelo. [Introdução ao R Commander](http://www.each.usp.br/lauretto/cursoR2017/02-RcommanderParte1.pdf). (Pequeno tutorial do RCommander, em pdf e em português.)
+- [The R Commander: A Basic-Statistics GUI for R](https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/)
+- John Fox. [Getting Started With the R Commander](https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/Getting-Started-with-the-Rcmdr.pdf). (Artigo do criador do RCommander)
+- Se quiser ver um video tutorial do Rcommander em ação e em português, veja o vídeo: 
+[Aprendendo Estatística com o R Commander](https://www.youtube.com/watch?v=7GDshWv8O6E) do Departamento de Estatística UFLA
+:::
+
+## Tipos de Dados no R (data types)
+
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
+
+## Estrutura de dados no R (Data Structures)
+
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
+
+## A suíte de pacotes do `tidyverse`
+
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
+

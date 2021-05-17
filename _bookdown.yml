@@ -13,6 +13,7 @@ rmd_files: [
 "exemplos_pesquisas_DH.Rmd",
 "estrutura_dados.Rmd",
 # "03-method.Rmd",
+"R_intro.Rmd",
 "redes.Rmd",
 "links.Rmd", 
 #"06-references.Rmd"

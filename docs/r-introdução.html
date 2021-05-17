@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introdução | Introdução à Análise Textual aplicada à Sociologia</title>
+  <title>Capítulo 4 R introdução | Introdução à Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introdução | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:title" content="Capítulo 4 R introdução | Introdução à Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introdução | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta name="twitter:title" content="Capítulo 4 R introdução | Introdução à Análise Textual aplicada à Sociologia" />
   
   <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="objetivos-deste-manual.html"/>
-<link rel="next" href="história-da-análise-textual.html"/>
+<link rel="prev" href="organização-dos-dados-quanto-a-sua-estrutura.html"/>
+<link rel="next" href="análise-de-redes-sociais.html"/>
 <script src="libs/header-attrs-2.5/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -256,41 +256,123 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1 unnumbered">
-<h1>Introdução</h1>
-<!-- You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods). -->
-<blockquote>
-<p><em>“the best digital theory-building of the past decade stems from social and computational origins. As such, it is increasingly apparent that digital sociologists need to develop a computational as well as a sociological imagination.”</em></p>
-</blockquote>
-<div id="HD" class="section level2 unnumbered">
-<h2>O termo “humanidade digitais”</h2>
-<p>Segundo um <a href="https://www.weforum.org/agenda/2021/02/digital-ecommerce-jobs-linkedin-report">estudo do LinkedIn</a> em 15 países, prevendo 150 milhões de vagas nos próximos 5 anos, das áreas de trabalhos digitais em alta e 2021, duas se relacionam a Humanidades Digitais: Big data Analytics (segundo lugar) e “Text, image and voice processing” (6º lugar). Profissionalmente, pode ser interessante entrar nesta área.</p>
-<p>Existem diversos termos correlatos a
-“Humanidades digitais” (“Digital humanities”), como
-“E-humanities,”Cultural Analytics“,”ciências sociais computacionais“,”sociologia digital“,”história digital“,”etnografia digital“,”etnografia quantitativa“,”Análise cultural quantitativa" (quantitative cultural analysis)
-“cultural analytics”,
-“humanities data science”, “humanities data analysis”
-<!-- computational ___ studies -->
-“humanities computing”,
-“distant reading”,
-“computational social science”,
-etc.</p>
-<p>Embora estes termos não sejam todos sinônimos entre si, há diversos pontos de contato. Em quase todos eles há a junção de algo de humanidades e algo de digital, demonstrando seu caráter transdisciplinar. A área possui contribuições de diversas áreas, como das ciências da informação, linguística, ciências da computação, história, sociologia, comunicação, etc.
-O termo é controverso mesmo entre os participantes, uma vez que é amplo demais.
-Uma definição ampla define o termo como intersecção entre humanidades e computação. Porém, uma busca no Google por um texto já configura uso de ferramenta digital.
-Outra definição mais restrita envolveria aprender a pensar como o computador e a partir disto extrair diversas novas possibilidades.
-Uma introdução aos diferentes significados do termo pode ser vista no artigo <a href="https://humanidadesdigitais.org/o-que-sao-humanidades-digitais/">“Humanidades digitais”</a> do grupo de pesquisas da USP.</p>
-<p>Em termos mais práticos, Humanidades digitais inclui a análise de:</p>
+<div id="r-introdução" class="section level1" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> R introdução</h1>
+<div class="infobox objetivo">
+<p>Objetivos do capítulo:</p>
 <ul>
-<li>sons/música,</li>
-<li>imagens.
-<!-- - dados geográficos/geo-localizados. --></li>
-<li>textos.
-<ul>
-<li>Nosso objetivo aqui</li>
-</ul></li>
+<li><ol style="list-style-type: decimal">
+<li>Apresentar como obter ajuda no R</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Apresentar os tipos de dados e as estruturas de dados no R</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Apresentar a suíte de pacotes do tidyverse</li>
+</ol></li>
 </ul>
-<p>Há todo um repertório de ferramentas comuns utilizados tanto por cientistas de dados como por humanistas digitais, com diferentes fins. Nosso foco será aprender diversas destas ferramentas de uso comum, mas focando em seu uso na sociologia.</p>
+</div>
+<p>Supondo que já tenha o R e o RStudio instalados (há diversos tutoriais de instalação no Youtube), vamos aos primeiros passos.</p>
+<div id="obtendo-ajuda" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Obtendo ajuda</h2>
+<p>A primeira coisa a se aprender é como conseguir ajuda, como conseguir a informação que precisamos.
+A busca por ajuda é uma constante, mesmo entre os mais experiente.</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Comando</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>help("função")</code> ou <code>?funcao()</code></td>
+<td>Acesso à documentação de funções, data sets e outros. Caso abra no console, uma vez dentro da página de ajuda, <code>q</code> para sair, e <code>/</code> para realizar busca dentro dele</td>
+<td><code>?getwd</code> ou <code>help(getwd)</code></td>
+</tr>
+<tr class="even">
+<td><code>help(função, package="NOME_PACOTE")</code></td>
+<td>para obter ajudar de um pacote que não foi cerregado</td>
+<td><code>help(rlm, package="MASS")</code> Ajuda para a função rlm() do pacote MASS</td>
+</tr>
+<tr class="odd">
+<td><code>help(package = 'NOME_PACOTE')</code></td>
+<td>Mostra um índice de páginas de ajuda para o pacote</td>
+<td><code>help(package = 'dplyr'</code></td>
+</tr>
+<tr class="even">
+<td><code>example()</code></td>
+<td>Mostra exemplos de uso</td>
+<td><code>example(grep)</code></td>
+</tr>
+<tr class="odd">
+<td><code>help.search()</code> ou <code>??busca</code></td>
+<td>Para busca mais vaga. Caso não se lembre do nome exato da função, ou caso busque uma função que faça determinada tarefa</td>
+<td><code>??regression</code> mostra diversas funções de diversos pacotes que contém a palavra “regression”</td>
+</tr>
+<tr class="even">
+<td><code>RSiteSearch()</code></td>
+<td>Busca em sites especializados em R</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>args()</code></td>
+<td>mostra os argumentos que uma função pode receber.</td>
+<td><code>args(grep)</code></td>
+</tr>
+<tr class="even">
+<td><code>apropos()</code></td>
+<td>Busca pelo nome de uma função</td>
+<td><code>apropos("grep")</code></td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: <a href="https://www.r-project.org/help.html">Getting Help with R</a>.</p>
+<p>Outra dica é buscar a documentação do pacote no <a href="https://cran.r-project.org/search.html">site do cran</a> ou o site <a href="https://stackoverflow.com/">stack overflow</a>.</p>
+<div id="obtendo-ajuda-com-o-r-commander-rcmdr" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Obtendo ajuda com o R Commander (Rcmdr)</h3>
+<p>Quem está aprendendo estatística no R, uma boa dica é usar o pacote R-commander.
+Ao rodá-lo, uma janela aparece onde escolhemos o tipo de operação, e ele mostra o código para tal.
+O Rcmdr ensina como importar dados (SPSS, Excell, Stata, ruls, etc.), como realizar diversas operações estatísticas, como plotar gráficos.</p>
+<pre><code>install.packages(&#39;Rcmdr&#39;) # instalando o pacote
+library(Rcmdr) # carregando o pacote R Commander</code></pre>
+<p>Ao rodar o Rcmdr pela primeira vez, pacotes adicionais serão instalados.</p>
+<p>Caso feche a janela do RCommander, rodar <code>library(Rcmdr)</code> novamente não abrirá a janela, uma vez que o pacote já está carregado. A solução é rodar então <code>Commander()</code> para ter a janela novamente.</p>
+<div class="infobox note">
+<p><strong>Dicas</strong>: RCommander</p>
+<ul>
+<li>LAURETTO, Marcelo. <a href="http://www.each.usp.br/lauretto/cursoR2017/02-RcommanderParte1.pdf">Introdução ao R Commander</a>. (Pequeno tutorial do RCommander, em pdf e em português.)</li>
+<li><a href="https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/">The R Commander: A Basic-Statistics GUI for R</a></li>
+<li>John Fox. <a href="https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/Getting-Started-with-the-Rcmdr.pdf">Getting Started With the R Commander</a>. (Artigo do criador do RCommander)</li>
+<li>Se quiser ver um video tutorial do Rcommander em ação e em português, veja o vídeo:
+<a href="https://www.youtube.com/watch?v=7GDshWv8O6E">Aprendendo Estatística com o R Commander</a> do Departamento de Estatística UFLA</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="tipos-de-dados-no-r-data-types" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Tipos de Dados no R (data types)</h2>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+</div>
+<div id="estrutura-de-dados-no-r-data-structures" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Estrutura de dados no R (Data Structures)</h2>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+</div>
+<div id="a-suíte-de-pacotes-do-tidyverse" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> A suíte de pacotes do <code>tidyverse</code></h2>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
 
 </div>
 </div>
@@ -299,8 +381,8 @@ Uma introdução aos diferentes significados do termo pode ser vista no artigo <
           </div>
         </div>
       </div>
-<a href="objetivos-deste-manual.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="história-da-análise-textual.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="organização-dos-dados-quanto-a-sua-estrutura.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análise-de-redes-sociais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
