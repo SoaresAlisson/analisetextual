@@ -15,7 +15,7 @@ exemplo-análise-de-complexidade-musical
 exemplo-polarização
 exemplo-de-integração-quali-quanti-complementando-dados-qualitativos
 exemplo-de-integração-quali-quanti-depurando-dados-quantitativos
-organização-dos-dados-quanto-a-sua-estrutura
+estrutura-de-dados-e-tipos-de-formatos
 dados-estruturados
 os-formatos-csv-comma-separeted-values-e-tsv.
 formatoJson
@@ -43,6 +43,7 @@ listas-list
 data-frames
 considerações-finais-sobre-estrutura-de-dados
 a-suíte-de-pacotes-tidyverse
+análise-textual-text-mining
 análise-de-redes-sociais
 o-pacote-igraph
 clusterização

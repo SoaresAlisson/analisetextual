@@ -26,6 +26,9 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - Podcast "New Work in Digital Humanities". Episódio: Neil Selwyn, ["What is Digital Sociology?"](https://newbooksnetwork.com/category/arts-letters/digital-humanities/) (Polity, 2019) 
 - BERNAU, John A. [Text Analysis with JSTOR Archives](https://journals.sagepub.com/doi/full/10.1177/2378023118809264).  November 12, 2018  https://doi.org/10.1177/2378023118809264. (Aplicação de métodos de humanidades digitais, usando a base do Jstor, para uma rápida análise de variação temática em revistas sociológicas).
 - FUSSEY, Pete e ROTH, Silke (ed.) [Digitizing Sociology ](https://journals.sagepub.com/page/soc/collections/e-specials/2020-may). edição da revista "Sociology" da  British Sociological Association.
+- Evans J, Foster JG. [Computation and the Sociological Imagination](https://journals.sagepub.com/doi/full/10.1177/1536504219883850). Contexts. 2019;18(4):10-15. doi:10.1177/1536504219883850
+  
+
 <!-- - Houtman, Dick & Achterberg, Peter. (2014). [Quantitative Analysis in Cultural Sociology:](https://www.researchgate.net/publication/265163539_Quantitative_Analysis_in_Cultural_Sociology_Why_It_Should_Be_Done_How_It_Can_Be_Done): Why It Should Be Done, How It Can Be Done. -->
 <!-- LUPTON, Debora. [Digital Sociology](https://edisciplinas.usp.br/pluginfile.php/4408475/mod_resource/content/1/Lupton-Digital%20Sociology%282014%29.pdf).-->
 
@@ -79,6 +82,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - Site [Digital Humanities Now](https://digitalhumanitiesnow.org/). (Agrega oportunidade de emprego, notícias, bolsas de pesquisa). 
 - site [Go Digital Humanities](https://dghumanity.wordpress.com/). (Novidades sobre humanidades digitais, como eventos).
 - Blog [Digital Society Blog](https://www.hiig.de/en/blog/). (Blog do Institut für Internet und Gesellschaft da Alexander von Humboldt).
+- Site [The Programming Historian](https://programminghistorian.org/pt/), com diverso conteúdos em português.
 
 ## Organizações
 - [Alliance of Digital Humanities Organizations (ADHO)](https://adho.org/).

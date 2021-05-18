@@ -1,0 +1,18 @@
+# Análise Textual (_text mining_)
+
+::: {.infobox .obra data-latex="{construcao}"}
+**EM CONSTRUÇÃO**
+
+Conteúdo planejado:
+
+- Introdução à análise textual via computador
+- Frequência de termos (bag of words, n-grams, skipgrams, TF-IDF)
+- nuvem de palavras (_wordclouds_), Polarized tag cloud, pyramid plot.
+- dendogramas
+- Correlação de palavras, tipos de distâncias
+- parts-of-speech
+- keyword extraction
+- redes de palavras (_word networks_)
+- Inteligência Artificial: clusterização; topic modelling
+- Análise de sentimentos.
+:::

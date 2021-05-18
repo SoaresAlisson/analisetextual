@@ -1,4 +1,5 @@
-# Organização dos dados quanto a sua estrutura
+# Estrutura de dados e tipos de formatos
+<!-- # Organização dos dados quanto a sua estrutura -->
 
 ::: {.infobox .objetivo data-latex="{objetivo}"}
 Objetivos do capítulo:

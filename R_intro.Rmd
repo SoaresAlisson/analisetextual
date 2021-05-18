@@ -8,6 +8,20 @@ Objetivos do capítulo:
 - 3) Apresentar a suíte de pacotes do tidyverse
 :::
 
+O R vem com diversos pacotes e funções nativamente. Só para ter uma idéia desta quantidade:
+
+|Pacote|Número de funções|
+|----|----|
+|base| 1244 |
+|datasets| 104 |
+|graphics| 87 |
+|grDevices| 112 |
+|methods| 203 |
+|utils| 215 |
+|stats| 449 |
+
+Dificilmente vamos dominar todos estes e mais as funçoes dos pacotes específicos.
+
 Supondo que já tenha o R e o RStudio instalados (há diversos tutoriais de instalação no Youtube), vamos aos primeiros passos.
 
 É possível também rodar o R de modo online, de modo gratuito, sem instalar nada em seu computador, com o
@@ -32,6 +46,7 @@ A busca por ajuda é uma constante, mesmo entre os mais experiente.
 |`apropos()`|Busca pelo nome de uma função. Útil quando não lembramos exatamente o nome de uma função|`apropos("grep")`|
 |`demo()`| Lista todas as demonstrações de todos os seus pacotes |`demo()`|
 |`demo(package="package-name")`| lista as demonstrações de um pacote particular | `demo(package="stats")`|
+|`pacote::`|No console do RStudio, apresenta uma lista com todas as funções do pacote, numa janela|`graphics::`|
 
 Fonte: Versão expandidada de [Getting Help with R](https://www.r-project.org/help.html).
 

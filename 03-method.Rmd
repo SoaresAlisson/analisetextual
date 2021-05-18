@@ -61,6 +61,11 @@ Some text for this block.
 ```
 
 
+
+::: {.infobox .obra data-latex="{construcao}"}
+_EM CONSTRUÇÃO_
+:::
+
 ::: {.infobox .note data-latex="{note}"}
 **NOTICE!**
 
