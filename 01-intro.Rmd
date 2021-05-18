@@ -20,7 +20,7 @@ Os seguintes capítulos serão incorporados futuramente e estão em elaboração
 
 - Rápida introdução à programação (conceitos básicos como variável, loops, condicionais if-else, função, etc.)
 - Normalização e expressões regulares.
-- Rápida introdução ao R (tipos de dados, estrutura de dados, importação de dados, ambientes virtuais)
+- Rápida introdução ao R (tipos de dados, estrutura de dados, importação de dados, ambientes virtuais, suíte tidyverse)
 - Introdução à análise textual via computador
   - Frequência de termos (bag of words, n-grams, skipgrams, TF-IDF)
   - dendogramas
@@ -30,6 +30,7 @@ Os seguintes capítulos serão incorporados futuramente e estão em elaboração
 - Introdução à análise de redes.
 - Inteligência Artificial: clusterização; topic modelling
 - Análise de sentimentos.
+- Glossário de termos
 
 
 # Introdução {#intro -} 

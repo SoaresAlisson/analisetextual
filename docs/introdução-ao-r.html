@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Introdução ao R | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Introdução ao R | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Introdução ao R | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="organização-dos-dados-quanto-a-sua-estrutura.html"/>
+<link rel="next" href="análise-de-redes-sociais.html"/>
+<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#HD"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-da-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências da filosofia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-google-trends-como-proxy-para-epidemias"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras</a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical</a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização</a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html"><i class="fa fa-check"></i><b>3</b> Organização dos dados quanto a sua estrutura</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados</a></li>
+<li class="chapter" data-level="3.3" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
+<li class="chapter" data-level="3.3.2" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown</a></li>
+<li class="chapter" data-level="3.3.3" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML</a></li>
+<li class="chapter" data-level="3.3.4" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex</a></li>
+<li class="chapter" data-level="3.3.5" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex</a></li>
+<li class="chapter" data-level="3.3.6" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html</a></li>
+<li class="chapter" data-level="3.3.7" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="organização-dos-dados-quanto-a-sua-estrutura.html"><a href="organização-dos-dados-quanto-a-sua-estrutura.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>4</b> Introdução ao R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>4.1</b> Obtendo Ajuda no R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-com-o-r-commander-rcmdr"><i class="fa fa-check"></i><b>4.1.1</b> Obtendo ajuda com o R Commander (Rcmdr)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#comentando-o-código"><i class="fa fa-check"></i><b>4.1.2</b> Comentando o código</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>4.2</b> Tipos de Dados no R (data types)</a></li>
+<li class="chapter" data-level="4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>4.3</b> Estrutura de dados no R (Data Structures)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>4.3.1</b> Vetor (vector)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fator-factor"><i class="fa fa-check"></i><b>4.3.2</b> Fator (<em>Factor</em>)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>4.3.3</b> Matriz (Matrix)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#listas-list"><i class="fa fa-check"></i><b>4.3.4</b> Listas (<em>list</em>)</a></li>
+<li class="chapter" data-level="4.3.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#data-frames"><i class="fa fa-check"></i><b>4.3.5</b> Data Frames</a></li>
+<li class="chapter" data-level="4.3.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>4.3.6</b> Considerações finais sobre estrutura de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#a-suíte-de-pacotes-tidyverse"><i class="fa fa-check"></i><b>4.4</b> A suíte de pacotes <code>tidyverse</code></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>5</b> Análise de Redes Sociais</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>5.1</b> O pacote Igraph</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>5.1.1</b> Clusterização</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>5.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
+<li class="chapter" data-level="5.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>5.3</b> Redes de palavras</a></li>
+<li class="chapter" data-level="5.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>5.4</b> Redes de citação</a></li>
+<li class="chapter" data-level="5.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>5.5</b> Gráfico de centralidade</a></li>
+<li class="chapter" data-level="5.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>5.6</b> Comunidades</a></li>
+<li class="chapter" data-level="5.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>5.7</b> Sugestões de links</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>6</b> Links úteis</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>6.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="6.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>6.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="6.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>6.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital"><i class="fa fa-check"></i><b>6.3.1</b> Sociologia Digital</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>6.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="6.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>6.5</b> Revistas / Journals acadêmicos</a></li>
+<li class="chapter" data-level="6.6" data-path="links-úteis.html"><a href="links-úteis.html#sobre-dados-abertos"><i class="fa fa-check"></i><b>6.6</b> Sobre Dados Abertos</a></li>
+<li class="chapter" data-level="6.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>6.7</b> Vídeos</a></li>
+<li class="chapter" data-level="6.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>6.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="6.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>6.9</b> Organizações</a></li>
+<li class="chapter" data-level="6.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>6.10</b> Links de Podcasts sobre Digital Humanities</a></li>
+<li class="chapter" data-level="6.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>6.11</b> Links Programação</a>
+<ul>
+<li class="chapter" data-level="6.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>6.11.1</b> R introdução</a></li>
+<li class="chapter" data-level="6.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>6.11.2</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="6.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>6.11.3</b> Links Python</a></li>
+<li class="chapter" data-level="6.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>6.11.4</b> Python - tópicos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>6.12</b> Links de Cursos Online</a></li>
+<li class="chapter" data-level="6.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>6.13</b> Grupos de discussão/Forum</a>
+<ul>
+<li class="chapter" data-level="6.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>6.13.1</b> Telegram</a></li>
+</ul></li>
+<li class="chapter" data-level="6.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>6.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introdução-ao-r" class="section level1" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Introdução ao R</h1>
+<div class="infobox objetivo">
+<p>Objetivos do capítulo:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Apresentar como obter ajuda no R</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Apresentar os tipos de dados e as estruturas de dados no R</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>Apresentar a suíte de pacotes do tidyverse</li>
+</ol></li>
+</ul>
+</div>
+<p>Supondo que já tenha o R e o RStudio instalados (há diversos tutoriais de instalação no Youtube), vamos aos primeiros passos.</p>
+<p>É possível também rodar o R de modo online, de modo gratuito, sem instalar nada em seu computador, com o
+<a href="https://onecompiler.com/r">One Compiler</a> e o <a href="https://rdrr.io/snippets/">Snippets</a>, tendo mais de 19 mil pacotes instalados. O lado negativo é que não é um modo prático e tão rápido como rodar em seu computador, mas pode servir para pequenos testes.</p>
+<div class="figure">
+<img src="imagens/RSnippets.png" style="width:50.0%" alt="" />
+<p class="caption">Snippets: um site para rodar R online</p>
+</div>
+<div id="obtendo-ajuda-no-r" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Obtendo Ajuda no R</h2>
+<p>A primeira coisa a se aprender é como conseguir ajuda, como conseguir a informação que precisamos.
+A busca por ajuda é uma constante, mesmo entre os mais experiente.</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Comando</th>
+<th>Descrição</th>
+<th>Exemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>help.start()</code></td>
+<td>para abrir o sistema de ajuda em HTML no seu navegador</td>
+<td><code>help.start()</code></td>
+</tr>
+<tr class="even">
+<td><code>help("função")</code> ou <code>?funcao()</code></td>
+<td>Acesso à documentação de funções, data sets e outros. No Rstudio, a ajuda é aberta na aba “Help”. Caso rode direto no console, sem o RStudio, uma vez dentro da página de ajuda, digite <code>/</code> para realizar busca e <code>q</code> para sair</td>
+<td><code>?getwd</code> ou <code>help(getwd)</code></td>
+</tr>
+<tr class="odd">
+<td><code>help(função, package="NOME_PACOTE")</code></td>
+<td>para obter ajudar de um pacote que não foi cerregado</td>
+<td><code>help(rlm, package="MASS")</code> Ajuda para a função rlm() do pacote MASS</td>
+</tr>
+<tr class="even">
+<td><code>help(package = 'NOME_PACOTE')</code></td>
+<td>Mostra um índice de páginas de ajuda para o pacote</td>
+<td><code>help(package = 'dplyr'</code></td>
+</tr>
+<tr class="odd">
+<td><code>example()</code></td>
+<td>Mostra exemplos de uso da função</td>
+<td><code>example(grep)</code></td>
+</tr>
+<tr class="even">
+<td><code>help.search()</code> ou <code>??busca</code></td>
+<td>Para busca mais vaga. Caso não se lembre do nome exato da função, ou caso busque uma função que faça determinada tarefa</td>
+<td><code>??regression</code> mostra diversas funções de diversos pacotes que contém a palavra “regression”</td>
+</tr>
+<tr class="odd">
+<td><code>RSiteSearch()</code></td>
+<td>Busca no seu navegador (browser) padrão em sites especializados em R</td>
+<td><code>RSiteSearch("text analysis")</code></td>
+</tr>
+<tr class="even">
+<td><code>args()</code></td>
+<td>Mostra os argumentos que uma função pode receber.</td>
+<td><code>args(grep)</code></td>
+</tr>
+<tr class="odd">
+<td><code>apropos()</code></td>
+<td>Busca pelo nome de uma função. Útil quando não lembramos exatamente o nome de uma função</td>
+<td><code>apropos("grep")</code></td>
+</tr>
+<tr class="even">
+<td><code>demo()</code></td>
+<td>Lista todas as demonstrações de todos os seus pacotes</td>
+<td><code>demo()</code></td>
+</tr>
+<tr class="odd">
+<td><code>demo(package="package-name")</code></td>
+<td>lista as demonstrações de um pacote particular</td>
+<td><code>demo(package="stats")</code></td>
+</tr>
+</tbody>
+</table>
+<p>Fonte: Versão expandidada de <a href="https://www.r-project.org/help.html">Getting Help with R</a>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="introdução-ao-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Buscando por funções que contenham &quot;grep&quot;</span></span>
+<span id="cb10-2"><a href="introdução-ao-r.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">apropos</span>(<span class="st">&quot;grep&quot;</span>)</span>
+<span id="cb10-3"><a href="introdução-ao-r.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;agrep&quot;   &quot;agrepl&quot;  &quot;grep&quot;    &quot;grepl&quot;   &quot;grepRaw&quot;</span></span>
+<span id="cb10-4"><a href="introdução-ao-r.html#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-5"><a href="introdução-ao-r.html#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrando os argumentos que uma função pode receber</span></span>
+<span id="cb10-6"><a href="introdução-ao-r.html#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="fu">args</span>(gsub)</span>
+<span id="cb10-7"><a href="introdução-ao-r.html#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="do">## function (pattern, replacement, x, ignore.case = FALSE, perl = FALSE, </span></span>
+<span id="cb10-8"><a href="introdução-ao-r.html#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="do">##     fixed = FALSE, useBytes = FALSE) </span></span>
+<span id="cb10-9"><a href="introdução-ao-r.html#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="do">## NULL</span></span></code></pre></div>
+<p>Outra dica é buscar a documentação do pacote no <a href="https://cran.r-project.org/search.html">site do cran</a> ou buscar por problemas específicos no o site <a href="https://stackoverflow.com/">Stack Overflow</a>.</p>
+<div id="obtendo-ajuda-com-o-r-commander-rcmdr" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Obtendo ajuda com o R Commander (Rcmdr)</h3>
+<p>Para quem está aprendendo a usar estatística no R, uma boa dica é usar o pacote R Commander.
+Ao rodá-lo, uma janela aparece onde escolhemos o tipo de operação, e ele mostra o código para tal.
+O Rcmdr ensina como importar dados (SPSS, Excell, Stata, ruls, etc.), como realizar diversas operações estatísticas, como plotar gráficos.</p>
+<p>Ao rodar o Rcmdr pela primeira vez, pacotes adicionais serão instalados, como na imagem abaixo.</p>
+<div class="figure">
+<img src="imagens/RCommander_install.png" alt="" />
+<p class="caption">Instalação do R Commander. Instalando pacotes adicionais</p>
+</div>
+<p>Após a instalação de pacotes adicionais, O R Commander abre uma janela com os comandos.</p>
+<div class="figure">
+<img src="imagens/Rcommander.png" alt="" />
+<p class="caption">R Commander em ação</p>
+</div>
+<p>Caso feche a janela do RCommander, rodar <code>library(Rcmdr)</code> novamente não abrirá a janela, uma vez que o pacote já está carregado. A solução é rodar então <code>Commander()</code> para ter a janela novamente. Caso queira fechar este pacote, basta digitar no Console <code>detach("package:Rcmdr", unload=TRUE)</code> ou apenas feche o R.</p>
+<div class="infobox note">
+<p><strong>Dicas</strong>: R Commander</p>
+<ul>
+<li>LAURETTO, Marcelo. <a href="http://www.each.usp.br/lauretto/cursoR2017/02-RcommanderParte1.pdf">Introdução ao R Commander</a>. (Pequeno tutorial do RCommander, em PDF e em português.)</li>
+<li><a href="https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/">The R Commander: A Basic-Statistics GUI for R</a></li>
+<li>FOX, John. <a href="https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/Getting-Started-with-the-Rcmdr.pdf">Getting Started With the R Commander</a>. (Artigo do criador do RCommander)</li>
+<li>Video tutorial do Rcommander em ação e em português:
+<a href="https://www.youtube.com/watch?v=7GDshWv8O6E">Aprendendo Estatística com o R Commander</a> do Departamento de Estatística UFLA</li>
+</ul>
+</div>
+</div>
+<div id="comentando-o-código" class="section level3" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Comentando o código</h3>
+<p>Nas linguagens de programação é possível acrescentar comentários para orientar os humanos e que não serão lidos pelo computador. Cada linguagem tem o seu próprio padrão.
+No R, assim como em muitas linguagens de programação, os comentários no código são feito com a tralha <code>#</code> ou hashtag, jogo da velha, etc. Tudo que vier depois deste símbolo é então ignorado.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introdução-ao-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Olá mundo!&quot;</span>)</span>
+<span id="cb11-2"><a href="introdução-ao-r.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Olá mundo!&quot;</span></span>
+<span id="cb11-3"><a href="introdução-ao-r.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Olá mundo R!&quot;</span>) <span class="co"># comentário que o computador ignora</span></span>
+<span id="cb11-4"><a href="introdução-ao-r.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Olá mundo R!&quot;</span></span></code></pre></div>
+<p>Se retirarmos o símbolo <code>#</code> temos então mensagem de erro.</p>
+<!-- ```{r, eval=FALSE, error=TRUE, collapse=TRUE}  -->
+<!--  print("Olá mundo! Olá R")  comentários que dará erro -->
+<!-- ``` -->
+<pre><code>print(&quot;Olá mundo! Olá R&quot;)  comentários que dará erro
+Error: unexpected symbol in &quot;print(&quot;Olá mundo! Olá R&quot;)  comentários&quot;
+Execution halted</code></pre>
+</div>
+</div>
+<div id="RDataTypes" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Tipos de Dados no R (data types)</h2>
+<blockquote>
+<p>“Tudo que existe no R é um objeto” (John Chambers, <em>apud</em> <a href="https://adv-r.hadley.nz/base-types.html">WICKHAM</a>)</p>
+</blockquote>
+<p>Tipos de dados se referem à forma mais simples de objetos, ou tipos de dados atômicos do R (R atomic data types)
+<!-- Everything in R programming language is an object. Hence, when we talk about data types in R we refer to the simplest data objects we can handle, that are also known as R atomic data types. https://r-coder.com/data-types-r/#Raw_data_type_in_R -->
+Há cerca de <a href="https://adv-r.hadley.nz/base-types.html">25 tipos de dados no R, ou “base types”</a>, mas<br />
+os cinco tipos de dados mais frequentes são:</p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="33%" />
+<col width="44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Tipo de dado no R</th>
+<th>Exemplo de uso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>character (texto)</td>
+<td>“a”, “bla”, “Fulano de tal”</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>numeric (real ou decimal)</td>
+<td><code>2</code>, <code>43</code></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>integer (integral)</td>
+<td><code>3L</code> (O “L” é o modo que o R entende que é um integral)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>logical (lógico)</td>
+<td><code>TRUE</code> ou <code>FALSE</code></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>complex (complexo)</td>
+<td><code>1+4i</code> (números complexos com partes reais e imaginárias)</td>
+</tr>
+</tbody>
+</table>
+<!-- |6| [raw](https://stat.ethz.ch/R-manual/R-devel/library/base/html/raw.html) | `charToRaw("bla")`, `intToBits(5L)` Trabalha com bytes e é de uso raro|  -->
+<p>Uma vez criados os dados, para examinar as características dos objetos há algumas funções no R</p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Função no R para examinar tipos de dados</th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>class()</code></td>
+<td>Que tipo de objeto é?</td>
+<td><code>class(3)</code>, <code>class("bla")</code></td>
+</tr>
+<tr class="even">
+<td><code>length()</code></td>
+<td>Qual o tamanho dos vetores? Quantos itens possui?</td>
+<td><code>length(c("bla","ble"))</code></td>
+</tr>
+<tr class="odd">
+<td><code>attributes()</code></td>
+<td>Possui metadados?</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<!-- |`class()`|Que tipo de objeto é (high-level)?|| -->
+<!-- |`typeof()`|Qual to tipo de dado (data type) do objeto (low-level)?|| -->
+<!-- What about two dimensional objects?| -->
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="introdução-ao-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um texto (character). Tem de ser delimitado entre aspas</span></span>
+<span id="cb13-2"><a href="introdução-ao-r.html#cb13-2" aria-hidden="true" tabindex="-1"></a>minha_variavel_texto <span class="ot">&lt;-</span> <span class="st">&quot;bla&quot;</span></span>
+<span id="cb13-3"><a href="introdução-ao-r.html#cb13-3" aria-hidden="true" tabindex="-1"></a>minha_variavel_texto </span>
+<span id="cb13-4"><a href="introdução-ao-r.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bla&quot;</span></span>
+<span id="cb13-5"><a href="introdução-ao-r.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(minha_variavel_texto)</span>
+<span id="cb13-6"><a href="introdução-ao-r.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb13-7"><a href="introdução-ao-r.html#cb13-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="introdução-ao-r.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando uma variável numérica. Não pode ser delimitado por aspas.</span></span>
+<span id="cb13-9"><a href="introdução-ao-r.html#cb13-9" aria-hidden="true" tabindex="-1"></a>minha_variavel_numerica <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb13-10"><a href="introdução-ao-r.html#cb13-10" aria-hidden="true" tabindex="-1"></a>minha_variavel_numerica</span>
+<span id="cb13-11"><a href="introdução-ao-r.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
+<span id="cb13-12"><a href="introdução-ao-r.html#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(minha_variavel_numerica)</span>
+<span id="cb13-13"><a href="introdução-ao-r.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span>
+<span id="cb13-14"><a href="introdução-ao-r.html#cb13-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="introdução-ao-r.html#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um integral:</span></span>
+<span id="cb13-16"><a href="introdução-ao-r.html#cb13-16" aria-hidden="true" tabindex="-1"></a>minha_variavel_integral <span class="ot">&lt;-</span> 5L</span>
+<span id="cb13-17"><a href="introdução-ao-r.html#cb13-17" aria-hidden="true" tabindex="-1"></a>minha_variavel_integral</span>
+<span id="cb13-18"><a href="introdução-ao-r.html#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
+<span id="cb13-19"><a href="introdução-ao-r.html#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(minha_variavel_integral)</span>
+<span id="cb13-20"><a href="introdução-ao-r.html#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;integer&quot;</span></span>
+<span id="cb13-21"><a href="introdução-ao-r.html#cb13-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-22"><a href="introdução-ao-r.html#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um variável lógica. Também sem aspas.</span></span>
+<span id="cb13-23"><a href="introdução-ao-r.html#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 é maior que 3?</span></span>
+<span id="cb13-24"><a href="introdução-ao-r.html#cb13-24" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">&gt;</span> <span class="dv">3</span></span>
+<span id="cb13-25"><a href="introdução-ao-r.html#cb13-25" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica</span>
+<span id="cb13-26"><a href="introdução-ao-r.html#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb13-27"><a href="introdução-ao-r.html#cb13-27" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(minha_variavel_logica)</span>
+<span id="cb13-28"><a href="introdução-ao-r.html#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;logical&quot;</span></span>
+<span id="cb13-29"><a href="introdução-ao-r.html#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 é menor que 3?</span></span>
+<span id="cb13-30"><a href="introdução-ao-r.html#cb13-30" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica2 <span class="ot">&lt;-</span> <span class="dv">5</span> <span class="sc">&lt;</span> <span class="dv">3</span></span>
+<span id="cb13-31"><a href="introdução-ao-r.html#cb13-31" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica2</span>
+<span id="cb13-32"><a href="introdução-ao-r.html#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb13-33"><a href="introdução-ao-r.html#cb13-33" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica3 <span class="ot">&lt;-</span> <span class="cn">TRUE</span> <span class="co"># É possível atribuir</span></span>
+<span id="cb13-34"><a href="introdução-ao-r.html#cb13-34" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica3</span>
+<span id="cb13-35"><a href="introdução-ao-r.html#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb13-36"><a href="introdução-ao-r.html#cb13-36" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica4 <span class="ot">&lt;-</span> F <span class="co"># Também é possível usar abreviaturas &quot;T&quot; e &quot;F&quot;</span></span>
+<span id="cb13-37"><a href="introdução-ao-r.html#cb13-37" aria-hidden="true" tabindex="-1"></a>minha_variavel_logica4</span>
+<span id="cb13-38"><a href="introdução-ao-r.html#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb13-39"><a href="introdução-ao-r.html#cb13-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-40"><a href="introdução-ao-r.html#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um número complexo:</span></span>
+<span id="cb13-41"><a href="introdução-ao-r.html#cb13-41" aria-hidden="true" tabindex="-1"></a>numero_complexo <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> 2i     </span>
+<span id="cb13-42"><a href="introdução-ao-r.html#cb13-42" aria-hidden="true" tabindex="-1"></a>numero_complexo</span>
+<span id="cb13-43"><a href="introdução-ao-r.html#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 3+2i</span></span>
+<span id="cb13-44"><a href="introdução-ao-r.html#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero_complexo)</span>
+<span id="cb13-45"><a href="introdução-ao-r.html#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;complex&quot;</span></span></code></pre></div>
+<!-- # Criando um Raw a partir de texto: -->
+<!-- meu_raw <- charToRaw("Análise textual") -->
+<!-- meu_raw -->
+<!-- class(meu_raw) -->
+<!-- ## Criando Raw a partir de um integral: -->
+<!-- raw_integ <- intToBits(2L) -->
+<!-- raw_integ -->
+<!-- class(raw_integ) -->
+<p>Na criação de tipos de dados, pode-se usar de coerção (coercion) através das funções <code>as.</code></p>
+<table>
+<thead>
+<tr class="header">
+<th>Função</th>
+<th>Coerção para</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>as.numeric</code></td>
+<td>Numeric</td>
+</tr>
+<tr class="even">
+<td><code>as.integer</code></td>
+<td>Integer</td>
+</tr>
+<tr class="odd">
+<td><code>as.double</code></td>
+<td>Double</td>
+</tr>
+<tr class="even">
+<td><code>as.character</code></td>
+<td>Character</td>
+</tr>
+<tr class="odd">
+<td><code>as.logical</code></td>
+<td>Boolean</td>
+</tr>
+</tbody>
+</table>
+<!-- |`as.raw`|Raw| -->
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+</div>
+<div id="estrutura-de-dados-no-r-data-structures" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Estrutura de dados no R (Data Structures)</h2>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+<p>Vimos os tipos de dados.
+Estes podem ser organizados de distintos modos, e a depender desta organização, temos diferentes estruturas de dados.
+O R possui diversas estruturas de dados, como:</p>
+<ul>
+<li>vetores numéricos e atômicos</li>
+<li>lista (<em>list</em>)</li>
+<li>fatores (<em>factors</em>)</li>
+<li>matriz (<em>matrix</em>)</li>
+<li>data frame</li>
+</ul>
+<div id="vetor-vector" class="section level3" number="4.3.1">
+<h3><span class="header-section-number">4.3.1</span> Vetor (vector)</h3>
+<p>Vetor é a estrutura de dados mais comum no R. Criamos vetores com a função <code>c()</code> de “concatenate” ou “combine”.
+No caso de strings (character), deve-se colocar os valores dentro de aspas:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introdução-ao-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a>meu_vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bla&quot;</span>, <span class="st">&quot;bla&quot;</span>, <span class="st">&quot;ble&quot;</span>, <span class="st">&quot;bli&quot;</span>) <span class="co"># criando o vetor com strings</span></span>
+<span id="cb14-2"><a href="introdução-ao-r.html#cb14-2" aria-hidden="true" tabindex="-1"></a>meu_vetor <span class="co"># imprimindo na tela o vetor que acabamos de criar</span></span>
+<span id="cb14-3"><a href="introdução-ao-r.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bla&quot; &quot;bla&quot; &quot;ble&quot; &quot;bli&quot;</span></span>
+<span id="cb14-4"><a href="introdução-ao-r.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(meu_vetor)</span>
+<span id="cb14-5"><a href="introdução-ao-r.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb14-6"><a href="introdução-ao-r.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="introdução-ao-r.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(meu_vetor) <span class="co"># observando quantos itens possui nosso vetor</span></span>
+<span id="cb14-8"><a href="introdução-ao-r.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
+<span id="cb14-9"><a href="introdução-ao-r.html#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="introdução-ao-r.html#cb14-10" aria-hidden="true" tabindex="-1"></a>meu_vetor[<span class="dv">3</span>]  <span class="co"># acessando o item do 3 de nosso vetor</span></span>
+<span id="cb14-11"><a href="introdução-ao-r.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;ble&quot;</span></span>
+<span id="cb14-12"><a href="introdução-ao-r.html#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="introdução-ao-r.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um vetor de valores booleanos</span></span>
+<span id="cb14-14"><a href="introdução-ao-r.html#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Não se usa aspas nesse caso</span></span>
+<span id="cb14-15"><a href="introdução-ao-r.html#cb14-15" aria-hidden="true" tabindex="-1"></a>vetor_logico <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>) <span class="co"># criando um vetor de valores booleanos</span></span>
+<span id="cb14-16"><a href="introdução-ao-r.html#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vetor_logico)</span>
+<span id="cb14-17"><a href="introdução-ao-r.html#cb14-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;logical&quot;</span></span>
+<span id="cb14-18"><a href="introdução-ao-r.html#cb14-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-19"><a href="introdução-ao-r.html#cb14-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um vetor com diferentes tipo de dados</span></span>
+<span id="cb14-20"><a href="introdução-ao-r.html#cb14-20" aria-hidden="true" tabindex="-1"></a>vetor_pan <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bla&quot;</span>, <span class="dv">3</span>, <span class="cn">TRUE</span>, 5L)</span>
+<span id="cb14-21"><a href="introdução-ao-r.html#cb14-21" aria-hidden="true" tabindex="-1"></a>vetor_pan</span>
+<span id="cb14-22"><a href="introdução-ao-r.html#cb14-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bla&quot;  &quot;3&quot;    &quot;TRUE&quot; &quot;5&quot;</span></span>
+<span id="cb14-23"><a href="introdução-ao-r.html#cb14-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="introdução-ao-r.html#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="co"># criando uma sequência numérica de 2 a 8. Desta vez não iremos salvar em uma variável</span></span>
+<span id="cb14-25"><a href="introdução-ao-r.html#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>) </span>
+<span id="cb14-26"><a href="introdução-ao-r.html#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2 3 4 5 6 7 8</span></span></code></pre></div>
+<p>Vetores podem ser de dois tipos: 1) atômicos, ou 2) listas. Mas o mais frequênte é encontrarmos “vetor” como sinônimo de “vetor atômico”, e listas serem consideradas como algo à parte.
+<!-- although the term “vector” most commonly refers to the atomic types not to lists. -->
+Para examinarmos os vetores, podemos usar as funções:
+<code>typeof()</code>, <code>length()</code>, <code>class()</code> e <code>str()</code></p>
+<p>É ainda possível também atribuir nomes aos elementos de um vetor usando a função <code>names()</code></p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="introdução-ao-r.html#cb15-1" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">34</span>, <span class="dv">13</span>) <span class="co"># Criando um vetor de valores</span></span>
+<span id="cb15-2"><a href="introdução-ao-r.html#cb15-2" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;uva&quot;</span>, <span class="st">&quot;abacate&quot;</span>) <span class="co"># Criando vetor com os nomes</span></span>
+<span id="cb15-3"><a href="introdução-ao-r.html#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(valores) <span class="ot">&lt;-</span> nomes <span class="co"># atribuindo o vetor &quot;nomes&quot; como titulo do vetor &quot;valores&quot;</span></span>
+<span id="cb15-4"><a href="introdução-ao-r.html#cb15-4" aria-hidden="true" tabindex="-1"></a>valores <span class="co"># imprimindo o vetor com nomes e valores</span></span>
+<span id="cb15-5"><a href="introdução-ao-r.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  banana     uva abacate </span></span>
+<span id="cb15-6"><a href="introdução-ao-r.html#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="do">##      12      34      13</span></span>
+<span id="cb15-7"><a href="introdução-ao-r.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(valores) <span class="co"># imprimindo apenas os nomes</span></span>
+<span id="cb15-8"><a href="introdução-ao-r.html#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;  &quot;uva&quot;     &quot;abacate&quot;</span></span>
+<span id="cb15-9"><a href="introdução-ao-r.html#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="introdução-ao-r.html#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(valores)</span>
+<span id="cb15-11"><a href="introdução-ao-r.html#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;numeric&quot;</span></span></code></pre></div>
+</div>
+<div id="fator-factor" class="section level3" number="4.3.2">
+<h3><span class="header-section-number">4.3.2</span> Fator (<em>Factor</em>)</h3>
+<p>Considere a seguinte tabela fictícia:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Nome</th>
+<th>Altura(cm)</th>
+<th>Região do país</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fulano</td>
+<td>175</td>
+<td>NE</td>
+</tr>
+<tr class="even">
+<td>Ciclano</td>
+<td>134</td>
+<td>SE</td>
+</tr>
+<tr class="odd">
+<td>Beltrano</td>
+<td>166</td>
+<td>S</td>
+</tr>
+<tr class="even">
+<td>João</td>
+<td>187</td>
+<td>S</td>
+</tr>
+<tr class="odd">
+<td>Maria</td>
+<td>173</td>
+<td>NE</td>
+</tr>
+<tr class="even">
+<td>José</td>
+<td>159</td>
+<td>CO</td>
+</tr>
+<tr class="odd">
+<td>Joaquim</td>
+<td>161</td>
+<td>SE</td>
+</tr>
+</tbody>
+</table>
+<p>Se em uma coluna certos valores se repetem, podemos considerá-los como “fatores”. No caso a coluna “Nome” possui valores únicos, a coluta “Altura” também, mas a coluna “Região” possui uma quantidade limitada de valores que se repetirão: N,S,NO,SE,CO. Podemos então considerar os valores desta coluna como “fatores”.
+Fatores podem ser tanto strings, como no caso acima, como integrais, como no caso da idade de estudantes de uma mesma turma.</p>
+<p>Um exemplo prático:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introdução-ao-r.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um vetor de caracteres com siglas de aeroportos brasileiros</span></span>
+<span id="cb16-2"><a href="introdução-ao-r.html#cb16-2" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BSB&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;BSB&quot;</span>, <span class="st">&quot;VIC&quot;</span>, <span class="st">&quot;GUA&quot;</span>, <span class="st">&quot;FOR&quot;</span>, <span class="st">&quot;MAO&quot;</span>,<span class="st">&quot;GUA&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;REC&quot;</span>, <span class="st">&quot;UDI&quot;</span>, <span class="st">&quot;VIC&quot;</span>, <span class="st">&quot;GUA&quot;</span>)</span>
+<span id="cb16-3"><a href="introdução-ao-r.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(aeroportos)</span>
+<span id="cb16-4"><a href="introdução-ao-r.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="do">##    Length     Class      Mode </span></span>
+<span id="cb16-5"><a href="introdução-ao-r.html#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="do">##        14 character character</span></span>
+<span id="cb16-6"><a href="introdução-ao-r.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="introdução-ao-r.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Se tento criar um barplot com os valores, dá erro:</span></span>
+<span id="cb16-8"><a href="introdução-ao-r.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">summary</span>(aeroportos))</span>
+<span id="cb16-9"><a href="introdução-ao-r.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in barplot.default(summary(aeroportos)): &#39;height&#39; must be a vector or a matrix</span></span>
+<span id="cb16-10"><a href="introdução-ao-r.html#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="introdução-ao-r.html#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Temos de transformar os dados em um fator, que vamos chamar de &quot;aeroportos.factor&quot;</span></span>
+<span id="cb16-12"><a href="introdução-ao-r.html#cb16-12" aria-hidden="true" tabindex="-1"></a>aeroportos.fator <span class="ot">&lt;-</span> <span class="fu">factor</span>(aeroportos)</span>
+<span id="cb16-13"><a href="introdução-ao-r.html#cb16-13" aria-hidden="true" tabindex="-1"></a>aeroportos.fator <span class="co"># Perceba que &quot;Levels&quot; mostra os valores sem repetição</span></span>
+<span id="cb16-14"><a href="introdução-ao-r.html#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] BSB CON BSB VIC GUA FOR MAO GUA CON CON REC UDI VIC GUA</span></span>
+<span id="cb16-15"><a href="introdução-ao-r.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Levels: BSB CON FOR GUA MAO REC UDI VIC</span></span>
+<span id="cb16-16"><a href="introdução-ao-r.html#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(aeroportos.fator) <span class="co"># Mostrando a frequência de cada termo com a função &#39;summary()&#39;</span></span>
+<span id="cb16-17"><a href="introdução-ao-r.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="do">## BSB CON FOR GUA MAO REC UDI VIC </span></span>
+<span id="cb16-18"><a href="introdução-ao-r.html#cb16-18" aria-hidden="true" tabindex="-1"></a><span class="do">##   2   3   1   3   1   1   1   2</span></span>
+<span id="cb16-19"><a href="introdução-ao-r.html#cb16-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-20"><a href="introdução-ao-r.html#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Agora é possível gerar o gráfico de barras (barplot)</span></span>
+<span id="cb16-21"><a href="introdução-ao-r.html#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">summary</span>(aeroportos.fator))</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/cars-1.png" width="672" /></p>
+<p>Fatores são comuns em tabelas, mas são raros em análise textual. Assim, ao trabalhar com análise textual, convém mudar as opções globais de strings, para não serem consideradas fatores:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introdução-ao-r.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+</div>
+<div id="matrix" class="section level3" number="4.3.3">
+<h3><span class="header-section-number">4.3.3</span> Matriz (Matrix)</h3>
+<p>Vejamos as matrizes:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="introdução-ao-r.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1:12=Os elementos da nossa matriz, 1 a 12</span></span>
+<span id="cb18-2"><a href="introdução-ao-r.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 4=linhas no eixo vertical 3=linhas noeixo horizontal</span></span>
+<span id="cb18-3"><a href="introdução-ao-r.html#cb18-3" aria-hidden="true" tabindex="-1"></a>minha.matriz <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">12</span>, <span class="dv">4</span>, <span class="dv">3</span>)</span>
+<span id="cb18-4"><a href="introdução-ao-r.html#cb18-4" aria-hidden="true" tabindex="-1"></a>minha.matriz</span>
+<span id="cb18-5"><a href="introdução-ao-r.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="do">##      [,1] [,2] [,3]</span></span>
+<span id="cb18-6"><a href="introdução-ao-r.html#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1,]    1    5    9</span></span>
+<span id="cb18-7"><a href="introdução-ao-r.html#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [2,]    2    6   10</span></span>
+<span id="cb18-8"><a href="introdução-ao-r.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [3,]    3    7   11</span></span>
+<span id="cb18-9"><a href="introdução-ao-r.html#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [4,]    4    8   12</span></span>
+<span id="cb18-10"><a href="introdução-ao-r.html#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-11"><a href="introdução-ao-r.html#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessando itens, linha 2, coluna 3</span></span>
+<span id="cb18-12"><a href="introdução-ao-r.html#cb18-12" aria-hidden="true" tabindex="-1"></a>minha.matriz[<span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb18-13"><a href="introdução-ao-r.html#cb18-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 10</span></span>
+<span id="cb18-14"><a href="introdução-ao-r.html#cb18-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="introdução-ao-r.html#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessando uma linha inteira</span></span>
+<span id="cb18-16"><a href="introdução-ao-r.html#cb18-16" aria-hidden="true" tabindex="-1"></a>minha.matriz[<span class="dv">2</span>, ]</span>
+<span id="cb18-17"><a href="introdução-ao-r.html#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  2  6 10</span></span></code></pre></div>
+<p>Matrizes também são usadas na análise textual, como nas <a href="#DTM">Document-Term-Matrix</a> e TermDocument Matrix. Veremos em mais detalhes posteriormente, mas apenas para um primeiro contato, o DTM das frases “O rato roeu a roupa do rei”, “O rei riu do rato”, “A roupa do rato é de rei”, onde cada linha representa um documento (documento, neste caso, é cada uma das frases) e as colunas são as palavras. Os números são a frequência de cada termo em cada frase:</p>
+<!-- |    | Documentoss| -->
+<!-- |-----|-----| -->
+<!-- |*Termos*|1 |2 |3| -->
+<!-- |  rato  |1 |1 |1| -->
+<!-- |  rei   |1 |1 |1| -->
+<!-- |  riu   |0 |1 |0| -->
+<!-- |  roeu  |1 |0 |0| -->
+<!-- |  roupa |1 |0 |1| -->
+<!-- |  |  |  |  | -->
+<!-- |----|----|---|---| -->
+<!-- |**termos**|1 |2 |3| -->
+<!-- |  rato  |1 |1 |1| -->
+<!-- |  rei   |1 |1 |1| -->
+<!-- |  riu   |0 |1 |0| -->
+<!-- |  roeu  |1 |0 |0| -->
+<!-- |  roupa |1 |0 |1| -->
+<table>
+<caption><span id="tab:unnamed-chunk-17">Table 4.1: </span>Um exemplo de DTM</caption>
+<thead>
+<tr class="header">
+<th align="right">rato</th>
+<th align="right">rei</th>
+<th align="right">riu</th>
+<th align="right">roeu</th>
+<th align="right">roupa</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="listas-list" class="section level3" number="4.3.4">
+<h3><span class="header-section-number">4.3.4</span> Listas (<em>list</em>)</h3>
+<p>Listas são conjuntos de vetores mais simples.
+Para criar uma lista, basta usar o comando <code>list()</code></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="introdução-ao-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a>minha_lista <span class="ot">=</span> <span class="fu">list</span>(<span class="fu">c</span>(T,T,F), <span class="st">&quot;Joaquim José da Silva Xavier&quot;</span>, <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">3</span>,<span class="dv">67</span>,<span class="dv">22</span>) )</span>
+<span id="cb19-2"><a href="introdução-ao-r.html#cb19-2" aria-hidden="true" tabindex="-1"></a>minha_lista</span>
+<span id="cb19-3"><a href="introdução-ao-r.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb19-4"><a href="introdução-ao-r.html#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE  TRUE FALSE</span></span>
+<span id="cb19-5"><a href="introdução-ao-r.html#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb19-6"><a href="introdução-ao-r.html#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [[2]]</span></span>
+<span id="cb19-7"><a href="introdução-ao-r.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Joaquim José da Silva Xavier&quot;</span></span>
+<span id="cb19-8"><a href="introdução-ao-r.html#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb19-9"><a href="introdução-ao-r.html#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [[3]]</span></span>
+<span id="cb19-10"><a href="introdução-ao-r.html#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  3  6  3 67 22</span></span>
+<span id="cb19-11"><a href="introdução-ao-r.html#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="introdução-ao-r.html#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessando o vetor 3 de nossa lista. No caso de listas, usamos o duplo colchete</span></span>
+<span id="cb19-13"><a href="introdução-ao-r.html#cb19-13" aria-hidden="true" tabindex="-1"></a>minha_lista[[<span class="dv">3</span>]]</span>
+<span id="cb19-14"><a href="introdução-ao-r.html#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  3  6  3 67 22</span></span>
+<span id="cb19-15"><a href="introdução-ao-r.html#cb19-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-16"><a href="introdução-ao-r.html#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessando o vetor 3 de nossa lista, item 5</span></span>
+<span id="cb19-17"><a href="introdução-ao-r.html#cb19-17" aria-hidden="true" tabindex="-1"></a>minha_lista[[<span class="dv">3</span>]][<span class="dv">5</span>]</span>
+<span id="cb19-18"><a href="introdução-ao-r.html#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 22</span></span></code></pre></div>
+<p>É possível também “quebrar” um texto em vetores, através do comando <code>strsplt()</code></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="introdução-ao-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">=</span> <span class="st">&quot;Bla bla bla. Ble ble ble ble. Bli bli. Blo. Blu blu blu&quot;</span></span>
+<span id="cb20-2"><a href="introdução-ao-r.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(texto)</span>
+<span id="cb20-3"><a href="introdução-ao-r.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb20-4"><a href="introdução-ao-r.html#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="introdução-ao-r.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(texto, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.&quot;</span>)</span>
+<span id="cb20-6"><a href="introdução-ao-r.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb20-7"><a href="introdução-ao-r.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Bla bla bla&quot;      &quot; Ble ble ble ble&quot; &quot; Bli bli&quot;         &quot; Blo&quot;            </span></span>
+<span id="cb20-8"><a href="introdução-ao-r.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot; Blu blu blu&quot;</span></span></code></pre></div>
+<p>No exemplo acima, o primeiro argumento em strplit() é a variável, o segundo argumento é o critério a ser usado para quebrar o texto. Alguns caracteres são considerados especiais e precisam ser indicados que queremos seu significado literal. É o caso de ponto final. Para conseguirmos usá-lo como ponto final, ao invés de usarmos <code>"."</code>, usamos <code>\\.</code> . Note que ficaram espaços no início dos elementos dos vetores. Podemos melhorar nosso código acrescentando um espaço em branco após o ponto final:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introdução-ao-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(texto, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">. &quot;</span>)</span>
+<span id="cb21-2"><a href="introdução-ao-r.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb21-3"><a href="introdução-ao-r.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Bla bla bla&quot;     &quot;Ble ble ble ble&quot; &quot;Bli bli&quot;         &quot;Blo&quot;            </span></span>
+<span id="cb21-4"><a href="introdução-ao-r.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot;Blu blu blu&quot;</span></span></code></pre></div>
+<p>Se examinarmos o tipo de arquivo que temos, veremos que se trata de uma lista:</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="introdução-ao-r.html#cb22-1" aria-hidden="true" tabindex="-1"></a>texto2 <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(texto, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">. &quot;</span>)</span>
+<span id="cb22-2"><a href="introdução-ao-r.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(texto2)</span>
+<span id="cb22-3"><a href="introdução-ao-r.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;list&quot;</span></span></code></pre></div>
+<p>Se quisermos que este seja um vetor simples, e não lista:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="introdução-ao-r.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(texto2)</span>
+<span id="cb23-2"><a href="introdução-ao-r.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;list&quot;</span></span>
+<span id="cb23-3"><a href="introdução-ao-r.html#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-4"><a href="introdução-ao-r.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># usar o comando unlist()</span></span>
+<span id="cb23-5"><a href="introdução-ao-r.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(texto2)</span>
+<span id="cb23-6"><a href="introdução-ao-r.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Bla bla bla&quot;     &quot;Ble ble ble ble&quot; &quot;Bli bli&quot;         &quot;Blo&quot;            </span></span>
+<span id="cb23-7"><a href="introdução-ao-r.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot;Blu blu blu&quot;</span></span>
+<span id="cb23-8"><a href="introdução-ao-r.html#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(<span class="fu">unlist</span>(texto2))</span>
+<span id="cb23-9"><a href="introdução-ao-r.html#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb23-10"><a href="introdução-ao-r.html#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="introdução-ao-r.html#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Ou ainda, acessando o item 1 da lista</span></span>
+<span id="cb23-12"><a href="introdução-ao-r.html#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(texto, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">. &quot;</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb23-13"><a href="introdução-ao-r.html#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Bla bla bla&quot;     &quot;Ble ble ble ble&quot; &quot;Bli bli&quot;         &quot;Blo&quot;            </span></span>
+<span id="cb23-14"><a href="introdução-ao-r.html#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot;Blu blu blu&quot;</span></span></code></pre></div>
+</div>
+<div id="data-frames" class="section level3" number="4.3.5">
+<h3><span class="header-section-number">4.3.5</span> Data Frames</h3>
+<p>Uma vantagem de se trabalhar com data frame é que as colunas tem nome e não apenas índice, e isto facilita nosso trabalho na hora de procurar as informações que queremos, pois buscar a coluna pelo seu número pode nos causar confusão.</p>
+<!-- escolaridade <- as.integer(c(08,13,15))  -->
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introdução-ao-r.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando 3 vetores com os valores</span></span>
+<span id="cb24-2"><a href="introdução-ao-r.html#cb24-2" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span>  <span class="fu">as.integer</span>(<span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">23</span>,<span class="dv">35</span>)) </span>
+<span id="cb24-3"><a href="introdução-ao-r.html#cb24-3" aria-hidden="true" tabindex="-1"></a>genero <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">&quot;fem&quot;</span>, <span class="st">&quot;mas&quot;</span>, <span class="st">&quot;fem&quot;</span>)) </span>
+<span id="cb24-4"><a href="introdução-ao-r.html#cb24-4" aria-hidden="true" tabindex="-1"></a>raça <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">&quot;pret&quot;</span>, <span class="st">&quot;branc&quot;</span>, <span class="st">&quot;pard&quot;</span>)) </span>
+<span id="cb24-5"><a href="introdução-ao-r.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="introdução-ao-r.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># jogando estes vetores no nosso dataframe que vamos nomear de &quot;df&quot;</span></span>
+<span id="cb24-7"><a href="introdução-ao-r.html#cb24-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(idade, genero, raça) </span>
+<span id="cb24-8"><a href="introdução-ao-r.html#cb24-8" aria-hidden="true" tabindex="-1"></a>df <span class="co"># vendo nosso dataframe no console</span></span>
+<span id="cb24-9"><a href="introdução-ao-r.html#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
+<span id="cb24-10"><a href="introdução-ao-r.html#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem  pret</span></span>
+<span id="cb24-11"><a href="introdução-ao-r.html#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
+<span id="cb24-12"><a href="introdução-ao-r.html#cb24-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem  pard</span></span>
+<span id="cb24-13"><a href="introdução-ao-r.html#cb24-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-14"><a href="introdução-ao-r.html#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(df) <span class="co"># ver o dataframe em uma nova janela pop-up</span></span>
+<span id="cb24-15"><a href="introdução-ao-r.html#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-16"><a href="introdução-ao-r.html#cb24-16" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(df) <span class="co"># Qual a classe de nosso objeto, caso tenhamos esquecido?</span></span>
+<span id="cb24-17"><a href="introdução-ao-r.html#cb24-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;data.frame&quot;</span></span>
+<span id="cb24-18"><a href="introdução-ao-r.html#cb24-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-19"><a href="introdução-ao-r.html#cb24-19" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(df) <span class="co"># retornando apenas o nome das colunas</span></span>
+<span id="cb24-20"><a href="introdução-ao-r.html#cb24-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;idade&quot;  &quot;genero&quot; &quot;raça&quot;</span></span>
+<span id="cb24-21"><a href="introdução-ao-r.html#cb24-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-22"><a href="introdução-ao-r.html#cb24-22" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>genero <span class="co"># Filtrando o dataframe &quot;df&quot; pela coluna &quot;genero&quot;</span></span>
+<span id="cb24-23"><a href="introdução-ao-r.html#cb24-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;fem&quot; &quot;mas&quot; &quot;fem&quot;</span></span>
+<span id="cb24-24"><a href="introdução-ao-r.html#cb24-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-25"><a href="introdução-ao-r.html#cb24-25" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">2</span>] <span class="co"># Filtrando o dataframe pela coluna 2: df[numero] </span></span>
+<span id="cb24-26"><a href="introdução-ao-r.html#cb24-26" aria-hidden="true" tabindex="-1"></a><span class="do">##   genero</span></span>
+<span id="cb24-27"><a href="introdução-ao-r.html#cb24-27" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    fem</span></span>
+<span id="cb24-28"><a href="introdução-ao-r.html#cb24-28" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    mas</span></span>
+<span id="cb24-29"><a href="introdução-ao-r.html#cb24-29" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    fem</span></span>
+<span id="cb24-30"><a href="introdução-ao-r.html#cb24-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-31"><a href="introdução-ao-r.html#cb24-31" aria-hidden="true" tabindex="-1"></a>df[,<span class="dv">2</span>] <span class="co"># Filtrando o dataframe pela coluna 2:</span></span>
+<span id="cb24-32"><a href="introdução-ao-r.html#cb24-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;fem&quot; &quot;mas&quot; &quot;fem&quot;</span></span>
+<span id="cb24-33"><a href="introdução-ao-r.html#cb24-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-34"><a href="introdução-ao-r.html#cb24-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrando o dataframe pelo número da linha: df[número_da_Linha,] . Repare na necessidade da vírgula.</span></span>
+<span id="cb24-35"><a href="introdução-ao-r.html#cb24-35" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">1</span>,] <span class="co"># imprimindo a linha 1</span></span>
+<span id="cb24-36"><a href="introdução-ao-r.html#cb24-36" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero raça</span></span>
+<span id="cb24-37"><a href="introdução-ao-r.html#cb24-37" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem pret</span></span>
+<span id="cb24-38"><a href="introdução-ao-r.html#cb24-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-39"><a href="introdução-ao-r.html#cb24-39" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">3</span>,] <span class="co"># imprimindo a linha 3</span></span>
+<span id="cb24-40"><a href="introdução-ao-r.html#cb24-40" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero raça</span></span>
+<span id="cb24-41"><a href="introdução-ao-r.html#cb24-41" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem pard</span></span>
+<span id="cb24-42"><a href="introdução-ao-r.html#cb24-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-43"><a href="introdução-ao-r.html#cb24-43" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>,] <span class="co"># retornando as linhas de 1 a 2</span></span>
+<span id="cb24-44"><a href="introdução-ao-r.html#cb24-44" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
+<span id="cb24-45"><a href="introdução-ao-r.html#cb24-45" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem  pret</span></span>
+<span id="cb24-46"><a href="introdução-ao-r.html#cb24-46" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
+<span id="cb24-47"><a href="introdução-ao-r.html#cb24-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-48"><a href="introdução-ao-r.html#cb24-48" aria-hidden="true" tabindex="-1"></a><span class="co"># media da coluna &quot;idade&quot;</span></span>
+<span id="cb24-49"><a href="introdução-ao-r.html#cb24-49" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>idade)</span>
+<span id="cb24-50"><a href="introdução-ao-r.html#cb24-50" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 23.33333</span></span>
+<span id="cb24-51"><a href="introdução-ao-r.html#cb24-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-52"><a href="introdução-ao-r.html#cb24-52" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df) <span class="co"># Obtendo uma visão estatística ampla da tabela</span></span>
+<span id="cb24-53"><a href="introdução-ao-r.html#cb24-53" aria-hidden="true" tabindex="-1"></a><span class="do">##      idade          genero              raça          </span></span>
+<span id="cb24-54"><a href="introdução-ao-r.html#cb24-54" aria-hidden="true" tabindex="-1"></a><span class="do">##  Min.   :12.00   Length:3           Length:3          </span></span>
+<span id="cb24-55"><a href="introdução-ao-r.html#cb24-55" aria-hidden="true" tabindex="-1"></a><span class="do">##  1st Qu.:17.50   Class :character   Class :character  </span></span>
+<span id="cb24-56"><a href="introdução-ao-r.html#cb24-56" aria-hidden="true" tabindex="-1"></a><span class="do">##  Median :23.00   Mode  :character   Mode  :character  </span></span>
+<span id="cb24-57"><a href="introdução-ao-r.html#cb24-57" aria-hidden="true" tabindex="-1"></a><span class="do">##  Mean   :23.33                                        </span></span>
+<span id="cb24-58"><a href="introdução-ao-r.html#cb24-58" aria-hidden="true" tabindex="-1"></a><span class="do">##  3rd Qu.:29.00                                        </span></span>
+<span id="cb24-59"><a href="introdução-ao-r.html#cb24-59" aria-hidden="true" tabindex="-1"></a><span class="do">##  Max.   :35.00</span></span>
+<span id="cb24-60"><a href="introdução-ao-r.html#cb24-60" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df<span class="sc">$</span>genero) <span class="co"># sumário da coluna &quot;gênero&quot; do dataset &quot;df&quot;</span></span>
+<span id="cb24-61"><a href="introdução-ao-r.html#cb24-61" aria-hidden="true" tabindex="-1"></a><span class="do">##    Length     Class      Mode </span></span>
+<span id="cb24-62"><a href="introdução-ao-r.html#cb24-62" aria-hidden="true" tabindex="-1"></a><span class="do">##         3 character character</span></span>
+<span id="cb24-63"><a href="introdução-ao-r.html#cb24-63" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df<span class="sc">$</span>idade) <span class="co"># sumário da coluna &quot;idade&quot; do dataset &quot;df&quot;</span></span>
+<span id="cb24-64"><a href="introdução-ao-r.html#cb24-64" aria-hidden="true" tabindex="-1"></a><span class="do">##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span></span>
+<span id="cb24-65"><a href="introdução-ao-r.html#cb24-65" aria-hidden="true" tabindex="-1"></a><span class="do">##   12.00   17.50   23.00   23.33   29.00   35.00</span></span>
+<span id="cb24-66"><a href="introdução-ao-r.html#cb24-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-67"><a href="introdução-ao-r.html#cb24-67" aria-hidden="true" tabindex="-1"></a><span class="co"># testando se valores da coluna &quot;genero&quot; são &quot;fem&quot;</span></span>
+<span id="cb24-68"><a href="introdução-ao-r.html#cb24-68" aria-hidden="true" tabindex="-1"></a> df<span class="sc">$</span>genero<span class="sc">==</span><span class="st">&quot;fem&quot;</span></span>
+<span id="cb24-69"><a href="introdução-ao-r.html#cb24-69" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE FALSE  TRUE</span></span>
+<span id="cb24-70"><a href="introdução-ao-r.html#cb24-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-71"><a href="introdução-ao-r.html#cb24-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrando apenas as linhas onde a coluna &quot;genero&quot; for &quot;fem&quot;. </span></span>
+<span id="cb24-72"><a href="introdução-ao-r.html#cb24-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Explicando de outro modo: quando &quot;genero&quot; igual a &quot;fem&quot; for verdadeiro, imprima</span></span>
+<span id="cb24-73"><a href="introdução-ao-r.html#cb24-73" aria-hidden="true" tabindex="-1"></a>df[df<span class="sc">$</span>genero<span class="sc">==</span><span class="st">&quot;fem&quot;</span>,]</span>
+<span id="cb24-74"><a href="introdução-ao-r.html#cb24-74" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero raça</span></span>
+<span id="cb24-75"><a href="introdução-ao-r.html#cb24-75" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem pret</span></span>
+<span id="cb24-76"><a href="introdução-ao-r.html#cb24-76" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem pard</span></span>
+<span id="cb24-77"><a href="introdução-ao-r.html#cb24-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-78"><a href="introdução-ao-r.html#cb24-78" aria-hidden="true" tabindex="-1"></a><span class="co"># Filtrando apenas as linhas onde a escolaridade for maior que 12. </span></span>
+<span id="cb24-79"><a href="introdução-ao-r.html#cb24-79" aria-hidden="true" tabindex="-1"></a>df[df<span class="sc">$</span>idade <span class="sc">&gt;</span> <span class="dv">12</span>,]</span>
+<span id="cb24-80"><a href="introdução-ao-r.html#cb24-80" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
+<span id="cb24-81"><a href="introdução-ao-r.html#cb24-81" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
+<span id="cb24-82"><a href="introdução-ao-r.html#cb24-82" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem  pard</span></span></code></pre></div>
+</div>
+<div id="considerações-finais-sobre-estrutura-de-dados" class="section level3" number="4.3.6">
+<h3><span class="header-section-number">4.3.6</span> Considerações finais sobre estrutura de dados</h3>
+<p>Estes não são os únicos tipos de estrutura de dados no R. Alguns pacotes podem criar o seu próprio tipo e não convém tentar cobrir todos.
+Apesar de considerar tipos diferentes, podemos considerar os diferentes tipos como subcategorias de outras.
+Data frames são um tipo restrito de listas. Listas, por sua vez, são um tipo de vetor.
+Veremos a seguir a suíte de pacotes do <code>tidyverse</code> que possui formato próprio de dados.</p>
+</div>
+</div>
+<div id="a-suíte-de-pacotes-tidyverse" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> A suíte de pacotes <code>tidyverse</code></h2>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="organização-dos-dados-quanto-a-sua-estrutura.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análise-de-redes-sociais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

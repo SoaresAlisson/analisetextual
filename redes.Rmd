@@ -214,7 +214,7 @@ ggraph(grafo, layout = 'kk') +
 `stat()` indica que segue ali uma informação estatística.
 - `geom_node_point()` mostra os nós como pontos/círculos e permite que sejam plotados em diferentes tamanhos, cores e formas em `aes()`. `size = Popularidade` indica que o tamanho dos nós é controlado pela variável "Popularidade" que criamos. `colour = Popularidade` indica que além do tamanho, a cor também vaira conforme a popularidade. Para mais opções, digite `?geom_node_point()` no console ou consulte a [documentação do ggraph](https://cran.r-project.org/web/packages/ggraph/ggraph.pdf).
 - `scale_colour_gradient(low = "steelblue", high = "black")` é opcional, podendo ser retirada. Especifica o gradiente de cores do comando anterior (no caso, nós), qual o valor mais baixo até o mais elevado. Sua informação é redundante com relação ao tamanho dos nós, mas ajuda a reforçar tal informação.
-- `facet_edges()`  função de "faceting", de criar facetas, gráficos multiplos, e o símbolo de til `~` seguido de `year` indica que o critério aqui são as categorias dentro de ano, que no caso, são 1957 e 1958. Os nós são repetidos em cada painel.
+- `facet_edges()`  função de "faceting", de criar facetas, gráficos multiplos,  e o símbolo de til `~` seguido de `year` indica que o critério aqui são as categorias dentro de ano, que no caso, são 1957 e 1958. Os nós são repetidos em cada painel. Caso tivéssesmos usado `facet_edges(1957)` teríamos o grafo apenas do ano 1957.
 <!-- Create small multiples based on edge attributes. Nodes are repeated in every panel.  -->
 <!-- `facet_graph` Create a grid of small multiples by node and/or edge attribute -->
 <!-- `facet_nodes` Create small multiples based on node attributes -->

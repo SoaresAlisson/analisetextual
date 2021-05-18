@@ -55,7 +55,7 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - [Journal of Cultural Analytics](https://culturalanalytics.org/).  Department of Languages, Literatures, and Cultures at McGill University, Canada. _open-access journal dedicated to the computational study of culture_
 
 
-## Links sobre Dados Abertos
+## Sobre Dados Abertos
 - [5 estrelas dos dados abertos](https://5stardata.info/pt-BR/) (Tim Berners-Lee, criador do termo "dados abertos". Site explica o que são dados abertos e seus 5 níveis. Em português)
 - [Busca do Google por base de dados Abertos](https://www.google.com.br/publicdata/directory?hl=pt-BR#)
 - [Dados abertos](https://dadosabertos.social/c/onde-encontrar/). (Se não sabe onde encontrar algum dado específico que você procura, veja aqui)
@@ -63,6 +63,11 @@ A digital textbook designed for UCLA's Introduction to Digital Humanities course
 - [Dados Abertos](https://dadosabertos.social): Fórum de discussão. 
 <!-- - [Ckan](https://ckan.org). CKAN, the world’s leading Open Source data portal platform CKAN is a powerful data management system that makes data accessible – by providing tools to streamline publishing, sharing, finding and using data. [User guide](https://docs.ckan.org/en/latest/user-guide.html) _CKAN is a tool for making open data websites. (Think of a content management system like WordPress - but for data, instead of pages and blog posts.) It helps you manage and publish collections of data. It is used by national and local governments, research institutions, and other organizations who collect a lot of data. Once your data is published, users can use its faceted search features to browse and find the data they need, and preview it using maps, graphs and tables - whether they are developers, journalists, researchers, NGOs, citizens, or even your own staff._ -->
 - Workshop do Henrique Xavier, no canal "Base dos Dados" sobre [como explorar os dados do Diário Oficial da União](https://youtube.com/watch?v=dGF3FRTTG6M).
+- [Como usar a biblioteca basedosdados no R](https://dev.to/basedosdados/como-usar-a-biblioteca-basedosdados-no-r-capitulo-1-46kb). Pacote `basedosdados` do R para baixar diversas bases de dados.
+- [Data sets do Brasil.io](https://brasil.io/datasets/), um "repositório de dados públicos disponibilizados em formato acessível" como "Eleições Brasil", "Cursos e notas de corte do Prouni 2018", gastos de deputados e do governo federal, salários de magistrados, etc.
+
+
+
 
 
 ## Vídeos
