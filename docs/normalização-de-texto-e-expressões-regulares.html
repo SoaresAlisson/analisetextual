@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Normalização de texto e Expressões Regulares | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 5 Normalização de texto e Expressões Regulares | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 5 Normalização de texto e Expressões Regulares | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="introdução-ao-r.html"/>
+<link rel="next" href="análise-textual-text-mining.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#HD"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-da-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências da filosofia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-google-trends-como-proxy-para-epidemias"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras</a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical</a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização</a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados</a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML</a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex</a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex</a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html</a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>4</b> Introdução ao R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>4.1</b> Obtendo Ajuda no R</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-com-o-r-commander-rcmdr"><i class="fa fa-check"></i><b>4.1.1</b> Obtendo ajuda com o R Commander (Rcmdr)</a></li>
+<li class="chapter" data-level="4.1.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#comentando-o-código"><i class="fa fa-check"></i><b>4.1.2</b> Comentando o código</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>4.2</b> Tipos de Dados no R (data types)</a></li>
+<li class="chapter" data-level="4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>4.3</b> Estrutura de dados no R (Data Structures)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>4.3.1</b> Vetor (vector)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fator-factor"><i class="fa fa-check"></i><b>4.3.2</b> Fator (<em>Factor</em>)</a></li>
+<li class="chapter" data-level="4.3.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>4.3.3</b> Matriz (Matrix)</a></li>
+<li class="chapter" data-level="4.3.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#listas-list"><i class="fa fa-check"></i><b>4.3.4</b> Listas (<em>list</em>)</a></li>
+<li class="chapter" data-level="4.3.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#data-frames"><i class="fa fa-check"></i><b>4.3.5</b> Data Frames</a></li>
+<li class="chapter" data-level="4.3.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>4.3.6</b> Considerações finais sobre estrutura de dados</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#criando-funções-no-r"><i class="fa fa-check"></i><b>4.3.7</b> Criando funções no R</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>4.3.8</b> Manipulando data e hora</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#a-suíte-de-pacotes-tidyverse"><i class="fa fa-check"></i><b>4.4</b> A suíte de pacotes <code>tidyverse</code></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>4.4.1</b> Tibbles</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate-facilitando-manipulação-de-datas"><i class="fa fa-check"></i><b>4.4.2</b> Lubridate: facilitando manipulação de datas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>5</b> Normalização de texto e Expressões Regulares</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>5.1</b> Expressões regulares (RegEx)</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>5.1.1</b> Parâmetros das Regex</a></li>
+<li class="chapter" data-level="5.1.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#sequência-de-escape-scaping"><i class="fa fa-check"></i><b>5.1.2</b> Sequência de escape (scaping)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#metacaracteres-especiais"><i class="fa fa-check"></i><b>5.2</b> Metacaracteres especiais</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#operadores"><i class="fa fa-check"></i><b>5.2.1</b> Operadores</a></li>
+<li class="chapter" data-level="5.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#quantificadores"><i class="fa fa-check"></i><b>5.2.2</b> Quantificadores</a></li>
+<li class="chapter" data-level="5.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#classes-posix"><i class="fa fa-check"></i><b>5.2.3</b> Classes POSIX</a></li>
+<li class="chapter" data-level="5.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#backreference"><i class="fa fa-check"></i><b>5.2.4</b> Backreference</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>5.3</b> RegEx no R</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>5.3.1</b> Grep</a></li>
+<li class="chapter" data-level="5.3.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>5.3.2</b> gsub()</a></li>
+<li class="chapter" data-level="5.3.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>5.3.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</a></li>
+<li class="chapter" data-level="5.3.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>5.3.4</b> Transformando strings em vetores com <code>strsplit()</code></a></li>
+<li class="chapter" data-level="5.3.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>5.3.5</b> Exemplo regex</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>5.4</b> Dicas/Sugestões: Regex no R</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>6</b> Análise Textual (<em>text mining</em>)</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context"><i class="fa fa-check"></i><b>6.0.1</b> Palavras em contexto (keyword-in-context)</a></li>
+<li class="chapter" data-level="6.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngrams"><i class="fa fa-check"></i><b>6.1</b> Ngrams</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngramr"><i class="fa fa-check"></i><b>6.1.1</b> GoogleNgrams</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>7</b> Análise de Redes Sociais</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>7.1</b> O pacote Igraph</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>7.1.1</b> Clusterização</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>7.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
+<li class="chapter" data-level="7.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>7.3</b> Redes de palavras</a></li>
+<li class="chapter" data-level="7.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>7.4</b> Redes de citação</a></li>
+<li class="chapter" data-level="7.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>7.5</b> Gráfico de centralidade</a></li>
+<li class="chapter" data-level="7.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>7.6</b> Comunidades</a></li>
+<li class="chapter" data-level="7.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>7.7</b> Sugestões de links</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>8</b> Links úteis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>8.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="8.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>8.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="8.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>8.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>8.3.1</b> Sociologia Digital / Sociologia Computacional</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>8.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="8.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>8.5</b> Revistas / Journals acadêmicos</a></li>
+<li class="chapter" data-level="8.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>8.6</b> Dados Abertos</a></li>
+<li class="chapter" data-level="8.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>8.7</b> Vídeos</a></li>
+<li class="chapter" data-level="8.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>8.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="8.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>8.9</b> Organizações</a></li>
+<li class="chapter" data-level="8.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>8.10</b> Links de Podcasts sobre Digital Humanities</a></li>
+<li class="chapter" data-level="8.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>8.11</b> Links Programação</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>8.11.1</b> R introdução</a></li>
+<li class="chapter" data-level="8.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>8.11.2</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="8.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>8.11.3</b> Links Python</a></li>
+<li class="chapter" data-level="8.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>8.11.4</b> Python - tópicos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>8.12</b> Links de Cursos Online</a></li>
+<li class="chapter" data-level="8.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>8.13</b> Grupos de discussão/Forum</a>
+<ul>
+<li class="chapter" data-level="8.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>8.13.1</b> Telegram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>8.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="normalização-de-texto-e-expressões-regulares" class="section level1" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Normalização de texto e Expressões Regulares</h1>
+<div class="infobox objetivo">
+<p>Objetivos deste capítulo:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>Apresentar as expressões regulares (regex)</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>Apresentar comandos regex no R</li>
+</ol></li>
+</ul>
+</div>
+<p>A <em>normalização de texto</em> consiste em converter texto para formatos mais padronizados, e
+expressões regulares, ou “regex” são uma ferramenta importante neste processo.
+A normalização de texto, a limpeza dos dados, sua reestruturação no formato necessário pode tomar a maior parte do tempo em um projeto.</p>
+<p>Vamos partir de um problema inicial.
+Quem quiser saber sobre uso de remédios como azitromicina, ivermectina e cloroquina em pacientes com “síndrome respiratória aguda grave”, podemos baixar a tabela csv do <a href="https://opendatasus.saude.gov.br/dataset/bd-srag-2020">opendatasus</a> e olhar a coluna “OUT_ANTIV”. Lá vemos que não há padronização, os dados estão bagunçados (ou “messy data”). Por exemplo, “azitromicina” foi escrita também como “azitronicina”,“az” “azt”, “azitro”, isto é, além de abreviações diferentes, há erros de ortografia. Em casos assim, expressões regulares podem ajudar a normalizar este campo, isto é, deixando tudo num mesmo padrão.
+Esta parte de limpeza, padronização, também chamada de <em>cleaning</em> e <em>data wrangling</em> (algo como “disputa de dados”) consome boa parte do tempo</p>
+<blockquote>
+<p>“É dito, frequentemente, que 80% da análise de dados é gasto no processo de limpeza e preparação dos dados. A preparação dos dados é não só o primeiro passo, como deve ser repetido tantas vezes no curso da análise na medida que novos problemas aparecem ou novos dados são coletados.”</p>
+</blockquote>
+<blockquote>
+<p><em>It is often said that 80% of data analysis is spent on the process of cleaning and preparing the data</em> (Dasu and Johnson 2003). Data preparation is not just a first step, but must be repeated many times over the course of analysis as new problems come to light or new datais collected.
+fonte: WICKHAM, Hadley. <a href="https://www.jstatsoft.org/article/view/v059i10/v59i10.pdf">Tidy Data. Journal of Statistical Software. August 2014, Volume 59, Issue 10</a></p>
+</blockquote>
+<p>Apesar desse número “80%” parecer ser ficcioso (<a href="https://blog.ldodds.com/2020/01/31/do-data-scientists-spend-80-of-their-time-cleaning-data-turns-out-no/">veja aqui</a>), não deixa de ser uma verdade que grande parte do tempo é gasto neste processo.</p>
+<div id="expressões-regulares-regex" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Expressões regulares (RegEx)</h2>
+<p>Certa vez Jamie Zawinski fez uma piada sobre regex que se tornou bastante conhecida:</p>
+<blockquote>
+<p>Algumas pessoas, ao se defrontarem com um problema, pensam “Acho que vou usar expressões regulares”. Agora elas tem dois problemas.</p>
+</blockquote>
+<p>Talvez um pouco exagerada a piada, expressões regulares podem ser um pouco difíceis no início, mas depois que se aprende, fica difícil viver sem elas.
+Em editores de texto como Microsoft Word, OpenOffice, LibreOffice, GoogleDocs etc.
+é possível buscar por trechos de texto idênticos, é possível tornar a busca sensível a termos em maiúsculo e minúsculo. A busca utilizando regex permite isto e muito mais.</p>
+<div class="figure">
+<img src="imagens/regex_LibreOffice.png" style="width:70.0%" alt="" />
+<p class="caption">Busca e subtituição com regex no Libre Office Calc</p>
+</div>
+<div class="figure">
+<img src="imagens/regex_Rstudio.png" alt="" />
+<p class="caption">Busca e subtituição com regex no Rstudio em Edit/Replace Find</p>
+</div>
+<p>Trata-se de uma ferramenta coringa na hora de limpar ou transformar texto, estando presente nas mais diversas linguagens de programação, com sintaxe mais ou menos comum a todas elas.
+As expressões regulares (<em>regular expressions</em>), ou RegEx, RegExp, etc., mas mais conhecidas como regex, trata-se de busca e substituição avançada usando não só o texto exato, mas usando <em>padrões de texto</em>.
+Perguntas das expressões regulares:</p>
+<ul>
+<li><em>O quê?</em> Números? Letras? Letras minúsculas ou maiúsculas? Palavras? Símbolos ou caracteres específicos? Quebras de linha? Tabulação?</li>
+<li><em>Quantas vezes?</em> Um vez? Uma ou nenhuma? Uma ou várias vezes? Uma quantidade específica? Em regex chama-se isso de <strong>quantificadores</strong>.</li>
+<li><em>Onde?</em> Antes ou de depois do quê? No início ou no fim da sentença? Em regex isso chama-se <strong>âncora</strong>.</li>
+</ul>
+<p>É possível delimitar a busca por letras específicas, por escopo de letras e/ou números, pode-se especificar a quantidade de caracteres, tirar ou acrescentar quebra de linha, acrescentar/retirar algo no início ou fim da linha.</p>
+<p>As regras do Regex são padronizadas em diversas linguagens de programação, apesar de algumas peculiaridades em cada uma, há uma gramática comum. Assim, aprendendo em uma linguagem, você aprendeu em outras.s</p>
+<!-- ### Exemplo simples de uso do regex -->
+<p>Supondo que queira ter uma ferramenta simples de consulta do Qualis de revistas da área de sociologia.
+Baixando o relatório qualis capes de sociologia <a href="https://www.capes.gov.br/images/Relatorio_qualis_periodicos_referencia_2019/Relatorio_qualis_sociologia.pdf">neste link</a> é possível filtrar com base no nome ou na avaliação.</p>
+<p>Com regex podemos transformar uma tabela em csv</p>
+<pre><code>Estado;sigla;capital;região;
+Acre;AC;Rio Branco;Norte;
+Alagoas;AL;Maceió;Nordeste;
+Amapá;AP;Macapá;Norte;
+Amazonas;AM;Manaus;Norte;
+Bahia;BA;Salvador;Nordeste;
+Ceará;CE;Fortaleza;Nordeste;</code></pre>
+<p>para o formato de tabela em markdwon</p>
+<pre><code>|Estado | sigla | capital| região|
+|------|----|-----|-----|
+|Acre |AC |Rio Branco |Norte|
+|Alagoas |AL |Maceió |Nordeste|
+|Amapá |AP |Macapá |Norte|
+|Amazonas |AM |Manaus |Norte|
+|Bahia |BA |Salvador |Nordeste|</code></pre>
+<p>Para termos uma noção do poder do regex, com ele regex também é possível fazer transformações, por exemplo, como pegar datas como “20/03/2020” ,“13/01/1990” ,“04/06/2001”, que estão no formado <code>dd/mm/aaaa</code> (dia/mês/ano) e mudá-las para outra disposição, como <code>aaaa-mm-dd</code> (ano/mês/dia), passando para “2020-03-20”, “1990-01-13”, “2001-06-04”.</p>
+<p>Há uma <a href="introdução-ao-r.html#RDataHora">sessão nesse manual dedicada a manipulação de datas</a>.
+<!-- |Original |Converter para| -->
+<!-- |------|------| -->
+<!-- |20/03/2020| "2020-03-20"| -->
+<!-- |13/01/1990| "1990-01-13"| -->
+<!-- |04/06/2001|"2001-06-04"| --></p>
+<p>Vejamos os parâmetros que usamos com regex</p>
+<div id="parâmetros-das-regex" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Parâmetros das Regex</h3>
+</div>
+<div id="sequência-de-escape-scaping" class="section level3" number="5.1.2">
+<h3><span class="header-section-number">5.1.2</span> Sequência de escape (scaping)</h3>
+<p>Há alguns caracteres especiais que não podem ser usados diretamente numa string, pois possuem um significado especial. As aspas são um caso. Assim, por exemplo:
+<code>variavel &lt;- 'moinho d'agua'</code> retorna erro. Para poder utilizar as aspas, temos de dizer ao programa para “escapar”. Isto é feito de modo geral com o caractere <code>\</code>. Assim, para funcionar, nosso exemplo fica: <code>variavel &lt;- 'moinho d\'agua'</code>.
+No caso de aspas simples <code>'</code> ou duplas <code>"</code>, é possível escapar estes caracteres colocando um dentro do outro. Por exemplo: <code>variavel &lt;- "moinho d'agua"</code> ou <code>variavel &lt;- 'O conto "Trio em Lá Menor" de Machado de Assis foi publicado em 1896.'</code>.
+Outros caracteres que levam escape são:</p>
+</div>
+</div>
+<div id="metacaracteres-especiais" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Metacaracteres especiais</h2>
+<p>Alguns caracteres tem significado especial</p>
+<ul>
+<li><code>\n</code> usado para quebra de linha, ou “newline”.</li>
+<li><code>\t</code> caractere de tabulação.</li>
+<li><code>\\</code> para usar a própria barra</li>
+<li><code>\r</code> retorno de carro ou “carriage return”, que move o cursor para a próxima linha, mas sem aparecer em seu início. De uso no Windows.</li>
+<li><code>\v</code> tab vertical</li>
+<li><code>\f</code> form feed</li>
+</ul>
+<!-- Mas ATENÇÂO: No R, usamos duas barras para a sequência escape. Assim,  -->
+<div id="âncoras" class="section level4" number="5.2.0.1">
+<h4><span class="header-section-number">5.2.0.1</span> Âncoras</h4>
+<table>
+<thead>
+<tr class="header">
+<th>símbolo</th>
+<th>descrição</th>
+<th>exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>\^a</code></td>
+<td>Início da string</td>
+<td><code>^a</code> busca “<u>a</u>aa aaa”</td>
+</tr>
+<tr class="even">
+<td><code>a$</code></td>
+<td>Fim da string</td>
+<td><code>a$</code> busca “aaaa aa<u>a</u>”</td>
+</tr>
+<tr class="odd">
+<td><code>\b</code></td>
+<td>limite de palavra</td>
+<td><code>\b[A-Za-z]\b</code></td>
+</tr>
+<tr class="even">
+<td><code>\B</code></td>
+<td>NÃO limite de palavra</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>\\&lt;</code></td>
+<td>Início de uma palavra</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>\\&gt;</code></td>
+<td>Fim de uma palavra</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img src="imagens/regex_googleDrive.png" style="width:50.0%" alt="" />
+<p class="caption">Exemplo de substituição com regex no Google Docs: acrescentou-se “Disse:” no início das células demarcadas</p>
+</div>
+</div>
+<div id="operadores" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Operadores</h3>
+<table>
+<colgroup>
+<col width="36%" />
+<col width="36%" />
+<col width="27%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Descrição</th>
+<th>Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>.</code></td>
+<td>Pega um caractere único, qualquer um.</td>
+<td>Dado <code>aba, abc, asa</code>, a busca por <code>ab.</code> retorna <code>aba, abc</code>. A busca de <code>a..</code> retorna <code>aba, asa</code></td>
+</tr>
+<tr class="even">
+<td><code>[..]</code></td>
+<td>Lista de caracteres, podendo usar a barra <code>-</code> para definir um escopo.</td>
+<td>Dado <code>abcdefgh</code> a busca por <code>[a-d]</code>, retorna <code>abcd</code></td>
+</tr>
+<tr class="odd">
+<td><code>[^..]</code></td>
+<td>Inversão do caso anterior. Pega todos os elementos, exceto os especificados ali</td>
+<td>Dado <code>abcdefgh</code> a busca por <code>[^a-d]</code>, retorna <code>efgh</code>.</td>
+</tr>
+<tr class="even">
+<td><code>|</code></td>
+<td>Operador booleano do tipo “ou”.</td>
+<td>Dado <code>"bananada, bananeira, bandolim"</code>, a busca utilizando <code>"eira|dol"</code>, retorna <code>"bananeira, bandolim"</code></td>
+</tr>
+<tr class="odd">
+<td><code>(...)</code></td>
+<td>Agrupamento. É bastante usado com “backreference”</td>
+<td>Dado <code>"banana, bananada, bananeira"</code>, a busca utilizando <code>"banan(ada|eira)"</code>, retorna <code>"bananada, bananeira"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Podemos usar os colchetes <code>[]</code> para pegarmos um escopo. Se usamos <code>[a-f]</code>, então nossa expressão pega qualquer coisa que contenha a,b,c,d,e, ou f, em minúscula. Assim, se quisermos pegar todas as letras minúsculas, usamos <code>[a-z]</code>, se quisermos pegar todas as maiúsculas e minúsculas, usamos <code>[A-Za-z]</code>. Mas atenção, desta forma não detectamos caracteres acentuados, como “à”, “ç”, “ã”, etc. Para isso, acrescentamos <code>à-ÿ</code> que pega o escopo de caracteres acentuados.</p>
+</div>
+<div id="quantificadores" class="section level3" number="5.2.2">
+<h3><span class="header-section-number">5.2.2</span> Quantificadores</h3>
+<p>Os quantificadores especificam quantas vezes o padrão anterior é repetido</p>
+<table>
+<colgroup>
+<col width="38%" />
+<col width="30%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>símbolo</th>
+<th>explicação</th>
+<th>exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>*</td>
+<td>busca o item anterior zero ou mais vezes</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>+</td>
+<td>busca o item anterior uma ou mais vezes</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>?</td>
+<td>o item anterior é opcional, e pode aparecer no máximo uma vez.</td>
+<td>O padrão <code>bananas?</code> encontra “<u>banana</u>” “<u>banana</u>s” “<u>banana</u>l” “<u>banana</u>da”</td>
+</tr>
+<tr class="even">
+<td>{n}</td>
+<td>busca o item anterior exatamente n vezes</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>{n,}</td>
+<td>busca o item anterior n vezes ou mais</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>{n,m}</td>
+<td>busca o item anterior com no mínimo n vezes e com no máximo m vezes. (Faz sentido usálo com delimitadores como <code>\b</code>)</td>
+<td><code>no_vec &lt;- c("no", "nono", "nonono", "nononono", "nonato")</code> <code>grep("(no){2,3}", no_vec, value=TRUE)</code> <code>[1] "nono"     "nonono"   "nononono"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Os quantificadores podem ser combinados. Por exemplo:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb46-1" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">&lt;-</span> <span class="st">&quot;O SR. PRESIDENTE (Omar Aziz. PSD - AM. Fala da Presidência.) – Os Srs. Senadores que as aprovam permaneçam como se encontram. (Pausa.)&quot;</span></span></code></pre></div>
+<p>Temos dois textos entre parênteses. Assim se usarmos:
+<!-- gsub('.*(\\(.*\\)).*','\\1' , texto) --></p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb47-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_extract</span>(texto, <span class="st">&#39;</span><span class="sc">\\</span><span class="st">(.*</span><span class="sc">\\</span><span class="st">)&#39;</span>) </span>
+<span id="cb47-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;(Omar Aziz. PSD - AM. Fala da Presidência.) – Os Srs. Senadores que as aprovam permaneçam como se encontram. (Pausa.)&quot;</span></span></code></pre></div>
+<p>Pegamos o texto desde o primeiro parêntese até o último. Isto acontece por o símbolo de asterisco <code>*</code> ser “greedy” (voraz, guloso, segundo a terminologia de regex). Precisamos torná-lo “lazy” (preguiçoso) se quisermos pegar apenas o primeiro caso. O fazemos com a sequência de quantificadores <code>*?</code>
+<!-- gsub('.*(\\(.*?\\)).*','\\1' , texto) --></p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb48-1" aria-hidden="true" tabindex="-1"></a>stringr<span class="sc">::</span><span class="fu">str_extract</span>(texto, <span class="st">&#39;</span><span class="sc">\\</span><span class="st">(.*?</span><span class="sc">\\</span><span class="st">)&#39;</span>) </span>
+<span id="cb48-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;(Omar Aziz. PSD - AM. Fala da Presidência.)&quot;</span></span></code></pre></div>
+<p><strong>Exemplos:</strong></p>
+<!--
+banana_vec <- c("banana", "bananas", "bananal", "bananando", "bananada", "bananeira", "bandolim") 
+-->
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-1" aria-hidden="true" tabindex="-1"></a>banana_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;bananas&quot;</span>, <span class="st">&quot;bananal&quot;</span>, <span class="st">&quot;bananada&quot;</span>, <span class="st">&quot;bananeira&quot;</span>, <span class="st">&quot;bandolim&quot;</span>)</span>
+<span id="cb49-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;ban.*&quot;</span>, banana_vec, <span class="at">value=</span>T)</span>
+<span id="cb49-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;    &quot;bananas&quot;   &quot;bananal&quot;   &quot;bananada&quot;  &quot;bananeira&quot; &quot;bandolim&quot;</span></span>
+<span id="cb49-5"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-6"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;banan.*&quot;</span>, banana_vec, <span class="at">value=</span>T)</span>
+<span id="cb49-7"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;    &quot;bananas&quot;   &quot;bananal&quot;   &quot;bananada&quot;  &quot;bananeira&quot;</span></span>
+<span id="cb49-8"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;banana.*&quot;</span>, banana_vec, <span class="at">value=</span>T)</span>
+<span id="cb49-9"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;   &quot;bananas&quot;  &quot;bananal&quot;  &quot;bananada&quot;</span></span>
+<span id="cb49-10"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-11"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;banana.?&quot;</span>, banana_vec, <span class="at">value=</span><span class="cn">TRUE</span>)</span>
+<span id="cb49-12"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;   &quot;bananas&quot;  &quot;bananal&quot;  &quot;bananada&quot;</span></span>
+<span id="cb49-13"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;banana.?$&quot;</span>, banana_vec, <span class="at">value=</span><span class="cn">TRUE</span>)</span>
+<span id="cb49-14"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;  &quot;bananas&quot; &quot;bananal&quot;</span></span>
+<span id="cb49-15"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-16"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-16" aria-hidden="true" tabindex="-1"></a><span class="co"># A sequência &quot;an&quot; pode aparecer uma ou mais vezes repetida, como &quot;ban&quot;, &quot;banan&quot;, &quot;bananan&quot;, &quot;banananan&quot;, etc.</span></span>
+<span id="cb49-17"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;b(an)+&quot;</span>, banana_vec, <span class="at">value=</span>T)</span>
+<span id="cb49-18"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;    &quot;bananas&quot;   &quot;bananal&quot;   &quot;bananada&quot;  &quot;bananeira&quot; &quot;bandolim&quot;</span></span>
+<span id="cb49-19"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-20"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-20" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;b[an]{2}&quot;</span>, banana_vec, <span class="at">value=</span>T) </span>
+<span id="cb49-21"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;    &quot;bananas&quot;   &quot;bananal&quot;   &quot;bananada&quot;  &quot;bananeira&quot; &quot;bandolim&quot;</span></span>
+<span id="cb49-22"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-23"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-23" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;b(an){2}&quot;</span>, banana_vec, <span class="at">value=</span>T)</span>
+<span id="cb49-24"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;    &quot;bananas&quot;   &quot;bananal&quot;   &quot;bananada&quot;  &quot;bananeira&quot;</span></span>
+<span id="cb49-25"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-26"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-26" aria-hidden="true" tabindex="-1"></a><span class="co"># se quiser delimitar a busca, restringindo a encontrar apenas o termo exato (exact match), deve-se usar o delimitador de palavra &quot;\b&quot;. E para usá-lo aqui, deve-se acrescentar mais uma barra para o escape, ficando &quot;\\b&quot;.</span></span>
+<span id="cb49-27"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-27" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">bbanana</span><span class="sc">\\</span><span class="st">b&quot;</span>, banana_vec, <span class="at">value=</span>T)</span>
+<span id="cb49-28"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;banana&quot;</span></span>
+<span id="cb49-29"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-30"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-30" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">bbanana.</span><span class="sc">\\</span><span class="st">b&quot;</span>, banana_vec, <span class="at">value=</span>T)</span>
+<span id="cb49-31"><a href="normalização-de-texto-e-expressões-regulares.html#cb49-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bananas&quot; &quot;bananal&quot;</span></span></code></pre></div>
+<div class="infobox history">
+<p><strong>A História do comando GREP: </strong></p>
+<p>O comando grep exite graças à uma demanda da análise textual.
+Na década de 1960, um problema intrigava diversos pesquisadores. Quem são os autores de cada texto dos textos dos Federalistas?
+Os <em>Federalist Papers</em> foram 85 textos publicados de modo anônimo sob pseudônimo de “Publius”, podendo ser de James Madinson, Alexander Hamilton, John Jay em 1787 e 1788. Quem escreveu qual?
+Lee McMahon comentou deste problema com seus colegas. Ele queria buscar por certas palavras através de vários textos.
+Ken Thompson - personagem importante na história da programação - escutou aquilo e no dia seguinte voltou com o programa que veio a ser chamado <code>grep</code>:</p>
+<ul>
+<li>“g” de “Global”, procurar em vários documentos</li>
+<li>“re” de regular expressions</li>
+<li>“p” de print. Se achar o padrão de regex, então imprima na tela. Poderia ainda ser apagar, ou substituir também.</li>
+</ul>
+<p>O <code>grep</code> se tornou parte obrigatória do arcabouço computacional na programação em geral, principalmente nos sistemas baseados em Unix (Mac e Linux).</p>
+<p>Esta história foi contada em <a href="https://www.youtube.com/watch?v=NTfOnGZUZDk">Where GREP Came From - Computerphile</a>. A identificação de autoria pelo padrão de escrita veio a ser chamado de “digitais linguísticas” (<em>linguistic fingerprint</em>). Posteriormente, um grupo de pesquisadores da Universidade de Aston usaram de técnica semelhante (porém mais avançada) para <a href="https://venturebeat.com/2014/04/16/linguistic-fingerprints-in-little-words-may-have-identified-the-real-bitcoin-creator/">identificar a identidade real de Satoshi Nakamoto</a>, criador do Bitcoin e da tecnologia de blockchain.</p>
+</div>
+</div>
+<div id="classes-posix" class="section level3" number="5.2.3">
+<h3><span class="header-section-number">5.2.3</span> Classes POSIX</h3>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="80%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>POSIX</th>
+<th>Descrição</th>
+<th>Equivalente</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>[:digit:]</code> ou <code>\\d</code></td>
+<td>Dígitos: 0 1 2 3 4 5 6 7 8 9.</td>
+<td>[0-9]</td>
+</tr>
+<tr class="even">
+<td><code>[:lower:]</code></td>
+<td>letras em minúsculo (Lower-case)</td>
+<td>[a-z]</td>
+</tr>
+<tr class="odd">
+<td><code>[:upper:]</code></td>
+<td>Caracteres maiúsculos</td>
+<td>[A-Z]</td>
+</tr>
+<tr class="even">
+<td><code>[:alpha:]</code></td>
+<td>Cracteres alfabéticos: [:lower:] and [:upper:].</td>
+<td>[a-zA-Z]</td>
+</tr>
+<tr class="odd">
+<td><code>[:alnum:]</code> ou <code>\w</code></td>
+<td>Caracteres alfanuméricos: [:alpha:] e [:digit:].</td>
+<td><code>[a-zA-Z0-9]</code> ou <code>[A-z0-9]</code></td>
+</tr>
+<tr class="even">
+<td><code>\W</code></td>
+<td>Não palavra</td>
+<td><code>[^A-z0-9]</code></td>
+</tr>
+<tr class="odd">
+<td><code>[:blank:]</code></td>
+<td>Caracteres vazios, como espaço e tab.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>[:cntrl:]</code></td>
+<td>Caracteres de controle, como <code>\n</code>, <code>\r</code>, <code>[\x00-\x1F\x7F]</code></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>[:graph:]</code></td>
+<td>Caracteres gráficos : [:alnum:] e [:punct:].</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>[:print:]</code></td>
+<td>Caracteres impimíveis: [:alnum:], [:punct:] and space.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>[:space:]</code></td>
+<td>Caracteres de espaço: tab <code>\t</code>, nova linha <code>\n</code>, tab vertical, form feed, carriage return <code>\r</code>, espaço e outros similares</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>[:xdigit:]</code></td>
+<td>Dígitos hexadecimais: 0 1 2 3 4 5 6 7 8 9 A B C D E F a b c d e f.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>\s</code></td>
+<td>espaço em branco</td>
+<td><code>[ ]</code></td>
+</tr>
+<tr class="even">
+<td><code>\S</code></td>
+<td>(maiúsculo) tudo, exceto espaço em branco</td>
+<td><code>[^ ]</code></td>
+</tr>
+<tr class="odd">
+<td><code>[:punct:]</code></td>
+<td>Caracteres de pontuação: ! ” # $ % &amp; ’ ( ) * + , - . / : ; &lt; = &gt; ? @ [  ] ^ _ ` { } ~ . |</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="backreference" class="section level3" number="5.2.4">
+<h3><span class="header-section-number">5.2.4</span> Backreference</h3>
+<p>Podemos reaproveitar trechos através de backreference.
+Ao fazer substituições nos textos, um modo de delimitar ou reorganizar os elementos é feita com o uso de backreference.
+Indicamos o que queremos reutilizar com os parênteses, e reutilizamos através de numeração como ‘\1’, ‘\2’.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb50-1" aria-hidden="true" tabindex="-1"></a>nome <span class="ot">&lt;-</span> <span class="st">&quot;Fulano Silva&quot;</span></span>
+<span id="cb50-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&#39;(.*) (.*)&#39;</span>, <span class="st">&#39;</span><span class="sc">\\</span><span class="st">2,</span><span class="sc">\\</span><span class="st">1.&#39;</span>, nome)</span>
+<span id="cb50-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Silva,Fulano.&quot;</span></span></code></pre></div>
+<p>Onde <code>\\0</code> indica toda a string, <code>\\1</code> indica o primeiro caso, <code>\\2</code> indica o segundo e assim por diante.</p>
+<!-- strings <- c("^ab", "ab", "abc", "abd", "abe", "ab 12") -->
+<!-- gsub("(ab) 12", "\\1 34", strings) -->
+<!-- ## Lookarounds -->
+</div>
+<div class="infobox note">
+<div id="dicassugestões" class="section level3" number="5.2.5">
+<h3><span class="header-section-number">5.2.5</span> Dicas/Sugestões</h3>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=exYBIoTEX4A&amp;t=1800s">SICSS 2019 – Basic text analysis with grep</a>. Video do YouTube do Summer Institute in Computational Social Science.</li>
+<li><a href="https://www.rexegg.com/regex-quickstart.html" class="uri">https://www.rexegg.com/regex-quickstart.html</a></li>
+</ul>
+</div>
+<div id="indicação-de-leitura-sobre-regex" class="section level3" number="5.2.6">
+<h3><span class="header-section-number">5.2.6</span> Indicação de leitura sobre Regex</h3>
+<ul>
+<li>JURAFSKY, Dan.; MARTIN, James H.<a href="https://web.stanford.edu/~jurafsky/slp3/2.pdf">Regular Expressions, Text Normalization, Edit Distance</a> in __ Speech and language processing: An introduction to speech recognition, computational linguistics and natural language processing. Upper Saddle River, NJ: Prentice Hall, 2020. Cap.2 p.2-28</li>
+<li>FRIEDL, Jeffrey E. F. <a href="https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/">Mastering Regular Expressions</a>, 3rd Edition. 2006. O’Reilly Media, Inc. ISBN: 9780596528126. Há opção free trial do livro.</li>
+<li><a href="www.ILoveJackDaniels.com">cheatsheet de expressões regulares</a> (em inglês)</li>
+</ul>
+<p><strong>Softwares</strong>
+Para lidar com dados bagunçados (“messy data”), uma sugestão é usar o
+<a href="https://openrefine.org/">OpenRefine</a>. Antes “Google Refine”, mas após a Google abandonar o projeto, virou “Open Refine”, livre e de código aberto, ajuda a padronizar dados de tabelas, planilhas, limpando, corrigindo, filtrando (com regex), clusterizando ou transformando em outro formato. No site há tutoriais. Ele abre no seu navegador de internet, mas roda direto do seu computador.
+Usam esta ferramenta do OpenRefine, por exemplo,
+o <a href="http://estadaodados.com/basometro/">Basômetro</a> do Estadão Dados, que mede o apoio que o governo federal tem no legislativo
+e o <a href="https://www.propublica.org/about/">ProPublica</a> de jornalismo investigativo independente,
+<!-- o [sponsokit](https://www.sponsokit.com/) para marketing de influenciadores.-->
+No próprio site do <a href="https://openrefine.org/documentation.html">OpenRefine</a> há tutoriais e no <a href="https://www.propublica.org/nerds/item/using-google-refine-for-data-cleaning">ProPublica</a>, ambos em inglês).</p>
+</div>
+</div>
+</div>
+<div id="regex-no-r" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> RegEx no R</h2>
+<p>O uso de regex vem por padrão no R, no pacote <code>base</code>, mas há também uma expansão de regex com o pacote <a href="https://stringr.tidyverse.org/">stringr</a> usado para lidarmos com strings e tem uma sintaxe um pouco diferente.</p>
+<div id="grep" class="section level3" number="5.3.1">
+<h3><span class="header-section-number">5.3.1</span> Grep</h3>
+<p>Como vimos, o grep serve para filtrar linhas que contenham algo que buscamos.
+Primeiro, vamos criar duas variáveis com texto.</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb51-1" aria-hidden="true" tabindex="-1"></a>nosso_texto <span class="ot">&lt;-</span> <span class="st">&quot;Estamos aprendendo expressão regular no R. Bla bla bla no no no.&quot;</span></span>
+<span id="cb51-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb51-2" aria-hidden="true" tabindex="-1"></a>poema <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;E agora, José?&quot;</span>, <span class="st">&quot;A festa acabou,&quot;</span> , <span class="st">&quot;a luz apagou,&quot;</span>, <span class="st">&quot;o povo sumiu,&quot;</span>, <span class="st">&quot;a noite esfriou&quot;</span>, <span class="st">&quot;e agora, José?&quot;</span>)</span></code></pre></div>
+<p>Usaremos estas frases como exemplos a seguir:</p>
+<div id="grepl" class="section level4" number="5.3.1.1">
+<h4><span class="header-section-number">5.3.1.1</span> grepl()</h4>
+<p>Com o <code>grepl("Termo", Nome_variável)</code> verificamos se uma expressão está presente em nosso texto e ele nos retorna booleanos <code>TRUE</code>(verdadeiro, termo encontrado) ou <code>FALSE</code> (falso, termo não encontrado).</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;Estamos&quot;</span>, nosso_texto)</span>
+<span id="cb52-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb52-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;paralelepípedo&quot;</span>, nosso_texto)</span>
+<span id="cb52-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb52-5"><a href="normalização-de-texto-e-expressões-regulares.html#cb52-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;festa&quot;</span>, poema)</span>
+<span id="cb52-6"><a href="normalização-de-texto-e-expressões-regulares.html#cb52-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE  TRUE FALSE FALSE FALSE FALSE</span></span></code></pre></div>
+</div>
+<div id="greppadrão-variável" class="section level4" number="5.3.1.2">
+<h4><span class="header-section-number">5.3.1.2</span> grep(“padrão”, variável)</h4>
+<p>Tendo várias linhas em um vetor, como por exemplo:</p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;festa&quot;</span>, poema)</span>
+<span id="cb53-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
+<span id="cb53-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;José&quot;</span>, poema)</span>
+<span id="cb53-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1 6</span></span>
+<span id="cb53-5"><a href="normalização-de-texto-e-expressões-regulares.html#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;josé&quot;</span>, poema)</span>
+<span id="cb53-6"><a href="normalização-de-texto-e-expressões-regulares.html#cb53-6" aria-hidden="true" tabindex="-1"></a><span class="do">## integer(0)</span></span></code></pre></div>
+<p>No primeiro e segundo exemplo, buscamos por “festa” e “José” e o R nos retornou o local do termo buscado no vetor. No terceiro exemplo, o termo “josé” - todo em minúsculo - não existia, e por isso o R retornou <code>integer(0)</code>.
+Se quisermos ver as respectivas linhas, fazemos assim:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb54-1" aria-hidden="true" tabindex="-1"></a>poema[<span class="fu">grep</span>(<span class="st">&quot;José&quot;</span>, poema)]</span>
+<span id="cb54-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;E agora, José?&quot; &quot;e agora, José?&quot;</span></span>
+<span id="cb54-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb54-3" aria-hidden="true" tabindex="-1"></a>poema[<span class="fu">grep</span>(<span class="st">&quot;festa&quot;</span>, poema)]</span>
+<span id="cb54-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb54-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;A festa acabou,&quot;</span></span></code></pre></div>
+<p>Ou ainda, usando <code>value = TRUE)</code> para mostrar o texto encontrado, e não apenas o índice.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;José&quot;</span>, poema, <span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb55-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;E agora, José?&quot; &quot;e agora, José?&quot;</span></span>
+<span id="cb55-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;festa&quot;</span>, poema, <span class="at">value =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb55-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb55-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;A festa acabou,&quot;</span></span></code></pre></div>
+<p>O <code>grep</code> em sua versão completa no R, pode ter ainda as seguintes designações:
+&gt; grep(padrão, nome_variável, ignore.case = FALSE, perl = FALSE, value = FALSE, fixed = FALSE, useBytes = FALSE, invert = FALSE)</p>
+<table>
+<colgroup>
+<col width="70%" />
+<col width="30%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Campo do grep</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>padrão</td>
+<td>padrão regex a ser buscado</td>
+</tr>
+<tr class="even">
+<td>nome_variável</td>
+<td>Nome da variável. Se o grep vier após um pipe (<code>%&gt;%</code>), é substituído por ponto <code>.</code></td>
+</tr>
+<tr class="odd">
+<td>ignore.case = FALSE</td>
+<td>se <code>ignore.case = TRUE</code> , então a busca não distinguirá maiúscula de minúscula</td>
+</tr>
+<tr class="even">
+<td>perl = FALSE</td>
+<td>usa o padrão Perl de regex</td>
+</tr>
+<tr class="odd">
+<td>value = FALSE</td>
+<td>Imprime os índices. Se <code>TRUE</code>, mostra os elementos. `<code>| |fixed = FALSE| considera a busca como texto puro, sem nenhuma expressão regex| |useBytes = FALSE| se</code>TRUE<code>a busca é feita byte-a-byte ao invés de caractere a caractere| |invert = FALSE| Se</code>invert = TRUE`, então serão exibidas todas as linhas, exceto as que contenham o padrão buscado.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/grep.html" class="uri">https://stat.ethz.ch/R-manual/R-devel/library/base/html/grep.html</a></p>
+</div>
+</div>
+<div id="gsub" class="section level3" number="5.3.2">
+<h3><span class="header-section-number">5.3.2</span> gsub()</h3>
+<p>Se quisermos substituir trechos de nossa frase, usamos <code>gsub("o que será retirado", "O que queremos colocar no lugar", nome_variável)</code></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;Bla&quot;</span>, <span class="st">&quot;paralelepípedo&quot;</span>, nosso_texto)</span>
+<span id="cb56-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Estamos aprendendo expressão regular no R. paralelepípedo bla bla no no no.&quot;</span></span>
+<span id="cb56-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;bla&quot;</span>, <span class="st">&quot;paralelepípedo&quot;</span>, nosso_texto)</span>
+<span id="cb56-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Estamos aprendendo expressão regular no R. Bla paralelepípedo paralelepípedo no no no.&quot;</span></span></code></pre></div>
+<p>Também podemos usar <code>gsub</code> para limpar nosso texto, colocando <code>""</code> no campo intermediário da nossa função gsub. Por exemplo, se quisermos retirar os “no”:</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;no&quot;</span>, <span class="st">&quot;&quot;</span>, nosso_texto)</span>
+<span id="cb57-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Estamos aprendendo expressão regular  R. Bla bla bla   .&quot;</span></span></code></pre></div>
+<p>Ou se quisermos retirar os “bla”:</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;bla&quot;</span>, <span class="st">&quot;&quot;</span>, nosso_texto)</span>
+<span id="cb58-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Estamos aprendendo expressão regular no R. Bla   no no no.&quot;</span></span>
+<span id="cb58-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;[bB]la&quot;</span>, <span class="st">&quot;&quot;</span>, nosso_texto)</span>
+<span id="cb58-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Estamos aprendendo expressão regular no R.    no no no.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;?&quot;</span>, <span class="st">&quot;&quot;</span>, poema)</span>
+<span id="cb59-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;E agora, José?&quot;  &quot;A festa acabou,&quot; &quot;a luz apagou,&quot;   &quot;o povo sumiu,&quot;  </span></span>
+<span id="cb59-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot;a noite esfriou&quot; &quot;e agora, José?&quot;</span></span>
+<span id="cb59-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;,&quot;</span>, <span class="st">&quot;&quot;</span>, poema)</span>
+<span id="cb59-5"><a href="normalização-de-texto-e-expressões-regulares.html#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;E agora José?&quot;   &quot;A festa acabou&quot;  &quot;a luz apagou&quot;    &quot;o povo sumiu&quot;   </span></span>
+<span id="cb59-6"><a href="normalização-de-texto-e-expressões-regulares.html#cb59-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot;a noite esfriou&quot; &quot;e agora José?&quot;</span></span></code></pre></div>
+<p>A retirada da vírgula ocorreu normalmente. Já a interrogação continuou, uma vez que é um caractere usado com significado específico no regex. Devemos então indicar que se trata de uma interrogação comum.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;</span><span class="sc">\\</span><span class="st">?&quot;</span>, <span class="st">&quot;&quot;</span>, poema)</span>
+<span id="cb60-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;E agora, José&quot;   &quot;A festa acabou,&quot; &quot;a luz apagou,&quot;   &quot;o povo sumiu,&quot;  </span></span>
+<span id="cb60-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot;a noite esfriou&quot; &quot;e agora, José&quot;</span></span></code></pre></div>
+<p>E retirando também a vírgula:</p>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&quot;[</span><span class="sc">\\</span><span class="st">?,]&quot;</span>, <span class="st">&quot;&quot;</span>, poema)</span>
+<span id="cb61-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb61-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;E agora José&quot;    &quot;A festa acabou&quot;  &quot;a luz apagou&quot;    &quot;o povo sumiu&quot;   </span></span>
+<span id="cb61-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot;a noite esfriou&quot; &quot;e agora José&quot;</span></span></code></pre></div>
+</div>
+<div id="exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis" class="section level3" number="5.3.3">
+<h3><span class="header-section-number">5.3.3</span> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</h3>
+<p>Vamos montar um script de busca dos Qualis de revistas de sociologia.
+Vasculhando a internet, encontrei uma lista com os <a href="https://www2.ufjf.br/ppgcso/wp-content/uploads/sites/133/2015/04/1-Qualis-Sociologia-Atualizado.pdf">Qualis das revistas de sociologia em pdf</a> e salvei no meu computador.
+Precisamos extrair a informação do pdf, precisamos dos pacotes <code>pdftools</code> e <code>tidyverse</code>.
+<!--  [Extracting data from a PDF into R](https://rstudio-pubs-static.s3.amazonaws.com/415060_553527fd13ed4f30aae0f1e4483aa970.html). --></p>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
+<span id="cb62-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Using poppler version 21.06.1</span></span>
+<span id="cb62-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb62-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-4" aria-hidden="true" tabindex="-1"></a>meupdf <span class="ot">&lt;-</span> <span class="fu">pdf_text</span>(<span class="st">&quot;/home/alisson/Documentos/Programação/R/1-Qualis-Sociologia-Atualizado.pdf&quot;</span>) <span class="sc">%&gt;%</span> readr<span class="sc">::</span><span class="fu">read_lines</span>() <span class="co"># carregando o arquivo pdf na variável &quot;meupdf&quot;</span></span>
+<span id="cb62-5"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;Soziolo&quot;</span>, meupdf, <span class="at">value=</span>T) <span class="co"># filtrando a tabela, toda linha que tiver &quot;Soziol&quot; irá aparecer.</span></span>
+<span id="cb62-6"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;0340-918X   Soziologie (Opladen)                                                     A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb62-7"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [2] &quot;0863-1808   Berliner Journal fur Soziologie                                A2      SOCIOLOGIA              Atualizado&quot;          </span></span>
+<span id="cb62-8"><a href="normalização-de-texto-e-expressões-regulares.html#cb62-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [3] &quot;0340-1804   Zeitschrift fur Soziologie                              A2      SOCIOLOGIA              Atualizado&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;A1&quot;</span>, meupdf, <span class="at">value=</span>T) <span class="co"># filtrando a tabela, toda linha que tiver &quot;A1&quot; irá aparecer, não importa em que coluna esteja.</span></span>
+<span id="cb63-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;0335-5322   Actes de la Recherche en Sciences Sociales                                          A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [2] &quot;0002-7294   American Anthropologist                                                             A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] &quot;1042-0533   American Journal of Human Biology                                                   A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-5"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  [4] &quot;0003-2573   Análise Social                                                                      A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-6"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;1573-3416   An International Journal of Politics, Culture and Society (Dordrecht. Online)       A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-7"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  [6] &quot;0004-0002   Archives of Sexual Behavior                                                         A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-8"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] &quot;0261-3050   Bulletin of Latin American Research                                                 A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-9"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  [8] &quot;1983-8239   Caderno CRH (Online)                                                                A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-10"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;0103-4979   Caderno CRH (UFBA. Impresso)                                                        A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-11"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [10] &quot;0104-8333   Cadernos Pagu (UNICAMP. Impresso)                                                   A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-12"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] &quot;0010-4159   Comparative Politics                                                                A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-13"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [12] &quot;1351-0487   Constellations (Oxford. Print)                                                      A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-14"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;0094-3061   Contemporary Sociology (Washington)                                                 A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-15"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [14] &quot;1354-067X   Culture &amp; Psychology                                                                A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-16"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] &quot;0011-3204   Current Anthropology                                                                A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-17"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] &quot;0011-3921   Current Sociology (Print)                                                           A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-18"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;0011-5258   Dados (Rio de Janeiro. Impresso)                                                    A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-19"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [18] &quot;1351-0347   Democratization (London)                                                            A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-20"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] &quot;0101-7330   Educação &amp; Sociedade (Impresso)                                                     A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-21"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [20] &quot;1044-3983   Epidemiology (Cambridge, Mass., Print)                                              A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-22"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;0185-4186   Estudios Sociológicos                                                               A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-23"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [22] &quot;0141-9870   Ethnic and Racial Studies (Print)                                                   A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-24"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [23] &quot;0873-6561   Etnográfica (Lisboa                                                                 A1      SOCIOLOGIA              Atualizado&quot;</span></span>
+<span id="cb63-25"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [24] &quot;0014-2182   Etudes Rurales                                               A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-26"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;1368-4310   European Journal of Social Theory                            A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-27"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [26] &quot;0104-5970   História, Ciências, Saúde-Manguinhos (Impresso)              A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-28"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] &quot;1678-4758   História, Ciências, Saúde-Manguinhos (Online)                A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-29"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [28] &quot;1806-9983   Horizontes Antropológicos (Online)                           A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-30"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] &quot;0104-7183   Horizontes Antropológicos (UFRGS. Impresso)                  A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-31"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [30] &quot;0539-0184   Information sur les Sciences Sociales (Paris)                A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-32"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] &quot;0891-4486   International Journal of Politics, Culture and Society       A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-33"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [32] &quot;2182-4096   International Journal on Working Conditions                  A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-34"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-34" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] &quot;0192-5121   International Political Science Review                       A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-35"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [34] &quot;0269-2171   International Review of Applied Economics                    A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-36"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-36" aria-hidden="true" tabindex="-1"></a><span class="do">## [35] &quot;0020-8701   International Social Science Journal (Print)                 A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-37"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-37" aria-hidden="true" tabindex="-1"></a><span class="do">## [36] &quot;0268-5809   International Sociology                                      A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-38"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] &quot;1468-795X   Journal of Classical Sociology                               A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-39"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-39" aria-hidden="true" tabindex="-1"></a><span class="do">## [38] &quot;1467-6443   Journal of Historical Sociology (Online)                     A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-40"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-40" aria-hidden="true" tabindex="-1"></a><span class="do">## [39] &quot;0022-216X   Journal of Latin American Studies (Print)                    A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-41"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [40] &quot;0022-4537   Journal of Social Issues (Print)                             A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-42"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-42" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] &quot;0094-582X   Latin American Perspectives                                  A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-43"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-43" aria-hidden="true" tabindex="-1"></a><span class="do">## [42] &quot;0023-8791   Latin American Research Review                               A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-44"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [43] &quot;0102-6445   Lua Nova (Impresso)                                          A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-45"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-45" aria-hidden="true" tabindex="-1"></a><span class="do">## [44] &quot;1678-4944   Mana (Rio de Janeiro. Online)                                A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-46"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-46" aria-hidden="true" tabindex="-1"></a><span class="do">## [45] &quot;0104-9313   Mana (UFRJ. Impresso)                                        A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-47"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-47" aria-hidden="true" tabindex="-1"></a><span class="do">## [46] &quot;0101-3300   Novos Estudos CEBRAP (Impresso)                              A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-48"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-48" aria-hidden="true" tabindex="-1"></a><span class="do">## [47] &quot;0102-4469   Perspectiva Teológica (Belo Horizonte)                       A1      SOCIOLOGIA              Atualizado&quot;                       </span></span>
+<span id="cb63-49"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-49" aria-hidden="true" tabindex="-1"></a><span class="do">## [48] &quot;0048-3931   Philosophy of the Social Sciences                                        A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-50"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-50" aria-hidden="true" tabindex="-1"></a><span class="do">## [49] &quot;0191-4537   Philosophy &amp; Social Criticism                                            A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-51"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-51" aria-hidden="true" tabindex="-1"></a><span class="do">## [50] &quot;0276-5624   Research in Social Stratification and Mobility                           A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-52"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-52" aria-hidden="true" tabindex="-1"></a><span class="do">## [51] &quot;0048-7333   Research Policy                                                          A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-53"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-53" aria-hidden="true" tabindex="-1"></a><span class="do">## [52] &quot;0102-6909   Revista Brasileira de Ciências Sociais (Impresso)                        A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-54"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-54" aria-hidden="true" tabindex="-1"></a><span class="do">## [53] &quot;0254-1106   Revista Crítica de Ciências Sociais                                      A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-55"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-55" aria-hidden="true" tabindex="-1"></a><span class="do">## [54] &quot;0034-7701   Revista de Antropologia (USP. Impresso)                                  A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-56"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-56" aria-hidden="true" tabindex="-1"></a><span class="do">## [55] &quot;0188-2503   Revista Mexicana de SociologÍa                                           A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-57"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-57" aria-hidden="true" tabindex="-1"></a><span class="do">## [56] &quot;0390-6701   Revue Internationale de Sociologie                                       A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-58"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-58" aria-hidden="true" tabindex="-1"></a><span class="do">## [57] &quot;0037-7686   Social Compass (Imprimé)                                                 A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-59"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-59" aria-hidden="true" tabindex="-1"></a><span class="do">## [58] &quot;0037-7732   Social Forces                                                            A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-60"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-60" aria-hidden="true" tabindex="-1"></a><span class="do">## [59] &quot;0303-8300   Social Indicators Research                                               A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-61"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-61" aria-hidden="true" tabindex="-1"></a><span class="do">## [60] &quot;0277-9536   Social Science &amp; Medicine (1982)                                         A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-62"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-62" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] &quot;0102-6992   Sociedade e Estado (UnB. Impresso)                                       A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-63"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-63" aria-hidden="true" tabindex="-1"></a><span class="do">## [62] &quot;0038-0199   Sociologia Ruralis (Print)                                               A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-64"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-64" aria-hidden="true" tabindex="-1"></a><span class="do">## [63] &quot;1517-4522   Sociologias (UFRGS. Impresso)                                            A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-65"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-65" aria-hidden="true" tabindex="-1"></a><span class="do">## [64] &quot;0735-2751   Sociological Theory                                                      A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-66"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-66" aria-hidden="true" tabindex="-1"></a><span class="do">## [65] &quot;0038-0296   Sociologie du Travail                                                    A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-67"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-67" aria-hidden="true" tabindex="-1"></a><span class="do">## [66] &quot;1069-4404   Sociology of Religion                                                    A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-68"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-68" aria-hidden="true" tabindex="-1"></a><span class="do">## [67] &quot;0340-918X   Soziologie (Opladen)                                                     A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-69"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-69" aria-hidden="true" tabindex="-1"></a><span class="do">## [68] &quot;0103-2070   Tempo Social (USP. Impresso)                                             A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-70"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-70" aria-hidden="true" tabindex="-1"></a><span class="do">## [69] &quot;0002-7162   The Annals of the American Academy of Political and Social Science       A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-71"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-71" aria-hidden="true" tabindex="-1"></a><span class="do">## [70] &quot;0263-2764   Theory, Culture &amp; Society                                                A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-72"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-72" aria-hidden="true" tabindex="-1"></a><span class="do">## [71] &quot;0725-5136   Thesis Eleven (Print)                                                    A1      SOCIOLOGIA              Atualizado&quot;           </span></span>
+<span id="cb63-73"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-73" aria-hidden="true" tabindex="-1"></a><span class="do">## [72] &quot;0730-8884   Work and Occupations                                           A1      SOCIOLOGIA              Atualizado&quot;                     </span></span>
+<span id="cb63-74"><a href="normalização-de-texto-e-expressões-regulares.html#cb63-74" aria-hidden="true" tabindex="-1"></a><span class="do">## [73] &quot;0305-750X   World Development                                              A1      SOCIOLOGIA              Atualizado&quot;</span></span></code></pre></div>
+<p>A busca está funcionando! No entanto, vale lembrar, não conseguimos aqui delimitar nossa busca a colunas específicas. Poderíamos fazer com que buscássemos apenas na coluna com classificação. Há outros modos de importarmos estes dados e fazermos esta busca no R. Este foi um modo simples para treinarmos o regex no R.</p>
+<!-- Para facilitar as coisas, já extraí em csv estes dados -->
+</div>
+<div id="transformando-strings-em-vetores-com-strsplit" class="section level3" number="5.3.4">
+<h3><span class="header-section-number">5.3.4</span> Transformando strings em vetores com <code>strsplit()</code></h3>
+<p>É possível quebrar uma string em vários elementos de um vetor usando um padrão regex</p>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nosso texto inicial</span></span>
+<span id="cb64-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-2" aria-hidden="true" tabindex="-1"></a>rato_vetor <span class="ot">&lt;-</span> <span class="st">&quot;O rato roeu. Roeu a roupa. A roupa que era do rei. Qual rei? O rei de Roma!&quot;</span></span>
+<span id="cb64-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um vetor tendo como critério de quebra o ponto final, deve-se usar o símbolo de escape &quot;\\.&quot;</span></span>
+<span id="cb64-5"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-5" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(rato_vetor, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.&quot;</span>)</span>
+<span id="cb64-6"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb64-7"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O rato roeu&quot;               &quot; Roeu a roupa&quot;            </span></span>
+<span id="cb64-8"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [3] &quot; A roupa que era do rei&quot;   &quot; Qual rei? O rei de Roma!&quot;</span></span>
+<span id="cb64-9"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-10"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetores a partir da pontuação</span></span>
+<span id="cb64-11"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-11" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(rato_vetor, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.|</span><span class="sc">\\</span><span class="st">?&quot;</span>)</span>
+<span id="cb64-12"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb64-13"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O rato roeu&quot;             &quot; Roeu a roupa&quot;          </span></span>
+<span id="cb64-14"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [3] &quot; A roupa que era do rei&quot; &quot; Qual rei&quot;              </span></span>
+<span id="cb64-15"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot; O rei de Roma!&quot;</span></span>
+<span id="cb64-16"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-17"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Uma dica. Os elementos de vetores estão ficando com espaço em branco. Podemos resolver isso:</span></span>
+<span id="cb64-18"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-18" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(rato_vetor, <span class="st">&quot;(</span><span class="sc">\\</span><span class="st">.|</span><span class="sc">\\</span><span class="st">?) ?&quot;</span>)</span>
+<span id="cb64-19"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
+<span id="cb64-20"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O rato roeu&quot;            &quot;Roeu a roupa&quot;           &quot;A roupa que era do rei&quot;</span></span>
+<span id="cb64-21"><a href="normalização-de-texto-e-expressões-regulares.html#cb64-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [4] &quot;Qual rei&quot;               &quot;O rei de Roma!&quot;</span></span></code></pre></div>
+<p>No pacote <code>stringr</code> o comando equivalente é o <code>str_split()</code>.</p>
+<p>Atenção:
+Ao tentar usar regex com espaços em branco (whitespace) e ele não funciona, é bom saber que há diversos tipos de espaços em branco.
+Há <a href="https://qwerty.dev/whitespace/">diferentes tipos de espaço em branco</a>
+<a href="https://www.oracle.com/technical-resources/articles/wang-whitespace.html"></a></p>
+</div>
+<div id="exemplo-regex" class="section level3" number="5.3.5">
+<h3><span class="header-section-number">5.3.5</span> Exemplo regex</h3>
+<p>Voltando ao nosso exemplo anterior, podemos transformar as datas abaixo, que estão no formado <code>dd/mm/aaaa</code> (dia/mês/ano) para o formato <code>aaaa-mm-dd</code> (ano-mês-dia), para que possamos, por exemplo, ordenar as datas de modo fácil.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Original</th>
+<th>Converter para</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>20/03/2020</td>
+<td>“2020-03-20”</td>
+</tr>
+<tr class="even">
+<td>13/01/1990</td>
+<td>“1990-01-13”</td>
+</tr>
+<tr class="odd">
+<td>04/06/2001</td>
+<td>“2001-06-04”</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="normalização-de-texto-e-expressões-regulares.html#cb65-1" aria-hidden="true" tabindex="-1"></a>datas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;20/03/2020&#39;</span>, <span class="st">&#39;13/01/1990&#39;</span>, <span class="st">&#39;04/06/2001&#39;</span>)</span>
+<span id="cb65-2"><a href="normalização-de-texto-e-expressões-regulares.html#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gsub</span>(<span class="st">&#39;([0-9]{2})/([0-9]{2})/([0-9]{4})&#39;</span>,<span class="st">&#39;</span><span class="sc">\\</span><span class="st">3-</span><span class="sc">\\</span><span class="st">2-</span><span class="sc">\\</span><span class="st">1&#39;</span>, datas)</span>
+<span id="cb65-3"><a href="normalização-de-texto-e-expressões-regulares.html#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;2020-03-20&quot; &quot;1990-01-13&quot; &quot;2001-06-04&quot;</span></span></code></pre></div>
+<p>Vale lembrar, o R possui funções (como o <code>strptime()</code> ) e <a href="introdução-ao-r.html#RDataHora">pacotes específicos para lidar com datas</a>. O exemplo acima foi apenas um exercício.</p>
+<p>O R possui diversos pacotes para lidar com regex. As funções do base, que já vem com o R possuem diversas funções.
+Há ainda o pacote <a href="https://cran.r-project.org/web//packages/re2/re2.pdf">Google RE2</a> que é uma versão rápida desenvolvida pela Google.</p>
+</div>
+</div>
+<div id="dicassugestões-regex-no-r" class="section level2 infobox note" number="5.4">
+<h2><span class="header-section-number">5.4</span> Dicas/Sugestões: Regex no R</h2>
+<ul>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/regex.pdf">Cheatsheet de expressões regulares no R</a> (em inglês) RECOMENDADO</li>
+<li><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/regex.html">“Regular Expressions as used in R”</a>.Expressão regular no R. Documento oficial. (em inglês)</li>
+<li>Albert Y. Kim. <a href="https://rstudio-pubs-static.s3.amazonaws.com/74603_76cd14d5983f47408fdf0b323550b846.html">Regular Expressions in R</a></li>
+<li><a href="https://www.regular-expressions.info/rlanguage.html">Regular Expressions with The R Language</a>. Site dedicao às RegEx em várias linguagens de programação.</li>
+<li><a href="https://github.com/rstudio/cheatsheets/raw/master/translations/portuguese/data-wrangling-cheatsheet-portuguese.pdf">Data Wrangling</a> Cheatsheet em português, tradução de Augusto Queiroz de Macedo</li>
+<li><a href="https://cran.r-project.org/web/packages/stringr/vignettes/regular-expressions.html">Regular expressions</a></li>
+<li>PENG, Roger. <a href="https://bookdown.org/rdpeng/rprogdatascience/regular-expressions.html">R Programming for Data Science</a>. 2020. Bookdown online.</li>
+<li>J. Kyle Armstrong <a href="https://bookdown.org/jkylearmstrong/jeff_data_wrangling/">Fundamentals of Data Wrangling with R</a> 2021. bookdown online</li>
+</ul>
+</div>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="introdução-ao-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análise-textual-text-mining.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
