@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 5 Análise Textual (text mining) | Introdução à Análise Textual aplicada à Sociologia</title>
+  <title>Capítulo 6 Análise Textual (text mining) | Introdução à Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 5 Análise Textual (text mining) | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:title" content="Capítulo 6 Análise Textual (text mining) | Introdução à Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 5 Análise Textual (text mining) | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta name="twitter:title" content="Capítulo 6 Análise Textual (text mining) | Introdução à Análise Textual aplicada à Sociologia" />
   
   <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   
@@ -30,9 +30,9 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="introdução-ao-r.html"/>
+<link rel="prev" href="normalização-de-texto-e-expressões-regulares.html"/>
 <link rel="next" href="análise-de-redes-sociais.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,8 +50,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -118,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -200,51 +201,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#listas-list"><i class="fa fa-check"></i><b>4.3.4</b> Listas (<em>list</em>)</a></li>
 <li class="chapter" data-level="4.3.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#data-frames"><i class="fa fa-check"></i><b>4.3.5</b> Data Frames</a></li>
 <li class="chapter" data-level="4.3.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>4.3.6</b> Considerações finais sobre estrutura de dados</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#criando-funções-no-r"><i class="fa fa-check"></i><b>4.3.7</b> Criando funções no R</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>4.3.8</b> Manipulando data e hora</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#a-suíte-de-pacotes-tidyverse"><i class="fa fa-check"></i><b>4.4</b> A suíte de pacotes <code>tidyverse</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>5</b> Análise Textual (<em>text mining</em>)</a></li>
-<li class="chapter" data-level="6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>6</b> Análise de Redes Sociais</a>
+<li class="chapter" data-level="4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#a-suíte-de-pacotes-tidyverse"><i class="fa fa-check"></i><b>4.4</b> A suíte de pacotes <code>tidyverse</code></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>6.1</b> O pacote Igraph</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>6.1.1</b> Clusterização</a></li>
+<li class="chapter" data-level="4.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>4.4.1</b> Tibbles</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate-facilitando-manipulação-de-datas"><i class="fa fa-check"></i><b>4.4.2</b> Lubridate: facilitando manipulação de datas</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>6.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
-<li class="chapter" data-level="6.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>6.3</b> Redes de palavras</a></li>
-<li class="chapter" data-level="6.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>6.4</b> Redes de citação</a></li>
-<li class="chapter" data-level="6.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>6.5</b> Gráfico de centralidade</a></li>
-<li class="chapter" data-level="6.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>6.6</b> Comunidades</a></li>
-<li class="chapter" data-level="6.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>6.7</b> Sugestões de links</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>7</b> Links úteis</a>
+<li class="chapter" data-level="5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>5</b> Normalização de texto e Expressões Regulares</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>7.1</b> Humanidades digitais</a></li>
-<li class="chapter" data-level="7.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>7.2</b> Análise de redes sociais</a></li>
-<li class="chapter" data-level="7.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>7.3</b> Textos sobre análise textual</a>
+<li class="chapter" data-level="5.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>5.1</b> Expressões regulares (RegEx)</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital"><i class="fa fa-check"></i><b>7.3.1</b> Sociologia Digital</a></li>
+<li class="chapter" data-level="5.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>5.1.1</b> Parâmetros das Regex</a></li>
+<li class="chapter" data-level="5.1.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#sequência-de-escape-scaping"><i class="fa fa-check"></i><b>5.1.2</b> Sequência de escape (scaping)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>7.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
-<li class="chapter" data-level="7.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>7.5</b> Revistas / Journals acadêmicos</a></li>
-<li class="chapter" data-level="7.6" data-path="links-úteis.html"><a href="links-úteis.html#sobre-dados-abertos"><i class="fa fa-check"></i><b>7.6</b> Sobre Dados Abertos</a></li>
-<li class="chapter" data-level="7.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>7.7</b> Vídeos</a></li>
-<li class="chapter" data-level="7.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>7.8</b> Sites / Blogs</a></li>
-<li class="chapter" data-level="7.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>7.9</b> Organizações</a></li>
-<li class="chapter" data-level="7.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>7.10</b> Links de Podcasts sobre Digital Humanities</a></li>
-<li class="chapter" data-level="7.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>7.11</b> Links Programação</a>
+<li class="chapter" data-level="5.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#metacaracteres-especiais"><i class="fa fa-check"></i><b>5.2</b> Metacaracteres especiais</a>
 <ul>
-<li class="chapter" data-level="7.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>7.11.1</b> R introdução</a></li>
-<li class="chapter" data-level="7.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>7.11.2</b> R - tópicos específicos</a></li>
-<li class="chapter" data-level="7.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>7.11.3</b> Links Python</a></li>
-<li class="chapter" data-level="7.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>7.11.4</b> Python - tópicos específicos</a></li>
+<li class="chapter" data-level="5.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#operadores"><i class="fa fa-check"></i><b>5.2.1</b> Operadores</a></li>
+<li class="chapter" data-level="5.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#quantificadores"><i class="fa fa-check"></i><b>5.2.2</b> Quantificadores</a></li>
+<li class="chapter" data-level="5.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#classes-posix"><i class="fa fa-check"></i><b>5.2.3</b> Classes POSIX</a></li>
+<li class="chapter" data-level="5.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#backreference"><i class="fa fa-check"></i><b>5.2.4</b> Backreference</a></li>
 </ul></li>
-<li class="chapter" data-level="7.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>7.12</b> Links de Cursos Online</a></li>
-<li class="chapter" data-level="7.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>7.13</b> Grupos de discussão/Forum</a>
+<li class="chapter" data-level="5.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>5.3</b> RegEx no R</a>
 <ul>
-<li class="chapter" data-level="7.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>7.13.1</b> Telegram</a></li>
+<li class="chapter" data-level="5.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>5.3.1</b> Grep</a></li>
+<li class="chapter" data-level="5.3.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>5.3.2</b> gsub()</a></li>
+<li class="chapter" data-level="5.3.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>5.3.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</a></li>
+<li class="chapter" data-level="5.3.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>5.3.4</b> Transformando strings em vetores com <code>strsplit()</code></a></li>
+<li class="chapter" data-level="5.3.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>5.3.5</b> Exemplo regex</a></li>
 </ul></li>
-<li class="chapter" data-level="7.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>7.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+<li class="chapter" data-level="5.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>5.4</b> Dicas/Sugestões: Regex no R</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>6</b> Análise Textual (<em>text mining</em>)</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context"><i class="fa fa-check"></i><b>6.0.1</b> Palavras em contexto (keyword-in-context)</a></li>
+<li class="chapter" data-level="6.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngrams"><i class="fa fa-check"></i><b>6.1</b> Ngrams</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngramr"><i class="fa fa-check"></i><b>6.1.1</b> GoogleNgrams</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>7</b> Análise de Redes Sociais</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>7.1</b> O pacote Igraph</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>7.1.1</b> Clusterização</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>7.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
+<li class="chapter" data-level="7.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>7.3</b> Redes de palavras</a></li>
+<li class="chapter" data-level="7.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>7.4</b> Redes de citação</a></li>
+<li class="chapter" data-level="7.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>7.5</b> Gráfico de centralidade</a></li>
+<li class="chapter" data-level="7.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>7.6</b> Comunidades</a></li>
+<li class="chapter" data-level="7.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>7.7</b> Sugestões de links</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>8</b> Links úteis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>8.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="8.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>8.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="8.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>8.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>8.3.1</b> Sociologia Digital / Sociologia Computacional</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>8.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="8.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>8.5</b> Revistas / Journals acadêmicos</a></li>
+<li class="chapter" data-level="8.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>8.6</b> Dados Abertos</a></li>
+<li class="chapter" data-level="8.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>8.7</b> Vídeos</a></li>
+<li class="chapter" data-level="8.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>8.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="8.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>8.9</b> Organizações</a></li>
+<li class="chapter" data-level="8.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>8.10</b> Links de Podcasts sobre Digital Humanities</a></li>
+<li class="chapter" data-level="8.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>8.11</b> Links Programação</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>8.11.1</b> R introdução</a></li>
+<li class="chapter" data-level="8.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>8.11.2</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="8.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>8.11.3</b> Links Python</a></li>
+<li class="chapter" data-level="8.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>8.11.4</b> Python - tópicos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>8.12</b> Links de Cursos Online</a></li>
+<li class="chapter" data-level="8.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>8.13</b> Grupos de discussão/Forum</a>
+<ul>
+<li class="chapter" data-level="8.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>8.13.1</b> Telegram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>8.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -266,17 +304,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="análise-textual-text-mining" class="section level1" number="5">
-<h1><span class="header-section-number">Capítulo 5</span> Análise Textual (<em>text mining</em>)</h1>
+<div id="análise-textual-text-mining" class="section level1" number="6">
+<h1><span class="header-section-number">Capítulo 6</span> Análise Textual (<em>text mining</em>)</h1>
 <div class="infobox obra">
-<p><strong>EM CONSTRUÇÃO</strong></p>
+<p><strong>CAPÍTULO AINDA EM CONSTRUÇÃO</strong></p>
 <p>Conteúdo planejado:</p>
 <ul>
 <li>Introdução à análise textual via computador</li>
+<li>Tipos de abordagens: bag of words, semantic parsing.</li>
 <li>Frequência de termos (bag of words, n-grams, skipgrams, TF-IDF)</li>
 <li>nuvem de palavras (<em>wordclouds</em>), Polarized tag cloud, pyramid plot.</li>
-<li>dendogramas</li>
-<li>Correlação de palavras, tipos de distâncias</li>
+<li>Correlação de palavras, tipos de distâncias, dendogramas</li>
 <li>parts-of-speech</li>
 <li>keyword extraction</li>
 <li>redes de palavras (<em>word networks</em>)</li>
@@ -284,14 +322,86 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Análise de sentimentos.</li>
 </ul>
 </div>
+<p>A análise computacional de textos é praticamente um sinônimo de Mineração de texto (<em>text mining</em>)
+Há diversas funções nativas do R que usamos na mineração de texto/análise textual, mas também há diversos pacotes focados em análise textual com diversas ferramentas, como o<br />
+<a href="https://cran.r-project.org/web/packages/quanteda/index.html">quanteda (QUantitative ANalysis TExtual DAta)</a>,
+<!-- [Rweka]() -->
+<a href="https://cran.r-project.org/web/packages/tm/tm.pdf">tm (Text Mining Package)</a> e
+<a href="https://www.rdocumentation.org/packages/qdap/">qdap (Quantitative Discourse Analysis Package)</a>.
+Estes são alguns dos mais famosos, com diversas ferramentas, mas há alguns outros pacotes focados em funções mais específicas, como o pacote <a href="https://cran.r-project.org/web/packages/wordcloud/index.html">wordcloud</a>, por exemplo.</p>
+<p>O pacote quanteda acompanha outros, como o quanteda.textstats, quanteda.textplots e o quanteda.textmodels que aconselhamos instalar também.</p>
+<div id="palavras-em-contexto-keyword-in-context" class="section level3" number="6.0.1">
+<h3><span class="header-section-number">6.0.1</span> Palavras em contexto (keyword-in-context)</h3>
+<div class="infobox obra">
+<p><strong>CAPÍTULO AINDA EM CONSTRUÇÃO</strong></p>
+</div>
+<p>Podemos ver como certas palavras são usadas em diversas frases no texto para ter uma ideia melhor do contexto em que aparecem.
+No quanteda, usamos a função <code>kwic(Dados, pattern = "padrão")</code>.</p>
+</div>
+<div id="ngrams" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Ngrams</h2>
+<div id="ngramr" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> GoogleNgrams</h3>
+<p>A Google pegou sua enorme base de dados dos milhares de livros do Google Books e extraiu os termos mais frequentes, e os colocou disponível para consulta no site <a href="https://books.google.com/ngrams">Goolge Books Ngram Viewer</a>.
+O Google Ngrams facilitou a busca por ngrams nesta base de dados, naquilo que chamavam de “<a href="http://www.culturomics.org/">culturonomics</a>”. O nome não pegou, a ferramenta tem suas limitações, mas ainda assim pode ser bem útil. A base de dados possui 5.2 milhões de livros, cerca de 4% de todos os livros já publicados.
+Para mais informações sobre a <a href="http://www.culturomics.org/Resources/A-users-guide-to-culturomics">base de dados</a> e sobre o GoogleNgram <a href="https://books.google.com/ngrams/info">no site</a>. Tanto o Python (com o <a href="http://www.culturomics.org/Resources/get-ngrams">get-ngrams</a>) como o R (<a href="https://github.com/seancarmody/ngramr">ngramr</a>) possuem pacotes que usam os dados do Google Ngram.</p>
+<p>Instalando o pacote</p>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="análise-textual-text-mining.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ngramr&#39;</span>)</span></code></pre></div>
+<p>Carregando os pacote</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="análise-textual-text-mining.html#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ngramr)</span></code></pre></div>
+<p>E um exemplo de uso</p>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="análise-textual-text-mining.html#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb68-2"><a href="análise-textual-text-mining.html#cb68-2" aria-hidden="true" tabindex="-1"></a>ng  <span class="ot">&lt;-</span> <span class="fu">ngram</span>(<span class="fu">c</span>(<span class="st">&quot;Max Weber&quot;</span>, <span class="st">&quot;Émile Durkheim&quot;</span>), <span class="at">year_start =</span> <span class="dv">1890</span>)</span>
+<span id="cb68-3"><a href="análise-textual-text-mining.html#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(ng, <span class="fu">aes</span>(<span class="at">x=</span>Year, <span class="at">y=</span>Frequency, <span class="at">colour=</span>Phrase)) <span class="sc">+</span></span>
+<span id="cb68-4"><a href="análise-textual-text-mining.html#cb68-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p>Um exemplo com mais opções:</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="análise-textual-text-mining.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggram</span>(<span class="fu">c</span>(<span class="st">&quot;monarchy&quot;</span>, <span class="st">&quot;democracy&quot;</span>), <span class="at">year_start =</span> <span class="dv">1500</span>, <span class="at">year_end =</span> <span class="dv">2000</span>, </span>
+<span id="cb69-2"><a href="análise-textual-text-mining.html#cb69-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">corpus =</span> <span class="st">&quot;eng_gb_2012&quot;</span>, <span class="at">ignore_case =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb69-3"><a href="análise-textual-text-mining.html#cb69-3" aria-hidden="true" tabindex="-1"></a>      <span class="at">geom =</span> <span class="st">&quot;area&quot;</span>, <span class="at">geom_options =</span> <span class="fu">list</span>(<span class="at">position =</span> <span class="st">&quot;stack&quot;</span>)) <span class="sc">+</span> </span>
+<span id="cb69-4"><a href="análise-textual-text-mining.html#cb69-4" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">y =</span> <span class="cn">NULL</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-57-1.png" width="672" />
+É possível mudar entre diferentes corpus, que neste caso representam as diferentes línguas, como “eng_us_2019”, “eng_gb_2019”, “chi_sim_2019”, “fre_2019”, “ger_2019”, “heb_2019”, “ger_2012”, “spa_2012”, “rus_2012”, “ita_2012”.
+Para ver todos os corpus disponíveis <a href="https://books.google.com/ngrams/info#">veja no site</a> busque a sessão “Corpora”. Infelizmente, não há corpus em português no Google Ngram.</p>
+<!-- Porquinhos3 = c("Max Weber", "Émile Durkheim", "Karl Marx", "Gabriel Tarde", "Georg Simmel") -->
+<!-- ggram(Porquinhos3, year_start = 1980, year_end = 2000,  -->
+<!--       corpus = "fre_2019", ignore_case = TRUE,  -->
+<!--       geom = "line", geom_options = list(position = "stack")) +  -->
+<!--       labs(y = NULL) -->
+<div class="infobox note">
+<p><strong>Dicas Ngramr:</strong></p>
+<ul>
+<li><a href="https://cran.r-project.org/web//packages/ngramr/ngramr.pdf">PDF com a documentação do ngramr</a></li>
+<li>instalação/Primeiros passos com o Ngramr <a href="https://github.com/seancarmody/ngramr">na página do Github do ngramr</a></li>
+</ul>
+</div>
+<div class="infobox note">
+<p><strong>Dicas Analise Textual</strong></p>
+<ul>
+<li>Julia Silge <a href="https://juliasilge.com/blog/learn-tidytext-learnr/">Learn tidytext with my new learnr course</a>. Um curso interativo do pacote Tidytext.</li>
+</ul>
+<p><strong>Textos sobre análise textual</strong></p>
+<ul>
+<li>CASTELFRANCHI, Yurij. <a href="https://jcom.sissa.it/sites/default/files/documents/JCOM_1602_2017_C04_pt.pdf">A análise de textos auxiliada pelo computador: um laboratório a céu aberto para as ciências sociais</a>. Journal of Science Communication 16(02)(2017)C04</li>
+<li>GRIMMER, Justin.STEWART, Brandom. <a href="http://stanford.edu/~jgrimmer/tad2.pdf">Text as Data: The Promise and Pitfalls of Automatic ContentAnalysis Methods for Political Texts</a>. Political Analysis(2013) pp. 1–31. <a href="doi:10.1093/pan/mps028" class="uri">doi:10.1093/pan/mps028</a>.</li>
+<li>TREADWELL, Donald. <a href="https://us.sagepub.com/sites/default/files/upm-binaries/53216_ch_12.pdf">Content Analysis: Understanding Text and Image in Numbers</a>. Understanding Text and Image in Numbers. In __ Introducing Communication Research: paths of Inquiry. Sage. 2014. (Capítulo sobre análise de conteúdo)</li>
+<li>Link para diversos artigos de Gary King sobre <a href="https://gking.harvard.edu/category/research-interests/applications/automated-text-analysis">Automated Text Analysis</a>.</li>
+</ul>
+<p><strong>Vídeos</strong></p>
+<ul>
+<li>BROWN, Taylor W. Workshop on automated text analysis no Summer Institute in Computational Social Science na Universidade de Oxford em 2019. Em inglês, sem legendas, usando o pacote Quanteda. <a href="http://media.podcasts.ox.ac.uk/nuff/2019_sicss/2019-06-19_1400-1515_Taylor_Brown_pt1_V1_720p.mp4">Parte 1</a> e <a href="http://media.podcasts.ox.ac.uk/nuff/2019_sicss/2019-06-19_1530-1730_Taylor_Brown_pt2_V1_720p.mp4">Parte 2</a>. O material da aula no <a href="https://drive.google.com/drive/folders/1qGCySYW9L3OnOEhtVGTbOXSRS1jcXnWX">Google Drive</a>.</li>
+</ul>
+</div>
 
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="introdução-ao-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="normalização-de-texto-e-expressões-regulares.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="análise-de-redes-sociais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
@@ -315,6 +425,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

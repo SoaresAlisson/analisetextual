@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 4 Introdução ao R | Introdução à Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 4 Introdução ao R | Introdução à Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
@@ -31,8 +31,8 @@
   
   
 <link rel="prev" href="estrutura-de-dados-e-tipos-de-formatos.html"/>
-<link rel="next" href="análise-textual-text-mining.html"/>
-<script src="libs/header-attrs-2.5/header-attrs.js"></script>
+<link rel="next" href="normalização-de-texto-e-expressões-regulares.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,8 +50,8 @@
 
 
 
-<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -118,6 +118,7 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
+
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -200,51 +201,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.3.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#listas-list"><i class="fa fa-check"></i><b>4.3.4</b> Listas (<em>list</em>)</a></li>
 <li class="chapter" data-level="4.3.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#data-frames"><i class="fa fa-check"></i><b>4.3.5</b> Data Frames</a></li>
 <li class="chapter" data-level="4.3.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>4.3.6</b> Considerações finais sobre estrutura de dados</a></li>
+<li class="chapter" data-level="4.3.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#criando-funções-no-r"><i class="fa fa-check"></i><b>4.3.7</b> Criando funções no R</a></li>
+<li class="chapter" data-level="4.3.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>4.3.8</b> Manipulando data e hora</a></li>
 </ul></li>
-<li class="chapter" data-level="4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#a-suíte-de-pacotes-tidyverse"><i class="fa fa-check"></i><b>4.4</b> A suíte de pacotes <code>tidyverse</code></a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>5</b> Análise Textual (<em>text mining</em>)</a></li>
-<li class="chapter" data-level="6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>6</b> Análise de Redes Sociais</a>
+<li class="chapter" data-level="4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#a-suíte-de-pacotes-tidyverse"><i class="fa fa-check"></i><b>4.4</b> A suíte de pacotes <code>tidyverse</code></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>6.1</b> O pacote Igraph</a>
-<ul>
-<li class="chapter" data-level="6.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>6.1.1</b> Clusterização</a></li>
+<li class="chapter" data-level="4.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>4.4.1</b> Tibbles</a></li>
+<li class="chapter" data-level="4.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate-facilitando-manipulação-de-datas"><i class="fa fa-check"></i><b>4.4.2</b> Lubridate: facilitando manipulação de datas</a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>6.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
-<li class="chapter" data-level="6.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>6.3</b> Redes de palavras</a></li>
-<li class="chapter" data-level="6.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>6.4</b> Redes de citação</a></li>
-<li class="chapter" data-level="6.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>6.5</b> Gráfico de centralidade</a></li>
-<li class="chapter" data-level="6.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>6.6</b> Comunidades</a></li>
-<li class="chapter" data-level="6.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>6.7</b> Sugestões de links</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>7</b> Links úteis</a>
+<li class="chapter" data-level="5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>5</b> Normalização de texto e Expressões Regulares</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>7.1</b> Humanidades digitais</a></li>
-<li class="chapter" data-level="7.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>7.2</b> Análise de redes sociais</a></li>
-<li class="chapter" data-level="7.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>7.3</b> Textos sobre análise textual</a>
+<li class="chapter" data-level="5.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>5.1</b> Expressões regulares (RegEx)</a>
 <ul>
-<li class="chapter" data-level="7.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital"><i class="fa fa-check"></i><b>7.3.1</b> Sociologia Digital</a></li>
+<li class="chapter" data-level="5.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>5.1.1</b> Parâmetros das Regex</a></li>
+<li class="chapter" data-level="5.1.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#sequência-de-escape-scaping"><i class="fa fa-check"></i><b>5.1.2</b> Sequência de escape (scaping)</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>7.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
-<li class="chapter" data-level="7.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>7.5</b> Revistas / Journals acadêmicos</a></li>
-<li class="chapter" data-level="7.6" data-path="links-úteis.html"><a href="links-úteis.html#sobre-dados-abertos"><i class="fa fa-check"></i><b>7.6</b> Sobre Dados Abertos</a></li>
-<li class="chapter" data-level="7.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>7.7</b> Vídeos</a></li>
-<li class="chapter" data-level="7.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>7.8</b> Sites / Blogs</a></li>
-<li class="chapter" data-level="7.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>7.9</b> Organizações</a></li>
-<li class="chapter" data-level="7.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>7.10</b> Links de Podcasts sobre Digital Humanities</a></li>
-<li class="chapter" data-level="7.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>7.11</b> Links Programação</a>
+<li class="chapter" data-level="5.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#metacaracteres-especiais"><i class="fa fa-check"></i><b>5.2</b> Metacaracteres especiais</a>
 <ul>
-<li class="chapter" data-level="7.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>7.11.1</b> R introdução</a></li>
-<li class="chapter" data-level="7.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>7.11.2</b> R - tópicos específicos</a></li>
-<li class="chapter" data-level="7.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>7.11.3</b> Links Python</a></li>
-<li class="chapter" data-level="7.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>7.11.4</b> Python - tópicos específicos</a></li>
+<li class="chapter" data-level="5.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#operadores"><i class="fa fa-check"></i><b>5.2.1</b> Operadores</a></li>
+<li class="chapter" data-level="5.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#quantificadores"><i class="fa fa-check"></i><b>5.2.2</b> Quantificadores</a></li>
+<li class="chapter" data-level="5.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#classes-posix"><i class="fa fa-check"></i><b>5.2.3</b> Classes POSIX</a></li>
+<li class="chapter" data-level="5.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#backreference"><i class="fa fa-check"></i><b>5.2.4</b> Backreference</a></li>
 </ul></li>
-<li class="chapter" data-level="7.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>7.12</b> Links de Cursos Online</a></li>
-<li class="chapter" data-level="7.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>7.13</b> Grupos de discussão/Forum</a>
+<li class="chapter" data-level="5.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>5.3</b> RegEx no R</a>
 <ul>
-<li class="chapter" data-level="7.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>7.13.1</b> Telegram</a></li>
+<li class="chapter" data-level="5.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>5.3.1</b> Grep</a></li>
+<li class="chapter" data-level="5.3.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>5.3.2</b> gsub()</a></li>
+<li class="chapter" data-level="5.3.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>5.3.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</a></li>
+<li class="chapter" data-level="5.3.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>5.3.4</b> Transformando strings em vetores com <code>strsplit()</code></a></li>
+<li class="chapter" data-level="5.3.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>5.3.5</b> Exemplo regex</a></li>
 </ul></li>
-<li class="chapter" data-level="7.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>7.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+<li class="chapter" data-level="5.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>5.4</b> Dicas/Sugestões: Regex no R</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>6</b> Análise Textual (<em>text mining</em>)</a>
+<ul>
+<li class="chapter" data-level="6.0.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context"><i class="fa fa-check"></i><b>6.0.1</b> Palavras em contexto (keyword-in-context)</a></li>
+<li class="chapter" data-level="6.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngrams"><i class="fa fa-check"></i><b>6.1</b> Ngrams</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngramr"><i class="fa fa-check"></i><b>6.1.1</b> GoogleNgrams</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>7</b> Análise de Redes Sociais</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>7.1</b> O pacote Igraph</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>7.1.1</b> Clusterização</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>7.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
+<li class="chapter" data-level="7.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>7.3</b> Redes de palavras</a></li>
+<li class="chapter" data-level="7.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>7.4</b> Redes de citação</a></li>
+<li class="chapter" data-level="7.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>7.5</b> Gráfico de centralidade</a></li>
+<li class="chapter" data-level="7.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>7.6</b> Comunidades</a></li>
+<li class="chapter" data-level="7.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>7.7</b> Sugestões de links</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>8</b> Links úteis</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>8.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="8.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>8.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="8.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>8.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>8.3.1</b> Sociologia Digital / Sociologia Computacional</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>8.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="8.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>8.5</b> Revistas / Journals acadêmicos</a></li>
+<li class="chapter" data-level="8.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>8.6</b> Dados Abertos</a></li>
+<li class="chapter" data-level="8.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>8.7</b> Vídeos</a></li>
+<li class="chapter" data-level="8.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>8.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="8.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>8.9</b> Organizações</a></li>
+<li class="chapter" data-level="8.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>8.10</b> Links de Podcasts sobre Digital Humanities</a></li>
+<li class="chapter" data-level="8.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>8.11</b> Links Programação</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>8.11.1</b> R introdução</a></li>
+<li class="chapter" data-level="8.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>8.11.2</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="8.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>8.11.3</b> Links Python</a></li>
+<li class="chapter" data-level="8.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>8.11.4</b> Python - tópicos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>8.12</b> Links de Cursos Online</a></li>
+<li class="chapter" data-level="8.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>8.13</b> Grupos de discussão/Forum</a>
+<ul>
+<li class="chapter" data-level="8.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>8.13.1</b> Telegram</a></li>
+</ul></li>
+<li class="chapter" data-level="8.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>8.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -282,7 +320,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol></li>
 </ul>
 </div>
-<p>O R vem com diversos pacotes e funções nativamente. Só para ter uma idéia desta quantidade:</p>
+<p>Supondo que já tenha o R e o RStudio instalados (há diversos tutoriais de instalação no Youtube), vamos aos primeiros passos.</p>
+<p>É possível também rodar o R de modo online, de modo gratuito, sem instalar nada em seu computador, com o <a href="https://onecompiler.com/r">One Compiler</a> e o <a href="https://rdrr.io/snippets/">Snippets</a>, tendo mais de 19 mil pacotes instalados.
+O lado negativo é que não é um modo prático e tão rápido como rodar em seu computador, mas pode servir para pequenos testes.</p>
+<div class="figure">
+<img src="imagens/RSnippets.png" style="width:50.0%" alt="" />
+<p class="caption">Snippets: um site para rodar R online</p>
+</div>
+<p>Outro modo de rodar o R online é criar uma conta no <a href="https://rstudio.cloud/">RStudio Cloud</a>, que possui também modalidade de conta gratuita, com algumas limitações: 15 horas de uso mensais, 1 Gb de Ram (pouco, mas funciona). Vantagem do Rstudio Cloud: a instalação de pacotes ocorre sem maiores problemas. Desvantagem: be mais lento que o RStudio Desktop.</p>
+<div class="infobox history">
+<p><strong>HISTORIA</strong></p>
+<p>A linguagem R foi criada no ano de 1993 por Ross Ihaka e Robert Gentleman do Departamento de Estatística da Universidade de Auckland, da Nova Zelândia, se baseando na linguagem S (por sua vez, criada em 1976). O anúncio oficial de lançamento do R ocorreu em 23 de abril de 1997.
+- <a href="https://www.jstor.org/stable/1390807">IHAKA, Ross; GENTLEMAN, Robert. “R: A Language for Data Analysis and Graphics”. Journal of Computational and Graphical Statistics. 5 (3): 299. set.1996 doi:10.2307/1390807. ISSN 1061-8600. JSTOR 1390807.</a></p>
+</div>
+<p>R é uma linguagem aberta e gratuita, mutiplataforma (roda em Linux, Windows e Mac), publicada sob a licença General Public License (GNU).
+O R é criado por estatísticos e é bem popular no mundo acadêmico. O R vem com diversos pacotes e funções nativamente.
+Só para ter uma idéia desta quantidade:</p>
 <table>
 <thead>
 <tr class="header">
@@ -321,23 +374,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Dificilmente vamos dominar todos estes e mais as funçoes dos pacotes específicos.</p>
-<p>Supondo que já tenha o R e o RStudio instalados (há diversos tutoriais de instalação no Youtube), vamos aos primeiros passos.</p>
-<p>É possível também rodar o R de modo online, de modo gratuito, sem instalar nada em seu computador, com o
-<a href="https://onecompiler.com/r">One Compiler</a> e o <a href="https://rdrr.io/snippets/">Snippets</a>, tendo mais de 19 mil pacotes instalados. O lado negativo é que não é um modo prático e tão rápido como rodar em seu computador, mas pode servir para pequenos testes.</p>
-<div class="figure">
-<img src="imagens/RSnippets.png" style="width:50.0%" alt="" />
-<p class="caption">Snippets: um site para rodar R online</p>
-</div>
+<p>Dificilmente vamos dominar estes pacotes e mais as funções dos pacotes específicos que iremos instalar</p>
 <div id="obtendo-ajuda-no-r" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Obtendo Ajuda no R</h2>
 <p>A primeira coisa a se aprender é como conseguir ajuda, como conseguir a informação que precisamos.
 A busca por ajuda é uma constante, mesmo entre os mais experiente.</p>
 <table>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col width="11%" />
+<col width="62%" />
+<col width="26%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -435,22 +481,25 @@ O Rcmdr ensina como importar dados (SPSS, Excell, Stata, ruls, etc.), como reali
 <img src="imagens/Rcommander.png" alt="" />
 <p class="caption">R Commander em ação</p>
 </div>
-<p>Caso feche a janela do RCommander, rodar <code>library(Rcmdr)</code> novamente não abrirá a janela, uma vez que o pacote já está carregado. A solução é rodar então <code>Commander()</code> para ter a janela novamente. Caso queira fechar este pacote, basta digitar no Console <code>detach("package:Rcmdr", unload=TRUE)</code> ou apenas feche o R.</p>
+<p>Caso feche a janela do RCommander, rodar <code>library(Rcmdr)</code> novamente não abrirá a janela, uma vez que o pacote já está carregado.
+A solução é rodar então <code>Commander()</code> para ter a janela novamente.
+Caso queira fechar este pacote, basta digitar no Console <code>detach("package:Rcmdr", unload=TRUE)</code> ou apenas feche o R.</p>
 <div class="infobox note">
 <p><strong>Dicas</strong>: R Commander</p>
 <ul>
 <li>LAURETTO, Marcelo. <a href="http://www.each.usp.br/lauretto/cursoR2017/02-RcommanderParte1.pdf">Introdução ao R Commander</a>. (Pequeno tutorial do RCommander, em PDF e em português.)</li>
 <li><a href="https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/">The R Commander: A Basic-Statistics GUI for R</a></li>
 <li>FOX, John. <a href="https://socialsciences.mcmaster.ca/jfox/Misc/Rcmdr/Getting-Started-with-the-Rcmdr.pdf">Getting Started With the R Commander</a>. (Artigo do criador do RCommander)</li>
-<li>Video tutorial do Rcommander em ação e em português:
-<a href="https://www.youtube.com/watch?v=7GDshWv8O6E">Aprendendo Estatística com o R Commander</a> do Departamento de Estatística UFLA</li>
+<li>Video tutorial do R Commander em ação e em português: <a href="https://www.youtube.com/watch?v=7GDshWv8O6E">Aprendendo Estatística com o R Commander</a> do Departamento de Estatística UFLA</li>
 </ul>
 </div>
 </div>
 <div id="comentando-o-código" class="section level3" number="4.1.2">
 <h3><span class="header-section-number">4.1.2</span> Comentando o código</h3>
-<p>Nas linguagens de programação é possível acrescentar comentários para orientar os humanos e que não serão lidos pelo computador. Cada linguagem tem o seu próprio padrão.
-No R, assim como em muitas linguagens de programação, os comentários no código são feito com a tralha <code>#</code> ou hashtag, jogo da velha, etc. Tudo que vier depois deste símbolo é então ignorado.</p>
+<p>Nas linguagens de programação é possível acrescentar comentários para orientar os humanos e que não serão lidos pelo computador.
+Cada linguagem tem o seu próprio padrão.
+No R, assim como em muitas linguagens de programação, os comentários no código são feito com a tralha <code>#</code> ou hashtag, jogo da velha, etc.
+Tudo que vier depois deste símbolo é então ignorado.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="introdução-ao-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Olá mundo!&quot;</span>)</span>
 <span id="cb11-2"><a href="introdução-ao-r.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Olá mundo!&quot;</span></span>
 <span id="cb11-3"><a href="introdução-ao-r.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Olá mundo R!&quot;</span>) <span class="co"># comentário que o computador ignora</span></span>
@@ -469,15 +518,13 @@ Execution halted</code></pre>
 <blockquote>
 <p>“Tudo que existe no R é um objeto” (John Chambers, <em>apud</em> <a href="https://adv-r.hadley.nz/base-types.html">WICKHAM</a>)</p>
 </blockquote>
-<p>Tipos de dados se referem à forma mais simples de objetos, ou tipos de dados atômicos do R (R atomic data types)
-<!-- Everything in R programming language is an object. Hence, when we talk about data types in R we refer to the simplest data objects we can handle, that are also known as R atomic data types. https://r-coder.com/data-types-r/#Raw_data_type_in_R -->
-Há cerca de <a href="https://adv-r.hadley.nz/base-types.html">25 tipos de dados no R, ou “base types”</a>, mas<br />
-os cinco tipos de dados mais frequentes são:</p>
+<p>Tipos de dados se referem à forma mais simples de objetos, ou tipos de dados atômicos do R (R atomic data types) <!-- Everything in R programming language is an object. Hence, when we talk about data types in R we refer to the simplest data objects we can handle, that are also known as R atomic data types. https://r-coder.com/data-types-r/#Raw_data_type_in_R --> Há cerca de <a href="https://adv-r.hadley.nz/base-types.html">25 tipos de dados no R, ou “base types”</a>, mas
+os tipos de dados mais frequentes são:</p>
 <table>
 <colgroup>
 <col width="22%" />
-<col width="33%" />
-<col width="44%" />
+<col width="39%" />
+<col width="38%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -489,38 +536,44 @@ os cinco tipos de dados mais frequentes são:</p>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td>character (texto)</td>
+<td><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/character.html">character</a> (texto)</td>
 <td>“a”, “bla”, “Fulano de tal”</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td>numeric (real ou decimal)</td>
+<td><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/numeric.html">numeric</a> (real ou decimal)</td>
 <td><code>2</code>, <code>43</code></td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td>integer (integral)</td>
+<td><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/integer.html">integer</a> (integral)</td>
 <td><code>3L</code> (O “L” é o modo que o R entende que é um integral)</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td>logical (lógico)</td>
+<td><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/logical.html">logical</a> (lógico)</td>
 <td><code>TRUE</code> ou <code>FALSE</code></td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td>complex (complexo)</td>
-<td><code>1+4i</code> (números complexos com partes reais e imaginárias)</td>
+<td><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/complex.html">complex</a> (complexo)</td>
+<td><code>1-4i</code> (números complexos com partes reais e imaginárias)</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/raw.html">raw</a> (bytes, para arquivos com dados binários)</td>
+<td>O raw é de uso raro. <code>&gt; charToRaw('olá')</code> resulta em: <code>6f 6c c3 a1</code></td>
 </tr>
 </tbody>
 </table>
+<!-- [raw](https://stat.ethz.ch/R-manual/R-devel/library/base/html/raw.html) -->
 <!-- |6| [raw](https://stat.ethz.ch/R-manual/R-devel/library/base/html/raw.html) | `charToRaw("bla")`, `intToBits(5L)` Trabalha com bytes e é de uso raro|  -->
 <p>Uma vez criados os dados, para examinar as características dos objetos há algumas funções no R</p>
 <table>
 <colgroup>
-<col width="33%" />
-<col width="33%" />
-<col width="33%" />
+<col width="34%" />
+<col width="41%" />
+<col width="23%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -537,8 +590,8 @@ os cinco tipos de dados mais frequentes são:</p>
 </tr>
 <tr class="even">
 <td><code>length()</code></td>
-<td>Qual o tamanho dos vetores? Quantos itens possui?</td>
-<td><code>length(c("bla","ble"))</code></td>
+<td>Qual o tamanho do vetore? Quantos itens possui? | `</td>
+<td>length(c(“bla”,“ble”))`</td>
 </tr>
 <tr class="odd">
 <td><code>attributes()</code></td>
@@ -632,6 +685,10 @@ os cinco tipos de dados mais frequentes são:</p>
 <td><code>as.logical</code></td>
 <td>Boolean</td>
 </tr>
+<tr class="even">
+<td><code>as.raw</code></td>
+<td>Raw</td>
+</tr>
 </tbody>
 </table>
 <!-- |`as.raw`|Raw| -->
@@ -656,19 +713,20 @@ O R possui diversas estruturas de dados, como:</p>
 </ul>
 <div id="vetor-vector" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> Vetor (vector)</h3>
-<p>Vetor é a estrutura de dados mais comum no R. Criamos vetores com a função <code>c()</code> de “concatenate” ou “combine”.
+<p>Vetor é a estrutura de dados mais comum no R.
+Criamos vetores com a função <code>c()</code> de “concatenate” ou “combine”.
 No caso de strings (character), deve-se colocar os valores dentro de aspas:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introdução-ao-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a>meu_vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bla&quot;</span>, <span class="st">&quot;bla&quot;</span>, <span class="st">&quot;ble&quot;</span>, <span class="st">&quot;bli&quot;</span>) <span class="co"># criando o vetor com strings</span></span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="introdução-ao-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a>meu_vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bla&quot;</span>, <span class="st">&quot;ble&quot;</span>, <span class="st">&quot;bli&quot;</span>, <span class="st">&quot;blo&quot;</span>, <span class="st">&quot;blu&quot;</span>) <span class="co"># criando o vetor com strings</span></span>
 <span id="cb14-2"><a href="introdução-ao-r.html#cb14-2" aria-hidden="true" tabindex="-1"></a>meu_vetor <span class="co"># imprimindo na tela o vetor que acabamos de criar</span></span>
-<span id="cb14-3"><a href="introdução-ao-r.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bla&quot; &quot;bla&quot; &quot;ble&quot; &quot;bli&quot;</span></span>
+<span id="cb14-3"><a href="introdução-ao-r.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bla&quot; &quot;ble&quot; &quot;bli&quot; &quot;blo&quot; &quot;blu&quot;</span></span>
 <span id="cb14-4"><a href="introdução-ao-r.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(meu_vetor)</span>
 <span id="cb14-5"><a href="introdução-ao-r.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
 <span id="cb14-6"><a href="introdução-ao-r.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-7"><a href="introdução-ao-r.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(meu_vetor) <span class="co"># observando quantos itens possui nosso vetor</span></span>
-<span id="cb14-8"><a href="introdução-ao-r.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
+<span id="cb14-8"><a href="introdução-ao-r.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
 <span id="cb14-9"><a href="introdução-ao-r.html#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-10"><a href="introdução-ao-r.html#cb14-10" aria-hidden="true" tabindex="-1"></a>meu_vetor[<span class="dv">3</span>]  <span class="co"># acessando o item do 3 de nosso vetor</span></span>
-<span id="cb14-11"><a href="introdução-ao-r.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;ble&quot;</span></span>
+<span id="cb14-11"><a href="introdução-ao-r.html#cb14-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bli&quot;</span></span>
 <span id="cb14-12"><a href="introdução-ao-r.html#cb14-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-13"><a href="introdução-ao-r.html#cb14-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um vetor de valores booleanos</span></span>
 <span id="cb14-14"><a href="introdução-ao-r.html#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Não se usa aspas nesse caso</span></span>
@@ -684,10 +742,9 @@ No caso de strings (character), deve-se colocar os valores dentro de aspas:</p>
 <span id="cb14-24"><a href="introdução-ao-r.html#cb14-24" aria-hidden="true" tabindex="-1"></a><span class="co"># criando uma sequência numérica de 2 a 8. Desta vez não iremos salvar em uma variável</span></span>
 <span id="cb14-25"><a href="introdução-ao-r.html#cb14-25" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">8</span>) </span>
 <span id="cb14-26"><a href="introdução-ao-r.html#cb14-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2 3 4 5 6 7 8</span></span></code></pre></div>
-<p>Vetores podem ser de dois tipos: 1) atômicos, ou 2) listas. Mas o mais frequênte é encontrarmos “vetor” como sinônimo de “vetor atômico”, e listas serem consideradas como algo à parte.
-<!-- although the term “vector” most commonly refers to the atomic types not to lists. -->
-Para examinarmos os vetores, podemos usar as funções:
-<code>typeof()</code>, <code>length()</code>, <code>class()</code> e <code>str()</code></p>
+<p>Vetores podem ser de dois tipos: 1) atômicos, ou 2) listas.
+Mas o mais frequênte é encontrarmos “vetor” como sinônimo de “vetor atômico”, e listas serem consideradas como algo à parte.
+<!-- although the term “vector” most commonly refers to the atomic types not to lists. --> Para examinarmos os vetores, podemos usar as funções: <code>typeof()</code>, <code>length()</code>, <code>class()</code> e <code>str()</code></p>
 <p>É ainda possível também atribuir nomes aos elementos de um vetor usando a função <code>names()</code></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="introdução-ao-r.html#cb15-1" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span>  <span class="fu">c</span>(<span class="dv">12</span>, <span class="dv">34</span>, <span class="dv">13</span>) <span class="co"># Criando um vetor de valores</span></span>
 <span id="cb15-2"><a href="introdução-ao-r.html#cb15-2" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;banana&quot;</span>, <span class="st">&quot;uva&quot;</span>, <span class="st">&quot;abacate&quot;</span>) <span class="co"># Criando vetor com os nomes</span></span>
@@ -750,7 +807,9 @@ Para examinarmos os vetores, podemos usar as funções:
 </tr>
 </tbody>
 </table>
-<p>Se em uma coluna certos valores se repetem, podemos considerá-los como “fatores”. No caso a coluna “Nome” possui valores únicos, a coluta “Altura” também, mas a coluna “Região” possui uma quantidade limitada de valores que se repetirão: N,S,NO,SE,CO. Podemos então considerar os valores desta coluna como “fatores”.
+<p>Se em uma coluna certos valores se repetem, podemos considerá-los como “fatores”.
+No caso a coluna “Nome” possui valores únicos, a coluta “Altura” também, mas a coluna “Região” possui uma quantidade limitada de valores que se repetirão: N,S,NO,SE,CO.
+Podemos então considerar os valores desta coluna como “fatores”.
 Fatores podem ser tanto strings, como no caso acima, como integrais, como no caso da idade de estudantes de uma mesma turma.</p>
 <p>Um exemplo prático:</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="introdução-ao-r.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um vetor de caracteres com siglas de aeroportos brasileiros</span></span>
@@ -775,7 +834,8 @@ Fatores podem ser tanto strings, como no caso acima, como integrais, como no cas
 <span id="cb16-20"><a href="introdução-ao-r.html#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Agora é possível gerar o gráfico de barras (barplot)</span></span>
 <span id="cb16-21"><a href="introdução-ao-r.html#cb16-21" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">summary</span>(aeroportos.fator))</span></code></pre></div>
 <p><img src="analise_textual_sociologia_files/figure-html/cars-1.png" width="672" /></p>
-<p>Fatores são comuns em tabelas, mas são raros em análise textual. Assim, ao trabalhar com análise textual, convém mudar as opções globais de strings, para não serem consideradas fatores:</p>
+<p>Fatores são comuns em tabelas, mas são raros em análise textual.
+Assim, ao trabalhar com análise textual, convém mudar as opções globais de strings, para não serem consideradas fatores:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="introdução-ao-r.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 </div>
 <div id="matrix" class="section level3" number="4.3.3">
@@ -798,7 +858,9 @@ Fatores podem ser tanto strings, como no caso acima, como integrais, como no cas
 <span id="cb18-15"><a href="introdução-ao-r.html#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Acessando uma linha inteira</span></span>
 <span id="cb18-16"><a href="introdução-ao-r.html#cb18-16" aria-hidden="true" tabindex="-1"></a>minha.matriz[<span class="dv">2</span>, ]</span>
 <span id="cb18-17"><a href="introdução-ao-r.html#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  2  6 10</span></span></code></pre></div>
-<p>Matrizes também são usadas na análise textual, como nas <a href="#DTM">Document-Term-Matrix</a> e TermDocument Matrix. Veremos em mais detalhes posteriormente, mas apenas para um primeiro contato, o DTM das frases “O rato roeu a roupa do rei”, “O rei riu do rato”, “A roupa do rato é de rei”, onde cada linha representa um documento (documento, neste caso, é cada uma das frases) e as colunas são as palavras. Os números são a frequência de cada termo em cada frase:</p>
+<p>Matrizes também são usadas na análise textual, como nas <a href="#DTM">Document-Term-Matrix</a> e TermDocument Matrix.
+Veremos em mais detalhes posteriormente, mas apenas para um primeiro contato, o DTM das frases “O rato roeu a roupa do rei”, “O rei riu do rato”, “A roupa do rato é de rei”, onde cada linha representa um documento (documento, neste caso, é cada uma das frases) e as colunas são as palavras.
+Os números são a frequência de cada termo em cada frase:</p>
 <!-- |    | Documentoss| -->
 <!-- |-----|-----| -->
 <!-- |*Termos*|1 |2 |3| -->
@@ -882,7 +944,11 @@ Para criar uma lista, basta usar o comando <code>list()</code></p>
 <span id="cb20-6"><a href="introdução-ao-r.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
 <span id="cb20-7"><a href="introdução-ao-r.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Bla bla bla&quot;      &quot; Ble ble ble ble&quot; &quot; Bli bli&quot;         &quot; Blo&quot;            </span></span>
 <span id="cb20-8"><a href="introdução-ao-r.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [5] &quot; Blu blu blu&quot;</span></span></code></pre></div>
-<p>No exemplo acima, o primeiro argumento em strplit() é a variável, o segundo argumento é o critério a ser usado para quebrar o texto. Alguns caracteres são considerados especiais e precisam ser indicados que queremos seu significado literal. É o caso de ponto final. Para conseguirmos usá-lo como ponto final, ao invés de usarmos <code>"."</code>, usamos <code>\\.</code> . Note que ficaram espaços no início dos elementos dos vetores. Podemos melhorar nosso código acrescentando um espaço em branco após o ponto final:</p>
+<p>No exemplo acima, o primeiro argumento em strplit() é a variável, o segundo argumento é o critério a ser usado para quebrar o texto.
+Alguns caracteres são considerados especiais e precisam ser indicados que queremos seu significado literal.
+É o caso de ponto final.
+Para conseguirmos usá-lo como ponto final, ao invés de usarmos <code>"."</code>, usamos <code>\\.</code> . Note que ficaram espaços no início dos elementos dos vetores.
+Podemos melhorar nosso código acrescentando um espaço em branco após o ponto final:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="introdução-ao-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">strsplit</span>(texto, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">. &quot;</span>)</span>
 <span id="cb21-2"><a href="introdução-ao-r.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [[1]]</span></span>
 <span id="cb21-3"><a href="introdução-ao-r.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Bla bla bla&quot;     &quot;Ble ble ble ble&quot; &quot;Bli bli&quot;         &quot;Blo&quot;            </span></span>
@@ -911,12 +977,13 @@ Para criar uma lista, basta usar o comando <code>list()</code></p>
 <h3><span class="header-section-number">4.3.5</span> Data Frames</h3>
 <p>Uma vantagem de se trabalhar com data frame é que as colunas tem nome e não apenas índice, e isto facilita nosso trabalho na hora de procurar as informações que queremos, pois buscar a coluna pelo seu número pode nos causar confusão.</p>
 <!-- escolaridade <- as.integer(c(08,13,15))  -->
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introdução-ao-r.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando 3 vetores com os valores</span></span>
+<!-- https://educa.ibge.gov.br/jovens/conheca-o-brasil/populacao/18319-cor-ou-raca.html -->
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="introdução-ao-r.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando 3 vetores com valores aleatórios</span></span>
 <span id="cb24-2"><a href="introdução-ao-r.html#cb24-2" aria-hidden="true" tabindex="-1"></a>idade <span class="ot">&lt;-</span>  <span class="fu">as.integer</span>(<span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">23</span>,<span class="dv">35</span>)) </span>
 <span id="cb24-3"><a href="introdução-ao-r.html#cb24-3" aria-hidden="true" tabindex="-1"></a>genero <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">&quot;fem&quot;</span>, <span class="st">&quot;mas&quot;</span>, <span class="st">&quot;fem&quot;</span>)) </span>
 <span id="cb24-4"><a href="introdução-ao-r.html#cb24-4" aria-hidden="true" tabindex="-1"></a>raça <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">c</span>(<span class="st">&quot;pret&quot;</span>, <span class="st">&quot;branc&quot;</span>, <span class="st">&quot;pard&quot;</span>)) </span>
 <span id="cb24-5"><a href="introdução-ao-r.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-6"><a href="introdução-ao-r.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># jogando estes vetores no nosso dataframe que vamos nomear de &quot;df&quot;</span></span>
+<span id="cb24-6"><a href="introdução-ao-r.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Jogando estes vetores no nosso dataframe, que vamos nomear de &quot;df&quot;</span></span>
 <span id="cb24-7"><a href="introdução-ao-r.html#cb24-7" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(idade, genero, raça) </span>
 <span id="cb24-8"><a href="introdução-ao-r.html#cb24-8" aria-hidden="true" tabindex="-1"></a>df <span class="co"># vendo nosso dataframe no console</span></span>
 <span id="cb24-9"><a href="introdução-ao-r.html#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
@@ -993,13 +1060,190 @@ Para criar uma lista, basta usar o comando <code>list()</code></p>
 <span id="cb24-80"><a href="introdução-ao-r.html#cb24-80" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
 <span id="cb24-81"><a href="introdução-ao-r.html#cb24-81" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
 <span id="cb24-82"><a href="introdução-ao-r.html#cb24-82" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem  pard</span></span></code></pre></div>
+<div id="manipulandoeditando-o-data-frame" class="section level4" number="4.3.5.1">
+<h4><span class="header-section-number">4.3.5.1</span> Manipulando/Editando o data frame</h4>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="introdução-ao-r.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># adicionando (append) nova linha ao data.frame </span></span>
+<span id="cb25-2"><a href="introdução-ao-r.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Modo1: através do &#39;nrow&#39;</span></span>
+<span id="cb25-3"><a href="introdução-ao-r.html#cb25-3" aria-hidden="true" tabindex="-1"></a>df[<span class="fu">nrow</span>(df)<span class="sc">+</span><span class="dv">1</span>,]<span class="ot">=</span><span class="fu">c</span>(<span class="dv">23</span>, <span class="st">&quot;mas&quot;</span>, <span class="st">&quot;branc&quot;</span>)</span>
+<span id="cb25-4"><a href="introdução-ao-r.html#cb25-4" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb25-5"><a href="introdução-ao-r.html#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
+<span id="cb25-6"><a href="introdução-ao-r.html#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem  pret</span></span>
+<span id="cb25-7"><a href="introdução-ao-r.html#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
+<span id="cb25-8"><a href="introdução-ao-r.html#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem  pard</span></span>
+<span id="cb25-9"><a href="introdução-ao-r.html#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    23    mas branc</span></span>
+<span id="cb25-10"><a href="introdução-ao-r.html#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Modo 2: rbind()</span></span>
+<span id="cb25-11"><a href="introdução-ao-r.html#cb25-11" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df, <span class="fu">c</span>(<span class="dv">20</span>,<span class="st">&quot;fem&quot;</span>, <span class="st">&quot;pret&quot;</span>))</span>
+<span id="cb25-12"><a href="introdução-ao-r.html#cb25-12" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb25-13"><a href="introdução-ao-r.html#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
+<span id="cb25-14"><a href="introdução-ao-r.html#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem  pret</span></span>
+<span id="cb25-15"><a href="introdução-ao-r.html#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
+<span id="cb25-16"><a href="introdução-ao-r.html#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem  pard</span></span>
+<span id="cb25-17"><a href="introdução-ao-r.html#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    23    mas branc</span></span>
+<span id="cb25-18"><a href="introdução-ao-r.html#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    20    fem  pret</span></span>
+<span id="cb25-19"><a href="introdução-ao-r.html#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="introdução-ao-r.html#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="co"># mudando um valor, em uma célula</span></span>
+<span id="cb25-21"><a href="introdução-ao-r.html#cb25-21" aria-hidden="true" tabindex="-1"></a><span class="co"># data.frame[número_da_linha, número_da_coluna] = new_value</span></span>
+<span id="cb25-22"><a href="introdução-ao-r.html#cb25-22" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">4</span>,<span class="dv">1</span>] <span class="ot">=</span> <span class="dv">14</span></span>
+<span id="cb25-23"><a href="introdução-ao-r.html#cb25-23" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb25-24"><a href="introdução-ao-r.html#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
+<span id="cb25-25"><a href="introdução-ao-r.html#cb25-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem  pret</span></span>
+<span id="cb25-26"><a href="introdução-ao-r.html#cb25-26" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
+<span id="cb25-27"><a href="introdução-ao-r.html#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem  pard</span></span>
+<span id="cb25-28"><a href="introdução-ao-r.html#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    14    mas branc</span></span>
+<span id="cb25-29"><a href="introdução-ao-r.html#cb25-29" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    20    fem  pret</span></span>
+<span id="cb25-30"><a href="introdução-ao-r.html#cb25-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-31"><a href="introdução-ao-r.html#cb25-31" aria-hidden="true" tabindex="-1"></a><span class="co"># mudando um valor usando o nome da coluna</span></span>
+<span id="cb25-32"><a href="introdução-ao-r.html#cb25-32" aria-hidden="true" tabindex="-1"></a>df[<span class="dv">4</span>,<span class="st">&quot;raça&quot;</span>] <span class="ot">=</span> <span class="st">&quot;pret&quot;</span></span>
+<span id="cb25-33"><a href="introdução-ao-r.html#cb25-33" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb25-34"><a href="introdução-ao-r.html#cb25-34" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero  raça</span></span>
+<span id="cb25-35"><a href="introdução-ao-r.html#cb25-35" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem  pret</span></span>
+<span id="cb25-36"><a href="introdução-ao-r.html#cb25-36" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branc</span></span>
+<span id="cb25-37"><a href="introdução-ao-r.html#cb25-37" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem  pard</span></span>
+<span id="cb25-38"><a href="introdução-ao-r.html#cb25-38" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    14    mas  pret</span></span>
+<span id="cb25-39"><a href="introdução-ao-r.html#cb25-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    20    fem  pret</span></span>
+<span id="cb25-40"><a href="introdução-ao-r.html#cb25-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-41"><a href="introdução-ao-r.html#cb25-41" aria-hidden="true" tabindex="-1"></a><span class="co"># mudando valores com condicionais</span></span>
+<span id="cb25-42"><a href="introdução-ao-r.html#cb25-42" aria-hidden="true" tabindex="-1"></a><span class="co"># onde coluna raça for &quot;branc&quot;, mudar na coluna &quot;raça&quot; para &quot;branco&quot;</span></span>
+<span id="cb25-43"><a href="introdução-ao-r.html#cb25-43" aria-hidden="true" tabindex="-1"></a><span class="co"># se o segundo parâmetro não for inserido, todas células ganharão valor &quot;branco&quot;</span></span>
+<span id="cb25-44"><a href="introdução-ao-r.html#cb25-44" aria-hidden="true" tabindex="-1"></a>df[df<span class="sc">$</span>raça<span class="sc">==</span><span class="st">&quot;branc&quot;</span>, <span class="st">&quot;raça&quot;</span>] <span class="ot">=</span> <span class="st">&quot;branco&quot;</span></span>
+<span id="cb25-45"><a href="introdução-ao-r.html#cb25-45" aria-hidden="true" tabindex="-1"></a>df</span>
+<span id="cb25-46"><a href="introdução-ao-r.html#cb25-46" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero   raça</span></span>
+<span id="cb25-47"><a href="introdução-ao-r.html#cb25-47" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    12    fem   pret</span></span>
+<span id="cb25-48"><a href="introdução-ao-r.html#cb25-48" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branco</span></span>
+<span id="cb25-49"><a href="introdução-ao-r.html#cb25-49" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem   pard</span></span>
+<span id="cb25-50"><a href="introdução-ao-r.html#cb25-50" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    14    mas   pret</span></span>
+<span id="cb25-51"><a href="introdução-ao-r.html#cb25-51" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    20    fem   pret</span></span>
+<span id="cb25-52"><a href="introdução-ao-r.html#cb25-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-53"><a href="introdução-ao-r.html#cb25-53" aria-hidden="true" tabindex="-1"></a><span class="co"># deletando linhas</span></span>
+<span id="cb25-54"><a href="introdução-ao-r.html#cb25-54" aria-hidden="true" tabindex="-1"></a><span class="co"># com base no numero da linha</span></span>
+<span id="cb25-55"><a href="introdução-ao-r.html#cb25-55" aria-hidden="true" tabindex="-1"></a>df[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>),]  <span class="co"># deleta a linha 1</span></span>
+<span id="cb25-56"><a href="introdução-ao-r.html#cb25-56" aria-hidden="true" tabindex="-1"></a><span class="do">##   idade genero   raça</span></span>
+<span id="cb25-57"><a href="introdução-ao-r.html#cb25-57" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    23    mas branco</span></span>
+<span id="cb25-58"><a href="introdução-ao-r.html#cb25-58" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    35    fem   pard</span></span>
+<span id="cb25-59"><a href="introdução-ao-r.html#cb25-59" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    14    mas   pret</span></span>
+<span id="cb25-60"><a href="introdução-ao-r.html#cb25-60" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    20    fem   pret</span></span>
+<span id="cb25-61"><a href="introdução-ao-r.html#cb25-61" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> df[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">1</span>),]  <span class="co"># para tornar a mudança permanente</span></span>
+<span id="cb25-62"><a href="introdução-ao-r.html#cb25-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-63"><a href="introdução-ao-r.html#cb25-63" aria-hidden="true" tabindex="-1"></a><span class="co"># com base no valor</span></span>
+<span id="cb25-64"><a href="introdução-ao-r.html#cb25-64" aria-hidden="true" tabindex="-1"></a>df <span class="ot">=</span> df[<span class="sc">!</span>df<span class="sc">$</span>a<span class="sc">==</span><span class="st">&quot;bla&quot;</span>,]</span></code></pre></div>
+</div>
 </div>
 <div id="considerações-finais-sobre-estrutura-de-dados" class="section level3" number="4.3.6">
 <h3><span class="header-section-number">4.3.6</span> Considerações finais sobre estrutura de dados</h3>
-<p>Estes não são os únicos tipos de estrutura de dados no R. Alguns pacotes podem criar o seu próprio tipo e não convém tentar cobrir todos.
+<p>Estes não são os únicos tipos de estrutura de dados no R.
+Alguns pacotes podem criar o seu próprio tipo e não convém tentar cobrir todos.
 Apesar de considerar tipos diferentes, podemos considerar os diferentes tipos como subcategorias de outras.
-Data frames são um tipo restrito de listas. Listas, por sua vez, são um tipo de vetor.
+Data frames são um tipo restrito de listas.
+Listas, por sua vez, são um tipo de vetor.
 Veremos a seguir a suíte de pacotes do <code>tidyverse</code> que possui formato próprio de dados.</p>
+</div>
+<div id="criando-funções-no-r" class="section level3" number="4.3.7">
+<h3><span class="header-section-number">4.3.7</span> Criando funções no R</h3>
+<p>Funções são úteis para evitar retrabalho.
+Possuem a seguinte sintaxe:</p>
+<pre><code>nome_da_funcao &lt;- function(arg_1, arg_2, ...) {
+   corpo da função
+}</code></pre>
+<p><code>arg_1</code>, <code>arg_2</code> são os parâmetros de entrada na função.
+Ao chamar uma função, passa-se argumentos para esta processar.
+Argumentos também podem conter valores padrão, caso a informação não lhe seja repassada.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="introdução-ao-r.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando função com valores padrão:</span></span>
+<span id="cb27-2"><a href="introdução-ao-r.html#cb27-2" aria-hidden="true" tabindex="-1"></a>minhafuncao <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="dv">2</span>, <span class="at">b =</span> <span class="dv">3</span>) {</span>
+<span id="cb27-3"><a href="introdução-ao-r.html#cb27-3" aria-hidden="true" tabindex="-1"></a>   resultado <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb27-4"><a href="introdução-ao-r.html#cb27-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">print</span>(resultado)</span>
+<span id="cb27-5"><a href="introdução-ao-r.html#cb27-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-6"><a href="introdução-ao-r.html#cb27-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-7"><a href="introdução-ao-r.html#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando a função sem nenhum argumento.</span></span>
+<span id="cb27-8"><a href="introdução-ao-r.html#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>()</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="introdução-ao-r.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando a função repassando argumentos.</span></span>
+<span id="cb29-2"><a href="introdução-ao-r.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(<span class="dv">10</span>,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 14</code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="introdução-ao-r.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando a função repassando parte dos argumentos.</span></span>
+<span id="cb31-2"><a href="introdução-ao-r.html#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(,<span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+</div>
+<div id="RDataHora" class="section level3" number="4.3.8">
+<h3><span class="header-section-number">4.3.8</span> Manipulando data e hora</h3>
+<p>Data e hora é algo simples, mas que pode dar dor de cabeça se não usar os pacotes já prontos.
+O R usa o seguinte formato <code>"ano-mês-dia hora:minuto:segundo"</code> ou, por exemplo, <code>2021-03-09 13:05:03</code>.
+O mês vem antes de dia e ano vem antes de todos já que assim é possível organizar as datas facilmente usando a ordem alfabética/numérica.</p>
+<p>P.s: Cuidado!
+não use <code>data</code> como nome para um objeto, já que <code>data</code> tem significado especial no R.</p>
+<p>Existe um padrão para datas usado em várias linguagens.
+Para consultar de modo fácil, olhe a ajuda <code>?strptime</code>.</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="introdução-ao-r.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dizendo ao R que nossa string &quot;12/05/1993 13:00:05&quot; é uma data</span></span>
+<span id="cb33-2"><a href="introdução-ao-r.html#cb33-2" aria-hidden="true" tabindex="-1"></a>minha_data <span class="ot">=</span> <span class="st">&quot;12/05/1993 13:00:05&quot;</span></span>
+<span id="cb33-3"><a href="introdução-ao-r.html#cb33-3" aria-hidden="true" tabindex="-1"></a>minha_data2 <span class="ot">=</span> <span class="fu">strptime</span>(minha_data, <span class="at">format =</span> <span class="st">&quot;%d/%m/%Y %H:%M:%S&quot;</span>)</span>
+<span id="cb33-4"><a href="introdução-ao-r.html#cb33-4" aria-hidden="true" tabindex="-1"></a>minha_data2</span></code></pre></div>
+<pre><code>## [1] &quot;1993-05-12 13:00:05 -03&quot;</code></pre>
+<div id="gerando-uma-sequencia-de-datas-no-r" class="section level4" number="4.3.8.1">
+<h4><span class="header-section-number">4.3.8.1</span> Gerando uma sequencia de datas no R</h4>
+<!-- Em algum momento você pode precisar de uma sequência de datas, por exemplo, ao fazer a raspagem de dados de alguma página que usa o formato de data. Isto é bem fácil com o R. Vamos gerar datas entre "29 de novembro de 2020 ("2020-11-29") e 02 de janeiro de 2021 ("2021-01-02"). -->
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="introdução-ao-r.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from=</span><span class="fu">as.Date</span>(<span class="st">&quot;2020-11-29&quot;</span>), <span class="at">to=</span><span class="fu">as.Date</span>(<span class="st">&quot;2021-01-02&quot;</span>), <span class="at">by=</span><span class="st">&quot;day&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;2020-11-29&quot; &quot;2020-11-30&quot; &quot;2020-12-01&quot; &quot;2020-12-02&quot; &quot;2020-12-03&quot;
+##  [6] &quot;2020-12-04&quot; &quot;2020-12-05&quot; &quot;2020-12-06&quot; &quot;2020-12-07&quot; &quot;2020-12-08&quot;
+## [11] &quot;2020-12-09&quot; &quot;2020-12-10&quot; &quot;2020-12-11&quot; &quot;2020-12-12&quot; &quot;2020-12-13&quot;
+## [16] &quot;2020-12-14&quot; &quot;2020-12-15&quot; &quot;2020-12-16&quot; &quot;2020-12-17&quot; &quot;2020-12-18&quot;
+## [21] &quot;2020-12-19&quot; &quot;2020-12-20&quot; &quot;2020-12-21&quot; &quot;2020-12-22&quot; &quot;2020-12-23&quot;
+## [26] &quot;2020-12-24&quot; &quot;2020-12-25&quot; &quot;2020-12-26&quot; &quot;2020-12-27&quot; &quot;2020-12-28&quot;
+## [31] &quot;2020-12-29&quot; &quot;2020-12-30&quot; &quot;2020-12-31&quot; &quot;2021-01-01&quot; &quot;2021-01-02&quot;</code></pre>
+<p>O parâmetro <code>by</code> aceita ainda <code>week</code> e <code>month</code>.
+O R também calcula anos bissextos.
+Fazendo um teste, gerando datas entre 28 de fevereiro e 1 de março de diferentes anos:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="introdução-ao-r.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criando uma função para testes</span></span>
+<span id="cb37-2"><a href="introdução-ao-r.html#cb37-2" aria-hidden="true" tabindex="-1"></a>FevMarc <span class="ot">&lt;-</span> <span class="cf">function</span>(ano) { <span class="co"># nome_da_funcao &lt;- function(input){</span></span>
+<span id="cb37-3"><a href="introdução-ao-r.html#cb37-3" aria-hidden="true" tabindex="-1"></a>  minhaDataInicial<span class="ot">=</span><span class="fu">paste0</span>(ano, <span class="st">&quot;-02-28&quot;</span>) </span>
+<span id="cb37-4"><a href="introdução-ao-r.html#cb37-4" aria-hidden="true" tabindex="-1"></a>  MinhaDataFinal<span class="ot">=</span><span class="fu">paste0</span>(ano, <span class="st">&quot;-03-01&quot;</span>)</span>
+<span id="cb37-5"><a href="introdução-ao-r.html#cb37-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="at">from=</span><span class="fu">as.Date</span>(minhaDataInicial), <span class="at">to=</span><span class="fu">as.Date</span>(MinhaDataFinal), <span class="at">by=</span><span class="st">&quot;day&quot;</span>)</span>
+<span id="cb37-6"><a href="introdução-ao-r.html#cb37-6" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb37-7"><a href="introdução-ao-r.html#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="introdução-ao-r.html#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ( ano <span class="cf">in</span> <span class="fu">c</span>(<span class="dv">2015</span><span class="sc">:</span><span class="dv">2021</span>) ) {</span>
+<span id="cb37-9"><a href="introdução-ao-r.html#cb37-9" aria-hidden="true" tabindex="-1"></a>    x<span class="ot">=</span> <span class="fu">FevMarc</span>(ano)</span>
+<span id="cb37-10"><a href="introdução-ao-r.html#cb37-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(x)</span>
+<span id="cb37-11"><a href="introdução-ao-r.html#cb37-11" aria-hidden="true" tabindex="-1"></a>       }</span></code></pre></div>
+<pre><code>## [1] &quot;2015-02-28&quot; &quot;2015-03-01&quot;
+## [1] &quot;2016-02-28&quot; &quot;2016-02-29&quot; &quot;2016-03-01&quot;
+## [1] &quot;2017-02-28&quot; &quot;2017-03-01&quot;
+## [1] &quot;2018-02-28&quot; &quot;2018-03-01&quot;
+## [1] &quot;2019-02-28&quot; &quot;2019-03-01&quot;
+## [1] &quot;2020-02-28&quot; &quot;2020-02-29&quot; &quot;2020-03-01&quot;
+## [1] &quot;2021-02-28&quot; &quot;2021-03-01&quot;</code></pre>
+</div>
+<div id="converter-data-em-nome-por-extenso-do-mês" class="section level4" number="4.3.8.2">
+<h4><span class="header-section-number">4.3.8.2</span> Converter data em nome por extenso do mês</h4>
+<p>Dado um vetor de meses, podemos querer gerar o mês não como número, mas com seu nome.</p>
+<!-- Sys.setlocale("LC_TIME", "pt_BR.utf8") -->
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="introdução-ao-r.html#cb39-1" aria-hidden="true" tabindex="-1"></a>vetor_meses <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">12</span>,<span class="dv">6</span>)</span>
+<span id="cb39-2"><a href="introdução-ao-r.html#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="introdução-ao-r.html#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate) <span class="co"># carregando o pacote lubridate</span></span>
+<span id="cb39-4"><a href="introdução-ao-r.html#cb39-4" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb39-5"><a href="introdução-ao-r.html#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Attaching package: &#39;lubridate&#39;</span></span>
+<span id="cb39-6"><a href="introdução-ao-r.html#cb39-6" aria-hidden="true" tabindex="-1"></a><span class="do">## The following objects are masked from &#39;package:base&#39;:</span></span>
+<span id="cb39-7"><a href="introdução-ao-r.html#cb39-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb39-8"><a href="introdução-ao-r.html#cb39-8" aria-hidden="true" tabindex="-1"></a><span class="do">##     date, intersect, setdiff, union</span></span>
+<span id="cb39-9"><a href="introdução-ao-r.html#cb39-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-10"><a href="introdução-ao-r.html#cb39-10" aria-hidden="true" tabindex="-1"></a><span class="co"># o locale pode ser que funcione com o valor &#39;pt_BR&#39;</span></span>
+<span id="cb39-11"><a href="introdução-ao-r.html#cb39-11" aria-hidden="true" tabindex="-1"></a>Meses <span class="ot">&lt;-</span> <span class="fu">month</span>(<span class="fu">as.numeric</span>(vetor_meses), </span>
+<span id="cb39-12"><a href="introdução-ao-r.html#cb39-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="co"># produz os meses </span></span>
+<span id="cb39-13"><a href="introdução-ao-r.html#cb39-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">locale =</span> <span class="st">&quot;pt_BR.utf8&quot;</span>) <span class="co"># lingua</span></span>
+<span id="cb39-14"><a href="introdução-ao-r.html#cb39-14" aria-hidden="true" tabindex="-1"></a>Meses</span>
+<span id="cb39-15"><a href="introdução-ao-r.html#cb39-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] jan abr jul mar fev dez jun</span></span>
+<span id="cb39-16"><a href="introdução-ao-r.html#cb39-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 Levels: jan &lt; fev &lt; mar &lt; abr &lt; mai &lt; jun &lt; jul &lt; ago &lt; set &lt; ... &lt; dez</span></span>
+<span id="cb39-17"><a href="introdução-ao-r.html#cb39-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-18"><a href="introdução-ao-r.html#cb39-18" aria-hidden="true" tabindex="-1"></a><span class="co"># De modo resumido</span></span>
+<span id="cb39-19"><a href="introdução-ao-r.html#cb39-19" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">month</span>(<span class="fu">as.numeric</span>(vetor_meses), <span class="at">label =</span> <span class="cn">TRUE</span>, <span class="at">locale =</span> <span class="st">&quot;pt_BR.utf8&quot;</span>)</span>
+<span id="cb39-20"><a href="introdução-ao-r.html#cb39-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] jan abr jul mar fev dez jun</span></span>
+<span id="cb39-21"><a href="introdução-ao-r.html#cb39-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 Levels: jan &lt; fev &lt; mar &lt; abr &lt; mai &lt; jun &lt; jul &lt; ago &lt; set &lt; ... &lt; dez</span></span></code></pre></div>
+<p>Fazendo o caminho inverso, supondo que tenhamos um vetor com nome dos meses e queiramos colocá-los em formato</p>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="introdução-ao-r.html#cb40-1" aria-hidden="true" tabindex="-1"></a>dataPorExtenso <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;12 agosto 2020&#39;</span>,</span>
+<span id="cb40-2"><a href="introdução-ao-r.html#cb40-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">&#39;17 dezembro 2021&#39;</span>)</span>
+<span id="cb40-3"><a href="introdução-ao-r.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="fu">as.Date</span>(dataPorExtenso, <span class="at">format =</span> <span class="st">&quot;%d %B %Y&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] &quot;2020-08-12&quot; &quot;2021-12-17&quot;</code></pre>
+<!-- lubridate::month(Meses, label = TRUE, locale = "pt_BR") -->
+<!-- lubridate::parse_date_time(Meses, orders = "d-b-y", locale = "pt-BR") -->
+<p>ver - <a href="https://rstudio-pubs-static.s3.amazonaws.com/286177_ecf4fb7fd5b0405982fc5b3d2b590305.html">Manipulação de Dados Podemos trabalhar com outros formatos de datas</a></p>
+</div>
 </div>
 </div>
 <div id="a-suíte-de-pacotes-tidyverse" class="section level2" number="4.4">
@@ -1007,7 +1251,122 @@ Veremos a seguir a suíte de pacotes do <code>tidyverse</code> que possui format
 <div class="infobox obra">
 <p><em>EM CONSTRUÇÃO</em></p>
 </div>
+<p>O tidyverse é uma suíte de pacotes bastante úteis e de uso mais fácil que os pacotes tradicionais do R.</p>
+<div class="infobox note">
+<p><strong>Dicas</strong></p>
+<p>O artigo do Hadley Wickham, o criador da ideia, explicando a “filosofia” dos dados “tidy”.
+&gt; Hadley Wickham. <a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy Data</a>. Journal of Statistical Software</p>
+</div>
+<p>Para instalar a suíte de pacotes tidyverse</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="introdução-ao-r.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(tidyverse)</span></code></pre></div>
+<p>O <code>tidyverse</code> conta com diversos pacotes e estão sempre aumentando.</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="introdução-ao-r.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb43-2"><a href="introdução-ao-r.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="do">## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</span></span>
+<span id="cb43-3"><a href="introdução-ao-r.html#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="do">## ✓ ggplot2 3.3.3     ✓ purrr   0.3.4</span></span>
+<span id="cb43-4"><a href="introdução-ao-r.html#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="do">## ✓ tibble  3.1.2     ✓ dplyr   1.0.6</span></span>
+<span id="cb43-5"><a href="introdução-ao-r.html#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="do">## ✓ tidyr   1.1.3     ✓ stringr 1.4.0</span></span>
+<span id="cb43-6"><a href="introdução-ao-r.html#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="do">## ✓ readr   1.4.0     ✓ forcats 0.5.1</span></span>
+<span id="cb43-7"><a href="introdução-ao-r.html#cb43-7" aria-hidden="true" tabindex="-1"></a><span class="do">## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──</span></span>
+<span id="cb43-8"><a href="introdução-ao-r.html#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="do">## x ggplot2::annotate()      masks NLP::annotate()</span></span>
+<span id="cb43-9"><a href="introdução-ao-r.html#cb43-9" aria-hidden="true" tabindex="-1"></a><span class="do">## x lubridate::as.difftime() masks base::as.difftime()</span></span>
+<span id="cb43-10"><a href="introdução-ao-r.html#cb43-10" aria-hidden="true" tabindex="-1"></a><span class="do">## x lubridate::date()        masks base::date()</span></span>
+<span id="cb43-11"><a href="introdução-ao-r.html#cb43-11" aria-hidden="true" tabindex="-1"></a><span class="do">## x dplyr::filter()          masks stats::filter()</span></span>
+<span id="cb43-12"><a href="introdução-ao-r.html#cb43-12" aria-hidden="true" tabindex="-1"></a><span class="do">## x lubridate::intersect()   masks base::intersect()</span></span>
+<span id="cb43-13"><a href="introdução-ao-r.html#cb43-13" aria-hidden="true" tabindex="-1"></a><span class="do">## x dplyr::lag()             masks stats::lag()</span></span>
+<span id="cb43-14"><a href="introdução-ao-r.html#cb43-14" aria-hidden="true" tabindex="-1"></a><span class="do">## x lubridate::setdiff()     masks base::setdiff()</span></span>
+<span id="cb43-15"><a href="introdução-ao-r.html#cb43-15" aria-hidden="true" tabindex="-1"></a><span class="do">## x lubridate::union()       masks base::union()</span></span>
+<span id="cb43-16"><a href="introdução-ao-r.html#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="introdução-ao-r.html#cb43-17" aria-hidden="true" tabindex="-1"></a><span class="co"># vendo os pacotes disponíveis no tidyverse:</span></span>
+<span id="cb43-18"><a href="introdução-ao-r.html#cb43-18" aria-hidden="true" tabindex="-1"></a><span class="fu">tidyverse_packages</span>()</span>
+<span id="cb43-19"><a href="introdução-ao-r.html#cb43-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;broom&quot;         &quot;cli&quot;           &quot;crayon&quot;        &quot;dbplyr&quot;       </span></span>
+<span id="cb43-20"><a href="introdução-ao-r.html#cb43-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;dplyr&quot;         &quot;dtplyr&quot;        &quot;forcats&quot;       &quot;googledrive&quot;  </span></span>
+<span id="cb43-21"><a href="introdução-ao-r.html#cb43-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;googlesheets4&quot; &quot;ggplot2&quot;       &quot;haven&quot;         &quot;hms&quot;          </span></span>
+<span id="cb43-22"><a href="introdução-ao-r.html#cb43-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;httr&quot;          &quot;jsonlite&quot;      &quot;lubridate&quot;     &quot;magrittr&quot;     </span></span>
+<span id="cb43-23"><a href="introdução-ao-r.html#cb43-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;modelr&quot;        &quot;pillar&quot;        &quot;purrr&quot;         &quot;readr&quot;        </span></span>
+<span id="cb43-24"><a href="introdução-ao-r.html#cb43-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;readxl&quot;        &quot;reprex&quot;        &quot;rlang&quot;         &quot;rstudioapi&quot;   </span></span>
+<span id="cb43-25"><a href="introdução-ao-r.html#cb43-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;rvest&quot;         &quot;stringr&quot;       &quot;tibble&quot;        &quot;tidyr&quot;        </span></span>
+<span id="cb43-26"><a href="introdução-ao-r.html#cb43-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] &quot;xml2&quot;          &quot;tidyverse&quot;</span></span></code></pre></div>
+<div class="figure">
+<img src="https://miro.medium.com/max/576/1*ckRqx4kCTUd--c9vZ1lc9Q.png" alt="" />
+<p class="caption">O ecossistema tidyverse</p>
+</div>
+<p>Tidyverse ecosystem picture (author: Silvia Canelón, PhD. Original link)</p>
+<p><img src="https://i0.wp.com/github.com/Joziani/Tidyverse/raw/master/imagens/pacotes.png" alt="Os que fazem os pacotes da suíte tidyverse" />
+<!-- https://operdata.com.br/blog/tidyverse-os-pacotes-mais-usados-no-r/ --></p>
+<p>Para nós, destes pacotes, os mais interessantes são:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Pacote tidyverse</th>
+<th>descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://readr.tidyverse.org/">readr</a></td>
+<td>Lê dados retangulares (de tabelas) como csv, tsv e fwf</td>
+</tr>
+<tr class="even">
+<td><a href="https://rvest.tidyverse.org/">rvest</a></td>
+<td>usado para minerar dados na web de modo fácil</td>
+</tr>
+<tr class="odd">
+<td><a href="https://tibble.tidyverse.org/">tibble</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><a href="https://ggplot2.tidyverse.org/">ggplot2</a></td>
+<td>Famoso pacote de geração de gráficos</td>
+</tr>
+<tr class="odd">
+<td><a href="https://dplyr.tidyverse.org/">dplyr</a></td>
+<td>Para manipulação facilitada de dados</td>
+</tr>
+<tr class="even">
+<td><a href="https://stringr.tidyverse.org/">stringr</a></td>
+<td>Usado na manipução de strings</td>
+</tr>
+<tr class="odd">
+<td><a href="https://lubridate.tidyverse.org/">libridate</a></td>
+<td>Para lidar com data e hora</td>
+</tr>
+</tbody>
+</table>
+<!-- |[tidyr](https://tidyr.tidyverse.org/)|Usado para cirar dados tipo tidy| -->
+<!-- |forcats|| -->
+<!-- |purrr|| -->
+<div id="tibbles" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Tibbles</h3>
+<p>O “Tibble” é um modo de chamar objetos da classe “tbl_df”, um tipo de data-frame.
+O tibble, ao ser chamado, mostra apenas as 10 primeiras linhas, ao invés do datafrae inteiro, o que é bem útil quando temos tabelas que não sejam minúsculas.
+Além disso, um tibble não força caracteres para fatores, que é o modo como lidamos com strings ao fazermos a análise textual.
+<!-- <https://www.tidytextmining.com/tidytext.html?q=tibble#the-unnest_tokens-function> A tibble, which is a colloquial term for an object of class tbl_df. --></p>
+<!-- A tibble, or tbl_df, is a modern reimagining of the data.frame, keeping what time has proven to be effective, and throwing out what is not. -->
+<!-- Tibbles are data.frames that are lazy and surly: they do less (i.e. they don't change variable names or types, and don't do partial matching) and complain more (e.g. when a variable does not exist). -->
+<!-- This forces you to confront problems earlier, typically leading to cleaner, more expressive code. -->
+<!-- Tibbles also have an enhanced print() method which makes them easier to use with large datasets containing complex objects. -->
+<!-- [Build a data frame](https://tibble.tidyverse.org/reference/tibble.html) -->
+<!-- -   Character vectors are not coerced to factor. -->
+<!-- -   List-columns are expressly anticipated and do not require special tricks. -->
+<!-- -   Column names are not modified. -->
+<!-- -   Inner names in columns are left unchanged. -->
+<!-- never changes the type of the inputs (e.g. it never converts strings to factors!), it never changes the names of variables -->
+<!-- <https://tibble.tidyverse.org/articles/tibble.html> There are three key differences between tibbles and data frames: printing, subsetting, and recycling rules. -->
+<!-- ![](http://www.sthda.com/sthda/RDoc/images/tibble-data-format-tbl_df.png) -->
+<p>Uma boa introdução aos tibbles (em inglês) temos no capítulo <a href="https://r4ds.had.co.nz/tibbles.html">10.Tibbles</a> do livro “R for Data Science” de Wichham e Grolemund.</p>
+<!-- # mudando valores de celulas a partir de padrão -->
+<!-- library(dplyr) -->
+<!-- library(stringr) -->
+<!-- df %>%  -->
+<!--   mutate(var1 = str_replace(var1, " ", "")) -->
+</div>
+<div id="lubridate-facilitando-manipulação-de-datas" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> Lubridate: facilitando manipulação de datas</h3>
+<p>Com o <code>Lubridate</code> é bem fácil manipular datas, ou mesmo alterar fuso horário.</p>
+<p><a href="https://www.rdocumentation.org/packages/lubridate/versions/1.7.10">Documentarion Lubridate</a> <a href="http://material.curso-r.com/lubridate/">Tutorial do Lubridate em português do Curso-R</a></p>
+<p><a href="https://www.youtube.com/watch?v=BYXFMdUx5C4">Como trabalhar com Data e Hora na linguagem R</a> <!-- ver wokflow --> <!-- https://escoladedados.org/tutoriais/tidy-data-dados-arrumados-e-5-problemas-comuns/ --></p>
 
+</div>
 </div>
 </div>
             </section>
@@ -1016,7 +1375,7 @@ Veremos a seguir a suíte de pacotes do <code>tidyverse</code> que possui format
         </div>
       </div>
 <a href="estrutura-de-dados-e-tipos-de-formatos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="análise-textual-text-mining.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="normalização-de-texto-e-expressões-regulares.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -1039,6 +1398,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
