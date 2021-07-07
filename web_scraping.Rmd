@@ -1,0 +1,172 @@
+# Web scraping notas taquigraficas
+
+O Web scraping
+
+Carregando o pacote para o webscraping
+```{r}
+library(rvest)
+```
+
+Pegando notas taquigráficas da CPI da Pandemia. No dia 19/05/2021 foi Eduardo Pazuello.
+
+```{r}
+NT_url = "https://www25.senado.leg.br/web/atividade/notas-taquigraficas/-/notas/r/9996"
+NT_html = read_html(NT_url, encoding = "utf8") # carregando o conteúdo da url numa variável, dentro do R
+```
+
+Para pegar a informação que queremos de modo fácil, vamos precisar intalar extensões no navegador de internet (Browser), usando Add-ons "Element picker". No Chrome, o [SelectorGadget](selectorgadget.com) e no Firefox o [ScrapeMate Beta](https://addons.mozilla.org/en-US/firefox/addon/scrapemate/). Estas extensões tornam a seleção da informação de CSS/Xpath algo muito fácil. Após acionar este Add-on na página que queremos raspar os dados, selecionamos o elemento que queremos extrair a informação. Diversos elementos ficarão amarelos. Se algo a mais for selecionado, clique então nestes (que ficarão em vermelho) para retirar da seleção. Quando a seleção em amarelo ficar apenas com a informação que queremos, copiamos a informação no add-on à direita. No nosso caso, é o item `.escriba-jq`.
+
+![SrapeMate no Firefox](/home/alisson/Documentos/Programação/R/analise_textual_sociologia/imagens/Scraping_scrape_mate.png) 
+
+
+No caso desta página, seria interessante separar as falas por autor. Infelizmente, não é possível separar já da página html. Mas ao olhar a página, podemos ver um padrão de escrita: Quem fala, aparece com nome em caixa alta, precedido de "O SR.". Por exemplo:
+
+> O SR. EDUARDO PAZUELLO -- Por favor.
+>
+> O SR. PRESIDENTE (Omar Aziz. PSD - AM) -- Fique à vontade!
+>
+> O SR. EDUARDO PAZUELLO (Para depor.) -- Exmo. Sr. Senador Omar Aziz, Presidente da Comissão; Exmo. Sr. Senador Renan Calheiros, nosso Relator da Comissão; Sras. e Srs. Senadores que compõem esta Comissão; demais Senadores que estão conosco, hoje, aqui presentes; senhoras e senhores que acompanham; imprensa; meu bom-dia a todos!
+
+
+
+```{r}
+texto = NT_html %>% html_nodes('.escriba-jq') %>% html_text()
+#NT_html %>% html_nodes('.escriba-jq') %>% html_attr('b')
+#NT_html %>% html_attr('b')
+```
+
+
+Podemos usar o padrão do texto para estruturar o texto através de expressão regular. 
+- Início com "O SR." ou A "SRA."
+- Nome em caixa alta
+- função/ partido entre parênteses, mas nem todos as pessoas - como os depoentes -  possuem descrição entre parênteses.
+- finalização com o hífen
+- Como estamos interessados apenas no que foi dito pelos parlamentares, retirar trechos como `(Tumulto no recinto.)`, `(Soa a campainha.)`, `(Suspensa às 13 horas e 13 minutos, a reunião é reaberta às 13 horas e 20 minutos.)`.
+
+```{r}
+library(stringr)
+library(re2)
+```
+
+
+```{r}
+# str_extract_all(texto, "(O SR|A SRA)\\. [A-Z ]+ \\(.*\\).–.")
+# strsplit(texto, '\\n|\\t')
+# str_extract_all(texto, "(O SR|A SRA)\\. [A-Z ]+ (\\(.*\\)")
+# gsub('(O SR|A SRA)\\.', '\\t\\n\\1\\.', texto) %>% strsplit(., "\\t\\n")
+# texto2 = gsub('(O SR|A SRA)\\.', '\\t\\n\\1\\.', texto) 
+
+# vamos limpar parte do texto, retirando a minutagem.
+# testando nosso regex com str_extract_all
+str_extract_all(texto,'[0-9]{2}\\:[0-9]{2}  R')
+
+# vamos limpar o texto, retirando a minutagem
+# vamos contar quantas vezes os termos aparecem, para conferirmos depois
+SrSra = str_extract_all(texto,'(O SR|A SRA)\\.') %>% unlist()
+#length(SrSra) # 1505
+#length(str_extract_all(texto2,'ZZZVECTOR_') %>% unlist()) # 1505
+
+# Vamos transformar em vetores.
+#texto_vetores = strsplit(texto2, "(O SR|A SRA)\\. ?")
+#texto_vetores = strsplit(texto2, "ZZZVECTOR_")
+#length(unlist(texto_vetores))
+```
+
+
+```{r}
+texto_vetores = gsub('[0-9]{2}\\:[0-9]{2}  R|\\(Pausa\\.\\)', '',texto) %>% gsub('(O SR|A SRA)\\.', 'ZZZVECTOR_\\1\\.', .) %>% strsplit(. , "ZZZVECTOR_") %>% unlist()
+
+# vetores = unlist(texto_vetores)[8:15]
+length(texto_vetores) # 1506
+
+```
+
+
+```{r}
+# vetores %>% gsub('(O SR|A SRA)\\. ([A-Z ]+) \\(.*\\) – (.*)', '\\2', .)
+# vetores %>% gsub('(O SR|A SRA)\\. [A-Z ]+ \\(.*\\) – (.*)', '\\2', .)
+# unlist(str_extract_all(vetores, '(O SR|A SRA)\\. [A-Z ]+ \\(.*\\)? – '))
+#ExpReg = '(O SR|A SRA)\\. ([A-Z \\.]+)( \\(.*\\)| ?) ?– '
+#ExpReg = '(O SR|A SRA)\\. ([A-Z \\.]+)( \\(.*\\)| ?) ?[––] (.*)'
+#ExpReg2 = '(O SR|A SRA)\\. ([A-Z \\.]+)( \\(.*\\)| ?)( - | – )(.*)'
+ExpReg = '(O SR|A SRA)\\. ([A-ZÀ-Ÿ \\.]+)(\\(.*?\\)| ?)([-   ––]{3})(.*)'
+#unlist(str_extract_all(vetores, '(O SR|A SRA)\\. [A-Z \\.]+ (\\(.*\\)| ?) ?– '))
+vetor_nomes = unlist(str_extract_all(texto_vetores, ExpReg))
+# texto_vetores_head = head(texto_vetores, 70)
+# unlist(str_extract_all(vetores, '(O SR|A SRA)\\. [A-Z \\.]+ .* – '))
+nomes = gsub(ExpReg,'\\2', texto_vetores) %>% gsub(' $','',.)
+unique(nomes)
+cargo_funcao = gsub(ExpReg,'\\3', texto_vetores)
+unique(cargo_funcao)
+# unique(gsub(ExpReg,'\\5', texto_vetores))
+fala = gsub(ExpReg,'\\5', texto_vetores)
+
+library(dplyr)
+#nomes = gsub(ExpReg,'\\2', texto_vetores)
+#cargo_funcao = gsub(ExpReg,'\\3', texto_vetores)
+#fala = gsub(ExpReg,'\\4', texto_vetores)
+
+NotasTaq_db <- tibble(
+  Nomes = nomes,
+  Cargo_Funcao = cargo_funcao,
+  Falas = fala
+)
+
+```
+
+Vamos olhar os trechos em parênteses nas falas para podermos ver o que podemos/devemos retirar
+```{r}
+NotasTaq_db$Falas %>% str_extract_all(., '\\(.*?\\)') %>% unlist() %>% unique()
+```
+
+Precisamos ainda normalizar algumas coisas. O depoente aparece como "EDUARDO PAZUELLO" e "GEN. EDUARDO PAZUELLO". Vamos substituir o segundo pelo primeiro para padronizar e facilitar nossa busca.
+```{r}
+NotasTaq_db[NotasTaq_db$Nomes == "GEN. EDUARDO PAZUELLO.*", "Nomes"] = "EDUARDO PAZUELLO"
+# vamos testar para ver se deu certo
+NotasTaq_db$Nomes %>% grep("GEN. EDUARDO PAZUELLO",., value = T)
+```
+ATENÇAO: conferir o general Pazuello linha 11
+
+```{r}
+dir  = "/home/alisson/Documentos/Programação/R/NotasTaquigraficas/"
+nome.arq = "NotasTaquigraficas_2021-05-19_CPI.Pandemia"
+
+NotasTaq_db2 = NotasTaq_db[-1,]
+write.csv(NotasTaq_db2, paste0(dir,nome.arq, ".csv"))
+
+saveRDS(NotasTaq_db2, paste0(dir,nome.arq, ".Rdata"))
+```
+
+
+
+
+Vamos analisar os termos mais frequentes do depoente. Para isso vamos filtrar as linhas com a fala deste, e após isto, pegar apenas a coluna com as falas.
+```{r}
+Pazuello = NotasTaq_db[NotasTaq_db$Nomes == 'EDUARDO PAZUELLO',]
+# Vamos pegar apenas a coluna que contém as falas
+Pazuello_falas = Pazuello$Falas 
+# Vamos transformar todos os vetores em um só vetor
+Pazuello_falas_1element = paste(Pazuello_falas, collapse = " ")
+```
+
+Carregando o pacote Quanteda
+```{r}
+library(quanteda)
+```
+
+```{r}
+Pazuello_1gram = tokens(Pazuello_falas_1element, remove_punct = T)
+Pazuello_1gram %>% unlist %>% table %>% sort(., decreasing = T) %>% head(., 200)
+```
+
+Vamos fazer o bigram das falas. 
+```{r}
+Pazuello_2gram = Pazuello_falas %>% tokens(., remove_punct = T) %>%
+  tokens_ngrams(., n = 2L)
+typeof(Pazuello_2gram)
+
+# como se trata de uma lista
+Pazuello_2gram %>% unlist() %>% table %>% sort(., decreasing = T) %>% head(., 200)
+```
+
+
