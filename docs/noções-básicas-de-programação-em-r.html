@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="estrutura-de-dados-e-tipos-de-formatos.html"/>
+<link rel="next" href="introdução-ao-r.html"/>
+<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#HD"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#fluxo-de-trabalho"><i class="fa fa-check"></i>Fluxo de trabalho</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-da-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências da filosofia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-google-trends-como-proxy-para-epidemias"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras</a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical</a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização</a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados</a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML</a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex</a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex</a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html</a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#sequências-de-scaping"><i class="fa fa-check"></i><b>4.1</b> sequências de scaping</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#comentando-o-código"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição</a></li>
+<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R</a></li>
+<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else</a></li>
+<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos</a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais</a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos</a></li>
+<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#outros-operadores"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops</a></li>
+<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop</a></li>
+<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R</a></li>
+<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#r-em-modo-gráfico-rkward-e-rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander</a></li>
+<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)</a></li>
+<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (vector)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)</a></li>
+<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#listas-list"><i class="fa fa-check"></i><b>5.4.4</b> Listas (<em>list</em>)</a></li>
+<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.5</b> Data Frames</a></li>
+<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.6</b> Considerações finais sobre estrutura de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.5</b> Manipulando data e hora</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequencia-de-datas-no-r"><i class="fa fa-check"></i><b>5.5.1</b> Gerando uma sequencia de datas no R</a></li>
+<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.5.2</b> Converter data em nome por extenso do mês</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code></a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes</a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles</a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate-facilitando-manipulação-de-datas"><i class="fa fa-check"></i><b>5.6.3</b> Lubridate: facilitando manipulação de datas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep</a></li>
+<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()</a></li>
+<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</a></li>
+<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code></a></li>
+<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.3</b> Dicas/Sugestões: Regex no R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#base-plots"><i class="fa fa-check"></i><b>7.1</b> Base plots</a></li>
+<li class="chapter" data-level="7.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores</a></li>
+<li class="chapter" data-level="7.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice</a></li>
+<li class="chapter" data-level="7.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.1</b> Abordagens: saco de palavras (bag of words) e análise semântica (semantic parsing)</a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#do-texto-ao-corpus"><i class="fa fa-check"></i><b>8.2</b> Do texto ao Corpus</a>
+<ul>
+<li class="chapter" data-level="8.2.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.2.1</b> Abordagem <em>Bag of words</em></a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#remoção-de-palavra-vazia-stopwords"><i class="fa fa-check"></i><b>8.3</b> Remoção de palavra vazia (stopwords)</a></li>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.4</b> stemização (Stemming) e lematização</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context"><i class="fa fa-check"></i><b>8.4.1</b> Palavras em contexto (keyword-in-context)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngrams"><i class="fa fa-check"></i><b>8.5</b> Ngrams</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngramr"><i class="fa fa-check"></i><b>8.5.1</b> GoogleNgrams</a></li>
+<li class="chapter" data-level="8.5.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tf-idf"><i class="fa fa-check"></i><b>8.5.2</b> TF-IDF</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>9</b> Análise de Redes Sociais</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>9.1</b> O pacote Igraph</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>9.1.1</b> Clusterização</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>9.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
+<li class="chapter" data-level="9.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>9.3</b> Redes de palavras</a></li>
+<li class="chapter" data-level="9.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>9.4</b> Redes de citação</a></li>
+<li class="chapter" data-level="9.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>9.5</b> Gráfico de centralidade</a></li>
+<li class="chapter" data-level="9.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>9.6</b> Comunidades</a></li>
+<li class="chapter" data-level="9.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>9.7</b> Sugestões de links</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>10</b> Links úteis</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>10.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="10.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>10.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="10.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>10.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="10.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>10.3.1</b> Sociologia Digital / Sociologia Computacional</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>10.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="10.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>10.5</b> Revistas / Journals acadêmicos</a></li>
+<li class="chapter" data-level="10.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>10.6</b> Dados Abertos</a></li>
+<li class="chapter" data-level="10.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>10.7</b> Vídeos</a></li>
+<li class="chapter" data-level="10.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>10.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="10.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>10.9</b> Organizações</a></li>
+<li class="chapter" data-level="10.10" data-path="links-úteis.html"><a href="links-úteis.html#links-de-podcasts-sobre-digital-humanities"><i class="fa fa-check"></i><b>10.10</b> Links de Podcasts sobre Digital Humanities</a></li>
+<li class="chapter" data-level="10.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>10.11</b> Links Programação</a>
+<ul>
+<li class="chapter" data-level="10.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>10.11.1</b> R introdução</a></li>
+<li class="chapter" data-level="10.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>10.11.2</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="10.11.3" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>10.11.3</b> Links Python</a></li>
+<li class="chapter" data-level="10.11.4" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>10.11.4</b> Python - tópicos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="10.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>10.12</b> Links de Cursos Online</a></li>
+<li class="chapter" data-level="10.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>10.13</b> Grupos de discussão/Forum</a>
+<ul>
+<li class="chapter" data-level="10.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>10.13.1</b> Telegram</a></li>
+</ul></li>
+<li class="chapter" data-level="10.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>10.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="noções-básicas-de-programação-em-r" class="section level1" number="4">
+<h1><span class="header-section-number">Capítulo 4</span> Noções básicas de programação em R</h1>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+<div class="infobox objetivo">
+<p>Objetivos deste capítulo:</p>
+<ul>
+<li>Apresentar uma breve introdução aos principais comandos usados em programação</li>
+</ul>
+</div>
+<div id="sequências-de-scaping" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> sequências de scaping</h2>
+<p>Há alguns caracteres especiais que não podem ser usados diretamente numa string, pois possuem um significado especial. As aspas são um caso. Assim, por exemplo:
+<code>variavel &lt;- 'moinho d'agua'</code> retorna erro. Para poder utilizar as aspas, temos de dizer ao programa para “escapar”. Isto é feito de modo geral com o caractere <code>\</code>. Assim, para funcionar, nosso exemplo fica: <code>variavel &lt;- 'moinho d\'agua'</code>.
+No caso de aspas simples <code>'</code> ou duplas <code>"</code>, é possível escapar estes caracteres colocando um dentro do outro. Por exemplo: <code>variavel &lt;- "moinho d'agua"</code> ou <code>variavel &lt;- 'O conto "Trio em Lá Menor" de Machado de Assis foi publicado em 1896.'</code>.
+Outros caracteres que levam escape são:</p>
+<div id="comentando-o-código" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Comentando o código</h3>
+<p>Nas linguagens de programação é possível acrescentar comentários para orientar os humanos e que não serão lidos pelo computador.
+Cada linguagem tem o seu próprio padrão.
+No R, assim como em muitas linguagens de programação, os comentários no código são feito com a tralha <code>#</code> ou hashtag, jogo da velha, etc.
+Tudo que vier depois deste símbolo é então ignorado.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="noções-básicas-de-programação-em-r.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Olá mundo!&quot;</span>)</span>
+<span id="cb10-2"><a href="noções-básicas-de-programação-em-r.html#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Olá mundo!&quot;</span></span>
+<span id="cb10-3"><a href="noções-básicas-de-programação-em-r.html#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Olá mundo R!&quot;</span>) <span class="co"># comentário que o computador ignora</span></span>
+<span id="cb10-4"><a href="noções-básicas-de-programação-em-r.html#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Olá mundo R!&quot;</span></span></code></pre></div>
+<p>Se retirarmos o símbolo <code>#</code> temos então mensagem de erro.</p>
+<!-- ```{r, eval=FALSE, error=TRUE, collapse=TRUE}  -->
+<!--  print("Olá mundo! Olá R")  comentários que dará erro -->
+<!-- ``` -->
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="noções-básicas-de-programação-em-r.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">&quot;Olá mundo! Olá R&quot;</span>)  comentários que dará erro</span>
+<span id="cb11-2"><a href="noções-básicas-de-programação-em-r.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Error: &lt;text&gt;:1:28: unexpected symbol</span></span>
+<span id="cb11-3"><a href="noções-básicas-de-programação-em-r.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1: print(&quot;Olá mundo! Olá R&quot;)  comentários</span></span>
+<span id="cb11-4"><a href="noções-básicas-de-programação-em-r.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="do">##                                ^</span></span></code></pre></div>
+<!-- print("Olá mundo! Olá R")  comentários que dará erro -->
+<!-- Error: unexpected symbol in "print("Olá mundo! Olá R")  comentários" -->
+<!-- Execution halted -->
+</div>
+</div>
+<div id="variavel" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Variável e atribuição</h2>
+<p>Em programação, no processo de automatização de tarefas, o uso de variáveis é essencial. Ele permite que reutilizemos as coisas, através de nomes mais simplificados. Normamente, usa-se o símbolo de igual <code>=</code>para atribuir algo a uma variável, no seguinte modo:</p>
+<p><code>Noma_da_variavel = valores</code></p>
+<p>O R também usa este símbolo, mas também usa outro que lhe é prório, o <code>&lt;-</code> que lembra uma seta.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="noções-básicas-de-programação-em-r.html#cb12-1" aria-hidden="true" tabindex="-1"></a>nome1 <span class="ot">=</span> <span class="st">&quot;Fulano&quot;</span></span>
+<span id="cb12-2"><a href="noções-básicas-de-programação-em-r.html#cb12-2" aria-hidden="true" tabindex="-1"></a>nome2 <span class="ot">&lt;-</span> <span class="st">&quot;Ciclano&quot;</span></span>
+<span id="cb12-3"><a href="noções-básicas-de-programação-em-r.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">&quot;Um nome é &quot;</span>, nome1, <span class="st">&quot;, o outro é &quot;</span>, nome2)</span>
+<span id="cb12-4"><a href="noções-básicas-de-programação-em-r.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Um nome é Fulano, o outro é Ciclano</span></span></code></pre></div>
+<p>Pode-se usar na direção contrária também</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="noções-básicas-de-programação-em-r.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;Beltrano&quot;</span> <span class="ot">-&gt;</span> nome3</span>
+<span id="cb13-2"><a href="noções-básicas-de-programação-em-r.html#cb13-2" aria-hidden="true" tabindex="-1"></a>nome3</span>
+<span id="cb13-3"><a href="noções-básicas-de-programação-em-r.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Beltrano&quot;</span></span></code></pre></div>
+<p>Há algumas regras para criar variáveis. Não conter espaço no nome é uma delas. Ao invés disso, pode-se usar o underscore (Ex.: bla_ble) ou ponto (bla.ble).
+Há alguns caracteres especiais que não podem ser usados diretamente numa string, pois possuem um significado especial. As aspas são um caso. Assim, por exemplo:
+<code>variavel &lt;- 'moinho d'agua'</code> retorna erro. Para poder utilizar as aspas, temos de dizer ao programa para “escapar”. Isto é feito de modo geral com o caractere <code>\</code>. Assim, para funcionar, nosso exemplo fica: <code>variavel &lt;- 'moinho d\'agua'</code>.
+No caso de aspas simples <code>'</code> ou duplas <code>"</code>, é possível escapar estes caracteres colocando um dentro do outro. Por exemplo: <code>variavel &lt;- "moinho d'agua"</code> ou <code>variavel &lt;- 'O conto "Trio em Lá Menor" de Machado de Assis'</code>.</p>
+</div>
+<div id="funções-no-r" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Funções no R</h2>
+<p>Funções são úteis para evitar retrabalho.</p>
+<p>Possuem a seguinte sintaxe:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="noções-básicas-de-programação-em-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criando uma função no R</span></span>
+<span id="cb14-2"><a href="noções-básicas-de-programação-em-r.html#cb14-2" aria-hidden="true" tabindex="-1"></a>nome_da_funcao <span class="ot">&lt;-</span> <span class="cf">function</span>(argumento_1, argumento_2, ...) {</span>
+<span id="cb14-3"><a href="noções-básicas-de-programação-em-r.html#cb14-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">fazendo_algo_com</span>(argumento_1)</span>
+<span id="cb14-4"><a href="noções-básicas-de-programação-em-r.html#cb14-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">fazendo_algo_mais_com</span>(argumento_2)</span>
+<span id="cb14-5"><a href="noções-básicas-de-programação-em-r.html#cb14-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-6"><a href="noções-básicas-de-programação-em-r.html#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="noções-básicas-de-programação-em-r.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co"># rodando a função</span></span>
+<span id="cb14-8"><a href="noções-básicas-de-programação-em-r.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nome_da_funcao</span>(argumento_1,sargumento_2)</span></code></pre></div>
+<p><code>arg_1</code>, <code>arg_2</code> são os parâmetros de entrada na função, que serão processados
+Ao chamar uma função, passa-se argumentos para esta processar.
+Argumentos também podem conter valores padrão, caso a informação não lhe seja repassada.</p>
+<p>Em um exemplo simples de função:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="noções-básicas-de-programação-em-r.html#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb15-2"><a href="noções-básicas-de-programação-em-r.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&#39;Olá Mundo&#39;</span>)</span>
+<span id="cb15-3"><a href="noções-básicas-de-programação-em-r.html#cb15-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-4"><a href="noções-básicas-de-programação-em-r.html#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">x</span>()</span>
+<span id="cb15-5"><a href="noções-básicas-de-programação-em-r.html#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Olá Mundo&quot;</span></span></code></pre></div>
+<p>Ou um outro exemplo, com a função tendo argumentos de entrada:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="noções-básicas-de-programação-em-r.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando função com valores padrão:</span></span>
+<span id="cb16-2"><a href="noções-básicas-de-programação-em-r.html#cb16-2" aria-hidden="true" tabindex="-1"></a>minhafuncao <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">a =</span> <span class="dv">2</span>, <span class="at">b =</span> <span class="dv">3</span>) {</span>
+<span id="cb16-3"><a href="noções-básicas-de-programação-em-r.html#cb16-3" aria-hidden="true" tabindex="-1"></a>   resultado <span class="ot">&lt;-</span> a <span class="sc">+</span> b</span>
+<span id="cb16-4"><a href="noções-básicas-de-programação-em-r.html#cb16-4" aria-hidden="true" tabindex="-1"></a>   <span class="fu">print</span>(resultado)</span>
+<span id="cb16-5"><a href="noções-básicas-de-programação-em-r.html#cb16-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb16-6"><a href="noções-básicas-de-programação-em-r.html#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="noções-básicas-de-programação-em-r.html#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando a função sem nenhum argumento.</span></span>
+<span id="cb16-8"><a href="noções-básicas-de-programação-em-r.html#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>()</span>
+<span id="cb16-9"><a href="noções-básicas-de-programação-em-r.html#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
+<span id="cb16-10"><a href="noções-básicas-de-programação-em-r.html#cb16-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="noções-básicas-de-programação-em-r.html#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando a função repassando argumentos.</span></span>
+<span id="cb16-12"><a href="noções-básicas-de-programação-em-r.html#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(<span class="dv">10</span>,<span class="dv">4</span>)</span>
+<span id="cb16-13"><a href="noções-básicas-de-programação-em-r.html#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 14</span></span>
+<span id="cb16-14"><a href="noções-básicas-de-programação-em-r.html#cb16-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-15"><a href="noções-básicas-de-programação-em-r.html#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando a função repassando parte dos argumentos.</span></span>
+<span id="cb16-16"><a href="noções-básicas-de-programação-em-r.html#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(,<span class="dv">4</span>)</span>
+<span id="cb16-17"><a href="noções-básicas-de-programação-em-r.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span></code></pre></div>
+</div>
+<div id="condicionais-seentão-ifelse" class="section level2" number="4.4">
+<h2><span class="header-section-number">4.4</span> Condicionais: se/então, If/else</h2>
+<ul>
+<li>Se uma condição, então faça algo.</li>
+<li>Se outra condição, então faça outra coisa.</li>
+<li><code>else</code>: Se nenhuma das condições anteriores for satisfeita, então faça o seguinte.</li>
+</ul>
+<p>Em sua versão mais simples</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="noções-básicas-de-programação-em-r.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condição) { </span>
+<span id="cb17-2"><a href="noções-básicas-de-programação-em-r.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fazer_algo</span>()</span>
+<span id="cb17-3"><a href="noções-básicas-de-programação-em-r.html#cb17-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Se certa condição for satisfeita, for verdadeira, então algo especificado será feito.
+Se certa condição não for satisfeita, for falsa, então nada será feito.</p>
+<!-- minhafuncao <- function(arg1){ -->
+<!--   if(arg1 > 5){ -->
+<!--     message(arg1, " é maior que 5") -->
+<!--   } -->
+<!-- } -->
+<!-- minhafuncao(3) -->
+<!-- minhafuncao(13) -->
+<p>Perceba que nossa função apenas retorna algo se o argumento de entrada for maior que 5. Caso contrário - como foi com o valor 3 - ela nada faz.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="noções-básicas-de-programação-em-r.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="dv">3</span> <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
+<span id="cb18-2"><a href="noções-básicas-de-programação-em-r.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;X é maior que 5&quot;</span>)</span>
+<span id="cb18-3"><a href="noções-básicas-de-programação-em-r.html#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-4"><a href="noções-básicas-de-programação-em-r.html#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="noções-básicas-de-programação-em-r.html#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span>(<span class="dv">14</span> <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
+<span id="cb18-6"><a href="noções-básicas-de-programação-em-r.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;X é maior que 5&quot;</span>)</span>
+<span id="cb18-7"><a href="noções-básicas-de-programação-em-r.html#cb18-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb18-8"><a href="noções-básicas-de-programação-em-r.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;X é maior que 5&quot;</span></span></code></pre></div>
+<div id="else" class="section level3" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Else</h3>
+<p>Uma versão mais elaborada da condicional envolve a condição <code>else</code></p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="noções-básicas-de-programação-em-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condição) { </span>
+<span id="cb19-2"><a href="noções-básicas-de-programação-em-r.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fazer_algo</span>()</span>
+<span id="cb19-3"><a href="noções-básicas-de-programação-em-r.html#cb19-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb19-4"><a href="noções-básicas-de-programação-em-r.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fazer_outra_coisa</span>()</span>
+<span id="cb19-5"><a href="noções-básicas-de-programação-em-r.html#cb19-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Se certa condição for satisfeita, for verdadeira, então algo especificado - a função fazer_algo() - será realizada.
+Se certa condição não for satisfeita, for falsa, então outra coisa será feita.
+<!-- Fazer um diagrama assim -->
+<!-- https://www.guru99.com/r-if-else-elif-statement.html -->
+Ex.:
+<!-- x <- 2 -->
+<!-- if (x > 5) { -->
+<!--   print('X é maior que 5') -->
+<!-- } else {  -->
+<!--   print('X não é maior que 5') -->
+<!-- } --></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="noções-básicas-de-programação-em-r.html#cb20-1" aria-hidden="true" tabindex="-1"></a>minhafuncao <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1){</span>
+<span id="cb20-2"><a href="noções-básicas-de-programação-em-r.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(arg1 <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
+<span id="cb20-3"><a href="noções-básicas-de-programação-em-r.html#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(arg1, <span class="st">&quot; é maior que 5&quot;</span>)</span>
+<span id="cb20-4"><a href="noções-básicas-de-programação-em-r.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> { </span>
+<span id="cb20-5"><a href="noções-básicas-de-programação-em-r.html#cb20-5" aria-hidden="true" tabindex="-1"></a>     <span class="fu">message</span>(arg1, <span class="st">&#39; não é maior que 5&#39;</span>)</span>
+<span id="cb20-6"><a href="noções-básicas-de-programação-em-r.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb20-7"><a href="noções-básicas-de-programação-em-r.html#cb20-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb20-8"><a href="noções-básicas-de-programação-em-r.html#cb20-8" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(<span class="dv">3</span>)</span>
+<span id="cb20-9"><a href="noções-básicas-de-programação-em-r.html#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 não é maior que 5</span></span>
+<span id="cb20-10"><a href="noções-básicas-de-programação-em-r.html#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(<span class="dv">13</span>)</span>
+<span id="cb20-11"><a href="noções-básicas-de-programação-em-r.html#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 13 é maior que 5</span></span></code></pre></div>
+</div>
+<div id="else-if" class="section level3" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> else if</h3>
+<p>Podemos colocar mais condições intermediárias, quantas quisermos, com <code>else if</code></p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="noções-básicas-de-programação-em-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a>comes <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1){</span>
+<span id="cb21-2"><a href="noções-básicas-de-programação-em-r.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (arg1 <span class="sc">==</span> <span class="st">&quot;laranja&quot;</span>){</span>
+<span id="cb21-3"><a href="noções-básicas-de-programação-em-r.html#cb21-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Prefiro tamarindo&quot;</span>)</span>
+<span id="cb21-4"><a href="noções-básicas-de-programação-em-r.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  }   <span class="cf">else</span> <span class="cf">if</span> (arg1 <span class="sc">==</span> <span class="st">&quot;rucula&quot;</span>){</span>
+<span id="cb21-5"><a href="noções-básicas-de-programação-em-r.html#cb21-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;bleaaaargh&quot;</span>)</span>
+<span id="cb21-6"><a href="noções-básicas-de-programação-em-r.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  }   <span class="cf">else</span> <span class="cf">if</span> (arg1 <span class="sc">==</span> <span class="st">&quot;sanduiche&quot;</span>){</span>
+<span id="cb21-7"><a href="noções-básicas-de-programação-em-r.html#cb21-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Com suco de tamarindo!&quot;</span>)</span>
+<span id="cb21-8"><a href="noções-básicas-de-programação-em-r.html#cb21-8" aria-hidden="true" tabindex="-1"></a>  }  <span class="cf">else</span> {</span>
+<span id="cb21-9"><a href="noções-básicas-de-programação-em-r.html#cb21-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(<span class="st">&quot;Só sei com laranjas&quot;</span>)</span>
+<span id="cb21-10"><a href="noções-básicas-de-programação-em-r.html#cb21-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb21-11"><a href="noções-básicas-de-programação-em-r.html#cb21-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb21-12"><a href="noções-básicas-de-programação-em-r.html#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="noções-básicas-de-programação-em-r.html#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando a função acima</span></span>
+<span id="cb21-14"><a href="noções-básicas-de-programação-em-r.html#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">comes</span>(<span class="st">&quot;laranja&quot;</span>)</span>
+<span id="cb21-15"><a href="noções-básicas-de-programação-em-r.html#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Prefiro tamarindo&quot;</span></span>
+<span id="cb21-16"><a href="noções-básicas-de-programação-em-r.html#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu">comes</span>(<span class="st">&quot;rucula&quot;</span>)</span>
+<span id="cb21-17"><a href="noções-básicas-de-programação-em-r.html#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bleaaaargh&quot;</span></span>
+<span id="cb21-18"><a href="noções-básicas-de-programação-em-r.html#cb21-18" aria-hidden="true" tabindex="-1"></a><span class="fu">comes</span>(<span class="st">&quot;sanduiche&quot;</span>)</span>
+<span id="cb21-19"><a href="noções-básicas-de-programação-em-r.html#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Com suco de tamarindo!&quot;</span></span>
+<span id="cb21-20"><a href="noções-básicas-de-programação-em-r.html#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="fu">comes</span>(<span class="st">&quot;abacaxi&quot;</span>)</span>
+<span id="cb21-21"><a href="noções-básicas-de-programação-em-r.html#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Só sei com laranjas&quot;</span></span>
+<span id="cb21-22"><a href="noções-básicas-de-programação-em-r.html#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="fu">comes</span>(<span class="st">&quot;morango&quot;</span>)</span>
+<span id="cb21-23"><a href="noções-básicas-de-programação-em-r.html#cb21-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Só sei com laranjas&quot;</span></span></code></pre></div>
+<p>Combinando função e If/Else</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="noções-básicas-de-programação-em-r.html#cb22-1" aria-hidden="true" tabindex="-1"></a>verifica <span class="ot">&lt;-</span> <span class="cf">function</span>(arg_entrada1, arg_entrada2){</span>
+<span id="cb22-2"><a href="noções-básicas-de-programação-em-r.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (arg_entrada1 <span class="sc">&gt;</span> arg_entrada2) {</span>
+<span id="cb22-3"><a href="noções-básicas-de-programação-em-r.html#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(arg_entrada1, <span class="st">&#39; é maior que &#39;</span>, arg_entrada2)</span>
+<span id="cb22-4"><a href="noções-básicas-de-programação-em-r.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> { </span>
+<span id="cb22-5"><a href="noções-básicas-de-programação-em-r.html#cb22-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">message</span>(arg_entrada1, <span class="st">&#39; não é maior que &#39;</span>, arg_entrada2)</span>
+<span id="cb22-6"><a href="noções-básicas-de-programação-em-r.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb22-7"><a href="noções-básicas-de-programação-em-r.html#cb22-7" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Chamando a função</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="noções-básicas-de-programação-em-r.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">verifica</span>(<span class="dv">1</span>,<span class="dv">5</span>)</span>
+<span id="cb23-2"><a href="noções-básicas-de-programação-em-r.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 não é maior que 5</span></span>
+<span id="cb23-3"><a href="noções-básicas-de-programação-em-r.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="fu">verifica</span>(<span class="dv">7</span>,<span class="dv">2</span>)</span>
+<span id="cb23-4"><a href="noções-básicas-de-programação-em-r.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 7 é maior que 2</span></span></code></pre></div>
+</div>
+</div>
+<div id="operadores" class="section level2" number="4.5">
+<h2><span class="header-section-number">4.5</span> Operadores</h2>
+<p>Usamos operadores para realizar transformações ou comparações entre valores ou variáveis (que por sua vez, contém valores).</p>
+<div id="operadores-de-atribuição-assignment" class="section level3" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Operadores de atribuição (assignment)</h3>
+<p>Os operadores de atribuição são aqueles que vimos na sessão “<a href="noções-básicas-de-programação-em-r.html#variavel">variável</a>”, que são <code>=</code>, <code>&lt;-</code>, <code>&lt;&lt;-</code>, <code>-&gt;</code> e <code>-&gt;&gt;</code>.</p>
+</div>
+<div id="operadores-aritiméticos" class="section level3" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Operadores Aritiméticos</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>+</td>
+<td>adição</td>
+</tr>
+<tr class="even">
+<td>-</td>
+<td>subtração</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td>multiplicação</td>
+</tr>
+<tr class="even">
+<td>/</td>
+<td>divisão</td>
+</tr>
+<tr class="odd">
+<td>^ ou **</td>
+<td>exponencial</td>
+</tr>
+</tbody>
+</table>
+<!-- |x %% y|modulus (x mod y) 5%%2 is 1| -->
+<!-- |x %/% y|integer division 5%/%2 is 2| -->
+<p>Há ainda os operadores <code>%%</code> (modulus) e <code>%/%</code> (divisão integral).</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="noções-básicas-de-programação-em-r.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">7</span></span>
+<span id="cb24-2"><a href="noções-básicas-de-programação-em-r.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 12</span></span>
+<span id="cb24-3"><a href="noções-básicas-de-programação-em-r.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span><span class="sc">/</span><span class="dv">3</span></span>
+<span id="cb24-4"><a href="noções-básicas-de-programação-em-r.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span></code></pre></div>
+</div>
+<div id="operadores-relacionais" class="section level3" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Operadores relacionais</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>&lt;</td>
+<td>menor que</td>
+</tr>
+<tr class="even">
+<td>&lt;=</td>
+<td>menor ou igual a</td>
+</tr>
+<tr class="odd">
+<td>&gt;</td>
+<td>maior que</td>
+</tr>
+<tr class="even">
+<td>&gt;=</td>
+<td>maior ou igual que</td>
+</tr>
+<tr class="odd">
+<td>==</td>
+<td>exatamente igual a</td>
+</tr>
+<tr class="even">
+<td>!=</td>
+<td>diferente de</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="noções-básicas-de-programação-em-r.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">&gt;</span><span class="dv">6</span></span>
+<span id="cb25-2"><a href="noções-básicas-de-programação-em-r.html#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb25-3"><a href="noções-básicas-de-programação-em-r.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span><span class="sc">&lt;=</span><span class="dv">6</span></span>
+<span id="cb25-4"><a href="noções-básicas-de-programação-em-r.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb25-5"><a href="noções-básicas-de-programação-em-r.html#cb25-5" aria-hidden="true" tabindex="-1"></a>variavel <span class="ot">&lt;-</span> <span class="st">&quot;teste&quot;</span></span>
+<span id="cb25-6"><a href="noções-básicas-de-programação-em-r.html#cb25-6" aria-hidden="true" tabindex="-1"></a>variavel <span class="sc">==</span> <span class="st">&quot;abacate&quot;</span></span>
+<span id="cb25-7"><a href="noções-básicas-de-programação-em-r.html#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb25-8"><a href="noções-básicas-de-programação-em-r.html#cb25-8" aria-hidden="true" tabindex="-1"></a>variavel <span class="sc">!=</span> <span class="st">&quot;TESTE&quot;</span></span>
+<span id="cb25-9"><a href="noções-básicas-de-programação-em-r.html#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
+</div>
+<div id="operadores-booleanos" class="section level3" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Operadores booleanos</h3>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>E</th>
+<th>OU</th>
+<th>NÃO</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td>AND</td>
+<td>OR</td>
+<td>NOT</td>
+</tr>
+<tr class="even">
+<td>Símbolos</td>
+<td>&amp;</td>
+<td>|</td>
+<td>!</td>
+</tr>
+<tr class="odd">
+<td>No R também temos</td>
+<td>&amp;&amp;</td>
+<td>||</td>
+<td>!</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>!=</td>
+<td>não igual a</td>
+</tr>
+<tr class="even">
+<td>!x</td>
+<td>não x</td>
+</tr>
+<tr class="odd">
+<td>x | y</td>
+<td>x ou y</td>
+</tr>
+<tr class="even">
+<td>x &amp; y</td>
+<td>x E y</td>
+</tr>
+<tr class="odd">
+<td>isTRUE(x)</td>
+<td>teste se X é TRUE</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html" class="uri">https://stat.ethz.ch/R-manual/R-devel/library/base/html/Logic.html</a></p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="noções-básicas-de-programação-em-r.html#cb26-1" aria-hidden="true" tabindex="-1"></a>txt <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bla bla&quot;</span>, <span class="st">&quot;bla ble&quot;</span>, <span class="st">&quot;bla bli&quot;</span>, <span class="st">&quot;bla non&quot;</span>)</span>
+<span id="cb26-2"><a href="noções-básicas-de-programação-em-r.html#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&#39;bla (bla|ble)&#39;</span>, txt, <span class="at">value =</span>T)</span>
+<span id="cb26-3"><a href="noções-básicas-de-programação-em-r.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;bla bla&quot; &quot;bla ble&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="noções-básicas-de-programação-em-r.html#cb27-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;bla&quot;</span>, <span class="st">&quot;ble&quot;</span>, <span class="st">&quot;bli&quot;</span>)</span>
+<span id="cb27-2"><a href="noções-básicas-de-programação-em-r.html#cb27-2" aria-hidden="true" tabindex="-1"></a>y<span class="sc">==</span><span class="st">&quot;bla&quot;</span></span>
+<span id="cb27-3"><a href="noções-básicas-de-programação-em-r.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE FALSE FALSE</span></span>
+<span id="cb27-4"><a href="noções-básicas-de-programação-em-r.html#cb27-4" aria-hidden="true" tabindex="-1"></a>y<span class="sc">!=</span><span class="st">&quot;bla&quot;</span></span>
+<span id="cb27-5"><a href="noções-básicas-de-programação-em-r.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE  TRUE  TRUE</span></span></code></pre></div>
+</div>
+<div id="outros-operadores" class="section level3" number="4.5.5">
+<h3><span class="header-section-number">4.5.5</span> Outros operadores</h3>
+<table>
+<thead>
+<tr class="header">
+<th>Operador</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>:</code></td>
+<td>Cria uma sequência de números em uma sequência</td>
+</tr>
+<tr class="even">
+<td><code>%in%</code></td>
+<td>Se um eelmento pertence/está contido em um vetor de elementos</td>
+</tr>
+<tr class="odd">
+<td><code>%*%</code></td>
+<td>Multiplicação de matrizes</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="noções-básicas-de-programação-em-r.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb28-2"><a href="noções-básicas-de-programação-em-r.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  5  6  7  8  9 10</span></span></code></pre></div>
+<p>O comando <code>colors()</code> lista as cores que possuem nome no R. Vamos usá-lo para exemplificar o operador <code>%in%</code>. Ele nos dirá se um nome de cor está presente no vetor de cores que o comando <code>colors()</code> retorna.</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="noções-básicas-de-programação-em-r.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;darkred&quot;</span> <span class="sc">%in%</span> <span class="fu">colors</span>() </span>
+<span id="cb29-2"><a href="noções-básicas-de-programação-em-r.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
+</div>
+</div>
+<div id="loops-repetições" class="section level2" number="4.6">
+<h2><span class="header-section-number">4.6</span> Loops, repetições</h2>
+<div id="for-loops" class="section level3" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> For Loops</h3>
+<p>Quando necessita de fazer uma mesma operação, repetida, em vários itens de uma lista, usamos os loops.
+Com loops iteramos, aplicamos uma operação a cada item de uma série de itens.</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="noções-básicas-de-programação-em-r.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (item <span class="cf">in</span> variavel_com_varios_itens){</span>
+<span id="cb30-2"><a href="noções-básicas-de-programação-em-r.html#cb30-2" aria-hidden="true" tabindex="-1"></a>         faça algo com o item n da lista</span>
+<span id="cb30-3"><a href="noções-básicas-de-programação-em-r.html#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Por exemplo:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="noções-básicas-de-programação-em-r.html#cb31-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb31-2"><a href="noções-básicas-de-programação-em-r.html#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="noções-básicas-de-programação-em-r.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># o loop abaixo pegará os elementos 1,3 e 5</span></span>
+<span id="cb31-4"><a href="noções-básicas-de-programação-em-r.html#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># e adicionará 1 a cada um deles.</span></span>
+<span id="cb31-5"><a href="noções-básicas-de-programação-em-r.html#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> x){</span>
+<span id="cb31-6"><a href="noções-básicas-de-programação-em-r.html#cb31-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(i<span class="sc">+</span><span class="dv">1</span>)</span>
+<span id="cb31-7"><a href="noções-básicas-de-programação-em-r.html#cb31-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb31-8"><a href="noções-básicas-de-programação-em-r.html#cb31-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 2</span></span>
+<span id="cb31-9"><a href="noções-básicas-de-programação-em-r.html#cb31-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 4</span></span>
+<span id="cb31-10"><a href="noções-básicas-de-programação-em-r.html#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span></code></pre></div>
+<p>Também podemos aplicar loops a strings:</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="noções-básicas-de-programação-em-r.html#cb32-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;bla&#39;</span>, <span class="st">&#39;ble&#39;</span>)</span>
+<span id="cb32-2"><a href="noções-básicas-de-programação-em-r.html#cb32-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a href="noções-básicas-de-programação-em-r.html#cb32-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> x){</span>
+<span id="cb32-4"><a href="noções-básicas-de-programação-em-r.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&#39;Alguém disse: &#39;</span>, i))</span>
+<span id="cb32-5"><a href="noções-básicas-de-programação-em-r.html#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-6"><a href="noções-básicas-de-programação-em-r.html#cb32-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Alguém disse:  bla&quot;</span></span>
+<span id="cb32-7"><a href="noções-básicas-de-programação-em-r.html#cb32-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Alguém disse:  ble&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="noções-básicas-de-programação-em-r.html#cb33-1" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fulano&quot;</span>, <span class="st">&quot;Beltrano&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Karen&quot;</span>) </span>
+<span id="cb33-2"><a href="noções-básicas-de-programação-em-r.html#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> nomes) {</span>
+<span id="cb33-3"><a href="noções-básicas-de-programação-em-r.html#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># o comando nchar() conta quantos caracteres há no item</span></span>
+<span id="cb33-4"><a href="noções-básicas-de-programação-em-r.html#cb33-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">&quot;O nome&quot;</span>, i, <span class="st">&quot;contém&quot;</span>, <span class="fu">nchar</span>(i), <span class="st">&quot;caracteres.&quot;</span>))</span>
+<span id="cb33-5"><a href="noções-básicas-de-programação-em-r.html#cb33-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb33-6"><a href="noções-básicas-de-programação-em-r.html#cb33-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O nome Fulano contém 6 caracteres.&quot;</span></span>
+<span id="cb33-7"><a href="noções-básicas-de-programação-em-r.html#cb33-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O nome Beltrano contém 8 caracteres.&quot;</span></span>
+<span id="cb33-8"><a href="noções-básicas-de-programação-em-r.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O nome Maria contém 5 caracteres.&quot;</span></span>
+<span id="cb33-9"><a href="noções-básicas-de-programação-em-r.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O nome Karen contém 5 caracteres.&quot;</span></span></code></pre></div>
+</div>
+<div id="while-loop" class="section level3" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> While loop</h3>
+<p>O for loops é usado quando temos uma lista que sabemos quantos elementos temos. Para o caso de não sabermos ao certo quantos e quais elementos temos, há ainda um outro tipo de loop em programação, o <code>while loop</code>, que diz enquanto uma condição for verdadeira, ela continuará rodando, e irá parar assim que for falsa.</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="noções-básicas-de-programação-em-r.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criando a variável &quot;i&quot; de valor 1</span></span>
+<span id="cb34-2"><a href="noções-básicas-de-programação-em-r.html#cb34-2" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb34-3"><a href="noções-básicas-de-programação-em-r.html#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Enquanto a condição i for menor que 7, continue</span></span>
+<span id="cb34-4"><a href="noções-básicas-de-programação-em-r.html#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> (i <span class="sc">&lt;</span> <span class="dv">7</span>) {</span>
+<span id="cb34-5"><a href="noções-básicas-de-programação-em-r.html#cb34-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># imprime a mensagem </span></span>
+<span id="cb34-6"><a href="noções-básicas-de-programação-em-r.html#cb34-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">message</span>(i, <span class="st">&quot; é menor que 7&quot;</span>)</span>
+<span id="cb34-7"><a href="noções-básicas-de-programação-em-r.html#cb34-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adiciona 1 ao valor de i</span></span>
+<span id="cb34-8"><a href="noções-básicas-de-programação-em-r.html#cb34-8" aria-hidden="true" tabindex="-1"></a>  i <span class="ot">&lt;-</span> i <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb34-9"><a href="noções-básicas-de-programação-em-r.html#cb34-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># volta ao início</span></span>
+<span id="cb34-10"><a href="noções-básicas-de-programação-em-r.html#cb34-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-11"><a href="noções-básicas-de-programação-em-r.html#cb34-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 é menor que 7</span></span>
+<span id="cb34-12"><a href="noções-básicas-de-programação-em-r.html#cb34-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 é menor que 7</span></span>
+<span id="cb34-13"><a href="noções-básicas-de-programação-em-r.html#cb34-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 é menor que 7</span></span>
+<span id="cb34-14"><a href="noções-básicas-de-programação-em-r.html#cb34-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 é menor que 7</span></span>
+<span id="cb34-15"><a href="noções-básicas-de-programação-em-r.html#cb34-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 é menor que 7</span></span>
+<span id="cb34-16"><a href="noções-básicas-de-programação-em-r.html#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 é menor que 7</span></span></code></pre></div>
+<p>No exemplo acima, criamos a variável “i” que tem valor 1, e dentro do loop há a operação de acrescentar +1 a cada “rodada” do loop, que começa com o valor “1”. A cada rodada, o loop avalia se a condição <code>i &lt; 7</code> é verdadeira. Se sim, imprime o valor atual da variável <code>i</code> e adiciona +1 ao valor de i. O loop continua rodando para o próximo item. Assim que chega em 7, o loop pára, já que “7 &lt; 7” é falso.</p>
+</div>
+<div id="apply-lapply-sapply-tapply-e-mapply" class="section level3" number="4.6.3">
+<h3><span class="header-section-number">4.6.3</span> apply (lapply, sapply, tapply e mapply)</h3>
+<p>Além de for loop e while loop, no R temos a família apply (lapply, sapply, tapply e mapply), que funciona como um for loop normal, mas que pode simplificar um pouco a repetição, além de ser mais rápido que o for loop. Entretanto, o apply funciona aplicando uma função já pré definida anteriormente.</p>
+<p>Assim, no nosso exemplo com o vetor</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="noções-básicas-de-programação-em-r.html#cb35-1" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fulano&quot;</span>, <span class="st">&quot;Beltrano&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Karen&quot;</span>)</span></code></pre></div>
+<p>Em que aplicamos o for loop</p>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="noções-básicas-de-programação-em-r.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> nomes) {</span>
+<span id="cb36-2"><a href="noções-básicas-de-programação-em-r.html#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># o comando nchar() conta quantos caracteres há no item</span></span>
+<span id="cb36-3"><a href="noções-básicas-de-programação-em-r.html#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="fu">nchar</span>(i))</span>
+<span id="cb36-4"><a href="noções-básicas-de-programação-em-r.html#cb36-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-5"><a href="noções-básicas-de-programação-em-r.html#cb36-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
+<span id="cb36-6"><a href="noções-básicas-de-programação-em-r.html#cb36-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 8</span></span>
+<span id="cb36-7"><a href="noções-básicas-de-programação-em-r.html#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span>
+<span id="cb36-8"><a href="noções-básicas-de-programação-em-r.html#cb36-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span></code></pre></div>
+<!-- sapply(nomes, nchar, message("Contém: ", x) -->
+<p>Podemos fazer algo parecido com o apply</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="noções-básicas-de-programação-em-r.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(nomes, nchar)</span>
+<span id="cb37-2"><a href="noções-básicas-de-programação-em-r.html#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="do">##   Fulano Beltrano    Maria    Karen </span></span>
+<span id="cb37-3"><a href="noções-básicas-de-programação-em-r.html#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="do">##        6        8        5        5</span></span></code></pre></div>
+<!-- |  |   | -->
+<!-- |--|--| -->
+<!-- |[`apply`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/apply.html)|usado para dataframes| -->
+<!-- |[`lapply`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/lapply.html)|para listas| -->
+<!-- |[`mapply`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/mapply.html)|para matrizes| -->
+<!-- |[`sapply`](https://www.rdocumentation.org/packages/memisc/versions/0.99.27.3/topics/Sapply)|| -->
+<!-- |[`vapply`](https://www.rdocumentation.org/packages/functools/versions/0.2.0/topics/Vapply)|| -->
+<!-- |[`rapply`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/rapply.html)| -->
+<!-- |[`tapply`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/tapply.html)|| -->
+<!-- the map_type() functions of the purrr package might be a better choice. -->
+<p>Além da família apply, o R conta também com <code>map_</code> e mais recentemente, com <code>purrr</code> do <a href="introdução-ao-r.html#tidyverse">tidyverse</a></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="estrutura-de-dados-e-tipos-de-formatos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introdução-ao-r.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

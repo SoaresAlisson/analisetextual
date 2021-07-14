@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 2 Exemplos de Pesquisas em Humanidades Digitais | Introdução à Análise Textual aplicada à Sociologia</title>
+  <title>Capítulo 7 Visualização de dados | Introdução à Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 2 Exemplos de Pesquisas em Humanidades Digitais | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:title" content="Capítulo 7 Visualização de dados | Introdução à Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 2 Exemplos de Pesquisas em Humanidades Digitais | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta name="twitter:title" content="Capítulo 7 Visualização de dados | Introdução à Análise Textual aplicada à Sociologia" />
   
   <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="história-da-análise-textual.html"/>
-<link rel="next" href="estrutura-de-dados-e-tipos-de-formatos.html"/>
+<link rel="prev" href="normalização-de-texto-e-expressões-regulares.html"/>
+<link rel="next" href="análise-textual-text-mining.html"/>
 <script src="libs/header-attrs-2.9/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -347,183 +347,165 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="exemplos-de-pesquisas-em-humanidades-digitais" class="section level1" number="2">
-<h1><span class="header-section-number">Capítulo 2</span> Exemplos de Pesquisas em Humanidades Digitais</h1>
-<p>Para entender os potenciais das humanidades digitais para pesquisa, nada melhor que observarmos exemplos de pesquisas. Aqui seguem alguns de exemplos, selecionados pelo potencial de integração entre humanidades e métodos digitais, mais que quanto ao possível mérito/demérito científico.</p>
-<div id="bibliometria-cientometria-cienciometria" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Bibliometria / cientometria / cienciometria</h2>
-<p>O estudo das citações, das rede de citações em artigos científicos foi talvez um dos pioneiros no uso de algumas das técnicas aqui descritas, existindo já há décadas. Chamada de “bibliometria”, “cientometria” ou “cienciometria”, ela conta citações de determinados autores em artigos científicos e tenta avaliar o quão influentes estes são.</p>
-<div id="exemplo-filósofos-da-ciência-na-sociologia" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Exemplo: Filósofos da ciência na Sociologia</h3>
-<p>Por exemplo, HEDSTRÖM et al (1998), buscando saber a influência dos principais filósofos da ciência (Hempel, Kuhn, Popper e Wittgenstein) na sociologia em diferentes países e regiões (países nórdicos, EUA, Grã Bretanha, Alemanha e França), analisou o número de artigos nas principais revistas sociológicas que os citaram.</p>
-<p><img src="imagens/Hedstrom.philosophers_science_in_sociological_journals.png" style="width:60.0%" alt="Tabela: citações de filósofos em revistas sociológicas" />
-(Fonte: HEDSTRÖM et al. 1998. p. 343)</p>
-<p>Pelos dados ali apresentados, Popper seria o filósofo mais influente na Europa, principalmente nos países de língua alemã, ao passo que Kuhn seria mais dominante nos EUA.</p>
+<div id="visualização-de-dados" class="section level1" number="7">
+<h1><span class="header-section-number">Capítulo 7</span> Visualização de dados</h1>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+<div class="infobox objetivo">
+<p><strong>Objetivos deste capítulo:</strong></p>
 <ul>
-<li>HEDSTRÖM, Peter; SWEDBERG; and UDÉHN, Lars. Popper’s Situational Analysis and Contemporary Sociology. Philosophy of the Social Sciences 1998; 28; 339-64]</li>
+<li>Apresentar uma introdução à visualização de dados com
+<ul>
+<li>pacote base</li>
+<li>pacote lattice</li>
+<li>pacote ggplot</li>
+<li>confecção de mapas simples</li>
+</ul></li>
 </ul>
 </div>
-<div id="exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</h3>
-<p>Stephen Roth analisou a chamada diferenciação funcional dos subsistemas da sociedade mundial, isto é, como os subssitemas como política, economia, religião, ciência, direito, meios de comunicação de massa, etc. se autonomizam em relação aos outros, entre os anos de 1800 e 2000, e para tal utilizou dados do Google Ngram viewer, que por sua vez se baseia no Google Books (mais detalhes sobre estas ferramentes na seção sobre frequência de palavras). Ele encontrou, por exemplo, declínio da presença relativa (isto é, proporcional a cada ano) da palavra “Deus” (<em>god</em>) nos livros em inglês ao longo do tempo.</p>
-<p><img src="imagens/SRoth.2014.Religion.png" style="width:80.0%" /></p>
-<p>Fonte: Roth (2014, p.46).</p>
-<p>E se examinarmos os termos relacionados aos Meios de Comunicação de Massa, podemos ver a importância relativa do termo “imprensa” (<em>press</em>) aumentando ao longo do tempo.</p>
-<p><img src="imagens/SRoth.2014.MassMedia.png" style="width:80.0%" /></p>
-<p>Fonte: Roth(2014, p.47).</p>
-<ul>
-<li>Roth, Steffen. 2014. <a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.692.7206&amp;rep=rep1&amp;type=pdf">“Fashionable Functions: A Google Ngram View of Trends in Functional Differentiation (1800-2000)”</a> International Journal of Technology and Human Interaction, 34–58.</li>
-</ul>
-<p>Uma versão posterior, um pouco mais elaborada em:</p>
-<ul>
-<li>Steffen Roth, Carlton Clark, Nikolay Trofimov, Artur Mkrtichyan, Markus Heidingsfelder, Laura Appignanesi, Miguel Pérez-Valls, Jan Berkel, Jari Kaivo-oja. <a href="https://www.sciencedirect.com/science/article/abs/pii/S004016251730269X?via%3Dihub">Futures of a distributed memory. A global brain wave measurement (1800–2000)</a>. Technological Forecasting &amp; Social Change 118 (2017) 307–323</li>
-</ul>
+<div id="base-plots" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> Base plots</h2>
+<div class="infobox obra">
+<p><em>CAPÍTULO EM CONSTRUÇÃO</em></p>
+</div>
+<p>O R vem com um pacote básico, nativo de gráficos.
+Repetindo o exemplo da introdução ao R na seção sobre <a href="introdução-ao-r.html#fatores">fatores</a>, fazendo um gráfico de barras simples a partir de um vetor, mas agora explicando a parte gráfica e aproveitando o <a href="#pipe">pipe</a> do tidyverse.</p>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="visualização-de-dados.html#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb92-2"><a href="visualização-de-dados.html#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb92-3"><a href="visualização-de-dados.html#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Attaching package: &#39;magrittr&#39;</span></span>
+<span id="cb92-4"><a href="visualização-de-dados.html#cb92-4" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:purrr&#39;:</span></span>
+<span id="cb92-5"><a href="visualização-de-dados.html#cb92-5" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb92-6"><a href="visualização-de-dados.html#cb92-6" aria-hidden="true" tabindex="-1"></a><span class="do">##     set_names</span></span>
+<span id="cb92-7"><a href="visualização-de-dados.html#cb92-7" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:tidyr&#39;:</span></span>
+<span id="cb92-8"><a href="visualização-de-dados.html#cb92-8" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb92-9"><a href="visualização-de-dados.html#cb92-9" aria-hidden="true" tabindex="-1"></a><span class="do">##     extract</span></span>
+<span id="cb92-10"><a href="visualização-de-dados.html#cb92-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-11"><a href="visualização-de-dados.html#cb92-11" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BSB&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;BSB&quot;</span>, <span class="st">&quot;VIC&quot;</span>, <span class="st">&quot;GUA&quot;</span>, <span class="st">&quot;FOR&quot;</span>, <span class="st">&quot;MAO&quot;</span>,<span class="st">&quot;GUA&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;REC&quot;</span>, <span class="st">&quot;UDI&quot;</span>, <span class="st">&quot;VIC&quot;</span>, <span class="st">&quot;GUA&quot;</span>)</span>
+<span id="cb92-12"><a href="visualização-de-dados.html#cb92-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Numa versão mínima:</span></span>
+<span id="cb92-13"><a href="visualização-de-dados.html#cb92-13" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="sc">%&gt;%</span> factor <span class="sc">%&gt;%</span> summary <span class="sc">%&gt;%</span> barplot</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-91-1.png" width="672" /></p>
+<p>E numa versão mais elaborada</p>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="visualização-de-dados.html#cb93-1" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="sc">%&gt;%</span></span>
+<span id="cb93-2"><a href="visualização-de-dados.html#cb93-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># transformando o vetor em fator para o barplot funcionar</span></span>
+<span id="cb93-3"><a href="visualização-de-dados.html#cb93-3" aria-hidden="true" tabindex="-1"></a>  factor <span class="sc">%&gt;%</span></span>
+<span id="cb93-4"><a href="visualização-de-dados.html#cb93-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># somando os repetidos</span></span>
+<span id="cb93-5"><a href="visualização-de-dados.html#cb93-5" aria-hidden="true" tabindex="-1"></a>  summary <span class="sc">%&gt;%</span></span>
+<span id="cb93-6"><a href="visualização-de-dados.html#cb93-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ordendando com &quot;sort()&quot;, e de modo decrescente com &quot;decreasing = TRUE&quot;</span></span>
+<span id="cb93-7"><a href="visualização-de-dados.html#cb93-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sort</span>(., <span class="at">decreasing =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb93-8"><a href="visualização-de-dados.html#cb93-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plotando o gráfico</span></span>
+<span id="cb93-9"><a href="visualização-de-dados.html#cb93-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">barplot</span>(</span>
+<span id="cb93-10"><a href="visualização-de-dados.html#cb93-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aeroportos Brasil&quot;</span>, <span class="at">sub =</span> <span class="st">&quot;Sublegenda&quot;</span>, </span>
+<span id="cb93-11"><a href="visualização-de-dados.html#cb93-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Legenda eixo x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Legenda eixo y&quot;</span>,</span>
+<span id="cb93-12"><a href="visualização-de-dados.html#cb93-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="st">&quot;Frequência&quot;</span>,</span>
+<span id="cb93-13"><a href="visualização-de-dados.html#cb93-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># cores </span></span>
+<span id="cb93-14"><a href="visualização-de-dados.html#cb93-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkred&quot;</span>, <span class="st">&quot;indianred&quot;</span>)</span>
+<span id="cb93-15"><a href="visualização-de-dados.html#cb93-15" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-92-1.png" width="672" /></p>
+</div>
+<div id="cores" class="section level2" number="7.2">
+<h2><span class="header-section-number">7.2</span> Cores</h2>
+<p>Para saber as cores disponíveis, usamos o comando <code>colors()</code>, que retorna 657 opções de cores. Se quisermos ver, por exemplo, somente as opções de vermelho:</p>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="visualização-de-dados.html#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;red&quot;</span>, <span class="fu">colors</span>(), <span class="at">value =</span> T)</span>
+<span id="cb94-2"><a href="visualização-de-dados.html#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;darkred&quot;         &quot;indianred&quot;       &quot;indianred1&quot;      &quot;indianred2&quot;     </span></span>
+<span id="cb94-3"><a href="visualização-de-dados.html#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;indianred3&quot;      &quot;indianred4&quot;      &quot;mediumvioletred&quot; &quot;orangered&quot;      </span></span>
+<span id="cb94-4"><a href="visualização-de-dados.html#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;orangered1&quot;      &quot;orangered2&quot;      &quot;orangered3&quot;      &quot;orangered4&quot;     </span></span>
+<span id="cb94-5"><a href="visualização-de-dados.html#cb94-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;palevioletred&quot;   &quot;palevioletred1&quot;  &quot;palevioletred2&quot;  &quot;palevioletred3&quot; </span></span>
+<span id="cb94-6"><a href="visualização-de-dados.html#cb94-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;palevioletred4&quot;  &quot;red&quot;             &quot;red1&quot;            &quot;red2&quot;           </span></span>
+<span id="cb94-7"><a href="visualização-de-dados.html#cb94-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;red3&quot;            &quot;red4&quot;            &quot;violetred&quot;       &quot;violetred1&quot;     </span></span>
+<span id="cb94-8"><a href="visualização-de-dados.html#cb94-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;violetred2&quot;      &quot;violetred3&quot;      &quot;violetred4&quot;</span></span></code></pre></div>
 <div class="infobox note">
-<p><strong>Dicas</strong>
-Há o pacote no Python <a href="http://www.culturomics.org/Resources/get-ngrams">Get Ngrams</a> e o R possui o pacote <a href="https://cran.r-project.org/web//packages/ngramr/index.html">ngramr</a> que pega os dados no site Google Ngram, os coloca no formato de dataframe do R, bem como plota o gráfico no R usando o pacote ggplot</p>
+<p><strong>Dicas: Cores no R</strong></p>
 <ul>
-<li>Veja a sessão dedicada ao <a href="%7B#ngramr">pacote ngramr neste manual</a></li>
+<li><a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf">Folha de dicas (cheatsheet) de cores no R</a>. Há dicas de pacotes para mais opções de cores, como o <a href="https://cran.r-project.org/web/packages/colorspace/colorspace.pdf">colorspace</a>, <a href="https://cran.r-project.org/web/packages/R.devices/R.devices.pdf">grDevices</a> e o <a href="https://cran.r-project.org/web/packages/colorRamps/colorRamps.pdf">colorRamps</a>.</li>
 </ul>
 </div>
 </div>
-<div id="exemplo-tendência-de-termos-chave-da-sociologia" class="section level3" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Exemplo: Tendência de termos chave da Sociologia</h3>
-<!-- Este tipo de pesquisa foi facilitada com a computação. -->
-<p>Além de contar citação nas referências, pode-se contar as palavras mais frequentes no corpo do texto e compará-las. Bernau (2018), por exemplo, coletou dados do <a href="https://www.jstor.org/dfr/">JSTOR’s Data for Research</a> e plotou um gráfico longitudinal (ao longo do tempo) de frequência de palavas com termos chaves da sociologia, como “classe”, “raça” e “gênero” da revista American Sociological Review.</p>
-<p><img src="imagens/AmericanSociologicalReview_WordFrequency_Class_Gender_Race.png" /></p>
-<p>Ele também disponibilizou o <a href="https://github.com/johnbernau/jstor_dfr">script em R que desenvolveu</a> para esta análise.</p>
+<div id="o-pacote-lattice" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> O pacote Lattice</h2>
+<div class="infobox obra">
+<p><em>CAPÍTULO EM CONSTRUÇÃO</em></p>
+</div>
+</div>
+<div id="ggplot2" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> O pacote ggplot2</h2>
+<p>O <a href="https://ggplot2.tidyverse.org/">ggplot2</a> é um pacote da suíte de pacotes do <a href="introdução-ao-r.html#tidyverse">tidyverse</a> e segue a gramática dos gráficos de Hadley Wickham. Caso não tenha ainda instalado o ggplot2 ou o tidyverse.
+Instalando o pacote ggplot:</p>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="visualização-de-dados.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ggplot2&#39;</span>)</span></code></pre></div>
+<p>Carregando o pacote:</p>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="visualização-de-dados.html#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>Na lógica da gramática dos gráficos, O ggplot possui 7 níveis:</p>
 <ul>
-<li>BERNAU, John A. <a href="https://journals.sagepub.com/doi/full/10.1177/2378023118809264">Text Analysis with JSTOR Archives</a>. November 12, 2018. <a href="https://doi.org/10.1177/2378023118809264" class="uri">https://doi.org/10.1177/2378023118809264</a></li>
+<li><ol style="list-style-type: decimal">
+<li>dados</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>aesthetics <code>aes()</code> , definindo os eixos x e y</li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>geoms, qual tipo de gráfico</li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>facets</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Estatística</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
+<li>Coord ou Sistema de coordenadas</li>
+</ol></li>
+<li><ol start="7" style="list-style-type: decimal">
+<li>Temas, theme: muda o fundo do gráfico.</li>
+</ol></li>
+</ul>
+<p>Desse modo, vamos plotando o gráfico, nível por nível. A ordem pode mudar um pouco, alguns podem estar ausentes, mas são obrigatórios os três primeiros, e sem eles, não temos o gráfico. Vamos fazer um histograma, que é um gráfico simples, e só precisamos do eixo x.</p>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="visualização-de-dados.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> MeuDataBase, <span class="fu">aes</span>(<span class="at">x=</span>ColunaDoDatabase_que_será_o_eixo_x)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="visualização-de-dados.html#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x=</span>mpg)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span>
+<span id="cb98-2"><a href="visualização-de-dados.html#cb98-2" aria-hidden="true" tabindex="-1"></a><span class="do">## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-97-1.png" width="672" />
+<!-- Ou ainda -->
+<!-- ggplot(data = mtcars, aes(x=mpg)) + geom_histogram(bins=6) --></p>
+<!-- é possível salvar o gráfico como objeto -->
+<!-- p <- ggplot(data = mtcars, aes(x=mpg)) -->
+<!-- p +  geom_histogram(bins=6) -->
+<!-- Podemos adicionar mais um nível com o `theme_*`, que muda o fundo do gráfico. -->
+<!-- p +  geom_histogram(bins=6) + theme_linedraw() -->
+<!-- library(ggplot2) -->
+<!-- ggplot(data=df, aes(x=dose, y=len)) + -->
+<!--   geom_bar(stat="identity") -->
+<!-- Vamos usar os dados de outro lugar para fazermos um gráfico de barras -->
+<!-- NT_falasJuntas %>% ggplot( -->
+<!--        # reorder() para organizar o eixo x -->
+<!--   aes(fala_junta, reorder(Nomes,fala_junta))) + -->
+<!--    geom_col() + -->
+<!--     labs(title = "Quantidade de palavras por pessoa", x = "Quantidade de palavras dita por cada", y = "senadores/depoente") + -->
+<!--   # virando o texto das barras em 90º -->
+<!--     theme(axis.text.x = element_text(angle = 90)) -->
+<div class="infobox obra">
+<p><strong>PARTE SOBRE GGPLOT AINDA EM CONSTRUÇÃO</strong></p>
+</div>
+<!-- http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization -->
+<div class="infobox note">
+<p><strong>Dicas</strong></p>
+<ul>
+<li>Quer fazer gráficos no R sem programar? Tente o pacote esquisse.
+<ul>
+<li><a href="https://dreamrs.github.io/esquisse/articles/get-started.html" class="uri">https://dreamrs.github.io/esquisse/articles/get-started.html</a></li>
+</ul></li>
+<li>cheat sheet ggplot2 <a href="https://nyu-cdsc.github.io/learningr/assets/data-visualization-2.1.pdf">opção1</a>, <a href="https://statsandr.com/blog/files/ggplot2-cheatsheet.pdf">opção2</a>.</li>
+<li>É possível personalizar mais ainda o texto do ggplot. Para isso podemos usar o pacote ggtext, que nos permite usar com texto em markdown e html.
+<ul>
+<li><a href="https://github.com/wilkelab/ggtext" class="uri">https://github.com/wilkelab/ggtext</a></li>
+<li><a href="https://www.r-bloggers.com/2020/06/ggplot2-text-customization-with-ggtext-data-visualization-in-r/" class="uri">https://www.r-bloggers.com/2020/06/ggplot2-text-customization-with-ggtext-data-visualization-in-r/</a></li>
+<li><a href="https://wilkelab.org/ggtext/articles/introduction.html" class="uri">https://wilkelab.org/ggtext/articles/introduction.html</a></li>
+</ul></li>
+<li>Para gráficos animados
+<ul>
+<li>Pacote <a href="https://github.com/ggobi/tourr">tourr</a>, para visualizar dados multivariados. <a href="https://twitter.com/rencontres_R/status/1414957799432404994?s=09">Aqui um exemplo</a> do tourr em ação.</li>
+</ul></li>
 </ul>
 </div>
-<div id="exemplo-tendências-da-filosofia" class="section level3" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> Exemplo: Tendências da filosofia</h3>
-<p>Inspirado neste trabalho, Brian Weatherson usou também o pacote <code>jstor_dfr</code>, baixou dados da filosofia, e os clusterizou através de topic modeling. Podemos ver as tendências gerais de vários ramos da filosofia ao longo do tempo:</p>
-<div class="figure">
-<img src="imagens/history_philosophy_trends.jpg" alt="" />
-<p class="caption">Tendencias na história da filosofia</p>
-</div>
-<p>O resultado e mais informações estão em seu livro online:</p>
-<ul>
-<li>WEATHERSON, Brian . <a href="http://www-personal.umich.edu/~weath/lda/">A History of Philosophy Journals</a>. Volume 1: Evidence from Topic Modeling, 1876-2013)</li>
-</ul>
-</div>
-</div>
-<div id="exemplo-google-trends-como-proxy-para-epidemias" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Exemplo: Google Trends como Proxy para epidemias</h2>
-<p>A busca no Google por certos sintomas de doenças, ou melhor, a variação na busca por certas doenças e sintomas correlatos pode indicar que variação real da doença.
-Isso acontece, por exemplo, com sintomas de gripe. Um pico no aumento das buscas pelos sintomas indica um prenúncio do aumento das infecções, a ser checado/validado posteriormente.
-No artigo <a href="https://academic.oup.com/cid/article/49/10/1557/298019">Google Trends: A Web-Based Tool for Real-Time Surveillance of Disease Outbreaks.</a>, os autores explicam que a ferramenta lançada em 2018:
-&gt; “Google Flu Trends can detect regional outbreaks of influenza 7–10 days before conventional Centers for Disease Control and Prevention surveillance systems”
-Para funcionar, há certas pré-condições sociais.</p>
-<p>Vale para gripe, e a ferramenta também prevê aumentos da Covid-19.
-Na reportagem da Piaui “<a href="https://piaui.folha.uol.com.br/no-carnaval-buscas-por-sintomas-covid-voltaram-subir-sete-dias-depois-numero-de-novos-casos-bateu-recorde/">No carnaval, buscas por “sintomas covid” voltaram a subir; sete dias depois, número de novos casos bateu recorde</a>” de 09 de março de 2021 compara as buscas no google com casos reais.</p>
-<div class="figure">
-<img src="imagens/Piaui-GoogleCovid.jpg" alt="" />
-<p class="caption">Gráfico: buscas por “sintomas Covid no Google” versus casos reais</p>
-</div>
-<p>Ver também <a href="https://smreputationmetrics.wordpress.com/2021/04/11/sintomas-covid-en-google-trends-un-indicador-alternativo-para-el-seguimiento-de-la-incidencia-de-casos/">“Sintomas Covid” en Google trends:.Un indicador alternativo para el seguimiento de la incidencia de casos.</a> com exemplos da Espanha, México, Chile e Argentina.</p>
-<!-- Exemplo de validação, de buscas no Google por "sintomas covid" e novos casos.
-[Piaui:Buscas sintomas Google](https://piaui.folha.uol.com.br/wp-content/uploads/2021/03/minipost2_googlecovid_interna.jpg).-->
-<p>No entanto, a ferramenta que parecia promissora falhou em prever o pico de gripe de 2013, sobrestimando por 140%. A empresa achou melhor terminar o projeto, conforme um <a href="https://www.wired.com/2015/10/can-learn-epic-failure-google-flu-trends/">artigo da Wired</a> de 2015. Mais detalhes podem lidos no artigo <a href="https://dash.harvard.edu/bitstream/handle/1/12016836/The%20Parable%20of%20Google%20Flu%20%28WP-Final%29.pdf?sequence=1">The Parable of Google Flu: Traps in Big Data Analysis</a>.
-O Instituto de Ciências Cognitvas de Osnabrück leva a ideia adiante, com modelo mais complexo, utilizando dados de redes sociais como Twitter e através do Watson da IBM.(<a href="https://www.ikw.uni-osnabrueck.de/en/research_groups/neuroinformatics/overview/flu_prediction.html">site do projeto</a>).</p>
-<ul>
-<li>O R possui o pacote <a href="https://cran.r-project.org/web/packages/gtrendsR/gtrendsR.pdf">gtrendsR</a> que pega dados do Google Trends para trabalhar</li>
-</ul>
-</div>
-<div id="exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</h2>
-<p>O relatório de 23/11/2020 sobre isolamento científico, intitulado “<a href="https://laut.org.br/scientific-self-isolation/">scientific [self] isolation</a>” do <a href="https://laut.org.br/">Laut</a>, Centro de Análise da Liberdade e do Autoritarismo,
-cruzou as checagens de fake news de 129 países diferentes (há uma plataforma que traduz as reportagens de fact checking de todo mundo para o inglês) e investigou a distribuição de notícias falsas sobre os tratamentos da Covid19. Os pesquisadores procederam então uma distribuição num plano das discussões nos países conforme sua semelhança. Quanto mais próximos, mais semelhantes os debates ao redor do tema. Encontraram então que o Brasil é o país mais isolado em sua discussão envolvendo certos medicamentos, no canto superior direito.
-<!-- , ele identifica e se aprofunda sobre especificidades do debate público brasileiro, que se distancia da discussão internacional.--></p>
-<div class="figure">
-<img src="imagens/Laut.Relative_proximity.png" alt="" />
-<p class="caption">Gráfico feito com o Iramuteq</p>
-</div>
-</div>
-<div id="exemplo-mudança-de-significado-de-palavras" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Exemplo: Mudança de significado de palavras</h2>
-<p>Kulkarni et al (2015) mostraram como através de ferramentas computacionais é possível identificar a mudança de significado de termos, seja ao longo de um século (com dados do Google NGram), seja em dinâmicas mais rápidas, como no twitter. Um dos termos analisado foi o “gay”:</p>
-<div class="figure">
-<img src="imagens/LinguisticChange-Gay.png" alt="" />
-<p class="caption">Linguistic Change da palavra “gay”</p>
-</div>
-<p>Várias outras palavras foram analisadas, como “tape” que significava “fita adesiva”, mas passou a significar também “fita cassete” nos anos 1970; ou “apple” e “windows” que ganharam novo significado com a indústria da computação.</p>
-<ul>
-<li>KULKARNI, V., Al-Rfou, R; PEROZZI, B e SKIENA, S. <a href="http://viveksck.github.io/langchangetrack/data/kulkarni.pdf">Statistically Significant Detection of Linguistic Change</a>. WWW 2015, May 18–22, 2015. <a href="http://dx.doi.org/10.1145/2736277.2741627" class="uri">http://dx.doi.org/10.1145/2736277.2741627</a> .</li>
-</ul>
-</div>
-<div id="exemplo-análise-de-complexidade-musical" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Exemplo: Análise de complexidade musical</h2>
-<p>A reportagem da Folha de São Paulo
-<a href="https://www1.folha.uol.com.br/ilustrada/2017/08/1910208-musica-brasileira-foi-simplificada-ao-longo-das-decadas-diz-pesquisa.shtml">Música brasileira foi simplificada ao longo das décadas, diz pesquisa</a>
-cita o trabalho do cientista de dados Leonardo Sales (<a href="leosalesblog.wordpress.com">blog do autor</a>), que analisou os acordes e vocabulário das letras, com base em 44 mil cifras e 102 mil letras raspadas de sites como cifras.com.br e letras.com.br em uma série de postagens: <a href="https://leosalesblog.wordpress.com/2017/04/21/analise-da-musica-brasileira-parte-1/">parte 1</a>, <a href="https://leosalesblog.wordpress.com/2017/04/21/analise-da-musica-brasileira-parte-2/">parte 2</a>, <a href="https://leosalesblog.wordpress.com/2017/04/26/analise-da-musica-brasileira-parte-3/">parte 3</a> sobre as letras, <a href="https://leosalesblog.wordpress.com/2017/06/18/analise-a-musica-brasileira-parte-4/">parte 4</a>. Os códigos para raspagem de dados destes sites estão disponíveis em Python.</p>
-<div class="figure">
-<img src="imagens/complexidade_musical.png" alt="" />
-<p class="caption">grafico</p>
-</div>
-<p>Como quase toda notação, há vantagens e desvantagens. Uma desvantagem, que levantou críticas, é que a análise se baseia em cifra, muito utilizada em músicas mais populares, mas inadequada para estilos mais complexos, como jazz.
-<!-- complexidade harmônica relativa d --></p>
-<!--
-## Riqueza vocabulário
-Comparando riqueza vocabular em diferentes estilos musicais.
--->
-</div>
-<div id="exemplo-polarização" class="section level2" number="2.6">
-<h2><span class="header-section-number">2.6</span> Exemplo: Polarização</h2>
-<p>Uma boa parte de pesquisas em política com métodos digitais se dedicou a analisar o fenômeno da polarização política.</p>
-<ul>
-<li>Christopher A. Bail, Lisa P. Argyle, Taylor W. Brown, John P. Bumpus, Haohan Chen, M. B. Fallin Hunzaker, Jaemin Lee, Marcus Mann, Friedolin Merhout, and Alexander Volfovsky. 2018. Exposure to opposing views on social media can increase political polarization. Proceedings of the National Academy of Sciences 115, 37 (Sept. 2018), 9216–9221. <a href="https://doi.org/10.1073/pnas.1804840115" class="uri">https://doi.org/10.1073/pnas.1804840115</a> Publisher: National Academy of Sciences Section: Social Sciences.</li>
-</ul>
-<p>Parte do trabalho de Franzosi descrevemos na <a href="https://soaresalisson.github.io/SociologiaDigital/estrutura_dados.html#markup">seção sobre dados estruturados</a>.</p>
-<ul>
-<li>Roberto P. Franzosi. <a href="https://www.researchgate.net/publication/226976976_Sociology_narrative_and_the_quality_versus_quantity_debate_Goethe_versus_Newton_Can_computer-assisted_story_grammars_help_us_understand_the_rise_of_Italian_fascism_1919-1922">Sociology, narrative, and the quality versus quantity debate (Goethe versus Newton): Can computer-assisted story grammars help us understand the rise of Italian fascism (1919–1922)?</a> . Theor Soc (2010) 39:593–629 DOI 10.1007/s11186-010-9131-3</li>
-</ul>
-<!-- Usando uma abordagem estrutural de narrativa/gramática de histórias com auxílio computacional e coletando e analisando jornais, sendo 20 mil artigos de jornais fascistas, 32 mil de jornais socialistas.
-
-I used PC-ACE to collect data on the rise of Italian fascism (1919–22), on the processes of working-class mobilization (1919–20, the “red years”) and fascist counter-mobilization (1921–22, the “black years”). I coded over 15,000 and over 17,000 newspaper articles from the socialist newspapers Il lavoro and Avanti!, and nearly 20,000 from the fascist newspaper Il Popolo d’Italia. The three databases resulted in over 17,000 semantic triplets from Il Lavoro, nearly 140,000 from Avanti!, and nearly 100,000 from Il Popolo d’Italia. 
-
-Franzosi os codificou e extraiu triplets semânticos, utilizando o programa  PC-ACE.
-As ações (verbos) mais frequentes, perpetradas por fascistas, em jornais socialistas,  são relacionados à violência (atirar, ferir, assaltar, bater, matar)
-Ao separar sujeito, ação, objeto, encontrou que os típicos agentes de violência contra a esquerda eram os fascistas e a polícia.
-
-Uso de PLN para verificar se havia agenda-setting no impeachment de Dilma Roussef.
-ALL THE ROADS LEAD TO IMPEACHMENT: AGENDA SETTING AND DILMA ROUSSEFF’S PRESIDENTIAL CRISIS (2013-2016)
-http://bibliotecadigital.fgv.br/dspace/handle/10438/29925
-Pegando o gancho da Vaza Jato: na minha tese, defendida em out/2020, eu quis ver se a tal da agenda-setting colava no impeachment da Dilma. Sim: dados de PLN comprovam. E mostram que as menções a Lula superaram à Dilma o tempo TODO 
-
-o tempo todo de análise (jan 2013- dez 2016) - com um pico exorbitante em março de 2016, mês dos históricos protestos de março de 2016. estas são menções na grande mídia, extraídas online para o período.
-uma das coisas que as análises mostram, contraintuitivamente, é que a marca Lava Jato em si não tinha a importância esperada, mas aparecia dissolvida ao longo do range de análise em subagendas como corrupção, por exemplo
-portanto, colegues jornalistas, grandes veículos, a barafunda Vaza Jato, o impeachment de Dilma e o assassinato da reputação do Lula são, em GRANDE MEDIDA, fruto do agendamento. não tem como falar de imparcialidade, nem razoabilidade. infelizmente.
--->
-</div>
-<div id="exemplo-de-integração-quali-quanti-complementando-dados-qualitativos" class="section level2" number="2.7">
-<h2><span class="header-section-number">2.7</span> Exemplo de integração quali-quanti: Complementando dados qualitativos</h2>
-<p>Uma dica de integração quali-quanti (qualitativo e quantitativo) usando análise textual vem do PEW Research. Aqui explicam como a partir de uma análise de grupos focais feita em 2019 com grupos dos EUA e da Grã Bretanha sobre atitudes frente a globalização/nacionalismo, complementaram com pesquisa quantitativa de análise textual, analisando as diferenças entre os grupos de cada país. Usaram técnicas como frequência de palavras, correlação de palavras e Topic modelling. Através destas análises, encontraram tópicos que se mostraram relevantes a serem incorporados em surveys futuros.</p>
-<ul>
-<li>DEVLIN, Kat.<a href="https://medium.com/pew-research-center-decoded/when-working-with-focus-groups-quantitative-methods-can-help-6ad39475ae5f">“How quantitative methods can supplement a qualitative approach when working with focus groups”</a>. medium.
-Dec 18, 2020.</li>
-</ul>
-</div>
-<div id="exemplo-de-integração-quali-quanti-depurando-dados-quantitativos" class="section level2" number="2.8">
-<h2><span class="header-section-number">2.8</span> Exemplo de integração quali-quanti: Depurando dados quantitativos</h2>
-<p>Nem sempre uma tabela de dados estruturados tem tudo estruturado, do modo que a sua pergunta de pesquisa necessite. Dentro de um campo específico de uma tabela pode-se precisar de desmembrar ainda mais os dados. Eis aqui um exemplo. Os pesquisadores do <a href="https://medium.com/dadoscope">Dadoscope</a> queriam investigar se houve aumento na abertura de igrejas evangélicas durante os anos Lula e Dilma. Os pesquisadores baixaram dados da Receita Federal referente ao Cadastro Nacional de Pessoa Jurídica e filtraram por “94.91–0–00 — Atividades de organizações religiosas ou filosóficas” no campo “Classificação Nacional de Atividades Econômicas”. O problema é que isto agrega não só igrejas evangélicas, como também católicas e de outras religiões e até agremiações filosóficas e institutos de psicanálise.
-Aqui entra a integração:</p>
-<blockquote>
-<p>Para tentarmos realizar a classificação das 150 mil igrejas evangélicas de maneira semi-supervisionada nós usamos Snorkel, uma biblioteca escrita em Python… foi preciso treinar um algoritmo de classificação usando uma amostra dos dados. De forma sucinta, os dados são separados em amostras que são usadas para treino, teste e validação da classificação. Para classificar os mais de 150 mil nomes únicos presentes na amostra de treino, criamos funções que classificam de forma grosseira as igrejas (e.g., se a palavra “assembleia” estiver presente, classificar a igreja como “evangélica”). Depois de escrever dezenas dessas funções, comparamos sua acurácia com uma amostra de teste de 5% dos nomes únicos, manualmente classificados por dois pesquisadores. Feito isso, usamos uma rede neural que combina em camadas estas funções e <em>voilá</em>: 91.8% de acurácia. Sabemos que este resultado não é perfeito, mas ele torna o trabalho de classificação viável.</p>
-</blockquote>
-<ul>
-<li>O artigo completo “Exclusivo: Igrejas evangélicas pentecostais tiveram boom de crescimento nos governos Lula e Dilma” pode ser lido aqui: <a href="https://revistaforum.com.br/blogs/dadoscope/exclusivo-igrejas-evangelicas-pentecostais-tiveram-boom-de-crescimento-nos-governos-lula-e-dilma/">artigo na Forum</a> e o <a href="https://medium.com/dadoscope/o-crescimento-das-igrejas-pentecostais-nos-governos-de-lula-e-dilma-a7c40b5669bd">mesmo artigo na Medium</a>.</li>
-<li><a href="https://github.com/dadoscope/igrejasevangelicas">Caderno de notas no dadoscope</a> para entender melhor como o processo foi realizado.</li>
-<li>Sobre a ferramenta utilizada, a Snorkel, ver a <a href="https://github.com/snorkel-team/snorkel">página do Github</a>, <a href="https://www.snorkel.org/use-cases/">introdução (em inglês) ao Snorkel</a>.</li>
-</ul>
-<p>Por fim, outra dica para pensar a integração de dados quantitativos e qualitativos é a palestra de <a href="https://heibox.uni-heidelberg.de/d/1c606b33d5/?p=%2FDr.%20Christof%20Sch%C3%B6ch%3A%20The%20Convergence%20of%20Quantitative%20and%20Qualitative%20Approaches&amp;mode=list">Dr. Christof Schöch: The Convergence of Quantitative and Qualitative Approaches</a>, ocorrida no 1st Summerschool of Digital Humanities: Distant Reading - Potentials and Applications, em inglês.</p>
-<!-- https://www1.folha.uol.com.br/colunas/monicabergamo/2021/05/mpf-fez-uso-politico-do-twitter-e-alimentou-redes-bolsonaristas-afirma-estudo-da-fgv.shtml -->
-<!-- https://www.researchgate.net/publication/351563884_The_Political_Use_of_Twitter_by_the_Federal_Prosecution_Service_in_Brazil  -->
-<!-- Discurso de ódio. -->
-<!-- Após Salah começar a jogar no Liverpool, as tags anti-muçulmanas dos torcedores do Liverpool caiu pela metade. -->
-<!-- "Can Exposure to Celebrities Reduce Prejudice? The Effect of Mohamed Salah on Islamophobic Behaviors and Attitudes" -->
-<!-- PrePrint: https://osf.io/preprints/socarxiv/eq8ca  -->
+<hr />
 
 </div>
 </div>
@@ -532,8 +514,8 @@ Aqui entra a integração:</p>
           </div>
         </div>
       </div>
-<a href="história-da-análise-textual.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="estrutura-de-dados-e-tipos-de-formatos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="normalização-de-texto-e-expressões-regulares.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análise-textual-text-mining.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
