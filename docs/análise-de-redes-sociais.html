@@ -32,7 +32,7 @@
   
 <link rel="prev" href="análise-textual-text-mining.html"/>
 <link rel="next" href="links-úteis.html"/>
-<script src="libs/header-attrs-2.9/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -263,8 +263,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</a></li>
 <li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code></a></li>
 <li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex</a></li>
+<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind</a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.3</b> Dicas/Sugestões: Regex no R</a></li>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> normalização com stringr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados</a>
 <ul>
@@ -286,39 +291,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.1</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)</a></li>
-<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#do-texto-ao-corpus"><i class="fa fa-check"></i><b>8.2</b> Do texto ao Corpus</a>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.2</b> Abordagem <em>Bag of words</em></a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.2.1</b> Abordagem <em>Bag of words</em></a></li>
+<li class="chapter" data-level="8.2.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.2.1</b> Frequência de palavras/termos e Ngrams</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#remoção-de-palavra-vazia-stopwords"><i class="fa fa-check"></i><b>8.3</b> Remoção de palavra vazia (<em>stopwords</em>)</a></li>
 <li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.4</b> Estemização (<em>stemming</em>) e lematização</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização"><i class="fa fa-check"></i><b>8.4.1</b> Estemização</a></li>
 <li class="chapter" data-level="8.4.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lematização"><i class="fa fa-check"></i><b>8.4.2</b> Lematização</a></li>
-<li class="chapter" data-level="8.4.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context-kwic"><i class="fa fa-check"></i><b>8.4.3</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngrams"><i class="fa fa-check"></i><b>8.5</b> Ngrams</a>
-<ul>
-<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#ngramr"><i class="fa fa-check"></i><b>8.5.1</b> GoogleNgrams</a></li>
-</ul></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context-kwic"><i class="fa fa-check"></i><b>8.5</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)</a></li>
 <li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#key-term-extraction"><i class="fa fa-check"></i><b>8.6</b> Key term extraction</a>
 <ul>
 <li class="chapter" data-level="8.6.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tf-idf"><i class="fa fa-check"></i><b>8.6.1</b> TF-IDF</a></li>
+<li class="chapter" data-level="8.6.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#udpipe"><i class="fa fa-check"></i><b>8.6.2</b> Pacote UDPipe</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#pos---part-of-speech-tagging"><i class="fa fa-check"></i><b>8.7</b> POS - Part-of-speech tagging</a>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>8.7</b> Coocorrência de palavras</a>
 <ul>
-<li class="chapter" data-level="8.7.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#pacote-udpipe"><i class="fa fa-check"></i><b>8.7.1</b> Pacote UDPipe</a></li>
+<li class="chapter" data-level="8.7.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>8.7.1</b> Rede de palavras (<em>wordnet</em>)</a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>8.8</b> Coocorrência de palavras</a>
+<li class="chapter" data-level="8.8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>8.8</b> Análise de semelhanças</a>
 <ul>
-<li class="chapter" data-level="8.8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordnet"><i class="fa fa-check"></i><b>8.8.1</b> wordnet</a></li>
+<li class="chapter" data-level="8.8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#algoritmo-smith_waterman"><i class="fa fa-check"></i><b>8.8.1</b> Algoritmo Smith_Waterman</a></li>
 </ul></li>
-<li class="chapter" data-level="8.9" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>8.9</b> Análise de semelhanças</a>
-<ul>
-<li class="chapter" data-level="8.9.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#algoritmo-smith_waterman"><i class="fa fa-check"></i><b>8.9.1</b> Algoritmo Smith_Waterman</a></li>
-</ul></li>
-<li class="chapter" data-level="8.10" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#word2vec"><i class="fa fa-check"></i><b>8.10</b> Word2Vec</a></li>
-<li class="chapter" data-level="8.11" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#análise-de-sentimentos"><i class="fa fa-check"></i><b>8.11</b> Análise de Sentimentos</a></li>
+<li class="chapter" data-level="8.9" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tm_datasets"><i class="fa fa-check"></i><b>8.9</b> Alguns datasets/databases para análise textual</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>9</b> Análise de Redes Sociais</a>
 <ul>
@@ -393,9 +390,9 @@ e do tidyverse temos
 <div id="o-pacote-igraph" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> O pacote Igraph</h2>
 <p>Instalando o pacote <code>igraph</code>:</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="análise-de-redes-sociais.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;igraph&quot;</span>) <span class="co"># instalando o pacote</span></span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="análise-de-redes-sociais.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;igraph&quot;</span>) <span class="co"># instalando o pacote</span></span></code></pre></div>
 <p>chamando o pacote já instalado</p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="análise-de-redes-sociais.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) <span class="co"># chamando o pacote já instalado</span></span></code></pre></div>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="análise-de-redes-sociais.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) <span class="co"># chamando o pacote já instalado</span></span></code></pre></div>
 <!-- A partir da ajuda do `igraph` --- no caso, digitando ` ?igraph.plotting` no console do R, e correndo até o final da ajuda ---  temos alguns exemplos de grafos com o Igraph. Por exemplo, construindo um anel: 
 
 
@@ -405,7 +402,7 @@ e do tidyverse temos
      plot(g)
 ```
 
-<img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-157-1.png" width="672" />
+<img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-165-1.png" width="672" />
 É possível ainda plotar com os comandos `tkplot(g)` e `rglplot(g)`. Rode no seu console e veja a diferença nos gráficos. Mas vamos a algo mais prático, 
 -->
 <p>Pegando o famoso poema de Drummond:</p>
@@ -413,51 +410,51 @@ e do tidyverse temos
 <p>“João amava Teresa que amava Raimundo que amava Maria que amava Joaquim que amava Lili que não amava ninguém”</p>
 </blockquote>
 <p>E o transformando em um grafo (os “gráficos” em análise de rede recebem este nome):</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="análise-de-redes-sociais.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
-<span id="cb157-2"><a href="análise-de-redes-sociais.html#cb157-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed =</span> <span class="cn">TRUE</span>) <span class="co"># &quot;directed&quot; implica distinguir entre &quot;de&quot; e &quot;para&quot; na relação entre os nós.</span></span>
-<span id="cb157-3"><a href="análise-de-redes-sociais.html#cb157-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-4"><a href="análise-de-redes-sociais.html#cb157-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
-<span id="cb157-5"><a href="análise-de-redes-sociais.html#cb157-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;João&quot;</span>) </span>
-<span id="cb157-6"><a href="análise-de-redes-sociais.html#cb157-6" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Teresa&quot;</span>) </span>
-<span id="cb157-7"><a href="análise-de-redes-sociais.html#cb157-7" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Raimundo&quot;</span>) </span>
-<span id="cb157-8"><a href="análise-de-redes-sociais.html#cb157-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Maria&quot;</span>) </span>
-<span id="cb157-9"><a href="análise-de-redes-sociais.html#cb157-9" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Joaquim&quot;</span>) </span>
-<span id="cb157-10"><a href="análise-de-redes-sociais.html#cb157-10" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Lili&quot;</span>) </span>
-<span id="cb157-11"><a href="análise-de-redes-sociais.html#cb157-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-12"><a href="análise-de-redes-sociais.html#cb157-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  Especificando as relações entres os vértices, os edges</span></span>
-<span id="cb157-13"><a href="análise-de-redes-sociais.html#cb157-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>)</span>
-<span id="cb157-14"><a href="análise-de-redes-sociais.html#cb157-14" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>)</span>
-<span id="cb157-15"><a href="análise-de-redes-sociais.html#cb157-15" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>)</span>
-<span id="cb157-16"><a href="análise-de-redes-sociais.html#cb157-16" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>)</span>
-<span id="cb157-17"><a href="análise-de-redes-sociais.html#cb157-17" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>)</span>
-<span id="cb157-18"><a href="análise-de-redes-sociais.html#cb157-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb157-19"><a href="análise-de-redes-sociais.html#cb157-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g) <span class="co"># plotando o grafo</span></span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-158-1.png" width="672" /></p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="análise-de-redes-sociais.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
+<span id="cb166-2"><a href="análise-de-redes-sociais.html#cb166-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed =</span> <span class="cn">TRUE</span>) <span class="co"># &quot;directed&quot; implica distinguir entre &quot;de&quot; e &quot;para&quot; na relação entre os nós.</span></span>
+<span id="cb166-3"><a href="análise-de-redes-sociais.html#cb166-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-4"><a href="análise-de-redes-sociais.html#cb166-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
+<span id="cb166-5"><a href="análise-de-redes-sociais.html#cb166-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;João&quot;</span>) </span>
+<span id="cb166-6"><a href="análise-de-redes-sociais.html#cb166-6" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Teresa&quot;</span>) </span>
+<span id="cb166-7"><a href="análise-de-redes-sociais.html#cb166-7" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Raimundo&quot;</span>) </span>
+<span id="cb166-8"><a href="análise-de-redes-sociais.html#cb166-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Maria&quot;</span>) </span>
+<span id="cb166-9"><a href="análise-de-redes-sociais.html#cb166-9" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Joaquim&quot;</span>) </span>
+<span id="cb166-10"><a href="análise-de-redes-sociais.html#cb166-10" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="st">&quot;Lili&quot;</span>) </span>
+<span id="cb166-11"><a href="análise-de-redes-sociais.html#cb166-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-12"><a href="análise-de-redes-sociais.html#cb166-12" aria-hidden="true" tabindex="-1"></a><span class="co">#  Especificando as relações entres os vértices, os edges</span></span>
+<span id="cb166-13"><a href="análise-de-redes-sociais.html#cb166-13" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>)</span>
+<span id="cb166-14"><a href="análise-de-redes-sociais.html#cb166-14" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>)</span>
+<span id="cb166-15"><a href="análise-de-redes-sociais.html#cb166-15" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>)</span>
+<span id="cb166-16"><a href="análise-de-redes-sociais.html#cb166-16" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>)</span>
+<span id="cb166-17"><a href="análise-de-redes-sociais.html#cb166-17" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>)</span>
+<span id="cb166-18"><a href="análise-de-redes-sociais.html#cb166-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb166-19"><a href="análise-de-redes-sociais.html#cb166-19" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g) <span class="co"># plotando o grafo</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-166-1.png" width="672" /></p>
 <p>Neste caso, poderíamos ter feito este mesmo grafo com código mais compacto:</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="análise-de-redes-sociais.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
-<span id="cb158-2"><a href="análise-de-redes-sociais.html#cb158-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
-<span id="cb158-3"><a href="análise-de-redes-sociais.html#cb158-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-4"><a href="análise-de-redes-sociais.html#cb158-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
-<span id="cb158-5"><a href="análise-de-redes-sociais.html#cb158-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb158-6"><a href="análise-de-redes-sociais.html#cb158-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-7"><a href="análise-de-redes-sociais.html#cb158-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os edges em pares</span></span>
-<span id="cb158-8"><a href="análise-de-redes-sociais.html#cb158-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb158-9"><a href="análise-de-redes-sociais.html#cb158-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb158-10"><a href="análise-de-redes-sociais.html#cb158-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-159-1.png" width="672" /></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="análise-de-redes-sociais.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(igraph) </span>
+<span id="cb167-2"><a href="análise-de-redes-sociais.html#cb167-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
+<span id="cb167-3"><a href="análise-de-redes-sociais.html#cb167-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-4"><a href="análise-de-redes-sociais.html#cb167-4" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os vértices. </span></span>
+<span id="cb167-5"><a href="análise-de-redes-sociais.html#cb167-5" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb167-6"><a href="análise-de-redes-sociais.html#cb167-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-7"><a href="análise-de-redes-sociais.html#cb167-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  Adicionando os edges em pares</span></span>
+<span id="cb167-8"><a href="análise-de-redes-sociais.html#cb167-8" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb167-9"><a href="análise-de-redes-sociais.html#cb167-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb167-10"><a href="análise-de-redes-sociais.html#cb167-10" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-167-1.png" width="672" /></p>
 <p>Se o grafo sobe ou desce, pouco importa para nós aqui, importa as pessoas e as relações entre elas.
 Repare que os edges são entendidos aos pares. Se fizéssemos um vetor sem as devidas repetições, teríamos um gráfico errado das relações:</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="análise-de-redes-sociais.html#cb159-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
-<span id="cb159-2"><a href="análise-de-redes-sociais.html#cb159-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb159-3"><a href="análise-de-redes-sociais.html#cb159-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
-<span id="cb159-4"><a href="análise-de-redes-sociais.html#cb159-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-160-1.png" width="672" /></p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="análise-de-redes-sociais.html#cb168-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.empty</span>(<span class="at">directed=</span><span class="cn">TRUE</span>) </span>
+<span id="cb168-2"><a href="análise-de-redes-sociais.html#cb168-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">vertex</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb168-3"><a href="análise-de-redes-sociais.html#cb168-3" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> g <span class="sc">+</span> <span class="fu">edges</span>(<span class="fu">c</span>(<span class="st">&quot;João&quot;</span>, <span class="st">&quot;Teresa&quot;</span>, <span class="st">&quot;Raimundo&quot;</span>, <span class="st">&quot;Maria&quot;</span>,<span class="st">&quot;Joaquim&quot;</span>, <span class="st">&quot;Lili&quot;</span>))</span>
+<span id="cb168-4"><a href="análise-de-redes-sociais.html#cb168-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot.igraph</span>(g)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-168-1.png" width="672" /></p>
 <p>Ou com código modo mais econômico ainda:</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="análise-de-redes-sociais.html#cb160-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.formula</span>(</span>
-<span id="cb160-2"><a href="análise-de-redes-sociais.html#cb160-2" aria-hidden="true" tabindex="-1"></a>    João <span class="sc">--+</span> Teresa <span class="sc">--+</span> Raimundo <span class="sc">--+</span> Maria <span class="sc">--+</span> Joaquim <span class="sc">--+</span> Lili</span>
-<span id="cb160-3"><a href="análise-de-redes-sociais.html#cb160-3" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb160-4"><a href="análise-de-redes-sociais.html#cb160-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-161-1.png" width="672" /></p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="análise-de-redes-sociais.html#cb169-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">graph.formula</span>(</span>
+<span id="cb169-2"><a href="análise-de-redes-sociais.html#cb169-2" aria-hidden="true" tabindex="-1"></a>    João <span class="sc">--+</span> Teresa <span class="sc">--+</span> Raimundo <span class="sc">--+</span> Maria <span class="sc">--+</span> Joaquim <span class="sc">--+</span> Lili</span>
+<span id="cb169-3"><a href="análise-de-redes-sociais.html#cb169-3" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb169-4"><a href="análise-de-redes-sociais.html#cb169-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(g)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
 <!-- Vamos a outro exemplo: -->
 <!-- ```{r} -->
 <!-- library(igraph)  -->
@@ -486,7 +483,7 @@ Repare que os edges são entendidos aos pares. Se fizéssemos um vetor sem as de
  plot.igraph(g)
  ```
  
- <img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-162-1.png" width="672" />
+ <img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-170-1.png" width="672" />
 
 -->
 <div id="clusterização" class="section level3" number="9.1.1">
@@ -501,22 +498,22 @@ Repare que os edges são entendidos aos pares. Se fizéssemos um vetor sem as de
 <p>O pacote <a href="https://ggraph.data-imaginist.com/">ggraph</a> é um pacote elaborado por Thomas Lin Pedersen, o mesmo do ggplot2, e pretende ser uma extensão deste, usando a mesma gramática de gráficos, o que nos dá grande flexibilidade visual. Com o ggraph é possível construir graficamente redes, mas ele vai além dos grafos, construindo também dendogramas, diferentes tipos de árvores, matrizes, gráficos hierárquicos, diagrama de arc, sunburst, etc.
 Para inserir os dados no ggraph, é necessário colocá-lo no formato “tidy” do “tidyverse”, e fazemos isso com o pacote <code>tidygraph</code>:</p>
 <p>Para instalar, usamos os comandos:</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="análise-de-redes-sociais.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ggraph&#39;</span>)</span>
-<span id="cb161-2"><a href="análise-de-redes-sociais.html#cb161-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidygraph&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="análise-de-redes-sociais.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ggraph&#39;</span>)</span>
+<span id="cb170-2"><a href="análise-de-redes-sociais.html#cb170-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;tidygraph&#39;</span>)</span></code></pre></div>
 <p>Carregando os pacotes</p>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="análise-de-redes-sociais.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph) </span>
-<span id="cb162-2"><a href="análise-de-redes-sociais.html#cb162-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph) </span>
-<span id="cb162-3"><a href="análise-de-redes-sociais.html#cb162-3" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb162-4"><a href="análise-de-redes-sociais.html#cb162-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Attaching package: &#39;tidygraph&#39;</span></span>
-<span id="cb162-5"><a href="análise-de-redes-sociais.html#cb162-5" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:igraph&#39;:</span></span>
-<span id="cb162-6"><a href="análise-de-redes-sociais.html#cb162-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb162-7"><a href="análise-de-redes-sociais.html#cb162-7" aria-hidden="true" tabindex="-1"></a><span class="do">##     groups</span></span>
-<span id="cb162-8"><a href="análise-de-redes-sociais.html#cb162-8" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:quanteda&#39;:</span></span>
-<span id="cb162-9"><a href="análise-de-redes-sociais.html#cb162-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb162-10"><a href="análise-de-redes-sociais.html#cb162-10" aria-hidden="true" tabindex="-1"></a><span class="do">##     convert</span></span>
-<span id="cb162-11"><a href="análise-de-redes-sociais.html#cb162-11" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:stats&#39;:</span></span>
-<span id="cb162-12"><a href="análise-de-redes-sociais.html#cb162-12" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
-<span id="cb162-13"><a href="análise-de-redes-sociais.html#cb162-13" aria-hidden="true" tabindex="-1"></a><span class="do">##     filter</span></span></code></pre></div>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="análise-de-redes-sociais.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggraph) </span>
+<span id="cb171-2"><a href="análise-de-redes-sociais.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidygraph) </span>
+<span id="cb171-3"><a href="análise-de-redes-sociais.html#cb171-3" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb171-4"><a href="análise-de-redes-sociais.html#cb171-4" aria-hidden="true" tabindex="-1"></a><span class="do">## Attaching package: &#39;tidygraph&#39;</span></span>
+<span id="cb171-5"><a href="análise-de-redes-sociais.html#cb171-5" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:igraph&#39;:</span></span>
+<span id="cb171-6"><a href="análise-de-redes-sociais.html#cb171-6" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb171-7"><a href="análise-de-redes-sociais.html#cb171-7" aria-hidden="true" tabindex="-1"></a><span class="do">##     groups</span></span>
+<span id="cb171-8"><a href="análise-de-redes-sociais.html#cb171-8" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:quanteda&#39;:</span></span>
+<span id="cb171-9"><a href="análise-de-redes-sociais.html#cb171-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb171-10"><a href="análise-de-redes-sociais.html#cb171-10" aria-hidden="true" tabindex="-1"></a><span class="do">##     convert</span></span>
+<span id="cb171-11"><a href="análise-de-redes-sociais.html#cb171-11" aria-hidden="true" tabindex="-1"></a><span class="do">## The following object is masked from &#39;package:stats&#39;:</span></span>
+<span id="cb171-12"><a href="análise-de-redes-sociais.html#cb171-12" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb171-13"><a href="análise-de-redes-sociais.html#cb171-13" aria-hidden="true" tabindex="-1"></a><span class="do">##     filter</span></span></code></pre></div>
 <!-- > ggraph is an extension of ggplot2 aimed at supporting relational data structures such as networks, graphs, and trees. While it builds upon the foundation of ggplot2 and its API it comes with its own self-contained set of geoms, facets, etc., as well as adding the concept of layouts to the grammar. -->
 <!-- install.packages('ggraph') #instalando # instalando o pacote -->
 <p>Seguindo <a href="https://github.com/thomasp85/ggraph">o exemplo</a> na página do criador do GGraph
@@ -526,86 +523,86 @@ vamos usar o dataset <code>highschool</code> do <code>ggraph</code>, que contém
 <!-- - Coleman, J. S. Introduction to Mathematical Sociology. New York: Free Press, pp.450-453. -->
 <!-- - Coleman, J. S. The Adolescent Society (New York:The Free Press of Glenco e,1961). -->
 Para obter mais informações sobre este dataset, basta digitar no console: <code>help(highschool)</code>.</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="análise-de-redes-sociais.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(highschool) <span class="co"># observando a estrutura do data frame</span></span>
-<span id="cb163-2"><a href="análise-de-redes-sociais.html#cb163-2" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;data.frame&#39;:    506 obs. of  3 variables:</span></span>
-<span id="cb163-3"><a href="análise-de-redes-sociais.html#cb163-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ from: num  1 1 1 1 1 2 2 3 3 4 ...</span></span>
-<span id="cb163-4"><a href="análise-de-redes-sociais.html#cb163-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ to  : num  14 15 21 54 55 21 22 9 15 5 ...</span></span>
-<span id="cb163-5"><a href="análise-de-redes-sociais.html#cb163-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ year: num  1957 1957 1957 1957 1957 ...</span></span></code></pre></div>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="análise-de-redes-sociais.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(highschool,<span class="dv">10</span>) <span class="co"># observado as primeiras linhas do data frame</span></span>
-<span id="cb164-2"><a href="análise-de-redes-sociais.html#cb164-2" aria-hidden="true" tabindex="-1"></a><span class="do">##    from to year</span></span>
-<span id="cb164-3"><a href="análise-de-redes-sociais.html#cb164-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1 14 1957</span></span>
-<span id="cb164-4"><a href="análise-de-redes-sociais.html#cb164-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     1 15 1957</span></span>
-<span id="cb164-5"><a href="análise-de-redes-sociais.html#cb164-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     1 21 1957</span></span>
-<span id="cb164-6"><a href="análise-de-redes-sociais.html#cb164-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 4     1 54 1957</span></span>
-<span id="cb164-7"><a href="análise-de-redes-sociais.html#cb164-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 5     1 55 1957</span></span>
-<span id="cb164-8"><a href="análise-de-redes-sociais.html#cb164-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 6     2 21 1957</span></span>
-<span id="cb164-9"><a href="análise-de-redes-sociais.html#cb164-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 7     2 22 1957</span></span>
-<span id="cb164-10"><a href="análise-de-redes-sociais.html#cb164-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 8     3  9 1957</span></span>
-<span id="cb164-11"><a href="análise-de-redes-sociais.html#cb164-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 9     3 15 1957</span></span>
-<span id="cb164-12"><a href="análise-de-redes-sociais.html#cb164-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 10    4  5 1957</span></span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="análise-de-redes-sociais.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(highschool) <span class="co"># observando a estrutura do data frame</span></span>
+<span id="cb172-2"><a href="análise-de-redes-sociais.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;data.frame&#39;:    506 obs. of  3 variables:</span></span>
+<span id="cb172-3"><a href="análise-de-redes-sociais.html#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ from: num  1 1 1 1 1 2 2 3 3 4 ...</span></span>
+<span id="cb172-4"><a href="análise-de-redes-sociais.html#cb172-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ to  : num  14 15 21 54 55 21 22 9 15 5 ...</span></span>
+<span id="cb172-5"><a href="análise-de-redes-sociais.html#cb172-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ year: num  1957 1957 1957 1957 1957 ...</span></span></code></pre></div>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="análise-de-redes-sociais.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(highschool,<span class="dv">10</span>) <span class="co"># observado as primeiras linhas do data frame</span></span>
+<span id="cb173-2"><a href="análise-de-redes-sociais.html#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="do">##    from to year</span></span>
+<span id="cb173-3"><a href="análise-de-redes-sociais.html#cb173-3" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1 14 1957</span></span>
+<span id="cb173-4"><a href="análise-de-redes-sociais.html#cb173-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     1 15 1957</span></span>
+<span id="cb173-5"><a href="análise-de-redes-sociais.html#cb173-5" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     1 21 1957</span></span>
+<span id="cb173-6"><a href="análise-de-redes-sociais.html#cb173-6" aria-hidden="true" tabindex="-1"></a><span class="do">## 4     1 54 1957</span></span>
+<span id="cb173-7"><a href="análise-de-redes-sociais.html#cb173-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 5     1 55 1957</span></span>
+<span id="cb173-8"><a href="análise-de-redes-sociais.html#cb173-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 6     2 21 1957</span></span>
+<span id="cb173-9"><a href="análise-de-redes-sociais.html#cb173-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 7     2 22 1957</span></span>
+<span id="cb173-10"><a href="análise-de-redes-sociais.html#cb173-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 8     3  9 1957</span></span>
+<span id="cb173-11"><a href="análise-de-redes-sociais.html#cb173-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 9     3 15 1957</span></span>
+<span id="cb173-12"><a href="análise-de-redes-sociais.html#cb173-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 10    4  5 1957</span></span></code></pre></div>
 <p>Vemos que há na coluna 1 de (“from”) pessoa número X para (“to”) para pessoa Y no ano (“year”). Assim, a pessoa 1 teve contato com as pessoas 14, 15, 21, 54 e 55 em 1957. A pessoa 2 teve contato com as pessoas 21 e 22, e assim por diante.
 Vamos preparar os dados para plotar o grafo com ggraph. Antes, é necessário colocá-lo no formato “tidy” do “tidyverse”, e fazemos isso com o pacote <code>tidygraph</code>.
 A função <code>as_tbl_graph()</code> do pacote <code>tidygraph</code> funciona como a função <code>grouped_df()</code>, que agrupa nós (nodes) e arestas (edges).</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="análise-de-redes-sociais.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tbl_graph</span>(highschool)</span>
-<span id="cb165-2"><a href="análise-de-redes-sociais.html#cb165-2" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tbl_graph: 70 nodes and 506 edges</span></span>
-<span id="cb165-3"><a href="análise-de-redes-sociais.html#cb165-3" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
-<span id="cb165-4"><a href="análise-de-redes-sociais.html#cb165-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A directed multigraph with 1 component</span></span>
-<span id="cb165-5"><a href="análise-de-redes-sociais.html#cb165-5" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
-<span id="cb165-6"><a href="análise-de-redes-sociais.html#cb165-6" aria-hidden="true" tabindex="-1"></a><span class="do">## # Node Data: 70 × 1 (active)</span></span>
-<span id="cb165-7"><a href="análise-de-redes-sociais.html#cb165-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   name </span></span>
-<span id="cb165-8"><a href="análise-de-redes-sociais.html#cb165-8" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;</span></span>
-<span id="cb165-9"><a href="análise-de-redes-sociais.html#cb165-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 1    </span></span>
-<span id="cb165-10"><a href="análise-de-redes-sociais.html#cb165-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 2    </span></span>
-<span id="cb165-11"><a href="análise-de-redes-sociais.html#cb165-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 3    </span></span>
-<span id="cb165-12"><a href="análise-de-redes-sociais.html#cb165-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 4    </span></span>
-<span id="cb165-13"><a href="análise-de-redes-sociais.html#cb165-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 5    </span></span>
-<span id="cb165-14"><a href="análise-de-redes-sociais.html#cb165-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 6    </span></span>
-<span id="cb165-15"><a href="análise-de-redes-sociais.html#cb165-15" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 64 more rows</span></span>
-<span id="cb165-16"><a href="análise-de-redes-sociais.html#cb165-16" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
-<span id="cb165-17"><a href="análise-de-redes-sociais.html#cb165-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # Edge Data: 506 × 3</span></span>
-<span id="cb165-18"><a href="análise-de-redes-sociais.html#cb165-18" aria-hidden="true" tabindex="-1"></a><span class="do">##    from    to  year</span></span>
-<span id="cb165-19"><a href="análise-de-redes-sociais.html#cb165-19" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;int&gt; &lt;int&gt; &lt;dbl&gt;</span></span>
-<span id="cb165-20"><a href="análise-de-redes-sociais.html#cb165-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1    13  1957</span></span>
-<span id="cb165-21"><a href="análise-de-redes-sociais.html#cb165-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     1    14  1957</span></span>
-<span id="cb165-22"><a href="análise-de-redes-sociais.html#cb165-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     1    20  1957</span></span>
-<span id="cb165-23"><a href="análise-de-redes-sociais.html#cb165-23" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 503 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="análise-de-redes-sociais.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tbl_graph</span>(highschool)</span>
+<span id="cb174-2"><a href="análise-de-redes-sociais.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tbl_graph: 70 nodes and 506 edges</span></span>
+<span id="cb174-3"><a href="análise-de-redes-sociais.html#cb174-3" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
+<span id="cb174-4"><a href="análise-de-redes-sociais.html#cb174-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A directed multigraph with 1 component</span></span>
+<span id="cb174-5"><a href="análise-de-redes-sociais.html#cb174-5" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
+<span id="cb174-6"><a href="análise-de-redes-sociais.html#cb174-6" aria-hidden="true" tabindex="-1"></a><span class="do">## # Node Data: 70 × 1 (active)</span></span>
+<span id="cb174-7"><a href="análise-de-redes-sociais.html#cb174-7" aria-hidden="true" tabindex="-1"></a><span class="do">##   name </span></span>
+<span id="cb174-8"><a href="análise-de-redes-sociais.html#cb174-8" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;</span></span>
+<span id="cb174-9"><a href="análise-de-redes-sociais.html#cb174-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 1    </span></span>
+<span id="cb174-10"><a href="análise-de-redes-sociais.html#cb174-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 2    </span></span>
+<span id="cb174-11"><a href="análise-de-redes-sociais.html#cb174-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 3    </span></span>
+<span id="cb174-12"><a href="análise-de-redes-sociais.html#cb174-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 4    </span></span>
+<span id="cb174-13"><a href="análise-de-redes-sociais.html#cb174-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 5    </span></span>
+<span id="cb174-14"><a href="análise-de-redes-sociais.html#cb174-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 6    </span></span>
+<span id="cb174-15"><a href="análise-de-redes-sociais.html#cb174-15" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 64 more rows</span></span>
+<span id="cb174-16"><a href="análise-de-redes-sociais.html#cb174-16" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
+<span id="cb174-17"><a href="análise-de-redes-sociais.html#cb174-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # Edge Data: 506 × 3</span></span>
+<span id="cb174-18"><a href="análise-de-redes-sociais.html#cb174-18" aria-hidden="true" tabindex="-1"></a><span class="do">##    from    to  year</span></span>
+<span id="cb174-19"><a href="análise-de-redes-sociais.html#cb174-19" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;int&gt; &lt;int&gt; &lt;dbl&gt;</span></span>
+<span id="cb174-20"><a href="análise-de-redes-sociais.html#cb174-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1    13  1957</span></span>
+<span id="cb174-21"><a href="análise-de-redes-sociais.html#cb174-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     1    14  1957</span></span>
+<span id="cb174-22"><a href="análise-de-redes-sociais.html#cb174-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     1    20  1957</span></span>
+<span id="cb174-23"><a href="análise-de-redes-sociais.html#cb174-23" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 503 more rows</span></span></code></pre></div>
 <p>Vamos criar uma lista chamada “grafo”, adicionando um campo novo com <code>mutate()</code>, de nome “Popularidade” e que vai medir a centralidade de grau através da função <code>centrality_degree()</code> do tidygraph. Centralidade de grau é a medida mais simples de centralidade, que conta o número de conexões, as arestas (“edges”) de cada nó.</p>
 <!-- mode: How should edges be followed. Ignored for undirected graphs. pode ser também 'out' -->
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="análise-de-redes-sociais.html#cb166-1" aria-hidden="true" tabindex="-1"></a>grafo <span class="ot">&lt;-</span> <span class="fu">as_tbl_graph</span>(highschool) <span class="sc">%&gt;%</span> </span>
-<span id="cb166-2"><a href="análise-de-redes-sociais.html#cb166-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Popularidade =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;in&#39;</span>))</span>
-<span id="cb166-3"><a href="análise-de-redes-sociais.html#cb166-3" aria-hidden="true" tabindex="-1"></a>grafo</span>
-<span id="cb166-4"><a href="análise-de-redes-sociais.html#cb166-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tbl_graph: 70 nodes and 506 edges</span></span>
-<span id="cb166-5"><a href="análise-de-redes-sociais.html#cb166-5" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
-<span id="cb166-6"><a href="análise-de-redes-sociais.html#cb166-6" aria-hidden="true" tabindex="-1"></a><span class="do">## # A directed multigraph with 1 component</span></span>
-<span id="cb166-7"><a href="análise-de-redes-sociais.html#cb166-7" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
-<span id="cb166-8"><a href="análise-de-redes-sociais.html#cb166-8" aria-hidden="true" tabindex="-1"></a><span class="do">## # Node Data: 70 × 2 (active)</span></span>
-<span id="cb166-9"><a href="análise-de-redes-sociais.html#cb166-9" aria-hidden="true" tabindex="-1"></a><span class="do">##   name  Popularidade</span></span>
-<span id="cb166-10"><a href="análise-de-redes-sociais.html#cb166-10" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;        &lt;dbl&gt;</span></span>
-<span id="cb166-11"><a href="análise-de-redes-sociais.html#cb166-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 1                2</span></span>
-<span id="cb166-12"><a href="análise-de-redes-sociais.html#cb166-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 2                0</span></span>
-<span id="cb166-13"><a href="análise-de-redes-sociais.html#cb166-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 3                0</span></span>
-<span id="cb166-14"><a href="análise-de-redes-sociais.html#cb166-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 4                4</span></span>
-<span id="cb166-15"><a href="análise-de-redes-sociais.html#cb166-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 5                5</span></span>
-<span id="cb166-16"><a href="análise-de-redes-sociais.html#cb166-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 6                2</span></span>
-<span id="cb166-17"><a href="análise-de-redes-sociais.html#cb166-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 64 more rows</span></span>
-<span id="cb166-18"><a href="análise-de-redes-sociais.html#cb166-18" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
-<span id="cb166-19"><a href="análise-de-redes-sociais.html#cb166-19" aria-hidden="true" tabindex="-1"></a><span class="do">## # Edge Data: 506 × 3</span></span>
-<span id="cb166-20"><a href="análise-de-redes-sociais.html#cb166-20" aria-hidden="true" tabindex="-1"></a><span class="do">##    from    to  year</span></span>
-<span id="cb166-21"><a href="análise-de-redes-sociais.html#cb166-21" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;int&gt; &lt;int&gt; &lt;dbl&gt;</span></span>
-<span id="cb166-22"><a href="análise-de-redes-sociais.html#cb166-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1    13  1957</span></span>
-<span id="cb166-23"><a href="análise-de-redes-sociais.html#cb166-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     1    14  1957</span></span>
-<span id="cb166-24"><a href="análise-de-redes-sociais.html#cb166-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     1    20  1957</span></span>
-<span id="cb166-25"><a href="análise-de-redes-sociais.html#cb166-25" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 503 more rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="análise-de-redes-sociais.html#cb175-1" aria-hidden="true" tabindex="-1"></a>grafo <span class="ot">&lt;-</span> <span class="fu">as_tbl_graph</span>(highschool) <span class="sc">%&gt;%</span> </span>
+<span id="cb175-2"><a href="análise-de-redes-sociais.html#cb175-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">Popularidade =</span> <span class="fu">centrality_degree</span>(<span class="at">mode =</span> <span class="st">&#39;in&#39;</span>))</span>
+<span id="cb175-3"><a href="análise-de-redes-sociais.html#cb175-3" aria-hidden="true" tabindex="-1"></a>grafo</span>
+<span id="cb175-4"><a href="análise-de-redes-sociais.html#cb175-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tbl_graph: 70 nodes and 506 edges</span></span>
+<span id="cb175-5"><a href="análise-de-redes-sociais.html#cb175-5" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
+<span id="cb175-6"><a href="análise-de-redes-sociais.html#cb175-6" aria-hidden="true" tabindex="-1"></a><span class="do">## # A directed multigraph with 1 component</span></span>
+<span id="cb175-7"><a href="análise-de-redes-sociais.html#cb175-7" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
+<span id="cb175-8"><a href="análise-de-redes-sociais.html#cb175-8" aria-hidden="true" tabindex="-1"></a><span class="do">## # Node Data: 70 × 2 (active)</span></span>
+<span id="cb175-9"><a href="análise-de-redes-sociais.html#cb175-9" aria-hidden="true" tabindex="-1"></a><span class="do">##   name  Popularidade</span></span>
+<span id="cb175-10"><a href="análise-de-redes-sociais.html#cb175-10" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;chr&gt;        &lt;dbl&gt;</span></span>
+<span id="cb175-11"><a href="análise-de-redes-sociais.html#cb175-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 1 1                2</span></span>
+<span id="cb175-12"><a href="análise-de-redes-sociais.html#cb175-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 2                0</span></span>
+<span id="cb175-13"><a href="análise-de-redes-sociais.html#cb175-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 3                0</span></span>
+<span id="cb175-14"><a href="análise-de-redes-sociais.html#cb175-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 4                4</span></span>
+<span id="cb175-15"><a href="análise-de-redes-sociais.html#cb175-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 5                5</span></span>
+<span id="cb175-16"><a href="análise-de-redes-sociais.html#cb175-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 6                2</span></span>
+<span id="cb175-17"><a href="análise-de-redes-sociais.html#cb175-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 64 more rows</span></span>
+<span id="cb175-18"><a href="análise-de-redes-sociais.html#cb175-18" aria-hidden="true" tabindex="-1"></a><span class="do">## #</span></span>
+<span id="cb175-19"><a href="análise-de-redes-sociais.html#cb175-19" aria-hidden="true" tabindex="-1"></a><span class="do">## # Edge Data: 506 × 3</span></span>
+<span id="cb175-20"><a href="análise-de-redes-sociais.html#cb175-20" aria-hidden="true" tabindex="-1"></a><span class="do">##    from    to  year</span></span>
+<span id="cb175-21"><a href="análise-de-redes-sociais.html#cb175-21" aria-hidden="true" tabindex="-1"></a><span class="do">##   &lt;int&gt; &lt;int&gt; &lt;dbl&gt;</span></span>
+<span id="cb175-22"><a href="análise-de-redes-sociais.html#cb175-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 1     1    13  1957</span></span>
+<span id="cb175-23"><a href="análise-de-redes-sociais.html#cb175-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 2     1    14  1957</span></span>
+<span id="cb175-24"><a href="análise-de-redes-sociais.html#cb175-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 3     1    20  1957</span></span>
+<span id="cb175-25"><a href="análise-de-redes-sociais.html#cb175-25" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 503 more rows</span></span></code></pre></div>
 <p>Plotando o grafo:</p>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="análise-de-redes-sociais.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggraph</span>(grafo, <span class="at">layout =</span> <span class="st">&#39;kk&#39;</span>) <span class="sc">+</span> </span>
-<span id="cb167-2"><a href="análise-de-redes-sociais.html#cb167-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_edge_fan</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">stat</span>(index)), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
-<span id="cb167-3"><a href="análise-de-redes-sociais.html#cb167-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Popularidade, <span class="at">colour=</span> Popularidade), <span class="at">show.legend =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
-<span id="cb167-4"><a href="análise-de-redes-sociais.html#cb167-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_gradient</span>(<span class="at">low =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">high =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
-<span id="cb167-5"><a href="análise-de-redes-sociais.html#cb167-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_edges</span>(<span class="sc">~</span>year) <span class="sc">+</span> </span>
-<span id="cb167-6"><a href="análise-de-redes-sociais.html#cb167-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_graph</span>(<span class="at">foreground =</span> <span class="st">&#39;steelblue&#39;</span>, <span class="at">fg_text_colour =</span> <span class="st">&#39;yellow&#39;</span>) <span class="sc">+</span></span>
-<span id="cb167-7"><a href="análise-de-redes-sociais.html#cb167-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Evolução da amizade entre adolescentes de uma escola no Illinóis&quot;</span>, </span>
-<span id="cb167-8"><a href="análise-de-redes-sociais.html#cb167-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Fonte: Elaboração própria a partir dos dados de Coleman(1961) apud ggraph (v.2.0.5; Pedersen)&quot;</span>)</span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="análise-de-redes-sociais.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggraph</span>(grafo, <span class="at">layout =</span> <span class="st">&#39;kk&#39;</span>) <span class="sc">+</span> </span>
+<span id="cb176-2"><a href="análise-de-redes-sociais.html#cb176-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_edge_fan</span>(<span class="fu">aes</span>(<span class="at">colour =</span> <span class="fu">stat</span>(index)), <span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb176-3"><a href="análise-de-redes-sociais.html#cb176-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_node_point</span>(<span class="fu">aes</span>(<span class="at">size =</span> Popularidade, <span class="at">colour=</span> Popularidade), <span class="at">show.legend =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb176-4"><a href="análise-de-redes-sociais.html#cb176-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_gradient</span>(<span class="at">low =</span> <span class="st">&quot;steelblue&quot;</span>, <span class="at">high =</span> <span class="st">&quot;black&quot;</span>) <span class="sc">+</span></span>
+<span id="cb176-5"><a href="análise-de-redes-sociais.html#cb176-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">facet_edges</span>(<span class="sc">~</span>year) <span class="sc">+</span> </span>
+<span id="cb176-6"><a href="análise-de-redes-sociais.html#cb176-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_graph</span>(<span class="at">foreground =</span> <span class="st">&#39;steelblue&#39;</span>, <span class="at">fg_text_colour =</span> <span class="st">&#39;yellow&#39;</span>) <span class="sc">+</span></span>
+<span id="cb176-7"><a href="análise-de-redes-sociais.html#cb176-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Evolução da amizade entre adolescentes de uma escola no Illinóis&quot;</span>, </span>
+<span id="cb176-8"><a href="análise-de-redes-sociais.html#cb176-8" aria-hidden="true" tabindex="-1"></a>         <span class="at">caption =</span> <span class="st">&quot;Fonte: Elaboração própria a partir dos dados de Coleman(1961) apud ggraph (v.2.0.5; Pedersen)&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-177-1.png" width="672" /></p>
 <ul>
 <li><code>layout</code> define como os nós serão alocados. O layout do ggraph possui os mesmos do igraph e outros mais como, hive plots, treemaps e circle packing. <code>kk</code> indica que está sendo usado o algortimo Kamada-Kawai para dispersar os nós e facilitar nossa visualização.
 <!-- The Nodes are the connected entities in the relational structure. These can be plotted using the geom_node_*() family of geoms. Some node geoms make more sense for certain layouts, e.g. geom_node_tile() for treemaps and icicle plots, while others are more general purpose, e.g. geom_node_point(). -->
