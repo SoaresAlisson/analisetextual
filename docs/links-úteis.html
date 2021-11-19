@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Capítulo 10 Links úteis | Introdução à Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Capítulo 10 Links úteis | Introdução à Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
@@ -33,7 +33,8 @@
 <link rel="prev" href="análise-de-redes-sociais.html"/>
 
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,79 +50,10 @@
 
 
 
-
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/viz-1.8.2/viz.js"></script>
-<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -143,15 +75,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
 <ul>
 <li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
-<ul>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#HD"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#fluxo-de-trabalho"><i class="fa fa-check"></i>Fluxo de trabalho</a></li>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#HD"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
+<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#fluxo-de-trabalho"><i class="fa fa-check"></i>Fluxo de trabalho</a></li>
 </ul></li>
 <li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual</a></li>
+<li class="chapter" data-level="1.2" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#história-da-análise-textual-técnicas-antes-do-uso-de-computadores"><i class="fa fa-check"></i><b>1.2</b> História da análise textual: Técnicas antes do uso de computadores</a></li>
+<li class="chapter" data-level="1.3" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#história-da-análise-textual-análise-textual-com-auxílio-de-computadores"><i class="fa fa-check"></i><b>1.3</b> História da análise textual: Análise Textual com auxílio de computadores</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#o-problema-das-digitais-linguísticas-linguistic-fingerprint"><i class="fa fa-check"></i><b>1.3.1</b> O problema das “digitais linguísticas” (<em>linguistic fingerprint</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#história-da-análise-textual-a-inteligência-artificial-machine-learning"><i class="fa fa-check"></i><b>1.4</b> História da análise textual: A inteligência artificial, machine learning</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais</a>
 <ul>
@@ -160,16 +95,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia</a></li>
 <li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</a></li>
 <li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia</a></li>
-<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-da-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências da filosofia</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-das-correntes-na-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências das correntes na filosofia</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-google-trends-como-proxy-para-epidemias"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
-<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exGoogleTrends"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ExFakesNewsMundo"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
 <li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras</a></li>
 <li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical</a></li>
-<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização</a></li>
-<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
-<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
-<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador</a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#riqueza-vocabulário"><i class="fa fa-check"></i><b>2.6</b> Riqueza vocabulário</a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.7</b> Exemplo: Polarização</a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
+<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.9</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
+<li class="chapter" data-level="2.10" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.10</b> Exemplo: Processo Civilizador</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos</a>
 <ul>
@@ -184,16 +120,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
 <li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown</a></li>
 <li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML</a></li>
-<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex</a></li>
-<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex</a></li>
-<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html</a></li>
-<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais</a></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#subtitulo"><i class="fa fa-check"></i><b>3.4</b> Subtitulo</a></li>
+<li class="chapter" data-level="3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#subtítulo-2"><i class="fa fa-check"></i><b>3.5</b> Subtítulo 2</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.5.1</b> O Formato LaTex</a></li>
+<li class="chapter" data-level="3.5.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.5.2</b> O formato BibTex</a></li>
+<li class="chapter" data-level="3.5.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.5.3</b> Os formatos xml e html</a></li>
+<li class="chapter" data-level="3.5.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.5.4</b> Formatos mais raros</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.6</b> Observações finais</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#sequências-de-scaping"><i class="fa fa-check"></i><b>4.1</b> sequências de scaping</a>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#sequências-de-scaping"><i class="fa fa-check"></i><b>4.1</b> Sequências de scaping</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#comentando-o-código"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código</a></li>
 </ul></li>
@@ -208,8 +148,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)</a></li>
 <li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos</a></li>
-<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais</a></li>
-<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos</a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais</a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos</a></li>
 <li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#outros-operadores"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores</a></li>
 </ul></li>
 <li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições</a>
@@ -235,13 +175,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R</a>
 <ul>
-<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: Linha de comando</a></li>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-instalando-via-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: instalando via linha de comando</a></li>
 <li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Modo gráfico</a></li>
 </ul></li>
 <li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code></a>
 <ul>
-<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.1</b> Tibbles</a></li>
-<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.2</b> Dplyr: Verbos (ou comandos)</a></li>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes</a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles</a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.3</b> Dplyr: Verbos (ou comandos)</a></li>
 </ul></li>
 <li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora</a>
 <ul>
@@ -255,6 +196,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)</a>
 <ul>
 <li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex</a></li>
+<li class="chapter" data-level="6.1.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões"><i class="fa fa-check"></i><b>6.1.2</b> Dicas/Sugestões</a></li>
+<li class="chapter" data-level="6.1.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#indicação-de-leitura-sobre-regex"><i class="fa fa-check"></i><b>6.1.3</b> Indicação de leitura sobre Regex</a></li>
 </ul></li>
 <li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R</a>
 <ul>
@@ -267,7 +210,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> normalização com stringr</a></li>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> Normalização com stringr</a></li>
 </ul></li>
 <li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R</a></li>
 </ul></li>
@@ -290,32 +233,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.1</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)</a></li>
-<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.2</b> Abordagem <em>Bag of words</em></a>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#introdução"><i class="fa fa-check"></i><b>8.1</b> Introdução</a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.2</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)</a></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.3</b> Abordagem <em>Bag of words</em></a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.2.1</b> Frequência de palavras/termos e Ngrams</a></li>
+<li class="chapter" data-level="8.3.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.3.1</b> Frequência de palavras/termos e Ngrams</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#remoção-de-palavra-vazia-stopwords"><i class="fa fa-check"></i><b>8.3</b> Remoção de palavra vazia (<em>stopwords</em>)</a></li>
-<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.4</b> Estemização (<em>stemming</em>) e lematização</a>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordcloud"><i class="fa fa-check"></i><b>8.4</b> Nuvem de palavras</a></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stopwrds"><i class="fa fa-check"></i><b>8.5</b> Remoção de palavra vazia (<em>stopwords</em>)</a></li>
+<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.6</b> Estemização (<em>stemming</em>) e lematização</a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização"><i class="fa fa-check"></i><b>8.4.1</b> Estemização</a></li>
-<li class="chapter" data-level="8.4.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lematização"><i class="fa fa-check"></i><b>8.4.2</b> Lematização</a></li>
+<li class="chapter" data-level="8.6.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemming"><i class="fa fa-check"></i><b>8.6.1</b> Estemização</a></li>
+<li class="chapter" data-level="8.6.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lematização"><i class="fa fa-check"></i><b>8.6.2</b> Lematização</a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context-kwic"><i class="fa fa-check"></i><b>8.5</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)</a></li>
-<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#key-term-extraction"><i class="fa fa-check"></i><b>8.6</b> Key term extraction</a>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#kwic"><i class="fa fa-check"></i><b>8.7</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)</a></li>
+<li class="chapter" data-level="8.8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#key-term-extraction"><i class="fa fa-check"></i><b>8.8</b> Key term extraction</a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tf-idf"><i class="fa fa-check"></i><b>8.6.1</b> TF-IDF</a></li>
-<li class="chapter" data-level="8.6.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#udpipe"><i class="fa fa-check"></i><b>8.6.2</b> Pacote UDPipe</a></li>
+<li class="chapter" data-level="8.8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tf-idf"><i class="fa fa-check"></i><b>8.8.1</b> TF-IDF: Term-Frequency Inverse Document Frequency</a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>8.7</b> Coocorrência de palavras</a>
+<li class="chapter" data-level="8.9" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#udpipe"><i class="fa fa-check"></i><b>8.9</b> Pacote UDPipe</a>
 <ul>
-<li class="chapter" data-level="8.7.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>8.7.1</b> Rede de palavras (<em>wordnet</em>)</a></li>
+<li class="chapter" data-level="8.9.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>8.9.1</b> Coocorrência de palavras</a></li>
+<li class="chapter" data-level="8.9.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>8.9.2</b> Rede de palavras (<em>wordnet</em>)</a></li>
+<li class="chapter" data-level="8.9.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>8.9.3</b> Análise de semelhanças</a></li>
 </ul></li>
-<li class="chapter" data-level="8.8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>8.8</b> Análise de semelhanças</a>
-<ul>
-<li class="chapter" data-level="8.8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#algoritmo-smith_waterman"><i class="fa fa-check"></i><b>8.8.1</b> Algoritmo Smith_Waterman</a></li>
-</ul></li>
-<li class="chapter" data-level="8.9" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tm_datasets"><i class="fa fa-check"></i><b>8.9</b> Alguns datasets/databases para análise textual</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>9</b> Análise de Redes Sociais</a>
 <ul>
@@ -359,6 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>10.13.1</b> Telegram</a></li>
 </ul></li>
 <li class="chapter" data-level="10.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>10.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+<li class="chapter" data-level="10.15" data-path="links-úteis.html"><a href="links-úteis.html#tm_datasets"><i class="fa fa-check"></i><b>10.15</b> Alguns datasets/databases para análise textual</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -620,6 +562,34 @@ R Markdown com o <a href="https://github.com/rstudio/cheatsheets/raw/master/rmar
 <a href="http://datasciencefree.com/advancedR.pdf">R Programming</a> por Arianne Colton e Sean Chen,</li>
 <li>Uma lista com estes e outros cheatsheets aqui do Rstudio <a href="https://www.rstudio.com/resources/cheatsheets/">aqui</a>.</li>
 </ul>
+</div>
+<div id="tm_datasets" class="section level2" number="10.15">
+<h2><span class="header-section-number">10.15</span> Alguns datasets/databases para análise textual</h2>
+<p>Alguns pacotes R com datasets inclusos em pacotes que podem ser interessantes para análise textual:</p>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/textstem/textstem.pdf"><code>data(presidential_debates_2012)</code> do pacote <code>textstem</code></a>, um dataset com versão limpa de três debates presidenciais dos EUA da eleição de 2012.</li>
+<li><a href="https://rdrr.io/rforge/tm/man/acq.html">“acq” do pacote tm</a> contém 50 artigos da Reuters e suas meta-informações, referentes à aquisições corporativas; ou <a href="https://rdrr.io/rforge/tm/man/crude.html">“crude” do pacote tm</a> com 20 artigos, também da Reuters, que versam sobre “crude oil”.</li>
+<li>pacote <a href="https://cran.r-project.org/web/packages/corpus/index.html">corpus: Text Corpus Analysis</a>. Possui estas base de dados:
+<ul>
+<li><code>federalist</code> com os 85 textos dos federalistas, um texto por linha.</li>
+<li><code>gutenberg_corpus</code> corpus de textos do projeto Gutenberg, criando um texto por linha.</li>
+</ul></li>
+<li>Discursos inaugurais dos presidentes dos EUA, no pacote <a href="https://quanteda.io/reference/data_corpus_inaugural.html">data_corpus_inaugural</a> do Quanteda.</li>
+<li>Pacote <a href="https://github.com/bradleyboehmke/harrypotter">Harry Potter</a> com texto completo dos sete primeiros livros. Para instalar, use o comando <code>devtools::install_github("bradleyboehmke/harrypotter")</code> e para carregá-lo <code>library(harrypotter)</code>. Requer o pacote <code>devtools</code> instalado.</li>
+</ul>
+<p>Datasets em sites diversos:</p>
+<ul>
+<li>Site do <a href="https://www.gutenberg.org">Projeto Gutenberg</a> possui diversos livros gratuitos em formato texto puro e gratuito. O pacote <a href="https://cran.r-project.org/web/packages/gutenbergr/index.html">gutenbergr</a> pode auxiliar neste processo.</li>
+<li>Tweets de Trump no <a href="https://www.thetrumparchive.com/">The Trump Archive</a> ou já no formato R com <a href="https://rdrr.io/github/rafalab/dslabs/man/trump_tweets.html">trump_tweets: Trump Tweets from2009 to 2017</a>.</li>
+<li><a href="https://github.com/fivethirtyeight/russian-troll-tweets/">fivethyrteight russian troll tweets</a>: 2,973,371 tweets da “fábrica de trolls” da Agência de Pesquisa da Internet da Rússia, que foram usados para tentar influenciar as eleições nos EUA. Mais detalhes em <a href="https://fivethirtyeight.com/features/why-were-sharing-3-million-russian-troll-tweets/">Why We’re Sharing 3 Million Russian Troll Tweets</a> que virou um working paper <a href="http://pwarren.people.clemson.edu/Linvill_Warren_TrollFactory.pdf">Troll Factories: The Internet Research Agency and State-Sponsored Agenda Building</a>.</li>
+</ul>
+<p>Datasets no <a href="https://www.kaggle.com">Kaggle</a>:</p>
+<ul>
+<li><a href="https://www.kaggle.com/gjbroughton/start-trek-scripts">Star Trek Scripts</a>. “Raw text scripts and processed lines of all Star Trek series scripts”. (Necessita de conta no Kaggle).</li>
+<li>Lista com <a href="https://towardsdatascience.com/31-datasets-for-your-next-data-science-project-6ef9a6f8cac6">31 datasetes</a> para datascience, contendo, por exemplo,
+dataset com <a href="https://www.kaggle.com/gowrishankarp/newspaper-text-summarization-cnn-dailymail">300k de artigos da CNN</a>,
+outro com o Wiki how to, outro com coleção de papers do Arxiv, outro com texto completo de <a href="https://www.kaggle.com/allen-institute-for-ai/CORD-19-research-challenge">artigos relacionados à Covid-19</a>, coleção sobre <a href="https://www.kaggle.com/shivamb/netflix-shows/tasks">filmes do Neflix</a>, dentre outros.</li>
+</ul>
 
 </div>
 </div>
@@ -633,7 +603,6 @@ R Markdown com o <a href="https://github.com/rstudio/cheatsheets/raw/master/rmar
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -673,6 +642,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
