@@ -148,8 +148,6 @@ coocorrência-de-palavras
 rede-de-palavras-wordnet
 análise-de-semelhanças
 algoritmo-smith_waterman
-distância
-cosine
 análise-de-redes-sociais
 o-pacote-igraph
 clusterização

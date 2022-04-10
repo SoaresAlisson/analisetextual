@@ -323,10 +323,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>9.2.2</b> Rede de palavras (<em>wordnet</em>)<span></span></a></li>
 <li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#distância"><i class="fa fa-check"></i><b>9.3</b> Distância<span></span></a>
-<ul>
-<li class="chapter" data-level="9.3.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#cosine"><i class="fa fa-check"></i><b>9.3.1</b> Cosine Cosseno<span></span></a></li>
-</ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>10</b> Análise de Redes Sociais<span></span></a>
 <ul>
@@ -785,29 +781,8 @@ O pacote <a href="https://cran.r-project.org/web/packages/text.alignment/index.h
 <li>BROWN, Taylor W. Workshop on automated text analysis no Summer Institute in Computational Social Science na Universidade de Oxford em 2019. Em inglês, sem legendas, usando o pacote Quanteda. <a href="http://media.podcasts.ox.ac.uk/nuff/2019_sicss/2019-06-19_1400-1515_Taylor_Brown_pt1_V1_720p.mp4">Parte 1</a> e <a href="http://media.podcasts.ox.ac.uk/nuff/2019_sicss/2019-06-19_1530-1730_Taylor_Brown_pt2_V1_720p.mp4">Parte 2</a>. O material da aula no <a href="https://drive.google.com/drive/folders/1qGCySYW9L3OnOEhtVGTbOXSRS1jcXnWX">Google Drive</a>.</li>
 </ul>
 </div>
-</div>
-</div>
-</div>
-<div id="distância" class="section level2 hasAnchor" number="9.3">
-<h2><span class="header-section-number">9.3</span> Distância<a href="text-mining-semantic-parsing.html#distância" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="cosine" class="section level3 hasAnchor" number="9.3.1">
-<h3><span class="header-section-number">9.3.1</span> Cosine Cosseno<a href="text-mining-semantic-parsing.html#cosine" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="text-mining-semantic-parsing.html#cb184-1" aria-hidden="true" tabindex="-1"></a>frases <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;O rato roeu a roupa do rei&quot;</span>, <span class="st">&quot;O rei riu do rato&quot;</span>, <span class="st">&quot;A roupa do rato é de rei&quot;</span>)</span>
-<span id="cb184-2"><a href="text-mining-semantic-parsing.html#cb184-2" aria-hidden="true" tabindex="-1"></a>frases_df <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">id_doc =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,</span>
-<span id="cb184-3"><a href="text-mining-semantic-parsing.html#cb184-3" aria-hidden="true" tabindex="-1"></a>                         <span class="at">frases =</span> frases)</span>
-<span id="cb184-4"><a href="text-mining-semantic-parsing.html#cb184-4" aria-hidden="true" tabindex="-1"></a><span class="co"># tokenizando o tibble</span></span>
-<span id="cb184-5"><a href="text-mining-semantic-parsing.html#cb184-5" aria-hidden="true" tabindex="-1"></a>frasesR <span class="ot">&lt;-</span> tidytext<span class="sc">::</span><span class="fu">unnest_tokens</span>(frases_df, palavras, frases)</span>
-<span id="cb184-6"><a href="text-mining-semantic-parsing.html#cb184-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando o DTM</span></span>
-<span id="cb184-7"><a href="text-mining-semantic-parsing.html#cb184-7" aria-hidden="true" tabindex="-1"></a>frasesR <span class="sc">%&gt;%</span></span>
-<span id="cb184-8"><a href="text-mining-semantic-parsing.html#cb184-8" aria-hidden="true" tabindex="-1"></a><span class="co"># contando termos com &#39;count&#39;, que gera nova coluna &#39;n&#39;</span></span>
-<span id="cb184-9"><a href="text-mining-semantic-parsing.html#cb184-9" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">count</span>(palavras, id_doc) <span class="sc">%&gt;%</span></span>
-<span id="cb184-10"><a href="text-mining-semantic-parsing.html#cb184-10" aria-hidden="true" tabindex="-1"></a>tidytext<span class="sc">::</span><span class="fu">cast_dtm</span>(id_doc, palavras, n) </span>
-<span id="cb184-11"><a href="text-mining-semantic-parsing.html#cb184-11" aria-hidden="true" tabindex="-1"></a><span class="do">## &lt;&lt;DocumentTermMatrix (documents: 3, terms: 10)&gt;&gt;</span></span>
-<span id="cb184-12"><a href="text-mining-semantic-parsing.html#cb184-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Non-/sparse entries: 19/11</span></span>
-<span id="cb184-13"><a href="text-mining-semantic-parsing.html#cb184-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Sparsity           : 37%</span></span>
-<span id="cb184-14"><a href="text-mining-semantic-parsing.html#cb184-14" aria-hidden="true" tabindex="-1"></a><span class="do">## Maximal term length: 5</span></span>
-<span id="cb184-15"><a href="text-mining-semantic-parsing.html#cb184-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Weighting          : term frequency (tf)</span></span></code></pre></div>
 
+</div>
 </div>
 </div>
 </div>
