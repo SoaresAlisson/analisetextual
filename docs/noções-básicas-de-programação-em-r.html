@@ -4,19 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia</title>
+  <title>4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia</title>
   <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:title" content="4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta name="twitter:title" content="4 Noções básicas de programação em R | Introdução à Análise Textual aplicada à Sociologia" />
   
   <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
   
@@ -32,8 +31,8 @@
   
 <link rel="prev" href="estrutura-de-dados-e-tipos-de-formatos.html"/>
 <link rel="next" href="introdução-ao-r.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,13 +48,13 @@
 
 
 
-
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <script src="libs/viz-1.8.2/viz.js"></script>
 <link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
-<script src="libs/grViz-binding-1.0.6.1/grViz.js"></script>
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
 
 
 <style type="text/css">
@@ -140,225 +139,239 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Análise Textual</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
+<li><a href="objetivos-deste-manual.html#objetivos-deste-manual">Objetivos deste manual<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="objetivos-deste-manual.html"><a href="objetivos-deste-manual.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
+<li><a href="objetivos-deste-manual.html#plano-do-livro">Plano do livro<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
+<li><a href="intro.html#intro">Introdução<span></span></a>
 <ul>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#HD"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
-<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#fluxo-de-trabalho"><i class="fa fa-check"></i>Fluxo de trabalho</a></li>
+<li><a href="intro.html#HD">O termo “humanidade digitais”<span></span></a></li>
+<li><a href="intro.html#fluxo-de-trabalho">Fluxo de trabalho<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual<span></span></a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual</a></li>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais</a>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais<span></span></a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria</a>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria<span></span></a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia</a></li>
-<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</a></li>
-<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia</a></li>
-<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-da-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências da filosofia</a></li>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann<span></span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-das-correntes-na-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências das correntes na filosofia<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-google-trends-como-proxy-para-epidemias"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
-<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-como-as-fake-news-sobre-a-pandemia-de-covid-19-se-assemelhamdivergem-entre-os-países"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
-<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras</a></li>
-<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical</a></li>
-<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização</a></li>
-<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
-<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
-<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador</a></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exGoogleTrends"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ExFakesNewsMundo"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização<span></span></a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador<span></span></a></li>
+<li class="chapter" data-level="2.10" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ex.-determinantes-sociais-do-florescimento-da-cultura-incel"><i class="fa fa-check"></i><b>2.10</b> Ex.: Determinantes sociais do florescimento da cultura Incel<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos</a>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados</a>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados<span></span></a>
 <ul>
-<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.</a></li>
-<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json</a></li>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados</a></li>
-<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados</a>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados<span></span></a>
 <ul>
-<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
-<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown</a></li>
-<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML</a></li>
-<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex</a></li>
-<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex</a></li>
-<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html</a></li>
-<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros</a></li>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML<span></span></a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex<span></span></a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex<span></span></a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html<span></span></a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais</a></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R</a>
+<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#sequências-de-scaping"><i class="fa fa-check"></i><b>4.1</b> sequências de scaping</a>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#sequências-de-scaping"><i class="fa fa-check"></i><b>4.1</b> Sequências de scaping<span></span></a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#comentando-o-código"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código</a></li>
+<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#comentando-o-código"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição</a></li>
-<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R</a></li>
-<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else</a>
+<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else<span></span></a>
 <ul>
-<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else</a></li>
-<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if</a></li>
+<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else<span></span></a></li>
+<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores</a>
+<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores<span></span></a>
 <ul>
-<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)</a></li>
-<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos</a></li>
-<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais</a></li>
-<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos</a></li>
-<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#outros-operadores"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores</a></li>
+<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)<span></span></a></li>
+<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos<span></span></a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais<span></span></a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos<span></span></a></li>
+<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#outros-operadores"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições</a>
+<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições<span></span></a>
 <ul>
-<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops</a></li>
-<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop</a></li>
-<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R</a></li>
-<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander</a></li>
-<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)</a></li>
-<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)</a>
-<ul>
-<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (vector)</a></li>
-<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)</a></li>
-<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)</a></li>
-<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#listas-list"><i class="fa fa-check"></i><b>5.4.4</b> Listas (<em>list</em>)</a></li>
-<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.5</b> Data Frames</a></li>
-<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.6</b> Considerações finais sobre estrutura de dados</a></li>
-</ul></li>
-<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R</a>
-<ul>
-<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: Linha de comando</a></li>
-<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Modo gráfico</a></li>
-</ul></li>
-<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code></a>
-<ul>
-<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.1</b> Tibbles</a></li>
-<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.2</b> Dplyr: Verbos (ou comandos)</a></li>
-</ul></li>
-<li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora</a>
-<ul>
-<li class="chapter" data-level="5.7.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequencia-de-datas-no-r"><i class="fa fa-check"></i><b>5.7.1</b> Gerando uma sequencia de datas no R</a></li>
-<li class="chapter" data-level="5.7.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate"><i class="fa fa-check"></i><b>5.7.2</b> Lubridate: facilitando manipulação de datas</a></li>
-<li class="chapter" data-level="5.7.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.7.3</b> Converter data em nome por extenso do mês</a></li>
+<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops<span></span></a></li>
+<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop<span></span></a></li>
+<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares</a>
+<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R<span></span></a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)</a>
+<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander<span></span></a>
 <ul>
-<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex</a></li>
+<li class="chapter" data-level="5.2.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#nvim-r"><i class="fa fa-check"></i><b>5.2.1</b> NVIM-R<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R</a>
+<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)<span></span></a>
 <ul>
-<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep</a></li>
-<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()</a></li>
-<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</a></li>
-<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code></a></li>
-<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex</a></li>
-<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind</a></li>
+<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (vector)<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)<span></span></a></li>
+<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tm-dtm"><i class="fa fa-check"></i><b>5.4.4</b> Gerando um DTM com o pacote TM<span></span></a></li>
+<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidytext-dtm"><i class="fa fa-check"></i><b>5.4.5</b> Gerando DTM com o pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lista"><i class="fa fa-check"></i><b>5.4.6</b> Listas (<em>list</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.7</b> Data Frames<span></span></a></li>
+<li class="chapter" data-level="5.4.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.8</b> Considerações finais sobre estrutura de dados<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr</a>
+<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R<span></span></a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> normalização com stringr</a></li>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-instalando-via-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: instalando via linha de comando<span></span></a></li>
+<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Modo gráfico<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R</a></li>
+<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code><span></span></a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes<span></span></a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles<span></span></a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.3</b> Dplyr: Verbos (ou comandos)<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados</a>
+<li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora<span></span></a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#base-plots"><i class="fa fa-check"></i><b>7.1</b> Base plots</a></li>
-<li class="chapter" data-level="7.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores</a></li>
-<li class="chapter" data-level="7.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice</a></li>
-<li class="chapter" data-level="7.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2</a>
-<ul>
-<li class="chapter" data-level="7.4.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-aes"><i class="fa fa-check"></i><b>7.4.1</b> ggplot: nível aes</a></li>
-<li class="chapter" data-level="7.4.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-geom"><i class="fa fa-check"></i><b>7.4.2</b> ggplot: Nível geom</a></li>
-<li class="chapter" data-level="7.4.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-facet"><i class="fa fa-check"></i><b>7.4.3</b> ggplot: nível facet</a></li>
-<li class="chapter" data-level="7.4.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-stat"><i class="fa fa-check"></i><b>7.4.4</b> ggplot: nível stat</a></li>
-<li class="chapter" data-level="7.4.5" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-sistema-de-coordenadas"><i class="fa fa-check"></i><b>7.4.5</b> ggplot: nível sistema de coordenadas</a></li>
-<li class="chapter" data-level="7.4.6" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores-no-ggplot"><i class="fa fa-check"></i><b>7.4.6</b> Cores no ggplot</a></li>
-<li class="chapter" data-level="7.4.7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-ggplot"><i class="fa fa-check"></i><b>7.4.7</b> Dicas ggplot</a></li>
-<li class="chapter" data-level="7.4.8" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-outros-pacotes-gráficos"><i class="fa fa-check"></i><b>7.4.8</b> Dicas outros pacotes gráficos</a></li>
+<li class="chapter" data-level="5.7.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequencia-de-datas-no-r"><i class="fa fa-check"></i><b>5.7.1</b> Gerando uma sequencia de datas no R<span></span></a></li>
+<li class="chapter" data-level="5.7.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate"><i class="fa fa-check"></i><b>5.7.2</b> Lubridate: facilitando manipulação de datas<span></span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.7.3</b> Converter data em nome por extenso do mês<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)</a>
+<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares<span></span></a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.1</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)</a></li>
-<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.2</b> Abordagem <em>Bag of words</em></a>
+<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)<span></span></a>
 <ul>
-<li class="chapter" data-level="8.2.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.2.1</b> Frequência de palavras/termos e Ngrams</a></li>
+<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#remoção-de-palavra-vazia-stopwords"><i class="fa fa-check"></i><b>8.3</b> Remoção de palavra vazia (<em>stopwords</em>)</a></li>
-<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.4</b> Estemização (<em>stemming</em>) e lematização</a>
+<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R<span></span></a>
 <ul>
-<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização"><i class="fa fa-check"></i><b>8.4.1</b> Estemização</a></li>
-<li class="chapter" data-level="8.4.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lematização"><i class="fa fa-check"></i><b>8.4.2</b> Lematização</a></li>
+<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep<span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()<span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?<span></span></a></li>
+<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code><span></span></a></li>
+<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex<span></span></a></li>
+<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#palavras-em-contexto-keyword-in-context-kwic"><i class="fa fa-check"></i><b>8.5</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)</a></li>
-<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#key-term-extraction"><i class="fa fa-check"></i><b>8.6</b> Key term extraction</a>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr<span></span></a>
 <ul>
-<li class="chapter" data-level="8.6.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tf-idf"><i class="fa fa-check"></i><b>8.6.1</b> TF-IDF</a></li>
-<li class="chapter" data-level="8.6.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#udpipe"><i class="fa fa-check"></i><b>8.6.2</b> Pacote UDPipe</a></li>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> Normalização com stringr<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>8.7</b> Coocorrência de palavras</a>
+<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados<span></span></a>
 <ul>
-<li class="chapter" data-level="8.7.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>8.7.1</b> Rede de palavras (<em>wordnet</em>)</a></li>
-</ul></li>
-<li class="chapter" data-level="8.8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>8.8</b> Análise de semelhanças</a>
+<li class="chapter" data-level="7.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#baseplots"><i class="fa fa-check"></i><b>7.1</b> Base plots<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2<span></span></a>
 <ul>
-<li class="chapter" data-level="8.8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#algoritmo-smith_waterman"><i class="fa fa-check"></i><b>8.8.1</b> Algoritmo Smith_Waterman</a></li>
+<li class="chapter" data-level="7.4.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-aes"><i class="fa fa-check"></i><b>7.4.1</b> ggplot: nível aes<span></span></a></li>
+<li class="chapter" data-level="7.4.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-geom"><i class="fa fa-check"></i><b>7.4.2</b> ggplot: Nível geom<span></span></a></li>
+<li class="chapter" data-level="7.4.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-facet_"><i class="fa fa-check"></i><b>7.4.3</b> ggplot: nível facet_<span></span></a></li>
+<li class="chapter" data-level="7.4.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-stat"><i class="fa fa-check"></i><b>7.4.4</b> ggplot: nível stat<span></span></a></li>
+<li class="chapter" data-level="7.4.5" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-sistema-de-coordenadas"><i class="fa fa-check"></i><b>7.4.5</b> ggplot: nível sistema de coordenadas<span></span></a></li>
+<li class="chapter" data-level="7.4.6" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores-no-ggplot"><i class="fa fa-check"></i><b>7.4.6</b> Cores no ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-ggplot"><i class="fa fa-check"></i><b>7.4.7</b> Dicas ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.8" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-outros-pacotes-gráficos"><i class="fa fa-check"></i><b>7.4.8</b> Dicas outros pacotes gráficos<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="8.9" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#tm_datasets"><i class="fa fa-check"></i><b>8.9</b> Alguns datasets/databases para análise textual</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>9</b> Análise de Redes Sociais</a>
+<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)<span></span></a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>9.1</b> O pacote Igraph</a>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#introdução"><i class="fa fa-check"></i><b>8.1</b> Introdução<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.2</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.3</b> Abordagem <em>Bag of words</em><span></span></a>
 <ul>
-<li class="chapter" data-level="9.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>9.1.1</b> Clusterização</a></li>
+<li class="chapter" data-level="8.3.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.3.1</b> Frequência de palavras/termos e Ngrams<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="9.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>9.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
-<li class="chapter" data-level="9.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>9.3</b> Redes de palavras</a></li>
-<li class="chapter" data-level="9.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>9.4</b> Redes de citação</a></li>
-<li class="chapter" data-level="9.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>9.5</b> Gráfico de centralidade</a></li>
-<li class="chapter" data-level="9.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>9.6</b> Comunidades</a></li>
-<li class="chapter" data-level="9.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>9.7</b> Sugestões de links</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>10</b> Links úteis</a>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stopwords"><i class="fa fa-check"></i><b>8.4</b> Remoção de palavra vazia (<em>stopwords</em>)<span></span></a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>10.1</b> Humanidades digitais</a></li>
-<li class="chapter" data-level="10.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>10.2</b> Análise de redes sociais</a></li>
-<li class="chapter" data-level="10.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>10.3</b> Textos sobre análise textual</a>
-<ul>
-<li class="chapter" data-level="10.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>10.3.1</b> Sociologia Digital / Sociologia Computacional</a></li>
+<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#criando-lista-com-stopwords"><i class="fa fa-check"></i><b>8.4.1</b> Criando lista com stopwords<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>10.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
-<li class="chapter" data-level="10.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>10.5</b> Revistas / Journals acadêmicos</a></li>
-<li class="chapter" data-level="10.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>10.6</b> Dados Abertos</a></li>
-<li class="chapter" data-level="10.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>10.7</b> Vídeos</a></li>
-<li class="chapter" data-level="10.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>10.8</b> Sites / Blogs</a></li>
-<li class="chapter" data-level="10.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>10.9</b> Organizações</a></li>
-<li class="chapter" data-level="10.10" data-path="links-úteis.html"><a href="links-úteis.html#podcasts-relacionados-à-digital-humanities"><i class="fa fa-check"></i><b>10.10</b> Podcasts relacionados à Digital Humanities</a></li>
-<li class="chapter" data-level="10.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>10.11</b> Links Programação</a>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.5</b> Estemização (<em>stemming</em>) e lematização<span></span></a>
 <ul>
-<li class="chapter" data-level="10.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>10.11.1</b> R introdução</a></li>
-<li class="chapter" data-level="10.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>10.11.2</b> R - tópicos específicos</a></li>
-<li class="chapter" data-level="10.11.3" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>10.11.3</b> R - avançado</a></li>
-<li class="chapter" data-level="10.11.4" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>10.11.4</b> Links Python</a></li>
-<li class="chapter" data-level="10.11.5" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>10.11.5</b> Python - tópicos específicos</a></li>
+<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemming"><i class="fa fa-check"></i><b>8.5.1</b> Estemização<span></span></a></li>
+<li class="chapter" data-level="8.5.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lemma"><i class="fa fa-check"></i><b>8.5.2</b> Lematização<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>10.12</b> Links de Cursos Online</a></li>
-<li class="chapter" data-level="10.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>10.13</b> Grupos de discussão/Forum</a>
+<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordcloud"><i class="fa fa-check"></i><b>8.6</b> Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#kwic"><i class="fa fa-check"></i><b>8.7</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html"><i class="fa fa-check"></i><b>9</b> Text mining: Semantic Parsing<span></span></a>
 <ul>
-<li class="chapter" data-level="10.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>10.13.1</b> Telegram</a></li>
+<li class="chapter" data-level="9.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#pos---part-of-speech-tagging"><i class="fa fa-check"></i><b>9.1</b> POS - Part-of-speech tagging<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#udpipe"><i class="fa fa-check"></i><b>9.2</b> Pacote UDPipe<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>9.2.1</b> Coocorrência de palavras<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>9.2.2</b> Rede de palavras (<em>wordnet</em>)<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>10.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+<li class="chapter" data-level="9.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#distância"><i class="fa fa-check"></i><b>9.3</b> Distância<span></span></a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#cosine"><i class="fa fa-check"></i><b>9.3.1</b> Cosine Cosseno<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>10</b> Análise de Redes Sociais<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>10.1</b> O pacote Igraph<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>10.1.1</b> Clusterização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>10.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.<span></span></a></li>
+<li class="chapter" data-level="10.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>10.3</b> Redes de palavras<span></span></a></li>
+<li class="chapter" data-level="10.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>10.4</b> Redes de citação<span></span></a></li>
+<li class="chapter" data-level="10.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>10.5</b> Gráfico de centralidade<span></span></a></li>
+<li class="chapter" data-level="10.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>10.6</b> Comunidades<span></span></a></li>
+<li class="chapter" data-level="10.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>10.7</b> Sugestões de links<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>11</b> Links úteis<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>11.1</b> Humanidades digitais<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>11.2</b> Análise de redes sociais<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>11.3</b> Textos sobre análise textual<span></span></a>
+<ul>
+<li class="chapter" data-level="11.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>11.3.1</b> Sociologia Digital / Sociologia Computacional<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>11.4</b> Processamento Linguagem Natural (PLN ou NLP)<span></span></a></li>
+<li class="chapter" data-level="11.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>11.5</b> Revistas / Journals acadêmicos<span></span></a></li>
+<li class="chapter" data-level="11.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>11.6</b> Dados Abertos<span></span></a></li>
+<li class="chapter" data-level="11.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>11.7</b> Vídeos<span></span></a></li>
+<li class="chapter" data-level="11.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>11.8</b> Sites / Blogs<span></span></a></li>
+<li class="chapter" data-level="11.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>11.9</b> Organizações<span></span></a></li>
+<li class="chapter" data-level="11.10" data-path="links-úteis.html"><a href="links-úteis.html#podcasts-relacionados-à-digital-humanities"><i class="fa fa-check"></i><b>11.10</b> Podcasts relacionados à Digital Humanities<span></span></a></li>
+<li class="chapter" data-level="11.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>11.11</b> Links Programação<span></span></a>
+<ul>
+<li class="chapter" data-level="11.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>11.11.1</b> R introdução<span></span></a></li>
+<li class="chapter" data-level="11.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>11.11.2</b> R e estatística<span></span></a></li>
+<li class="chapter" data-level="11.11.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>11.11.3</b> R - tópicos específicos<span></span></a></li>
+<li class="chapter" data-level="11.11.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>11.11.4</b> R - avançado<span></span></a></li>
+<li class="chapter" data-level="11.11.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>11.11.5</b> Links Python<span></span></a></li>
+<li class="chapter" data-level="11.11.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>11.11.6</b> Python - tópicos específicos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>11.12</b> Links de Cursos Online<span></span></a></li>
+<li class="chapter" data-level="11.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>11.13</b> Grupos de discussão/Forum<span></span></a>
+<ul>
+<li class="chapter" data-level="11.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>11.13.1</b> Telegram<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>11.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)<span></span></a></li>
+<li class="chapter" data-level="11.15" data-path="links-úteis.html"><a href="links-úteis.html#tm_datasets"><i class="fa fa-check"></i><b>11.15</b> Alguns datasets/databases para análise textual<span></span></a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -380,8 +393,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="noções-básicas-de-programação-em-r" class="section level1" number="4">
-<h1><span class="header-section-number">Capítulo 4</span> Noções básicas de programação em R</h1>
+<div id="noções-básicas-de-programação-em-r" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">4</span> Noções básicas de programação em R<a href="noções-básicas-de-programação-em-r.html#noções-básicas-de-programação-em-r" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="infobox obra">
 <p><em>EM CONSTRUÇÃO</em></p>
 </div>
@@ -391,14 +404,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>Apresentar uma breve introdução aos principais comandos usados em programação</li>
 </ul>
 </div>
-<div id="sequências-de-scaping" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> sequências de scaping</h2>
+<div id="sequências-de-scaping" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Sequências de scaping<a href="noções-básicas-de-programação-em-r.html#sequências-de-scaping" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Há alguns caracteres especiais que não podem ser usados diretamente numa string, pois possuem um significado especial. As aspas são um caso. Assim, por exemplo:
 <code>variavel &lt;- 'moinho d'agua'</code> retorna erro. Para poder utilizar as aspas, temos de dizer ao programa para “escapar”. Isto é feito de modo geral com o caractere <code>\</code>. Assim, para funcionar, nosso exemplo fica: <code>variavel &lt;- 'moinho d\'agua'</code>.
 No caso de aspas simples <code>'</code> ou duplas <code>"</code>, é possível escapar estes caracteres colocando um dentro do outro. Por exemplo: <code>variavel &lt;- "moinho d'agua"</code> ou <code>variavel &lt;- 'O conto "Trio em Lá Menor" de Machado de Assis foi publicado em 1896.'</code>.
 Outros caracteres que levam escape são:</p>
-<div id="comentando-o-código" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Comentando o código</h3>
+<div id="comentando-o-código" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Comentando o código<a href="noções-básicas-de-programação-em-r.html#comentando-o-código" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Nas linguagens de programação é possível acrescentar comentários para orientar os humanos e que não serão lidos pelo computador.
 Cada linguagem tem o seu próprio padrão.
 No R, assim como em muitas linguagens de programação, os comentários no código são feito com a tralha <code>#</code> ou hashtag, jogo da velha, etc.
@@ -420,8 +433,8 @@ Tudo que vier depois deste símbolo é então ignorado.</p>
 <!-- Execution halted -->
 </div>
 </div>
-<div id="variavel" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> Variável e atribuição</h2>
+<div id="variavel" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Variável e atribuição<a href="noções-básicas-de-programação-em-r.html#variavel" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Em programação, no processo de automatização de tarefas, o uso de variáveis é essencial. Ele permite que reutilizemos as coisas, através de nomes mais simplificados. Normamente, usa-se o símbolo de igual <code>=</code>para atribuir algo a uma variável, no seguinte modo:</p>
 <p><code>Noma_da_variavel = valores</code></p>
 <p>O R também usa este símbolo, mas também usa outro que lhe é prório, o <code>&lt;-</code> que lembra uma seta.</p>
@@ -438,8 +451,8 @@ Há alguns caracteres especiais que não podem ser usados diretamente numa strin
 <code>variavel &lt;- 'moinho d'agua'</code> retorna erro. Para poder utilizar as aspas, temos de dizer ao programa para “escapar”. Isto é feito de modo geral com o caractere <code>\</code>. Assim, para funcionar, nosso exemplo fica: <code>variavel &lt;- 'moinho d\'agua'</code>.
 No caso de aspas simples <code>'</code> ou duplas <code>"</code>, é possível escapar estes caracteres colocando um dentro do outro. Por exemplo: <code>variavel &lt;- "moinho d'agua"</code> ou <code>variavel &lt;- 'O conto "Trio em Lá Menor" de Machado de Assis'</code>.</p>
 </div>
-<div id="funções-no-r" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Funções no R</h2>
+<div id="funções-no-r" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Funções no R<a href="noções-básicas-de-programação-em-r.html#funções-no-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Funções são úteis para evitar retrabalho.</p>
 <p>Possuem a seguinte sintaxe:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="noções-básicas-de-programação-em-r.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criando uma função no R</span></span>
@@ -478,8 +491,8 @@ Argumentos também podem conter valores padrão, caso a informação não lhe se
 <span id="cb16-16"><a href="noções-básicas-de-programação-em-r.html#cb16-16" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(,<span class="dv">4</span>)</span>
 <span id="cb16-17"><a href="noções-básicas-de-programação-em-r.html#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span></code></pre></div>
 </div>
-<div id="condicionais-seentão-ifelse" class="section level2" number="4.4">
-<h2><span class="header-section-number">4.4</span> Condicionais: se/então, If/else</h2>
+<div id="condicionais-seentão-ifelse" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Condicionais: se/então, If/else<a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
 <li>Se uma condição, então faça algo.</li>
 <li>Se outra condição, então faça outra coisa.</li>
@@ -507,8 +520,8 @@ Se certa condição não for satisfeita, for falsa, então nada será feito.</p>
 <span id="cb18-6"><a href="noções-básicas-de-programação-em-r.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;X é maior que 5&quot;</span>)</span>
 <span id="cb18-7"><a href="noções-básicas-de-programação-em-r.html#cb18-7" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb18-8"><a href="noções-básicas-de-programação-em-r.html#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;X é maior que 5&quot;</span></span></code></pre></div>
-<div id="else" class="section level3" number="4.4.1">
-<h3><span class="header-section-number">4.4.1</span> Else</h3>
+<div id="else" class="section level3 hasAnchor" number="4.4.1">
+<h3><span class="header-section-number">4.4.1</span> Else<a href="noções-básicas-de-programação-em-r.html#else" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Uma versão mais elaborada da condicional envolve a condição <code>else</code></p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="noções-básicas-de-programação-em-r.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (condição) { </span>
 <span id="cb19-2"><a href="noções-básicas-de-programação-em-r.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fazer_algo</span>()</span>
@@ -538,8 +551,8 @@ Ex.:
 <span id="cb20-10"><a href="noções-básicas-de-programação-em-r.html#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">minhafuncao</span>(<span class="dv">13</span>)</span>
 <span id="cb20-11"><a href="noções-básicas-de-programação-em-r.html#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 13 é maior que 5</span></span></code></pre></div>
 </div>
-<div id="else-if" class="section level3" number="4.4.2">
-<h3><span class="header-section-number">4.4.2</span> else if</h3>
+<div id="else-if" class="section level3 hasAnchor" number="4.4.2">
+<h3><span class="header-section-number">4.4.2</span> else if<a href="noções-básicas-de-programação-em-r.html#else-if" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Podemos colocar mais condições intermediárias, quantas quisermos, com <code>else if</code></p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="noções-básicas-de-programação-em-r.html#cb21-1" aria-hidden="true" tabindex="-1"></a>comes <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1){</span>
 <span id="cb21-2"><a href="noções-básicas-de-programação-em-r.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (arg1 <span class="sc">==</span> <span class="st">&quot;laranja&quot;</span>){</span>
@@ -579,15 +592,15 @@ Ex.:
 <span id="cb23-4"><a href="noções-básicas-de-programação-em-r.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 7 é maior que 2</span></span></code></pre></div>
 </div>
 </div>
-<div id="operadores" class="section level2" number="4.5">
-<h2><span class="header-section-number">4.5</span> Operadores</h2>
+<div id="operadores" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Operadores<a href="noções-básicas-de-programação-em-r.html#operadores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Usamos operadores para realizar transformações ou comparações entre valores ou variáveis (que por sua vez, contém valores).</p>
-<div id="operadores-de-atribuição-assignment" class="section level3" number="4.5.1">
-<h3><span class="header-section-number">4.5.1</span> Operadores de atribuição (assignment)</h3>
+<div id="operadores-de-atribuição-assignment" class="section level3 hasAnchor" number="4.5.1">
+<h3><span class="header-section-number">4.5.1</span> Operadores de atribuição (assignment)<a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Os operadores de atribuição são aqueles que vimos na sessão “<a href="noções-básicas-de-programação-em-r.html#variavel">variável</a>”, que são <code>=</code>, <code>&lt;-</code>, <code>&lt;&lt;-</code>, <code>-&gt;</code> e <code>-&gt;&gt;</code>.</p>
 </div>
-<div id="operadores-aritiméticos" class="section level3" number="4.5.2">
-<h3><span class="header-section-number">4.5.2</span> Operadores Aritiméticos</h3>
+<div id="operadores-aritiméticos" class="section level3 hasAnchor" number="4.5.2">
+<h3><span class="header-section-number">4.5.2</span> Operadores Aritiméticos<a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
 <tr class="header">
@@ -626,8 +639,8 @@ Ex.:
 <span id="cb24-3"><a href="noções-básicas-de-programação-em-r.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="dv">15</span><span class="sc">/</span><span class="dv">3</span></span>
 <span id="cb24-4"><a href="noções-básicas-de-programação-em-r.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 5</span></span></code></pre></div>
 </div>
-<div id="operadores-relacionais" class="section level3" number="4.5.3">
-<h3><span class="header-section-number">4.5.3</span> Operadores relacionais</h3>
+<div id="operadores_relacionais" class="section level3 hasAnchor" number="4.5.3">
+<h3><span class="header-section-number">4.5.3</span> Operadores relacionais<a href="noções-básicas-de-programação-em-r.html#operadores_relacionais" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
 <tr class="header">
@@ -672,8 +685,8 @@ Ex.:
 <span id="cb25-8"><a href="noções-básicas-de-programação-em-r.html#cb25-8" aria-hidden="true" tabindex="-1"></a>variavel <span class="sc">!=</span> <span class="st">&quot;TESTE&quot;</span></span>
 <span id="cb25-9"><a href="noções-básicas-de-programação-em-r.html#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
 </div>
-<div id="operadores-booleanos" class="section level3" number="4.5.4">
-<h3><span class="header-section-number">4.5.4</span> Operadores booleanos</h3>
+<div id="operadores_booleanos" class="section level3 hasAnchor" number="4.5.4">
+<h3><span class="header-section-number">4.5.4</span> Operadores booleanos<a href="noções-básicas-de-programação-em-r.html#operadores_booleanos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
 <tr class="header">
@@ -743,9 +756,10 @@ Ex.:
 <span id="cb27-3"><a href="noções-básicas-de-programação-em-r.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  TRUE FALSE FALSE</span></span>
 <span id="cb27-4"><a href="noções-básicas-de-programação-em-r.html#cb27-4" aria-hidden="true" tabindex="-1"></a>y<span class="sc">!=</span><span class="st">&quot;bla&quot;</span></span>
 <span id="cb27-5"><a href="noções-básicas-de-programação-em-r.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE  TRUE  TRUE</span></span></code></pre></div>
+<p>Algumas buscas na internet disponibilizam alguns operadores. No portal da Cãmara dos deputados, pode-se buscar discursos dos parlamentares no banco de discursos utilizando “and” e “or” (<a href="https://www2.camara.leg.br/atividade-legislativa/discursos-e-notas-taquigraficas/pesquisa/como-pesquisar">link aqui</a>). Na busca do Google, é possível excluir termos da busca (no caso, o operador “NOT”), utilizando o sinal de menos antes do termo.</p>
 </div>
-<div id="outros-operadores" class="section level3" number="4.5.5">
-<h3><span class="header-section-number">4.5.5</span> Outros operadores</h3>
+<div id="outros-operadores" class="section level3 hasAnchor" number="4.5.5">
+<h3><span class="header-section-number">4.5.5</span> Outros operadores<a href="noções-básicas-de-programação-em-r.html#outros-operadores" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <table>
 <thead>
 <tr class="header">
@@ -760,7 +774,7 @@ Ex.:
 </tr>
 <tr class="even">
 <td><code>%in%</code></td>
-<td>Se um eelmento pertence/está contido em um vetor de elementos</td>
+<td>Se um elemento pertence/está contido em um vetor de elementos</td>
 </tr>
 <tr class="odd">
 <td><code>%*%</code></td>
@@ -768,21 +782,38 @@ Ex.:
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="noções-básicas-de-programação-em-r.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">:</span><span class="dv">10</span></span>
-<span id="cb28-2"><a href="noções-básicas-de-programação-em-r.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  5  6  7  8  9 10</span></span></code></pre></div>
-<p>O comando <code>colors()</code> lista as cores que possuem nome no R. Vamos usá-lo para exemplificar o operador <code>%in%</code>. Ele nos dirá se um nome de cor está presente no vetor de cores que o comando <code>colors()</code> retorna.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="noções-básicas-de-programação-em-r.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># geranto automaticamente uma sequencia de 5 a 10</span></span>
+<span id="cb28-2"><a href="noções-básicas-de-programação-em-r.html#cb28-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">10</span></span>
+<span id="cb28-3"><a href="noções-básicas-de-programação-em-r.html#cb28-3" aria-hidden="true" tabindex="-1"></a>x</span>
+<span id="cb28-4"><a href="noções-básicas-de-programação-em-r.html#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1]  5  6  7  8  9 10</span></span>
+<span id="cb28-5"><a href="noções-básicas-de-programação-em-r.html#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co"># checando se alguns numeros estão contidos no vetor x</span></span>
+<span id="cb28-6"><a href="noções-básicas-de-programação-em-r.html#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%in%</span> x</span>
+<span id="cb28-7"><a href="noções-básicas-de-programação-em-r.html#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE</span></span>
+<span id="cb28-8"><a href="noções-básicas-de-programação-em-r.html#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="dv">7</span> <span class="sc">%in%</span> x</span>
+<span id="cb28-9"><a href="noções-básicas-de-programação-em-r.html#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span>
+<span id="cb28-10"><a href="noções-básicas-de-programação-em-r.html#cb28-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-11"><a href="noções-básicas-de-programação-em-r.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Num outro exemplo, vamos usar o operador para checar intesecção entre dois vetores</span></span>
+<span id="cb28-12"><a href="noções-básicas-de-programação-em-r.html#cb28-12" aria-hidden="true" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">67</span>, <span class="dv">53</span>, <span class="dv">73</span>)</span>
+<span id="cb28-13"><a href="noções-básicas-de-programação-em-r.html#cb28-13" aria-hidden="true" tabindex="-1"></a>v2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;x&quot;</span>, <span class="st">&quot;y&quot;</span>, <span class="st">&quot;z&quot;</span>, <span class="st">&quot;2&quot;</span>, <span class="st">&quot;h&quot;</span>, <span class="st">&quot;j&quot;</span>, <span class="st">&quot;c&quot;</span>)</span>
+<span id="cb28-14"><a href="noções-básicas-de-programação-em-r.html#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co"># obtendo um vetor com booleanos (TRUE e FALSE) de todos os elementos</span></span>
+<span id="cb28-15"><a href="noções-básicas-de-programação-em-r.html#cb28-15" aria-hidden="true" tabindex="-1"></a>v1 <span class="sc">%in%</span> v2</span>
+<span id="cb28-16"><a href="noções-básicas-de-programação-em-r.html#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE</span></span>
+<span id="cb28-17"><a href="noções-básicas-de-programação-em-r.html#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co"># observando apenas os elementos que tem intersecção entre os vetores</span></span>
+<span id="cb28-18"><a href="noções-básicas-de-programação-em-r.html#cb28-18" aria-hidden="true" tabindex="-1"></a>v1[v1 <span class="sc">%in%</span> v2]</span>
+<span id="cb28-19"><a href="noções-básicas-de-programação-em-r.html#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;c&quot; &quot;2&quot;</span></span></code></pre></div>
+<p>Num exemplo prático, o comando <code>colors()</code> lista as cores que possuem nome no R. Vamos usá-lo para exemplificar o operador <code>%in%</code>. Ele nos dirá se um nome de cor está presente no vetor de cores que o comando <code>colors()</code> retorna.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="noções-básicas-de-programação-em-r.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;darkred&quot;</span> <span class="sc">%in%</span> <span class="fu">colors</span>() </span>
 <span id="cb29-2"><a href="noções-básicas-de-programação-em-r.html#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] TRUE</span></span></code></pre></div>
 </div>
 </div>
-<div id="loops-repetições" class="section level2" number="4.6">
-<h2><span class="header-section-number">4.6</span> Loops, repetições</h2>
-<div id="for-loops" class="section level3" number="4.6.1">
-<h3><span class="header-section-number">4.6.1</span> For Loops</h3>
+<div id="loops-repetições" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Loops, repetições<a href="noções-básicas-de-programação-em-r.html#loops-repetições" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="for-loops" class="section level3 hasAnchor" number="4.6.1">
+<h3><span class="header-section-number">4.6.1</span> For Loops<a href="noções-básicas-de-programação-em-r.html#for-loops" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Quando necessita de fazer uma mesma operação, repetida, em vários itens de uma lista, usamos os loops.
 Com loops iteramos, aplicamos uma operação a cada item de uma série de itens.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="noções-básicas-de-programação-em-r.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (item <span class="cf">in</span> variavel_com_varios_itens){</span>
-<span id="cb30-2"><a href="noções-básicas-de-programação-em-r.html#cb30-2" aria-hidden="true" tabindex="-1"></a>         faça algo com o item n da lista</span>
+<span id="cb30-2"><a href="noções-básicas-de-programação-em-r.html#cb30-2" aria-hidden="true" tabindex="-1"></a>         faça algo com cada item n da variável</span>
 <span id="cb30-3"><a href="noções-básicas-de-programação-em-r.html#cb30-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Por exemplo:</p>
 <div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="noções-básicas-de-programação-em-r.html#cb31-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">5</span>)</span>
@@ -813,8 +844,8 @@ Com loops iteramos, aplicamos uma operação a cada item de uma série de itens.
 <span id="cb33-8"><a href="noções-básicas-de-programação-em-r.html#cb33-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O nome Maria contém 5 caracteres.&quot;</span></span>
 <span id="cb33-9"><a href="noções-básicas-de-programação-em-r.html#cb33-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;O nome Karen contém 5 caracteres.&quot;</span></span></code></pre></div>
 </div>
-<div id="while-loop" class="section level3" number="4.6.2">
-<h3><span class="header-section-number">4.6.2</span> While loop</h3>
+<div id="while-loop" class="section level3 hasAnchor" number="4.6.2">
+<h3><span class="header-section-number">4.6.2</span> While loop<a href="noções-básicas-de-programação-em-r.html#while-loop" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>O for loops é usado quando temos uma lista que sabemos quantos elementos temos. Para o caso de não sabermos ao certo quantos e quais elementos temos, há ainda um outro tipo de loop em programação, o <code>while loop</code>, que diz enquanto uma condição for verdadeira, ela continuará rodando, e irá parar assim que for falsa.</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="noções-básicas-de-programação-em-r.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criando a variável &quot;i&quot; de valor 1</span></span>
 <span id="cb34-2"><a href="noções-básicas-de-programação-em-r.html#cb34-2" aria-hidden="true" tabindex="-1"></a>i <span class="ot">&lt;-</span> <span class="dv">1</span></span>
@@ -834,8 +865,8 @@ Com loops iteramos, aplicamos uma operação a cada item de uma série de itens.
 <span id="cb34-16"><a href="noções-básicas-de-programação-em-r.html#cb34-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 6 é menor que 7</span></span></code></pre></div>
 <p>No exemplo acima, criamos a variável “i” que tem valor 1, e dentro do loop há a operação de acrescentar +1 a cada “rodada” do loop, que começa com o valor “1”. A cada rodada, o loop avalia se a condição <code>i &lt; 7</code> é verdadeira. Se sim, imprime o valor atual da variável <code>i</code> e adiciona +1 ao valor de i. O loop continua rodando para o próximo item. Assim que chega em 7, o loop pára, já que “7 &lt; 7” é falso.</p>
 </div>
-<div id="apply-lapply-sapply-tapply-e-mapply" class="section level3" number="4.6.3">
-<h3><span class="header-section-number">4.6.3</span> apply (lapply, sapply, tapply e mapply)</h3>
+<div id="apply-lapply-sapply-tapply-e-mapply" class="section level3 hasAnchor" number="4.6.3">
+<h3><span class="header-section-number">4.6.3</span> apply (lapply, sapply, tapply e mapply)<a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Além de for loop e while loop, no R temos a família apply (lapply, sapply, tapply e mapply), que funciona como um for loop normal, mas que pode simplificar um pouco a repetição, além de ser mais rápido que o for loop. Entretanto, o apply funciona aplicando uma função já pré definida anteriormente.</p>
 <p>Assim, no nosso exemplo com o vetor</p>
 <div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="noções-básicas-de-programação-em-r.html#cb35-1" aria-hidden="true" tabindex="-1"></a>nomes <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Fulano&quot;</span>, <span class="st">&quot;Beltrano&quot;</span>, <span class="st">&quot;Maria&quot;</span>, <span class="st">&quot;Karen&quot;</span>)</span></code></pre></div>
@@ -863,7 +894,12 @@ Com loops iteramos, aplicamos uma operação a cada item de uma série de itens.
 <!-- |[`rapply`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/rapply.html)| -->
 <!-- |[`tapply`](https://stat.ethz.ch/R-manual/R-devel/library/base/html/tapply.html)|| -->
 <!-- the map_type() functions of the purrr package might be a better choice. -->
-<p>Além da família apply, o R conta também com <code>map_</code> e mais recentemente, com <code>purrr</code> do <a href="introdução-ao-r.html#tidyverse">tidyverse</a></p>
+<p>Além de forloops e da família apply, o R conta também com:</p>
+<ul>
+<li>família de <a href="https://purrr.tidyverse.org/reference/map.html">funções <code>map_</code></a> do pacote <a href="https://purrr.tidyverse.org/">purrr</a> do <a href="introdução-ao-r.html#tidyverse">tidyverse</a></li>
+<li>pacote <a href="https://cran.r-project.org/web/packages/foreach/">foreach</a>, que possibilita forloops com processamento paralelo, isto é, mais rápidos.</li>
+<li>As funções do purrr também podem ser paralelizadas para ficarem mais rápidas através do pacote <a href="https://cran.rstudio.com/web/packages/furrr/index.html">furrr</a>.</li>
+</ul>
 
 </div>
 </div>
@@ -878,7 +914,6 @@ Com loops iteramos, aplicamos uma operação a cada item de uma série de itens.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -898,7 +933,7 @@ gitbook.start({
 "instapaper": false,
 "vk": false,
 "whatsapp": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper", "vk"]
 },
 "fontsettings": {
 "theme": "white",
@@ -918,6 +953,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "section",
 "scroll_highlight": true
