@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>10 Classificação: Dicionários e Análise de Sentimentos | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="10 Classificação: Dicionários e Análise de Sentimentos | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="10 Classificação: Dicionários e Análise de Sentimentos | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="text-mining-semantic-parsing.html"/>
+<link rel="next" href="análise-de-redes-sociais.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li><a href="objetivos-deste-manual.html#objetivos-deste-manual">Objetivos deste manual<span></span></a>
+<ul>
+<li><a href="objetivos-deste-manual.html#plano-do-livro">Plano do livro<span></span></a></li>
+</ul></li>
+<li><a href="intro.html#intro">Introdução<span></span></a>
+<ul>
+<li><a href="intro.html#HD">O termo “humanidade digitais”<span></span></a></li>
+<li><a href="intro.html#fluxo-de-trabalho">Fluxo de trabalho<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann<span></span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-das-correntes-na-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências das correntes na filosofia<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exGoogleTrends"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ExFakesNewsMundo"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização<span></span></a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador<span></span></a></li>
+<li class="chapter" data-level="2.10" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ex.-determinantes-sociais-do-florescimento-da-cultura-incel"><i class="fa fa-check"></i><b>2.10</b> Ex.: Determinantes sociais do florescimento da cultura Incel<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML<span></span></a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex<span></span></a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex<span></span></a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html<span></span></a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#sequências-de-scaping"><i class="fa fa-check"></i><b>4.1</b> Sequências de scaping<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#comentando-o-código"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else<span></span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else<span></span></a></li>
+<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores<span></span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)<span></span></a></li>
+<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos<span></span></a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais<span></span></a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos<span></span></a></li>
+<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#outros-operadores"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições<span></span></a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops<span></span></a></li>
+<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop<span></span></a></li>
+<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#nvim-r"><i class="fa fa-check"></i><b>5.2.1</b> NVIM-R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)<span></span></a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (vector)<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)<span></span></a></li>
+<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tm-dtm"><i class="fa fa-check"></i><b>5.4.4</b> Gerando um DTM com o pacote TM<span></span></a></li>
+<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidytext-dtm"><i class="fa fa-check"></i><b>5.4.5</b> Gerando DTM com o pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lista"><i class="fa fa-check"></i><b>5.4.6</b> Listas (<em>list</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.7</b> Data Frames<span></span></a></li>
+<li class="chapter" data-level="5.4.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.8</b> Considerações finais sobre estrutura de dados<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-instalando-via-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: instalando via linha de comando<span></span></a></li>
+<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Modo gráfico<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code><span></span></a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes<span></span></a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles<span></span></a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.3</b> Dplyr: Verbos (ou comandos)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora<span></span></a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequencia-de-datas-no-r"><i class="fa fa-check"></i><b>5.7.1</b> Gerando uma sequencia de datas no R<span></span></a></li>
+<li class="chapter" data-level="5.7.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate"><i class="fa fa-check"></i><b>5.7.2</b> Lubridate: facilitando manipulação de datas<span></span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.7.3</b> Converter data em nome por extenso do mês<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep<span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()<span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?<span></span></a></li>
+<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code><span></span></a></li>
+<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex<span></span></a></li>
+<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> Normalização com stringr<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#baseplots"><i class="fa fa-check"></i><b>7.1</b> Base plots<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2<span></span></a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-aes"><i class="fa fa-check"></i><b>7.4.1</b> ggplot: nível aes<span></span></a></li>
+<li class="chapter" data-level="7.4.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-geom"><i class="fa fa-check"></i><b>7.4.2</b> ggplot: Nível geom<span></span></a></li>
+<li class="chapter" data-level="7.4.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-facet_"><i class="fa fa-check"></i><b>7.4.3</b> ggplot: nível facet_<span></span></a></li>
+<li class="chapter" data-level="7.4.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-stat"><i class="fa fa-check"></i><b>7.4.4</b> ggplot: nível stat<span></span></a></li>
+<li class="chapter" data-level="7.4.5" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-sistema-de-coordenadas"><i class="fa fa-check"></i><b>7.4.5</b> ggplot: nível sistema de coordenadas<span></span></a></li>
+<li class="chapter" data-level="7.4.6" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores-no-ggplot"><i class="fa fa-check"></i><b>7.4.6</b> Cores no ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-ggplot"><i class="fa fa-check"></i><b>7.4.7</b> Dicas ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.8" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-outros-pacotes-gráficos"><i class="fa fa-check"></i><b>7.4.8</b> Dicas outros pacotes gráficos<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#introdução"><i class="fa fa-check"></i><b>8.1</b> Introdução<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.2</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.3</b> Abordagem <em>Bag of words</em><span></span></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.3.1</b> Frequência de palavras/termos e Ngrams<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stopwords"><i class="fa fa-check"></i><b>8.4</b> Remoção de palavra vazia (<em>stopwords</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#criando-lista-com-stopwords"><i class="fa fa-check"></i><b>8.4.1</b> Criando lista com stopwords<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.5</b> Estemização (<em>stemming</em>) e lematização<span></span></a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemming"><i class="fa fa-check"></i><b>8.5.1</b> Estemização<span></span></a></li>
+<li class="chapter" data-level="8.5.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lemma"><i class="fa fa-check"></i><b>8.5.2</b> Lematização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordcloud"><i class="fa fa-check"></i><b>8.6</b> Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#kwic"><i class="fa fa-check"></i><b>8.7</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html"><i class="fa fa-check"></i><b>9</b> Text mining: Semantic Parsing<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#pos---part-of-speech-tagging"><i class="fa fa-check"></i><b>9.1</b> POS - Part-of-speech tagging<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#udpipe"><i class="fa fa-check"></i><b>9.2</b> Pacote UDPipe<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>9.2.1</b> Coocorrência de palavras<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>9.2.2</b> Rede de palavras (<em>wordnet</em>)<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html"><i class="fa fa-check"></i><b>10</b> Classificação: Dicionários e Análise de Sentimentos<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#classificação"><i class="fa fa-check"></i><b>10.1</b> Classificação<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#sentiment-analysis"><i class="fa fa-check"></i><b>10.2</b> Análise de sentimentos (<em>Sentiment Analysis</em>) por meio de dicionário/léxico<span></span></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#datasets-de-sentimentosemoções"><i class="fa fa-check"></i><b>10.2.1</b> Datasets de sentimentos/emoções<span></span></a></li>
+<li class="chapter" data-level="10.2.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis"><i class="fa fa-check"></i><b>10.2.2</b> Pacote SentimentAnalysis<span></span></a></li>
+<li class="chapter" data-level="10.2.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Tidytext"><i class="fa fa-check"></i><b>10.2.3</b> Pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="10.2.4" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Quanteda"><i class="fa fa-check"></i><b>10.2.4</b> Pacote Quanteda<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#dicas-finais-bibliografia-indicada"><i class="fa fa-check"></i><b>10.3</b> Dicas finais: Bibliografia indicada<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>11</b> Análise de Redes Sociais<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>11.1</b> O pacote Igraph<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>11.1.1</b> Clusterização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>11.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>11.3</b> Redes de palavras<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>11.4</b> Redes de citação<span></span></a></li>
+<li class="chapter" data-level="11.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>11.5</b> Gráfico de centralidade<span></span></a></li>
+<li class="chapter" data-level="11.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>11.6</b> Comunidades<span></span></a></li>
+<li class="chapter" data-level="11.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>11.7</b> Sugestões de links<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>12</b> Links úteis<span></span></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>12.1</b> Humanidades digitais<span></span></a></li>
+<li class="chapter" data-level="12.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>12.2</b> Análise de redes sociais<span></span></a></li>
+<li class="chapter" data-level="12.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>12.3</b> Textos sobre análise textual<span></span></a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>12.3.1</b> Sociologia Digital / Sociologia Computacional<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>12.4</b> Processamento Linguagem Natural (PLN ou NLP)<span></span></a></li>
+<li class="chapter" data-level="12.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>12.5</b> Revistas / Journals acadêmicos<span></span></a></li>
+<li class="chapter" data-level="12.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>12.6</b> Dados Abertos<span></span></a></li>
+<li class="chapter" data-level="12.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>12.7</b> Vídeos<span></span></a></li>
+<li class="chapter" data-level="12.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>12.8</b> Sites / Blogs<span></span></a></li>
+<li class="chapter" data-level="12.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>12.9</b> Organizações<span></span></a></li>
+<li class="chapter" data-level="12.10" data-path="links-úteis.html"><a href="links-úteis.html#podcasts-relacionados-à-digital-humanities"><i class="fa fa-check"></i><b>12.10</b> Podcasts relacionados à Digital Humanities<span></span></a></li>
+<li class="chapter" data-level="12.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>12.11</b> Links Programação<span></span></a>
+<ul>
+<li class="chapter" data-level="12.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>12.11.1</b> R introdução<span></span></a></li>
+<li class="chapter" data-level="12.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>12.11.2</b> R e estatística<span></span></a></li>
+<li class="chapter" data-level="12.11.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>12.11.3</b> R - tópicos específicos<span></span></a></li>
+<li class="chapter" data-level="12.11.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>12.11.4</b> R - avançado<span></span></a></li>
+<li class="chapter" data-level="12.11.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>12.11.5</b> Links Python<span></span></a></li>
+<li class="chapter" data-level="12.11.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>12.11.6</b> Python - tópicos específicos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>12.12</b> Links de Cursos Online<span></span></a></li>
+<li class="chapter" data-level="12.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>12.13</b> Grupos de discussão/Forum<span></span></a>
+<ul>
+<li class="chapter" data-level="12.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>12.13.1</b> Telegram<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>12.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)<span></span></a></li>
+<li class="chapter" data-level="12.15" data-path="links-úteis.html"><a href="links-úteis.html#tm_datasets"><i class="fa fa-check"></i><b>12.15</b> Alguns datasets/databases para análise textual<span></span></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="classificação-dicionários-e-análise-de-sentimentos" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">10</span> Classificação: Dicionários e Análise de Sentimentos<a href="classificação-dicionários-e-análise-de-sentimentos.html#classificação-dicionários-e-análise-de-sentimentos" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- Classificação com léxicos e Análise de Sentimentos -->
+<div class="infobox objetivo">
+<p><strong>Objetivos deste capítulo:</strong></p>
+<ul>
+<li>Apresentar uma introdução à análise de sentimentos utilizando dicionários</li>
+<li>Apresentar como criar e utilizar dicionários/léxicos em classificação</li>
+<li>Como fazer isso com diferentes pacotes do R</li>
+</ul>
+</div>
+<div id="classificação" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Classificação<a href="classificação-dicionários-e-análise-de-sentimentos.html#classificação" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Podemos classificar palavras, sentenças, textos, documentos, corpus, etc. através de diferentes métodos.
+A análise de sentimentos ou emoções é um sub-item particular dentre os tipos de classificação.
+Entre as diferentes formas de classificação, seguindo a tipologia de Welbers et al. (2017) temos:</p>
+<div id="htmlwidget-c525aa6f90020a8e82b4" style="width:672px;height:500px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c525aa6f90020a8e82b4">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = TB]\n  \n  node [shape = \"rectangle\"]        \n  a [label = \"classificação\"]\n  b [label = \"dicionários\"]\n  c [label = \"Machine learning\"]\n  d [label = \"estatística\"]\n  e [label = \"Aprendizado Supervisionado\"]\n  f [label = \"Aprendizado Não Supervisionado\"]\n\n  # edge definitions with the node IDs\n  a -> b,c,d\n  c -> e,f\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<ul>
+<li>Dicionários e métodos de contagem</li>
+<li>Aprendizado de máquinas supervisionado, ou <em>supervised machine learning</em>:
+<ul>
+<li>Um (ou vários) seres humans classificam textos com base em categorias estabelecidas por estes e o algoritmo irá tentar aprender o padrão e aplicar na classificação subsequente.</li>
+</ul></li>
+<li>Aprendizado de máquinas não-supervisionado ou <em>unsupervised machine learning</em>.
+<ul>
+<li>Exemplo é a modelagem de tópicos (<em>topic modeling</em>) que tem o algoritmo Latent Dirichlet Allocation (LDA) como exemplo mais famoso. O algoritmo estabelece as categorias e os termos, cabendo muitas vezes ao pesquisador apenas estabelecer o número de categorias.</li>
+</ul></li>
+<li>categorização estatística:
+<ul>
+<li>não possui categorias prévias dadas por humanos, mas também não é machine learning.</li>
+</ul></li>
+</ul>
+<p>Há várias formas de analisar sentimentos.
+O modo mais simples e talvez mais recorrente se dá com o uso de dicionários/léxicos com termos/palavras e seu sentimento ou uma pontuação (<em>score</em>) correspondente.
+Mas há também formas mais elaboradas de análise sentimento, e também mais complicadas, que mixam outras técnicas de processamento de linguagem natural com a análise de sentimentos.</p>
+</div>
+<div id="sentiment-analysis" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Análise de sentimentos (<em>Sentiment Analysis</em>) por meio de dicionário/léxico<a href="classificação-dicionários-e-análise-de-sentimentos.html#sentiment-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Como sempre, o R possui diversos pacotes também para análise de sentimentos utilizando léxico de palavras, como o <a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis">SentimentAnalysis</a>, o <a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Tidytext">Tidytext</a> e o <a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Quanteda">Quanteda</a>.</p>
+<p>De modo simplificado, a análise de sentimentos pode ser entendida como uma forma de classificação em categorias pré-definidas.
+Tais categorias podem ser “positivo” e “negativo” em sua versão mais simples e binária, trinaria se para além das duas se incorporar a categoria “neutro”, ou pode-se ainda utilizar de diversas outras categorias, como “espanto”, “indecisão”, etc.
+Pode-se ainda atribuir diferentes pesos aos termos dentro de um escopo de pontuação, por exemplo, tendo termo pontuando entre -5 e +5, ou entre -10 a +10. Isto faz sentido nas situações onde queira se diferenciar termos como “ruim” de “péssimo” e de “pior”.</p>
+<div id="datasets-de-sentimentosemoções" class="section level3 hasAnchor" number="10.2.1">
+<h3><span class="header-section-number">10.2.1</span> Datasets de sentimentos/emoções<a href="classificação-dicionários-e-análise-de-sentimentos.html#datasets-de-sentimentosemoções" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Além de possibilitar criar seu próprio dicionário, com suas próprias categorias, é possível usar léxicos de sentimentos já pronto, contendo dezenas de milhares de palavras já categorizadas.
+Diferentes pacotes vem com diferentes dicionários, alguns com dicionários em comum. Alguns pacotes são apenas de datasets de sentimentos a serem usados.</p>
+<p>O pacote tidytext vem com os seguintes dicionários:
+- Bing: palavras rotuladas em positivo e negativo
+- AFINN: palavras com escores entre -5 e 5.
+- NRC: Emoções são classificados em 8 emoções. Além de positivo e negativo: - “trust”, “fear”, “sadness”,“anger”, “surprise”, disgust”, “joy” e “anticipation”
+- Loughran-McDonald Sentiment lexicon. Requer licença para uso comercial.</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tidytext<span class="sc">::</span><span class="fu">get_sentiments</span>(<span class="st">&quot;bing&quot;</span>))</span>
+<span id="cb184-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-2" aria-hidden="true" tabindex="-1"></a><span class="do">## tibble [6,786 × 2] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb184-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ word     : chr [1:6786] &quot;2-faces&quot; &quot;abnormal&quot; &quot;abolish&quot; &quot;abominable&quot; ...</span></span>
+<span id="cb184-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ sentiment: chr [1:6786] &quot;negative&quot; &quot;negative&quot; &quot;negative&quot; &quot;negative&quot; ...</span></span>
+<span id="cb184-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tidytext<span class="sc">::</span><span class="fu">get_sentiments</span>(<span class="st">&quot;afinn&quot;</span>))</span>
+<span id="cb184-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-6" aria-hidden="true" tabindex="-1"></a><span class="do">## spec_tbl_df [2,477 × 2] (S3: spec_tbl_df/tbl_df/tbl/data.frame)</span></span>
+<span id="cb184-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ word : chr [1:2477] &quot;abandon&quot; &quot;abandoned&quot; &quot;abandons&quot; &quot;abducted&quot; ...</span></span>
+<span id="cb184-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ value: num [1:2477] -2 -2 -2 -2 -2 -2 -3 -3 -3 -3 ...</span></span>
+<span id="cb184-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  - attr(*, &quot;spec&quot;)=</span></span>
+<span id="cb184-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-10" aria-hidden="true" tabindex="-1"></a><span class="do">##   .. cols(</span></span>
+<span id="cb184-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-11" aria-hidden="true" tabindex="-1"></a><span class="do">##   ..   word = col_character(),</span></span>
+<span id="cb184-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-12" aria-hidden="true" tabindex="-1"></a><span class="do">##   ..   value = col_double()</span></span>
+<span id="cb184-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-13" aria-hidden="true" tabindex="-1"></a><span class="do">##   .. )</span></span>
+<span id="cb184-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  - attr(*, &quot;problems&quot;)=&lt;externalptr&gt;</span></span>
+<span id="cb184-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-15" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tidytext<span class="sc">::</span><span class="fu">get_sentiments</span>(<span class="st">&quot;loughran&quot;</span>))</span>
+<span id="cb184-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-16" aria-hidden="true" tabindex="-1"></a><span class="do">## tibble [4,150 × 2] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb184-17"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ word     : chr [1:4150] &quot;abandon&quot; &quot;abandoned&quot; &quot;abandoning&quot; &quot;abandonment&quot; ...</span></span>
+<span id="cb184-18"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ sentiment: chr [1:4150] &quot;negative&quot; &quot;negative&quot; &quot;negative&quot; &quot;negative&quot; ...</span></span>
+<span id="cb184-19"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-19" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tidytext<span class="sc">::</span><span class="fu">get_sentiments</span>(<span class="st">&quot;nrc&quot;</span>))</span>
+<span id="cb184-20"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-20" aria-hidden="true" tabindex="-1"></a><span class="do">## tibble [13,875 × 2] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb184-21"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ word     : chr [1:13875] &quot;abacus&quot; &quot;abandon&quot; &quot;abandon&quot; &quot;abandon&quot; ...</span></span>
+<span id="cb184-22"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb184-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ sentiment: chr [1:13875] &quot;trust&quot; &quot;fear&quot; &quot;negative&quot; &quot;sadness&quot; ...</span></span></code></pre></div>
+<p>O pacote SentimentAnalysis vem com os seguintes léxicos:
+- QDAP (somente seu dicionário, não o pacote QDAP),
+- Harvard IV, dicionário piscológico, com a lista utilizada no software General Inquirer.
+- Henry’s Financial dictionary (Henry 2008), dicionário focado em finanças
+- Loughran-McDonald Financial dictionary (Loughran and McDonald 2011)</p>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(SentimentAnalysis<span class="sc">::</span>DictionaryGI) <span class="co"># Harvard-IV</span></span>
+<span id="cb185-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-2" aria-hidden="true" tabindex="-1"></a><span class="do">## List of 2</span></span>
+<span id="cb185-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ negative: chr [1:2005] &quot;abandon&quot; &quot;abandonment&quot; &quot;abate&quot; &quot;abdicate&quot; ...</span></span>
+<span id="cb185-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ positive: chr [1:1637] &quot;abide&quot; &quot;ability&quot; &quot;able&quot; &quot;abound&quot; ...</span></span>
+<span id="cb185-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(SentimentAnalysis<span class="sc">::</span>DictionaryHE) <span class="co"># Henry’s Financial dictionary</span></span>
+<span id="cb185-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-6" aria-hidden="true" tabindex="-1"></a><span class="do">## List of 2</span></span>
+<span id="cb185-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ negative: chr [1:85] &quot;below&quot; &quot;challenge&quot; &quot;challenged&quot; &quot;challenges&quot; ...</span></span>
+<span id="cb185-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ positive: chr [1:105] &quot;above&quot; &quot;accomplish&quot; &quot;accomplished&quot; &quot;accomplishes&quot; ...</span></span>
+<span id="cb185-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-9" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(SentimentAnalysis<span class="sc">::</span>DictionaryLM) <span class="co"># Loughran-McDonald Financial dictionary</span></span>
+<span id="cb185-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-10" aria-hidden="true" tabindex="-1"></a><span class="do">## List of 3</span></span>
+<span id="cb185-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ negative   : chr [1:2355] &quot;abandon&quot; &quot;abandoned&quot; &quot;abandoning&quot; &quot;abandonment&quot; ...</span></span>
+<span id="cb185-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ positive   : chr [1:354] &quot;able&quot; &quot;abundance&quot; &quot;abundant&quot; &quot;acclaimed&quot; ...</span></span>
+<span id="cb185-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ uncertainty: chr [1:297] &quot;abeyance&quot; &quot;abeyances&quot; &quot;almost&quot; &quot;alteration&quot; ...</span></span>
+<span id="cb185-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-14" aria-hidden="true" tabindex="-1"></a>SentimentAnalysis<span class="sc">::</span><span class="fu">loadDictionaryQDAP</span>() <span class="sc">|&gt;</span> <span class="fu">str</span>() <span class="co"># polarity words do QDAP</span></span>
+<span id="cb185-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-15" aria-hidden="true" tabindex="-1"></a><span class="do">## List of 2</span></span>
+<span id="cb185-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ positiveWords: chr [1:1280] &quot;a plus&quot; &quot;abound&quot; &quot;abund&quot; &quot;access&quot; ...</span></span>
+<span id="cb185-17"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ negativeWords: chr [1:2952] &quot;abnorm&quot; &quot;abolish&quot; &quot;abomin&quot; &quot;abort&quot; ...</span></span>
+<span id="cb185-18"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb185-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  - attr(*, &quot;class&quot;)= chr &quot;SentimentDictionaryBinary&quot;</span></span></code></pre></div>
+<ul>
+<li>O <a href="https://cran.r-project.org/web/packages/corpus/">pacote corpus</a> possui o <a href="https://wndomains.fbk.eu/wnaffect.html">WordNet-Affect Lexicon</a>, o “AFINN Sentiment Lexicon”</li>
+<li>O pacote <a href="https://cran.r-project.org/web/packages/lexicon">lexicon</a> possui muitos datasets, para citar alguns dos diversos:
+<ul>
+<li><code>lexicon::key_sentiment_jockers</code>: <a href="https://github.com/mjockers/syuzhet">Jockers Sentiment Key</a></li>
+<li><code>lexicon::hash_sentiment_huliu</code>: dataset com 6.874 termos com valores que vão de -2 a 1, baseado em Hu &amp; Liu’s</li>
+<li><code>lexicon::hash_emojis</code>: com descrição de emojis</li>
+<li><code>lexicon::nrc_emotions</code>: 14.182 linhas em 9 variáveis/categorias: term, anger, anticipation, disgust, fear, joy, sadness, surprise e trust.</li>
+<li><code>lexicon::profanity_*</code> com vários datasets com palavrões, termos racistas/linguagem de ódio, ou <code>hash_internet_slang</code> com gírias de internet.</li>
+<li>É possível realizar uma busca do que há disponível no pacote com a função <code>lexicon::available_data('termo')</code></li>
+</ul></li>
+</ul>
+<p>O pacote <a href="https://cran.r-project.org/web/packages/lexiconPT/">LexiconPT</a> possui três léxicos de sentimentos em português (o utilizaremos mais à frente), dois deles mais de 30 mil termos.</p>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(lexiconPT<span class="sc">::</span>oplexicon_v2<span class="fl">.1</span>)</span>
+<span id="cb186-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-2" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;data.frame&#39;:    30673 obs. of  3 variables:</span></span>
+<span id="cb186-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ term    : chr  &quot;ababadar&quot; &quot;ababelar-se&quot; &quot;ababelar&quot; &quot;abacanar&quot; ...</span></span>
+<span id="cb186-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ type    : chr  &quot;vb&quot; &quot;vb&quot; &quot;vb&quot; &quot;vb&quot; ...</span></span>
+<span id="cb186-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity: int  0 1 -1 1 1 -1 -1 -1 -1 -1 ...</span></span>
+<span id="cb186-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(lexiconPT<span class="sc">::</span>oplexicon_v3<span class="fl">.0</span>)</span>
+<span id="cb186-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-7" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;data.frame&#39;:    32191 obs. of  4 variables:</span></span>
+<span id="cb186-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ term             : chr  &quot;=[&quot; &quot;=@&quot; &quot;=p&quot; &quot;=P&quot; ...</span></span>
+<span id="cb186-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ type             : chr  &quot;emot&quot; &quot;emot&quot; &quot;emot&quot; &quot;emot&quot; ...</span></span>
+<span id="cb186-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity         : int  -1 -1 -1 -1 -1 1 1 1 1 -1 ...</span></span>
+<span id="cb186-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity_revision: chr  &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; ...</span></span>
+<span id="cb186-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-12" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(lexiconPT<span class="sc">::</span>sentiLex_lem_PT02)</span>
+<span id="cb186-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-13" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;data.frame&#39;:    7014 obs. of  5 variables:</span></span>
+<span id="cb186-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ term                   : chr  &quot;a-vontade&quot; &quot;abafado&quot; &quot;abafante&quot; &quot;abaixado&quot; ...</span></span>
+<span id="cb186-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ grammar_category       : chr  &quot;N&quot; &quot;Adj&quot; &quot;Adj&quot; &quot;Adj&quot; ...</span></span>
+<span id="cb186-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity               : num  1 -1 -1 -1 -1 1 -1 1 1 -1 ...</span></span>
+<span id="cb186-17"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity_target        : chr  &quot;N0&quot; &quot;N0&quot; &quot;N0&quot; &quot;N0&quot; ...</span></span>
+<span id="cb186-18"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb186-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity_classification: chr  &quot;MAN&quot; &quot;JALC&quot; &quot;MAN&quot; &quot;JALC&quot; ...</span></span></code></pre></div>
+<p>Mas é sempre bom ressaltar e repetir: o melhor é ter um dicionário adequado para o contexto de aplicação. A aplicação de dicionários tem de ser validada!</p>
+</div>
+<div id="SentimentAnalysis" class="section level3 hasAnchor" number="10.2.2">
+<h3><span class="header-section-number">10.2.2</span> Pacote SentimentAnalysis<a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Link no <a href="https://cran.rstudio.com/web/packages/SentimentAnalysis/">Cran</a>, <a href="https://cran.rstudio.com/web/packages/SentimentAnalysis/SentimentAnalysis.pdf">manual em pdf</a> e <a href="https://cran.rstudio.com/web/packages/SentimentAnalysis/vignettes/SentimentAnalysis.html#language-support-and-extensibility">página vignette</a> (de exemplo/tutorial)</li>
+</ul>
+<p>Vamos iniciar criando nosso próprio dicionário de sentimentos para entender melhor o conceito de análise de sentimentos.
+Após instalar o pacote utilizando o comando <code>install.packages("SentimentAnalysis")</code></p>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carregando o pacote</span></span>
+<span id="cb187-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(SentimentAnalysis)</span>
+<span id="cb187-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Vetor com frases a serem analisadas</span></span>
+<span id="cb187-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-4" aria-hidden="true" tabindex="-1"></a>documentos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Café é bom&quot;</span>, <span class="st">&quot;Rúcula é ruim&quot;</span>, <span class="st">&quot;Bem mais ou menos&quot;</span>, </span>
+<span id="cb187-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;refrigerante é péssimo&quot;</span>, <span class="st">&quot;ruim é ter de trabalhar&quot;</span>)</span>
+<span id="cb187-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um dicionário (no caso, do tipo binário)</span></span>
+<span id="cb187-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-8" aria-hidden="true" tabindex="-1"></a>dict_pt <span class="ot">&lt;-</span> <span class="fu">SentimentDictionaryBinary</span>(</span>
+<span id="cb187-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-9" aria-hidden="true" tabindex="-1"></a>                                     <span class="co"># vetor de palavras com conotação positiva</span></span>
+<span id="cb187-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-10" aria-hidden="true" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>,<span class="st">&quot;boa&quot;</span>, <span class="st">&quot;excelente&quot;</span>), </span>
+<span id="cb187-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-11" aria-hidden="true" tabindex="-1"></a>                                     <span class="co"># vetor de palavras com conotação negativa</span></span>
+<span id="cb187-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-12" aria-hidden="true" tabindex="-1"></a>                                     <span class="fu">c</span>(<span class="st">&quot;ruim&quot;</span>, <span class="st">&quot;péssimo&quot;</span>))</span>
+<span id="cb187-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-14" aria-hidden="true" tabindex="-1"></a><span class="co"># realizando a análise de sentimento a partir do dicionário criado</span></span>
+<span id="cb187-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-15" aria-hidden="true" tabindex="-1"></a>AnaliseSentimentos <span class="ot">&lt;-</span> <span class="fu">analyzeSentiment</span>(documentos,</span>
+<span id="cb187-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-16" aria-hidden="true" tabindex="-1"></a>                              <span class="at">language=</span><span class="st">&quot;portuguese&quot;</span>,</span>
+<span id="cb187-17"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-17" aria-hidden="true" tabindex="-1"></a>                              <span class="at">rules=</span><span class="fu">list</span>(<span class="st">&quot;pontos&quot;</span><span class="ot">=</span><span class="fu">list</span>(ruleSentiment, dict_pt)))</span>
+<span id="cb187-18"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-18" aria-hidden="true" tabindex="-1"></a><span class="co"># visualizando</span></span>
+<span id="cb187-19"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-19" aria-hidden="true" tabindex="-1"></a>AnaliseSentimentos </span>
+<span id="cb187-20"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-20" aria-hidden="true" tabindex="-1"></a><span class="do">##       pontos</span></span>
+<span id="cb187-21"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  0.5000000</span></span>
+<span id="cb187-22"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 2 -0.5000000</span></span>
+<span id="cb187-23"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  0.0000000</span></span>
+<span id="cb187-24"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 -0.5000000</span></span>
+<span id="cb187-25"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 -0.3333333</span></span>
+<span id="cb187-26"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-27"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Apresentando este resultado de forma mais legível para humanos, como um data frame.</span></span>
+<span id="cb187-28"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-28" aria-hidden="true" tabindex="-1"></a>sentimentosDF <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">frase =</span> documentos, </span>
+<span id="cb187-29"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-29" aria-hidden="true" tabindex="-1"></a>                            <span class="at">score.sentimentos =</span> AnaliseSentimentos, </span>
+<span id="cb187-30"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-30" aria-hidden="true" tabindex="-1"></a>                            <span class="co"># convertendo os valores em direções: pos., neg. e neutro </span></span>
+<span id="cb187-31"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-31" aria-hidden="true" tabindex="-1"></a>                            <span class="at">sentimento =</span> <span class="fu">convertToDirection</span>(AnaliseSentimentos<span class="sc">$</span>pontos))</span>
+<span id="cb187-32"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb187-33"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-33" aria-hidden="true" tabindex="-1"></a>sentimentosDF </span>
+<span id="cb187-34"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-34" aria-hidden="true" tabindex="-1"></a><span class="do">##                     frase     pontos sentimento</span></span>
+<span id="cb187-35"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-35" aria-hidden="true" tabindex="-1"></a><span class="do">## 1              Café é bom  0.5000000   positive</span></span>
+<span id="cb187-36"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-36" aria-hidden="true" tabindex="-1"></a><span class="do">## 2           Rúcula é ruim -0.5000000   negative</span></span>
+<span id="cb187-37"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-37" aria-hidden="true" tabindex="-1"></a><span class="do">## 3       Bem mais ou menos  0.0000000    neutral</span></span>
+<span id="cb187-38"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-38" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  refrigerante é péssimo -0.5000000   negative</span></span>
+<span id="cb187-39"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb187-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 5 ruim é ter de trabalhar -0.3333333   negative</span></span></code></pre></div>
+<p>Para criar dicionário ponderado (<em>weighted</em>), isto é, com valores contínuos, onde cada termo recebe pontuação, fazemos da seguinte forma:
+colocamos como primeiro vetor os termos e o segundo com suas respectivas pontuações.</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opção 1:</span></span>
+<span id="cb188-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Léxico de sentimentos a partir de dois vetores</span></span>
+<span id="cb188-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-3" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">SentimentDictionaryWeighted</span>(<span class="fu">c</span>(<span class="st">&quot;péssimo&quot;</span>, <span class="st">&quot;ruim&quot;</span>, <span class="st">&quot;bom&quot;</span>, <span class="st">&quot;boa&quot;</span>, <span class="st">&quot;excelente&quot;</span>, <span class="st">&quot;top&quot;</span>),</span>
+<span id="cb188-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-4" aria-hidden="true" tabindex="-1"></a>                                 <span class="fu">c</span>(<span class="sc">-</span><span class="dv">10</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="sc">+</span><span class="dv">5</span>, <span class="sc">+</span><span class="dv">5</span>, <span class="sc">+</span><span class="dv">10</span>, <span class="sc">+</span><span class="dv">10</span>),)</span>
+<span id="cb188-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-5" aria-hidden="true" tabindex="-1"></a>d</span>
+<span id="cb188-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Type: weighted (words with individual scores)</span></span>
+<span id="cb188-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Intercept: 0</span></span>
+<span id="cb188-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-8" aria-hidden="true" tabindex="-1"></a><span class="do">## -10.00 péssimo</span></span>
+<span id="cb188-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-9" aria-hidden="true" tabindex="-1"></a><span class="do">## -5.00 ruim</span></span>
+<span id="cb188-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  5.00 bom</span></span>
+<span id="cb188-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  5.00 boa</span></span>
+<span id="cb188-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 10.00 excelente</span></span>
+<span id="cb188-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 10.00 top</span></span>
+<span id="cb188-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Opção 2</span></span>
+<span id="cb188-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Montando o léxico a partir de uma tabela</span></span>
+<span id="cb188-17"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-17" aria-hidden="true" tabindex="-1"></a>tabela <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">header =</span> <span class="cn">FALSE</span>, <span class="at">text =</span> <span class="st">&#39;</span></span>
+<span id="cb188-18"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-18" aria-hidden="true" tabindex="-1"></a><span class="st">péssimo -10</span></span>
+<span id="cb188-19"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-19" aria-hidden="true" tabindex="-1"></a><span class="st">ruim -5</span></span>
+<span id="cb188-20"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-20" aria-hidden="true" tabindex="-1"></a><span class="st">ok 0</span></span>
+<span id="cb188-21"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-21" aria-hidden="true" tabindex="-1"></a><span class="st">bom +5</span></span>
+<span id="cb188-22"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-22" aria-hidden="true" tabindex="-1"></a><span class="st">boa +5</span></span>
+<span id="cb188-23"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-23" aria-hidden="true" tabindex="-1"></a><span class="st">excelente +10</span></span>
+<span id="cb188-24"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-24" aria-hidden="true" tabindex="-1"></a><span class="st">top +10&#39;</span>)</span>
+<span id="cb188-25"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-26"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-26" aria-hidden="true" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">SentimentDictionaryWeighted</span>(tabela[,<span class="dv">1</span>], tabela[,<span class="dv">2</span>]) </span>
+<span id="cb188-27"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-27" aria-hidden="true" tabindex="-1"></a>d</span>
+<span id="cb188-28"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Type: weighted (words with individual scores)</span></span>
+<span id="cb188-29"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-29" aria-hidden="true" tabindex="-1"></a><span class="do">## Intercept: 0</span></span>
+<span id="cb188-30"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-30" aria-hidden="true" tabindex="-1"></a><span class="do">## -10.00 péssimo</span></span>
+<span id="cb188-31"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-31" aria-hidden="true" tabindex="-1"></a><span class="do">## -5.00 ruim</span></span>
+<span id="cb188-32"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  0.00 ok</span></span>
+<span id="cb188-33"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  5.00 bom</span></span>
+<span id="cb188-34"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  5.00 boa</span></span>
+<span id="cb188-35"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-35" aria-hidden="true" tabindex="-1"></a><span class="do">## 10.00 excelente</span></span>
+<span id="cb188-36"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb188-36" aria-hidden="true" tabindex="-1"></a><span class="do">## 10.00 top</span></span></code></pre></div>
+<p>Também é possível utilizar dicionários/léxicos de sentimentos prontos em português.
+É sempre bom lembrar que certos termos em um contexto, podem bem significar outra coisa em outros contextos.
+Por isso há diversidade de dicionários, e sempre deve-se procurar, sempre que possível, utilizar um dicionário que tenha sido criado num contexto parecido ao que vamos utilizar, quando não, criarmos nosso próprio léxico para a ocasião, ou adaptar algum. Além disso, o ideal é sempre validarmos o dicionário.
+O pacote <a href="https://cran.r-project.org/web/packages/lexiconPT/">LexiconPT</a> disponibiliza alguns desses dicionários/léxicos na língua de Camões, alguns com mais de 30 mil termos já catalogados.
+Para padronização, os termos se encontram em minúsculo e sem acentuação, alguns até com emoticons catalogados <code>;)</code>.
+Após a instalação do pacote com <code>install.pacakges("lexiconPT")</code>, vamos carregar a biblioteca/pacote com:</p>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lexiconPT)</span></code></pre></div>
+<p>Para checar se uma palavra específica está presente nos léxicos do <code>LexiconPT</code> e quais pontuações recebe:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-1" aria-hidden="true" tabindex="-1"></a>lexiconPT<span class="sc">::</span><span class="fu">get_word_sentiment</span>(<span class="st">&quot;comemorar&quot;</span>)</span>
+<span id="cb190-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-2" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v2.1</span></span>
+<span id="cb190-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-3" aria-hidden="true" tabindex="-1"></a><span class="do">##           term type polarity</span></span>
+<span id="cb190-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-4" aria-hidden="true" tabindex="-1"></a><span class="do">## 6622 comemorar   vb        0</span></span>
+<span id="cb190-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-5" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-6" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v3.0</span></span>
+<span id="cb190-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-7" aria-hidden="true" tabindex="-1"></a><span class="do">##           term type polarity polarity_revision</span></span>
+<span id="cb190-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 7298 comemorar   vb        0                 A</span></span>
+<span id="cb190-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-9" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-10" aria-hidden="true" tabindex="-1"></a><span class="do">## $sentilex</span></span>
+<span id="cb190-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Word not present in dataset&quot;</span></span>
+<span id="cb190-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-12" aria-hidden="true" tabindex="-1"></a>lexiconPT<span class="sc">::</span><span class="fu">get_word_sentiment</span>(<span class="st">&quot;gritar&quot;</span>)</span>
+<span id="cb190-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-13" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v2.1</span></span>
+<span id="cb190-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-14" aria-hidden="true" tabindex="-1"></a><span class="do">##         term type polarity</span></span>
+<span id="cb190-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 16646 gritar   vb        1</span></span>
+<span id="cb190-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-17"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-17" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v3.0</span></span>
+<span id="cb190-18"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-18" aria-hidden="true" tabindex="-1"></a><span class="do">##         term type polarity polarity_revision</span></span>
+<span id="cb190-19"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 17567 gritar   vb        1                 A</span></span>
+<span id="cb190-20"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-20" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-21"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-21" aria-hidden="true" tabindex="-1"></a><span class="do">## $sentilex</span></span>
+<span id="cb190-22"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Word not present in dataset&quot;</span></span>
+<span id="cb190-23"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-23" aria-hidden="true" tabindex="-1"></a>lexiconPT<span class="sc">::</span><span class="fu">get_word_sentiment</span>(<span class="st">&quot;espernear&quot;</span>)</span>
+<span id="cb190-24"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-24" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v2.1</span></span>
+<span id="cb190-25"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Word not present in dataset&quot;</span></span>
+<span id="cb190-26"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-26" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-27"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-27" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v3.0</span></span>
+<span id="cb190-28"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Word not present in dataset&quot;</span></span>
+<span id="cb190-29"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-29" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-30"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-30" aria-hidden="true" tabindex="-1"></a><span class="do">## $sentilex</span></span>
+<span id="cb190-31"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;Word not present in dataset&quot;</span></span>
+<span id="cb190-32"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-32" aria-hidden="true" tabindex="-1"></a>lexiconPT<span class="sc">::</span><span class="fu">get_word_sentiment</span>(<span class="st">&quot;confrontar&quot;</span>)</span>
+<span id="cb190-33"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-33" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v2.1</span></span>
+<span id="cb190-34"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-34" aria-hidden="true" tabindex="-1"></a><span class="do">##            term type polarity</span></span>
+<span id="cb190-35"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-35" aria-hidden="true" tabindex="-1"></a><span class="do">## 7049 confrontar   vb       -1</span></span>
+<span id="cb190-36"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-36" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-37"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-37" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v3.0</span></span>
+<span id="cb190-38"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-38" aria-hidden="true" tabindex="-1"></a><span class="do">##            term type polarity polarity_revision</span></span>
+<span id="cb190-39"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 7736 confrontar   vb       -1                 A</span></span>
+<span id="cb190-40"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-40" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-41"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-41" aria-hidden="true" tabindex="-1"></a><span class="do">## $sentilex</span></span>
+<span id="cb190-42"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-42" aria-hidden="true" tabindex="-1"></a><span class="do">##            term grammar_category polarity polarity_target</span></span>
+<span id="cb190-43"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-43" aria-hidden="true" tabindex="-1"></a><span class="do">## 1582 confrontar                V        1           N0:N1</span></span>
+<span id="cb190-44"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-44" aria-hidden="true" tabindex="-1"></a><span class="do">##      polarity_classification</span></span>
+<span id="cb190-45"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-45" aria-hidden="true" tabindex="-1"></a><span class="do">## 1582                     MAN</span></span>
+<span id="cb190-46"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-46" aria-hidden="true" tabindex="-1"></a>lexiconPT<span class="sc">::</span><span class="fu">get_word_sentiment</span>(<span class="st">&quot;detestar&quot;</span>)</span>
+<span id="cb190-47"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-47" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v2.1</span></span>
+<span id="cb190-48"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-48" aria-hidden="true" tabindex="-1"></a><span class="do">##           term type polarity</span></span>
+<span id="cb190-49"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-49" aria-hidden="true" tabindex="-1"></a><span class="do">## 10573 detestar   vb        1</span></span>
+<span id="cb190-50"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-50" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-51"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-51" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v3.0</span></span>
+<span id="cb190-52"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-52" aria-hidden="true" tabindex="-1"></a><span class="do">##           term type polarity polarity_revision</span></span>
+<span id="cb190-53"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-53" aria-hidden="true" tabindex="-1"></a><span class="do">## 11314 detestar   vb        1                 A</span></span>
+<span id="cb190-54"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-54" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-55"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-55" aria-hidden="true" tabindex="-1"></a><span class="do">## $sentilex</span></span>
+<span id="cb190-56"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-56" aria-hidden="true" tabindex="-1"></a><span class="do">##          term grammar_category polarity polarity_target polarity_classification</span></span>
+<span id="cb190-57"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-57" aria-hidden="true" tabindex="-1"></a><span class="do">## 2353 detestar                V        0           N0:N1                     MAN</span></span>
+<span id="cb190-58"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-58" aria-hidden="true" tabindex="-1"></a>lexiconPT<span class="sc">::</span><span class="fu">get_word_sentiment</span>(<span class="st">&quot;odiar&quot;</span>)</span>
+<span id="cb190-59"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-59" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v2.1</span></span>
+<span id="cb190-60"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-60" aria-hidden="true" tabindex="-1"></a><span class="do">##        term type polarity</span></span>
+<span id="cb190-61"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-61" aria-hidden="true" tabindex="-1"></a><span class="do">## 22371 odiar   vb        1</span></span>
+<span id="cb190-62"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-62" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-63"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-63" aria-hidden="true" tabindex="-1"></a><span class="do">## $oplexicon_v3.0</span></span>
+<span id="cb190-64"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-64" aria-hidden="true" tabindex="-1"></a><span class="do">##        term type polarity polarity_revision</span></span>
+<span id="cb190-65"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-65" aria-hidden="true" tabindex="-1"></a><span class="do">## 23549 odiar   vb        1                 A</span></span>
+<span id="cb190-66"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-66" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb190-67"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-67" aria-hidden="true" tabindex="-1"></a><span class="do">## $sentilex</span></span>
+<span id="cb190-68"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-68" aria-hidden="true" tabindex="-1"></a><span class="do">##       term grammar_category polarity polarity_target polarity_classification</span></span>
+<span id="cb190-69"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb190-69" aria-hidden="true" tabindex="-1"></a><span class="do">## 5215 odiar                V        0           N0:N1                     MAN</span></span></code></pre></div>
+<p>Para podermos trocar de dicionário de modo fácil, vamos criar um vetor com estes léxicos disponíveis no pacote LexiconPT</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escolhendo manuamente um léxico vamos usar. </span></span>
+<span id="cb191-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-2" aria-hidden="true" tabindex="-1"></a>lex <span class="ot">&lt;-</span> oplexicon_v2<span class="fl">.1</span></span>
+<span id="cb191-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb191-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando o vetor com léxicos</span></span>
+<span id="cb191-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-5" aria-hidden="true" tabindex="-1"></a>lex <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;oplexicon_v2.1&quot;</span>, <span class="st">&quot;oplexicon_v3.0&quot;</span>, <span class="st">&quot;sentiLex_lem_PT02&quot;</span>)</span>
+<span id="cb191-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb191-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-7" aria-hidden="true" tabindex="-1"></a><span class="co"># para que captemos não o nome, mas o conteúdo do dataframe, rodamos o seguinte </span></span>
+<span id="cb191-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-8" aria-hidden="true" tabindex="-1"></a><span class="co"># comando, que pega o segundo item do vetor</span></span>
+<span id="cb191-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-9" aria-hidden="true" tabindex="-1"></a>lexico <span class="ot">&lt;-</span> <span class="fu">eval</span>(<span class="fu">parse</span>(<span class="at">text =</span> lex[<span class="dv">2</span>]))</span>
+<span id="cb191-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-10" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(lexico)</span>
+<span id="cb191-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-11" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;data.frame&#39;:    32191 obs. of  4 variables:</span></span>
+<span id="cb191-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ term             : chr  &quot;=[&quot; &quot;=@&quot; &quot;=p&quot; &quot;=P&quot; ...</span></span>
+<span id="cb191-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ type             : chr  &quot;emot&quot; &quot;emot&quot; &quot;emot&quot; &quot;emot&quot; ...</span></span>
+<span id="cb191-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity         : int  -1 -1 -1 -1 -1 1 1 1 1 -1 ...</span></span>
+<span id="cb191-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb191-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ polarity_revision: chr  &quot;A&quot; &quot;A&quot; &quot;A&quot; &quot;A&quot; ...</span></span></code></pre></div>
+<p>Os dicionários do LexiconPT possuem vários termos duplicados, e isto impossibilita de usá-los diretamente no pacote SentimentAnalysis. Para identificar duplicados usamos o comando <code>duplicated()</code>, que retorna um vetor de mesmo tamanho, com valores lógicos.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;True&quot; indica quantos valores duplicados nós temos</span></span>
+<span id="cb192-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(<span class="fu">duplicated</span>(lexico<span class="sc">$</span>term))</span>
+<span id="cb192-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-3" aria-hidden="true" tabindex="-1"></a><span class="do">##    Mode   FALSE    TRUE </span></span>
+<span id="cb192-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-4" aria-hidden="true" tabindex="-1"></a><span class="do">## logical   31951     240</span></span>
+<span id="cb192-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Se quisermos ver quais os termos duplicados:</span></span>
+<span id="cb192-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-6" aria-hidden="true" tabindex="-1"></a>duplicados <span class="ot">&lt;-</span> lexico<span class="sc">$</span>term[<span class="fu">duplicated</span>(lexico<span class="sc">$</span>term)]</span>
+<span id="cb192-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-7" aria-hidden="true" tabindex="-1"></a>duplicados[<span class="dv">1</span><span class="sc">:</span><span class="dv">35</span>]</span>
+<span id="cb192-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;;)&quot;            &quot;;D&quot;            &quot;;p&quot;            &quot;:(&quot;           </span></span>
+<span id="cb192-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;:)&quot;            &quot;:@&quot;            &quot;:*&quot;            &quot;:P&quot;           </span></span>
+<span id="cb192-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;:x&quot;            &quot;aberrantes&quot;    &quot;academica&quot;     &quot;academicas&quot;   </span></span>
+<span id="cb192-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;academico&quot;     &quot;academicos&quot;    &quot;acoitar&quot;       &quot;acoutar&quot;      </span></span>
+<span id="cb192-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;adultera&quot;      &quot;adulteras&quot;     &quot;adultero&quot;      &quot;adulteros&quot;    </span></span>
+<span id="cb192-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;afinar&quot;        &quot;anacronica&quot;    &quot;anacronicas&quot;   &quot;anacronico&quot;   </span></span>
+<span id="cb192-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;anacronicos&quot;   &quot;anemica&quot;       &quot;anemicas&quot;      &quot;anemico&quot;      </span></span>
+<span id="cb192-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] &quot;anemicos&quot;      &quot;anomalo&quot;       &quot;antiquissima&quot;  &quot;antiquissimas&quot;</span></span>
+<span id="cb192-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb192-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] &quot;antiquissimo&quot;  &quot;antiquissimos&quot; &quot;apedrar&quot;</span></span></code></pre></div>
+<p>Uma solução rápida seria retirar estes termos duplicados, ficando apenas com os termos que apareceram uma única vez. Fazemos isto com a função <code>unique()</code>.</p>
+<p>A função <code>compareDictionaries()</code> compara dois dicionários, mostrando total de palavras únicas e as compartilhadas.</p>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-1" aria-hidden="true" tabindex="-1"></a>dic1 <span class="ot">&lt;-</span> <span class="fu">SentimentDictionary</span>(<span class="fu">c</span>(<span class="st">&quot;incerto&quot;</span>, <span class="st">&quot;possível&quot;</span>, <span class="st">&quot;provável&quot;</span>, <span class="st">&quot;talvez&quot;</span>))</span>
+<span id="cb193-2"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-2" aria-hidden="true" tabindex="-1"></a>dic2 <span class="ot">&lt;-</span> <span class="fu">SentimentDictionary</span>(<span class="fu">c</span>(<span class="st">&quot;preferencialmente&quot;</span>, <span class="st">&quot;pretender&quot;</span>, <span class="st">&quot;provável&quot;</span>))</span>
+<span id="cb193-3"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb193-4"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparando os dicionários</span></span>
+<span id="cb193-5"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-5" aria-hidden="true" tabindex="-1"></a>cmp <span class="ot">&lt;-</span> <span class="fu">compareDictionaries</span>(dic1, dic2)</span>
+<span id="cb193-6"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Comparing: wordlist vs wordlist</span></span>
+<span id="cb193-7"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-7" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb193-8"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Total unique words: 6</span></span>
+<span id="cb193-9"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Matching entries: 1 (0.1666667%)</span></span>
+<span id="cb193-10"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-10" aria-hidden="true" tabindex="-1"></a>cmp</span>
+<span id="cb193-11"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-11" aria-hidden="true" tabindex="-1"></a><span class="do">## $totalUniqueWords</span></span>
+<span id="cb193-12"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 6</span></span>
+<span id="cb193-13"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-13" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb193-14"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-14" aria-hidden="true" tabindex="-1"></a><span class="do">## $totalSameWords</span></span>
+<span id="cb193-15"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 1</span></span>
+<span id="cb193-16"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-16" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb193-17"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-17" aria-hidden="true" tabindex="-1"></a><span class="do">## $ratioSameWords</span></span>
+<span id="cb193-18"><a href="classificação-dicionários-e-análise-de-sentimentos.html#cb193-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] 0.1666667</span></span></code></pre></div>
+</div>
+<div id="SentimentAnalysis-Tidytext" class="section level3 hasAnchor" number="10.2.3">
+<h3><span class="header-section-number">10.2.3</span> Pacote Tidytext<a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Tidytext" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para ver exemplos de análise de sentimentos com princípios Tidy, em inglês:</p>
+<ul>
+<li>ver o capítulo 2 de “Text Mining with R: A Tidy Approach” da Julia Silge <a href="https://www.tidytextmining.com/sentiment.html">link aqui</a>.</li>
+<li>Um exemplo de análise de sentimentos de Harry Potter (há um pacote no Github com sete livros da saga Harry Potter) com o Tidytext, ver <a href="https://cfss.uchicago.edu/notes/harry-potter-exercise/">este link</a>.</li>
+</ul>
+</div>
+<div id="SentimentAnalysis-Quanteda" class="section level3 hasAnchor" number="10.2.4">
+<h3><span class="header-section-number">10.2.4</span> Pacote Quanteda<a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Quanteda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>O Quanteda torna fácil o uso de dicionários, e a análise de sentimentos é um caso de dicionário. Veja aqui a sessão
+<a href="https://quanteda.io/articles/pkgdown/quickstart.html">“Grouping words by dictionary or equivalence class”</a> para se ter uma ideia.</p>
+<p>Por fim, vale dizer que a análise de sentimentos não se resume ao uso de dicionários prontos, havendo toda uma miríade de outras técnicas/ técnicas mistas utilizadas ali, como word embedding, topic models, etc.</p>
+<div class="infobox obra">
+<p><em>EM EXPANSÃO</em>
+Este trecho será expandido</p>
+</div>
+</div>
+</div>
+<div id="dicas-finais-bibliografia-indicada" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Dicas finais: Bibliografia indicada<a href="classificação-dicionários-e-análise-de-sentimentos.html#dicas-finais-bibliografia-indicada" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!-- Para uma visão panorâmica da análise de sentimentos, recomenda-se ver @van2021validitySentAna para as diferentes abordagens, e para ver os diferentes tipos de dicionários, ver @ribeiro2016sentibench. -->
+<!-- para algo mais atualizado, ver capítulos "Naive Bayes and Sentiment Classification" e "Lexicons for Sentiment, Affect, and Connotation" em  -->
+<div class="infobox note">
+<p><strong>Dicas: Análise de Sentimentos</strong></p>
+<ul>
+<li>Em termos teóricos, para saber mais sobre análise de sentimentos, recomendo ver
+- JURAFSKY, Dan.; MARTIN, James H. Speech and Language Processing - An Introduction to Natural Language Processing, Computational Linguistics, and Speech Recognition. 3ª Edição. 2020. especialmente o
+cap.4 <a href="https://web.stanford.edu/~jurafsky/slp3/4.pdf">Naive Bayes and Sentiment Classification</a> para entender os mecanismos de classificação e
+cap.20 <a href="https://web.stanford.edu/~jurafsky/slp3/20.pdf">Lexicons for Sentiment, Affect, and Connotation</a> para entender os diferentes léxicos utilizados.</li>
+<li>Uma boa introdução à lógica da análise de sentimentos, sobre definições e conceitos básicos, problemas, entradas e saídas, e como os resultados podem ser usados na prática, ver:
+<ul>
+<li>LIU, Bing. <a href="https://www.cs.uic.edu/~liub/FBS/NLP-handbook-sentiment-analysis.pdf">Sentiment Analysis and Subjectivity</a>. 2010</li>
+</ul></li>
+<li>Para uma visão mais panorâmica das diferentes abordagens em análise de sentimentos, recomenda-se:
+<ul>
+<li>Wouter van Atteveldt, Mariken A. C. G. van der Velden &amp; Mark Boukes (2021) The Validity of Sentiment Analysis: Comparing Manual Annotation, Crowd-Coding, Dictionary Approaches, and Machine Learning Algorithms, Communication Methods and Measures, 15:2, 121-140, DOI: 10.1080/19312458.2020.1869198 <a href="https://www.tandfonline.com/doi/pdf/10.1080/19312458.2020.1869198">pdf</a></li>
+</ul></li>
+<li>Sobre os diferentes tipos de dicionários/léxicos:
+<ul>
+<li>Ribeiro, F.N., Araújo, M., Gonçalves, P. et al. <a href="%5D(https://arxiv.org/pdf/1512.01818.pdf)">SentiBench - a benchmark comparison of state-of-the-practice sentiment analysis methods</a>. EPJ Data Sci. 5, 23 (2016). <a href="https://doi.org/10.1140/epjds/s13688-016-0085-1" class="uri">https://doi.org/10.1140/epjds/s13688-016-0085-1</a></li>
+</ul></li>
+<li>Para uma lista extensa de bibliografia acerca do tema, ver <a href="https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html">Opinion Mining, Sentiment Analysis, and Opinion Spam Detection</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="text-mining-semantic-parsing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análise-de-redes-sociais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

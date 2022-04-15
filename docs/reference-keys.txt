@@ -148,6 +148,14 @@ coocorrência-de-palavras
 rede-de-palavras-wordnet
 análise-de-semelhanças
 algoritmo-smith_waterman
+classificação-dicionários-e-análise-de-sentimentos
+classificação
+sentiment-analysis
+datasets-de-sentimentosemoções
+SentimentAnalysis
+SentimentAnalysis-Tidytext
+SentimentAnalysis-Quanteda
+dicas-finais-bibliografia-indicada
 análise-de-redes-sociais
 o-pacote-igraph
 clusterização

@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="análise-textual-text-mining.html"/>
-<link rel="next" href="análise-de-redes-sociais.html"/>
+<link rel="next" href="classificação-dicionários-e-análise-de-sentimentos.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -324,50 +324,62 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças<span></span></a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>10</b> Análise de Redes Sociais<span></span></a>
+<li class="chapter" data-level="10" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html"><i class="fa fa-check"></i><b>10</b> Classificação: Dicionários e Análise de Sentimentos<span></span></a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>10.1</b> O pacote Igraph<span></span></a>
+<li class="chapter" data-level="10.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#classificação"><i class="fa fa-check"></i><b>10.1</b> Classificação<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#sentiment-analysis"><i class="fa fa-check"></i><b>10.2</b> Análise de sentimentos (<em>Sentiment Analysis</em>) por meio de dicionário/léxico<span></span></a>
 <ul>
-<li class="chapter" data-level="10.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>10.1.1</b> Clusterização<span></span></a></li>
+<li class="chapter" data-level="10.2.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#datasets-de-sentimentosemoções"><i class="fa fa-check"></i><b>10.2.1</b> Datasets de sentimentos/emoções<span></span></a></li>
+<li class="chapter" data-level="10.2.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis"><i class="fa fa-check"></i><b>10.2.2</b> Pacote SentimentAnalysis<span></span></a></li>
+<li class="chapter" data-level="10.2.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Tidytext"><i class="fa fa-check"></i><b>10.2.3</b> Pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="10.2.4" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Quanteda"><i class="fa fa-check"></i><b>10.2.4</b> Pacote Quanteda<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="10.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>10.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.<span></span></a></li>
-<li class="chapter" data-level="10.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>10.3</b> Redes de palavras<span></span></a></li>
-<li class="chapter" data-level="10.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>10.4</b> Redes de citação<span></span></a></li>
-<li class="chapter" data-level="10.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>10.5</b> Gráfico de centralidade<span></span></a></li>
-<li class="chapter" data-level="10.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>10.6</b> Comunidades<span></span></a></li>
-<li class="chapter" data-level="10.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>10.7</b> Sugestões de links<span></span></a></li>
+<li class="chapter" data-level="10.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#dicas-finais-bibliografia-indicada"><i class="fa fa-check"></i><b>10.3</b> Dicas finais: Bibliografia indicada<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>11</b> Links úteis<span></span></a>
+<li class="chapter" data-level="11" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>11</b> Análise de Redes Sociais<span></span></a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>11.1</b> Humanidades digitais<span></span></a></li>
-<li class="chapter" data-level="11.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>11.2</b> Análise de redes sociais<span></span></a></li>
-<li class="chapter" data-level="11.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>11.3</b> Textos sobre análise textual<span></span></a>
+<li class="chapter" data-level="11.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>11.1</b> O pacote Igraph<span></span></a>
 <ul>
-<li class="chapter" data-level="11.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>11.3.1</b> Sociologia Digital / Sociologia Computacional<span></span></a></li>
+<li class="chapter" data-level="11.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>11.1.1</b> Clusterização<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>11.4</b> Processamento Linguagem Natural (PLN ou NLP)<span></span></a></li>
-<li class="chapter" data-level="11.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>11.5</b> Revistas / Journals acadêmicos<span></span></a></li>
-<li class="chapter" data-level="11.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>11.6</b> Dados Abertos<span></span></a></li>
-<li class="chapter" data-level="11.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>11.7</b> Vídeos<span></span></a></li>
-<li class="chapter" data-level="11.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>11.8</b> Sites / Blogs<span></span></a></li>
-<li class="chapter" data-level="11.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>11.9</b> Organizações<span></span></a></li>
-<li class="chapter" data-level="11.10" data-path="links-úteis.html"><a href="links-úteis.html#podcasts-relacionados-à-digital-humanities"><i class="fa fa-check"></i><b>11.10</b> Podcasts relacionados à Digital Humanities<span></span></a></li>
-<li class="chapter" data-level="11.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>11.11</b> Links Programação<span></span></a>
-<ul>
-<li class="chapter" data-level="11.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>11.11.1</b> R introdução<span></span></a></li>
-<li class="chapter" data-level="11.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>11.11.2</b> R e estatística<span></span></a></li>
-<li class="chapter" data-level="11.11.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>11.11.3</b> R - tópicos específicos<span></span></a></li>
-<li class="chapter" data-level="11.11.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>11.11.4</b> R - avançado<span></span></a></li>
-<li class="chapter" data-level="11.11.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>11.11.5</b> Links Python<span></span></a></li>
-<li class="chapter" data-level="11.11.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>11.11.6</b> Python - tópicos específicos<span></span></a></li>
+<li class="chapter" data-level="11.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>11.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>11.3</b> Redes de palavras<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>11.4</b> Redes de citação<span></span></a></li>
+<li class="chapter" data-level="11.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>11.5</b> Gráfico de centralidade<span></span></a></li>
+<li class="chapter" data-level="11.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>11.6</b> Comunidades<span></span></a></li>
+<li class="chapter" data-level="11.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>11.7</b> Sugestões de links<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>11.12</b> Links de Cursos Online<span></span></a></li>
-<li class="chapter" data-level="11.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>11.13</b> Grupos de discussão/Forum<span></span></a>
+<li class="chapter" data-level="12" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>12</b> Links úteis<span></span></a>
 <ul>
-<li class="chapter" data-level="11.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>11.13.1</b> Telegram<span></span></a></li>
+<li class="chapter" data-level="12.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>12.1</b> Humanidades digitais<span></span></a></li>
+<li class="chapter" data-level="12.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>12.2</b> Análise de redes sociais<span></span></a></li>
+<li class="chapter" data-level="12.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>12.3</b> Textos sobre análise textual<span></span></a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-sociologia-computacional"><i class="fa fa-check"></i><b>12.3.1</b> Sociologia Digital / Sociologia Computacional<span></span></a></li>
 </ul></li>
-<li class="chapter" data-level="11.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>11.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)<span></span></a></li>
-<li class="chapter" data-level="11.15" data-path="links-úteis.html"><a href="links-úteis.html#tm_datasets"><i class="fa fa-check"></i><b>11.15</b> Alguns datasets/databases para análise textual<span></span></a></li>
+<li class="chapter" data-level="12.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>12.4</b> Processamento Linguagem Natural (PLN ou NLP)<span></span></a></li>
+<li class="chapter" data-level="12.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>12.5</b> Revistas / Journals acadêmicos<span></span></a></li>
+<li class="chapter" data-level="12.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>12.6</b> Dados Abertos<span></span></a></li>
+<li class="chapter" data-level="12.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>12.7</b> Vídeos<span></span></a></li>
+<li class="chapter" data-level="12.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>12.8</b> Sites / Blogs<span></span></a></li>
+<li class="chapter" data-level="12.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>12.9</b> Organizações<span></span></a></li>
+<li class="chapter" data-level="12.10" data-path="links-úteis.html"><a href="links-úteis.html#podcasts-relacionados-à-digital-humanities"><i class="fa fa-check"></i><b>12.10</b> Podcasts relacionados à Digital Humanities<span></span></a></li>
+<li class="chapter" data-level="12.11" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>12.11</b> Links Programação<span></span></a>
+<ul>
+<li class="chapter" data-level="12.11.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>12.11.1</b> R introdução<span></span></a></li>
+<li class="chapter" data-level="12.11.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>12.11.2</b> R e estatística<span></span></a></li>
+<li class="chapter" data-level="12.11.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>12.11.3</b> R - tópicos específicos<span></span></a></li>
+<li class="chapter" data-level="12.11.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>12.11.4</b> R - avançado<span></span></a></li>
+<li class="chapter" data-level="12.11.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>12.11.5</b> Links Python<span></span></a></li>
+<li class="chapter" data-level="12.11.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>12.11.6</b> Python - tópicos específicos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.12" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>12.12</b> Links de Cursos Online<span></span></a></li>
+<li class="chapter" data-level="12.13" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>12.13</b> Grupos de discussão/Forum<span></span></a>
+<ul>
+<li class="chapter" data-level="12.13.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>12.13.1</b> Telegram<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12.14" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>12.14</b> Links de folhas de dicas (<em>Cheat-sheets</em>)<span></span></a></li>
+<li class="chapter" data-level="12.15" data-path="links-úteis.html"><a href="links-úteis.html#tm_datasets"><i class="fa fa-check"></i><b>12.15</b> Alguns datasets/databases para análise textual<span></span></a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -470,148 +482,147 @@ UD vem de <a href="https://universaldependencies.org/introduction.html">universa
 <span id="cb172-2"><a href="text-mining-semantic-parsing.html#cb172-2" aria-hidden="true" tabindex="-1"></a>txt.anotado2 <span class="ot">&lt;-</span> <span class="fu">udpipe_annotate</span>(udmodel_ptBosque, </span>
 <span id="cb172-3"><a href="text-mining-semantic-parsing.html#cb172-3" aria-hidden="true" tabindex="-1"></a>                              <span class="at">x =</span> texto2,  <span class="at">tagger =</span> <span class="st">&quot;default&quot;</span> , <span class="at">parser =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">%&gt;%</span> </span>
 <span id="cb172-4"><a href="text-mining-semantic-parsing.html#cb172-4" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>()</span>
-<span id="cb172-5"><a href="text-mining-semantic-parsing.html#cb172-5" aria-hidden="true" tabindex="-1"></a><span class="do">## This looks like you restarted your R session which has invalidated the model object, trying now to reload the model again from the file at /home/alisson/Documentos/Programação/R/analise_textual_sociologia/portuguese-bosque-ud-2.5-191206.udpipe in order to do the annotation.</span></span>
-<span id="cb172-6"><a href="text-mining-semantic-parsing.html#cb172-6" aria-hidden="true" tabindex="-1"></a>txt.anotado2</span>
-<span id="cb172-7"><a href="text-mining-semantic-parsing.html#cb172-7" aria-hidden="true" tabindex="-1"></a><span class="do">##    doc_id paragraph_id sentence_id</span></span>
-<span id="cb172-8"><a href="text-mining-semantic-parsing.html#cb172-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    doc1            1           1</span></span>
-<span id="cb172-9"><a href="text-mining-semantic-parsing.html#cb172-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    doc1            1           1</span></span>
-<span id="cb172-10"><a href="text-mining-semantic-parsing.html#cb172-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    doc1            1           1</span></span>
-<span id="cb172-11"><a href="text-mining-semantic-parsing.html#cb172-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    doc1            1           1</span></span>
-<span id="cb172-12"><a href="text-mining-semantic-parsing.html#cb172-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    doc1            1           1</span></span>
-<span id="cb172-13"><a href="text-mining-semantic-parsing.html#cb172-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 6    doc1            1           1</span></span>
-<span id="cb172-14"><a href="text-mining-semantic-parsing.html#cb172-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 7    doc1            1           1</span></span>
-<span id="cb172-15"><a href="text-mining-semantic-parsing.html#cb172-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 8    doc1            1           1</span></span>
-<span id="cb172-16"><a href="text-mining-semantic-parsing.html#cb172-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 9    doc1            1           1</span></span>
-<span id="cb172-17"><a href="text-mining-semantic-parsing.html#cb172-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 10   doc1            1           1</span></span>
-<span id="cb172-18"><a href="text-mining-semantic-parsing.html#cb172-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 11   doc1            1           1</span></span>
-<span id="cb172-19"><a href="text-mining-semantic-parsing.html#cb172-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 12   doc1            1           1</span></span>
-<span id="cb172-20"><a href="text-mining-semantic-parsing.html#cb172-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 13   doc1            1           1</span></span>
-<span id="cb172-21"><a href="text-mining-semantic-parsing.html#cb172-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 14   doc1            1           1</span></span>
-<span id="cb172-22"><a href="text-mining-semantic-parsing.html#cb172-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 15   doc1            1           1</span></span>
-<span id="cb172-23"><a href="text-mining-semantic-parsing.html#cb172-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 16   doc1            1           1</span></span>
-<span id="cb172-24"><a href="text-mining-semantic-parsing.html#cb172-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 17   doc1            1           1</span></span>
-<span id="cb172-25"><a href="text-mining-semantic-parsing.html#cb172-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 18   doc1            1           1</span></span>
-<span id="cb172-26"><a href="text-mining-semantic-parsing.html#cb172-26" aria-hidden="true" tabindex="-1"></a><span class="do">## 19   doc1            1           1</span></span>
-<span id="cb172-27"><a href="text-mining-semantic-parsing.html#cb172-27" aria-hidden="true" tabindex="-1"></a><span class="do">## 20   doc1            1           1</span></span>
-<span id="cb172-28"><a href="text-mining-semantic-parsing.html#cb172-28" aria-hidden="true" tabindex="-1"></a><span class="do">## 21   doc1            1           1</span></span>
-<span id="cb172-29"><a href="text-mining-semantic-parsing.html#cb172-29" aria-hidden="true" tabindex="-1"></a><span class="do">## 22   doc1            1           1</span></span>
-<span id="cb172-30"><a href="text-mining-semantic-parsing.html#cb172-30" aria-hidden="true" tabindex="-1"></a><span class="do">## 23   doc1            1           1</span></span>
-<span id="cb172-31"><a href="text-mining-semantic-parsing.html#cb172-31" aria-hidden="true" tabindex="-1"></a><span class="do">## 24   doc1            1           1</span></span>
-<span id="cb172-32"><a href="text-mining-semantic-parsing.html#cb172-32" aria-hidden="true" tabindex="-1"></a><span class="do">## 25   doc1            1           1</span></span>
-<span id="cb172-33"><a href="text-mining-semantic-parsing.html#cb172-33" aria-hidden="true" tabindex="-1"></a><span class="do">## 26   doc1            1           1</span></span>
-<span id="cb172-34"><a href="text-mining-semantic-parsing.html#cb172-34" aria-hidden="true" tabindex="-1"></a><span class="do">## 27   doc1            1           1</span></span>
-<span id="cb172-35"><a href="text-mining-semantic-parsing.html#cb172-35" aria-hidden="true" tabindex="-1"></a><span class="do">##                                                                                                                          sentence</span></span>
-<span id="cb172-36"><a href="text-mining-semantic-parsing.html#cb172-36" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-37"><a href="text-mining-semantic-parsing.html#cb172-37" aria-hidden="true" tabindex="-1"></a><span class="do">## 2  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-38"><a href="text-mining-semantic-parsing.html#cb172-38" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-39"><a href="text-mining-semantic-parsing.html#cb172-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-40"><a href="text-mining-semantic-parsing.html#cb172-40" aria-hidden="true" tabindex="-1"></a><span class="do">## 5  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-41"><a href="text-mining-semantic-parsing.html#cb172-41" aria-hidden="true" tabindex="-1"></a><span class="do">## 6  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-42"><a href="text-mining-semantic-parsing.html#cb172-42" aria-hidden="true" tabindex="-1"></a><span class="do">## 7  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-43"><a href="text-mining-semantic-parsing.html#cb172-43" aria-hidden="true" tabindex="-1"></a><span class="do">## 8  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-44"><a href="text-mining-semantic-parsing.html#cb172-44" aria-hidden="true" tabindex="-1"></a><span class="do">## 9  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-45"><a href="text-mining-semantic-parsing.html#cb172-45" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-46"><a href="text-mining-semantic-parsing.html#cb172-46" aria-hidden="true" tabindex="-1"></a><span class="do">## 11 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-47"><a href="text-mining-semantic-parsing.html#cb172-47" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-48"><a href="text-mining-semantic-parsing.html#cb172-48" aria-hidden="true" tabindex="-1"></a><span class="do">## 13 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-49"><a href="text-mining-semantic-parsing.html#cb172-49" aria-hidden="true" tabindex="-1"></a><span class="do">## 14 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-50"><a href="text-mining-semantic-parsing.html#cb172-50" aria-hidden="true" tabindex="-1"></a><span class="do">## 15 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-51"><a href="text-mining-semantic-parsing.html#cb172-51" aria-hidden="true" tabindex="-1"></a><span class="do">## 16 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-52"><a href="text-mining-semantic-parsing.html#cb172-52" aria-hidden="true" tabindex="-1"></a><span class="do">## 17 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-53"><a href="text-mining-semantic-parsing.html#cb172-53" aria-hidden="true" tabindex="-1"></a><span class="do">## 18 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-54"><a href="text-mining-semantic-parsing.html#cb172-54" aria-hidden="true" tabindex="-1"></a><span class="do">## 19 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-55"><a href="text-mining-semantic-parsing.html#cb172-55" aria-hidden="true" tabindex="-1"></a><span class="do">## 20 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-56"><a href="text-mining-semantic-parsing.html#cb172-56" aria-hidden="true" tabindex="-1"></a><span class="do">## 21 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-57"><a href="text-mining-semantic-parsing.html#cb172-57" aria-hidden="true" tabindex="-1"></a><span class="do">## 22 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-58"><a href="text-mining-semantic-parsing.html#cb172-58" aria-hidden="true" tabindex="-1"></a><span class="do">## 23 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-59"><a href="text-mining-semantic-parsing.html#cb172-59" aria-hidden="true" tabindex="-1"></a><span class="do">## 24 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-60"><a href="text-mining-semantic-parsing.html#cb172-60" aria-hidden="true" tabindex="-1"></a><span class="do">## 25 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-61"><a href="text-mining-semantic-parsing.html#cb172-61" aria-hidden="true" tabindex="-1"></a><span class="do">## 26 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-62"><a href="text-mining-semantic-parsing.html#cb172-62" aria-hidden="true" tabindex="-1"></a><span class="do">## 27 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
-<span id="cb172-63"><a href="text-mining-semantic-parsing.html#cb172-63" aria-hidden="true" tabindex="-1"></a><span class="do">##    token_id            token           lemma upos xpos</span></span>
-<span id="cb172-64"><a href="text-mining-semantic-parsing.html#cb172-64" aria-hidden="true" tabindex="-1"></a><span class="do">## 1         1                O               o  DET &lt;NA&gt;</span></span>
-<span id="cb172-65"><a href="text-mining-semantic-parsing.html#cb172-65" aria-hidden="true" tabindex="-1"></a><span class="do">## 2         2       fundamento      fundamento NOUN &lt;NA&gt;</span></span>
-<span id="cb172-66"><a href="text-mining-semantic-parsing.html#cb172-66" aria-hidden="true" tabindex="-1"></a><span class="do">## 3         3      psicológico     psicológico  ADJ &lt;NA&gt;</span></span>
-<span id="cb172-67"><a href="text-mining-semantic-parsing.html#cb172-67" aria-hidden="true" tabindex="-1"></a><span class="do">## 4         4            sobre           sobre  ADP &lt;NA&gt;</span></span>
-<span id="cb172-68"><a href="text-mining-semantic-parsing.html#cb172-68" aria-hidden="true" tabindex="-1"></a><span class="do">## 5         5                o               o  DET &lt;NA&gt;</span></span>
-<span id="cb172-69"><a href="text-mining-semantic-parsing.html#cb172-69" aria-hidden="true" tabindex="-1"></a><span class="do">## 6         6             qual            qual PRON &lt;NA&gt;</span></span>
-<span id="cb172-70"><a href="text-mining-semantic-parsing.html#cb172-70" aria-hidden="true" tabindex="-1"></a><span class="do">## 7         7               se              se PRON &lt;NA&gt;</span></span>
-<span id="cb172-71"><a href="text-mining-semantic-parsing.html#cb172-71" aria-hidden="true" tabindex="-1"></a><span class="do">## 8         8            eleva          elevar VERB &lt;NA&gt;</span></span>
-<span id="cb172-72"><a href="text-mining-semantic-parsing.html#cb172-72" aria-hidden="true" tabindex="-1"></a><span class="do">## 9         9                o               o  DET &lt;NA&gt;</span></span>
-<span id="cb172-73"><a href="text-mining-semantic-parsing.html#cb172-73" aria-hidden="true" tabindex="-1"></a><span class="do">## 10       10             tipo            tipo NOUN &lt;NA&gt;</span></span>
-<span id="cb172-74"><a href="text-mining-semantic-parsing.html#cb172-74" aria-hidden="true" tabindex="-1"></a><span class="do">## 11    11-12              das            &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span></span>
-<span id="cb172-75"><a href="text-mining-semantic-parsing.html#cb172-75" aria-hidden="true" tabindex="-1"></a><span class="do">## 12       11               de              de  ADP &lt;NA&gt;</span></span>
-<span id="cb172-76"><a href="text-mining-semantic-parsing.html#cb172-76" aria-hidden="true" tabindex="-1"></a><span class="do">## 13       12               as               o  DET &lt;NA&gt;</span></span>
-<span id="cb172-77"><a href="text-mining-semantic-parsing.html#cb172-77" aria-hidden="true" tabindex="-1"></a><span class="do">## 14       13 individualidades individualidade NOUN &lt;NA&gt;</span></span>
-<span id="cb172-78"><a href="text-mining-semantic-parsing.html#cb172-78" aria-hidden="true" tabindex="-1"></a><span class="do">## 15    14-15               da            &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span></span>
-<span id="cb172-79"><a href="text-mining-semantic-parsing.html#cb172-79" aria-hidden="true" tabindex="-1"></a><span class="do">## 16       14               de              de  ADP &lt;NA&gt;</span></span>
-<span id="cb172-80"><a href="text-mining-semantic-parsing.html#cb172-80" aria-hidden="true" tabindex="-1"></a><span class="do">## 17       15                a               o  DET &lt;NA&gt;</span></span>
-<span id="cb172-81"><a href="text-mining-semantic-parsing.html#cb172-81" aria-hidden="true" tabindex="-1"></a><span class="do">## 18       16           cidade          cidade NOUN &lt;NA&gt;</span></span>
-<span id="cb172-82"><a href="text-mining-semantic-parsing.html#cb172-82" aria-hidden="true" tabindex="-1"></a><span class="do">## 19       17           grande          grande  ADJ &lt;NA&gt;</span></span>
-<span id="cb172-83"><a href="text-mining-semantic-parsing.html#cb172-83" aria-hidden="true" tabindex="-1"></a><span class="do">## 20       18                é             ser  AUX &lt;NA&gt;</span></span>
-<span id="cb172-84"><a href="text-mining-semantic-parsing.html#cb172-84" aria-hidden="true" tabindex="-1"></a><span class="do">## 21       19                a               o  DET &lt;NA&gt;</span></span>
-<span id="cb172-85"><a href="text-mining-semantic-parsing.html#cb172-85" aria-hidden="true" tabindex="-1"></a><span class="do">## 22       20   intensificação  intensificação NOUN &lt;NA&gt;</span></span>
-<span id="cb172-86"><a href="text-mining-semantic-parsing.html#cb172-86" aria-hidden="true" tabindex="-1"></a><span class="do">## 23    21-22               da            &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span></span>
-<span id="cb172-87"><a href="text-mining-semantic-parsing.html#cb172-87" aria-hidden="true" tabindex="-1"></a><span class="do">## 24       21               de              de  ADP &lt;NA&gt;</span></span>
-<span id="cb172-88"><a href="text-mining-semantic-parsing.html#cb172-88" aria-hidden="true" tabindex="-1"></a><span class="do">## 25       22                a               o  DET &lt;NA&gt;</span></span>
-<span id="cb172-89"><a href="text-mining-semantic-parsing.html#cb172-89" aria-hidden="true" tabindex="-1"></a><span class="do">## 26       23             vida            vida NOUN &lt;NA&gt;</span></span>
-<span id="cb172-90"><a href="text-mining-semantic-parsing.html#cb172-90" aria-hidden="true" tabindex="-1"></a><span class="do">## 27       24          nervosa         nervoso  ADJ &lt;NA&gt;</span></span>
-<span id="cb172-91"><a href="text-mining-semantic-parsing.html#cb172-91" aria-hidden="true" tabindex="-1"></a><span class="do">##                                                     feats head_token_id dep_rel</span></span>
-<span id="cb172-92"><a href="text-mining-semantic-parsing.html#cb172-92" aria-hidden="true" tabindex="-1"></a><span class="do">## 1       Definite=Def|Gender=Masc|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-93"><a href="text-mining-semantic-parsing.html#cb172-93" aria-hidden="true" tabindex="-1"></a><span class="do">## 2                                 Gender=Masc|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-94"><a href="text-mining-semantic-parsing.html#cb172-94" aria-hidden="true" tabindex="-1"></a><span class="do">## 3                                 Gender=Masc|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-95"><a href="text-mining-semantic-parsing.html#cb172-95" aria-hidden="true" tabindex="-1"></a><span class="do">## 4                                                    &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-96"><a href="text-mining-semantic-parsing.html#cb172-96" aria-hidden="true" tabindex="-1"></a><span class="do">## 5                    Gender=Masc|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-97"><a href="text-mining-semantic-parsing.html#cb172-97" aria-hidden="true" tabindex="-1"></a><span class="do">## 6                    Gender=Masc|Number=Sing|PronType=Rel          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-98"><a href="text-mining-semantic-parsing.html#cb172-98" aria-hidden="true" tabindex="-1"></a><span class="do">## 7  Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-99"><a href="text-mining-semantic-parsing.html#cb172-99" aria-hidden="true" tabindex="-1"></a><span class="do">## 8    Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-100"><a href="text-mining-semantic-parsing.html#cb172-100" aria-hidden="true" tabindex="-1"></a><span class="do">## 9       Definite=Def|Gender=Masc|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-101"><a href="text-mining-semantic-parsing.html#cb172-101" aria-hidden="true" tabindex="-1"></a><span class="do">## 10                                Gender=Masc|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-102"><a href="text-mining-semantic-parsing.html#cb172-102" aria-hidden="true" tabindex="-1"></a><span class="do">## 11                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-103"><a href="text-mining-semantic-parsing.html#cb172-103" aria-hidden="true" tabindex="-1"></a><span class="do">## 12                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-104"><a href="text-mining-semantic-parsing.html#cb172-104" aria-hidden="true" tabindex="-1"></a><span class="do">## 13       Definite=Def|Gender=Fem|Number=Plur|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-105"><a href="text-mining-semantic-parsing.html#cb172-105" aria-hidden="true" tabindex="-1"></a><span class="do">## 14                                 Gender=Fem|Number=Plur          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-106"><a href="text-mining-semantic-parsing.html#cb172-106" aria-hidden="true" tabindex="-1"></a><span class="do">## 15                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-107"><a href="text-mining-semantic-parsing.html#cb172-107" aria-hidden="true" tabindex="-1"></a><span class="do">## 16                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-108"><a href="text-mining-semantic-parsing.html#cb172-108" aria-hidden="true" tabindex="-1"></a><span class="do">## 17       Definite=Def|Gender=Fem|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-109"><a href="text-mining-semantic-parsing.html#cb172-109" aria-hidden="true" tabindex="-1"></a><span class="do">## 18                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-110"><a href="text-mining-semantic-parsing.html#cb172-110" aria-hidden="true" tabindex="-1"></a><span class="do">## 19                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-111"><a href="text-mining-semantic-parsing.html#cb172-111" aria-hidden="true" tabindex="-1"></a><span class="do">## 20  Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-112"><a href="text-mining-semantic-parsing.html#cb172-112" aria-hidden="true" tabindex="-1"></a><span class="do">## 21       Definite=Def|Gender=Fem|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-113"><a href="text-mining-semantic-parsing.html#cb172-113" aria-hidden="true" tabindex="-1"></a><span class="do">## 22                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-114"><a href="text-mining-semantic-parsing.html#cb172-114" aria-hidden="true" tabindex="-1"></a><span class="do">## 23                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-115"><a href="text-mining-semantic-parsing.html#cb172-115" aria-hidden="true" tabindex="-1"></a><span class="do">## 24                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-116"><a href="text-mining-semantic-parsing.html#cb172-116" aria-hidden="true" tabindex="-1"></a><span class="do">## 25       Definite=Def|Gender=Fem|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-117"><a href="text-mining-semantic-parsing.html#cb172-117" aria-hidden="true" tabindex="-1"></a><span class="do">## 26                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-118"><a href="text-mining-semantic-parsing.html#cb172-118" aria-hidden="true" tabindex="-1"></a><span class="do">## 27                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
-<span id="cb172-119"><a href="text-mining-semantic-parsing.html#cb172-119" aria-hidden="true" tabindex="-1"></a><span class="do">##    deps            misc</span></span>
-<span id="cb172-120"><a href="text-mining-semantic-parsing.html#cb172-120" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-121"><a href="text-mining-semantic-parsing.html#cb172-121" aria-hidden="true" tabindex="-1"></a><span class="do">## 2  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-122"><a href="text-mining-semantic-parsing.html#cb172-122" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-123"><a href="text-mining-semantic-parsing.html#cb172-123" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-124"><a href="text-mining-semantic-parsing.html#cb172-124" aria-hidden="true" tabindex="-1"></a><span class="do">## 5  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-125"><a href="text-mining-semantic-parsing.html#cb172-125" aria-hidden="true" tabindex="-1"></a><span class="do">## 6  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-126"><a href="text-mining-semantic-parsing.html#cb172-126" aria-hidden="true" tabindex="-1"></a><span class="do">## 7  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-127"><a href="text-mining-semantic-parsing.html#cb172-127" aria-hidden="true" tabindex="-1"></a><span class="do">## 8  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-128"><a href="text-mining-semantic-parsing.html#cb172-128" aria-hidden="true" tabindex="-1"></a><span class="do">## 9  &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-129"><a href="text-mining-semantic-parsing.html#cb172-129" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-130"><a href="text-mining-semantic-parsing.html#cb172-130" aria-hidden="true" tabindex="-1"></a><span class="do">## 11 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-131"><a href="text-mining-semantic-parsing.html#cb172-131" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-132"><a href="text-mining-semantic-parsing.html#cb172-132" aria-hidden="true" tabindex="-1"></a><span class="do">## 13 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-133"><a href="text-mining-semantic-parsing.html#cb172-133" aria-hidden="true" tabindex="-1"></a><span class="do">## 14 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-134"><a href="text-mining-semantic-parsing.html#cb172-134" aria-hidden="true" tabindex="-1"></a><span class="do">## 15 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-135"><a href="text-mining-semantic-parsing.html#cb172-135" aria-hidden="true" tabindex="-1"></a><span class="do">## 16 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-136"><a href="text-mining-semantic-parsing.html#cb172-136" aria-hidden="true" tabindex="-1"></a><span class="do">## 17 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-137"><a href="text-mining-semantic-parsing.html#cb172-137" aria-hidden="true" tabindex="-1"></a><span class="do">## 18 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-138"><a href="text-mining-semantic-parsing.html#cb172-138" aria-hidden="true" tabindex="-1"></a><span class="do">## 19 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-139"><a href="text-mining-semantic-parsing.html#cb172-139" aria-hidden="true" tabindex="-1"></a><span class="do">## 20 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-140"><a href="text-mining-semantic-parsing.html#cb172-140" aria-hidden="true" tabindex="-1"></a><span class="do">## 21 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-141"><a href="text-mining-semantic-parsing.html#cb172-141" aria-hidden="true" tabindex="-1"></a><span class="do">## 22 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-142"><a href="text-mining-semantic-parsing.html#cb172-142" aria-hidden="true" tabindex="-1"></a><span class="do">## 23 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-143"><a href="text-mining-semantic-parsing.html#cb172-143" aria-hidden="true" tabindex="-1"></a><span class="do">## 24 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-144"><a href="text-mining-semantic-parsing.html#cb172-144" aria-hidden="true" tabindex="-1"></a><span class="do">## 25 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-145"><a href="text-mining-semantic-parsing.html#cb172-145" aria-hidden="true" tabindex="-1"></a><span class="do">## 26 &lt;NA&gt;            &lt;NA&gt;</span></span>
-<span id="cb172-146"><a href="text-mining-semantic-parsing.html#cb172-146" aria-hidden="true" tabindex="-1"></a><span class="do">## 27 &lt;NA&gt; SpacesAfter=\\n</span></span></code></pre></div>
+<span id="cb172-5"><a href="text-mining-semantic-parsing.html#cb172-5" aria-hidden="true" tabindex="-1"></a>txt.anotado2</span>
+<span id="cb172-6"><a href="text-mining-semantic-parsing.html#cb172-6" aria-hidden="true" tabindex="-1"></a><span class="do">##    doc_id paragraph_id sentence_id</span></span>
+<span id="cb172-7"><a href="text-mining-semantic-parsing.html#cb172-7" aria-hidden="true" tabindex="-1"></a><span class="do">## 1    doc1            1           1</span></span>
+<span id="cb172-8"><a href="text-mining-semantic-parsing.html#cb172-8" aria-hidden="true" tabindex="-1"></a><span class="do">## 2    doc1            1           1</span></span>
+<span id="cb172-9"><a href="text-mining-semantic-parsing.html#cb172-9" aria-hidden="true" tabindex="-1"></a><span class="do">## 3    doc1            1           1</span></span>
+<span id="cb172-10"><a href="text-mining-semantic-parsing.html#cb172-10" aria-hidden="true" tabindex="-1"></a><span class="do">## 4    doc1            1           1</span></span>
+<span id="cb172-11"><a href="text-mining-semantic-parsing.html#cb172-11" aria-hidden="true" tabindex="-1"></a><span class="do">## 5    doc1            1           1</span></span>
+<span id="cb172-12"><a href="text-mining-semantic-parsing.html#cb172-12" aria-hidden="true" tabindex="-1"></a><span class="do">## 6    doc1            1           1</span></span>
+<span id="cb172-13"><a href="text-mining-semantic-parsing.html#cb172-13" aria-hidden="true" tabindex="-1"></a><span class="do">## 7    doc1            1           1</span></span>
+<span id="cb172-14"><a href="text-mining-semantic-parsing.html#cb172-14" aria-hidden="true" tabindex="-1"></a><span class="do">## 8    doc1            1           1</span></span>
+<span id="cb172-15"><a href="text-mining-semantic-parsing.html#cb172-15" aria-hidden="true" tabindex="-1"></a><span class="do">## 9    doc1            1           1</span></span>
+<span id="cb172-16"><a href="text-mining-semantic-parsing.html#cb172-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 10   doc1            1           1</span></span>
+<span id="cb172-17"><a href="text-mining-semantic-parsing.html#cb172-17" aria-hidden="true" tabindex="-1"></a><span class="do">## 11   doc1            1           1</span></span>
+<span id="cb172-18"><a href="text-mining-semantic-parsing.html#cb172-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 12   doc1            1           1</span></span>
+<span id="cb172-19"><a href="text-mining-semantic-parsing.html#cb172-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 13   doc1            1           1</span></span>
+<span id="cb172-20"><a href="text-mining-semantic-parsing.html#cb172-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 14   doc1            1           1</span></span>
+<span id="cb172-21"><a href="text-mining-semantic-parsing.html#cb172-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 15   doc1            1           1</span></span>
+<span id="cb172-22"><a href="text-mining-semantic-parsing.html#cb172-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 16   doc1            1           1</span></span>
+<span id="cb172-23"><a href="text-mining-semantic-parsing.html#cb172-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 17   doc1            1           1</span></span>
+<span id="cb172-24"><a href="text-mining-semantic-parsing.html#cb172-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 18   doc1            1           1</span></span>
+<span id="cb172-25"><a href="text-mining-semantic-parsing.html#cb172-25" aria-hidden="true" tabindex="-1"></a><span class="do">## 19   doc1            1           1</span></span>
+<span id="cb172-26"><a href="text-mining-semantic-parsing.html#cb172-26" aria-hidden="true" tabindex="-1"></a><span class="do">## 20   doc1            1           1</span></span>
+<span id="cb172-27"><a href="text-mining-semantic-parsing.html#cb172-27" aria-hidden="true" tabindex="-1"></a><span class="do">## 21   doc1            1           1</span></span>
+<span id="cb172-28"><a href="text-mining-semantic-parsing.html#cb172-28" aria-hidden="true" tabindex="-1"></a><span class="do">## 22   doc1            1           1</span></span>
+<span id="cb172-29"><a href="text-mining-semantic-parsing.html#cb172-29" aria-hidden="true" tabindex="-1"></a><span class="do">## 23   doc1            1           1</span></span>
+<span id="cb172-30"><a href="text-mining-semantic-parsing.html#cb172-30" aria-hidden="true" tabindex="-1"></a><span class="do">## 24   doc1            1           1</span></span>
+<span id="cb172-31"><a href="text-mining-semantic-parsing.html#cb172-31" aria-hidden="true" tabindex="-1"></a><span class="do">## 25   doc1            1           1</span></span>
+<span id="cb172-32"><a href="text-mining-semantic-parsing.html#cb172-32" aria-hidden="true" tabindex="-1"></a><span class="do">## 26   doc1            1           1</span></span>
+<span id="cb172-33"><a href="text-mining-semantic-parsing.html#cb172-33" aria-hidden="true" tabindex="-1"></a><span class="do">## 27   doc1            1           1</span></span>
+<span id="cb172-34"><a href="text-mining-semantic-parsing.html#cb172-34" aria-hidden="true" tabindex="-1"></a><span class="do">##                                                                                                                          sentence</span></span>
+<span id="cb172-35"><a href="text-mining-semantic-parsing.html#cb172-35" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-36"><a href="text-mining-semantic-parsing.html#cb172-36" aria-hidden="true" tabindex="-1"></a><span class="do">## 2  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-37"><a href="text-mining-semantic-parsing.html#cb172-37" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-38"><a href="text-mining-semantic-parsing.html#cb172-38" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-39"><a href="text-mining-semantic-parsing.html#cb172-39" aria-hidden="true" tabindex="-1"></a><span class="do">## 5  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-40"><a href="text-mining-semantic-parsing.html#cb172-40" aria-hidden="true" tabindex="-1"></a><span class="do">## 6  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-41"><a href="text-mining-semantic-parsing.html#cb172-41" aria-hidden="true" tabindex="-1"></a><span class="do">## 7  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-42"><a href="text-mining-semantic-parsing.html#cb172-42" aria-hidden="true" tabindex="-1"></a><span class="do">## 8  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-43"><a href="text-mining-semantic-parsing.html#cb172-43" aria-hidden="true" tabindex="-1"></a><span class="do">## 9  O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-44"><a href="text-mining-semantic-parsing.html#cb172-44" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-45"><a href="text-mining-semantic-parsing.html#cb172-45" aria-hidden="true" tabindex="-1"></a><span class="do">## 11 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-46"><a href="text-mining-semantic-parsing.html#cb172-46" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-47"><a href="text-mining-semantic-parsing.html#cb172-47" aria-hidden="true" tabindex="-1"></a><span class="do">## 13 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-48"><a href="text-mining-semantic-parsing.html#cb172-48" aria-hidden="true" tabindex="-1"></a><span class="do">## 14 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-49"><a href="text-mining-semantic-parsing.html#cb172-49" aria-hidden="true" tabindex="-1"></a><span class="do">## 15 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-50"><a href="text-mining-semantic-parsing.html#cb172-50" aria-hidden="true" tabindex="-1"></a><span class="do">## 16 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-51"><a href="text-mining-semantic-parsing.html#cb172-51" aria-hidden="true" tabindex="-1"></a><span class="do">## 17 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-52"><a href="text-mining-semantic-parsing.html#cb172-52" aria-hidden="true" tabindex="-1"></a><span class="do">## 18 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-53"><a href="text-mining-semantic-parsing.html#cb172-53" aria-hidden="true" tabindex="-1"></a><span class="do">## 19 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-54"><a href="text-mining-semantic-parsing.html#cb172-54" aria-hidden="true" tabindex="-1"></a><span class="do">## 20 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-55"><a href="text-mining-semantic-parsing.html#cb172-55" aria-hidden="true" tabindex="-1"></a><span class="do">## 21 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-56"><a href="text-mining-semantic-parsing.html#cb172-56" aria-hidden="true" tabindex="-1"></a><span class="do">## 22 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-57"><a href="text-mining-semantic-parsing.html#cb172-57" aria-hidden="true" tabindex="-1"></a><span class="do">## 23 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-58"><a href="text-mining-semantic-parsing.html#cb172-58" aria-hidden="true" tabindex="-1"></a><span class="do">## 24 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-59"><a href="text-mining-semantic-parsing.html#cb172-59" aria-hidden="true" tabindex="-1"></a><span class="do">## 25 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-60"><a href="text-mining-semantic-parsing.html#cb172-60" aria-hidden="true" tabindex="-1"></a><span class="do">## 26 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-61"><a href="text-mining-semantic-parsing.html#cb172-61" aria-hidden="true" tabindex="-1"></a><span class="do">## 27 O fundamento psicológico sobre o qual se eleva o tipo das individualidades da cidade grande é a intensificação da vida nervosa</span></span>
+<span id="cb172-62"><a href="text-mining-semantic-parsing.html#cb172-62" aria-hidden="true" tabindex="-1"></a><span class="do">##    token_id            token           lemma upos xpos</span></span>
+<span id="cb172-63"><a href="text-mining-semantic-parsing.html#cb172-63" aria-hidden="true" tabindex="-1"></a><span class="do">## 1         1                O               o  DET &lt;NA&gt;</span></span>
+<span id="cb172-64"><a href="text-mining-semantic-parsing.html#cb172-64" aria-hidden="true" tabindex="-1"></a><span class="do">## 2         2       fundamento      fundamento NOUN &lt;NA&gt;</span></span>
+<span id="cb172-65"><a href="text-mining-semantic-parsing.html#cb172-65" aria-hidden="true" tabindex="-1"></a><span class="do">## 3         3      psicológico     psicológico  ADJ &lt;NA&gt;</span></span>
+<span id="cb172-66"><a href="text-mining-semantic-parsing.html#cb172-66" aria-hidden="true" tabindex="-1"></a><span class="do">## 4         4            sobre           sobre  ADP &lt;NA&gt;</span></span>
+<span id="cb172-67"><a href="text-mining-semantic-parsing.html#cb172-67" aria-hidden="true" tabindex="-1"></a><span class="do">## 5         5                o               o  DET &lt;NA&gt;</span></span>
+<span id="cb172-68"><a href="text-mining-semantic-parsing.html#cb172-68" aria-hidden="true" tabindex="-1"></a><span class="do">## 6         6             qual            qual PRON &lt;NA&gt;</span></span>
+<span id="cb172-69"><a href="text-mining-semantic-parsing.html#cb172-69" aria-hidden="true" tabindex="-1"></a><span class="do">## 7         7               se              se PRON &lt;NA&gt;</span></span>
+<span id="cb172-70"><a href="text-mining-semantic-parsing.html#cb172-70" aria-hidden="true" tabindex="-1"></a><span class="do">## 8         8            eleva          elevar VERB &lt;NA&gt;</span></span>
+<span id="cb172-71"><a href="text-mining-semantic-parsing.html#cb172-71" aria-hidden="true" tabindex="-1"></a><span class="do">## 9         9                o               o  DET &lt;NA&gt;</span></span>
+<span id="cb172-72"><a href="text-mining-semantic-parsing.html#cb172-72" aria-hidden="true" tabindex="-1"></a><span class="do">## 10       10             tipo            tipo NOUN &lt;NA&gt;</span></span>
+<span id="cb172-73"><a href="text-mining-semantic-parsing.html#cb172-73" aria-hidden="true" tabindex="-1"></a><span class="do">## 11    11-12              das            &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span></span>
+<span id="cb172-74"><a href="text-mining-semantic-parsing.html#cb172-74" aria-hidden="true" tabindex="-1"></a><span class="do">## 12       11               de              de  ADP &lt;NA&gt;</span></span>
+<span id="cb172-75"><a href="text-mining-semantic-parsing.html#cb172-75" aria-hidden="true" tabindex="-1"></a><span class="do">## 13       12               as               o  DET &lt;NA&gt;</span></span>
+<span id="cb172-76"><a href="text-mining-semantic-parsing.html#cb172-76" aria-hidden="true" tabindex="-1"></a><span class="do">## 14       13 individualidades individualidade NOUN &lt;NA&gt;</span></span>
+<span id="cb172-77"><a href="text-mining-semantic-parsing.html#cb172-77" aria-hidden="true" tabindex="-1"></a><span class="do">## 15    14-15               da            &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span></span>
+<span id="cb172-78"><a href="text-mining-semantic-parsing.html#cb172-78" aria-hidden="true" tabindex="-1"></a><span class="do">## 16       14               de              de  ADP &lt;NA&gt;</span></span>
+<span id="cb172-79"><a href="text-mining-semantic-parsing.html#cb172-79" aria-hidden="true" tabindex="-1"></a><span class="do">## 17       15                a               o  DET &lt;NA&gt;</span></span>
+<span id="cb172-80"><a href="text-mining-semantic-parsing.html#cb172-80" aria-hidden="true" tabindex="-1"></a><span class="do">## 18       16           cidade          cidade NOUN &lt;NA&gt;</span></span>
+<span id="cb172-81"><a href="text-mining-semantic-parsing.html#cb172-81" aria-hidden="true" tabindex="-1"></a><span class="do">## 19       17           grande          grande  ADJ &lt;NA&gt;</span></span>
+<span id="cb172-82"><a href="text-mining-semantic-parsing.html#cb172-82" aria-hidden="true" tabindex="-1"></a><span class="do">## 20       18                é             ser  AUX &lt;NA&gt;</span></span>
+<span id="cb172-83"><a href="text-mining-semantic-parsing.html#cb172-83" aria-hidden="true" tabindex="-1"></a><span class="do">## 21       19                a               o  DET &lt;NA&gt;</span></span>
+<span id="cb172-84"><a href="text-mining-semantic-parsing.html#cb172-84" aria-hidden="true" tabindex="-1"></a><span class="do">## 22       20   intensificação  intensificação NOUN &lt;NA&gt;</span></span>
+<span id="cb172-85"><a href="text-mining-semantic-parsing.html#cb172-85" aria-hidden="true" tabindex="-1"></a><span class="do">## 23    21-22               da            &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;</span></span>
+<span id="cb172-86"><a href="text-mining-semantic-parsing.html#cb172-86" aria-hidden="true" tabindex="-1"></a><span class="do">## 24       21               de              de  ADP &lt;NA&gt;</span></span>
+<span id="cb172-87"><a href="text-mining-semantic-parsing.html#cb172-87" aria-hidden="true" tabindex="-1"></a><span class="do">## 25       22                a               o  DET &lt;NA&gt;</span></span>
+<span id="cb172-88"><a href="text-mining-semantic-parsing.html#cb172-88" aria-hidden="true" tabindex="-1"></a><span class="do">## 26       23             vida            vida NOUN &lt;NA&gt;</span></span>
+<span id="cb172-89"><a href="text-mining-semantic-parsing.html#cb172-89" aria-hidden="true" tabindex="-1"></a><span class="do">## 27       24          nervosa         nervoso  ADJ &lt;NA&gt;</span></span>
+<span id="cb172-90"><a href="text-mining-semantic-parsing.html#cb172-90" aria-hidden="true" tabindex="-1"></a><span class="do">##                                                     feats head_token_id dep_rel</span></span>
+<span id="cb172-91"><a href="text-mining-semantic-parsing.html#cb172-91" aria-hidden="true" tabindex="-1"></a><span class="do">## 1       Definite=Def|Gender=Masc|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-92"><a href="text-mining-semantic-parsing.html#cb172-92" aria-hidden="true" tabindex="-1"></a><span class="do">## 2                                 Gender=Masc|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-93"><a href="text-mining-semantic-parsing.html#cb172-93" aria-hidden="true" tabindex="-1"></a><span class="do">## 3                                 Gender=Masc|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-94"><a href="text-mining-semantic-parsing.html#cb172-94" aria-hidden="true" tabindex="-1"></a><span class="do">## 4                                                    &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-95"><a href="text-mining-semantic-parsing.html#cb172-95" aria-hidden="true" tabindex="-1"></a><span class="do">## 5                    Gender=Masc|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-96"><a href="text-mining-semantic-parsing.html#cb172-96" aria-hidden="true" tabindex="-1"></a><span class="do">## 6                    Gender=Masc|Number=Sing|PronType=Rel          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-97"><a href="text-mining-semantic-parsing.html#cb172-97" aria-hidden="true" tabindex="-1"></a><span class="do">## 7  Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-98"><a href="text-mining-semantic-parsing.html#cb172-98" aria-hidden="true" tabindex="-1"></a><span class="do">## 8    Mood=Ind|Number=Sing|Person=3|Tense=Imp|VerbForm=Fin          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-99"><a href="text-mining-semantic-parsing.html#cb172-99" aria-hidden="true" tabindex="-1"></a><span class="do">## 9       Definite=Def|Gender=Masc|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-100"><a href="text-mining-semantic-parsing.html#cb172-100" aria-hidden="true" tabindex="-1"></a><span class="do">## 10                                Gender=Masc|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-101"><a href="text-mining-semantic-parsing.html#cb172-101" aria-hidden="true" tabindex="-1"></a><span class="do">## 11                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-102"><a href="text-mining-semantic-parsing.html#cb172-102" aria-hidden="true" tabindex="-1"></a><span class="do">## 12                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-103"><a href="text-mining-semantic-parsing.html#cb172-103" aria-hidden="true" tabindex="-1"></a><span class="do">## 13       Definite=Def|Gender=Fem|Number=Plur|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-104"><a href="text-mining-semantic-parsing.html#cb172-104" aria-hidden="true" tabindex="-1"></a><span class="do">## 14                                 Gender=Fem|Number=Plur          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-105"><a href="text-mining-semantic-parsing.html#cb172-105" aria-hidden="true" tabindex="-1"></a><span class="do">## 15                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-106"><a href="text-mining-semantic-parsing.html#cb172-106" aria-hidden="true" tabindex="-1"></a><span class="do">## 16                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-107"><a href="text-mining-semantic-parsing.html#cb172-107" aria-hidden="true" tabindex="-1"></a><span class="do">## 17       Definite=Def|Gender=Fem|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-108"><a href="text-mining-semantic-parsing.html#cb172-108" aria-hidden="true" tabindex="-1"></a><span class="do">## 18                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-109"><a href="text-mining-semantic-parsing.html#cb172-109" aria-hidden="true" tabindex="-1"></a><span class="do">## 19                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-110"><a href="text-mining-semantic-parsing.html#cb172-110" aria-hidden="true" tabindex="-1"></a><span class="do">## 20  Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-111"><a href="text-mining-semantic-parsing.html#cb172-111" aria-hidden="true" tabindex="-1"></a><span class="do">## 21       Definite=Def|Gender=Fem|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-112"><a href="text-mining-semantic-parsing.html#cb172-112" aria-hidden="true" tabindex="-1"></a><span class="do">## 22                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-113"><a href="text-mining-semantic-parsing.html#cb172-113" aria-hidden="true" tabindex="-1"></a><span class="do">## 23                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-114"><a href="text-mining-semantic-parsing.html#cb172-114" aria-hidden="true" tabindex="-1"></a><span class="do">## 24                                                   &lt;NA&gt;          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-115"><a href="text-mining-semantic-parsing.html#cb172-115" aria-hidden="true" tabindex="-1"></a><span class="do">## 25       Definite=Def|Gender=Fem|Number=Sing|PronType=Art          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-116"><a href="text-mining-semantic-parsing.html#cb172-116" aria-hidden="true" tabindex="-1"></a><span class="do">## 26                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-117"><a href="text-mining-semantic-parsing.html#cb172-117" aria-hidden="true" tabindex="-1"></a><span class="do">## 27                                 Gender=Fem|Number=Sing          &lt;NA&gt;    &lt;NA&gt;</span></span>
+<span id="cb172-118"><a href="text-mining-semantic-parsing.html#cb172-118" aria-hidden="true" tabindex="-1"></a><span class="do">##    deps            misc</span></span>
+<span id="cb172-119"><a href="text-mining-semantic-parsing.html#cb172-119" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-120"><a href="text-mining-semantic-parsing.html#cb172-120" aria-hidden="true" tabindex="-1"></a><span class="do">## 2  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-121"><a href="text-mining-semantic-parsing.html#cb172-121" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-122"><a href="text-mining-semantic-parsing.html#cb172-122" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-123"><a href="text-mining-semantic-parsing.html#cb172-123" aria-hidden="true" tabindex="-1"></a><span class="do">## 5  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-124"><a href="text-mining-semantic-parsing.html#cb172-124" aria-hidden="true" tabindex="-1"></a><span class="do">## 6  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-125"><a href="text-mining-semantic-parsing.html#cb172-125" aria-hidden="true" tabindex="-1"></a><span class="do">## 7  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-126"><a href="text-mining-semantic-parsing.html#cb172-126" aria-hidden="true" tabindex="-1"></a><span class="do">## 8  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-127"><a href="text-mining-semantic-parsing.html#cb172-127" aria-hidden="true" tabindex="-1"></a><span class="do">## 9  &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-128"><a href="text-mining-semantic-parsing.html#cb172-128" aria-hidden="true" tabindex="-1"></a><span class="do">## 10 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-129"><a href="text-mining-semantic-parsing.html#cb172-129" aria-hidden="true" tabindex="-1"></a><span class="do">## 11 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-130"><a href="text-mining-semantic-parsing.html#cb172-130" aria-hidden="true" tabindex="-1"></a><span class="do">## 12 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-131"><a href="text-mining-semantic-parsing.html#cb172-131" aria-hidden="true" tabindex="-1"></a><span class="do">## 13 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-132"><a href="text-mining-semantic-parsing.html#cb172-132" aria-hidden="true" tabindex="-1"></a><span class="do">## 14 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-133"><a href="text-mining-semantic-parsing.html#cb172-133" aria-hidden="true" tabindex="-1"></a><span class="do">## 15 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-134"><a href="text-mining-semantic-parsing.html#cb172-134" aria-hidden="true" tabindex="-1"></a><span class="do">## 16 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-135"><a href="text-mining-semantic-parsing.html#cb172-135" aria-hidden="true" tabindex="-1"></a><span class="do">## 17 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-136"><a href="text-mining-semantic-parsing.html#cb172-136" aria-hidden="true" tabindex="-1"></a><span class="do">## 18 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-137"><a href="text-mining-semantic-parsing.html#cb172-137" aria-hidden="true" tabindex="-1"></a><span class="do">## 19 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-138"><a href="text-mining-semantic-parsing.html#cb172-138" aria-hidden="true" tabindex="-1"></a><span class="do">## 20 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-139"><a href="text-mining-semantic-parsing.html#cb172-139" aria-hidden="true" tabindex="-1"></a><span class="do">## 21 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-140"><a href="text-mining-semantic-parsing.html#cb172-140" aria-hidden="true" tabindex="-1"></a><span class="do">## 22 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-141"><a href="text-mining-semantic-parsing.html#cb172-141" aria-hidden="true" tabindex="-1"></a><span class="do">## 23 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-142"><a href="text-mining-semantic-parsing.html#cb172-142" aria-hidden="true" tabindex="-1"></a><span class="do">## 24 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-143"><a href="text-mining-semantic-parsing.html#cb172-143" aria-hidden="true" tabindex="-1"></a><span class="do">## 25 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-144"><a href="text-mining-semantic-parsing.html#cb172-144" aria-hidden="true" tabindex="-1"></a><span class="do">## 26 &lt;NA&gt;            &lt;NA&gt;</span></span>
+<span id="cb172-145"><a href="text-mining-semantic-parsing.html#cb172-145" aria-hidden="true" tabindex="-1"></a><span class="do">## 27 &lt;NA&gt; SpacesAfter=\\n</span></span></code></pre></div>
 <div class="infobox note">
 <p><strong>Dicas POST - Part-of-Speech Tagging</strong></p>
 <ul>
@@ -680,8 +691,7 @@ As notas foram separadas por pessoa, partido, bloco parlamentar, função na CPI
 <span id="cb178-4"><a href="text-mining-semantic-parsing.html#cb178-4" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(nome <span class="sc">==</span> <span class="fu">unique</span>(NotasTaq<span class="sc">$</span>nome)[<span class="dv">2</span>]) <span class="sc">%&gt;%</span> <span class="fu">select</span>(fala) <span class="sc">%&gt;%</span></span>
 <span id="cb178-5"><a href="text-mining-semantic-parsing.html#cb178-5" aria-hidden="true" tabindex="-1"></a><span class="fu">paste0</span>()</span>
 <span id="cb178-6"><a href="text-mining-semantic-parsing.html#cb178-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb178-7"><a href="text-mining-semantic-parsing.html#cb178-7" aria-hidden="true" tabindex="-1"></a>NT.ud <span class="ot">&lt;-</span> <span class="fu">udpipe_annotate</span>(udmodel_ptBosque, <span class="at">x =</span> falas) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span>
-<span id="cb178-8"><a href="text-mining-semantic-parsing.html#cb178-8" aria-hidden="true" tabindex="-1"></a><span class="do">## This looks like you restarted your R session which has invalidated the model object, trying now to reload the model again from the file at /home/alisson/Documentos/Programação/R/analise_textual_sociologia/portuguese-bosque-ud-2.5-191206.udpipe in order to do the annotation.</span></span></code></pre></div>
+<span id="cb178-7"><a href="text-mining-semantic-parsing.html#cb178-7" aria-hidden="true" tabindex="-1"></a>NT.ud <span class="ot">&lt;-</span> <span class="fu">udpipe_annotate</span>(udmodel_ptBosque, <span class="at">x =</span> falas) <span class="sc">%&gt;%</span> <span class="fu">as.data.frame</span>()</span></code></pre></div>
 <p>Podemos fazer uma frequência básica</p>
 <div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="text-mining-semantic-parsing.html#cb179-1" aria-hidden="true" tabindex="-1"></a>NT.ud.lemma <span class="ot">&lt;-</span> NT.ud <span class="sc">%&gt;%</span> <span class="fu">filter</span>(upos <span class="sc">==</span> <span class="st">&quot;ADJ&quot;</span>) <span class="sc">%&gt;%</span> <span class="fu">select</span>(lemma)</span></code></pre></div>
 <div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="text-mining-semantic-parsing.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pegando apenas substantivos (noun) da coluna upos</span></span>
@@ -693,7 +703,7 @@ As notas foram separadas por pessoa, partido, bloco parlamentar, função na CPI
 <span id="cb180-7"><a href="text-mining-semantic-parsing.html#cb180-7" aria-hidden="true" tabindex="-1"></a>                <span class="co"># pegando os 25 casos mais frequentes </span></span>
 <span id="cb180-8"><a href="text-mining-semantic-parsing.html#cb180-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">data =</span> <span class="fu">head</span>(estatisticasTexto, <span class="dv">25</span>), <span class="at">col =</span> <span class="st">&quot;indianred&quot;</span>, </span>
 <span id="cb180-9"><a href="text-mining-semantic-parsing.html#cb180-9" aria-hidden="true" tabindex="-1"></a>                <span class="at">main =</span> <span class="st">&quot;Substantivos mais frequentes do depoente&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Frequência&quot;</span>)</span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-169-1.png" width="672" /></p>
 <p>Perceba que há imprecisões: “Sr.” é pronome de tratamento, mas figura como substantivo.</p>
 </div>
 <div id="rede-de-palavras-wordnet" class="section level3 hasAnchor" number="9.2.2">
@@ -712,7 +722,7 @@ As notas foram separadas por pessoa, partido, bloco parlamentar, função na CPI
 <span id="cb181-11"><a href="text-mining-semantic-parsing.html#cb181-11" aria-hidden="true" tabindex="-1"></a><span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">+</span></span>
 <span id="cb181-12"><a href="text-mining-semantic-parsing.html#cb181-12" aria-hidden="true" tabindex="-1"></a><span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Coocorrência dentro da sentença&quot;</span>, </span>
 <span id="cb181-13"><a href="text-mining-semantic-parsing.html#cb181-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">subtitle =</span> <span class="st">&quot;60 substantivos, adjetivos e verbos no depoimento </span><span class="sc">\n</span><span class="st">de Dominguetti na CPI da Pandemia&quot;</span>)</span></code></pre></div>
-<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-171-1.png" width="672" /></p>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-170-1.png" width="672" /></p>
 <!-- # ```{r, collapse=TRUE} -->
 <!-- # NT.cooc <- cooccurrence(NT.ud = subset(NT.ud, upos %in% c("NOUN", "ADJ")),  -->
 <!-- #                      term = "lemma",  -->
@@ -792,7 +802,7 @@ O pacote <a href="https://cran.r-project.org/web/packages/text.alignment/index.h
         </div>
       </div>
 <a href="análise-textual-text-mining.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="análise-de-redes-sociais.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="classificação-dicionários-e-análise-de-sentimentos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
