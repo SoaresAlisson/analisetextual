@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>12 Apêndice: Exemplo Análise - CPI da Pandemia | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="12 Apêndice: Exemplo Análise - CPI da Pandemia | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="12 Apêndice: Exemplo Análise - CPI da Pandemia | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="análise-de-redes-sociais.html"/>
+<link rel="next" href="pré-processamento.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li><a href="objetivos-deste-manual.html#objetivos-deste-manual">Objetivos deste manual<span></span></a>
+<ul>
+<li><a href="objetivos-deste-manual.html#plano-do-livro">Plano do livro<span></span></a></li>
+</ul></li>
+<li><a href="intro.html#intro">Introdução<span></span></a>
+<ul>
+<li><a href="intro.html#HD">O termo “humanidade digitais”<span></span></a></li>
+<li><a href="intro.html#fluxo-de-trabalho">Fluxo de trabalho<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann<span></span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-das-correntes-na-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências das correntes na filosofia<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exGoogleTrends"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ExFakesNewsMundo"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização<span></span></a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador<span></span></a></li>
+<li class="chapter" data-level="2.10" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ex.-determinantes-sociais-do-florescimento-da-cultura-incel"><i class="fa fa-check"></i><b>2.10</b> Ex.: Determinantes sociais do florescimento da cultura Incel<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML<span></span></a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex<span></span></a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex<span></span></a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html<span></span></a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#scaping"><i class="fa fa-check"></i><b>4.1</b> Sequências de scaping<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#coment"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else<span></span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else<span></span></a></li>
+<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores<span></span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)<span></span></a></li>
+<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos<span></span></a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais<span></span></a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos<span></span></a></li>
+<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_outros"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições<span></span></a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops<span></span></a></li>
+<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop<span></span></a></li>
+<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#nvim-r"><i class="fa fa-check"></i><b>5.2.1</b> NVIM-R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)<span></span></a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (vector)<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)<span></span></a></li>
+<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tm-dtm"><i class="fa fa-check"></i><b>5.4.4</b> Gerando um DTM com o pacote TM<span></span></a></li>
+<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidytext-dtm"><i class="fa fa-check"></i><b>5.4.5</b> Gerando DTM com o pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lista"><i class="fa fa-check"></i><b>5.4.6</b> Listas (<em>list</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.7</b> Data Frames<span></span></a></li>
+<li class="chapter" data-level="5.4.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.8</b> Considerações finais sobre estrutura de dados<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-instalando-via-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: instalando via linha de comando<span></span></a></li>
+<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Modo gráfico<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code><span></span></a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes<span></span></a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles<span></span></a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.3</b> Dplyr: Verbos (ou comandos)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora<span></span></a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequencia-de-datas-no-r"><i class="fa fa-check"></i><b>5.7.1</b> Gerando uma sequencia de datas no R<span></span></a></li>
+<li class="chapter" data-level="5.7.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate"><i class="fa fa-check"></i><b>5.7.2</b> Lubridate: facilitando manipulação de datas<span></span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.7.3</b> Converter data em nome por extenso do mês<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#links-e-dicas"><i class="fa fa-check"></i><b>5.8</b> Links e Dicas<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep<span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()<span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?<span></span></a></li>
+<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code><span></span></a></li>
+<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex<span></span></a></li>
+<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> Normalização com stringr<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#baseplots"><i class="fa fa-check"></i><b>7.1</b> Base plots<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2<span></span></a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-aes"><i class="fa fa-check"></i><b>7.4.1</b> ggplot: nível aes<span></span></a></li>
+<li class="chapter" data-level="7.4.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-geom"><i class="fa fa-check"></i><b>7.4.2</b> ggplot: Nível geom<span></span></a></li>
+<li class="chapter" data-level="7.4.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-facet_"><i class="fa fa-check"></i><b>7.4.3</b> ggplot: nível facet_<span></span></a></li>
+<li class="chapter" data-level="7.4.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-stat"><i class="fa fa-check"></i><b>7.4.4</b> ggplot: nível stat<span></span></a></li>
+<li class="chapter" data-level="7.4.5" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-sistema-de-coordenadas"><i class="fa fa-check"></i><b>7.4.5</b> ggplot: nível sistema de coordenadas<span></span></a></li>
+<li class="chapter" data-level="7.4.6" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores-no-ggplot"><i class="fa fa-check"></i><b>7.4.6</b> Cores no ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-ggplot"><i class="fa fa-check"></i><b>7.4.7</b> Dicas ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.8" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-outros-pacotes-gráficos"><i class="fa fa-check"></i><b>7.4.8</b> Dicas outros pacotes gráficos<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#introdução"><i class="fa fa-check"></i><b>8.1</b> Introdução<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.2</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.3</b> Abordagem <em>Bag of words</em><span></span></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.3.1</b> Frequência de palavras/termos e Ngrams<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stopwords"><i class="fa fa-check"></i><b>8.4</b> Remoção de palavra vazia (<em>stopwords</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#criando-lista-com-stopwords"><i class="fa fa-check"></i><b>8.4.1</b> Criando lista com stopwords<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.5</b> Estemização (<em>stemming</em>) e lematização<span></span></a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemming"><i class="fa fa-check"></i><b>8.5.1</b> Estemização<span></span></a></li>
+<li class="chapter" data-level="8.5.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lemma"><i class="fa fa-check"></i><b>8.5.2</b> Lematização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordcloud"><i class="fa fa-check"></i><b>8.6</b> Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#kwic"><i class="fa fa-check"></i><b>8.7</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html"><i class="fa fa-check"></i><b>9</b> Text mining: Semantic Parsing<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#pos---part-of-speech-tagging"><i class="fa fa-check"></i><b>9.1</b> POS - Part-of-speech tagging<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#udpipe"><i class="fa fa-check"></i><b>9.2</b> Pacote UDPipe<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>9.2.1</b> Coocorrência de palavras<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>9.2.2</b> Rede de palavras (<em>wordnet</em>)<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html"><i class="fa fa-check"></i><b>10</b> Classificação: Dicionários e Análise de Sentimentos<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#classificação"><i class="fa fa-check"></i><b>10.1</b> Classificação<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#sentiment-analysis"><i class="fa fa-check"></i><b>10.2</b> Análise de sentimentos (<em>Sentiment Analysis</em>) por meio de dicionário/léxico<span></span></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#datasets-de-sentimentosemoções"><i class="fa fa-check"></i><b>10.2.1</b> Datasets de sentimentos/emoções<span></span></a></li>
+<li class="chapter" data-level="10.2.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis"><i class="fa fa-check"></i><b>10.2.2</b> Pacote SentimentAnalysis<span></span></a></li>
+<li class="chapter" data-level="10.2.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Tidytext"><i class="fa fa-check"></i><b>10.2.3</b> Pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="10.2.4" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Quanteda"><i class="fa fa-check"></i><b>10.2.4</b> Pacote Quanteda<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#dicas-finais-bibliografia-indicada"><i class="fa fa-check"></i><b>10.3</b> Dicas finais: Bibliografia indicada<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>11</b> Análise de Redes Sociais<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>11.1</b> O pacote Igraph<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>11.1.1</b> Clusterização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>11.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>11.3</b> Redes de palavras<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>11.4</b> Redes de citação<span></span></a></li>
+<li class="chapter" data-level="11.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>11.5</b> Gráfico de centralidade<span></span></a></li>
+<li class="chapter" data-level="11.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>11.6</b> Comunidades<span></span></a></li>
+<li class="chapter" data-level="11.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>11.7</b> Sugestões de links<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="apêndice-exemplo-análise---cpi-da-pandemia.html"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html"><i class="fa fa-check"></i><b>12</b> Apêndice: Exemplo Análise - CPI da Pandemia<span></span></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="apêndice-exemplo-análise---cpi-da-pandemia.html"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#introdução-1"><i class="fa fa-check"></i><b>12.1</b> Introdução<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="pré-processamento.html"><a href="pré-processamento.html"><i class="fa fa-check"></i><b>13</b> Pré-processamento<span></span></a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="pré-processamento.html"><a href="pré-processamento.html#pré-processamento-substituição-de-abreviaturas"><i class="fa fa-check"></i><b>13.1</b> Pré-processamento: substituição de abreviaturas<span></span></a></li>
+<li class="chapter" data-level="13.2" data-path="pré-processamento.html"><a href="pré-processamento.html#primeiras-observações"><i class="fa fa-check"></i><b>13.2</b> Primeiras observações<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="entes.html"><a href="entes.html"><i class="fa fa-check"></i><b>14</b> Entes<span></span></a></li>
+<li class="chapter" data-level="15" data-path="palavras-chave-em-contexto---kwic.html"><a href="palavras-chave-em-contexto---kwic.html"><i class="fa fa-check"></i><b>15</b> Palavras chave em contexto - KWIC<span></span></a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="palavras-chave-em-contexto---kwic.html"><a href="palavras-chave-em-contexto---kwic.html#opção-1-pegando-apenas-os-senadores"><i class="fa fa-check"></i><b>15.1</b> Opção 1: pegando apenas os senadores<span></span></a></li>
+<li class="chapter" data-level="15.2" data-path="palavras-chave-em-contexto---kwic.html"><a href="palavras-chave-em-contexto---kwic.html#opção-2-somente-senadores-a-partir-do-site-do-senado"><i class="fa fa-check"></i><b>15.2</b> Opção 2: Somente senadores, a partir do site do Senado<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="wordcloud---nuvem-de-palavras.html"><a href="wordcloud---nuvem-de-palavras.html"><i class="fa fa-check"></i><b>16</b> wordcloud - Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="17" data-path="tf-idf-dos-senadores.html"><a href="tf-idf-dos-senadores.html"><i class="fa fa-check"></i><b>17</b> TF-IDF dos Senadores<span></span></a></li>
+<li class="chapter" data-level="18" data-path="dicionário.html"><a href="dicionário.html"><i class="fa fa-check"></i><b>18</b> Dicionário<span></span></a></li>
+<li class="chapter" data-level="19" data-path="modelagem-de-tópicos.html"><a href="modelagem-de-tópicos.html"><i class="fa fa-check"></i><b>19</b> Modelagem de tópicos<span></span></a></li>
+<li class="chapter" data-level="20" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>20</b> Apêndice: Datasets<span></span></a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="datasets.html"><a href="datasets.html#tm_datasets"><i class="fa fa-check"></i><b>20.1</b> Alguns datasets/databases para análise textual<span></span></a></li>
+<li class="chapter" data-level="20.2" data-path="datasets.html"><a href="datasets.html#pacotes-r-com-datasets"><i class="fa fa-check"></i><b>20.2</b> Pacotes R com datasets<span></span></a></li>
+<li class="chapter" data-level="20.3" data-path="datasets.html"><a href="datasets.html#datasets-em-sites-diversos"><i class="fa fa-check"></i><b>20.3</b> Datasets em sites diversos:<span></span></a></li>
+<li class="chapter" data-level="20.4" data-path="datasets.html"><a href="datasets.html#datasets-no-kaggle"><i class="fa fa-check"></i><b>20.4</b> Datasets no <span>Kaggle</span>:<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>21</b> Links úteis<span></span></a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>21.1</b> Humanidades digitais<span></span></a></li>
+<li class="chapter" data-level="21.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>21.2</b> Análise de redes sociais<span></span></a></li>
+<li class="chapter" data-level="21.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>21.3</b> Textos sobre análise textual<span></span></a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-ciências-sociais-computacionais"><i class="fa fa-check"></i><b>21.3.1</b> Sociologia Digital / Ciências Sociais Computacionais<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>21.4</b> Processamento Linguagem Natural (PLN ou NLP)<span></span></a></li>
+<li class="chapter" data-level="21.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>21.5</b> Revistas / Journals acadêmicos<span></span></a></li>
+<li class="chapter" data-level="21.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>21.6</b> Dados Abertos<span></span></a></li>
+<li class="chapter" data-level="21.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>21.7</b> Vídeos<span></span></a></li>
+<li class="chapter" data-level="21.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>21.8</b> Sites / Blogs<span></span></a></li>
+<li class="chapter" data-level="21.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>21.9</b> Organizações<span></span></a></li>
+<li class="chapter" data-level="21.10" data-path="links-úteis.html"><a href="links-úteis.html#estatística"><i class="fa fa-check"></i><b>21.10</b> Estatística<span></span></a></li>
+<li class="chapter" data-level="21.11" data-path="links-úteis.html"><a href="links-úteis.html#podcasts"><i class="fa fa-check"></i><b>21.11</b> Podcasts<span></span></a></li>
+<li class="chapter" data-level="21.12" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>21.12</b> Links Programação<span></span></a>
+<ul>
+<li class="chapter" data-level="21.12.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>21.12.1</b> R introdução<span></span></a></li>
+<li class="chapter" data-level="21.12.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>21.12.2</b> R e estatística<span></span></a></li>
+<li class="chapter" data-level="21.12.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>21.12.3</b> R - tópicos específicos<span></span></a></li>
+<li class="chapter" data-level="21.12.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>21.12.4</b> R - avançado<span></span></a></li>
+<li class="chapter" data-level="21.12.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>21.12.5</b> Links Python<span></span></a></li>
+<li class="chapter" data-level="21.12.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>21.12.6</b> Python - tópicos específicos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.13" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>21.13</b> Links de Cursos Online<span></span></a></li>
+<li class="chapter" data-level="21.14" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>21.14</b> Grupos de discussão/Forum<span></span></a>
+<ul>
+<li class="chapter" data-level="21.14.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>21.14.1</b> Telegram<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.15" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>21.15</b> Links de folhas de dicas (<em>Cheat-sheets</em>)<span></span></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="apêndice-exemplo-análise---cpi-da-pandemia" class="section level1 hasAnchor" number="12">
+<h1><span class="header-section-number">12</span> Apêndice: Exemplo Análise - CPI da Pandemia<a href="apêndice-exemplo-análise---cpi-da-pandemia.html#apêndice-exemplo-análise---cpi-da-pandemia" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!-- Há duas versões deste arquivo. um na pasta Notas taquigrafias e e outra no paste análise textual, sociologiai -->
+<!-- << preprocessamento: /retirar pontuação/stemizar/ substituir abreviaturas -->
+<p>Apresento aqui um exemplo de análise possível utilizando várias técnicas de análise textual.</p>
+<div id="introdução-1" class="section level2 hasAnchor" number="12.1">
+<h2><span class="header-section-number">12.1</span> Introdução<a href="apêndice-exemplo-análise---cpi-da-pandemia.html#introdução-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Atenção:</strong> O texto a seguir não tem o intuito de ser uma análise da CPI da Pandemia, mas sim de servir de breve tutorial, de fornecer ideias de uso de algumas das ferramentas disponíveis para análise textual, que podem permitir análises posteriores mais apuradas por quem se interessar pelo tema da CPI.
+Utilizamos aqui a base de dados feita a partir das notas taquigráficas das reuniões da CPI da pandemia, ocorrida no ano de 2021.
+Confira o <a href="https://github.com/SoaresAlisson/NotasTaquigraficas">readme</a>.
+<!-- As Notas Taquigráficas da CPI da Pandemia foram estruturadas em um dataframe no formato .rds do R: [Todas as notas da CPI da Pandemia](https://github.com/SoaresAlisson/NotasTaquigraficas/raw/master/rds/NT_todas_normalizado.rds). -->
+<!-- **Atenção:** O texto a seguir não tem o intuito de ser uma análise da CPI, mas sim de servir de breve tutorial, de fornecer ideias de uso de algumas das ferramentas disponíveis para análise textual, para análises posteriores mais apuradas por quem se interessar pelo tema da CPI. Utilizamos aqui a base de dados feita a partir das notas taquigráficas das reuniões da CPI da pandemia, ocorrida no ano de 2021. -->
+<!-- As Notas Taquigráficas da CPI da Pandemia foram estruturadas em um dataframe no formato .rds do R: [Todas as notas da CPI da Pandemia](https://github.com/SoaresAlisson/NotasTaquigraficas/raw/master/rds/NT_todas_normalizado.rds). -->
+<!-- <<i --></p>
+<p>A primeira coisa a se fazer é colocar como opção global de nosso projeto que strings não sejam consideradas como fatores.</p>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Opções globais</span></span>
+<span id="cb214-2"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb214-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<p>Carregando alguns dos principais pacotes necessários. Outros serão incorporados.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="co"># para manipular os dados</span></span>
+<span id="cb215-2"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb215-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr) <span class="co"># para usamors os pipes: %&gt;%</span></span>
+<span id="cb215-3"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb215-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2) <span class="co"># para gerar gráficos mais agradáveis</span></span></code></pre></div>
+<p>Vamos importar os dados, e temos duas opções.</p>
+<p>Opção 1: baixando a base de dados direto do site</p>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb216-1" aria-hidden="true" tabindex="-1"></a>NotasTaq <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="fu">url</span>(<span class="st">&quot;https://github.com/SoaresAlisson/NotasTaquigraficas/raw/master/rds/NT_todas_normalizado.rds&quot;</span>))</span></code></pre></div>
+<p>Opção 2: utilizando arquivo no seu computador.<br />
+É possível também baixar a <a href="https://github.com/SoaresAlisson/NotasTaquigraficas/raw/master/rds/NT_todas_normalizado.rds">base de dados</a> em seu computador e carregá-la dali.
+Para tal, 1) baixe o aquivo pelo site e salve em seu computador; 2) copie o endereço do arquivo no seu computador 3) Use a função <code>readRDS()</code> com o endereço do arquivo, como no exemplo abaixo.
+Ali utiliza-se um endereço padrão Linux.</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb217-1" aria-hidden="true" tabindex="-1"></a>NotasTaq <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;~/Documentos/NT_todas_normalizado.rds&quot;</span>)</span></code></pre></div>
+<p>Caso utilize Windows, o caminho para o arquivo pode ser que tenha que ser algo como:</p>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb218-1" aria-hidden="true" tabindex="-1"></a>NotasTaq <span class="ot">&lt;-</span> <span class="fu">readRDS</span>(<span class="st">&quot;c:/Documentos/NT_todas_normalizado.rds&quot;</span>)</span></code></pre></div>
+<p>Vamos transformar nosso dataframe em tibble, caso ainda não o seja</p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-1" aria-hidden="true" tabindex="-1"></a>NotasTaq <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">as_tibble</span>(NotasTaq)</span>
+<span id="cb219-2"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-2" aria-hidden="true" tabindex="-1"></a><span class="co"># conferindo se é tibble</span></span>
+<span id="cb219-3"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(NotasTaq)</span>
+<span id="cb219-4"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-4" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;tbl_df&quot;     &quot;tbl&quot;        &quot;data.frame&quot;</span></span>
+<span id="cb219-5"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-5" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;tbl_df&quot; indica que é tibble</span></span>
+<span id="cb219-6"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb219-7"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-7" aria-hidden="true" tabindex="-1"></a><span class="co"># observando a estrutura de nossa tabela</span></span>
+<span id="cb219-8"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-8" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(NotasTaq)</span>
+<span id="cb219-9"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-9" aria-hidden="true" tabindex="-1"></a><span class="do">## tibble [94,272 × 9] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb219-10"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ reuniao        : num [1:94272] 1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb219-11"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ data           : Date[1:94272], format: &quot;2021-04-27&quot; &quot;2021-04-27&quot; ...</span></span>
+<span id="cb219-12"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ nome           : chr [1:94272] &quot;Otto Alencar&quot; &quot;Ciro Nogueira&quot; &quot;Otto Alencar&quot; &quot;Ciro Nogueira&quot; ...</span></span>
+<span id="cb219-13"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ funcao_blocoPar: chr [1:94272] &quot;PRESIDENTE&quot; &quot;(Bloco Parlamentar Unidos pelo Brasil/PP - PI. Para questão de ordem.)&quot; &quot;PRESIDENTE&quot; &quot;(Bloco Parlamentar Unidos pelo Brasil/PP - PI)&quot; ...</span></span>
+<span id="cb219-14"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ BlocoParl      : chr [1:94272] &quot;(Otto Alencar. PSD - BA. Fala da Presidência.)&quot; &quot;Bloco Parlamentar Unidos pelo Brasil&quot; &quot;(Otto Alencar. PSD - BA)&quot; &quot;Bloco Parlamentar Unidos pelo Brasil&quot; ...</span></span>
+<span id="cb219-15"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ partido        : Named chr [1:94272] &quot;PSD&quot; &quot;PP&quot; &quot;PSD&quot; &quot;PP&quot; ...</span></span>
+<span id="cb219-16"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-16" aria-hidden="true" tabindex="-1"></a><span class="do">##   ..- attr(*, &quot;names&quot;)= chr [1:94272] &quot;PSD&quot; &quot;PP&quot; &quot;PSD&quot; &quot;PP&quot; ...</span></span>
+<span id="cb219-17"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ estado         : chr [1:94272] &quot;BA&quot; &quot;PI&quot; &quot;BA&quot; &quot;PI&quot; ...</span></span>
+<span id="cb219-18"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ complemento    : chr [1:94272] &quot;Fala da Presidência&quot; &quot;Para questão de ordem&quot; &quot;&quot; &quot;&quot; ...</span></span>
+<span id="cb219-19"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb219-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ fala           : chr [1:94272] &quot;Invocando a proteção de Deus, declaro aberta a sessão para eleição, já que temos quórum suficiente para a abert&quot;| __truncated__ &quot;Sr. Presidente, Sras. e Srs. Senadores, eu achava que nós deveríamos suspender a atual sessão até que seja sana&quot;| __truncated__ &quot;Senador Ciro Nogueira, esta é uma Comissão Parlamentar de Inquérito, V. Exa. sabe que não é temática. Então, é &quot;| __truncated__ &quot;Sr. Presidente, não é o caso de indeferir ou não. Isso aqui... &quot; ...</span></span></code></pre></div>
+<p>Vemos que a coluna “BlocoParl” foi desmembrada em outras, como “partido”, “estado” e “complemento”, o que facilita se quisermos filtrar por estas variáveis.</p>
+<p>Se quisermos dar uma olhada na tabela completa, usamos a função <code>View()</code>.</p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(NotasTaq)</span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="análise-de-redes-sociais.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pré-processamento.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
