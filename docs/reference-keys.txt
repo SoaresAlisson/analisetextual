@@ -1,4 +1,4 @@
-date-2022-04-28
+date-2022-05-23
 história-da-análise-textual
 linha-do-tempo-da-história-da-análise-textual
 história-da-análise-textual-técnicas-antes-do-uso-de-computadores
@@ -115,8 +115,13 @@ lookaround-lookadead-e-lookbehind
 stringr
 normalização-com-stringr
 dicassugestões-regex-no-r
-visualização-de-dados
+dataviz
 baseplots
+hist
+barplot
+piechart
+scatterplot
+lineplot
 cores
 o-pacote-lattice
 ggplot2
@@ -233,4 +238,3 @@ datasets
 pacotes-r-com-datasets
 datasets-em-sites-diversos
 datasets-no-kaggle
-tab:unnamed-chunk-12
