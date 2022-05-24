@@ -1,10 +1,7 @@
-date-2022-05-23
+fig:unnamed-chunk-5
+tab:unnamed-chunk-42
 história-da-análise-textual
 linha-do-tempo-da-história-da-análise-textual
-história-da-análise-textual-técnicas-antes-do-uso-de-computadores
-história-da-análise-textual-análise-textual-com-auxílio-de-computadores
-o-problema-das-digitais-linguísticas-linguistic-fingerprint
-história-da-análise-textual-a-inteligência-artificial-machine-learning
 exemplos-de-pesquisas-em-humanidades-digitais
 bibliometria-cientometria-cienciometria
 exemplo-filósofos-da-ciência-na-sociologia
@@ -15,7 +12,6 @@ exGoogleTrends
 ExFakesNewsMundo
 exemplo-mudança-de-significado-de-palavras
 exemplo-análise-de-complexidade-musical
-riqueza-vocabulário
 exemplo-polarização
 exemplo-de-integração-quali-quanti-complementando-dados-qualitativos
 exemplo-de-integração-quali-quanti-depurando-dados-quantitativos
@@ -31,8 +27,6 @@ exemplos-de-dados-semi-estruturados
 markup
 formatoMarkdown
 formatoYaml
-subtitulo
-subtítulo-2
 formatoLatex
 formatoBibtex
 formatosXmlHtml
