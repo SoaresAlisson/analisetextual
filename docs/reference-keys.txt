@@ -1,5 +1,4 @@
 fig:unnamed-chunk-5
-tab:unnamed-chunk-42
 história-da-análise-textual
 linha-do-tempo-da-história-da-análise-textual
 exemplos-de-pesquisas-em-humanidades-digitais
@@ -120,17 +119,20 @@ cores
 o-pacote-lattice
 ggplot2
 ggplot-nível-aes
-argumento-position
+ggplotargumento-position
 ggplot-nível-geom
-ggplot-geom_line-gráfico-de-linha
+geom_line
+geom_point
 ggplot-nível-facet_
 ggplot-nível-stat
 ggplot-nível-sistema-de-coordenadas
 cores-no-ggplot
 cores-definidas-manualmente-scale_fill_manual
 cores-contínuas
+ggplot_annotate
 dicas-ggplot
-dicas-outros-pacotes-gráficos
+dicas-de-extensões-e-outros-pacotes-gráficos
+dataviz_texto
 análise-textual-text-mining
 introdução
 abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing
@@ -223,6 +225,7 @@ opção-1-separando-apenas-os-senadores
 opção-2-somente-senadores-a-partir-do-site-do-senado
 exCpi_wordcloud
 nuvem-de-palavras-comparativa-wordcloud-comparision
+Lexical_dispersion
 extração-de-palavras-chave-keywords---colocação-collocation
 tf-idf-dos-senadores
 dicionário
@@ -230,5 +233,5 @@ exCpi_coocorrencia
 modelagem-de-tópicos
 datasets
 pacotes-r-com-datasets
-datasets-em-sites-diversos
+datasets-em-sites-diversosi
 datasets-no-kaggle
