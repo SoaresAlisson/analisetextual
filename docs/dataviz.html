@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>7 Visualização de dados (dataviz) | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="7 Visualização de dados (dataviz) | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="7 Visualização de dados (dataviz) | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="normalização-de-texto-e-expressões-regulares.html"/>
+<link rel="next" href="análise-textual-text-mining.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Objetivos deste manual</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#plano-do-livro"><i class="fa fa-check"></i>Plano do livro</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i>Introdução</a>
+<ul>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#HD"><i class="fa fa-check"></i>O termo “humanidade digitais”</a></li>
+<li class="chapter" data-level="" data-path="intro.html"><a href="intro.html#fluxo-de-trabalho"><i class="fa fa-check"></i>Fluxo de trabalho</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia</a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann</a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia</a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-das-correntes-na-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências das correntes na filosofia</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exGoogleTrends"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias</a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ExFakesNewsMundo"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?</a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras</a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical</a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização</a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos</a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos</a></li>
+<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador</a></li>
+<li class="chapter" data-level="2.10" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ex.-determinantes-sociais-do-florescimento-da-cultura-incel"><i class="fa fa-check"></i><b>2.10</b> Ex.: Determinantes sociais do florescimento da cultura Incel</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#csv"><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.</a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados</a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados</a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown</a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML</a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex</a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex</a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html</a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#scaping"><i class="fa fa-check"></i><b>4.1</b> Sequências de scaping</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#coment"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição</a></li>
+<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R</a></li>
+<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#if_else"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else</a></li>
+<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos</a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais</a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos</a></li>
+<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_outros"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições</a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops</a></li>
+<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop</a></li>
+<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R</a></li>
+<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#nvim-r"><i class="fa fa-check"></i><b>5.2.1</b> NVIM-R</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)</a></li>
+<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vectors"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (<em>vector</em>)</a></li>
+<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)</a></li>
+<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)</a></li>
+<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lista"><i class="fa fa-check"></i><b>5.4.4</b> Listas (<em>list</em>)</a></li>
+<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.5</b> Data Frames</a></li>
+<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fuzzySearch"><i class="fa fa-check"></i><b>5.4.6</b> Busca difusa (<em>fuzzy search</em>)</a></li>
+<li class="chapter" data-level="5.4.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.7</b> Considerações finais sobre estrutura de dados</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-instalando-via-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: instalando via linha de comando</a></li>
+<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-instalando-pacotes-no-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Instalando pacotes no modo gráfico</a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code></a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes</a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles</a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.3</b> Dplyr: Verbos (ou comandos)</a></li>
+<li class="chapter" data-level="5.6.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyr"><i class="fa fa-check"></i><b>5.6.4</b> <span>Tidyr</span>: criando objetos no formato tidy</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora</a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequência-de-datas-no-r"><i class="fa fa-check"></i><b>5.7.1</b> Gerando uma sequência de datas no R</a></li>
+<li class="chapter" data-level="5.7.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate"><i class="fa fa-check"></i><b>5.7.2</b> Lubridate: facilitando manipulação de datas</a></li>
+<li class="chapter" data-level="5.7.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.7.3</b> Converter data em nome por extenso do mês</a></li>
+<li class="chapter" data-level="5.7.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#links-e-dicas"><i class="fa fa-check"></i><b>5.7.4</b> Links e Dicas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep</a></li>
+<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()</a></li>
+<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?</a></li>
+<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code></a></li>
+<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex</a></li>
+<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr</a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> Normalização com stringr</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="dataviz.html"><a href="dataviz.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados (<em>dataviz</em>)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="dataviz.html"><a href="dataviz.html#baseplots"><i class="fa fa-check"></i><b>7.1</b> Base plots</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="dataviz.html"><a href="dataviz.html#hist"><i class="fa fa-check"></i><b>7.1.1</b> Histograma (<em>histogram</em>) no pacote base</a></li>
+<li class="chapter" data-level="7.1.2" data-path="dataviz.html"><a href="dataviz.html#barplot"><i class="fa fa-check"></i><b>7.1.2</b> Gráfico de barras (<em>barplot</em>)</a></li>
+<li class="chapter" data-level="7.1.3" data-path="dataviz.html"><a href="dataviz.html#piechart"><i class="fa fa-check"></i><b>7.1.3</b> Gráfico de Pizza ou setograma (<em>pie chart</em>)</a></li>
+<li class="chapter" data-level="7.1.4" data-path="dataviz.html"><a href="dataviz.html#scatterplot"><i class="fa fa-check"></i><b>7.1.4</b> Gráfico de dispersão (<em>scatterplot</em>)</a></li>
+<li class="chapter" data-level="7.1.5" data-path="dataviz.html"><a href="dataviz.html#lineplot"><i class="fa fa-check"></i><b>7.1.5</b> Gráfico de linha (<em>line plot</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="dataviz.html"><a href="dataviz.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores</a></li>
+<li class="chapter" data-level="7.3" data-path="dataviz.html"><a href="dataviz.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice</a></li>
+<li class="chapter" data-level="7.4" data-path="dataviz.html"><a href="dataviz.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2</a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="dataviz.html"><a href="dataviz.html#ggplot-nível-aes"><i class="fa fa-check"></i><b>7.4.1</b> ggplot: nível aes</a></li>
+<li class="chapter" data-level="7.4.2" data-path="dataviz.html"><a href="dataviz.html#ggplot-nível-geom"><i class="fa fa-check"></i><b>7.4.2</b> ggplot: Nível geom</a></li>
+<li class="chapter" data-level="7.4.3" data-path="dataviz.html"><a href="dataviz.html#ggplot-nível-facet_"><i class="fa fa-check"></i><b>7.4.3</b> ggplot: nível facet_</a></li>
+<li class="chapter" data-level="7.4.4" data-path="dataviz.html"><a href="dataviz.html#ggplot-nível-stat"><i class="fa fa-check"></i><b>7.4.4</b> ggplot: nível stat</a></li>
+<li class="chapter" data-level="7.4.5" data-path="dataviz.html"><a href="dataviz.html#ggplot-nível-sistema-de-coordenadas"><i class="fa fa-check"></i><b>7.4.5</b> ggplot: nível sistema de coordenadas</a></li>
+<li class="chapter" data-level="7.4.6" data-path="dataviz.html"><a href="dataviz.html#cores-no-ggplot"><i class="fa fa-check"></i><b>7.4.6</b> Cores no ggplot</a></li>
+<li class="chapter" data-level="7.4.7" data-path="dataviz.html"><a href="dataviz.html#ggplot_annotate"><i class="fa fa-check"></i><b>7.4.7</b> Anotações no ggplot: annotate()</a></li>
+<li class="chapter" data-level="7.4.8" data-path="dataviz.html"><a href="dataviz.html#dicas-ggplot"><i class="fa fa-check"></i><b>7.4.8</b> Dicas ggplot</a></li>
+<li class="chapter" data-level="7.4.9" data-path="dataviz.html"><a href="dataviz.html#dicas-de-extensões-e-outros-pacotes-gráficos"><i class="fa fa-check"></i><b>7.4.9</b> Dicas de extensões e outros pacotes gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="7.5" data-path="dataviz.html"><a href="dataviz.html#dataviz_texto"><i class="fa fa-check"></i><b>7.5</b> Gráficos de visualização textual</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#introdução"><i class="fa fa-check"></i><b>8.1</b> Introdução</a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.2</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)</a></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.3</b> Abordagem <em>Bag of words</em></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.3.1</b> Frequência de palavras/termos e Ngrams</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stopwords"><i class="fa fa-check"></i><b>8.4</b> Remoção de palavra vazia (<em>stopwords</em>)</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#criando-lista-com-stopwords"><i class="fa fa-check"></i><b>8.4.1</b> Criando lista com stopwords</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.5</b> Estemização (<em>stemming</em>) e lematização</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemming"><i class="fa fa-check"></i><b>8.5.1</b> Estemização</a></li>
+<li class="chapter" data-level="8.5.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lemma"><i class="fa fa-check"></i><b>8.5.2</b> Lematização</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordcloud"><i class="fa fa-check"></i><b>8.6</b> Nuvem de palavras</a></li>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#kwic"><i class="fa fa-check"></i><b>8.7</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html"><i class="fa fa-check"></i><b>9</b> Text mining: Semantic Parsing</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#pos---part-of-speech-tagging"><i class="fa fa-check"></i><b>9.1</b> POS - Part-of-speech tagging</a></li>
+<li class="chapter" data-level="9.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#udpipe"><i class="fa fa-check"></i><b>9.2</b> Pacote UDPipe</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>9.2.1</b> Coocorrência de palavras</a></li>
+<li class="chapter" data-level="9.2.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>9.2.2</b> Rede de palavras (<em>wordnet</em>)</a></li>
+<li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sentiment.html"><a href="sentiment.html"><i class="fa fa-check"></i><b>10</b> Classificação: Dicionários e Análise de Sentimentos</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="sentiment.html"><a href="sentiment.html#classificacao"><i class="fa fa-check"></i><b>10.1</b> Classificação</a></li>
+<li class="chapter" data-level="10.2" data-path="sentiment.html"><a href="sentiment.html#sentiment-analysis"><i class="fa fa-check"></i><b>10.2</b> Análise de sentimentos (<em>Sentiment Analysis</em>) por meio de dicionário/léxico</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="sentiment.html"><a href="sentiment.html#datasets-de-sentimentosemoções"><i class="fa fa-check"></i><b>10.2.1</b> Datasets de sentimentos/emoções</a></li>
+<li class="chapter" data-level="10.2.2" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis"><i class="fa fa-check"></i><b>10.2.2</b> Pacote SentimentAnalysis</a></li>
+<li class="chapter" data-level="10.2.3" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis-Tidytext"><i class="fa fa-check"></i><b>10.2.3</b> Pacote Tidytext</a></li>
+<li class="chapter" data-level="10.2.4" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis-Quanteda"><i class="fa fa-check"></i><b>10.2.4</b> Pacote Quanteda</a></li>
+<li class="chapter" data-level="10.2.5" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis-syuzhet"><i class="fa fa-check"></i><b>10.2.5</b> Pacote syuzhet</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="sentiment.html"><a href="sentiment.html#dicas-finais-bibliografia-indicada"><i class="fa fa-check"></i><b>10.3</b> Dicas finais: Bibliografia indicada</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>11</b> Análise de Redes Sociais</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>11.1</b> O pacote Igraph</a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>11.1.1</b> Clusterização</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>11.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.</a></li>
+<li class="chapter" data-level="11.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>11.3</b> Redes de palavras</a></li>
+<li class="chapter" data-level="11.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>11.4</b> Redes de citação</a></li>
+<li class="chapter" data-level="11.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#medidas-e-gráfico-de-centralidade"><i class="fa fa-check"></i><b>11.5</b> Medidas e Gráfico de centralidade</a></li>
+<li class="chapter" data-level="11.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>11.6</b> Comunidades</a></li>
+<li class="chapter" data-level="11.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>11.7</b> Sugestões de links</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="KE.html"><a href="KE.html"><i class="fa fa-check"></i><b>12</b> Extração de palavras-chave - <em>Key term</em> ou <em>keyword extraction</em></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="KE.html"><a href="KE.html#keywordassignment"><i class="fa fa-check"></i><b>12.1</b> Atribuição de palavra chave <em>Keyword assignment</em></a></li>
+<li class="chapter" data-level="12.2" data-path="KE.html"><a href="KE.html#keywordextraction"><i class="fa fa-check"></i><b>12.2</b> Key term ou keyword extraction</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="KE.html"><a href="KE.html#tf-idf"><i class="fa fa-check"></i><b>12.2.1</b> TF-IDF: Term-Frequency Inverse Document Frequency</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="KE.html"><a href="KE.html#coocorrencia"><i class="fa fa-check"></i><b>12.3</b> Colocação e Coocorrência</a>
+<ul>
+<li class="chapter" data-level="12.3.1" data-path="KE.html"><a href="KE.html#colocação-com-o-quanteda"><i class="fa fa-check"></i><b>12.3.1</b> Colocação com o Quanteda</a></li>
+<li class="chapter" data-level="12.3.2" data-path="KE.html"><a href="KE.html#colocação-com-udpipe"><i class="fa fa-check"></i><b>12.3.2</b> Colocação com Udpipe</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>13</b> Links úteis</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>13.1</b> Humanidades digitais</a></li>
+<li class="chapter" data-level="13.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>13.2</b> Análise de redes sociais</a></li>
+<li class="chapter" data-level="13.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>13.3</b> Textos sobre análise textual</a>
+<ul>
+<li class="chapter" data-level="13.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-ciências-sociais-computacionais"><i class="fa fa-check"></i><b>13.3.1</b> Sociologia Digital / Ciências Sociais Computacionais</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>13.4</b> Processamento Linguagem Natural (PLN ou NLP)</a></li>
+<li class="chapter" data-level="13.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>13.5</b> Revistas / Journals acadêmicos</a></li>
+<li class="chapter" data-level="13.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>13.6</b> Dados Abertos</a></li>
+<li class="chapter" data-level="13.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>13.7</b> Vídeos</a></li>
+<li class="chapter" data-level="13.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>13.8</b> Sites / Blogs</a></li>
+<li class="chapter" data-level="13.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>13.9</b> Organizações</a></li>
+<li class="chapter" data-level="13.10" data-path="links-úteis.html"><a href="links-úteis.html#estatística"><i class="fa fa-check"></i><b>13.10</b> Estatística</a></li>
+<li class="chapter" data-level="13.11" data-path="links-úteis.html"><a href="links-úteis.html#podcasts"><i class="fa fa-check"></i><b>13.11</b> Podcasts</a></li>
+<li class="chapter" data-level="13.12" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>13.12</b> Links Programação</a>
+<ul>
+<li class="chapter" data-level="13.12.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>13.12.1</b> R introdução</a></li>
+<li class="chapter" data-level="13.12.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>13.12.2</b> R e estatística</a></li>
+<li class="chapter" data-level="13.12.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>13.12.3</b> R - tópicos específicos</a></li>
+<li class="chapter" data-level="13.12.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>13.12.4</b> R - avançado</a></li>
+<li class="chapter" data-level="13.12.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>13.12.5</b> Links Python</a></li>
+<li class="chapter" data-level="13.12.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>13.12.6</b> Python - tópicos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="13.13" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>13.13</b> Links de Cursos Online</a></li>
+<li class="chapter" data-level="13.14" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>13.14</b> Grupos de discussão/Forum</a>
+<ul>
+<li class="chapter" data-level="13.14.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>13.14.1</b> Telegram</a></li>
+</ul></li>
+<li class="chapter" data-level="13.15" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>13.15</b> Links de folhas de dicas (<em>Cheat-sheets</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html"><i class="fa fa-check"></i><b>14</b> Exemplo Análise - Dados da CPI da Pandemia</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#introdução-1"><i class="fa fa-check"></i><b>14.1</b> Introdução</a></li>
+<li class="chapter" data-level="14.2" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#pré-processamento"><i class="fa fa-check"></i><b>14.2</b> Pré-processamento</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#pré-processamento-substituição-de-abreviaturas"><i class="fa fa-check"></i><b>14.2.1</b> Pré-processamento: substituição de abreviaturas</a></li>
+<li class="chapter" data-level="14.2.2" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#primeiras-observações"><i class="fa fa-check"></i><b>14.2.2</b> Primeiras observações</a></li>
+</ul></li>
+<li class="chapter" data-level="14.3" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#entes"><i class="fa fa-check"></i><b>14.3</b> Entes</a></li>
+<li class="chapter" data-level="14.4" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#palavras-chave-em-contexto---kwic"><i class="fa fa-check"></i><b>14.4</b> Palavras chave em contexto - KWIC</a>
+<ul>
+<li class="chapter" data-level="14.4.1" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#opção-1-pegando-apenas-os-senadores"><i class="fa fa-check"></i><b>14.4.1</b> Opção 1: pegando apenas os senadores</a></li>
+<li class="chapter" data-level="14.4.2" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#opção-2-somente-senadores-a-partir-do-site-do-senado"><i class="fa fa-check"></i><b>14.4.2</b> Opção 2: Somente senadores, a partir do site do Senado</a></li>
+</ul></li>
+<li class="chapter" data-level="14.5" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#wordcloud---nuvem-de-palavras"><i class="fa fa-check"></i><b>14.5</b> wordcloud - Nuvem de palavras</a></li>
+<li class="chapter" data-level="14.6" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#tf-idf-dos-senadores"><i class="fa fa-check"></i><b>14.6</b> TF-IDF dos Senadores</a></li>
+<li class="chapter" data-level="14.7" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#dicionário"><i class="fa fa-check"></i><b>14.7</b> Dicionário</a></li>
+<li class="chapter" data-level="14.8" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#modelagem-de-tópicos"><i class="fa fa-check"></i><b>14.8</b> Modelagem de tópicos</a></li>
+<li class="chapter" data-level="14.9" data-path="exemplo-análise---dados-da-cpi-da-pandemia.html"><a href="exemplo-análise---dados-da-cpi-da-pandemia.html#clusterização-1"><i class="fa fa-check"></i><b>14.9</b> Clusterização</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>15</b> Apêndice: Datasets</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="datasets.html"><a href="datasets.html#pacotes-r-com-datasets"><i class="fa fa-check"></i><b>15.1</b> Pacotes R com datasets</a></li>
+<li class="chapter" data-level="15.2" data-path="datasets.html"><a href="datasets.html#datasets-em-sites-diversosi"><i class="fa fa-check"></i><b>15.2</b> Datasets em sites diversosi:</a></li>
+<li class="chapter" data-level="15.3" data-path="datasets.html"><a href="datasets.html#datasets-no-kaggle"><i class="fa fa-check"></i><b>15.3</b> Datasets no <span>Kaggle</span>:</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dataviz" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">7</span> Visualização de dados (<em>dataviz</em>)<a href="dataviz.html#dataviz" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="infobox objetivo">
+<p><strong>Objetivos deste capítulo:</strong></p>
+<ul>
+<li>Apresentar uma introdução à visualização de dados com
+<ul>
+<li><a href="dataviz.html#baseplots">pacote base</a> nativo do R (em expansão)</li>
+<li>pacote lattice (em elaboração)</li>
+<li><a href="dataviz.html#ggplot2">pacote ggplot</a> (em expansão)</li>
+<li>confecção de mapas simples (em elaboração)</li>
+<li><a href="dataviz.html#dataviz_texto">gráficos de visualização textual</a> (em expansão)</li>
+</ul></li>
+</ul>
+</div>
+<div class="infobox obra">
+<p><em>EM CONSTRUÇÃO</em></p>
+</div>
+<div class="infobox note">
+<p><strong>Dicas</strong></p>
+<ul>
+<li>Quer fazer gráficos no R sem programar? Tente o <a href="https://dreamrs.github.io/esquisse/articles/get-started.html">pacote esquisse</a>.</li>
+</ul>
+</div>
+<!-- Existem propósitos diferentes para um gráfico. Ele pode ser usado para exploração de dados (_data exploration_) ou para apresentação. -->
+<!-- ferramentas como ggobi, auxiliavam na exploração, mas dificil de ser usado em apresentações. -->
+<p>Vamos criar um <a href="#dataframe">dataframe</a> com valores aleatórios e depois vamos criar alguns gráficos a partir dele.</p>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="dataviz.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criando um dataframe com valores aleatórios</span></span>
+<span id="cb132-2"><a href="dataviz.html#cb132-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.table</span>( <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">&quot;;&quot;</span>, </span>
+<span id="cb132-3"><a href="dataviz.html#cb132-3" aria-hidden="true" tabindex="-1"></a>                        <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>, <span class="at">text =</span> <span class="st">&#39;</span></span>
+<span id="cb132-4"><a href="dataviz.html#cb132-4" aria-hidden="true" tabindex="-1"></a><span class="st">Col1;Col2;Col3</span></span>
+<span id="cb132-5"><a href="dataviz.html#cb132-5" aria-hidden="true" tabindex="-1"></a><span class="st">A;12;24</span></span>
+<span id="cb132-6"><a href="dataviz.html#cb132-6" aria-hidden="true" tabindex="-1"></a><span class="st">B;25;41</span></span>
+<span id="cb132-7"><a href="dataviz.html#cb132-7" aria-hidden="true" tabindex="-1"></a><span class="st">C;37;13</span></span>
+<span id="cb132-8"><a href="dataviz.html#cb132-8" aria-hidden="true" tabindex="-1"></a><span class="st">D;22;18&#39;</span>)</span>
+<span id="cb132-9"><a href="dataviz.html#cb132-9" aria-hidden="true" tabindex="-1"></a><span class="co"># convertendo o datatype das colunas para numeric</span></span>
+<span id="cb132-10"><a href="dataviz.html#cb132-10" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Col2 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df<span class="sc">$</span>Col2)                      </span>
+<span id="cb132-11"><a href="dataviz.html#cb132-11" aria-hidden="true" tabindex="-1"></a>df<span class="sc">$</span>Col3 <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(df<span class="sc">$</span>Col3)                      </span></code></pre></div>
+<div id="baseplots" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Base plots<a href="dataviz.html#baseplots" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O R vem com um pacote básico, nativo de gráficos, como o
+<a href="dataviz.html#hist">hist()</a> para histogramas,
+<a href="dataviz.html#piechart">pie()</a> para gráfico de pizza,
+<a href="dataviz.html#barplot">barplot()</a> para gráfico de barras,
+<a href="dataviz.html#scatterplot">plot()</a> para gráfico de dispersão (<em>scatterplot</em>) e <a href="dataviz.html#lineplot">gráficos de linha</a>,
+e boxplot() para boxplot ou whiskerplot.</p>
+<div id="hist" class="section level3 hasAnchor" number="7.1.1">
+<h3><span class="header-section-number">7.1.1</span> Histograma (<em>histogram</em>) no pacote base<a href="dataviz.html#hist" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Criando um gráfico simples.
+Histogramas são interessantes para observar a distribuição de frequência de um determinado conjunto de valores numéricos, por exemplo, caso queira ver a distribuição de alturas das pessoas de uma sala de aula.
+Para tal, precisamos de valores numéricos.
+Vamos começar pelo histograma que necessita de apenas um vetor com dados numéricos, mas também podemos especificar o número (aproximado) de barras (breaks):</p>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="dataviz.html#cb133-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">24</span>, <span class="dv">22</span>, <span class="dv">27</span>, <span class="dv">17</span>, <span class="dv">33</span>)</span>
+<span id="cb133-2"><a href="dataviz.html#cb133-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb133-3"><a href="dataviz.html#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">as.integer</span>(dados))</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/baseplot_hist-1.png" width="672" /></p>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="dataviz.html#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(<span class="fu">as.integer</span>(dados), <span class="at">breaks =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/baseplot_hist-2.png" width="672" /></p>
+<p>Repare que o número de colunas não bate com o número de barras no nosso gráfico.
+O histograma cria “breakpoints” ou “bins” usando uma fórmula (sturges). Isto permite termos valores mais arredondados ou mais precisos, a depender da visualização que quisermos. É possível especificar o número de barras com o argumento <code>breaks = X</code>, mas ainda assim como uma sugestão, já que o R ainda decide se o número é plausível.</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="dataviz.html#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>Col2, </span>
+<span id="cb135-2"><a href="dataviz.html#cb135-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">4</span>,</span>
+<span id="cb135-3"><a href="dataviz.html#cb135-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span><span class="st">&quot;Meu Título&quot;</span>, <span class="at">xlab=</span><span class="st">&quot;Descrição do eixo x&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Descrição do eixo Y&quot;</span>,</span>
+<span id="cb135-4"><a href="dataviz.html#cb135-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">labels=</span> <span class="cn">TRUE</span>, <span class="co"># Adicionar os valores nas barras</span></span>
+<span id="cb135-5"><a href="dataviz.html#cb135-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">border=</span><span class="st">&quot;darkblue&quot;</span>, <span class="at">col=</span><span class="st">&quot;lightblue&quot;</span>,</span>
+<span id="cb135-6"><a href="dataviz.html#cb135-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">density=</span><span class="dv">25</span>, <span class="co"># adicionado hachuras</span></span>
+<span id="cb135-7"><a href="dataviz.html#cb135-7" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlim=</span><span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">40</span>) <span class="co"># se quisermos delimitar os valores mínimos e máximos no eixo X</span></span>
+<span id="cb135-8"><a href="dataviz.html#cb135-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/baseplot_hist3-1.png" width="672" /></p>
+<!--        labels = df$Col2, -->
+</div>
+<div id="barplot" class="section level3 hasAnchor" number="7.1.2">
+<h3><span class="header-section-number">7.1.2</span> Gráfico de barras (<em>barplot</em>)<a href="dataviz.html#barplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Repetindo o exemplo da introdução ao R na seção sobre <a href="introdução-ao-r.html#fatores">fatores</a>, fazendo um gráfico de barras simples a partir de um vetor, mas agora explicando a parte gráfica e aproveitando o <a href="#pipe">pipe</a> do tidyverse. Perceba que o pacote já faz a soma para nós.</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="dataviz.html#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carregando o magritrr para usar os pipes</span></span>
+<span id="cb136-2"><a href="dataviz.html#cb136-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magrittr)</span>
+<span id="cb136-3"><a href="dataviz.html#cb136-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb136-4"><a href="dataviz.html#cb136-4" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;BSB&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;BSB&quot;</span>, <span class="st">&quot;VIC&quot;</span>, <span class="st">&quot;GUA&quot;</span>, <span class="st">&quot;FOR&quot;</span>, <span class="st">&quot;MAO&quot;</span>,</span>
+<span id="cb136-5"><a href="dataviz.html#cb136-5" aria-hidden="true" tabindex="-1"></a>                <span class="st">&quot;GUA&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;CON&quot;</span>, <span class="st">&quot;REC&quot;</span>, <span class="st">&quot;UDI&quot;</span>, <span class="st">&quot;VIC&quot;</span>, <span class="st">&quot;GUA&quot;</span>)</span>
+<span id="cb136-6"><a href="dataviz.html#cb136-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Numa versão mínima do gráfico:</span></span>
+<span id="cb136-7"><a href="dataviz.html#cb136-7" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="sc">%&gt;%</span> factor <span class="sc">%&gt;%</span> summary <span class="sc">%&gt;%</span> barplot</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/plotAeroportos-1.png" width="672" /></p>
+<p>E numa versão mais elaborada do gráfico de barras:</p>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="dataviz.html#cb137-1" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="sc">%&gt;%</span></span>
+<span id="cb137-2"><a href="dataviz.html#cb137-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># transformando o vetor em fator para o barplot funcionar</span></span>
+<span id="cb137-3"><a href="dataviz.html#cb137-3" aria-hidden="true" tabindex="-1"></a>  factor <span class="sc">%&gt;%</span></span>
+<span id="cb137-4"><a href="dataviz.html#cb137-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># somando os repetidos</span></span>
+<span id="cb137-5"><a href="dataviz.html#cb137-5" aria-hidden="true" tabindex="-1"></a>  summary <span class="sc">%&gt;%</span></span>
+<span id="cb137-6"><a href="dataviz.html#cb137-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ordendando com &quot;sort()&quot;, e de modo decrescente com &quot;decreasing = TRUE&quot;</span></span>
+<span id="cb137-7"><a href="dataviz.html#cb137-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sort</span>(., <span class="at">decreasing =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb137-8"><a href="dataviz.html#cb137-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># plotando o gráfico</span></span>
+<span id="cb137-9"><a href="dataviz.html#cb137-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">barplot</span>(</span>
+<span id="cb137-10"><a href="dataviz.html#cb137-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aeroportos Brasil&quot;</span>, <span class="at">sub =</span> <span class="st">&quot;Sublegenda&quot;</span>, </span>
+<span id="cb137-11"><a href="dataviz.html#cb137-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab =</span> <span class="st">&quot;Legenda eixo x&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Legenda eixo y&quot;</span>,</span>
+<span id="cb137-12"><a href="dataviz.html#cb137-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="st">&quot;Frequência&quot;</span>,</span>
+<span id="cb137-13"><a href="dataviz.html#cb137-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># cores </span></span>
+<span id="cb137-14"><a href="dataviz.html#cb137-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">c</span>(<span class="st">&quot;darkred&quot;</span>, <span class="st">&quot;indianred&quot;</span>),</span>
+<span id="cb137-15"><a href="dataviz.html#cb137-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># rotacionando as legendas do das barras. Bom para quando as legendas são extensas</span></span>
+<span id="cb137-16"><a href="dataviz.html#cb137-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">las=</span><span class="dv">2</span>,</span>
+<span id="cb137-17"><a href="dataviz.html#cb137-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># fazer o gráfico de modo horizontal</span></span>
+<span id="cb137-18"><a href="dataviz.html#cb137-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">horiz =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/plotAeroportos2-1.png" width="672" /></p>
+<p>O comando <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/text">text()</a> permite adicionar texto aos gráficos do R.
+e o comando <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/legend">legend()</a> permite acrescentar e mudar diversos parâmetros da legenda.</p>
+</div>
+<div id="piechart" class="section level3 hasAnchor" number="7.1.3">
+<h3><span class="header-section-number">7.1.3</span> Gráfico de Pizza ou setograma (<em>pie chart</em>)<a href="dataviz.html#piechart" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Os gráficos de pizza, de torta, ou ainda setograma é usado para mostrar diferentes proporções.
+Eles se tornaram controversos ultimamente, pois perdem o sentido de mostrar claramente diferentes proporções se tivermos muitos itens e/ou com valores próximos. Mas é necessário saber fazê-los:</p>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="dataviz.html#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Numa versão mínima do gráfico:</span></span>
+<span id="cb138-2"><a href="dataviz.html#cb138-2" aria-hidden="true" tabindex="-1"></a>aeroportos <span class="sc">|&gt;</span> <span class="fu">factor</span>() <span class="sc">|&gt;</span> <span class="fu">summary</span>() <span class="sc">|&gt;</span> <span class="fu">pie</span>()</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/plotAeroportos_pie-1.png" width="672" /></p>
+<p>Gerando um gráfico de pizza mais elaborado</p>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="dataviz.html#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># criando um vetor nomeado com as frequências de cada aeroporto</span></span>
+<span id="cb139-2"><a href="dataviz.html#cb139-2" aria-hidden="true" tabindex="-1"></a>aeroportos2 <span class="ot">&lt;-</span> aeroportos <span class="sc">|&gt;</span> <span class="fu">factor</span>() <span class="sc">|&gt;</span> <span class="fu">summary</span>() </span>
+<span id="cb139-3"><a href="dataviz.html#cb139-3" aria-hidden="true" tabindex="-1"></a>aeroportos2</span>
+<span id="cb139-4"><a href="dataviz.html#cb139-4" aria-hidden="true" tabindex="-1"></a><span class="do">## BSB CON FOR GUA MAO REC UDI VIC </span></span>
+<span id="cb139-5"><a href="dataviz.html#cb139-5" aria-hidden="true" tabindex="-1"></a><span class="do">##   2   3   1   3   1   1   1   2</span></span>
+<span id="cb139-6"><a href="dataviz.html#cb139-6" aria-hidden="true" tabindex="-1"></a><span class="fu">pie</span>(aeroportos2, </span>
+<span id="cb139-7"><a href="dataviz.html#cb139-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">main =</span> <span class="st">&quot;Aeroportos&quot;</span>,</span>
+<span id="cb139-8"><a href="dataviz.html#cb139-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">unname</span>(aeroportos2), <span class="co"># percentual</span></span>
+<span id="cb139-9"><a href="dataviz.html#cb139-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">col =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(aeroportos2)) <span class="co"># espectro de cores</span></span>
+<span id="cb139-10"><a href="dataviz.html#cb139-10" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb139-11"><a href="dataviz.html#cb139-11" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="fu">names</span>(aeroportos2), <span class="at">cex =</span> <span class="fl">0.8</span>, <span class="at">fill =</span> <span class="fu">rainbow</span>(<span class="fu">length</span>(aeroportos)))</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/plotAeroportos_pie2-1.png" width="672" /></p>
+<p>Se quiser fazer um gráfico de pizza 3d, dê uma olhada no pacote plotrix.</p>
+</div>
+<div id="scatterplot" class="section level3 hasAnchor" number="7.1.4">
+<h3><span class="header-section-number">7.1.4</span> Gráfico de dispersão (<em>scatterplot</em>)<a href="dataviz.html#scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Criando o gráfico com a função <code>plot()</code> do pacote base. Vamos precisar de especificar quais os valores de x e y de nosso gráfico: <code>plot(x,y)</code></p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="dataviz.html#cb140-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>Col2, df<span class="sc">$</span>Col3)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/baseplot_scatterplot-1.png" width="672" /></p>
+<div class="infobox history">
+<p><strong>Um pouco de história</strong></p>
+<p>O <em>scattterplot</em> foi inventado em 1833 por J. F. W. Herschel em dois papers no jornal <em>Memoirs of the Royal Astronomical Society</em> detalhando a órbita de estrelas gêmeas a partir da observação do ângulo relativo de sua posição e da sua distância angular.
+O pacote <a href="https://cran.r-project.org/web/packages/HistData">HistData</a> possui os datasets <code>Virginis</code> e <code>Virginis.interp</code> com observações feitas por Herschel das estrelas virgens.</p>
+</div>
+<p>Em 1973, o estatístico Francis Anscombe publicou o seguinte artigo:</p>
+<blockquote>
+<p>ANSCOMBE, Francis J. (1973). Graphs in statistical analysis. The American Statistician, 27, 17–21. <a href="https://doi.org/10.2307/2682899" class="uri">https://doi.org/10.2307/2682899</a></p>
+</blockquote>
+<p>Nele, o estatístico construiu diferentes datasets com mesmo número de elementos (onze), mesma média e desvio padrão, mas que ao virarem gráficos de dispersão, mostravam relações bem diferentes. Com isso queria chamar a atenção para a importância de visualizar relações na análise estatística e não somente a observação das medidas citados, o que poderia ser enganoso.
+Estes dados estão presentes no pacote <a href="https://search.r-project.org/R/refmans/datasets/html/anscombe.html">datasets: anscombe</a>
+e outros datasets com esta mesma intenção didática, mas com dados diferentes nos pacotes
+<a href="https://cran.r-project.org/web/packages/datasauRus/index.html">datasauRus</a> e
+<a href="https://cran.r-project.org/web/packages/anscombiser/">anscombiser</a>.</p>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="dataviz.html#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregando o dataset</span></span>
+<span id="cb141-2"><a href="dataviz.html#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(anscombe)</span>
+<span id="cb141-3"><a href="dataviz.html#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(anscombe)</span>
+<span id="cb141-4"><a href="dataviz.html#cb141-4" aria-hidden="true" tabindex="-1"></a><span class="do">## &#39;data.frame&#39;:    11 obs. of  8 variables:</span></span>
+<span id="cb141-5"><a href="dataviz.html#cb141-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ x1: num  10 8 13 9 11 14 6 4 12 7 ...</span></span>
+<span id="cb141-6"><a href="dataviz.html#cb141-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ x2: num  10 8 13 9 11 14 6 4 12 7 ...</span></span>
+<span id="cb141-7"><a href="dataviz.html#cb141-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ x3: num  10 8 13 9 11 14 6 4 12 7 ...</span></span>
+<span id="cb141-8"><a href="dataviz.html#cb141-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ x4: num  8 8 8 8 8 8 8 19 8 8 ...</span></span>
+<span id="cb141-9"><a href="dataviz.html#cb141-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ y1: num  8.04 6.95 7.58 8.81 8.33 ...</span></span>
+<span id="cb141-10"><a href="dataviz.html#cb141-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ y2: num  9.14 8.14 8.74 8.77 9.26 8.1 6.13 3.1 9.13 7.26 ...</span></span>
+<span id="cb141-11"><a href="dataviz.html#cb141-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ y3: num  7.46 6.77 12.74 7.11 7.81 ...</span></span>
+<span id="cb141-12"><a href="dataviz.html#cb141-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ y4: num  6.58 5.76 7.71 8.84 8.47 7.04 5.25 12.5 5.56 7.91 ...</span></span>
+<span id="cb141-13"><a href="dataviz.html#cb141-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb141-14"><a href="dataviz.html#cb141-14" aria-hidden="true" tabindex="-1"></a><span class="co"># plotando o gráfico</span></span>
+<span id="cb141-15"><a href="dataviz.html#cb141-15" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x1, anscombe<span class="sc">$</span>y1)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/anscombe-1.png" width="672" /></p>
+<p>Mudando o tipo de figura no gráfico através do parâmetro <code>pch</code>, sendo:</p>
+<ul>
+<li>1: círculo</li>
+<li>2: triângulo</li>
+<li>3: sinal de mais</li>
+<li>4: sinal de “x”</li>
+<li>5: losango</li>
+<li>6: triângulo reverso</li>
+<li>7: Quadrado riscado com x</li>
+</ul>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="dataviz.html#cb142-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x1, anscombe<span class="sc">$</span>y1, <span class="at">pch =</span> <span class="dv">2</span>) </span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/anscombePlot_pch-1.png" width="672" /></p>
+<p>Se quisermos adicionar uma linha, usamos <code>abline()</code>. Como parâmetros:</p>
+<ul>
+<li><code>h</code> é horizontal e <code>v</code> vertical. O valor a seguir define onde será o corte</li>
+<li><code>a</code> significa a intersecção</li>
+<li><code>b</code> é o slope</li>
+</ul>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="dataviz.html#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x1, anscombe<span class="sc">$</span>y1, </span>
+<span id="cb143-2"><a href="dataviz.html#cb143-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span> <span class="st">&quot;Dataset Anscombe&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Rótulo eixo Y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Rótulo eixo X&quot;</span>)</span>
+<span id="cb143-3"><a href="dataviz.html#cb143-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">10</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/anscombe_plot-1.png" width="672" /></p>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="dataviz.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(anscombe<span class="sc">$</span>x1, anscombe<span class="sc">$</span>y1, </span>
+<span id="cb144-2"><a href="dataviz.html#cb144-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">main=</span> <span class="st">&quot;Dataset Anscombe&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Rótulo eixo Y&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Rótulo eixo X&quot;</span>)</span>
+<span id="cb144-3"><a href="dataviz.html#cb144-3" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="fl">9.5</span>, <span class="co">#local de corte da linha</span></span>
+<span id="cb144-4"><a href="dataviz.html#cb144-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="co"># cor da linha= vermelho</span></span>
+<span id="cb144-5"><a href="dataviz.html#cb144-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">lty =</span> <span class="st">&quot;dashed&quot;</span>, <span class="co"># modifica o tipo de linha: tracejado</span></span>
+<span id="cb144-6"><a href="dataviz.html#cb144-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">lwd =</span> <span class="dv">3</span> <span class="co"># espessura da linha</span></span>
+<span id="cb144-7"><a href="dataviz.html#cb144-7" aria-hidden="true" tabindex="-1"></a>       )  </span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/anscombePlot_abline-1.png" width="672" /></p>
+<!-- Plotando um gráfico de dispersão (_scatter plot_). Para tal, precisamos de valores numéricos para cada eixo. -->
+<!-- ```{r baseplot_scatter, collapse = TRUE, cache = TRUE} -->
+<!-- plot(df$Col2, df$Col3) -->
+<!-- ``` -->
+</div>
+<div id="lineplot" class="section level3 hasAnchor" number="7.1.5">
+<h3><span class="header-section-number">7.1.5</span> Gráfico de linha (<em>line plot</em>)<a href="dataviz.html#lineplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para o gráfico de linhas também utilizamos a função <code>plot()</code>, porém mudamos o tipo: <code>l</code> para linhas e <code>o</code> para linhas e pontos.</p>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="dataviz.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>Col3, <span class="at">type =</span> <span class="st">&quot;l&quot;</span>) <span class="co"># apenas linha</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/lineplot-1.png" width="672" /></p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="dataviz.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>Col3, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>) <span class="co"># linha e ponto</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/lineplot-2.png" width="672" /></p>
+<p>Gráficos de linha múltiplos</p>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="dataviz.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>Col3, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span>
+<span id="cb147-2"><a href="dataviz.html#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">lines</span>(df<span class="sc">$</span>Col2, <span class="at">type =</span> <span class="st">&quot;o&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/lineplot_multiplos-1.png" width="672" />
+<!-- # Boxplot -->
+<!-- https://nightingaledvs.com/ive-stopped-using-box-plots-should-you/ --></p>
+</div>
+</div>
+<div id="cores" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Cores<a href="dataviz.html#cores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para saber as cores disponíveis, usamos o comando <code>colors()</code>, que retorna 657 opções de cores. Se quisermos ver, por exemplo, somente as opções de vermelho:</p>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="dataviz.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;red&quot;</span>, <span class="fu">colors</span>(), <span class="at">value =</span> T)</span>
+<span id="cb148-2"><a href="dataviz.html#cb148-2" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;darkred&quot;         &quot;indianred&quot;       &quot;indianred1&quot;      &quot;indianred2&quot;     </span></span>
+<span id="cb148-3"><a href="dataviz.html#cb148-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;indianred3&quot;      &quot;indianred4&quot;      &quot;mediumvioletred&quot; &quot;orangered&quot;      </span></span>
+<span id="cb148-4"><a href="dataviz.html#cb148-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;orangered1&quot;      &quot;orangered2&quot;      &quot;orangered3&quot;      &quot;orangered4&quot;     </span></span>
+<span id="cb148-5"><a href="dataviz.html#cb148-5" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;palevioletred&quot;   &quot;palevioletred1&quot;  &quot;palevioletred2&quot;  &quot;palevioletred3&quot; </span></span>
+<span id="cb148-6"><a href="dataviz.html#cb148-6" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;palevioletred4&quot;  &quot;red&quot;             &quot;red1&quot;            &quot;red2&quot;           </span></span>
+<span id="cb148-7"><a href="dataviz.html#cb148-7" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;red3&quot;            &quot;red4&quot;            &quot;violetred&quot;       &quot;violetred1&quot;     </span></span>
+<span id="cb148-8"><a href="dataviz.html#cb148-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;violetred2&quot;      &quot;violetred3&quot;      &quot;violetred4&quot;</span></span></code></pre></div>
+<div class="infobox note">
+<p><strong>Dicas: Cores no R</strong></p>
+<ul>
+<li>Para mais opções de personalização dos gráficos de barra, veja <a href="https://r-graph-gallery.com/209-the-options-of-barplot.html">Basic R barplot customization</a></li>
+<li><a href="https://www.nceas.ucsb.edu/sites/default/files/2020-04/colorPaletteCheatsheet.pdf">Folha de dicas (cheatsheet) de cores no R</a>. Há dicas de pacotes para mais opções de cores, como o <a href="https://cran.r-project.org/web/packages/colorspace/colorspace.pdf">colorspace</a>, <a href="https://cran.r-project.org/web/packages/R.devices/R.devices.pdf">grDevices</a> e o <a href="https://cran.r-project.org/web/packages/colorRamps/colorRamps.pdf">colorRamps</a>.</li>
+<li>Outra opção bem extensa sobre cores no R é <a href="https://github.com/EmilHvitfeldt/r-color-palettes">Paletas de cores no R</a>.</li>
+</ul>
+</div>
+<div class="infobox obra">
+<p><em>CAPÍTULO EM CONSTRUÇÃO</em></p>
+</div>
+</div>
+<div id="o-pacote-lattice" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> O pacote Lattice<a href="dataviz.html#o-pacote-lattice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="infobox obra">
+<p><em>CAPÍTULO EM CONSTRUÇÃO</em></p>
+</div>
+<p>(Mas há um exemplo de uso do lattice no <a href="#excpi">apêndice deste manual, sobre a CPI da Pandemia</a>)</p>
+</div>
+<div id="ggplot2" class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> O pacote ggplot2<a href="dataviz.html#ggplot2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>O <a href="https://ggplot2.tidyverse.org/">ggplot2</a> é um dos pacotes da suíte de pacotes do <a href="introdução-ao-r.html#tidyverse">tidyverse</a> e segue a gramática dos gráficos de Hadley Wickham. O ggplot é um dos pacotes mais famosos do tidyverse ou mesmo do R.
+Instalando o pacote ggplot, caso não tenha instalado o tidyverse ou o ggplot:</p>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="dataviz.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;ggplot2&#39;</span>, )</span></code></pre></div>
+<p>Carregando o pacote ggplot:</p>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="dataviz.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span></code></pre></div>
+<p>A chamada lógica da gramática dos gráficos, sob a qual o ggplot foi construído, possui 7 níveis:</p>
+<ul>
+<li><ol style="list-style-type: decimal">
+<li>dados: isto é, a base de dados a ser usada.</li>
+</ol></li>
+<li><ol start="2" style="list-style-type: decimal">
+<li>aesthetics <code>aes()</code>: o que você pecisa para plotar, define os eixos x e y.
+<!-- mapping --></li>
+</ol></li>
+<li><ol start="3" style="list-style-type: decimal">
+<li>geoms ou geometria, <code>geom_*()</code>, qual tipo de gráfico queremos. Há cerca de 37 tipos disponíveis, como histograma, gráfico de linhas, dispersão, boxplot, etc.
+<!-- atributos. --></li>
+</ol></li>
+<li><ol start="4" style="list-style-type: decimal">
+<li>facets</li>
+</ol></li>
+<li><ol start="5" style="list-style-type: decimal">
+<li>Estatística. Refere-e a algumas funções estatísticas. Pode-se, por exemplo, acrescentar uma reta de regressão.</li>
+</ol></li>
+<li><ol start="6" style="list-style-type: decimal">
+<li>Coord ou Sistema de coordenadas.
+<!-- Mudamos a escala para logaristmo por aqui--></li>
+</ol></li>
+<li><ol start="7" style="list-style-type: decimal">
+<li>Temas, theme: muda o fundo do gráfico.</li>
+</ol></li>
+</ul>
+<p>Desse modo, vamos plotando o gráfico, nível por nível. A ordem pode mudar um pouco, alguns podem estar ausentes, mas são obrigatórios os três primeiros (dados, aes e geoms), e sem eles, não temos o gráfico. Para ilustar, vamos fazer um histograma, um gráfico simples, e que só precisa do eixo x.</p>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="dataviz.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> MeuDataBase, <span class="fu">aes</span>(<span class="at">x=</span>ColunaDoDatabase_que_será_o_eixo_x)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span></code></pre></div>
+<p>E agora um exemplo prático:</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="dataviz.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> mtcars, <span class="fu">aes</span>(<span class="at">x=</span>mpg)) <span class="sc">+</span> <span class="fu">geom_histogram</span>()</span>
+<span id="cb152-2"><a href="dataviz.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="do">## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/pplot_histogram_Mtcars-1.png" width="672" /></p>
+<p>Vamos fazer o mesmo barplot de aeroportos</p>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="dataviz.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(aeroportos)</span>
+<span id="cb153-2"><a href="dataviz.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] &quot;character&quot;</span></span>
+<span id="cb153-3"><a href="dataviz.html#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="co"># aeroportos não pode ser um vetor char para usarmos no ggplot</span></span>
+<span id="cb153-4"><a href="dataviz.html#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="co"># temos de transformá-lo em um tibble </span></span>
+<span id="cb153-5"><a href="dataviz.html#cb153-5" aria-hidden="true" tabindex="-1"></a>aer.tibble <span class="ot">&lt;-</span> tibble<span class="sc">::</span><span class="fu">tibble</span>(<span class="at">aer =</span> aeroportos)</span>
+<span id="cb153-6"><a href="dataviz.html#cb153-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aer.tibble, <span class="fu">aes</span>(aer)) <span class="sc">+</span> <span class="fu">geom_bar</span>() </span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_aeroportos_geombar-1.png" width="672" /></p>
+<p>Podemos reordenar com base não na ordem alfabética, mas em valores, crescentes ou decrescentes. Para tal, usamos a função <code>fct_reorder()</code> no nível aes, no seguinte modo: <code>aes(fct_reorder( eixoX,  eixoY), eixoY))</code>.</p>
+<!-- Ou ainda -->
+<!-- ggplot(data = mtcars, aes(x=mpg)) + geom_histogram(bins=6) -->
+<!-- é possível salvar o gráfico como objeto -->
+<!-- p <- ggplot(data = mtcars, aes(x=mpg)) -->
+<!-- p +  geom_histogram(bins=6) -->
+<!-- Podemos adicionar mais um nível com o `theme_*`, que muda o fundo do gráfico. -->
+<!-- p +  geom_histogram(bins=6) + theme_linedraw() -->
+<!-- library(ggplot2) -->
+<!-- ggplot(data=df, aes(x=dose, y=len)) + -->
+<!--   geom_bar(stat="identity") -->
+<!-- Vamos usar os dados de outro lugar para fazermos um gráfico de barras -->
+<!-- NT_falasJuntas %>% ggplot( -->
+<!--        # reorder() para organizar o eixo x -->
+<!--   aes(fala_junta, reorder(Nomes,fala_junta))) + -->
+<!--    geom_col() + -->
+<!--     labs(title = "Quantidade de palavras por pessoa", x = "Quantidade de palavras dita por cada", y = "senadores/depoente") + -->
+<!--   # virando o texto das barras em 90º -->
+<!--     theme(axis.text.x = element_text(angle = 90)) -->
+<div id="ggplot-nível-aes" class="section level3 hasAnchor" number="7.4.1">
+<h3><span class="header-section-number">7.4.1</span> ggplot: nível aes<a href="dataviz.html#ggplot-nível-aes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Como dito, o nível “aes” define os eixos x e y. É nele que definimos onde entram os dados.
+Também é aqui que podemos redefinir a ordem de apresentação dos dados. Por exemplo, no gráfico dos aeroportos, podemos reordená-los da seguinte forma:</p>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="dataviz.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plyr cria um data frame com a coluna &quot;x&quot; de nomes/fatores e &quot;freq&quot; com a frequência</span></span>
+<span id="cb154-2"><a href="dataviz.html#cb154-2" aria-hidden="true" tabindex="-1"></a>aeroportos.df <span class="ot">&lt;-</span> plyr<span class="sc">::</span><span class="fu">count</span>(aeroportos) </span>
+<span id="cb154-3"><a href="dataviz.html#cb154-3" aria-hidden="true" tabindex="-1"></a><span class="co"># gerando o gráfico</span></span>
+<span id="cb154-4"><a href="dataviz.html#cb154-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(aeroportos.df, <span class="fu">aes</span>(<span class="fu">reorder</span>(x, <span class="sc">-</span>freq), freq)) <span class="sc">+</span> <span class="fu">geom_col</span>()</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_aes-1.png" width="672" /></p>
+<p>Usamos reorder para reordenar conforme o valor de “freq”. Se quisermos em ordem crescente, usamos <code>aes(reorder(x, freq), freq))</code>. Se quisermos a ordem inversa, dos valores maiores aos menores, acrescentamos o sinal de <code>-</code> assim: <code>aes(reorder(x, -freq), freq))</code>.</p>
+<p>No caso abaixo, usamos um database já disponível sobre diamantes. Atribuímos, para cada coluna/variável, um aspecto no gráfico, como eixos x e y, cores diferentes e formas.</p>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="dataviz.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> diamonds, </span>
+<span id="cb155-2"><a href="dataviz.html#cb155-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price,</span>
+<span id="cb155-3"><a href="dataviz.html#cb155-3" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;shape&#39; aqui diz que cada valor na variável &#39;cut&#39; terá uma forma (shape) diferente</span></span>
+<span id="cb155-4"><a href="dataviz.html#cb155-4" aria-hidden="true" tabindex="-1"></a>           <span class="at">shape =</span> cut,</span>
+<span id="cb155-5"><a href="dataviz.html#cb155-5" aria-hidden="true" tabindex="-1"></a><span class="co"># &#39;color&#39; diz que cada valor na variável terá uma cor diferente. </span></span>
+<span id="cb155-6"><a href="dataviz.html#cb155-6" aria-hidden="true" tabindex="-1"></a><span class="co"># &quot;clarity&quot; é o nome da variável/coluna com base na qual as cores variarão </span></span>
+<span id="cb155-7"><a href="dataviz.html#cb155-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> clarity</span>
+<span id="cb155-8"><a href="dataviz.html#cb155-8" aria-hidden="true" tabindex="-1"></a>           )) <span class="sc">+</span> </span>
+<span id="cb155-9"><a href="dataviz.html#cb155-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb155-10"><a href="dataviz.html#cb155-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning: Using shapes for an ordinal variable is not advised</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_points_diamonds-1.png" width="672" /></p>
+<div id="ggplotargumento-position" class="section level4 hasAnchor" number="7.4.1.1">
+<h4><span class="header-section-number">7.4.1.1</span> ggplot:Argumento position<a href="dataviz.html#ggplotargumento-position" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Ao menos no caso de gráficos de barras, podemos especificar como gráficos com mais de uma variável terão as informações agrupadas.
+Primeiro, vamos criar um database com valores aleatórios</p>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="dataviz.html#cb156-1" aria-hidden="true" tabindex="-1"></a>meuDF <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">header =</span> T, <span class="at">text =</span> <span class="st">&#39;</span></span>
+<span id="cb156-2"><a href="dataviz.html#cb156-2" aria-hidden="true" tabindex="-1"></a><span class="st">  mes ano valor valor2</span></span>
+<span id="cb156-3"><a href="dataviz.html#cb156-3" aria-hidden="true" tabindex="-1"></a><span class="st">  1   2019  23  14</span></span>
+<span id="cb156-4"><a href="dataviz.html#cb156-4" aria-hidden="true" tabindex="-1"></a><span class="st">  1   2020  31  36</span></span>
+<span id="cb156-5"><a href="dataviz.html#cb156-5" aria-hidden="true" tabindex="-1"></a><span class="st">  1   2021  28  13</span></span>
+<span id="cb156-6"><a href="dataviz.html#cb156-6" aria-hidden="true" tabindex="-1"></a><span class="st">  2   2019  28  20</span></span>
+<span id="cb156-7"><a href="dataviz.html#cb156-7" aria-hidden="true" tabindex="-1"></a><span class="st">  2   2020  29  21</span></span>
+<span id="cb156-8"><a href="dataviz.html#cb156-8" aria-hidden="true" tabindex="-1"></a><span class="st">  2   2021  30  19</span></span>
+<span id="cb156-9"><a href="dataviz.html#cb156-9" aria-hidden="true" tabindex="-1"></a><span class="st">  3   2019  19  20</span></span>
+<span id="cb156-10"><a href="dataviz.html#cb156-10" aria-hidden="true" tabindex="-1"></a><span class="st">  3   2020  26  16</span></span>
+<span id="cb156-11"><a href="dataviz.html#cb156-11" aria-hidden="true" tabindex="-1"></a><span class="st">  3   2021  24  24&#39;</span>)</span></code></pre></div>
+<p>Gerando o gráfico barras - <code>geom_bar()</code> - ou de colunas - <code>geom_col()</code> - é possível distribuir os gráficos de modos distintos.</p>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="dataviz.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="co"># para facilitar, vamos salvar parte do código numa variável</span></span>
+<span id="cb157-2"><a href="dataviz.html#cb157-2" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(meuDF, <span class="fu">aes</span>(<span class="at">x=</span>ano, <span class="at">y=</span>valor, <span class="at">fill=</span><span class="fu">as.factor</span>(mes))) </span>
+<span id="cb157-3"><a href="dataviz.html#cb157-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-4"><a href="dataviz.html#cb157-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos agora testar diferentes posições (positions):</span></span>
+<span id="cb157-5"><a href="dataviz.html#cb157-5" aria-hidden="true" tabindex="-1"></a><span class="co"># No caso, para cada ano, os valores dos meses</span></span>
+<span id="cb157-6"><a href="dataviz.html#cb157-6" aria-hidden="true" tabindex="-1"></a><span class="co"># usando a posição &quot;dodge&quot;: &quot;desviar&quot; ou &quot;esquivar&quot;</span></span>
+<span id="cb157-7"><a href="dataviz.html#cb157-7" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_geomcol-1.png" width="672" /></p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="dataviz.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Fill que calcula percentualmente. O eixo y vai até 100%</span></span>
+<span id="cb158-2"><a href="dataviz.html#cb158-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;fill&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_geomcol-2.png" width="672" /></p>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="dataviz.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stack vai o valor nominal</span></span>
+<span id="cb159-2"><a href="dataviz.html#cb159-2" aria-hidden="true" tabindex="-1"></a>p <span class="sc">+</span> <span class="fu">geom_col</span>(<span class="at">position =</span> <span class="st">&quot;stack&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_geomcol-3.png" width="672" /></p>
+<p>Se está incomodado com a legenda “as.factor(mes)”, veremos mais adiante como personalizá-lo.</p>
+</div>
+</div>
+<div id="ggplot-nível-geom" class="section level3 hasAnchor" number="7.4.2">
+<h3><span class="header-section-number">7.4.2</span> ggplot: Nível geom<a href="dataviz.html#ggplot-nível-geom" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>“geom”, ou “geometry” (geometria), define o tipo de gráfico que queremos, se gráfico de barras ou linhas, se boxplot, etc. Há 37 tipos diferentes.
+Olhando a folha de dicas (<em>cheat sheet</em>) do ggplot2 <a href="https://nyu-cdsc.github.io/learningr/assets/data-visualization-2.1.pdf">opção1</a>, <a href="https://statsandr.com/blog/files/ggplot2-cheatsheet.pdf">opção2</a> podemos ver as opções de gráficos (<code>geom_alguma_coisa</code>) quando temos uma variável somente, quando tempos duas e assim por diante.</p>
+<div id="geom_line" class="section level4 hasAnchor" number="7.4.2.1">
+<h4><span class="header-section-number">7.4.2.1</span> geom_line: gráfico de linha<a href="dataviz.html#geom_line" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Criando um data frame com duas variáveis numéricas para testarmos.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="dataviz.html#cb160-1" aria-hidden="true" tabindex="-1"></a>dataf <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">text=</span><span class="st">&#39;</span></span>
+<span id="cb160-2"><a href="dataviz.html#cb160-2" aria-hidden="true" tabindex="-1"></a><span class="st"> Letra Valor1 Valor2</span></span>
+<span id="cb160-3"><a href="dataviz.html#cb160-3" aria-hidden="true" tabindex="-1"></a><span class="st">    A 9   4</span></span>
+<span id="cb160-4"><a href="dataviz.html#cb160-4" aria-hidden="true" tabindex="-1"></a><span class="st">    B 14  6</span></span>
+<span id="cb160-5"><a href="dataviz.html#cb160-5" aria-hidden="true" tabindex="-1"></a><span class="st">    C 11  8</span></span>
+<span id="cb160-6"><a href="dataviz.html#cb160-6" aria-hidden="true" tabindex="-1"></a><span class="st">    D 12  5&#39;</span>)</span></code></pre></div>
+<p>Gerando um gráfico de linha simples</p>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="dataviz.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataf, <span class="fu">aes</span>(<span class="at">x=</span>Valor1, <span class="at">y=</span>Valor2)) <span class="sc">+</span> </span>
+<span id="cb161-2"><a href="dataviz.html#cb161-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>()</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_geomline-1.png" width="672" /></p>
+<p>Na versão ampliada</p>
+<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="dataviz.html#cb162-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataf, <span class="fu">aes</span>(<span class="at">x=</span>Valor1, <span class="at">y=</span>Valor2)) <span class="sc">+</span> </span>
+<span id="cb162-2"><a href="dataviz.html#cb162-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(</span>
+<span id="cb162-3"><a href="dataviz.html#cb162-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># largura da linha</span></span>
+<span id="cb162-4"><a href="dataviz.html#cb162-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">size=</span><span class="fl">1.5</span>, </span>
+<span id="cb162-5"><a href="dataviz.html#cb162-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># tipo de linha. pontilhada=dashed</span></span>
+<span id="cb162-6"><a href="dataviz.html#cb162-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">linetype =</span> <span class="st">&quot;dotted&quot;</span>, </span>
+<span id="cb162-7"><a href="dataviz.html#cb162-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="co"># cor </span></span>
+<span id="cb162-8"><a href="dataviz.html#cb162-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># adiciona uma seta. ver grid::arrow()</span></span>
+<span id="cb162-9"><a href="dataviz.html#cb162-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">arrow=</span><span class="fu">arrow</span>()</span>
+<span id="cb162-10"><a href="dataviz.html#cb162-10" aria-hidden="true" tabindex="-1"></a>            ) <span class="sc">+</span></span>
+<span id="cb162-11"><a href="dataviz.html#cb162-11" aria-hidden="true" tabindex="-1"></a><span class="co"># adiciona pontos  na interseção</span></span>
+<span id="cb162-12"><a href="dataviz.html#cb162-12" aria-hidden="true" tabindex="-1"></a> <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>, <span class="at">color=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_geomline2-1.png" width="672" /></p>
+<ul>
+<li>O <code>linetype</code> pode ser “blank” (vazio), “solid”, “dashed” (tracejado), “dotted” (pontilhado), “dotdash” (ponto e traço), “longdash” (traços longos), “twodash”. Estes também podem ser especificados por números, sendo 1 para “blank”, 2 para “dashed” e assim por diante.</li>
+</ul>
+<!-- read.table(header = F, text = ' -->
+<!--         blank 1 1 -->
+<!--         solid 1 1 -->
+<!--                  ') %>% -->
+<!--   ggplot(., aes(.)) -->
+<!--   geom_line() -->
+<p>Para o caso de várias linhas</p>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="dataviz.html#cb163-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(meuDF, <span class="fu">aes</span>(<span class="at">x=</span>mes, <span class="at">y=</span>valor)) <span class="sc">+</span> </span>
+<span id="cb163-2"><a href="dataviz.html#cb163-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">group =</span>ano, </span>
+<span id="cb163-3"><a href="dataviz.html#cb163-3" aria-hidden="true" tabindex="-1"></a>            <span class="co"># cor conforme o ano</span></span>
+<span id="cb163-4"><a href="dataviz.html#cb163-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">color=</span><span class="fu">as.factor</span>(ano),</span>
+<span id="cb163-5"><a href="dataviz.html#cb163-5" aria-hidden="true" tabindex="-1"></a>            <span class="co"># tipo de linha conforme a varivel ano</span></span>
+<span id="cb163-6"><a href="dataviz.html#cb163-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">linetype =</span> <span class="fu">as.factor</span>(ano),),</span>
+<span id="cb163-7"><a href="dataviz.html#cb163-7" aria-hidden="true" tabindex="-1"></a>            <span class="co"># size: espessura das linhas no gráfico</span></span>
+<span id="cb163-8"><a href="dataviz.html#cb163-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">size=</span><span class="dv">1</span>) </span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_lines-1.png" width="672" /></p>
+<ul>
+<li>Se não usarmos o as.factor em ano, os anos serão considerados contínuos e podem aparecer errados na escala, como “2019.5”. Para evitar isso, caso aconteça, usamos o <code>as.factor()</code> na variável.</li>
+<li><code>linetype = as.factor(ano)</code>, dentro de aes do geom_line, para gerar o gráfico como queremos. Forçamos a variável ano em <code>as.factor()</code> pois ao tentar rodar, vimos na mensagem de erro que estava como variável contínua, o que não funciona para este tipo de gráfico. Forçamos então a se tornar discreta com o comando <code>as.factor</code> e booom! funcionou.</li>
+<li>Mais à frente veremos opções de configurações de cores mais avançadas.</li>
+</ul>
+<p>Vejamos agora os níveis opcionais do ggplot. Não há nenhuma ordem certa entre eles.</p>
+</div>
+<div id="geom_point" class="section level4 hasAnchor" number="7.4.2.2">
+<h4><span class="header-section-number">7.4.2.2</span> geom_point: gráfico de dispersão<a href="dataviz.html#geom_point" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para um gráfico de dispersão precisamos de duas variáveis contínuas. No DF que criamos com valores aleatórios, temos as colunas “valor” e “valor2”.</p>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="dataviz.html#cb164-1" aria-hidden="true" tabindex="-1"></a>meuDF <span class="sc">|&gt;</span></span>
+<span id="cb164-2"><a href="dataviz.html#cb164-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>valor, <span class="at">y=</span>valor2)) <span class="sc">+</span></span>
+<span id="cb164-3"><a href="dataviz.html#cb164-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot-geom_point-1.png" width="672" /></p>
+</div>
+</div>
+<div id="ggplot-nível-facet_" class="section level3 hasAnchor" number="7.4.3">
+<h3><span class="header-section-number">7.4.3</span> ggplot: nível facet_<a href="dataviz.html#ggplot-nível-facet_" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Caso queiramos quebrar as informações em diferentes gráficos, usamos facet. Podemos usar <code>facet_grid</code> ou <code>facet_wrap</code> (este inverte os eixos x e y)
+ver “facetting” no sheet cheat.</p>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="dataviz.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="co"># salvando tudo em uma variável para facilitar o uso</span></span>
+<span id="cb165-2"><a href="dataviz.html#cb165-2" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data=</span>diamonds, <span class="fu">aes</span>(<span class="at">x=</span>carat, <span class="at">y=</span>price)) <span class="sc">+</span><span class="fu">geom_point</span>()</span>
+<span id="cb165-3"><a href="dataviz.html#cb165-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb165-4"><a href="dataviz.html#cb165-4" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">facet_grid</span>(.<span class="sc">~</span>cut)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_facet_grid-1.png" width="672" /></p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="dataviz.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co"># se quiser compará-los na horizontal:</span></span>
+<span id="cb166-2"><a href="dataviz.html#cb166-2" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">facet_grid</span>(cut<span class="sc">~</span>.)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_facet_grid-2.png" width="672" /></p>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="dataviz.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="co"># cria um grid entre cut e clarity</span></span>
+<span id="cb167-2"><a href="dataviz.html#cb167-2" aria-hidden="true" tabindex="-1"></a>g <span class="sc">+</span> <span class="fu">facet_grid</span>(cut<span class="sc">~</span>clarity)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_facet_grid-3.png" width="672" /></p>
+<div class="infobox note">
+<p><strong>Dica ggplot: facet_</strong></p>
+<ul>
+<li>ver seção <a href="%22http://www.cookbook-r.com/Graphs/Facets_(ggplot2)/%22">Facets (ggplot2)</a> do manual Cookbook R</li>
+</ul>
+</div>
+</div>
+<div id="ggplot-nível-stat" class="section level3 hasAnchor" number="7.4.4">
+<h3><span class="header-section-number">7.4.4</span> ggplot: nível stat<a href="dataviz.html#ggplot-nível-stat" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>O nível “stat” refere-se a “estatística”.
+Pode-se acrescentar a linha de regressão em um gráfico de dispersão, por exemplo.
+<!-- que acrescenta linha  -->
+Há opções de usar funções como lm (linear models, usado em modelos de regressão), glm, gam, loss, rlm.</p>
+<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="dataviz.html#cb168-1" aria-hidden="true" tabindex="-1"></a>meuDF <span class="sc">|&gt;</span></span>
+<span id="cb168-2"><a href="dataviz.html#cb168-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>valor, <span class="at">y=</span>valor2)) <span class="sc">+</span></span>
+<span id="cb168-3"><a href="dataviz.html#cb168-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb168-4"><a href="dataviz.html#cb168-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>()</span>
+<span id="cb168-5"><a href="dataviz.html#cb168-5" aria-hidden="true" tabindex="-1"></a><span class="do">## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot-geom_smooth-1.png" width="672" /></p>
+<p>Se quisermos a linha da regressão linear, usamos o argumento <code>method = "lm"</code>, lm significando “linear model”:</p>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="dataviz.html#cb169-1" aria-hidden="true" tabindex="-1"></a>meuDF <span class="sc">|&gt;</span></span>
+<span id="cb169-2"><a href="dataviz.html#cb169-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>valor, <span class="at">y=</span>valor2)) <span class="sc">+</span></span>
+<span id="cb169-3"><a href="dataviz.html#cb169-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb169-4"><a href="dataviz.html#cb169-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb169-5"><a href="dataviz.html#cb169-5" aria-hidden="true" tabindex="-1"></a><span class="do">## `geom_smooth()` using formula &#39;y ~ x&#39;</span></span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot-geom_smooth_Lm-1.png" width="672" /></p>
+<p>O sombreamento ao redor da linha indica o erro padrão. Caso opte por retirá-la, acrescente o argumento <code>se = FALSE</code> ou <code>se = 0</code>.</p>
+<ul>
+<li>Dica: <a href="https://yjunechoe.github.io/posts/2020-09-26-demystifying-stat-layers-ggplot2/">Demystifying stat_ layers in ggplot2</a></li>
+</ul>
+</div>
+<div id="ggplot-nível-sistema-de-coordenadas" class="section level3 hasAnchor" number="7.4.5">
+<h3><span class="header-section-number">7.4.5</span> ggplot: nível sistema de coordenadas<a href="dataviz.html#ggplot-nível-sistema-de-coordenadas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Caso queira limitar os dados que aparecem no gráfico, é possível com <code>xlim</code> e <code>ylim()</code>.</li>
+<li>Pode-se mudar a proporção, ampliando ou reduzindo os eixos através do ratio, como em <code>coord_fixed(ratio=4)</code></li>
+<li>Para rotacionar o gráfico em 90º, acrescente o parâmetro <code>+ coord_flip()</code>.</li>
+</ul>
+<!-- é possível transformar a escala, com logaritmo. -->
+<!-- `coord_cartesian` -->
+</div>
+<div id="cores-no-ggplot" class="section level3 hasAnchor" number="7.4.6">
+<h3><span class="header-section-number">7.4.6</span> Cores no ggplot<a href="dataviz.html#cores-no-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>É possível utilizar paletas de cores diferentes do padrão.
+Um modo é usar o pacote RColorBrewer e o comando <code>scale_fill_brewer()</code></p>
+<p>Gerando o gráfico usando apenas a coluna Valor1 e a letra</p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="dataviz.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataf, <span class="fu">aes</span>(<span class="at">x=</span>Letra, <span class="at">y=</span>Valor1, <span class="at">fill=</span>Letra)) <span class="sc">+</span> <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>) <span class="sc">+</span></span>
+<span id="cb170-2"><a href="dataviz.html#cb170-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_brewer</span>(<span class="at">palette=</span> <span class="st">&quot;BuGn&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_scaleFill-1.png" width="672" /></p>
+<p>Há diversas outras paletas de cores.</p>
+<ul>
+<li>Há cores divergentes, como como BrBG, PiYG, PRGn, PuOr, RdBu, RdGy, RdYlBu, RdYlGn e Spectral;</li>
+<li>há sequência de cores qualitativas, como Accent, Dark2, Paired, Pastel1, Pastel2, Set1, Set2, Set3</li>
+<li>Sequenciais como: Blues, BuGn, BuPu, GnBu, Greens, Greys, Oranges, OrRd, PuBu, PuBuGn, PuRd, Purples, RdPu, Reds, YlGn, YlGnBu, YlOrBr e YlOrRd.</li>
+</ul>
+<!-- Veja [aqui](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/figure/unnamed-chunk-14-1.png) uma imagem com exemplos destas paletas de cores -->
+<p><img src="http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/figure/unnamed-chunk-14-1.png" alt="Palestas de cores" />
+Fonte: cookbook-r.com</p>
+<p>Há ainda outras escalas de cores, como
+scale_alpha(), scale_colour_continuous(), scale_colour_gradient(), scale_colour_grey(), scale_colour_hue(), scale_colour_steps(), scale_colour_viridis_d().</p>
+<div id="cores-definidas-manualmente-scale_fill_manual" class="section level4 hasAnchor" number="7.4.6.1">
+<h4><span class="header-section-number">7.4.6.1</span> Cores definidas manualmente: <code>scale_fill_manual</code><a href="dataviz.html#cores-definidas-manualmente-scale_fill_manual" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Para usar sequência de cores personalizadas usa-se comando é <code>scale_fill_manual</code> e uma sequência de nomes de cores - como “green”, “blue”. Para ver a lista completa, digite <code>colors()</code> no console - ou use valores <a href="http://erikasarti.com/html/tabela-cores/">hexadecimais</a> das cores.</p>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="dataviz.html#cb171-1" aria-hidden="true" tabindex="-1"></a>Cores <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;yellowgreen&quot;</span>, <span class="st">&quot;#66CC99&quot;</span>, <span class="st">&quot;#3CB371&quot;</span>, <span class="st">&quot;seagreen4&quot;</span>)</span>
+<span id="cb171-2"><a href="dataviz.html#cb171-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dataf, <span class="fu">aes</span>(<span class="at">x=</span>Letra, <span class="at">y=</span>Valor1, <span class="at">fill=</span>Letra)) <span class="sc">+</span> </span>
+<span id="cb171-3"><a href="dataviz.html#cb171-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb171-4"><a href="dataviz.html#cb171-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_fill_manual</span>(<span class="at">values=</span>Cores)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/scale_fill_manual-1.png" width="672" /></p>
+</div>
+<div id="cores-contínuas" class="section level4 hasAnchor" number="7.4.6.2">
+<h4><span class="header-section-number">7.4.6.2</span> Cores contínuas<a href="dataviz.html#cores-contínuas" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<!-- Em um gráfico de dispersão, podemos  -->
+<p>Primeiro criando um data frame com valores aleatórios.</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="dataviz.html#cb172-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">text=</span><span class="st">&#39;</span></span>
+<span id="cb172-2"><a href="dataviz.html#cb172-2" aria-hidden="true" tabindex="-1"></a><span class="st">  valorX valorY</span></span>
+<span id="cb172-3"><a href="dataviz.html#cb172-3" aria-hidden="true" tabindex="-1"></a><span class="st">  3  3.4</span></span>
+<span id="cb172-4"><a href="dataviz.html#cb172-4" aria-hidden="true" tabindex="-1"></a><span class="st">  2  4</span></span>
+<span id="cb172-5"><a href="dataviz.html#cb172-5" aria-hidden="true" tabindex="-1"></a><span class="st">  2.5 5</span></span>
+<span id="cb172-6"><a href="dataviz.html#cb172-6" aria-hidden="true" tabindex="-1"></a><span class="st">  1  2.3</span></span>
+<span id="cb172-7"><a href="dataviz.html#cb172-7" aria-hidden="true" tabindex="-1"></a><span class="st">  3.5 5.4</span></span>
+<span id="cb172-8"><a href="dataviz.html#cb172-8" aria-hidden="true" tabindex="-1"></a><span class="st">  1.7 2.7</span></span>
+<span id="cb172-9"><a href="dataviz.html#cb172-9" aria-hidden="true" tabindex="-1"></a><span class="st">  2.3  2.6</span></span>
+<span id="cb172-10"><a href="dataviz.html#cb172-10" aria-hidden="true" tabindex="-1"></a><span class="st">  2.7 3.1&#39;</span>)</span></code></pre></div>
+<p>Podemos acrescentar gradientes diferentes, como o comando <code>rainbow()</code>. O valor dentro dele refere-se ao número de cores dentro do espectro do arco-íris</p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb173-1"><a href="dataviz.html#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span>valorX, <span class="at">y=</span>valorY, <span class="at">colour=</span>valorX)) <span class="sc">+</span> </span>
+<span id="cb173-2"><a href="dataviz.html#cb173-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>) <span class="sc">+</span> </span>
+<span id="cb173-3"><a href="dataviz.html#cb173-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">scale_colour_gradientn</span>(<span class="at">colours=</span><span class="fu">rainbow</span>(<span class="dv">4</span>))</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/scale_colour_gradientn-1.png" width="672" /></p>
+<!-- http://www.sthda.com/english/wiki/ggplot2-barplots-quick-start-guide-r-software-and-data-visualization -->
+</div>
+</div>
+<div id="ggplot_annotate" class="section level3 hasAnchor" number="7.4.7">
+<h3><span class="header-section-number">7.4.7</span> Anotações no ggplot: annotate()<a href="dataviz.html#ggplot_annotate" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Caso queira adicionar anotação em um gráfico, a função <a href="https://ggplot2.tidyverse.org/reference/annotate.html">annotate()</a> permite adicionar comentários, destaques, linhas, etc. Em sua versão mínima para adicionar comentário de texto, precisamos dos argumentos:
+<code>annotate(geom, x = valorX, y = valorY, label = "texto"</code>.</p>
+<p>O argumento <code>geom</code> da função annotate aceita os seguintes parâmetros:</p>
+<ul>
+<li><code>"text"</code>: para o texto sem caixa</li>
+<li><code>"label"</code>: para texto dentro de uma caixa</li>
+<li><code>"segment"</code>: para fazer um traço (parâmetros exigidos: x, xend, y, yend)</li>
+<li><code>"pointrange"</code>: para um traço com ponto (parâmetros exigidos: x, y, ymin, ymax)</li>
+<li><code>"rect"</code>: para destacar uma região com um retângulo. (parâmetros exigidos: xmin, xmax ymin, ymax)</li>
+</ul>
+<p>Vamos gerar um gráfico e salvá-lo como o objeto “grafico”</p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="dataviz.html#cb174-1" aria-hidden="true" tabindex="-1"></a>grafico <span class="ot">&lt;-</span> meuDF <span class="sc">|&gt;</span></span>
+<span id="cb174-2"><a href="dataviz.html#cb174-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>valor, <span class="at">y=</span>valor2)) <span class="sc">+</span></span>
+<span id="cb174-3"><a href="dataviz.html#cb174-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()</span>
+<span id="cb174-4"><a href="dataviz.html#cb174-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb174-5"><a href="dataviz.html#cb174-5" aria-hidden="true" tabindex="-1"></a>grafico</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_point_Grafico-1.png" width="672" /></p>
+<!-- ```{r ggplot_annotate, collapse=TRUE, cache=TRUE, eval=T} -->
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="dataviz.html#cb175-1" aria-hidden="true" tabindex="-1"></a>grafico <span class="sc">+</span> ggplot2<span class="sc">::</span><span class="fu">annotate</span>(<span class="at">geom =</span> <span class="st">&quot;label&quot;</span>, <span class="co"># ou &quot;text&quot;, caso não queira a caixa ao redor do texto</span></span>
+<span id="cb175-2"><a href="dataviz.html#cb175-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="dv">24</span>, <span class="at">y =</span> <span class="dv">25</span>, <span class="co"># posições no eixo cartesiano</span></span>
+<span id="cb175-3"><a href="dataviz.html#cb175-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">colour =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb175-4"><a href="dataviz.html#cb175-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">2</span>,         <span class="co"># tamanho da letra</span></span>
+<span id="cb175-5"><a href="dataviz.html#cb175-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">label =</span>  <span class="st">&quot;texto&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot_annotate-1.png" width="672" /></p>
+<p>A função annotate também permite destacar região no gráfico</p>
+<!--```{r ggplot-annotate2, collapse=TRUE, cache=TRUE, eval=T} -->
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="dataviz.html#cb176-1" aria-hidden="true" tabindex="-1"></a>grafico <span class="sc">+</span></span>
+<span id="cb176-2"><a href="dataviz.html#cb176-2" aria-hidden="true" tabindex="-1"></a>  ggplot2<span class="sc">::</span><span class="fu">annotate</span>(<span class="st">&quot;rect&quot;</span>,</span>
+<span id="cb176-3"><a href="dataviz.html#cb176-3" aria-hidden="true" tabindex="-1"></a>    <span class="co"># posições no eixo cartesiano:</span></span>
+<span id="cb176-4"><a href="dataviz.html#cb176-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">xmin =</span> <span class="dv">25</span>, <span class="at">xmax =</span> <span class="fl">28.5</span>,</span>
+<span id="cb176-5"><a href="dataviz.html#cb176-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">ymin =</span> <span class="dv">15</span>, <span class="at">ymax =</span> <span class="dv">22</span>,</span>
+<span id="cb176-6"><a href="dataviz.html#cb176-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># colour=&quot;blue&quot;, # cor de contorno da caixa</span></span>
+<span id="cb176-7"><a href="dataviz.html#cb176-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">alpha =</span>  .<span class="dv">2</span> <span class="co"># nível de transparência</span></span>
+<span id="cb176-8"><a href="dataviz.html#cb176-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggplot-annotate2-1.png" width="672" /></p>
+<div class="infobox obra">
+<p><strong>PARTE SOBRE GGPLOT AINDA EM EXPANSÃO</strong></p>
+</div>
+</div>
+<div id="dicas-ggplot" class="section level3 hasAnchor" number="7.4.8">
+<h3><span class="header-section-number">7.4.8</span> Dicas ggplot<a href="dataviz.html#dicas-ggplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="infobox note">
+<p><strong>Dicas</strong></p>
+<ul>
+<li>Quer fazer gráficos no R sem programar? Tente o pacote esquisse.
+<ul>
+<li><a href="https://dreamrs.github.io/esquisse/articles/get-started.html" class="uri">https://dreamrs.github.io/esquisse/articles/get-started.html</a></li>
+</ul></li>
+<li>folha de dicas/cheat sheet ggplot2:
+<ul>
+<li><a href="https://nyu-cdsc.github.io/learningr/assets/data-visualization-2.1.pdf">opção1</a>, <a href="https://statsandr.com/blog/files/ggplot2-cheatsheet.pdf">opção2</a>, com resumo dos comandos do ggplot.</li>
+<li>Para entender cada elemento do gráfico ggplot, como legenda, titulo, etc. de <a href="https://github.com/claragranell/ggplot2/blob/main/ggplot_theme_system_cheatsheet.pdf">Claragrannel</a></li>
+<li>Cheatsheet de <a href="https://github.com/ch-bu/ggplot2-fundamentals/tree/main/cheatsheets">Christian Bukhard</a></li>
+<li>Cheatsheets de <a href="http://tianhangcui.com/cheatsheet_vis_for_R/Cheatsheet_Interactive_web_visualizations_for_R.pdf">Interactive web visualizations for R</a> com dicas do que fazer diversos pacotes, como DiagrammeR, Leflet, Dygraphs, ggiraph, Plotly, etc.</li>
+</ul></li>
+<li>Livro online gratuito em português <a href="http://sillasgonzaga.com/material/curso_visualizacao/">Introdução a R para Visualização e Apresentação de Dados</a> com geração automática de relatórios, mapas, e diferentes gráficos com o ggplot2.</li>
+</ul>
+<p><strong>Saindo do básico no ggplot</strong></p>
+<ul>
+<li>Exemplos de gráficos variados feitos com ggplot e com tutoriais <a href="https://ggplot2tor.com/">ggplotr</a>. Bom para sair do básico.</li>
+<li>É possível personalizar mais ainda o texto do ggplot. Para isso podemos usar o pacote ggtext, que nos permite usar com texto em markdown e html.
+<ul>
+<li><a href="https://github.com/wilkelab/ggtext" class="uri">https://github.com/wilkelab/ggtext</a></li>
+<li><a href="https://www.r-bloggers.com/2020/06/ggplot2-text-customization-with-ggtext-data-visualization-in-r/" class="uri">https://www.r-bloggers.com/2020/06/ggplot2-text-customization-with-ggtext-data-visualization-in-r/</a></li>
+<li><a href="https://wilkelab.org/ggtext/articles/introduction.html" class="uri">https://wilkelab.org/ggtext/articles/introduction.html</a></li>
+</ul></li>
+<li>Para gráficos animados
+<ul>
+<li>Pacote <a href="https://github.com/ggobi/tourr">tourr</a>, para visualizar dados multivariados. <a href="https://twitter.com/rencontres_R/status/1414957799432404994?s=09">Aqui um exemplo</a> do tourr em ação.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="dicas-de-extensões-e-outros-pacotes-gráficos" class="section level3 hasAnchor" number="7.4.9">
+<h3><span class="header-section-number">7.4.9</span> Dicas de extensões e outros pacotes gráficos<a href="dataviz.html#dicas-de-extensões-e-outros-pacotes-gráficos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>Dica para tirar dúvidas com o GGplot</strong></p>
+<p>O pacote <code>ggx</code> permite digitar sua dúvida sobre o ggplot e este retornar a solução. Não faz milagres, mas pode ajudar.
+Para utilizá-lo, após instalá-lo através do <code>install.packages('ggx')</code>:</p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="dataviz.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggx) <span class="co"># carregando o pacote</span></span>
+<span id="cb177-2"><a href="dataviz.html#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">gghelp</span>(<span class="st">&quot;flip x and y axis&quot;</span>)</span>
+<span id="cb177-3"><a href="dataviz.html#cb177-3" aria-hidden="true" tabindex="-1"></a><span class="do">## coord_flip()</span></span>
+<span id="cb177-4"><a href="dataviz.html#cb177-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gghelp</span>(<span class="st">&quot;label in darkblue&quot;</span>)</span>
+<span id="cb177-5"><a href="dataviz.html#cb177-5" aria-hidden="true" tabindex="-1"></a><span class="do">## theme(axis.title.x=element_text(color=&#39;darkblue&#39;))</span></span>
+<span id="cb177-6"><a href="dataviz.html#cb177-6" aria-hidden="true" tabindex="-1"></a><span class="fu">gghelp</span>(<span class="st">&quot;rotate x-axis label 45 degree&quot;</span>)</span>
+<span id="cb177-7"><a href="dataviz.html#cb177-7" aria-hidden="true" tabindex="-1"></a><span class="do">## theme(axis.text.x = element_text(angle = 45))</span></span></code></pre></div>
+<!-- - pairs  -->
+<p><!-- - [ggalt](https://exts.ggplot2.tidyverse.org/ggalt.html): para circular algo no gráfico --></p>
+<div class="infobox note">
+<p><strong>Dicas</strong></p>
+<ul>
+<li>O pacote <a href="https://cran.r-project.org/web/packages/patchwork/index.html">patchwork</a> torna fácil fazer gráficos múltiplos. Há um exemplo de seu uso no <a href="#excpi">apêndice sobre CPI da Pandemia</a>.</li>
+<li><code>psych::pairs.panels()</code> apresenta correlação de Pearson, histograma e regressão</li>
+<li>O ggplot possui diversos plugins de extensão, como:
+<ul>
+<li><a href="http://ggobi.github.io/ggally/">ggaly</a> extensão do ggplot.</li>
+<li><a href="https://github.com/wilkelab/ggtext">ggtext</a>: para diversas otimizações nos textos, como múltiplas cores e a possibilidade de usar markups como <a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown">markdown</a> ou LaTex nos títulos dos gráficos.</li>
+<li><a href="https://coolbutuseless.github.io/package/ggpattern/">ggpattern</a>: para usar hachuras ou texturas nos gráficos</li>
+<li>gghighlight: para realçar algo no gráfico.</li>
+<li><a href="https://gganimate.com/">gganimate</a>: para fazer gráficos animados</li>
+<li><a href="https://github.com/ricardo-bion/ggradar">ggradar</a> para construir gráficos de radar</li>
+<li>Há esta lista mais completa, com cerca de <a href="https://exts.ggplot2.tidyverse.org/gallery/">111 extensões registradas para o ggplot</a>, com a curadoria do pessoal envolvido no tidyverse. Há dicas de como fazer um pacote para o ggplot.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="dataviz_texto" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Gráficos de visualização textual<a href="dataviz.html#dataviz_texto" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Esta seção pretende mostar alguns gráficos mais peculiares da análise textual. Alguns exemplos de usos de gráficos ou indicação para seções posteriores, como nuvens de palavras, dedrogramas, pyramid plot, etc.</p>
+<div class="infobox obra">
+<p><strong>Seção sobre visualização textual em expansão</strong></p>
+</div>
+<p>O pacote <a href="https://emilhvitfeldt.github.io/ggpage/">ggpage</a> permite criar visualizações que destaca de modo panorâmico a incidência de certas palavras no texto.</p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="dataviz.html#cb178-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggpage)</span>
+<span id="cb178-2"><a href="dataviz.html#cb178-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb178-3"><a href="dataviz.html#cb178-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(tinderbox)</span>
+<span id="cb178-4"><a href="dataviz.html#cb178-4" aria-hidden="true" tabindex="-1"></a><span class="do">## tibble [211 × 2] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb178-5"><a href="dataviz.html#cb178-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ text: chr [1:211] &quot;A soldier came marching along the high road: \&quot;Left, right - left, right.\&quot; He&quot; &quot;had his knapsack on his back, and a sword at his side; he had been to the wars,&quot; &quot;and was now returning home. As he walked on, he met a very frightful-looking old&quot; &quot;witch in the road. Her under-lip hung quite down on her breast, and she stopped&quot; ...</span></span>
+<span id="cb178-6"><a href="dataviz.html#cb178-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ book: chr [1:211] &quot;The tinder-box&quot; &quot;The tinder-box&quot; &quot;The tinder-box&quot; &quot;The tinder-box&quot; ...</span></span>
+<span id="cb178-7"><a href="dataviz.html#cb178-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggpage_quick</span>(tinderbox)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggpage-1.png" width="672" /></p>
+<p>E usando um exemplo o próprio pacote:</p>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="dataviz.html#cb179-1" aria-hidden="true" tabindex="-1"></a>tinderbox <span class="sc">%&gt;%</span></span>
+<span id="cb179-2"><a href="dataviz.html#cb179-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggpage_build</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb179-3"><a href="dataviz.html#cb179-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">long_word =</span> stringr<span class="sc">::</span><span class="fu">str_length</span>(word) <span class="sc">&gt;</span> <span class="dv">8</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb179-4"><a href="dataviz.html#cb179-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggpage_plot</span>(<span class="fu">aes</span>(<span class="at">fill =</span> long_word)) <span class="sc">+</span></span>
+<span id="cb179-5"><a href="dataviz.html#cb179-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;Palavras longas através do texto Tinder-box&quot;</span>) <span class="sc">+</span></span>
+<span id="cb179-6"><a href="dataviz.html#cb179-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey70&quot;</span>, <span class="st">&quot;blue&quot;</span>),</span>
+<span id="cb179-7"><a href="dataviz.html#cb179-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;8 ou menos&quot;</span>, <span class="st">&quot;9 ou mais&quot;</span>),</span>
+<span id="cb179-8"><a href="dataviz.html#cb179-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">name =</span> <span class="st">&quot;Comprimento das palavras&quot;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/ggpage2-1.png" width="672" /></p>
+<p>Há mais opções de visualizações de exemplo na <a href="https://emilhvitfeldt.github.io/ggpage/">página do pacote</a>, inclusive com animações, uso de dicionários (como em análise de sentimentos).
+Como exemplificado no apêndice deste manual, no exemplo da CPI da Pandemia, há também o <a href="#Lexical_dispersion">gráfico de dispersão lexical (<em>lexical dispertion</em>)</a>, do pacote Quanteda, que também mostra a ocorrência de certo termo ao longo do(s) texto(s).</p>
+<!--dendrogramas + heatmap https://github.com/XiaoLuo-boy/ggheatmap -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="normalização-de-texto-e-expressões-regulares.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análise-textual-text-mining.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

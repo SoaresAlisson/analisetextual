@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>15 Palavras chave em contexto - KWIC | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="15 Palavras chave em contexto - KWIC | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="15 Palavras chave em contexto - KWIC | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="entes.html"/>
+<link rel="next" href="wordcloud---nuvem-de-palavras.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li><a href="objetivos-deste-manual.html#objetivos-deste-manual">Objetivos deste manual<span></span></a>
+<ul>
+<li><a href="objetivos-deste-manual.html#plano-do-livro">Plano do livro<span></span></a></li>
+</ul></li>
+<li><a href="intro.html#intro">Introdução<span></span></a>
+<ul>
+<li><a href="intro.html#HD">O termo “humanidade digitais”<span></span></a></li>
+<li><a href="intro.html#fluxo-de-trabalho">Fluxo de trabalho<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann<span></span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-das-correntes-na-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências das correntes na filosofia<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exGoogleTrends"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ExFakesNewsMundo"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização<span></span></a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador<span></span></a></li>
+<li class="chapter" data-level="2.10" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ex.-determinantes-sociais-do-florescimento-da-cultura-incel"><i class="fa fa-check"></i><b>2.10</b> Ex.: Determinantes sociais do florescimento da cultura Incel<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML<span></span></a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex<span></span></a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex<span></span></a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html<span></span></a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#scaping"><i class="fa fa-check"></i><b>4.1</b> Sequências de scaping<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#coment"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else<span></span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else<span></span></a></li>
+<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores<span></span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)<span></span></a></li>
+<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos<span></span></a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais<span></span></a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos<span></span></a></li>
+<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_outros"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições<span></span></a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops<span></span></a></li>
+<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop<span></span></a></li>
+<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#nvim-r"><i class="fa fa-check"></i><b>5.2.1</b> NVIM-R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)<span></span></a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (vector)<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)<span></span></a></li>
+<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tm-dtm"><i class="fa fa-check"></i><b>5.4.4</b> Gerando um DTM com o pacote TM<span></span></a></li>
+<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidytext-dtm"><i class="fa fa-check"></i><b>5.4.5</b> Gerando DTM com o pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lista"><i class="fa fa-check"></i><b>5.4.6</b> Listas (<em>list</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.7</b> Data Frames<span></span></a></li>
+<li class="chapter" data-level="5.4.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.8</b> Considerações finais sobre estrutura de dados<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-instalando-via-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: instalando via linha de comando<span></span></a></li>
+<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Modo gráfico<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code><span></span></a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes<span></span></a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles<span></span></a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.3</b> Dplyr: Verbos (ou comandos)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora<span></span></a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequencia-de-datas-no-r"><i class="fa fa-check"></i><b>5.7.1</b> Gerando uma sequencia de datas no R<span></span></a></li>
+<li class="chapter" data-level="5.7.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate"><i class="fa fa-check"></i><b>5.7.2</b> Lubridate: facilitando manipulação de datas<span></span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.7.3</b> Converter data em nome por extenso do mês<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#links-e-dicas"><i class="fa fa-check"></i><b>5.8</b> Links e Dicas<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#expressões-regulares-regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep<span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()<span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?<span></span></a></li>
+<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code><span></span></a></li>
+<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex<span></span></a></li>
+<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> Normalização com stringr<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#baseplots"><i class="fa fa-check"></i><b>7.1</b> Base plots<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2<span></span></a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-aes"><i class="fa fa-check"></i><b>7.4.1</b> ggplot: nível aes<span></span></a></li>
+<li class="chapter" data-level="7.4.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-geom"><i class="fa fa-check"></i><b>7.4.2</b> ggplot: Nível geom<span></span></a></li>
+<li class="chapter" data-level="7.4.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-facet_"><i class="fa fa-check"></i><b>7.4.3</b> ggplot: nível facet_<span></span></a></li>
+<li class="chapter" data-level="7.4.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-stat"><i class="fa fa-check"></i><b>7.4.4</b> ggplot: nível stat<span></span></a></li>
+<li class="chapter" data-level="7.4.5" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-sistema-de-coordenadas"><i class="fa fa-check"></i><b>7.4.5</b> ggplot: nível sistema de coordenadas<span></span></a></li>
+<li class="chapter" data-level="7.4.6" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores-no-ggplot"><i class="fa fa-check"></i><b>7.4.6</b> Cores no ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-ggplot"><i class="fa fa-check"></i><b>7.4.7</b> Dicas ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.8" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-outros-pacotes-gráficos"><i class="fa fa-check"></i><b>7.4.8</b> Dicas outros pacotes gráficos<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#introdução"><i class="fa fa-check"></i><b>8.1</b> Introdução<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.2</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.3</b> Abordagem <em>Bag of words</em><span></span></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.3.1</b> Frequência de palavras/termos e Ngrams<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stopwords"><i class="fa fa-check"></i><b>8.4</b> Remoção de palavra vazia (<em>stopwords</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#criando-lista-com-stopwords"><i class="fa fa-check"></i><b>8.4.1</b> Criando lista com stopwords<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.5</b> Estemização (<em>stemming</em>) e lematização<span></span></a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemming"><i class="fa fa-check"></i><b>8.5.1</b> Estemização<span></span></a></li>
+<li class="chapter" data-level="8.5.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lemma"><i class="fa fa-check"></i><b>8.5.2</b> Lematização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordcloud"><i class="fa fa-check"></i><b>8.6</b> Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#kwic"><i class="fa fa-check"></i><b>8.7</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html"><i class="fa fa-check"></i><b>9</b> Text mining: Semantic Parsing<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#pos---part-of-speech-tagging"><i class="fa fa-check"></i><b>9.1</b> POS - Part-of-speech tagging<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#udpipe"><i class="fa fa-check"></i><b>9.2</b> Pacote UDPipe<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>9.2.1</b> Coocorrência de palavras<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>9.2.2</b> Rede de palavras (<em>wordnet</em>)<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html"><i class="fa fa-check"></i><b>10</b> Classificação: Dicionários e Análise de Sentimentos<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#classificação"><i class="fa fa-check"></i><b>10.1</b> Classificação<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#sentiment-analysis"><i class="fa fa-check"></i><b>10.2</b> Análise de sentimentos (<em>Sentiment Analysis</em>) por meio de dicionário/léxico<span></span></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#datasets-de-sentimentosemoções"><i class="fa fa-check"></i><b>10.2.1</b> Datasets de sentimentos/emoções<span></span></a></li>
+<li class="chapter" data-level="10.2.2" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis"><i class="fa fa-check"></i><b>10.2.2</b> Pacote SentimentAnalysis<span></span></a></li>
+<li class="chapter" data-level="10.2.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Tidytext"><i class="fa fa-check"></i><b>10.2.3</b> Pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="10.2.4" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#SentimentAnalysis-Quanteda"><i class="fa fa-check"></i><b>10.2.4</b> Pacote Quanteda<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="classificação-dicionários-e-análise-de-sentimentos.html"><a href="classificação-dicionários-e-análise-de-sentimentos.html#dicas-finais-bibliografia-indicada"><i class="fa fa-check"></i><b>10.3</b> Dicas finais: Bibliografia indicada<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>11</b> Análise de Redes Sociais<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>11.1</b> O pacote Igraph<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>11.1.1</b> Clusterização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>11.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>11.3</b> Redes de palavras<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>11.4</b> Redes de citação<span></span></a></li>
+<li class="chapter" data-level="11.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>11.5</b> Gráfico de centralidade<span></span></a></li>
+<li class="chapter" data-level="11.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>11.6</b> Comunidades<span></span></a></li>
+<li class="chapter" data-level="11.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>11.7</b> Sugestões de links<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="apêndice-exemplo-análise---cpi-da-pandemia.html"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html"><i class="fa fa-check"></i><b>12</b> Apêndice: Exemplo Análise - CPI da Pandemia<span></span></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="apêndice-exemplo-análise---cpi-da-pandemia.html"><a href="apêndice-exemplo-análise---cpi-da-pandemia.html#introdução-1"><i class="fa fa-check"></i><b>12.1</b> Introdução<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="pré-processamento.html"><a href="pré-processamento.html"><i class="fa fa-check"></i><b>13</b> Pré-processamento<span></span></a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="pré-processamento.html"><a href="pré-processamento.html#pré-processamento-substituição-de-abreviaturas"><i class="fa fa-check"></i><b>13.1</b> Pré-processamento: substituição de abreviaturas<span></span></a></li>
+<li class="chapter" data-level="13.2" data-path="pré-processamento.html"><a href="pré-processamento.html#primeiras-observações"><i class="fa fa-check"></i><b>13.2</b> Primeiras observações<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="entes.html"><a href="entes.html"><i class="fa fa-check"></i><b>14</b> Entes<span></span></a></li>
+<li class="chapter" data-level="15" data-path="palavras-chave-em-contexto---kwic.html"><a href="palavras-chave-em-contexto---kwic.html"><i class="fa fa-check"></i><b>15</b> Palavras chave em contexto - KWIC<span></span></a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="palavras-chave-em-contexto---kwic.html"><a href="palavras-chave-em-contexto---kwic.html#opção-1-pegando-apenas-os-senadores"><i class="fa fa-check"></i><b>15.1</b> Opção 1: pegando apenas os senadores<span></span></a></li>
+<li class="chapter" data-level="15.2" data-path="palavras-chave-em-contexto---kwic.html"><a href="palavras-chave-em-contexto---kwic.html#opção-2-somente-senadores-a-partir-do-site-do-senado"><i class="fa fa-check"></i><b>15.2</b> Opção 2: Somente senadores, a partir do site do Senado<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="wordcloud---nuvem-de-palavras.html"><a href="wordcloud---nuvem-de-palavras.html"><i class="fa fa-check"></i><b>16</b> wordcloud - Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="17" data-path="tf-idf-dos-senadores.html"><a href="tf-idf-dos-senadores.html"><i class="fa fa-check"></i><b>17</b> TF-IDF dos Senadores<span></span></a></li>
+<li class="chapter" data-level="18" data-path="dicionário.html"><a href="dicionário.html"><i class="fa fa-check"></i><b>18</b> Dicionário<span></span></a></li>
+<li class="chapter" data-level="19" data-path="modelagem-de-tópicos.html"><a href="modelagem-de-tópicos.html"><i class="fa fa-check"></i><b>19</b> Modelagem de tópicos<span></span></a></li>
+<li class="chapter" data-level="20" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>20</b> Apêndice: Datasets<span></span></a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="datasets.html"><a href="datasets.html#tm_datasets"><i class="fa fa-check"></i><b>20.1</b> Alguns datasets/databases para análise textual<span></span></a></li>
+<li class="chapter" data-level="20.2" data-path="datasets.html"><a href="datasets.html#pacotes-r-com-datasets"><i class="fa fa-check"></i><b>20.2</b> Pacotes R com datasets<span></span></a></li>
+<li class="chapter" data-level="20.3" data-path="datasets.html"><a href="datasets.html#datasets-em-sites-diversos"><i class="fa fa-check"></i><b>20.3</b> Datasets em sites diversos:<span></span></a></li>
+<li class="chapter" data-level="20.4" data-path="datasets.html"><a href="datasets.html#datasets-no-kaggle"><i class="fa fa-check"></i><b>20.4</b> Datasets no <span>Kaggle</span>:<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>21</b> Links úteis<span></span></a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>21.1</b> Humanidades digitais<span></span></a></li>
+<li class="chapter" data-level="21.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>21.2</b> Análise de redes sociais<span></span></a></li>
+<li class="chapter" data-level="21.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>21.3</b> Textos sobre análise textual<span></span></a>
+<ul>
+<li class="chapter" data-level="21.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-ciências-sociais-computacionais"><i class="fa fa-check"></i><b>21.3.1</b> Sociologia Digital / Ciências Sociais Computacionais<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>21.4</b> Processamento Linguagem Natural (PLN ou NLP)<span></span></a></li>
+<li class="chapter" data-level="21.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>21.5</b> Revistas / Journals acadêmicos<span></span></a></li>
+<li class="chapter" data-level="21.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>21.6</b> Dados Abertos<span></span></a></li>
+<li class="chapter" data-level="21.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>21.7</b> Vídeos<span></span></a></li>
+<li class="chapter" data-level="21.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>21.8</b> Sites / Blogs<span></span></a></li>
+<li class="chapter" data-level="21.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>21.9</b> Organizações<span></span></a></li>
+<li class="chapter" data-level="21.10" data-path="links-úteis.html"><a href="links-úteis.html#estatística"><i class="fa fa-check"></i><b>21.10</b> Estatística<span></span></a></li>
+<li class="chapter" data-level="21.11" data-path="links-úteis.html"><a href="links-úteis.html#podcasts"><i class="fa fa-check"></i><b>21.11</b> Podcasts<span></span></a></li>
+<li class="chapter" data-level="21.12" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>21.12</b> Links Programação<span></span></a>
+<ul>
+<li class="chapter" data-level="21.12.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>21.12.1</b> R introdução<span></span></a></li>
+<li class="chapter" data-level="21.12.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>21.12.2</b> R e estatística<span></span></a></li>
+<li class="chapter" data-level="21.12.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>21.12.3</b> R - tópicos específicos<span></span></a></li>
+<li class="chapter" data-level="21.12.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>21.12.4</b> R - avançado<span></span></a></li>
+<li class="chapter" data-level="21.12.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>21.12.5</b> Links Python<span></span></a></li>
+<li class="chapter" data-level="21.12.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>21.12.6</b> Python - tópicos específicos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.13" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>21.13</b> Links de Cursos Online<span></span></a></li>
+<li class="chapter" data-level="21.14" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>21.14</b> Grupos de discussão/Forum<span></span></a>
+<ul>
+<li class="chapter" data-level="21.14.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>21.14.1</b> Telegram<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="21.15" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>21.15</b> Links de folhas de dicas (<em>Cheat-sheets</em>)<span></span></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="palavras-chave-em-contexto---kwic" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">15</span> Palavras chave em contexto - KWIC<a href="palavras-chave-em-contexto---kwic.html#palavras-chave-em-contexto---kwic" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Para entender melhor como certas palavras foram utilizadas, em que contexto elas apareceram, podemos utilizar o Keywords in context</p>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="palavras-chave-em-contexto---kwic.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Carregando o pacote</span></span>
+<span id="cb230-2"><a href="palavras-chave-em-contexto---kwic.html#cb230-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quanteda)</span>
+<span id="cb230-3"><a href="palavras-chave-em-contexto---kwic.html#cb230-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Transformando o dataframe em corpus do quanteda</span></span>
+<span id="cb230-4"><a href="palavras-chave-em-contexto---kwic.html#cb230-4" aria-hidden="true" tabindex="-1"></a>Corpus.NT.falas.agrupadas <span class="ot">&lt;-</span> <span class="fu">corpus</span>(NotasTaq_falas.agrupadas, </span>
+<span id="cb230-5"><a href="palavras-chave-em-contexto---kwic.html#cb230-5" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">docnames =</span> <span class="st">&quot;nome&quot;</span>, </span>
+<span id="cb230-6"><a href="palavras-chave-em-contexto---kwic.html#cb230-6" aria-hidden="true" tabindex="-1"></a>                                    <span class="co"># docid_field = 1:nrow(NotasTaq_falas.agrupadas), </span></span>
+<span id="cb230-7"><a href="palavras-chave-em-contexto---kwic.html#cb230-7" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">docid_field =</span> <span class="st">&quot;nome&quot;</span>, </span>
+<span id="cb230-8"><a href="palavras-chave-em-contexto---kwic.html#cb230-8" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">text_field =</span> <span class="st">&quot;falas&quot;</span> )</span>
+<span id="cb230-9"><a href="palavras-chave-em-contexto---kwic.html#cb230-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning: docnames argument is not used.</span></span>
+<span id="cb230-10"><a href="palavras-chave-em-contexto---kwic.html#cb230-10" aria-hidden="true" tabindex="-1"></a><span class="co"># observando nosso corpus</span></span>
+<span id="cb230-11"><a href="palavras-chave-em-contexto---kwic.html#cb230-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(Corpus.NT.falas.agrupadas)</span>
+<span id="cb230-12"><a href="palavras-chave-em-contexto---kwic.html#cb230-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Corpus consisting of 153 documents.</span></span>
+<span id="cb230-13"><a href="palavras-chave-em-contexto---kwic.html#cb230-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Airton Antonio Soligo :</span></span>
+<span id="cb230-14"><a href="palavras-chave-em-contexto---kwic.html#cb230-14" aria-hidden="true" tabindex="-1"></a><span class="do">## &quot;senhor Presidente, acredito que, em função da decisão, eu nã...&quot;</span></span>
+<span id="cb230-15"><a href="palavras-chave-em-contexto---kwic.html#cb230-15" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb230-16"><a href="palavras-chave-em-contexto---kwic.html#cb230-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Alan Diniz Moreira Guedes de Ornelas :</span></span>
+<span id="cb230-17"><a href="palavras-chave-em-contexto---kwic.html#cb230-17" aria-hidden="true" tabindex="-1"></a><span class="do">## &quot;Presidente, só uma questão de ordem então?  Para deixar o re...&quot;</span></span>
+<span id="cb230-18"><a href="palavras-chave-em-contexto---kwic.html#cb230-18" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb230-19"><a href="palavras-chave-em-contexto---kwic.html#cb230-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Alberto Zacharias Toron :</span></span>
+<span id="cb230-20"><a href="palavras-chave-em-contexto---kwic.html#cb230-20" aria-hidden="true" tabindex="-1"></a><span class="do">## &quot;Perfeitamente, Excelência, senhor Presidente em exercício.  ...&quot;</span></span>
+<span id="cb230-21"><a href="palavras-chave-em-contexto---kwic.html#cb230-21" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb230-22"><a href="palavras-chave-em-contexto---kwic.html#cb230-22" aria-hidden="true" tabindex="-1"></a><span class="do">## Alessandro Vieira :</span></span>
+<span id="cb230-23"><a href="palavras-chave-em-contexto---kwic.html#cb230-23" aria-hidden="true" tabindex="-1"></a><span class="do">## &quot;Pela ordem, Presidente Otto Alencar.  senhor Presidente...  ...&quot;</span></span>
+<span id="cb230-24"><a href="palavras-chave-em-contexto---kwic.html#cb230-24" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb230-25"><a href="palavras-chave-em-contexto---kwic.html#cb230-25" aria-hidden="true" tabindex="-1"></a><span class="do">## Alexandre Figueiredo Costa Silva Marques :</span></span>
+<span id="cb230-26"><a href="palavras-chave-em-contexto---kwic.html#cb230-26" aria-hidden="true" tabindex="-1"></a><span class="do">## &quot;Senador, eu vou me valer do habeas corpus que me foi deferid...&quot;</span></span>
+<span id="cb230-27"><a href="palavras-chave-em-contexto---kwic.html#cb230-27" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb230-28"><a href="palavras-chave-em-contexto---kwic.html#cb230-28" aria-hidden="true" tabindex="-1"></a><span class="do">## Alexandre Queiroz :</span></span>
+<span id="cb230-29"><a href="palavras-chave-em-contexto---kwic.html#cb230-29" aria-hidden="true" tabindex="-1"></a><span class="do">## &quot;Presidente, bom dia.  Bom dia, eminente Relator, senhors. Se...&quot;</span></span>
+<span id="cb230-30"><a href="palavras-chave-em-contexto---kwic.html#cb230-30" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb230-31"><a href="palavras-chave-em-contexto---kwic.html#cb230-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [ reached max_ndoc ... 147 more documents ]</span></span>
+<span id="cb230-32"><a href="palavras-chave-em-contexto---kwic.html#cb230-32" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(Corpus.NT.falas.agrupadas, <span class="dv">5</span>)</span>
+<span id="cb230-33"><a href="palavras-chave-em-contexto---kwic.html#cb230-33" aria-hidden="true" tabindex="-1"></a><span class="do">## Corpus consisting of 153 documents, showing 5 documents:</span></span>
+<span id="cb230-34"><a href="palavras-chave-em-contexto---kwic.html#cb230-34" aria-hidden="true" tabindex="-1"></a><span class="do">## </span></span>
+<span id="cb230-35"><a href="palavras-chave-em-contexto---kwic.html#cb230-35" aria-hidden="true" tabindex="-1"></a><span class="do">##                                      Text Types Tokens Sentences</span></span>
+<span id="cb230-36"><a href="palavras-chave-em-contexto---kwic.html#cb230-36" aria-hidden="true" tabindex="-1"></a><span class="do">##                     Airton Antonio Soligo  2706  19501      1367</span></span>
+<span id="cb230-37"><a href="palavras-chave-em-contexto---kwic.html#cb230-37" aria-hidden="true" tabindex="-1"></a><span class="do">##      Alan Diniz Moreira Guedes de Ornelas   238    632        60</span></span>
+<span id="cb230-38"><a href="palavras-chave-em-contexto---kwic.html#cb230-38" aria-hidden="true" tabindex="-1"></a><span class="do">##                   Alberto Zacharias Toron   233    632        55</span></span>
+<span id="cb230-39"><a href="palavras-chave-em-contexto---kwic.html#cb230-39" aria-hidden="true" tabindex="-1"></a><span class="do">##                         Alessandro Vieira  6974  73620      3955</span></span>
+<span id="cb230-40"><a href="palavras-chave-em-contexto---kwic.html#cb230-40" aria-hidden="true" tabindex="-1"></a><span class="do">##  Alexandre Figueiredo Costa Silva Marques  1323   7169       459</span></span>
+<span id="cb230-41"><a href="palavras-chave-em-contexto---kwic.html#cb230-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-42"><a href="palavras-chave-em-contexto---kwic.html#cb230-42" aria-hidden="true" tabindex="-1"></a><span class="co"># tokenizando para poder usar no kwic</span></span>
+<span id="cb230-43"><a href="palavras-chave-em-contexto---kwic.html#cb230-43" aria-hidden="true" tabindex="-1"></a>corpus.token <span class="ot">&lt;-</span> Corpus.NT.falas.agrupadas <span class="sc">|&gt;</span></span>
+<span id="cb230-44"><a href="palavras-chave-em-contexto---kwic.html#cb230-44" aria-hidden="true" tabindex="-1"></a>          <span class="co"># precisamos primeiro tokenizar</span></span>
+<span id="cb230-45"><a href="palavras-chave-em-contexto---kwic.html#cb230-45" aria-hidden="true" tabindex="-1"></a>          <span class="fu">tokens</span>()</span>
+<span id="cb230-46"><a href="palavras-chave-em-contexto---kwic.html#cb230-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-47"><a href="palavras-chave-em-contexto---kwic.html#cb230-47" aria-hidden="true" tabindex="-1"></a><span class="co"># termos a serem buscados</span></span>
+<span id="cb230-48"><a href="palavras-chave-em-contexto---kwic.html#cb230-48" aria-hidden="true" tabindex="-1"></a>termos.vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;WhatsApps&quot;</span>, <span class="st">&quot;Quickcard&quot;</span>)</span>
+<span id="cb230-49"><a href="palavras-chave-em-contexto---kwic.html#cb230-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb230-50"><a href="palavras-chave-em-contexto---kwic.html#cb230-50" aria-hidden="true" tabindex="-1"></a> <span class="co"># rodando a função de palavras chave em contexto</span></span>
+<span id="cb230-51"><a href="palavras-chave-em-contexto---kwic.html#cb230-51" aria-hidden="true" tabindex="-1"></a><span class="fu">kwic</span>(corpus.token , </span>
+<span id="cb230-52"><a href="palavras-chave-em-contexto---kwic.html#cb230-52" aria-hidden="true" tabindex="-1"></a>        <span class="co"># termos a serem buscados. Pode ser um termo ou um vetor</span></span>
+<span id="cb230-53"><a href="palavras-chave-em-contexto---kwic.html#cb230-53" aria-hidden="true" tabindex="-1"></a>        termos.vetor, </span>
+<span id="cb230-54"><a href="palavras-chave-em-contexto---kwic.html#cb230-54" aria-hidden="true" tabindex="-1"></a>        <span class="co"># quantas palavras devem ser mostradas ao redor</span></span>
+<span id="cb230-55"><a href="palavras-chave-em-contexto---kwic.html#cb230-55" aria-hidden="true" tabindex="-1"></a>        <span class="dv">4</span>, </span>
+<span id="cb230-56"><a href="palavras-chave-em-contexto---kwic.html#cb230-56" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Para pegar tanto palavras minúsculas como as em maiúsculo. </span></span>
+<span id="cb230-57"><a href="palavras-chave-em-contexto---kwic.html#cb230-57" aria-hidden="true" tabindex="-1"></a>        <span class="at">case_insensitive =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb230-58"><a href="palavras-chave-em-contexto---kwic.html#cb230-58" aria-hidden="true" tabindex="-1"></a><span class="do">## Keyword-in-context with 10 matches.                                                                      </span></span>
+<span id="cb230-59"><a href="palavras-chave-em-contexto---kwic.html#cb230-59" aria-hidden="true" tabindex="-1"></a><span class="do">##       [Humberto Costa, 18096]      já recebi hoje alguns | WhatsApps |</span></span>
+<span id="cb230-60"><a href="palavras-chave-em-contexto---kwic.html#cb230-60" aria-hidden="true" tabindex="-1"></a><span class="do">##       [Humberto Costa, 36774]     , vários telefonemas e | WhatsApps |</span></span>
+<span id="cb230-61"><a href="palavras-chave-em-contexto---kwic.html#cb230-61" aria-hidden="true" tabindex="-1"></a><span class="do">##     [Jean Paul Prates, 12712] conhece um serviço chamado | QuickCard |</span></span>
+<span id="cb230-62"><a href="palavras-chave-em-contexto---kwic.html#cb230-62" aria-hidden="true" tabindex="-1"></a><span class="do">##     [Jean Paul Prates, 12714] serviço chamado QuickCard? | QuickCard |</span></span>
+<span id="cb230-63"><a href="palavras-chave-em-contexto---kwic.html#cb230-63" aria-hidden="true" tabindex="-1"></a><span class="do">##     [Jean Paul Prates, 12727]            . Você emite um | QuickCard |</span></span>
+<span id="cb230-64"><a href="palavras-chave-em-contexto---kwic.html#cb230-64" aria-hidden="true" tabindex="-1"></a><span class="do">##     [Jean Paul Prates, 12760]  para esse serviço chamado | QuickCard |</span></span>
+<span id="cb230-65"><a href="palavras-chave-em-contexto---kwic.html#cb230-65" aria-hidden="true" tabindex="-1"></a><span class="do">##     [Jean Paul Prates, 12997]            é o pagamento à | QuickCard |</span></span>
+<span id="cb230-66"><a href="palavras-chave-em-contexto---kwic.html#cb230-66" aria-hidden="true" tabindex="-1"></a><span class="do">##     [Jean Paul Prates, 13014]            adiante: a quem | QuickCard |</span></span>
+<span id="cb230-67"><a href="palavras-chave-em-contexto---kwic.html#cb230-67" aria-hidden="true" tabindex="-1"></a><span class="do">##  [Randolfe Rodrigues, 210924]           Abdul, vamos aos | WhatsApps |</span></span>
+<span id="cb230-68"><a href="palavras-chave-em-contexto---kwic.html#cb230-68" aria-hidden="true" tabindex="-1"></a><span class="do">##  [Randolfe Rodrigues, 211078]      Pode continuar com os | WhatsApps |</span></span>
+<span id="cb230-69"><a href="palavras-chave-em-contexto---kwic.html#cb230-69" aria-hidden="true" tabindex="-1"></a><span class="do">##                             </span></span>
+<span id="cb230-70"><a href="palavras-chave-em-contexto---kwic.html#cb230-70" aria-hidden="true" tabindex="-1"></a><span class="do">##  e tal. O                   </span></span>
+<span id="cb230-71"><a href="palavras-chave-em-contexto---kwic.html#cb230-71" aria-hidden="true" tabindex="-1"></a><span class="do">##  de assessores do ministério</span></span>
+<span id="cb230-72"><a href="palavras-chave-em-contexto---kwic.html#cb230-72" aria-hidden="true" tabindex="-1"></a><span class="do">##  ? QuickCard é uma          </span></span>
+<span id="cb230-73"><a href="palavras-chave-em-contexto---kwic.html#cb230-73" aria-hidden="true" tabindex="-1"></a><span class="do">##  é uma espécie de           </span></span>
+<span id="cb230-74"><a href="palavras-chave-em-contexto---kwic.html#cb230-74" aria-hidden="true" tabindex="-1"></a><span class="do">##  para alguém e essa         </span></span>
+<span id="cb230-75"><a href="palavras-chave-em-contexto---kwic.html#cb230-75" aria-hidden="true" tabindex="-1"></a><span class="do">##  . O senhor tem             </span></span>
+<span id="cb230-76"><a href="palavras-chave-em-contexto---kwic.html#cb230-76" aria-hidden="true" tabindex="-1"></a><span class="do">##  . O que a                  </span></span>
+<span id="cb230-77"><a href="palavras-chave-em-contexto---kwic.html#cb230-77" aria-hidden="true" tabindex="-1"></a><span class="do">##  pagou, ou quem             </span></span>
+<span id="cb230-78"><a href="palavras-chave-em-contexto---kwic.html#cb230-78" aria-hidden="true" tabindex="-1"></a><span class="do">##  . O senhor Abdul           </span></span>
+<span id="cb230-79"><a href="palavras-chave-em-contexto---kwic.html#cb230-79" aria-hidden="true" tabindex="-1"></a><span class="do">##  . Pode continuar,</span></span></code></pre></div>
+<p>Vamos colocar os gráficos lado a lado para facilitar a comparação. Para tal, vamos utilizar o pacote <a href="https://cran.r-project.org/web/packages/patchwork/index.html">patchwork</a> que torna bem fácil colocar múltiplos gráficos juntos, nas mais diferentes configurações de layout. Para usá-lo, vamos primeiro salvar os gráficos como objetos R e depois vamos organizá-los no patchwork. Os gráficos são os mesmos que usamos mais acima.
+Para instalar, podemos usar o comando <code>install.packages('patchwork')</code>.</p>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="palavras-chave-em-contexto---kwic.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carregando o pacote</span></span>
+<span id="cb231-2"><a href="palavras-chave-em-contexto---kwic.html#cb231-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="palavras-chave-em-contexto---kwic.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Número de corte do máximo de itens a aparecer no gráfico</span></span>
+<span id="cb232-2"><a href="palavras-chave-em-contexto---kwic.html#cb232-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">20</span></span>
+<span id="cb232-3"><a href="palavras-chave-em-contexto---kwic.html#cb232-3" aria-hidden="true" tabindex="-1"></a>graf1 <span class="ot">&lt;-</span> dplyr<span class="sc">::</span><span class="fu">arrange</span>(intervencoes, <span class="fu">desc</span>(freq)) <span class="sc">%&gt;%</span></span>
+<span id="cb232-4"><a href="palavras-chave-em-contexto---kwic.html#cb232-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># restringindo aos 30 mais frequentes</span></span>
+<span id="cb232-5"><a href="palavras-chave-em-contexto---kwic.html#cb232-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">head</span>(n) <span class="sc">%&gt;%</span></span>
+<span id="cb232-6"><a href="palavras-chave-em-contexto---kwic.html#cb232-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(nome, freq), <span class="at">y =</span> freq)) <span class="sc">+</span></span>
+<span id="cb232-7"><a href="palavras-chave-em-contexto---kwic.html#cb232-7" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb232-8"><a href="palavras-chave-em-contexto---kwic.html#cb232-8" aria-hidden="true" tabindex="-1"></a>     <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;intervenções&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>,<span class="at">y =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb232-9"><a href="palavras-chave-em-contexto---kwic.html#cb232-9" aria-hidden="true" tabindex="-1"></a>     <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>), </span>
+<span id="cb232-10"><a href="palavras-chave-em-contexto---kwic.html#cb232-10" aria-hidden="true" tabindex="-1"></a>        <span class="co"># diminuindo a letra do título do gráfico</span></span>
+<span id="cb232-11"><a href="palavras-chave-em-contexto---kwic.html#cb232-11" aria-hidden="true" tabindex="-1"></a>           <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb232-12"><a href="palavras-chave-em-contexto---kwic.html#cb232-12" aria-hidden="true" tabindex="-1"></a>      <span class="co"># girando o gráfico</span></span>
+<span id="cb232-13"><a href="palavras-chave-em-contexto---kwic.html#cb232-13" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coord_flip</span>()  </span>
+<span id="cb232-14"><a href="palavras-chave-em-contexto---kwic.html#cb232-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb232-15"><a href="palavras-chave-em-contexto---kwic.html#cb232-15" aria-hidden="true" tabindex="-1"></a>graf2 <span class="ot">&lt;-</span> NT_falasJuntasCount <span class="sc">%&gt;%</span></span>
+<span id="cb232-16"><a href="palavras-chave-em-contexto---kwic.html#cb232-16" aria-hidden="true" tabindex="-1"></a><span class="co"># restringindo aos primeiros resultados</span></span>
+<span id="cb232-17"><a href="palavras-chave-em-contexto---kwic.html#cb232-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(n) <span class="sc">%&gt;%</span></span>
+<span id="cb232-18"><a href="palavras-chave-em-contexto---kwic.html#cb232-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>( <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(nome, N_palavras), <span class="at">y =</span> N_palavras)) <span class="sc">+</span></span>
+<span id="cb232-19"><a href="palavras-chave-em-contexto---kwic.html#cb232-19" aria-hidden="true" tabindex="-1"></a>     <span class="fu">geom_col</span>() <span class="sc">+</span></span>
+<span id="cb232-20"><a href="palavras-chave-em-contexto---kwic.html#cb232-20" aria-hidden="true" tabindex="-1"></a>      <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&quot;palavras ditas&quot;</span>, <span class="at">x =</span> <span class="st">&quot;&quot;</span>,<span class="at">y =</span> <span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb232-21"><a href="palavras-chave-em-contexto---kwic.html#cb232-21" aria-hidden="true" tabindex="-1"></a>      <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>), </span>
+<span id="cb232-22"><a href="palavras-chave-em-contexto---kwic.html#cb232-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># diminuindo o tamanho do título do gráfico</span></span>
+<span id="cb232-23"><a href="palavras-chave-em-contexto---kwic.html#cb232-23" aria-hidden="true" tabindex="-1"></a>            <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size=</span><span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb232-24"><a href="palavras-chave-em-contexto---kwic.html#cb232-24" aria-hidden="true" tabindex="-1"></a>      <span class="co"># girando o gráfico</span></span>
+<span id="cb232-25"><a href="palavras-chave-em-contexto---kwic.html#cb232-25" aria-hidden="true" tabindex="-1"></a>      <span class="fu">coord_flip</span>()  </span>
+<span id="cb232-26"><a href="palavras-chave-em-contexto---kwic.html#cb232-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb232-27"><a href="palavras-chave-em-contexto---kwic.html#cb232-27" aria-hidden="true" tabindex="-1"></a><span class="co"># usando o patchwork pra colocar os gráficos lado a lado</span></span>
+<span id="cb232-28"><a href="palavras-chave-em-contexto---kwic.html#cb232-28" aria-hidden="true" tabindex="-1"></a>graf1 <span class="sc">+</span> graf2 <span class="sc">+</span></span>
+<span id="cb232-29"><a href="palavras-chave-em-contexto---kwic.html#cb232-29" aria-hidden="true" tabindex="-1"></a><span class="co"># adicionando titulo ao gráfico</span></span>
+<span id="cb232-30"><a href="palavras-chave-em-contexto---kwic.html#cb232-30" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot_annotation</span>(<span class="at">title =</span> <span class="st">&#39;CPI da Pandemia: falas quantificadas de todas as reuniões&#39;</span>,</span>
+<span id="cb232-31"><a href="palavras-chave-em-contexto---kwic.html#cb232-31" aria-hidden="true" tabindex="-1"></a>                <span class="at">subtitle =</span> <span class="st">&quot;Número de intervenções (esquerda) vs. quandidade de palavras ditas (direita)&quot;</span>,</span>
+<span id="cb232-32"><a href="palavras-chave-em-contexto---kwic.html#cb232-32" aria-hidden="true" tabindex="-1"></a>                <span class="at">caption =</span> <span class="st">&#39;*Apenas os 20 mais frequentes aparecem nos gráficos</span><span class="sc">\n</span><span class="st">Elaboração: Alisson Soares&#39;</span>)</span></code></pre></div>
+<p><img src="analise_textual_sociologia_files/figure-html/unnamed-chunk-200-1.png" width="672" /></p>
+<!-- Vamos criar um dataframe separando apenas os senadores -->
+<!-- São 149 pessoas. Alguns nomes aparecem em mais de uma versão, como Pazuelo, que aparece escrito de duas formas diferentes, uma com, outra sem "gen."; Francieli; o deputado Luis Miranda e Marcelo Blanco, aparecem com nomes grafado de duas formas distintas.  -->
+<p>Vamos restringir inicialmente nossa base de dados para explorar melhor. Vamos começar somente com os senadores.</p>
+<div id="opção-1-pegando-apenas-os-senadores" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> Opção 1: pegando apenas os senadores<a href="palavras-chave-em-contexto---kwic.html#opção-1-pegando-apenas-os-senadores" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Como somente os senadores que participaram possuem campo com partido e bloco parlamentar preenchido, uma opção para filtrarmos apenas os senadores seria excluindo as linhas cuja célula da coluna “BlocoParl” esteja vazia. &lt;&lt;</p>
+<ul>
+<li>O campo “funcao_blocoPar” possui, além da função e bloco parlamentar, possui também questões de ordem</li>
+<li>O campo “part” melhora a situação, mas podendo haver parlamentar sem partido, não resolve nosso problema</li>
+<li>o campo estado pode resolver nosso problema.</li>
+</ul>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="palavras-chave-em-contexto---kwic.html#cb233-1" aria-hidden="true" tabindex="-1"></a>siglas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;AC&quot;</span>, <span class="st">&quot;AL&quot;</span>, <span class="st">&quot;AP&quot;</span>, <span class="st">&quot;AM&quot;</span>, <span class="st">&quot;BA&quot;</span>, <span class="st">&quot;CE&quot;</span>, <span class="st">&quot;DF&quot;</span>, <span class="st">&quot;ES&quot;</span>, <span class="st">&quot;GO&quot;</span>, <span class="st">&quot;MA&quot;</span>, <span class="st">&quot;MT&quot;</span>, <span class="st">&quot;MS&quot;</span>, <span class="st">&quot;MG&quot;</span>, <span class="st">&quot;PA&quot;</span>, <span class="st">&quot;PB&quot;</span>, <span class="st">&quot;PR&quot;</span>, <span class="st">&quot;PE&quot;</span>, <span class="st">&quot;PI&quot;</span>, <span class="st">&quot;RJ&quot;</span>, <span class="st">&quot;RN&quot;</span>, <span class="st">&quot;RS&quot;</span>, <span class="st">&quot;RO&quot;</span>, <span class="st">&quot;RR&quot;</span>, <span class="st">&quot;SC&quot;</span>, <span class="st">&quot;SP&quot;</span>, <span class="st">&quot;SE&quot;</span>, <span class="st">&quot;TO&quot;</span>)</span>
+<span id="cb233-2"><a href="palavras-chave-em-contexto---kwic.html#cb233-2" aria-hidden="true" tabindex="-1"></a>DFsenadores <span class="ot">&lt;-</span> NotasTaq <span class="sc">%&gt;%</span></span>
+<span id="cb233-3"><a href="palavras-chave-em-contexto---kwic.html#cb233-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">#filter(siglas %in% estado)</span></span>
+<span id="cb233-4"><a href="palavras-chave-em-contexto---kwic.html#cb233-4" aria-hidden="true" tabindex="-1"></a>        <span class="fu">filter</span>(estado <span class="sc">%in%</span> siglas)</span>
+<span id="cb233-5"><a href="palavras-chave-em-contexto---kwic.html#cb233-5" aria-hidden="true" tabindex="-1"></a>DFsenadores</span>
+<span id="cb233-6"><a href="palavras-chave-em-contexto---kwic.html#cb233-6" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 67,220 × 9</span></span>
+<span id="cb233-7"><a href="palavras-chave-em-contexto---kwic.html#cb233-7" aria-hidden="true" tabindex="-1"></a><span class="do">##    reuniao data       nome  funcao_blocoPar BlocoParl partido estado complemento</span></span>
+<span id="cb233-8"><a href="palavras-chave-em-contexto---kwic.html#cb233-8" aria-hidden="true" tabindex="-1"></a><span class="do">##      &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;      </span></span>
+<span id="cb233-9"><a href="palavras-chave-em-contexto---kwic.html#cb233-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  1       1 2021-04-27 Otto… PRESIDENTE      (Otto Al… PSD     BA     &quot;Fala da P…</span></span>
+<span id="cb233-10"><a href="palavras-chave-em-contexto---kwic.html#cb233-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  2       1 2021-04-27 Ciro… (Bloco Parlame… Bloco Pa… PP      PI     &quot;Para ques…</span></span>
+<span id="cb233-11"><a href="palavras-chave-em-contexto---kwic.html#cb233-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  3       1 2021-04-27 Otto… PRESIDENTE      (Otto Al… PSD     BA     &quot;&quot;         </span></span>
+<span id="cb233-12"><a href="palavras-chave-em-contexto---kwic.html#cb233-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  4       1 2021-04-27 Ciro… (Bloco Parlame… Bloco Pa… PP      PI     &quot;&quot;         </span></span>
+<span id="cb233-13"><a href="palavras-chave-em-contexto---kwic.html#cb233-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  5       1 2021-04-27 Otto… PRESIDENTE      (Otto Al… PSD     BA     &quot;&quot;         </span></span>
+<span id="cb233-14"><a href="palavras-chave-em-contexto---kwic.html#cb233-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  6       1 2021-04-27 Ciro… (Bloco Parlame… Bloco Pa… PP      PI     &quot;&quot;         </span></span>
+<span id="cb233-15"><a href="palavras-chave-em-contexto---kwic.html#cb233-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  7       1 2021-04-27 Otto… PRESIDENTE      (Otto Al… PSD     BA     &quot;&quot;         </span></span>
+<span id="cb233-16"><a href="palavras-chave-em-contexto---kwic.html#cb233-16" aria-hidden="true" tabindex="-1"></a><span class="do">##  8       1 2021-04-27 Ciro… (Bloco Parlame… Bloco Pa… PP      PI     &quot;&quot;         </span></span>
+<span id="cb233-17"><a href="palavras-chave-em-contexto---kwic.html#cb233-17" aria-hidden="true" tabindex="-1"></a><span class="do">##  9       1 2021-04-27 Otto… PRESIDENTE      (Otto Al… PSD     BA     &quot;&quot;         </span></span>
+<span id="cb233-18"><a href="palavras-chave-em-contexto---kwic.html#cb233-18" aria-hidden="true" tabindex="-1"></a><span class="do">## 10       1 2021-04-27 Ciro… (Bloco Parlame… Bloco Pa… PP      PI     &quot;&quot;         </span></span>
+<span id="cb233-19"><a href="palavras-chave-em-contexto---kwic.html#cb233-19" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 67,210 more rows, and 1 more variable: fala &lt;chr&gt;</span></span>
+<span id="cb233-20"><a href="palavras-chave-em-contexto---kwic.html#cb233-20" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(DFsenadores<span class="sc">$</span>nome)</span>
+<span id="cb233-21"><a href="palavras-chave-em-contexto---kwic.html#cb233-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;Otto Alencar&quot;              &quot;Ciro Nogueira&quot;            </span></span>
+<span id="cb233-22"><a href="palavras-chave-em-contexto---kwic.html#cb233-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] &quot;Jorginho Mello&quot;            &quot;Izalci Lucas&quot;             </span></span>
+<span id="cb233-23"><a href="palavras-chave-em-contexto---kwic.html#cb233-23" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;Alessandro Vieira&quot;         &quot;Eduardo Braga&quot;            </span></span>
+<span id="cb233-24"><a href="palavras-chave-em-contexto---kwic.html#cb233-24" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] &quot;Eduardo Girão&quot;             &quot;Marcos Rogério&quot;           </span></span>
+<span id="cb233-25"><a href="palavras-chave-em-contexto---kwic.html#cb233-25" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;Omar Aziz&quot;                 &quot;Humberto Costa&quot;           </span></span>
+<span id="cb233-26"><a href="palavras-chave-em-contexto---kwic.html#cb233-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] &quot;Rogério Carvalho&quot;          &quot;Weverton&quot;                 </span></span>
+<span id="cb233-27"><a href="palavras-chave-em-contexto---kwic.html#cb233-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;Eliziane Gama&quot;             &quot;Randolfe Rodrigues&quot;       </span></span>
+<span id="cb233-28"><a href="palavras-chave-em-contexto---kwic.html#cb233-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] &quot;Paulo Rocha&quot;               &quot;Flávio Bolsonaro&quot;         </span></span>
+<span id="cb233-29"><a href="palavras-chave-em-contexto---kwic.html#cb233-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;Renan Calheiros&quot;           &quot;Fernando Bezerra Coelho&quot;  </span></span>
+<span id="cb233-30"><a href="palavras-chave-em-contexto---kwic.html#cb233-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] &quot;Luis Carlos Heinze&quot;        &quot;Angelo Coronel&quot;           </span></span>
+<span id="cb233-31"><a href="palavras-chave-em-contexto---kwic.html#cb233-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;Marcos do Val&quot;             &quot;Simone Tebet&quot;             </span></span>
+<span id="cb233-32"><a href="palavras-chave-em-contexto---kwic.html#cb233-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [23] &quot;Leila Barros&quot;              &quot;Tasso Jereissati&quot;         </span></span>
+<span id="cb233-33"><a href="palavras-chave-em-contexto---kwic.html#cb233-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;Zenaide Maia&quot;              &quot;Fabiano Contarato&quot;        </span></span>
+<span id="cb233-34"><a href="palavras-chave-em-contexto---kwic.html#cb233-34" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] &quot;Vanderlan Cardoso&quot;         &quot;Telmário Mota&quot;            </span></span>
+<span id="cb233-35"><a href="palavras-chave-em-contexto---kwic.html#cb233-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] &quot;Soraya Thronicke&quot;          &quot;Jean Paul Prates&quot;         </span></span>
+<span id="cb233-36"><a href="palavras-chave-em-contexto---kwic.html#cb233-36" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] &quot;Mara Gabrilli&quot;             &quot;Reguffe&quot;                  </span></span>
+<span id="cb233-37"><a href="palavras-chave-em-contexto---kwic.html#cb233-37" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] &quot;Mecias de Jesus&quot;           &quot;Roberto Rocha&quot;            </span></span>
+<span id="cb233-38"><a href="palavras-chave-em-contexto---kwic.html#cb233-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [35] &quot;Kátia Abreu&quot;               &quot;Daniella Ribeiro&quot;         </span></span>
+<span id="cb233-39"><a href="palavras-chave-em-contexto---kwic.html#cb233-39" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] &quot;Jorge Kajuru&quot;              &quot;Carlos Portinho&quot;          </span></span>
+<span id="cb233-40"><a href="palavras-chave-em-contexto---kwic.html#cb233-40" aria-hidden="true" tabindex="-1"></a><span class="do">## [39] &quot;Styvenson Valentim&quot;        &quot;Nelsinho Trad&quot;            </span></span>
+<span id="cb233-41"><a href="palavras-chave-em-contexto---kwic.html#cb233-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] &quot;Giordano&quot;                  &quot;Osmar Terra&quot;              </span></span>
+<span id="cb233-42"><a href="palavras-chave-em-contexto---kwic.html#cb233-42" aria-hidden="true" tabindex="-1"></a><span class="do">## [43] &quot;Luis Miranda&quot;              &quot;Rodrigo Cunha&quot;            </span></span>
+<span id="cb233-43"><a href="palavras-chave-em-contexto---kwic.html#cb233-43" aria-hidden="true" tabindex="-1"></a><span class="do">## [45] &quot;Eliane Nogueira&quot;           &quot;Reinhold Stephanes Junior&quot;</span></span>
+<span id="cb233-44"><a href="palavras-chave-em-contexto---kwic.html#cb233-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [47] &quot;Ricardo Barros&quot;            &quot;Rose de Freitas&quot;          </span></span>
+<span id="cb233-45"><a href="palavras-chave-em-contexto---kwic.html#cb233-45" aria-hidden="true" tabindex="-1"></a><span class="do">## [49] &quot;Daniel Freitas&quot;            &quot;Bia Kicis&quot;</span></span></code></pre></div>
+<p>No entanto, esta opção captou também os deputados que lá falaram, como Luis Miranda e Bia Kicis.</p>
+</div>
+<div id="opção-2-somente-senadores-a-partir-do-site-do-senado" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Opção 2: Somente senadores, a partir do site do Senado<a href="palavras-chave-em-contexto---kwic.html#opção-2-somente-senadores-a-partir-do-site-do-senado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Vamos pegar os nomes dos senadores no site do senado</p>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="palavras-chave-em-contexto---kwic.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rvest)</span>
+<span id="cb234-2"><a href="palavras-chave-em-contexto---kwic.html#cb234-2" aria-hidden="true" tabindex="-1"></a>pagina_senadores <span class="ot">&lt;-</span> rvest<span class="sc">::</span><span class="fu">read_html</span>(<span class="fu">url</span>(<span class="st">&quot;https://www25.senado.leg.br/web/senadores/em-exercicio/&quot;</span>))</span>
+<span id="cb234-3"><a href="palavras-chave-em-contexto---kwic.html#cb234-3" aria-hidden="true" tabindex="-1"></a>senadores <span class="ot">&lt;-</span> pagina_senadores <span class="sc">%&gt;%</span></span>
+<span id="cb234-4"><a href="palavras-chave-em-contexto---kwic.html#cb234-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_elements</span>(<span class="st">&quot;#senadoresemexercicio-tabela-senadores a&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb234-5"><a href="palavras-chave-em-contexto---kwic.html#cb234-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">html_text</span>()</span>
+<span id="cb234-6"><a href="palavras-chave-em-contexto---kwic.html#cb234-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">#html_attr(&quot;name&quot;)</span></span>
+<span id="cb234-7"><a href="palavras-chave-em-contexto---kwic.html#cb234-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(senadores, <span class="dv">20</span>)</span>
+<span id="cb234-8"><a href="palavras-chave-em-contexto---kwic.html#cb234-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;&quot;                   &quot;Mailza Gomes&quot;       &quot;Marcio Bittar&quot;     </span></span>
+<span id="cb234-9"><a href="palavras-chave-em-contexto---kwic.html#cb234-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  [4] &quot;Sérgio Petecão&quot;     &quot;&quot;                   &quot;Fernando Collor&quot;   </span></span>
+<span id="cb234-10"><a href="palavras-chave-em-contexto---kwic.html#cb234-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] &quot;Renan Calheiros&quot;    &quot;Rodrigo Cunha&quot;      &quot;&quot;                  </span></span>
+<span id="cb234-11"><a href="palavras-chave-em-contexto---kwic.html#cb234-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [10] &quot;Eduardo Braga&quot;      &quot;Omar Aziz&quot;          &quot;Plínio Valério&quot;    </span></span>
+<span id="cb234-12"><a href="palavras-chave-em-contexto---kwic.html#cb234-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;&quot;                   &quot;Davi Alcolumbre&quot;    &quot;Lucas Barreto&quot;     </span></span>
+<span id="cb234-13"><a href="palavras-chave-em-contexto---kwic.html#cb234-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [16] &quot;Randolfe Rodrigues&quot; &quot;&quot;                   &quot;Angelo Coronel&quot;    </span></span>
+<span id="cb234-14"><a href="palavras-chave-em-contexto---kwic.html#cb234-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] &quot;Jaques Wagner&quot;      &quot;Otto Alencar&quot;</span></span>
+<span id="cb234-15"><a href="palavras-chave-em-contexto---kwic.html#cb234-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Vimos que há muitos elementos vazios no vetor. Vamos retirá-los com o comando:</span></span>
+<span id="cb234-16"><a href="palavras-chave-em-contexto---kwic.html#cb234-16" aria-hidden="true" tabindex="-1"></a>senadores <span class="ot">&lt;-</span> senadores[senadores<span class="sc">!=</span> <span class="st">&quot;&quot;</span>]</span>
+<span id="cb234-17"><a href="palavras-chave-em-contexto---kwic.html#cb234-17" aria-hidden="true" tabindex="-1"></a>senadores</span>
+<span id="cb234-18"><a href="palavras-chave-em-contexto---kwic.html#cb234-18" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;Mailza Gomes&quot;            &quot;Marcio Bittar&quot;          </span></span>
+<span id="cb234-19"><a href="palavras-chave-em-contexto---kwic.html#cb234-19" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] &quot;Sérgio Petecão&quot;          &quot;Fernando Collor&quot;        </span></span>
+<span id="cb234-20"><a href="palavras-chave-em-contexto---kwic.html#cb234-20" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;Renan Calheiros&quot;         &quot;Rodrigo Cunha&quot;          </span></span>
+<span id="cb234-21"><a href="palavras-chave-em-contexto---kwic.html#cb234-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] &quot;Eduardo Braga&quot;           &quot;Omar Aziz&quot;              </span></span>
+<span id="cb234-22"><a href="palavras-chave-em-contexto---kwic.html#cb234-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;Plínio Valério&quot;          &quot;Davi Alcolumbre&quot;        </span></span>
+<span id="cb234-23"><a href="palavras-chave-em-contexto---kwic.html#cb234-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] &quot;Lucas Barreto&quot;           &quot;Randolfe Rodrigues&quot;     </span></span>
+<span id="cb234-24"><a href="palavras-chave-em-contexto---kwic.html#cb234-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;Angelo Coronel&quot;          &quot;Jaques Wagner&quot;          </span></span>
+<span id="cb234-25"><a href="palavras-chave-em-contexto---kwic.html#cb234-25" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] &quot;Otto Alencar&quot;            &quot;Cid Gomes&quot;              </span></span>
+<span id="cb234-26"><a href="palavras-chave-em-contexto---kwic.html#cb234-26" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;Eduardo Girão&quot;           &quot;Tasso Jereissati&quot;       </span></span>
+<span id="cb234-27"><a href="palavras-chave-em-contexto---kwic.html#cb234-27" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] &quot;Izalci Lucas&quot;            &quot;Leila Barros&quot;           </span></span>
+<span id="cb234-28"><a href="palavras-chave-em-contexto---kwic.html#cb234-28" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;Reguffe&quot;                 &quot;Fabiano Contarato&quot;      </span></span>
+<span id="cb234-29"><a href="palavras-chave-em-contexto---kwic.html#cb234-29" aria-hidden="true" tabindex="-1"></a><span class="do">## [23] &quot;Marcos do Val&quot;           &quot;Rose de Freitas&quot;        </span></span>
+<span id="cb234-30"><a href="palavras-chave-em-contexto---kwic.html#cb234-30" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;Jorge Kajuru&quot;            &quot;Luiz Carlos do Carmo&quot;   </span></span>
+<span id="cb234-31"><a href="palavras-chave-em-contexto---kwic.html#cb234-31" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] &quot;Vanderlan Cardoso&quot;       &quot;Eliziane Gama&quot;          </span></span>
+<span id="cb234-32"><a href="palavras-chave-em-contexto---kwic.html#cb234-32" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] &quot;Roberto Rocha&quot;           &quot;Weverton&quot;               </span></span>
+<span id="cb234-33"><a href="palavras-chave-em-contexto---kwic.html#cb234-33" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] &quot;Alexandre Silveira&quot;      &quot;Carlos Viana&quot;           </span></span>
+<span id="cb234-34"><a href="palavras-chave-em-contexto---kwic.html#cb234-34" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] &quot;Rodrigo Pacheco&quot;         &quot;Nelsinho Trad&quot;          </span></span>
+<span id="cb234-35"><a href="palavras-chave-em-contexto---kwic.html#cb234-35" aria-hidden="true" tabindex="-1"></a><span class="do">## [35] &quot;Simone Tebet&quot;            &quot;Soraya Thronicke&quot;       </span></span>
+<span id="cb234-36"><a href="palavras-chave-em-contexto---kwic.html#cb234-36" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] &quot;Carlos Fávaro&quot;           &quot;Fabio Garcia&quot;           </span></span>
+<span id="cb234-37"><a href="palavras-chave-em-contexto---kwic.html#cb234-37" aria-hidden="true" tabindex="-1"></a><span class="do">## [39] &quot;Wellington Fagundes&quot;     &quot;Jader Barbalho&quot;         </span></span>
+<span id="cb234-38"><a href="palavras-chave-em-contexto---kwic.html#cb234-38" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] &quot;Paulo Rocha&quot;             &quot;Zequinha Marinho&quot;       </span></span>
+<span id="cb234-39"><a href="palavras-chave-em-contexto---kwic.html#cb234-39" aria-hidden="true" tabindex="-1"></a><span class="do">## [43] &quot;Daniella Ribeiro&quot;        &quot;Nilda Gondim&quot;           </span></span>
+<span id="cb234-40"><a href="palavras-chave-em-contexto---kwic.html#cb234-40" aria-hidden="true" tabindex="-1"></a><span class="do">## [45] &quot;Veneziano Vital do Rêgo&quot; &quot;Fernando Bezerra Coelho&quot;</span></span>
+<span id="cb234-41"><a href="palavras-chave-em-contexto---kwic.html#cb234-41" aria-hidden="true" tabindex="-1"></a><span class="do">## [47] &quot;Humberto Costa&quot;          &quot;Jarbas Vasconcelos&quot;     </span></span>
+<span id="cb234-42"><a href="palavras-chave-em-contexto---kwic.html#cb234-42" aria-hidden="true" tabindex="-1"></a><span class="do">## [49] &quot;Eliane Nogueira&quot;         &quot;Elmano Férrer&quot;          </span></span>
+<span id="cb234-43"><a href="palavras-chave-em-contexto---kwic.html#cb234-43" aria-hidden="true" tabindex="-1"></a><span class="do">## [51] &quot;Marcelo Castro&quot;          &quot;Alvaro Dias&quot;            </span></span>
+<span id="cb234-44"><a href="palavras-chave-em-contexto---kwic.html#cb234-44" aria-hidden="true" tabindex="-1"></a><span class="do">## [53] &quot;Flávio Arns&quot;             &quot;Oriovisto Guimarães&quot;    </span></span>
+<span id="cb234-45"><a href="palavras-chave-em-contexto---kwic.html#cb234-45" aria-hidden="true" tabindex="-1"></a><span class="do">## [55] &quot;Carlos Portinho&quot;         &quot;Flávio Bolsonaro&quot;       </span></span>
+<span id="cb234-46"><a href="palavras-chave-em-contexto---kwic.html#cb234-46" aria-hidden="true" tabindex="-1"></a><span class="do">## [57] &quot;Romário&quot;                 &quot;Jean Paul Prates&quot;       </span></span>
+<span id="cb234-47"><a href="palavras-chave-em-contexto---kwic.html#cb234-47" aria-hidden="true" tabindex="-1"></a><span class="do">## [59] &quot;Styvenson Valentim&quot;      &quot;Zenaide Maia&quot;           </span></span>
+<span id="cb234-48"><a href="palavras-chave-em-contexto---kwic.html#cb234-48" aria-hidden="true" tabindex="-1"></a><span class="do">## [61] &quot;Acir Gurgacz&quot;            &quot;Confúcio Moura&quot;         </span></span>
+<span id="cb234-49"><a href="palavras-chave-em-contexto---kwic.html#cb234-49" aria-hidden="true" tabindex="-1"></a><span class="do">## [63] &quot;Marcos Rogério&quot;          &quot;Chico Rodrigues&quot;        </span></span>
+<span id="cb234-50"><a href="palavras-chave-em-contexto---kwic.html#cb234-50" aria-hidden="true" tabindex="-1"></a><span class="do">## [65] &quot;Mecias de Jesus&quot;         &quot;Telmário Mota&quot;          </span></span>
+<span id="cb234-51"><a href="palavras-chave-em-contexto---kwic.html#cb234-51" aria-hidden="true" tabindex="-1"></a><span class="do">## [67] &quot;Lasier Martins&quot;          &quot;Luis Carlos Heinze&quot;     </span></span>
+<span id="cb234-52"><a href="palavras-chave-em-contexto---kwic.html#cb234-52" aria-hidden="true" tabindex="-1"></a><span class="do">## [69] &quot;Paulo Paim&quot;              &quot;Dário Berger&quot;           </span></span>
+<span id="cb234-53"><a href="palavras-chave-em-contexto---kwic.html#cb234-53" aria-hidden="true" tabindex="-1"></a><span class="do">## [71] &quot;Esperidião Amin&quot;         &quot;Jorginho Mello&quot;         </span></span>
+<span id="cb234-54"><a href="palavras-chave-em-contexto---kwic.html#cb234-54" aria-hidden="true" tabindex="-1"></a><span class="do">## [73] &quot;Alessandro Vieira&quot;       &quot;Maria do Carmo Alves&quot;   </span></span>
+<span id="cb234-55"><a href="palavras-chave-em-contexto---kwic.html#cb234-55" aria-hidden="true" tabindex="-1"></a><span class="do">## [75] &quot;Rogério Carvalho&quot;        &quot;Giordano&quot;               </span></span>
+<span id="cb234-56"><a href="palavras-chave-em-contexto---kwic.html#cb234-56" aria-hidden="true" tabindex="-1"></a><span class="do">## [77] &quot;José Serra&quot;              &quot;Mara Gabrilli&quot;          </span></span>
+<span id="cb234-57"><a href="palavras-chave-em-contexto---kwic.html#cb234-57" aria-hidden="true" tabindex="-1"></a><span class="do">## [79] &quot;Eduardo Gomes&quot;           &quot;Irajá&quot;                  </span></span>
+<span id="cb234-58"><a href="palavras-chave-em-contexto---kwic.html#cb234-58" aria-hidden="true" tabindex="-1"></a><span class="do">## [81] &quot;Kátia Abreu&quot;</span></span></code></pre></div>
+<p>De posse dos nomes dos senadores, vamos ver quais nomes no nosso dataframe da CPI tem intersecção com a lista de senadores. Lembrando, esta lista foi gerada pouco tempo depois da CPI, assim, dependendo de quanto tempo você for tentar reproduzir o exemplo, o link pode ter expirado ou a lista de senadores pode já ter mudado.</p>
+<!--  participantes.cpi <- NotasTaq$nome |> unique() -->
+<!-- senadores_NT <- unique(DFsenadores$nome) -->
+<!-- #write_clip(senadores_NT)i -->
+<p>Já havíamos gerado um vetor com os nomes de todos que participaram da CPI: “participantes”. Vamos fazer a intersecção dos participantes da CPI com os senadores para pegar apenas os senadores que participaram da CPI.</p>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="palavras-chave-em-contexto---kwic.html#cb235-1" aria-hidden="true" tabindex="-1"></a>senadoresNaCPI <span class="ot">&lt;-</span> participantes[participantes <span class="sc">%in%</span> senadores]</span>
+<span id="cb235-2"><a href="palavras-chave-em-contexto---kwic.html#cb235-2" aria-hidden="true" tabindex="-1"></a>senadoresNaCPI</span>
+<span id="cb235-3"><a href="palavras-chave-em-contexto---kwic.html#cb235-3" aria-hidden="true" tabindex="-1"></a><span class="do">##  [1] &quot;Otto Alencar&quot;            &quot;Jorginho Mello&quot;         </span></span>
+<span id="cb235-4"><a href="palavras-chave-em-contexto---kwic.html#cb235-4" aria-hidden="true" tabindex="-1"></a><span class="do">##  [3] &quot;Izalci Lucas&quot;            &quot;Alessandro Vieira&quot;      </span></span>
+<span id="cb235-5"><a href="palavras-chave-em-contexto---kwic.html#cb235-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  [5] &quot;Eduardo Braga&quot;           &quot;Eduardo Girão&quot;          </span></span>
+<span id="cb235-6"><a href="palavras-chave-em-contexto---kwic.html#cb235-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  [7] &quot;Marcos Rogério&quot;          &quot;Omar Aziz&quot;              </span></span>
+<span id="cb235-7"><a href="palavras-chave-em-contexto---kwic.html#cb235-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  [9] &quot;Humberto Costa&quot;          &quot;Rogério Carvalho&quot;       </span></span>
+<span id="cb235-8"><a href="palavras-chave-em-contexto---kwic.html#cb235-8" aria-hidden="true" tabindex="-1"></a><span class="do">## [11] &quot;Weverton&quot;                &quot;Eliziane Gama&quot;          </span></span>
+<span id="cb235-9"><a href="palavras-chave-em-contexto---kwic.html#cb235-9" aria-hidden="true" tabindex="-1"></a><span class="do">## [13] &quot;Randolfe Rodrigues&quot;      &quot;Paulo Rocha&quot;            </span></span>
+<span id="cb235-10"><a href="palavras-chave-em-contexto---kwic.html#cb235-10" aria-hidden="true" tabindex="-1"></a><span class="do">## [15] &quot;Flávio Bolsonaro&quot;        &quot;Renan Calheiros&quot;        </span></span>
+<span id="cb235-11"><a href="palavras-chave-em-contexto---kwic.html#cb235-11" aria-hidden="true" tabindex="-1"></a><span class="do">## [17] &quot;Fernando Bezerra Coelho&quot; &quot;Luis Carlos Heinze&quot;     </span></span>
+<span id="cb235-12"><a href="palavras-chave-em-contexto---kwic.html#cb235-12" aria-hidden="true" tabindex="-1"></a><span class="do">## [19] &quot;Angelo Coronel&quot;          &quot;Marcos do Val&quot;          </span></span>
+<span id="cb235-13"><a href="palavras-chave-em-contexto---kwic.html#cb235-13" aria-hidden="true" tabindex="-1"></a><span class="do">## [21] &quot;Simone Tebet&quot;            &quot;Leila Barros&quot;           </span></span>
+<span id="cb235-14"><a href="palavras-chave-em-contexto---kwic.html#cb235-14" aria-hidden="true" tabindex="-1"></a><span class="do">## [23] &quot;Tasso Jereissati&quot;        &quot;Zenaide Maia&quot;           </span></span>
+<span id="cb235-15"><a href="palavras-chave-em-contexto---kwic.html#cb235-15" aria-hidden="true" tabindex="-1"></a><span class="do">## [25] &quot;Fabiano Contarato&quot;       &quot;Vanderlan Cardoso&quot;      </span></span>
+<span id="cb235-16"><a href="palavras-chave-em-contexto---kwic.html#cb235-16" aria-hidden="true" tabindex="-1"></a><span class="do">## [27] &quot;Telmário Mota&quot;           &quot;Soraya Thronicke&quot;       </span></span>
+<span id="cb235-17"><a href="palavras-chave-em-contexto---kwic.html#cb235-17" aria-hidden="true" tabindex="-1"></a><span class="do">## [29] &quot;Jean Paul Prates&quot;        &quot;Mara Gabrilli&quot;          </span></span>
+<span id="cb235-18"><a href="palavras-chave-em-contexto---kwic.html#cb235-18" aria-hidden="true" tabindex="-1"></a><span class="do">## [31] &quot;Reguffe&quot;                 &quot;Mecias de Jesus&quot;        </span></span>
+<span id="cb235-19"><a href="palavras-chave-em-contexto---kwic.html#cb235-19" aria-hidden="true" tabindex="-1"></a><span class="do">## [33] &quot;Roberto Rocha&quot;           &quot;Kátia Abreu&quot;            </span></span>
+<span id="cb235-20"><a href="palavras-chave-em-contexto---kwic.html#cb235-20" aria-hidden="true" tabindex="-1"></a><span class="do">## [35] &quot;Daniella Ribeiro&quot;        &quot;Jorge Kajuru&quot;           </span></span>
+<span id="cb235-21"><a href="palavras-chave-em-contexto---kwic.html#cb235-21" aria-hidden="true" tabindex="-1"></a><span class="do">## [37] &quot;Carlos Portinho&quot;         &quot;Styvenson Valentim&quot;     </span></span>
+<span id="cb235-22"><a href="palavras-chave-em-contexto---kwic.html#cb235-22" aria-hidden="true" tabindex="-1"></a><span class="do">## [39] &quot;Nelsinho Trad&quot;           &quot;Giordano&quot;               </span></span>
+<span id="cb235-23"><a href="palavras-chave-em-contexto---kwic.html#cb235-23" aria-hidden="true" tabindex="-1"></a><span class="do">## [41] &quot;Rodrigo Cunha&quot;           &quot;Eliane Nogueira&quot;        </span></span>
+<span id="cb235-24"><a href="palavras-chave-em-contexto---kwic.html#cb235-24" aria-hidden="true" tabindex="-1"></a><span class="do">## [43] &quot;Rose de Freitas&quot;</span></span></code></pre></div>
+<p>Tendo agora a lista dos senadores que participaram da CPI, vamos filtrar as falas somente destes.</p>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="palavras-chave-em-contexto---kwic.html#cb236-1" aria-hidden="true" tabindex="-1"></a>senadoresdf <span class="ot">&lt;-</span> NotasTaq <span class="sc">%&gt;%</span></span>
+<span id="cb236-2"><a href="palavras-chave-em-contexto---kwic.html#cb236-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(nome <span class="sc">%in%</span> senadoresNaCPI )</span>
+<span id="cb236-3"><a href="palavras-chave-em-contexto---kwic.html#cb236-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(senadoresdf) </span>
+<span id="cb236-4"><a href="palavras-chave-em-contexto---kwic.html#cb236-4" aria-hidden="true" tabindex="-1"></a><span class="do">## tibble [65,733 × 9] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb236-5"><a href="palavras-chave-em-contexto---kwic.html#cb236-5" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ reuniao        : num [1:65733] 1 1 1 1 1 1 1 1 1 1 ...</span></span>
+<span id="cb236-6"><a href="palavras-chave-em-contexto---kwic.html#cb236-6" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ data           : Date[1:65733], format: &quot;2021-04-27&quot; &quot;2021-04-27&quot; ...</span></span>
+<span id="cb236-7"><a href="palavras-chave-em-contexto---kwic.html#cb236-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ nome           : chr [1:65733] &quot;Otto Alencar&quot; &quot;Otto Alencar&quot; &quot;Otto Alencar&quot; &quot;Otto Alencar&quot; ...</span></span>
+<span id="cb236-8"><a href="palavras-chave-em-contexto---kwic.html#cb236-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ funcao_blocoPar: chr [1:65733] &quot;PRESIDENTE&quot; &quot;PRESIDENTE&quot; &quot;PRESIDENTE&quot; &quot;PRESIDENTE&quot; ...</span></span>
+<span id="cb236-9"><a href="palavras-chave-em-contexto---kwic.html#cb236-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ BlocoParl      : chr [1:65733] &quot;(Otto Alencar. PSD - BA. Fala da Presidência.)&quot; &quot;(Otto Alencar. PSD - BA)&quot; &quot;(Otto Alencar. PSD - BA)&quot; &quot;(Otto Alencar. PSD - BA)&quot; ...</span></span>
+<span id="cb236-10"><a href="palavras-chave-em-contexto---kwic.html#cb236-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ partido        : Named chr [1:65733] &quot;PSD&quot; &quot;PSD&quot; &quot;PSD&quot; &quot;PSD&quot; ...</span></span>
+<span id="cb236-11"><a href="palavras-chave-em-contexto---kwic.html#cb236-11" aria-hidden="true" tabindex="-1"></a><span class="do">##   ..- attr(*, &quot;names&quot;)= chr [1:65733] &quot;PSD&quot; &quot;PSD&quot; &quot;PSD&quot; &quot;PSD&quot; ...</span></span>
+<span id="cb236-12"><a href="palavras-chave-em-contexto---kwic.html#cb236-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ estado         : chr [1:65733] &quot;BA&quot; &quot;BA&quot; &quot;BA&quot; &quot;BA&quot; ...</span></span>
+<span id="cb236-13"><a href="palavras-chave-em-contexto---kwic.html#cb236-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ complemento    : chr [1:65733] &quot;Fala da Presidência&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...</span></span>
+<span id="cb236-14"><a href="palavras-chave-em-contexto---kwic.html#cb236-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ fala           : chr [1:65733] &quot;Invocando a proteção de Deus, declaro aberta a sessão para eleição, já que temos quórum suficiente para a abert&quot;| __truncated__ &quot;Senador Ciro Nogueira, esta é uma Comissão Parlamentar de Inquérito, vossa_excelência sabe que não é temática. &quot;| __truncated__ &quot;Eu indeferi. Sou Presidente e posso indeferir. &quot; &quot;Por que vossa_excelência não questionou à época essa questão de ordem? &quot; ...</span></span>
+<span id="cb236-15"><a href="palavras-chave-em-contexto---kwic.html#cb236-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb236-16"><a href="palavras-chave-em-contexto---kwic.html#cb236-16" aria-hidden="true" tabindex="-1"></a><span class="co"># criando um DF das falas de cada senador todas reunidas</span></span>
+<span id="cb236-17"><a href="palavras-chave-em-contexto---kwic.html#cb236-17" aria-hidden="true" tabindex="-1"></a>senadores_falasJuntas <span class="ot">&lt;-</span> NT_falasJuntasCount <span class="sc">%&gt;%</span></span>
+<span id="cb236-18"><a href="palavras-chave-em-contexto---kwic.html#cb236-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(nome <span class="sc">%in%</span> senadoresNaCPI )</span>
+<span id="cb236-19"><a href="palavras-chave-em-contexto---kwic.html#cb236-19" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(senadores_falasJuntas)</span>
+<span id="cb236-20"><a href="palavras-chave-em-contexto---kwic.html#cb236-20" aria-hidden="true" tabindex="-1"></a><span class="do">## tibble [43 × 3] (S3: tbl_df/tbl/data.frame)</span></span>
+<span id="cb236-21"><a href="palavras-chave-em-contexto---kwic.html#cb236-21" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ nome      : chr [1:43] &quot;Omar Aziz&quot; &quot;Renan Calheiros&quot; &quot;Randolfe Rodrigues&quot; &quot;Marcos Rogério&quot; ...</span></span>
+<span id="cb236-22"><a href="palavras-chave-em-contexto---kwic.html#cb236-22" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ N_palavras: int [1:43] 412873 354425 342297 196545 146236 139675 126370 124370 120364 114933 ...</span></span>
+<span id="cb236-23"><a href="palavras-chave-em-contexto---kwic.html#cb236-23" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ falas     : chr [1:43] &quot;Como é que é? Peço só um minutinho, só um minutinho!  senhor Presidente...  Eu acho que vossa_excelência.. Nós &quot;| __truncated__ &quot;Quer dizer que há outros impedimentos a serem...  Acredito não ser o caso de V.Exa., mas o Estado de Alagoas é &quot;| __truncated__ &quot;Presidente...  Presidente, qual a ordem?  Presidente, só para declinar a ordem, quem são?  Agora é a Eliziane? &quot;| __truncated__ &quot;senhor Presidente, senhors. e senhor. Senadores, faço a presente questão de ordem, senhor Presidente, desde log&quot;| __truncated__ ...</span></span></code></pre></div>
+<p>E outro tibble apenas com quem não for senador
+<!-- Na verdade, o que fizemos acima foi captar não apenas os depoentes, bem como demais que não sejam senadores e que tenham falado por lá, incluindo deputados e advogados. --></p>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="palavras-chave-em-contexto---kwic.html#cb237-1" aria-hidden="true" tabindex="-1"></a>nao_senadores <span class="ot">&lt;-</span> NotasTaq <span class="sc">%&gt;%</span></span>
+<span id="cb237-2"><a href="palavras-chave-em-contexto---kwic.html#cb237-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(BlocoParl <span class="sc">==</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb237-3"><a href="palavras-chave-em-contexto---kwic.html#cb237-3" aria-hidden="true" tabindex="-1"></a>nao_senadores</span>
+<span id="cb237-4"><a href="palavras-chave-em-contexto---kwic.html#cb237-4" aria-hidden="true" tabindex="-1"></a><span class="do">## # A tibble: 24,296 × 9</span></span>
+<span id="cb237-5"><a href="palavras-chave-em-contexto---kwic.html#cb237-5" aria-hidden="true" tabindex="-1"></a><span class="do">##    reuniao data       nome  funcao_blocoPar BlocoParl partido estado complemento</span></span>
+<span id="cb237-6"><a href="palavras-chave-em-contexto---kwic.html#cb237-6" aria-hidden="true" tabindex="-1"></a><span class="do">##      &lt;dbl&gt; &lt;date&gt;     &lt;chr&gt; &lt;chr&gt;           &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;      </span></span>
+<span id="cb237-7"><a href="palavras-chave-em-contexto---kwic.html#cb237-7" aria-hidden="true" tabindex="-1"></a><span class="do">##  1      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-8"><a href="palavras-chave-em-contexto---kwic.html#cb237-8" aria-hidden="true" tabindex="-1"></a><span class="do">##  2      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-9"><a href="palavras-chave-em-contexto---kwic.html#cb237-9" aria-hidden="true" tabindex="-1"></a><span class="do">##  3      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-10"><a href="palavras-chave-em-contexto---kwic.html#cb237-10" aria-hidden="true" tabindex="-1"></a><span class="do">##  4      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-11"><a href="palavras-chave-em-contexto---kwic.html#cb237-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  5      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-12"><a href="palavras-chave-em-contexto---kwic.html#cb237-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  6      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-13"><a href="palavras-chave-em-contexto---kwic.html#cb237-13" aria-hidden="true" tabindex="-1"></a><span class="do">##  7      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-14"><a href="palavras-chave-em-contexto---kwic.html#cb237-14" aria-hidden="true" tabindex="-1"></a><span class="do">##  8      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-15"><a href="palavras-chave-em-contexto---kwic.html#cb237-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  9      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-16"><a href="palavras-chave-em-contexto---kwic.html#cb237-16" aria-hidden="true" tabindex="-1"></a><span class="do">## 10      10 2021-05-20 Edua… &quot;&quot;              &quot;&quot;        &quot;&quot;      &quot;&quot;     &quot;&quot;         </span></span>
+<span id="cb237-17"><a href="palavras-chave-em-contexto---kwic.html#cb237-17" aria-hidden="true" tabindex="-1"></a><span class="do">## # … with 24,286 more rows, and 1 more variable: fala &lt;chr&gt;</span></span>
+<span id="cb237-18"><a href="palavras-chave-em-contexto---kwic.html#cb237-18" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(nao_senadores<span class="sc">$</span>nome)</span>
+<span id="cb237-19"><a href="palavras-chave-em-contexto---kwic.html#cb237-19" aria-hidden="true" tabindex="-1"></a><span class="do">##   [1] &quot;Eduardo Pazuello&quot;                           </span></span>
+<span id="cb237-20"><a href="palavras-chave-em-contexto---kwic.html#cb237-20" aria-hidden="true" tabindex="-1"></a><span class="do">##   [2] &quot;Mayra Pinheiro&quot;                             </span></span>
+<span id="cb237-21"><a href="palavras-chave-em-contexto---kwic.html#cb237-21" aria-hidden="true" tabindex="-1"></a><span class="do">##   [3] &quot;Dimas Tadeu Covas&quot;                          </span></span>
+<span id="cb237-22"><a href="palavras-chave-em-contexto---kwic.html#cb237-22" aria-hidden="true" tabindex="-1"></a><span class="do">##   [4] &quot;Nise Hitomi Yamaguchi&quot;                      </span></span>
+<span id="cb237-23"><a href="palavras-chave-em-contexto---kwic.html#cb237-23" aria-hidden="true" tabindex="-1"></a><span class="do">##   [5] &quot;Luana Araújo&quot;                               </span></span>
+<span id="cb237-24"><a href="palavras-chave-em-contexto---kwic.html#cb237-24" aria-hidden="true" tabindex="-1"></a><span class="do">##   [6] &quot;Marcelo Antônio Cartaxo Queiroga Lopes&quot;     </span></span>
+<span id="cb237-25"><a href="palavras-chave-em-contexto---kwic.html#cb237-25" aria-hidden="true" tabindex="-1"></a><span class="do">##   [7] &quot;Antônio Elcio Franco Filho&quot;                 </span></span>
+<span id="cb237-26"><a href="palavras-chave-em-contexto---kwic.html#cb237-26" aria-hidden="true" tabindex="-1"></a><span class="do">##   [8] &quot;Natalia Pasternak&quot;                          </span></span>
+<span id="cb237-27"><a href="palavras-chave-em-contexto---kwic.html#cb237-27" aria-hidden="true" tabindex="-1"></a><span class="do">##   [9] &quot;Cláudio Maierovitch&quot;                        </span></span>
+<span id="cb237-28"><a href="palavras-chave-em-contexto---kwic.html#cb237-28" aria-hidden="true" tabindex="-1"></a><span class="do">##  [10] &quot;Marcellus José Barroso Campêlo&quot;             </span></span>
+<span id="cb237-29"><a href="palavras-chave-em-contexto---kwic.html#cb237-29" aria-hidden="true" tabindex="-1"></a><span class="do">##  [11] &quot;Marcellus Campelo&quot;                          </span></span>
+<span id="cb237-30"><a href="palavras-chave-em-contexto---kwic.html#cb237-30" aria-hidden="true" tabindex="-1"></a><span class="do">##  [12] &quot;Wilson Witzel&quot;                              </span></span>
+<span id="cb237-31"><a href="palavras-chave-em-contexto---kwic.html#cb237-31" aria-hidden="true" tabindex="-1"></a><span class="do">##  [13] &quot;Francisco Eduardo Cardoso Alves&quot;            </span></span>
+<span id="cb237-32"><a href="palavras-chave-em-contexto---kwic.html#cb237-32" aria-hidden="true" tabindex="-1"></a><span class="do">##  [14] &quot;Ricardo Ariel Zimerman&quot;                     </span></span>
+<span id="cb237-33"><a href="palavras-chave-em-contexto---kwic.html#cb237-33" aria-hidden="true" tabindex="-1"></a><span class="do">##  [15] &quot;Osmar Terra&quot;                                </span></span>
+<span id="cb237-34"><a href="palavras-chave-em-contexto---kwic.html#cb237-34" aria-hidden="true" tabindex="-1"></a><span class="do">##  [16] &quot;Jurema Werneck&quot;                             </span></span>
+<span id="cb237-35"><a href="palavras-chave-em-contexto---kwic.html#cb237-35" aria-hidden="true" tabindex="-1"></a><span class="do">##  [17] &quot;Pedro Hallal&quot;                               </span></span>
+<span id="cb237-36"><a href="palavras-chave-em-contexto---kwic.html#cb237-36" aria-hidden="true" tabindex="-1"></a><span class="do">##  [18] &quot;Luis Ricardo Fernandes Miranda&quot;             </span></span>
+<span id="cb237-37"><a href="palavras-chave-em-contexto---kwic.html#cb237-37" aria-hidden="true" tabindex="-1"></a><span class="do">##  [19] &quot;Fausto Vieira dos Santos Junior&quot;            </span></span>
+<span id="cb237-38"><a href="palavras-chave-em-contexto---kwic.html#cb237-38" aria-hidden="true" tabindex="-1"></a><span class="do">##  [20] &quot;Wagner Lima da Costa&quot;                       </span></span>
+<span id="cb237-39"><a href="palavras-chave-em-contexto---kwic.html#cb237-39" aria-hidden="true" tabindex="-1"></a><span class="do">##  [21] &quot;Gina Moraes de Almeida&quot;                     </span></span>
+<span id="cb237-40"><a href="palavras-chave-em-contexto---kwic.html#cb237-40" aria-hidden="true" tabindex="-1"></a><span class="do">##  [22] &quot;Carlos Roberto Wizard Martins&quot;              </span></span>
+<span id="cb237-41"><a href="palavras-chave-em-contexto---kwic.html#cb237-41" aria-hidden="true" tabindex="-1"></a><span class="do">##  [23] &quot;Alberto Zacharias Toron&quot;                    </span></span>
+<span id="cb237-42"><a href="palavras-chave-em-contexto---kwic.html#cb237-42" aria-hidden="true" tabindex="-1"></a><span class="do">##  [24] &quot;Guilherme Cremonesi Caurin&quot;                 </span></span>
+<span id="cb237-43"><a href="palavras-chave-em-contexto---kwic.html#cb237-43" aria-hidden="true" tabindex="-1"></a><span class="do">##  [25] &quot;Luiz Henrique Mandetta&quot;                     </span></span>
+<span id="cb237-44"><a href="palavras-chave-em-contexto---kwic.html#cb237-44" aria-hidden="true" tabindex="-1"></a><span class="do">##  [26] &quot;Luiz Paulo Dominguetti Pereira&quot;             </span></span>
+<span id="cb237-45"><a href="palavras-chave-em-contexto---kwic.html#cb237-45" aria-hidden="true" tabindex="-1"></a><span class="do">##  [27] &quot;Flavio Correa de Moraes&quot;                    </span></span>
+<span id="cb237-46"><a href="palavras-chave-em-contexto---kwic.html#cb237-46" aria-hidden="true" tabindex="-1"></a><span class="do">##  [28] &quot;Regina Célia Silva Oliveira&quot;                </span></span>
+<span id="cb237-47"><a href="palavras-chave-em-contexto---kwic.html#cb237-47" aria-hidden="true" tabindex="-1"></a><span class="do">##  [29] &quot;Pedro Henrique Medeiros de Araújo&quot;          </span></span>
+<span id="cb237-48"><a href="palavras-chave-em-contexto---kwic.html#cb237-48" aria-hidden="true" tabindex="-1"></a><span class="do">##  [30] &quot;Roberto Ferreira dias&quot;                      </span></span>
+<span id="cb237-49"><a href="palavras-chave-em-contexto---kwic.html#cb237-49" aria-hidden="true" tabindex="-1"></a><span class="do">##  [31] &quot;Maria Jamile José&quot;                          </span></span>
+<span id="cb237-50"><a href="palavras-chave-em-contexto---kwic.html#cb237-50" aria-hidden="true" tabindex="-1"></a><span class="do">##  [32] &quot;Francieli Fontana Sutile Tardetti Fantinato&quot;</span></span>
+<span id="cb237-51"><a href="palavras-chave-em-contexto---kwic.html#cb237-51" aria-hidden="true" tabindex="-1"></a><span class="do">##  [33] &quot;Francieli Fontana Sutile Fantinato&quot;         </span></span>
+<span id="cb237-52"><a href="palavras-chave-em-contexto---kwic.html#cb237-52" aria-hidden="true" tabindex="-1"></a><span class="do">##  [34] &quot;Thiago Leônidas&quot;                            </span></span>
+<span id="cb237-53"><a href="palavras-chave-em-contexto---kwic.html#cb237-53" aria-hidden="true" tabindex="-1"></a><span class="do">##  [35] &quot;William Amorim Santana&quot;                     </span></span>
+<span id="cb237-54"><a href="palavras-chave-em-contexto---kwic.html#cb237-54" aria-hidden="true" tabindex="-1"></a><span class="do">##  [36] &quot;Emanuela Batista de Souza Medrades&quot;         </span></span>
+<span id="cb237-55"><a href="palavras-chave-em-contexto---kwic.html#cb237-55" aria-hidden="true" tabindex="-1"></a><span class="do">##  [37] &quot;Ticiano Figueiredo de Oliveira&quot;             </span></span>
+<span id="cb237-56"><a href="palavras-chave-em-contexto---kwic.html#cb237-56" aria-hidden="true" tabindex="-1"></a><span class="do">##  [38] &quot;Pedro Ivo Velloso&quot;                          </span></span>
+<span id="cb237-57"><a href="palavras-chave-em-contexto---kwic.html#cb237-57" aria-hidden="true" tabindex="-1"></a><span class="do">##  [39] &quot;Cristiano Alberto Hossri Carvalho&quot;          </span></span>
+<span id="cb237-58"><a href="palavras-chave-em-contexto---kwic.html#cb237-58" aria-hidden="true" tabindex="-1"></a><span class="do">##  [40] &quot;Fábio Henrique Ming Martini&quot;                </span></span>
+<span id="cb237-59"><a href="palavras-chave-em-contexto---kwic.html#cb237-59" aria-hidden="true" tabindex="-1"></a><span class="do">##  [41] &quot;Amilton Gomes de Paula&quot;                     </span></span>
+<span id="cb237-60"><a href="palavras-chave-em-contexto---kwic.html#cb237-60" aria-hidden="true" tabindex="-1"></a><span class="do">##  [42] &quot;Otávio de Queiroga&quot;                         </span></span>
+<span id="cb237-61"><a href="palavras-chave-em-contexto---kwic.html#cb237-61" aria-hidden="true" tabindex="-1"></a><span class="do">##  [43] &quot;Marcelo Blanco da Costa&quot;                    </span></span>
+<span id="cb237-62"><a href="palavras-chave-em-contexto---kwic.html#cb237-62" aria-hidden="true" tabindex="-1"></a><span class="do">##  [44] &quot;Marcelo Blanco&quot;                             </span></span>
+<span id="cb237-63"><a href="palavras-chave-em-contexto---kwic.html#cb237-63" aria-hidden="true" tabindex="-1"></a><span class="do">##  [45] &quot;Eric Furtado Ferreira Borges&quot;               </span></span>
+<span id="cb237-64"><a href="palavras-chave-em-contexto---kwic.html#cb237-64" aria-hidden="true" tabindex="-1"></a><span class="do">##  [46] &quot;Nelson Luiz Sperle Teich&quot;                   </span></span>
+<span id="cb237-65"><a href="palavras-chave-em-contexto---kwic.html#cb237-65" aria-hidden="true" tabindex="-1"></a><span class="do">##  [47] &quot;Airton Antonio Soligo&quot;                      </span></span>
+<span id="cb237-66"><a href="palavras-chave-em-contexto---kwic.html#cb237-66" aria-hidden="true" tabindex="-1"></a><span class="do">##  [48] &quot;Emerson Paxá Pinto Oliveira&quot;                </span></span>
+<span id="cb237-67"><a href="palavras-chave-em-contexto---kwic.html#cb237-67" aria-hidden="true" tabindex="-1"></a><span class="do">##  [49] &quot;Helcio Bruno de Almeida&quot;                    </span></span>
+<span id="cb237-68"><a href="palavras-chave-em-contexto---kwic.html#cb237-68" aria-hidden="true" tabindex="-1"></a><span class="do">##  [50] &quot;João Carlos Gonçalves Krakauer Maia&quot;        </span></span>
+<span id="cb237-69"><a href="palavras-chave-em-contexto---kwic.html#cb237-69" aria-hidden="true" tabindex="-1"></a><span class="do">##  [51] &quot;Jailton Batista&quot;                            </span></span>
+<span id="cb237-70"><a href="palavras-chave-em-contexto---kwic.html#cb237-70" aria-hidden="true" tabindex="-1"></a><span class="do">##  [52] &quot;Ricardo Barros&quot;                             </span></span>
+<span id="cb237-71"><a href="palavras-chave-em-contexto---kwic.html#cb237-71" aria-hidden="true" tabindex="-1"></a><span class="do">##  [53] &quot;Alexandre Figueiredo Costa Silva Marques&quot;   </span></span>
+<span id="cb237-72"><a href="palavras-chave-em-contexto---kwic.html#cb237-72" aria-hidden="true" tabindex="-1"></a><span class="do">##  [54] &quot;Eduardo de Vilhena Toledo&quot;                  </span></span>
+<span id="cb237-73"><a href="palavras-chave-em-contexto---kwic.html#cb237-73" aria-hidden="true" tabindex="-1"></a><span class="do">##  [55] &quot;Túlio Silveira&quot;                             </span></span>
+<span id="cb237-74"><a href="palavras-chave-em-contexto---kwic.html#cb237-74" aria-hidden="true" tabindex="-1"></a><span class="do">##  [56] &quot;Francisco Emerson Maximiano&quot;                </span></span>
+<span id="cb237-75"><a href="palavras-chave-em-contexto---kwic.html#cb237-75" aria-hidden="true" tabindex="-1"></a><span class="do">##  [57] &quot;Ticiano Figueiredo&quot;                         </span></span>
+<span id="cb237-76"><a href="palavras-chave-em-contexto---kwic.html#cb237-76" aria-hidden="true" tabindex="-1"></a><span class="do">##  [58] &quot;Emanuel Ramalho Catori&quot;                     </span></span>
+<span id="cb237-77"><a href="palavras-chave-em-contexto---kwic.html#cb237-77" aria-hidden="true" tabindex="-1"></a><span class="do">##  [59] &quot;Michel Saliba Oliveira&quot;                     </span></span>
+<span id="cb237-78"><a href="palavras-chave-em-contexto---kwic.html#cb237-78" aria-hidden="true" tabindex="-1"></a><span class="do">##  [60] &quot;Roberto Pereira Ramos Júnior&quot;               </span></span>
+<span id="cb237-79"><a href="palavras-chave-em-contexto---kwic.html#cb237-79" aria-hidden="true" tabindex="-1"></a><span class="do">##  [61] &quot;Alexandre Queiroz&quot;                          </span></span>
+<span id="cb237-80"><a href="palavras-chave-em-contexto---kwic.html#cb237-80" aria-hidden="true" tabindex="-1"></a><span class="do">##  [62] &quot;José Ricardo Santana&quot;                       </span></span>
+<span id="cb237-81"><a href="palavras-chave-em-contexto---kwic.html#cb237-81" aria-hidden="true" tabindex="-1"></a><span class="do">##  [63] &quot;Marcelo Queiroga&quot;                           </span></span>
+<span id="cb237-82"><a href="palavras-chave-em-contexto---kwic.html#cb237-82" aria-hidden="true" tabindex="-1"></a><span class="do">##  [64] &quot;Alan Diniz Moreira Guedes de Ornelas&quot;       </span></span>
+<span id="cb237-83"><a href="palavras-chave-em-contexto---kwic.html#cb237-83" aria-hidden="true" tabindex="-1"></a><span class="do">##  [65] &quot;Ivanildo Gonçalves da Silva&quot;                </span></span>
+<span id="cb237-84"><a href="palavras-chave-em-contexto---kwic.html#cb237-84" aria-hidden="true" tabindex="-1"></a><span class="do">##  [66] &quot;Francisco Araújo Filho&quot;                     </span></span>
+<span id="cb237-85"><a href="palavras-chave-em-contexto---kwic.html#cb237-85" aria-hidden="true" tabindex="-1"></a><span class="do">##  [67] &quot;Cleber Lopes de Oliveira&quot;                   </span></span>
+<span id="cb237-86"><a href="palavras-chave-em-contexto---kwic.html#cb237-86" aria-hidden="true" tabindex="-1"></a><span class="do">##  [68] &quot;Marcos Tolentino da Silva&quot;                  </span></span>
+<span id="cb237-87"><a href="palavras-chave-em-contexto---kwic.html#cb237-87" aria-hidden="true" tabindex="-1"></a><span class="do">##  [69] &quot;Luciano Duarte Peres&quot;                       </span></span>
+<span id="cb237-88"><a href="palavras-chave-em-contexto---kwic.html#cb237-88" aria-hidden="true" tabindex="-1"></a><span class="do">##  [70] &quot;Marconny Nunes Ribeiro Albernaz de Faria&quot;   </span></span>
+<span id="cb237-89"><a href="palavras-chave-em-contexto---kwic.html#cb237-89" aria-hidden="true" tabindex="-1"></a><span class="do">##  [71] &quot;Wagner de Campos Rosário&quot;                   </span></span>
+<span id="cb237-90"><a href="palavras-chave-em-contexto---kwic.html#cb237-90" aria-hidden="true" tabindex="-1"></a><span class="do">##  [72] &quot;Pedro Benedito Batista Júnior&quot;              </span></span>
+<span id="cb237-91"><a href="palavras-chave-em-contexto---kwic.html#cb237-91" aria-hidden="true" tabindex="-1"></a><span class="do">##  [73] &quot;Aristides Zacarelli&quot;                        </span></span>
+<span id="cb237-92"><a href="palavras-chave-em-contexto---kwic.html#cb237-92" aria-hidden="true" tabindex="-1"></a><span class="do">##  [74] &quot;Maria José Ferreira Pessoa&quot;                 </span></span>
+<span id="cb237-93"><a href="palavras-chave-em-contexto---kwic.html#cb237-93" aria-hidden="true" tabindex="-1"></a><span class="do">##  [75] &quot;Vinicius Luiz Ferreira&quot;                     </span></span>
+<span id="cb237-94"><a href="palavras-chave-em-contexto---kwic.html#cb237-94" aria-hidden="true" tabindex="-1"></a><span class="do">##  [76] &quot;Danilo Berndt Trento&quot;                       </span></span>
+<span id="cb237-95"><a href="palavras-chave-em-contexto---kwic.html#cb237-95" aria-hidden="true" tabindex="-1"></a><span class="do">##  [77] &quot;Bruna Mendes dos Santos Morato&quot;             </span></span>
+<span id="cb237-96"><a href="palavras-chave-em-contexto---kwic.html#cb237-96" aria-hidden="true" tabindex="-1"></a><span class="do">##  [78] &quot;Antonio Barra Torres&quot;                       </span></span>
+<span id="cb237-97"><a href="palavras-chave-em-contexto---kwic.html#cb237-97" aria-hidden="true" tabindex="-1"></a><span class="do">##  [79] &quot;Luciano Hang&quot;                               </span></span>
+<span id="cb237-98"><a href="palavras-chave-em-contexto---kwic.html#cb237-98" aria-hidden="true" tabindex="-1"></a><span class="do">##  [80] &quot;Beno Brandão&quot;                               </span></span>
+<span id="cb237-99"><a href="palavras-chave-em-contexto---kwic.html#cb237-99" aria-hidden="true" tabindex="-1"></a><span class="do">##  [81] &quot;Otávio Oscar Fakhoury&quot;                      </span></span>
+<span id="cb237-100"><a href="palavras-chave-em-contexto---kwic.html#cb237-100" aria-hidden="true" tabindex="-1"></a><span class="do">##  [82] &quot;Antonio Manssur&quot;                            </span></span>
+<span id="cb237-101"><a href="palavras-chave-em-contexto---kwic.html#cb237-101" aria-hidden="true" tabindex="-1"></a><span class="do">##  [83] &quot;Milena Ramos Câmara&quot;                        </span></span>
+<span id="cb237-102"><a href="palavras-chave-em-contexto---kwic.html#cb237-102" aria-hidden="true" tabindex="-1"></a><span class="do">##  [84] &quot;Raimundo Nonato Brasil&quot;                     </span></span>
+<span id="cb237-103"><a href="palavras-chave-em-contexto---kwic.html#cb237-103" aria-hidden="true" tabindex="-1"></a><span class="do">##  [85] &quot;Andreia da Silva Lima&quot;                      </span></span>
+<span id="cb237-104"><a href="palavras-chave-em-contexto---kwic.html#cb237-104" aria-hidden="true" tabindex="-1"></a><span class="do">##  [86] &quot;Walter José Faiad de Moura&quot;                 </span></span>
+<span id="cb237-105"><a href="palavras-chave-em-contexto---kwic.html#cb237-105" aria-hidden="true" tabindex="-1"></a><span class="do">##  [87] &quot;Paulo Roberto Vanderlei Rebello Filho&quot;      </span></span>
+<span id="cb237-106"><a href="palavras-chave-em-contexto---kwic.html#cb237-106" aria-hidden="true" tabindex="-1"></a><span class="do">##  [88] &quot;Walter Correa de Souza Neto&quot;                </span></span>
+<span id="cb237-107"><a href="palavras-chave-em-contexto---kwic.html#cb237-107" aria-hidden="true" tabindex="-1"></a><span class="do">##  [89] &quot;Tadeu Frederico de Andrade&quot;                 </span></span>
+<span id="cb237-108"><a href="palavras-chave-em-contexto---kwic.html#cb237-108" aria-hidden="true" tabindex="-1"></a><span class="do">##  [90] &quot;Priscila Pamela Cesario dos Santos&quot;         </span></span>
+<span id="cb237-109"><a href="palavras-chave-em-contexto---kwic.html#cb237-109" aria-hidden="true" tabindex="-1"></a><span class="do">##  [91] &quot;Rosane Maria dos Santos Brandão&quot;            </span></span>
+<span id="cb237-110"><a href="palavras-chave-em-contexto---kwic.html#cb237-110" aria-hidden="true" tabindex="-1"></a><span class="do">##  [92] &quot;Mayra Pires Lima&quot;                           </span></span>
+<span id="cb237-111"><a href="palavras-chave-em-contexto---kwic.html#cb237-111" aria-hidden="true" tabindex="-1"></a><span class="do">##  [93] &quot;Antonio Carlos Alves de Sá Costa&quot;           </span></span>
+<span id="cb237-112"><a href="palavras-chave-em-contexto---kwic.html#cb237-112" aria-hidden="true" tabindex="-1"></a><span class="do">##  [94] &quot;Giovanna Gomes Mendes da Silva&quot;             </span></span>
+<span id="cb237-113"><a href="palavras-chave-em-contexto---kwic.html#cb237-113" aria-hidden="true" tabindex="-1"></a><span class="do">##  [95] &quot;Katia Shirlene Castilho dos Santos&quot;         </span></span>
+<span id="cb237-114"><a href="palavras-chave-em-contexto---kwic.html#cb237-114" aria-hidden="true" tabindex="-1"></a><span class="do">##  [96] &quot;Márcio Antonio do Nascimento Silva&quot;         </span></span>
+<span id="cb237-115"><a href="palavras-chave-em-contexto---kwic.html#cb237-115" aria-hidden="true" tabindex="-1"></a><span class="do">##  [97] &quot;Elton da Silva Chaves&quot;                      </span></span>
+<span id="cb237-116"><a href="palavras-chave-em-contexto---kwic.html#cb237-116" aria-hidden="true" tabindex="-1"></a><span class="do">##  [98] &quot;Fabio Wajngarten&quot;                           </span></span>
+<span id="cb237-117"><a href="palavras-chave-em-contexto---kwic.html#cb237-117" aria-hidden="true" tabindex="-1"></a><span class="do">##  [99] &quot;Carlos Murillo&quot;                             </span></span>
+<span id="cb237-118"><a href="palavras-chave-em-contexto---kwic.html#cb237-118" aria-hidden="true" tabindex="-1"></a><span class="do">## [100] &quot;Ernesto Araújo&quot;</span></span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="entes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="wordcloud---nuvem-de-palavras.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>

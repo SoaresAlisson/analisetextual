@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="pt-br" xml:lang="pt-br">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>13 Atribuição de palavra chave Keyword assignment | Introdução à Análise Textual aplicada à Sociologia</title>
+  <meta name="description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="13 Atribuição de palavra chave Keyword assignment | Introdução à Análise Textual aplicada à Sociologia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="13 Atribuição de palavra chave Keyword assignment | Introdução à Análise Textual aplicada à Sociologia" />
+  
+  <meta name="twitter:description" content="Este é um manual em progresso destinado à análise textual aplicada às ciências sociais, priorizando materiais gratuitos e de código aberto." />
+  
+
+<meta name="author" content="Alisson Soares" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="KE.html"/>
+<link rel="next" href="pagerank.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.9/grViz.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Análise Textual</a></li>
+
+<li class="divider"></li>
+<li><a href="objetivos-deste-manual.html#objetivos-deste-manual">Objetivos deste manual<span></span></a>
+<ul>
+<li><a href="objetivos-deste-manual.html#plano-do-livro">Plano do livro<span></span></a></li>
+</ul></li>
+<li><a href="intro.html#intro">Introdução<span></span></a>
+<ul>
+<li><a href="intro.html#HD">O termo “humanidade digitais”<span></span></a></li>
+<li><a href="intro.html#fluxo-de-trabalho">Fluxo de trabalho<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html"><i class="fa fa-check"></i><b>1</b> História da Análise Textual<span></span></a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="história-da-análise-textual.html"><a href="história-da-análise-textual.html#linha-do-tempo-da-história-da-análise-textual"><i class="fa fa-check"></i><b>1.1</b> Linha do tempo da história da Análise Textual<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html"><i class="fa fa-check"></i><b>2</b> Exemplos de Pesquisas em Humanidades Digitais<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#bibliometria-cientometria-cienciometria"><i class="fa fa-check"></i><b>2.1</b> Bibliometria / cientometria / cienciometria<span></span></a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-filósofos-da-ciência-na-sociologia"><i class="fa fa-check"></i><b>2.1.1</b> Exemplo: Filósofos da ciência na Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-a-teoria-dos-sistemas-sociais-de-niklas-luhmann"><i class="fa fa-check"></i><b>2.1.2</b> Exemplo: A teoria dos sistemas sociais de Niklas Luhmann<span></span></a></li>
+<li class="chapter" data-level="2.1.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendência-de-termos-chave-da-sociologia"><i class="fa fa-check"></i><b>2.1.3</b> Exemplo: Tendência de termos chave da Sociologia<span></span></a></li>
+<li class="chapter" data-level="2.1.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-tendências-das-correntes-na-filosofia"><i class="fa fa-check"></i><b>2.1.4</b> Exemplo: Tendências das correntes na filosofia<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exGoogleTrends"><i class="fa fa-check"></i><b>2.2</b> Exemplo: Google Trends como Proxy para epidemias<span></span></a></li>
+<li class="chapter" data-level="2.3" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ExFakesNewsMundo"><i class="fa fa-check"></i><b>2.3</b> Exemplo: Como as fake news sobre a pandemia de Covid-19 se assemelham/divergem entre os países?<span></span></a></li>
+<li class="chapter" data-level="2.4" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-mudança-de-significado-de-palavras"><i class="fa fa-check"></i><b>2.4</b> Exemplo: Mudança de significado de palavras<span></span></a></li>
+<li class="chapter" data-level="2.5" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-análise-de-complexidade-musical"><i class="fa fa-check"></i><b>2.5</b> Exemplo: Análise de complexidade musical<span></span></a></li>
+<li class="chapter" data-level="2.6" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-polarização"><i class="fa fa-check"></i><b>2.6</b> Exemplo: Polarização<span></span></a></li>
+<li class="chapter" data-level="2.7" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-complementando-dados-qualitativos"><i class="fa fa-check"></i><b>2.7</b> Exemplo de integração quali-quanti: Complementando dados qualitativos<span></span></a></li>
+<li class="chapter" data-level="2.8" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-de-integração-quali-quanti-depurando-dados-quantitativos"><i class="fa fa-check"></i><b>2.8</b> Exemplo de integração quali-quanti: Depurando dados quantitativos<span></span></a></li>
+<li class="chapter" data-level="2.9" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#exemplo-processo-civilizador"><i class="fa fa-check"></i><b>2.9</b> Exemplo: Processo Civilizador<span></span></a></li>
+<li class="chapter" data-level="2.10" data-path="exemplos-de-pesquisas-em-humanidades-digitais.html"><a href="exemplos-de-pesquisas-em-humanidades-digitais.html#ex.-determinantes-sociais-do-florescimento-da-cultura-incel"><i class="fa fa-check"></i><b>2.10</b> Ex.: Determinantes sociais do florescimento da cultura Incel<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html"><i class="fa fa-check"></i><b>3</b> Estrutura de dados e tipos de formatos<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-estruturados"><i class="fa fa-check"></i><b>3.1</b> Dados estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#os-formatos-csv-comma-separeted-values-e-tsv."><i class="fa fa-check"></i><b>3.1.1</b> Os formatos csv (<em>comma separeted values</em>) e tsv.<span></span></a></li>
+<li class="chapter" data-level="3.1.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoJson"><i class="fa fa-check"></i><b>3.1.2</b> O formato Json<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-não-estruturados"><i class="fa fa-check"></i><b>3.2</b> Dados não estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3</b> Dados semi-estruturados<span></span></a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#exemplos-de-dados-semi-estruturados"><i class="fa fa-check"></i><b>3.3.1</b> Exemplos de dados semi-estruturados<span></span></a></li>
+<li class="chapter" data-level="3.3.2" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoMarkdown"><i class="fa fa-check"></i><b>3.3.2</b> O formato Markdown<span></span></a></li>
+<li class="chapter" data-level="3.3.3" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoYaml"><i class="fa fa-check"></i><b>3.3.3</b> O formato YAML<span></span></a></li>
+<li class="chapter" data-level="3.3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoLatex"><i class="fa fa-check"></i><b>3.3.4</b> O Formato LaTex<span></span></a></li>
+<li class="chapter" data-level="3.3.5" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatoBibtex"><i class="fa fa-check"></i><b>3.3.5</b> O formato BibTex<span></span></a></li>
+<li class="chapter" data-level="3.3.6" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatosXmlHtml"><i class="fa fa-check"></i><b>3.3.6</b> Os formatos xml e html<span></span></a></li>
+<li class="chapter" data-level="3.3.7" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#formatos-mais-raros"><i class="fa fa-check"></i><b>3.3.7</b> Formatos mais raros<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="estrutura-de-dados-e-tipos-de-formatos.html"><a href="estrutura-de-dados-e-tipos-de-formatos.html#observações-finais"><i class="fa fa-check"></i><b>3.4</b> Observações finais<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html"><i class="fa fa-check"></i><b>4</b> Noções básicas de programação em R<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#scaping"><i class="fa fa-check"></i><b>4.1</b> Sequências de scaping<span></span></a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#coment"><i class="fa fa-check"></i><b>4.1.1</b> Comentando o código<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#variavel"><i class="fa fa-check"></i><b>4.2</b> Variável e atribuição<span></span></a></li>
+<li class="chapter" data-level="4.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#funções-no-r"><i class="fa fa-check"></i><b>4.3</b> Funções no R<span></span></a></li>
+<li class="chapter" data-level="4.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#condicionais-seentão-ifelse"><i class="fa fa-check"></i><b>4.4</b> Condicionais: se/então, If/else<span></span></a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else"><i class="fa fa-check"></i><b>4.4.1</b> Else<span></span></a></li>
+<li class="chapter" data-level="4.4.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#else-if"><i class="fa fa-check"></i><b>4.4.2</b> else if<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores"><i class="fa fa-check"></i><b>4.5</b> Operadores<span></span></a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-de-atribuição-assignment"><i class="fa fa-check"></i><b>4.5.1</b> Operadores de atribuição (assignment)<span></span></a></li>
+<li class="chapter" data-level="4.5.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores-aritiméticos"><i class="fa fa-check"></i><b>4.5.2</b> Operadores Aritiméticos<span></span></a></li>
+<li class="chapter" data-level="4.5.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_relacionais"><i class="fa fa-check"></i><b>4.5.3</b> Operadores relacionais<span></span></a></li>
+<li class="chapter" data-level="4.5.4" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_booleanos"><i class="fa fa-check"></i><b>4.5.4</b> Operadores booleanos<span></span></a></li>
+<li class="chapter" data-level="4.5.5" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#operadores_outros"><i class="fa fa-check"></i><b>4.5.5</b> Outros operadores<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#loops-repetições"><i class="fa fa-check"></i><b>4.6</b> Loops, repetições<span></span></a>
+<ul>
+<li class="chapter" data-level="4.6.1" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#for-loops"><i class="fa fa-check"></i><b>4.6.1</b> For Loops<span></span></a></li>
+<li class="chapter" data-level="4.6.2" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#while-loop"><i class="fa fa-check"></i><b>4.6.2</b> While loop<span></span></a></li>
+<li class="chapter" data-level="4.6.3" data-path="noções-básicas-de-programação-em-r.html"><a href="noções-básicas-de-programação-em-r.html#apply-lapply-sapply-tapply-e-mapply"><i class="fa fa-check"></i><b>4.6.3</b> apply (lapply, sapply, tapply e mapply)<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html"><i class="fa fa-check"></i><b>5</b> Introdução ao R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#obtendo-ajuda-no-r"><i class="fa fa-check"></i><b>5.1</b> Obtendo Ajuda no R<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#rcommander"><i class="fa fa-check"></i><b>5.2</b> R em modo gráfico: RKWard e RCommander<span></span></a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#nvim-r"><i class="fa fa-check"></i><b>5.2.1</b> NVIM-R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataTypes"><i class="fa fa-check"></i><b>5.3</b> Tipos de Dados no R (data types)<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#estrutura-de-dados-no-r-data-structures"><i class="fa fa-check"></i><b>5.4</b> Estrutura de dados no R (Data Structures)<span></span></a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#vetor-vector"><i class="fa fa-check"></i><b>5.4.1</b> Vetor (vector)<span></span></a></li>
+<li class="chapter" data-level="5.4.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#fatores"><i class="fa fa-check"></i><b>5.4.2</b> Fator (<em>Factor</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#matrix"><i class="fa fa-check"></i><b>5.4.3</b> Matriz (Matrix)<span></span></a></li>
+<li class="chapter" data-level="5.4.4" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tm-dtm"><i class="fa fa-check"></i><b>5.4.4</b> Gerando um DTM com o pacote TM<span></span></a></li>
+<li class="chapter" data-level="5.4.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidytext-dtm"><i class="fa fa-check"></i><b>5.4.5</b> Gerando DTM com o pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="5.4.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lista"><i class="fa fa-check"></i><b>5.4.6</b> Listas (<em>list</em>)<span></span></a></li>
+<li class="chapter" data-level="5.4.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dataframes"><i class="fa fa-check"></i><b>5.4.7</b> Data Frames<span></span></a></li>
+<li class="chapter" data-level="5.4.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#considerações-finais-sobre-estrutura-de-dados"><i class="fa fa-check"></i><b>5.4.8</b> Considerações finais sobre estrutura de dados<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#instalandopacotes"><i class="fa fa-check"></i><b>5.5</b> Instalando pacotes no R<span></span></a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-1-instalando-via-linha-de-comando"><i class="fa fa-check"></i><b>5.5.1</b> Modo 1: instalando via linha de comando<span></span></a></li>
+<li class="chapter" data-level="5.5.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#modo-2-modo-gráfico"><i class="fa fa-check"></i><b>5.5.2</b> Modo 2: Modo gráfico<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.6" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tidyverse"><i class="fa fa-check"></i><b>5.6</b> A suíte de pacotes <code>tidyverse</code><span></span></a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#pipes"><i class="fa fa-check"></i><b>5.6.1</b> Pipes<span></span></a></li>
+<li class="chapter" data-level="5.6.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#tibbles"><i class="fa fa-check"></i><b>5.6.2</b> Tibbles<span></span></a></li>
+<li class="chapter" data-level="5.6.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#dplyr"><i class="fa fa-check"></i><b>5.6.3</b> Dplyr: Verbos (ou comandos)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#RDataHora"><i class="fa fa-check"></i><b>5.7</b> Manipulando data e hora<span></span></a>
+<ul>
+<li class="chapter" data-level="5.7.1" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#gerando-uma-sequencia-de-datas-no-r"><i class="fa fa-check"></i><b>5.7.1</b> Gerando uma sequencia de datas no R<span></span></a></li>
+<li class="chapter" data-level="5.7.2" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#lubridate"><i class="fa fa-check"></i><b>5.7.2</b> Lubridate: facilitando manipulação de datas<span></span></a></li>
+<li class="chapter" data-level="5.7.3" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#converter-data-em-nome-por-extenso-do-mês"><i class="fa fa-check"></i><b>5.7.3</b> Converter data em nome por extenso do mês<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="5.8" data-path="introdução-ao-r.html"><a href="introdução-ao-r.html#links-e-dicas"><i class="fa fa-check"></i><b>5.8</b> Links e Dicas<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html"><i class="fa fa-check"></i><b>6</b> Normalização de texto e Expressões Regulares<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex"><i class="fa fa-check"></i><b>6.1</b> Expressões regulares (RegEx)<span></span></a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#parâmetros-das-regex"><i class="fa fa-check"></i><b>6.1.1</b> Parâmetros das Regex<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#regex-no-r"><i class="fa fa-check"></i><b>6.2</b> RegEx no R<span></span></a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#grep"><i class="fa fa-check"></i><b>6.2.1</b> Grep<span></span></a></li>
+<li class="chapter" data-level="6.2.2" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#gsub"><i class="fa fa-check"></i><b>6.2.2</b> gsub()<span></span></a></li>
+<li class="chapter" data-level="6.2.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exercício-qual-o-qualis-de-certas-revistas-quais-revistas-possuem-certo-qualis"><i class="fa fa-check"></i><b>6.2.3</b> Exercício: Qual o Qualis de certas revistas? Quais revistas possuem certo Qualis?<span></span></a></li>
+<li class="chapter" data-level="6.2.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#transformando-strings-em-vetores-com-strsplit"><i class="fa fa-check"></i><b>6.2.4</b> Transformando strings em vetores com <code>strsplit()</code><span></span></a></li>
+<li class="chapter" data-level="6.2.5" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#exemplo-regex"><i class="fa fa-check"></i><b>6.2.5</b> Exemplo regex<span></span></a></li>
+<li class="chapter" data-level="6.2.6" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#lookaround-lookadead-e-lookbehind"><i class="fa fa-check"></i><b>6.2.6</b> Lookaround lookadead e lookbehind<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#pacote-stringr"><i class="fa fa-check"></i><b>6.3</b> Pacote stringr<span></span></a>
+<ul>
+<li class="chapter" data-level="6.3.1" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#normalização-com-stringr"><i class="fa fa-check"></i><b>6.3.1</b> Normalização com stringr<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="normalização-de-texto-e-expressões-regulares.html"><a href="normalização-de-texto-e-expressões-regulares.html#dicassugestões-regex-no-r"><i class="fa fa-check"></i><b>6.4</b> Dicas/Sugestões: Regex no R<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html"><i class="fa fa-check"></i><b>7</b> Visualização de dados<span></span></a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#baseplots"><i class="fa fa-check"></i><b>7.1</b> Base plots<span></span></a></li>
+<li class="chapter" data-level="7.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores"><i class="fa fa-check"></i><b>7.2</b> Cores<span></span></a></li>
+<li class="chapter" data-level="7.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#o-pacote-lattice"><i class="fa fa-check"></i><b>7.3</b> O pacote Lattice<span></span></a></li>
+<li class="chapter" data-level="7.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot2"><i class="fa fa-check"></i><b>7.4</b> O pacote ggplot2<span></span></a>
+<ul>
+<li class="chapter" data-level="7.4.1" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-aes"><i class="fa fa-check"></i><b>7.4.1</b> ggplot: nível aes<span></span></a></li>
+<li class="chapter" data-level="7.4.2" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-geom"><i class="fa fa-check"></i><b>7.4.2</b> ggplot: Nível geom<span></span></a></li>
+<li class="chapter" data-level="7.4.3" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-facet_"><i class="fa fa-check"></i><b>7.4.3</b> ggplot: nível facet_<span></span></a></li>
+<li class="chapter" data-level="7.4.4" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-stat"><i class="fa fa-check"></i><b>7.4.4</b> ggplot: nível stat<span></span></a></li>
+<li class="chapter" data-level="7.4.5" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#ggplot-nível-sistema-de-coordenadas"><i class="fa fa-check"></i><b>7.4.5</b> ggplot: nível sistema de coordenadas<span></span></a></li>
+<li class="chapter" data-level="7.4.6" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#cores-no-ggplot"><i class="fa fa-check"></i><b>7.4.6</b> Cores no ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.7" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-ggplot"><i class="fa fa-check"></i><b>7.4.7</b> Dicas ggplot<span></span></a></li>
+<li class="chapter" data-level="7.4.8" data-path="visualização-de-dados.html"><a href="visualização-de-dados.html#dicas-outros-pacotes-gráficos"><i class="fa fa-check"></i><b>7.4.8</b> Dicas outros pacotes gráficos<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html"><i class="fa fa-check"></i><b>8</b> Análise Textual (<em>text mining</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#introdução"><i class="fa fa-check"></i><b>8.1</b> Introdução<span></span></a></li>
+<li class="chapter" data-level="8.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagens-saco-de-palavras-bag-of-words-e-análise-semântica-semantic-parsing"><i class="fa fa-check"></i><b>8.2</b> Abordagens: saco de palavras (<em>bag of words</em>) e análise semântica (<em>semantic parsing</em>)<span></span></a></li>
+<li class="chapter" data-level="8.3" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#abordagem-bag-of-words"><i class="fa fa-check"></i><b>8.3</b> Abordagem <em>Bag of words</em><span></span></a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#frequência-de-palavrastermos-e-ngrams"><i class="fa fa-check"></i><b>8.3.1</b> Frequência de palavras/termos e Ngrams<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stopwords"><i class="fa fa-check"></i><b>8.4</b> Remoção de palavra vazia (<em>stopwords</em>)<span></span></a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#criando-lista-com-stopwords"><i class="fa fa-check"></i><b>8.4.1</b> Criando lista com stopwords<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#estemização-stemming-e-lematização"><i class="fa fa-check"></i><b>8.5</b> Estemização (<em>stemming</em>) e lematização<span></span></a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#stemming"><i class="fa fa-check"></i><b>8.5.1</b> Estemização<span></span></a></li>
+<li class="chapter" data-level="8.5.2" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#lemma"><i class="fa fa-check"></i><b>8.5.2</b> Lematização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#wordcloud"><i class="fa fa-check"></i><b>8.6</b> Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="8.7" data-path="análise-textual-text-mining.html"><a href="análise-textual-text-mining.html#kwic"><i class="fa fa-check"></i><b>8.7</b> Palavras em contexto (<em>keyword-in-context KWIC</em>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html"><i class="fa fa-check"></i><b>9</b> Text mining: Semantic Parsing<span></span></a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#pos---part-of-speech-tagging"><i class="fa fa-check"></i><b>9.1</b> POS - Part-of-speech tagging<span></span></a></li>
+<li class="chapter" data-level="9.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#udpipe"><i class="fa fa-check"></i><b>9.2</b> Pacote UDPipe<span></span></a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#coocorrência-de-palavras"><i class="fa fa-check"></i><b>9.2.1</b> Coocorrência de palavras<span></span></a></li>
+<li class="chapter" data-level="9.2.2" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#rede-de-palavras-wordnet"><i class="fa fa-check"></i><b>9.2.2</b> Rede de palavras (<em>wordnet</em>)<span></span></a></li>
+<li class="chapter" data-level="9.2.3" data-path="text-mining-semantic-parsing.html"><a href="text-mining-semantic-parsing.html#análise-de-semelhanças"><i class="fa fa-check"></i><b>9.2.3</b> Análise de semelhanças<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="sentiment.html"><a href="sentiment.html"><i class="fa fa-check"></i><b>10</b> Classificação: Dicionários e Análise de Sentimentos<span></span></a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="sentiment.html"><a href="sentiment.html#classificacao"><i class="fa fa-check"></i><b>10.1</b> Classificação<span></span></a></li>
+<li class="chapter" data-level="10.2" data-path="sentiment.html"><a href="sentiment.html#sentiment-analysis"><i class="fa fa-check"></i><b>10.2</b> Análise de sentimentos (<em>Sentiment Analysis</em>) por meio de dicionário/léxico<span></span></a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="sentiment.html"><a href="sentiment.html#datasets-de-sentimentosemoções"><i class="fa fa-check"></i><b>10.2.1</b> Datasets de sentimentos/emoções<span></span></a></li>
+<li class="chapter" data-level="10.2.2" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis"><i class="fa fa-check"></i><b>10.2.2</b> Pacote SentimentAnalysis<span></span></a></li>
+<li class="chapter" data-level="10.2.3" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis-Tidytext"><i class="fa fa-check"></i><b>10.2.3</b> Pacote Tidytext<span></span></a></li>
+<li class="chapter" data-level="10.2.4" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis-Quanteda"><i class="fa fa-check"></i><b>10.2.4</b> Pacote Quanteda<span></span></a></li>
+<li class="chapter" data-level="10.2.5" data-path="sentiment.html"><a href="sentiment.html#SentimentAnalysis-syuzhet"><i class="fa fa-check"></i><b>10.2.5</b> Pacote syuzhet<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="sentiment.html"><a href="sentiment.html#dicas-finais-bibliografia-indicada"><i class="fa fa-check"></i><b>10.3</b> Dicas finais: Bibliografia indicada<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html"><i class="fa fa-check"></i><b>11</b> Análise de Redes Sociais<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#o-pacote-igraph"><i class="fa fa-check"></i><b>11.1</b> O pacote Igraph<span></span></a>
+<ul>
+<li class="chapter" data-level="11.1.1" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#clusterização"><i class="fa fa-check"></i><b>11.1.1</b> Clusterização<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#os-pacotes-ggraph-e-tidygraph-.-construindo-grafos-com-o-tidyverse."><i class="fa fa-check"></i><b>11.2</b> Os pacotes <code>ggraph</code> e <code>tidygraph</code> . Construindo grafos com o <code>tidyverse</code>.<span></span></a></li>
+<li class="chapter" data-level="11.3" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-palavras"><i class="fa fa-check"></i><b>11.3</b> Redes de palavras<span></span></a></li>
+<li class="chapter" data-level="11.4" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#redes-de-citação"><i class="fa fa-check"></i><b>11.4</b> Redes de citação<span></span></a></li>
+<li class="chapter" data-level="11.5" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#gráfico-de-centralidade"><i class="fa fa-check"></i><b>11.5</b> Gráfico de centralidade<span></span></a></li>
+<li class="chapter" data-level="11.6" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#comunidades"><i class="fa fa-check"></i><b>11.6</b> Comunidades<span></span></a></li>
+<li class="chapter" data-level="11.7" data-path="análise-de-redes-sociais.html"><a href="análise-de-redes-sociais.html#SugestaoLinksredes"><i class="fa fa-check"></i><b>11.7</b> Sugestões de links<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="KE.html"><a href="KE.html"><i class="fa fa-check"></i><b>12</b> Extração de palavras-chave - <em>Key term</em> ou <em>keyword extraction</em><span></span></a></li>
+<li class="chapter" data-level="13" data-path="keywordassignment.html"><a href="keywordassignment.html"><i class="fa fa-check"></i><b>13</b> Atribuição de palavra chave <em>Keyword assignment</em><span></span></a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="keywordassignment.html"><a href="keywordassignment.html#keywordextraction"><i class="fa fa-check"></i><b>13.1</b> Key term ou keyword extraction<span></span></a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="keywordassignment.html"><a href="keywordassignment.html#tf-idf"><i class="fa fa-check"></i><b>13.1.1</b> TF-IDF: Term-Frequency Inverse Document Frequency<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="keywordassignment.html"><a href="keywordassignment.html#coocorrencia"><i class="fa fa-check"></i><b>13.2</b> Colocação e Coocorrência {#colocacao}<span></span></a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="keywordassignment.html"><a href="keywordassignment.html#colocação-com-o-quanteda"><i class="fa fa-check"></i><b>13.2.1</b> Colocação com o Quanteda<span></span></a></li>
+<li class="chapter" data-level="13.2.2" data-path="keywordassignment.html"><a href="keywordassignment.html#colocação-com-udpipe"><i class="fa fa-check"></i><b>13.2.2</b> Colocação com Udpipe<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="keywordassignment.html"><a href="keywordassignment.html#textrank"><i class="fa fa-check"></i><b>13.3</b> TextRank<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="pagerank.html"><a href="pagerank.html"><i class="fa fa-check"></i><b>14</b> PageRank<span></span></a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="pagerank.html"><a href="pagerank.html#bert"><i class="fa fa-check"></i><b>14.1</b> Bert<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="links-úteis.html"><a href="links-úteis.html"><i class="fa fa-check"></i><b>15</b> Links úteis<span></span></a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="links-úteis.html"><a href="links-úteis.html#humanidades-digitais"><i class="fa fa-check"></i><b>15.1</b> Humanidades digitais<span></span></a></li>
+<li class="chapter" data-level="15.2" data-path="links-úteis.html"><a href="links-úteis.html#análise-de-redes-sociais-1"><i class="fa fa-check"></i><b>15.2</b> Análise de redes sociais<span></span></a></li>
+<li class="chapter" data-level="15.3" data-path="links-úteis.html"><a href="links-úteis.html#textos-sobre-análise-textual"><i class="fa fa-check"></i><b>15.3</b> Textos sobre análise textual<span></span></a>
+<ul>
+<li class="chapter" data-level="15.3.1" data-path="links-úteis.html"><a href="links-úteis.html#sociologia-digital-ciências-sociais-computacionais"><i class="fa fa-check"></i><b>15.3.1</b> Sociologia Digital / Ciências Sociais Computacionais<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="15.4" data-path="links-úteis.html"><a href="links-úteis.html#processamento-linguagem-natural-pln-ou-nlp"><i class="fa fa-check"></i><b>15.4</b> Processamento Linguagem Natural (PLN ou NLP)<span></span></a></li>
+<li class="chapter" data-level="15.5" data-path="links-úteis.html"><a href="links-úteis.html#revistas-journals-acadêmicos"><i class="fa fa-check"></i><b>15.5</b> Revistas / Journals acadêmicos<span></span></a></li>
+<li class="chapter" data-level="15.6" data-path="links-úteis.html"><a href="links-úteis.html#dados-abertos"><i class="fa fa-check"></i><b>15.6</b> Dados Abertos<span></span></a></li>
+<li class="chapter" data-level="15.7" data-path="links-úteis.html"><a href="links-úteis.html#vídeos"><i class="fa fa-check"></i><b>15.7</b> Vídeos<span></span></a></li>
+<li class="chapter" data-level="15.8" data-path="links-úteis.html"><a href="links-úteis.html#sites-blogs"><i class="fa fa-check"></i><b>15.8</b> Sites / Blogs<span></span></a></li>
+<li class="chapter" data-level="15.9" data-path="links-úteis.html"><a href="links-úteis.html#organizações"><i class="fa fa-check"></i><b>15.9</b> Organizações<span></span></a></li>
+<li class="chapter" data-level="15.10" data-path="links-úteis.html"><a href="links-úteis.html#estatística"><i class="fa fa-check"></i><b>15.10</b> Estatística<span></span></a></li>
+<li class="chapter" data-level="15.11" data-path="links-úteis.html"><a href="links-úteis.html#podcasts"><i class="fa fa-check"></i><b>15.11</b> Podcasts<span></span></a></li>
+<li class="chapter" data-level="15.12" data-path="links-úteis.html"><a href="links-úteis.html#links-programação"><i class="fa fa-check"></i><b>15.12</b> Links Programação<span></span></a>
+<ul>
+<li class="chapter" data-level="15.12.1" data-path="links-úteis.html"><a href="links-úteis.html#r-introdução"><i class="fa fa-check"></i><b>15.12.1</b> R introdução<span></span></a></li>
+<li class="chapter" data-level="15.12.2" data-path="links-úteis.html"><a href="links-úteis.html#r-e-estatística"><i class="fa fa-check"></i><b>15.12.2</b> R e estatística<span></span></a></li>
+<li class="chapter" data-level="15.12.3" data-path="links-úteis.html"><a href="links-úteis.html#r---tópicos-específicos"><i class="fa fa-check"></i><b>15.12.3</b> R - tópicos específicos<span></span></a></li>
+<li class="chapter" data-level="15.12.4" data-path="links-úteis.html"><a href="links-úteis.html#r---avançado"><i class="fa fa-check"></i><b>15.12.4</b> R - avançado<span></span></a></li>
+<li class="chapter" data-level="15.12.5" data-path="links-úteis.html"><a href="links-úteis.html#links-python"><i class="fa fa-check"></i><b>15.12.5</b> Links Python<span></span></a></li>
+<li class="chapter" data-level="15.12.6" data-path="links-úteis.html"><a href="links-úteis.html#python---tópicos-específicos"><i class="fa fa-check"></i><b>15.12.6</b> Python - tópicos específicos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="15.13" data-path="links-úteis.html"><a href="links-úteis.html#links-de-cursos-online"><i class="fa fa-check"></i><b>15.13</b> Links de Cursos Online<span></span></a></li>
+<li class="chapter" data-level="15.14" data-path="links-úteis.html"><a href="links-úteis.html#grupos-de-discussãoforum"><i class="fa fa-check"></i><b>15.14</b> Grupos de discussão/Forum<span></span></a>
+<ul>
+<li class="chapter" data-level="15.14.1" data-path="links-úteis.html"><a href="links-úteis.html#telegram"><i class="fa fa-check"></i><b>15.14.1</b> Telegram<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="15.15" data-path="links-úteis.html"><a href="links-úteis.html#links-de-folhas-de-dicas-cheat-sheets"><i class="fa fa-check"></i><b>15.15</b> Links de folhas de dicas (<em>Cheat-sheets</em>)<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="excpi.html"><a href="excpi.html"><i class="fa fa-check"></i><b>16</b> Apêndice: Exemplo Análise - CPI da Pandemia<span></span></a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="excpi.html"><a href="excpi.html#introdução-1"><i class="fa fa-check"></i><b>16.1</b> Introdução<span></span></a></li>
+<li class="chapter" data-level="16.2" data-path="excpi.html"><a href="excpi.html#pré-processamento"><i class="fa fa-check"></i><b>16.2</b> Pré-processamento<span></span></a>
+<ul>
+<li class="chapter" data-level="16.2.1" data-path="excpi.html"><a href="excpi.html#pré-processamento-substituição-de-abreviaturas"><i class="fa fa-check"></i><b>16.2.1</b> Pré-processamento: substituição de abreviaturas<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="16.3" data-path="excpi.html"><a href="excpi.html#primeiras-observações"><i class="fa fa-check"></i><b>16.3</b> Primeiras observações<span></span></a></li>
+<li class="chapter" data-level="16.4" data-path="excpi.html"><a href="excpi.html#entes"><i class="fa fa-check"></i><b>16.4</b> Entes<span></span></a></li>
+<li class="chapter" data-level="16.5" data-path="excpi.html"><a href="excpi.html#palavras-chave-em-contexto---kwic"><i class="fa fa-check"></i><b>16.5</b> Palavras chave em contexto - KWIC<span></span></a></li>
+<li class="chapter" data-level="16.6" data-path="excpi.html"><a href="excpi.html#opção-1-pegando-apenas-os-senadores"><i class="fa fa-check"></i><b>16.6</b> Opção 1: pegando apenas os senadores<span></span></a></li>
+<li class="chapter" data-level="16.7" data-path="excpi.html"><a href="excpi.html#opção-2-somente-senadores-a-partir-do-site-do-senado"><i class="fa fa-check"></i><b>16.7</b> Opção 2: Somente senadores, a partir do site do Senado<span></span></a></li>
+<li class="chapter" data-level="16.8" data-path="excpi.html"><a href="excpi.html#wordcloud---nuvem-de-palavras"><i class="fa fa-check"></i><b>16.8</b> wordcloud - Nuvem de palavras<span></span></a></li>
+<li class="chapter" data-level="16.9" data-path="excpi.html"><a href="excpi.html#tf-idf-dos-senadores"><i class="fa fa-check"></i><b>16.9</b> TF-IDF dos Senadores<span></span></a></li>
+<li class="chapter" data-level="16.10" data-path="excpi.html"><a href="excpi.html#dicionário"><i class="fa fa-check"></i><b>16.10</b> Dicionário<span></span></a></li>
+<li class="chapter" data-level="16.11" data-path="excpi.html"><a href="excpi.html#modelagem-de-tópicos"><i class="fa fa-check"></i><b>16.11</b> Modelagem de tópicos<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="datasets.html"><a href="datasets.html"><i class="fa fa-check"></i><b>17</b> Apêndice: Datasets<span></span></a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="datasets.html"><a href="datasets.html#pacotes-r-com-datasets"><i class="fa fa-check"></i><b>17.1</b> Pacotes R com datasets<span></span></a></li>
+<li class="chapter" data-level="17.2" data-path="datasets.html"><a href="datasets.html#datasets-em-sites-diversos"><i class="fa fa-check"></i><b>17.2</b> Datasets em sites diversos:<span></span></a></li>
+<li class="chapter" data-level="17.3" data-path="datasets.html"><a href="datasets.html#datasets-no-kaggle"><i class="fa fa-check"></i><b>17.3</b> Datasets no <span>Kaggle</span>:<span></span></a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução à Análise Textual aplicada à Sociologia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="keywordassignment" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">13</span> Atribuição de palavra chave <em>Keyword assignment</em><a href="keywordassignment.html#keywordassignment" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Busca-se com a atribuição de palavra chave selecionar frases ou termos presentes em um vocabulário pré-definido pelo pesquisador.</p>
+<!-- Keyphrase assignment seeks to select the phrases from a controlled vocabulary that best describe a document. The training data associates a set of documents with each phrase in the vocabulary, and builds a classifier for each phrase. A new document is processed by each classifier, and assigned the keyphrase of any model that classifies it positively (e.g. Dumais et al., 1998). The only keyphrases that can be assigned are ones that have already been seen in the training data. i -->
+<!-- https://tutorials.quanteda.io/basic-operations/tokens/tokens_lookup/ -->
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="keywordassignment.html#cb216-1" aria-hidden="true" tabindex="-1"></a>dict <span class="ot">&lt;-</span> <span class="fu">dictionary</span>(<span class="fu">list</span>(<span class="at">refugee =</span> <span class="fu">c</span>(<span class="st">&quot;refugee*&quot;</span>, <span class="st">&quot;asylum*&quot;</span>),</span>
+<span id="cb216-2"><a href="keywordassignment.html#cb216-2" aria-hidden="true" tabindex="-1"></a>                        <span class="at">worker =</span> <span class="fu">c</span>(<span class="st">&quot;worker*&quot;</span>, <span class="st">&quot;employee*&quot;</span>)))</span></code></pre></div>
+<div id="keywordextraction" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Key term ou keyword extraction<a href="keywordassignment.html#keywordextraction" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Como dito, extração de termos ou palavras-chave consiste na extração automatizada de termos contidos no texto, sem o uso de vocabulário controlado externo.
+Segundo Beliga (2014) como exemplos de key word extraction temos:</p>
+<ul>
+<li>métodos estatísticos não supervisionados, como
+<a href="keywordassignment.html#tf-idf">TF-IDF</a>,
+KP-Miner,
+RAKE (Rapid Automatic Keyword Extraction).</li>
+<li>métodos baseados em grafos, como
+TextRank,
+SingleRank,
+ExpandRank
+TopicRank,
+PositionRank,
+TopologicalPageRank e
+MultipartitieRank.</li>
+<li>método supervisionado, como o
+KEA.</li>
+</ul>
+<p>Além destes, pode-se destacar ainda os seguintes algoritmos de KE:
+Os <a href="ngrams">ngrams</a> podem ser considerados uma forma de extrair palavras chave, bem como
+<a href="#pos">Parts-of-Speech tagging, ou POS</a> (por exemplo, pegando os substantivos mais frequentes),
+colocação e Coocorrências,
+PAT tree (Patricia Tree),
+YAKE! (Yet Another Keyword Extractor),
+Selectivity-Based Keyword Extraction,
+Yum!,
+GenEx (o nome é uma junção entre <em>Genitor</em>, um algoritmo genético e <em>Extractor</em>, um algoritmo de extração de palavras chave parametrizado),
+KeyBERT.</p>
+<p>Os algoritmos GenEx e Kea estabeleceram a fundação dos métodos de extração de termos que vieram depois.</p>
+<p>ver <a href="https://alvinntnu.github.io/NTNU_ENC2036_LECTURES/keyword-analysis.html" class="uri">https://alvinntnu.github.io/NTNU_ENC2036_LECTURES/keyword-analysis.html</a> keyness</p>
+<div class="infobox note">
+<p><strong>Dicas</strong></p>
+<ul>
+<li>Sobre o KEA.</li>
+<li>I. H. Witten, G. W. Paynter, E. Frank, C. Gutwin, C. G. Nevill-Manning, <a href="https://www.cs.waikato.ac.nz/~ml/publications/2005/chap_Witten-et-al_Windows.pdf">“Kea: Practical Automatic Keyphrase Extraction”</a> in Proc. of the 4th ACM Conf. of the Digital Libraries, Berkeley, CA, USA, 1999.</li>
+</ul>
+<p>O artigo que apresentou o GenEx:</p>
+<ul>
+<li>P. D. Turney, <a href="http://extractor.com/Learning%20to%20Extract%20keyphrases.pdf">“Learning to Extract Keyphrases from Text”</a> in Tech. Report, National Research Council of Canada, Institute for Information Technology, 1999.</li>
+</ul>
+</div>
+<p>Chamamos de <strong>métodos não supervisionados</strong> aqueles que não utilizam fontes externas, utilizam somente os textos, documentos, etc.
+Chamamos de <strong>métodos supervisionados</strong> aqueles que utilizam alguma fonte externa - como modelos pré-treinados ou dicionários - para extração de palavras chave.</p>
+<!-- https://www.r-bloggers.com/2018/04/an-overview-of-keyword-extraction-techniques/ -->
+<p><a href="https://towardsdatascience.com/keyword-extraction-methods-the-overview-35557350f8bb">resumo dos diferentes métodos</a></p>
+<div id="tf-idf" class="section level3 hasAnchor" number="13.1.1">
+<h3><span class="header-section-number">13.1.1</span> TF-IDF: Term-Frequency Inverse Document Frequency<a href="keywordassignment.html#tf-idf" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>A “frequência do termo–inverso da frequência nos documentos”,
+do inglês “<em>Term-Frequency Inverse Document Frequency</em>”, ou “TF-IDF” é utilizado para medir a relevância de palavras em uma série de documentos. Para funcionar, requer que existam vários documentos, ou textos, ou capítulos, etc.
+Neste algoritmo, as palavras que aparecem em todos ou em muitos documentos - como as <a href="análise-textual-text-mining.html#stopwords">stopwords</a> - serão “penalizadas” e terão pontuação baixa.
+Agora, se uma palavra aparece bastante em um documento, mas não em outros, terá pontuação alta, e isto pode indicar que seja relevante, significativa para entender a peculiaridade daquele documento/texto.
+TF-IDF é útil num processo chamado de <a href="keywordassignment.html#keywordextraction"><em>keyword extraction</em>” ou “extração de palavras chave”</a>.</p>
+<!-- Term Frequency (TF) tfi ,j : the number of occurrences of term ti in document dj -->
+<p>Vamos para um exemplo:</p>
+<blockquote>
+<p>Documento 1: “Eu quero abacaxi”</p>
+</blockquote>
+<blockquote>
+<p>Documento 2: “Eu? Eu quero banana”</p>
+</blockquote>
+<p>Frequência de termos, ou TF, representa a proporção que uma palavra tem no documento em questão. Esta frequência pode ser apresentada no formato de <a href="introdução-ao-r.html#matrix">matriz</a>.</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Frequência</strong></th>
+<th>Doc 1</th>
+<th>Doc2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eu</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>quero</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>abacaxi</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>banana</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>total palavras</td>
+<td>3</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<!--  ```{r, echo=FALSE, eval=TRUE, cache=TRUE} -->
+<!-- doc1 <- "Eu quero abacaxi" -->
+<!-- doc2 <- "Eu? Eu quero banana" -->
+<!-- corpus1 <- c(doc1,doc2) -->
+<!-- meu_corpus <- tm::Corpus(tm::VectorSource(corpus1)) -->
+<!-- meu_corpus2 <-  -->
+<!--   # passando tudo para minúsculo -->
+<!--   tm::tm_map(meu_corpus, tolower) # %>% -->
+<!--   # removendo pontuações -->
+<!--   # tm::tm_map(., tm::removePunctuation )  -->
+<!-- # Para visualizar, transformamos nosso objeto em matriz -->
+<!-- as.matrix(meu_tdm)  -->
+<!--  ``` -->
+<div id="tf-frequência-de-termos-term-frequency" class="section level4 hasAnchor" number="13.1.1.1">
+<h4><span class="header-section-number">13.1.1.1</span> TF: Frequência de termos (<em>Term Frequency</em>)<a href="keywordassignment.html#tf-frequência-de-termos-term-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>O TF de um termo que ocorre em um documento é calculado da seguinte maneira:</p>
+<blockquote>
+<p><span class="math inline">\(tf(t,d)\)</span> : contagem de t(termo) em d(documento) / número de palavras no documento</p>
+</blockquote>
+<p>O documento 1 possui 3 palavras, o documento 2 possui 4 palavras, portanto, a frequência de termos (TF) fica assim:</p>
+<table>
+<thead>
+<tr class="header">
+<th><strong>TF</strong></th>
+<th>Doc 1</th>
+<th>Doc2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eu</td>
+<td>1 / 3 = 0,33333</td>
+<td>2 / 4 = 0,5</td>
+</tr>
+<tr class="even">
+<td>quero</td>
+<td>1 / 3 = 0,33333</td>
+<td>1 / 4 = 0,25</td>
+</tr>
+<tr class="odd">
+<td>abacaxi</td>
+<td>1 / 3 = 0,33333</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>banana</td>
+<td>0</td>
+<td>1 / 4 = 0,25</td>
+</tr>
+<tr class="odd">
+<td>Total</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>No Documento 1, temos 3 palavras no total, cada uma, por ser única no documento, possui TF de 1/3, ou 0,33333.
+O Documento 2 possui 4 palavras no total. “quero” e “banana” possui um TF de 1/4 cada, ou 0,25, enquanto “eu”, que apareceu duas vezes, possui TF de 2/4 ou 0,5.
+TF me diz o quão frequente é uma palavra/termo em um documento. Isto pode ser feito em números absolutos bem como em termos proporcionais (bom olhar as documentações dos pacotes para entender qual o padrão utilizado)</p>
+<!-- - Ver (Luhn, 1957) -->
+<!-- Because of the large number of documents in many collections, this measure too is usually squashed with a log function.  -->
+</div>
+<div id="idf-inverse-document-frequency" class="section level4 hasAnchor" number="13.1.1.2">
+<h4><span class="header-section-number">13.1.1.2</span> IDF: Inverse Document Frequency<a href="keywordassignment.html#idf-inverse-document-frequency" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>IDF, <em>inverse document frequency</em>, mostra o peso de um termo em relação à coleção total de documentos/textos, dando um valor baixo para termos frequentes em todos os documentos e que por isso são pouco informativos sobre as peculiaridades daquele documento, bem como privilegia termos frequentes em poucos documentos.</p>
+<p>Assim, no nosso exemplo, as palavras “eu” e “quero” estão presentes em dois documentos de um total de dois documentos, tendo o IDF de 0.
+Já “abacaxi” e “banana”, termos que aparecem uma vez e somente em um documento cada, possuem IDF de 0,30102.</p>
+<p>O <strong>cálculo</strong> é feito da seguinte forma:</p>
+<blockquote>
+<p>Número de documentos no corpus (no caso acima, dois), dividido pelo número de documentos onde o termo aparece. Se o termo aparece uma vez somente ou 50 vezes em um documento, em ambos os casos será computado como um.
+O resultado disto é posto num logaritmo.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th>IDF</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eu</td>
+<td>Log(2/2) = 0</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>quero</td>
+<td>Log(2/2) = 0</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>abacaxi</td>
+<td>Log(2/1) = 0,30102</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>banana</td>
+<td>Log(2/1) = 0,30102</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Com o IDF sabemos quais termos ocorrem em vários documentos e os que ocorrem em poucos. Para saber o peso de cada termo em cada documento, usamos então o TF-IDF.</p>
+</div>
+<div id="calculando-tf-idf" class="section level4 hasAnchor" number="13.1.1.3">
+<h4><span class="header-section-number">13.1.1.3</span> Calculando TF-IDF<a href="keywordassignment.html#calculando-tf-idf" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>TF-IDF é a multiplicação dos dois termos, TF * IDF.
+Ao multiplicar TF por IDF, obtemos o <em>score</em> da palavra no documento.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>TF Doc 1</th>
+<th>TF Doc2</th>
+<th>IDF</th>
+<th>TF-IDF Doc1</th>
+<th>TF-IDF Doc2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Eu</td>
+<td>1 / 3 = 0,33333</td>
+<td>2 / 4 = 0,5</td>
+<td>Log(2/2) = 0</td>
+<td>0,33333 * 0 = 0</td>
+<td>0,5 * 0 = 0</td>
+</tr>
+<tr class="even">
+<td>quero</td>
+<td>1 / 3 = 0,33333</td>
+<td>1 / 4 = 0,25</td>
+<td>Log(2/2) = 0</td>
+<td>0,33333 * 0 = 0</td>
+<td>0,5 * 0 = 0</td>
+</tr>
+<tr class="odd">
+<td>abacaxi</td>
+<td>1 / 3 = 0,33333</td>
+<td>0</td>
+<td>Log(2/1) = 0,301</td>
+<td>0,3 * 0,3 = 0,1003</td>
+<td>0 * 0,3 = 0</td>
+</tr>
+<tr class="even">
+<td>banana</td>
+<td>0</td>
+<td>1 / 4 = 0,25</td>
+<td>Log(2/1) = 0,301</td>
+<td>0 * 0,3 = 0</td>
+<td>0,25 * 0,3 = 0,0752</td>
+</tr>
+</tbody>
+</table>
+<!-- |TF-IDF |Doc 1|Doc2| -->
+<!-- |---|---|---| -->
+<!-- |Eu|0|0| -->
+<!-- |quero|0|0| -->
+<!-- |abacaxi|0|0,6931472| -->
+<!-- |banana|0,6931472|0| -->
+<div class="infobox matematica">
+<p><strong>Matemática</strong></p>
+<p>Esta é a fórmula do TF-IDF, e nos retorna o índice TF-IDF para cada palavra em cada documento.</p>
+<blockquote>
+<p><span class="math inline">\(W_{ij} = tf_{i,j} \times \log(\frac{N}{df_i})\)</span></p>
+</blockquote>
+<p>Destrinchando a fórmula:</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fórmula</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(W_{ij}\)</span></td>
+<td>um termo <span class="math inline">\(i\)</span> num documento <span class="math inline">\(j\)</span>, para o qual vamos calcular o TF-IDF</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(tf_{i,j}\)</span></td>
+<td>frequência do termo <span class="math inline">\(i\)</span>, no documento <span class="math inline">\(j\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(df_{ij}\)</span></td>
+<td>Número de documentos que contenham o termo <span class="math inline">\(i\)</span>. Pouco importa se aparece apenas uma vez ou se 500 vezes num mesmo documento, seu valor em cada documento, se presente, é 1</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(N\)</span></td>
+<td>Número total de documentos</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(df_i\)</span></td>
+<td>frequência de documentos que contenham o termo <span class="math inline">\(i\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Frequência de documento (_Document Frequency_):Número de documentos em que o termo está presente -->
+<!-- > $df(t)$ = ocorrência de t em documentos -->
+<p>Se o resultado encontrado se aproximar de “0”, então a palavra se encontra presente em vários documentos. Caso contrário, quanto mais se aproxima de “1”, mais rara é esta palavra em outros documentos e mais concentrada em poucos documentos.
+Vale ressaltar que o cálculo TF-IDF pode ser feito tanto com a frequência absoluta ou como com a relativa.</p>
+<p>Vimos exemplo de TF-IDF com apenas dois “documentos”. Vamos usar mais documentos para entender melhor o TF-IDF. Usamos um pacote de R nos bastidores para gerar a tabela à seguir, mas veremos o código que o gerou mais à frente.</p>
+<!-- doc2 <- "Eu? Eu quero banana!" -->
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="keywordassignment.html#cb217-1" aria-hidden="true" tabindex="-1"></a>doc1 <span class="ot">&lt;-</span> <span class="st">&quot;Eu quero abacaxi!&quot;</span></span>
+<span id="cb217-2"><a href="keywordassignment.html#cb217-2" aria-hidden="true" tabindex="-1"></a>doc2 <span class="ot">&lt;-</span> <span class="st">&quot;Eu quero açaí!&quot;</span></span>
+<span id="cb217-3"><a href="keywordassignment.html#cb217-3" aria-hidden="true" tabindex="-1"></a>doc3 <span class="ot">&lt;-</span> <span class="st">&quot;Eu quero manga ou açaí! Eu quero manga! Manga!&quot;</span></span></code></pre></div>
+<p>O exemplo acima possui diferentes configurações de palavras para observarmos o TF-IDF:</p>
+<ul>
+<li>“eu” e “quero” em todos os docs</li>
+<li>“abacaxi”, “manga” e “ou” que ocorrem uma vez.</li>
+<li>“açaí” que ocorre uma vez em dois documentos diferentes.</li>
+<li>“manga” que aparece várias vezes em um documento somente.</li>
+</ul>
+<!--  ```{r, echo=F, collapse = TRUE, chache = TRUE} -->
+<!-- df <- data.frame("texto" = c(doc1,doc2, doc3),  -->
+<!--                  "ID" = c(1:3),  -->
+<!--                  stringsAsFactors = F) -->
+<!-- df %>%  -->
+<!--      tidytext::unnest_tokens(output = 'word', token = 'words',  -->
+<!--                              # input =  nome da coluna do dataframe -->
+<!--                              input = texto) %>% -->
+<!--      dplyr::count(ID, word, sort = TRUE) %>% -->
+<!--      tidytext::bind_tf_idf(word, ID, n) -->
+<!--  ``` -->
+<pre><code>## Document-feature matrix of: 3 documents, 6 features (38.89% sparse) and 0 docvars.
+##        features
+## docs    eu quero   abacaxi       açaí     manga         ou
+##   text1  0     0 0.1590404 0          0         0         
+##   text2  0     0 0         0.05869709 0         0         
+##   text3  0     0 0         0.01956570 0.1590404 0.05301347</code></pre>
+<ul>
+<li>“eu” e “quero” ocorrem em todos os docs e possuem TF-IDF de 0 em todos os casos.</li>
+<li>“abacaxi” aparece somente na primeira frase e tem TF-IDF de 0.1590404</li>
+<li>“açaí” ocorre uma vez em dois documentos possui TF-IDF em um doc com menos palavras no total.</li>
+<li>“ou” e “manga” só aparecem na frase 3, e manga aparece 3 vezes e tem TF-IDF maior que a palavra “ou”, que só aparece uma vez.</li>
+<li>No doc3, “ou” (que só aparece uma vez em um doc) possui TF-IDF maior que “açaí”, que aparece em mais de um doc.
+<!-- - "manga" aparece várias vezes em um documento e possui TF-IDF maior que "ou" que  -->
+<!-- somente possui o mesmo IDF de palavras que aparecem apenas uma vez em um documento, como abacaxi, e banana. --></li>
+</ul>
+<p>Podemos realizar o TF-IDF no R calculando manualmente, como neste <a href="https://www.youtube.com/watch?v=az7yf0IfWPM">exemplo em video</a> ou <a href="http://ethen8181.github.io/machine-learning/clustering_old/tf_idf/tf_idf.html">neste tutorial</a>, ou podemos usar alguns dos vários pacotes que tem já implementadas a função, como o Tidytext, Quanteda e TM, que veremos a seguir.
+Vale atentar que cálculos feitos com diferentes pacotes podem não bater entre si. Se for este o caso, atente para se usam frequência absoluta ou relativa, e qual a base do Logaritmo utilizado (se de base 2 ou 10).</p>
+<p>Em um <strong>exemplo</strong> real de uso de TF-IDF, <a href="http://uc-r.github.io/tf-idf_analysis">este tutorial</a> usou TF-IDF entre diferentes livros do Harry Potter:</p>
+<p><img src="http://uc-r.github.io/public/images/analytics/descriptives/tf_idf5.png" width="60%" /></p>
+<p>Fonte: <a href="https://afit-r.github.io/tf-idf_analysis">Text Mining: Term vs. Document Frequency</a> do AFIT Data Science Lab R Programming Guide</p>
+<!-- ![](http://uc-r.github.io/public/images/analytics/descriptives/tf_idf5.png) -->
+</div>
+<div id="tf-idf-no-r-tidyverse" class="section level4 hasAnchor" number="13.1.1.4">
+<h4><span class="header-section-number">13.1.1.4</span> TF-IDF no R: Tidyverse<a href="keywordassignment.html#tf-idf-no-r-tidyverse" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Podemos realizar o TF-IDF no R com o tidytext com a função <a href="https://rdrr.io/cran/tidytext/man/bind_tf_idf.html">tidytext::bind_tf_idf</a>.</p>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="keywordassignment.html#cb219-1" aria-hidden="true" tabindex="-1"></a>doc1 <span class="ot">&lt;-</span> <span class="st">&quot;Eu quero abacaxi&quot;</span></span>
+<span id="cb219-2"><a href="keywordassignment.html#cb219-2" aria-hidden="true" tabindex="-1"></a>doc2 <span class="ot">&lt;-</span> <span class="st">&quot;Eu? Eu quero banana&quot;</span></span>
+<span id="cb219-3"><a href="keywordassignment.html#cb219-3" aria-hidden="true" tabindex="-1"></a><span class="co"># criando o data frame, onde cada linha é um documento.</span></span>
+<span id="cb219-4"><a href="keywordassignment.html#cb219-4" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="st">&quot;texto&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(doc1,doc2), </span>
+<span id="cb219-5"><a href="keywordassignment.html#cb219-5" aria-hidden="true" tabindex="-1"></a>                 <span class="co"># ID de &quot;identificação&quot;</span></span>
+<span id="cb219-6"><a href="keywordassignment.html#cb219-6" aria-hidden="true" tabindex="-1"></a>                 <span class="st">&quot;ID&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), </span>
+<span id="cb219-7"><a href="keywordassignment.html#cb219-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> F)</span>
+<span id="cb219-8"><a href="keywordassignment.html#cb219-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb219-9"><a href="keywordassignment.html#cb219-9" aria-hidden="true" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb219-10"><a href="keywordassignment.html#cb219-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># quebrando o texto em tokens</span></span>
+<span id="cb219-11"><a href="keywordassignment.html#cb219-11" aria-hidden="true" tabindex="-1"></a>     tidytext<span class="sc">::</span><span class="fu">unnest_tokens</span>(<span class="at">output =</span> <span class="st">&#39;word&#39;</span>, <span class="at">token =</span> <span class="st">&#39;words&#39;</span>, </span>
+<span id="cb219-12"><a href="keywordassignment.html#cb219-12" aria-hidden="true" tabindex="-1"></a>                             <span class="co"># input =  nome da coluna do dataframe</span></span>
+<span id="cb219-13"><a href="keywordassignment.html#cb219-13" aria-hidden="true" tabindex="-1"></a>                             <span class="at">input =</span> texto) <span class="sc">%&gt;%</span></span>
+<span id="cb219-14"><a href="keywordassignment.html#cb219-14" aria-hidden="true" tabindex="-1"></a>              <span class="co"># contando os termos</span></span>
+<span id="cb219-15"><a href="keywordassignment.html#cb219-15" aria-hidden="true" tabindex="-1"></a>              dplyr<span class="sc">::</span><span class="fu">count</span>(ID, word, <span class="at">sort =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb219-16"><a href="keywordassignment.html#cb219-16" aria-hidden="true" tabindex="-1"></a>              <span class="co"># TF-IDF</span></span>
+<span id="cb219-17"><a href="keywordassignment.html#cb219-17" aria-hidden="true" tabindex="-1"></a>            tidytext<span class="sc">::</span><span class="fu">bind_tf_idf</span>(word, ID, n)</span>
+<span id="cb219-18"><a href="keywordassignment.html#cb219-18" aria-hidden="true" tabindex="-1"></a><span class="do">##   ID    word n        tf       idf    tf_idf</span></span>
+<span id="cb219-19"><a href="keywordassignment.html#cb219-19" aria-hidden="true" tabindex="-1"></a><span class="do">## 1  2      eu 2 0.5000000 0.0000000 0.0000000</span></span>
+<span id="cb219-20"><a href="keywordassignment.html#cb219-20" aria-hidden="true" tabindex="-1"></a><span class="do">## 2  1 abacaxi 1 0.3333333 0.6931472 0.2310491</span></span>
+<span id="cb219-21"><a href="keywordassignment.html#cb219-21" aria-hidden="true" tabindex="-1"></a><span class="do">## 3  1      eu 1 0.3333333 0.0000000 0.0000000</span></span>
+<span id="cb219-22"><a href="keywordassignment.html#cb219-22" aria-hidden="true" tabindex="-1"></a><span class="do">## 4  1   quero 1 0.3333333 0.0000000 0.0000000</span></span>
+<span id="cb219-23"><a href="keywordassignment.html#cb219-23" aria-hidden="true" tabindex="-1"></a><span class="do">## 5  2  banana 1 0.2500000 0.6931472 0.1732868</span></span>
+<span id="cb219-24"><a href="keywordassignment.html#cb219-24" aria-hidden="true" tabindex="-1"></a><span class="do">## 6  2   quero 1 0.2500000 0.0000000 0.0000000</span></span></code></pre></div>
+<p>Em <code>bind_tf_idf()</code> sendo: <code>word</code> a coluna contendo termos, <code>ID</code> a coluna contendo os IDs dos docs, <code>n</code> a contagem de palavras produzido por <code>count()</code>.</p>
+<div class="infobox note">
+<p><strong>Dicas</strong></p>
+<p>Exemplo/tutorial de <a href="https://cran.r-project.org/web/packages/tidytext/vignettes/tf_idf.html">TF-IDF com o tidyverse</a> de Julia Silge e David Robinson.</p>
+</div>
+</div>
+<div id="tf-idf-no-r-quanteda" class="section level4 hasAnchor" number="13.1.1.5">
+<h4><span class="header-section-number">13.1.1.5</span> TF-IDF no R: Quanteda<a href="keywordassignment.html#tf-idf-no-r-quanteda" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>TF-IDF com o pacote Quanteda é usado com a função <a href="https://quanteda.io/reference/dfm_tfidf.html"><code>quanteda::dfm_tfidf</code></a></p>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="keywordassignment.html#cb220-1" aria-hidden="true" tabindex="-1"></a>doc1 <span class="ot">&lt;-</span> <span class="st">&quot;Eu quero Elias&quot;</span></span>
+<span id="cb220-2"><a href="keywordassignment.html#cb220-2" aria-hidden="true" tabindex="-1"></a>doc2 <span class="ot">&lt;-</span> <span class="st">&quot;Eu? Eu quero Durkheim&quot;</span></span>
+<span id="cb220-3"><a href="keywordassignment.html#cb220-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-4"><a href="keywordassignment.html#cb220-4" aria-hidden="true" tabindex="-1"></a><span class="co"># criando um vetor com documentos para transformar em um corpus no quanteda</span></span>
+<span id="cb220-5"><a href="keywordassignment.html#cb220-5" aria-hidden="true" tabindex="-1"></a>meuvetor <span class="ot">&lt;-</span> <span class="fu">c</span>(doc1,doc2)</span>
+<span id="cb220-6"><a href="keywordassignment.html#cb220-6" aria-hidden="true" tabindex="-1"></a><span class="co"># criando um objeto tipo corpus a partir do vetor</span></span>
+<span id="cb220-7"><a href="keywordassignment.html#cb220-7" aria-hidden="true" tabindex="-1"></a>meucorpus <span class="ot">&lt;-</span> quanteda<span class="sc">::</span><span class="fu">corpus</span>(meuvetor)</span>
+<span id="cb220-8"><a href="keywordassignment.html#cb220-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-9"><a href="keywordassignment.html#cb220-9" aria-hidden="true" tabindex="-1"></a><span class="co"># criando uma matriz de frequência</span></span>
+<span id="cb220-10"><a href="keywordassignment.html#cb220-10" aria-hidden="true" tabindex="-1"></a>meudfm <span class="ot">&lt;-</span> meucorpus <span class="sc">%&gt;%</span> </span>
+<span id="cb220-11"><a href="keywordassignment.html#cb220-11" aria-hidden="true" tabindex="-1"></a>    <span class="co"># quebrando em tokens</span></span>
+<span id="cb220-12"><a href="keywordassignment.html#cb220-12" aria-hidden="true" tabindex="-1"></a>    quanteda<span class="sc">::</span><span class="fu">tokens</span>(</span>
+<span id="cb220-13"><a href="keywordassignment.html#cb220-13" aria-hidden="true" tabindex="-1"></a>    <span class="co"># removendo a pontuação</span></span>
+<span id="cb220-14"><a href="keywordassignment.html#cb220-14" aria-hidden="true" tabindex="-1"></a>     <span class="at">remove_punct =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb220-15"><a href="keywordassignment.html#cb220-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># transformando em um document frame matrix</span></span>
+<span id="cb220-16"><a href="keywordassignment.html#cb220-16" aria-hidden="true" tabindex="-1"></a>    quanteda<span class="sc">::</span><span class="fu">dfm</span>()</span>
+<span id="cb220-17"><a href="keywordassignment.html#cb220-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-18"><a href="keywordassignment.html#cb220-18" aria-hidden="true" tabindex="-1"></a>meudfm</span>
+<span id="cb220-19"><a href="keywordassignment.html#cb220-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Document-feature matrix of: 2 documents, 4 features (25.00% sparse) and 0 docvars.</span></span>
+<span id="cb220-20"><a href="keywordassignment.html#cb220-20" aria-hidden="true" tabindex="-1"></a><span class="do">##        features</span></span>
+<span id="cb220-21"><a href="keywordassignment.html#cb220-21" aria-hidden="true" tabindex="-1"></a><span class="do">## docs    eu quero elias durkheim</span></span>
+<span id="cb220-22"><a href="keywordassignment.html#cb220-22" aria-hidden="true" tabindex="-1"></a><span class="do">##   text1  1     1     1        0</span></span>
+<span id="cb220-23"><a href="keywordassignment.html#cb220-23" aria-hidden="true" tabindex="-1"></a><span class="do">##   text2  2     1     0        1</span></span>
+<span id="cb220-24"><a href="keywordassignment.html#cb220-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-25"><a href="keywordassignment.html#cb220-25" aria-hidden="true" tabindex="-1"></a><span class="co"># gerando o tf-idf (frequencia absoluta)</span></span>
+<span id="cb220-26"><a href="keywordassignment.html#cb220-26" aria-hidden="true" tabindex="-1"></a>quanteda<span class="sc">::</span><span class="fu">dfm_tfidf</span>(meudfm)</span>
+<span id="cb220-27"><a href="keywordassignment.html#cb220-27" aria-hidden="true" tabindex="-1"></a><span class="do">## Document-feature matrix of: 2 documents, 4 features (25.00% sparse) and 0 docvars.</span></span>
+<span id="cb220-28"><a href="keywordassignment.html#cb220-28" aria-hidden="true" tabindex="-1"></a><span class="do">##        features</span></span>
+<span id="cb220-29"><a href="keywordassignment.html#cb220-29" aria-hidden="true" tabindex="-1"></a><span class="do">## docs    eu quero   elias durkheim</span></span>
+<span id="cb220-30"><a href="keywordassignment.html#cb220-30" aria-hidden="true" tabindex="-1"></a><span class="do">##   text1  0     0 0.30103  0      </span></span>
+<span id="cb220-31"><a href="keywordassignment.html#cb220-31" aria-hidden="true" tabindex="-1"></a><span class="do">##   text2  0     0 0        0.30103</span></span>
+<span id="cb220-32"><a href="keywordassignment.html#cb220-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb220-33"><a href="keywordassignment.html#cb220-33" aria-hidden="true" tabindex="-1"></a><span class="co"># TF-IDF usando frequência relativa, proporcional</span></span>
+<span id="cb220-34"><a href="keywordassignment.html#cb220-34" aria-hidden="true" tabindex="-1"></a>quanteda<span class="sc">::</span><span class="fu">dfm_tfidf</span>(meudfm, <span class="at">scheme_tf =</span> <span class="st">&quot;prop&quot;</span>)</span>
+<span id="cb220-35"><a href="keywordassignment.html#cb220-35" aria-hidden="true" tabindex="-1"></a><span class="do">## Document-feature matrix of: 2 documents, 4 features (25.00% sparse) and 0 docvars.</span></span>
+<span id="cb220-36"><a href="keywordassignment.html#cb220-36" aria-hidden="true" tabindex="-1"></a><span class="do">##        features</span></span>
+<span id="cb220-37"><a href="keywordassignment.html#cb220-37" aria-hidden="true" tabindex="-1"></a><span class="do">## docs    eu quero     elias  durkheim</span></span>
+<span id="cb220-38"><a href="keywordassignment.html#cb220-38" aria-hidden="true" tabindex="-1"></a><span class="do">##   text1  0     0 0.1003433 0        </span></span>
+<span id="cb220-39"><a href="keywordassignment.html#cb220-39" aria-hidden="true" tabindex="-1"></a><span class="do">##   text2  0     0 0         0.0752575</span></span></code></pre></div>
+<blockquote>
+<p>quanteda::dfm_tfidf(x, scheme_tf = “count”, scheme_df = “inverse”, base = 2)</p>
+</blockquote>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Parâmetro</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>x</td>
+<td>objeto de entrada, devendo ser um document-feature matrix</td>
+</tr>
+<tr class="even">
+<td>scheme_tf</td>
+<td>esquema para dfm_weight(); sendo o padrão “count”. Para usar a frequência relativa, usa-se o “prop”</td>
+</tr>
+<tr class="odd">
+<td>scheme_df</td>
+<td>esquema para docfreq(); sendo o padrão “inverse”.</td>
+</tr>
+<tr class="even">
+<td>base</td>
+<td>A base para logaritmo no dfm_weight() e docfreq(), sendo 10 o valor padrão. Outro valor comum é 2</td>
+</tr>
+</tbody>
+</table>
+<!-- |force|logical; if TRUE, apply weighting scheme even if the dfm has been weighted before. This can result in invalid weights, such as as weighting by "prop" after applying "logcount", or after having grouped a dfm using dfm_group().| -->
+</div>
+<div id="tf-idf-no-r-tm" class="section level4 hasAnchor" number="13.1.1.6">
+<h4><span class="header-section-number">13.1.1.6</span> TF-IDF no R: TM<a href="keywordassignment.html#tf-idf-no-r-tm" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Vamos usar agora o <a href="https://cran.r-project.org/web/packages/tm/">pacote TM</a>.</p>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="keywordassignment.html#cb221-1" aria-hidden="true" tabindex="-1"></a>doc1 <span class="ot">&lt;-</span> <span class="st">&quot;Eu quero Durkheim&quot;</span></span>
+<span id="cb221-2"><a href="keywordassignment.html#cb221-2" aria-hidden="true" tabindex="-1"></a>doc2 <span class="ot">&lt;-</span> <span class="st">&quot;Elias! Eu quero Elias&quot;</span></span>
+<span id="cb221-3"><a href="keywordassignment.html#cb221-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb221-4"><a href="keywordassignment.html#cb221-4" aria-hidden="true" tabindex="-1"></a>vetor_vetores <span class="ot">&lt;-</span> <span class="fu">c</span>(doc1,doc2)</span>
+<span id="cb221-5"><a href="keywordassignment.html#cb221-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb221-6"><a href="keywordassignment.html#cb221-6" aria-hidden="true" tabindex="-1"></a><span class="co"># criando o objeto tipo corpus para o TM</span></span>
+<span id="cb221-7"><a href="keywordassignment.html#cb221-7" aria-hidden="true" tabindex="-1"></a>meu_corpus <span class="ot">&lt;-</span> tm<span class="sc">::</span><span class="fu">Corpus</span>(tm<span class="sc">::</span><span class="fu">VectorSource</span>(vetor_vetores))</span>
+<span id="cb221-8"><a href="keywordassignment.html#cb221-8" aria-hidden="true" tabindex="-1"></a><span class="co"># observando a estrutura do objeto criado, que é uma lista</span></span>
+<span id="cb221-9"><a href="keywordassignment.html#cb221-9" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(meu_corpus)</span>
+<span id="cb221-10"><a href="keywordassignment.html#cb221-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Classes &#39;SimpleCorpus&#39;, &#39;Corpus&#39;  hidden list of 3</span></span>
+<span id="cb221-11"><a href="keywordassignment.html#cb221-11" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ content: chr [1:2] &quot;Eu quero Durkheim&quot; &quot;Elias! Eu quero Elias&quot;</span></span>
+<span id="cb221-12"><a href="keywordassignment.html#cb221-12" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ meta   :List of 1</span></span>
+<span id="cb221-13"><a href="keywordassignment.html#cb221-13" aria-hidden="true" tabindex="-1"></a><span class="do">##   ..$ language: chr &quot;en&quot;</span></span>
+<span id="cb221-14"><a href="keywordassignment.html#cb221-14" aria-hidden="true" tabindex="-1"></a><span class="do">##   ..- attr(*, &quot;class&quot;)= chr &quot;CorpusMeta&quot;</span></span>
+<span id="cb221-15"><a href="keywordassignment.html#cb221-15" aria-hidden="true" tabindex="-1"></a><span class="do">##  $ dmeta  :&#39;data.frame&#39;: 2 obs. of  0 variables</span></span></code></pre></div>
+<p>Vamos a um pré-processamento do pacote <code>tm</code> com a função <code>tm_map()</code> e <a href="https://rdrr.io/rforge/tm/man/removePunctuation.html">tm::removePunctuation</a>.</p>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="keywordassignment.html#cb222-1" aria-hidden="true" tabindex="-1"></a>meu_corpus2 <span class="ot">&lt;-</span> </span>
+<span id="cb222-2"><a href="keywordassignment.html#cb222-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># passando tudo para minúsculo</span></span>
+<span id="cb222-3"><a href="keywordassignment.html#cb222-3" aria-hidden="true" tabindex="-1"></a>  tm<span class="sc">::</span><span class="fu">tm_map</span>(meu_corpus, tolower) <span class="sc">%&gt;%</span></span>
+<span id="cb222-4"><a href="keywordassignment.html#cb222-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># removendo pontuações</span></span>
+<span id="cb222-5"><a href="keywordassignment.html#cb222-5" aria-hidden="true" tabindex="-1"></a>  tm<span class="sc">::</span><span class="fu">tm_map</span>(., tm<span class="sc">::</span>removePunctuation) </span>
+<span id="cb222-6"><a href="keywordassignment.html#cb222-6" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning in tm_map.SimpleCorpus(meu_corpus, tolower): transformation drops</span></span>
+<span id="cb222-7"><a href="keywordassignment.html#cb222-7" aria-hidden="true" tabindex="-1"></a><span class="do">## documents</span></span>
+<span id="cb222-8"><a href="keywordassignment.html#cb222-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning in tm_map.SimpleCorpus(., tm::removePunctuation): transformation drops</span></span>
+<span id="cb222-9"><a href="keywordassignment.html#cb222-9" aria-hidden="true" tabindex="-1"></a><span class="do">## documents</span></span>
+<span id="cb222-10"><a href="keywordassignment.html#cb222-10" aria-hidden="true" tabindex="-1"></a>meu_corpus2</span>
+<span id="cb222-11"><a href="keywordassignment.html#cb222-11" aria-hidden="true" tabindex="-1"></a><span class="do">## &lt;&lt;SimpleCorpus&gt;&gt;</span></span>
+<span id="cb222-12"><a href="keywordassignment.html#cb222-12" aria-hidden="true" tabindex="-1"></a><span class="do">## Metadata:  corpus specific: 1, document level (indexed): 0</span></span>
+<span id="cb222-13"><a href="keywordassignment.html#cb222-13" aria-hidden="true" tabindex="-1"></a><span class="do">## Content:  documents: 2</span></span></code></pre></div>
+<p>A matriz de termo por documento (document-term-matrix) computa quantas vezes um termo aparece por documento, que no nosso caso foi uma frase simples. “Durkheim” aparece uma vez no documento 1, “quero” aparece uma vez em cada documento e “Elias” aparece duas vezes no documento 2.</p>
+<!-- control = list(weighting = tm::weightTfIdf(normalize = T) )) -->
+<p>Opção 1, mais simples</p>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="keywordassignment.html#cb223-1" aria-hidden="true" tabindex="-1"></a>dtm.tfidf <span class="ot">&lt;-</span> tm<span class="sc">::</span><span class="fu">DocumentTermMatrix</span>(meu_corpus2,</span>
+<span id="cb223-2"><a href="keywordassignment.html#cb223-2" aria-hidden="true" tabindex="-1"></a>           <span class="at">control =</span> <span class="fu">list</span>(<span class="at">weighting =</span> tm<span class="sc">::</span>weightTfIdf))</span>
+<span id="cb223-3"><a href="keywordassignment.html#cb223-3" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning in TermDocumentMatrix.SimpleCorpus(x, control): custom functions are</span></span>
+<span id="cb223-4"><a href="keywordassignment.html#cb223-4" aria-hidden="true" tabindex="-1"></a><span class="do">## ignored</span></span>
+<span id="cb223-5"><a href="keywordassignment.html#cb223-5" aria-hidden="true" tabindex="-1"></a><span class="co"># vendo a estrutura</span></span>
+<span id="cb223-6"><a href="keywordassignment.html#cb223-6" aria-hidden="true" tabindex="-1"></a>dtm.tfidf</span>
+<span id="cb223-7"><a href="keywordassignment.html#cb223-7" aria-hidden="true" tabindex="-1"></a><span class="do">## &lt;&lt;DocumentTermMatrix (documents: 2, terms: 3)&gt;&gt;</span></span>
+<span id="cb223-8"><a href="keywordassignment.html#cb223-8" aria-hidden="true" tabindex="-1"></a><span class="do">## Non-/sparse entries: 2/4</span></span>
+<span id="cb223-9"><a href="keywordassignment.html#cb223-9" aria-hidden="true" tabindex="-1"></a><span class="do">## Sparsity           : 67%</span></span>
+<span id="cb223-10"><a href="keywordassignment.html#cb223-10" aria-hidden="true" tabindex="-1"></a><span class="do">## Maximal term length: 8</span></span>
+<span id="cb223-11"><a href="keywordassignment.html#cb223-11" aria-hidden="true" tabindex="-1"></a><span class="do">## Weighting          : term frequency - inverse document frequency (normalized) (tf-idf)</span></span>
+<span id="cb223-12"><a href="keywordassignment.html#cb223-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Para visualizar, transformamos nosso objeto em matriz</span></span>
+<span id="cb223-13"><a href="keywordassignment.html#cb223-13" aria-hidden="true" tabindex="-1"></a><span class="fu">as.matrix</span>(dtm.tfidf)</span>
+<span id="cb223-14"><a href="keywordassignment.html#cb223-14" aria-hidden="true" tabindex="-1"></a><span class="do">##     Terms</span></span>
+<span id="cb223-15"><a href="keywordassignment.html#cb223-15" aria-hidden="true" tabindex="-1"></a><span class="do">## Docs durkheim quero     elias</span></span>
+<span id="cb223-16"><a href="keywordassignment.html#cb223-16" aria-hidden="true" tabindex="-1"></a><span class="do">##    1      0.5     0 0.0000000</span></span>
+<span id="cb223-17"><a href="keywordassignment.html#cb223-17" aria-hidden="true" tabindex="-1"></a><span class="do">##    2      0.0     0 0.6666667</span></span></code></pre></div>
+<!-- # criando uma lista com parâmetros para nossa matriz -->
+<!-- control_list <- list(removePunctuation = TRUE, stopwords = TRUE, tolower = TRUE) -->
+<p>Opção 2: com normalização e retirada de stopwords</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="keywordassignment.html#cb224-1" aria-hidden="true" tabindex="-1"></a>doc1 <span class="ot">&lt;-</span> <span class="st">&quot;Eu quero Durkheim&quot;</span></span>
+<span id="cb224-2"><a href="keywordassignment.html#cb224-2" aria-hidden="true" tabindex="-1"></a>doc2 <span class="ot">&lt;-</span> <span class="st">&quot;Elias! Eu quero Elias&quot;</span></span>
+<span id="cb224-3"><a href="keywordassignment.html#cb224-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-4"><a href="keywordassignment.html#cb224-4" aria-hidden="true" tabindex="-1"></a>vetor.docs <span class="ot">&lt;-</span> <span class="fu">c</span>(doc1,doc2)</span>
+<span id="cb224-5"><a href="keywordassignment.html#cb224-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-6"><a href="keywordassignment.html#cb224-6" aria-hidden="true" tabindex="-1"></a><span class="co"># criando o objeto tipo corpus para o TM</span></span>
+<span id="cb224-7"><a href="keywordassignment.html#cb224-7" aria-hidden="true" tabindex="-1"></a><span class="co"># como nossa fonte são vetores, usamos VectorSource</span></span>
+<span id="cb224-8"><a href="keywordassignment.html#cb224-8" aria-hidden="true" tabindex="-1"></a>meu_corpus <span class="ot">&lt;-</span> tm<span class="sc">::</span><span class="fu">Corpus</span>(tm<span class="sc">::</span><span class="fu">VectorSource</span>(vetor.docs))</span>
+<span id="cb224-9"><a href="keywordassignment.html#cb224-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb224-10"><a href="keywordassignment.html#cb224-10" aria-hidden="true" tabindex="-1"></a>tm<span class="sc">::</span><span class="fu">DocumentTermMatrix</span>(meu_corpus,</span>
+<span id="cb224-11"><a href="keywordassignment.html#cb224-11" aria-hidden="true" tabindex="-1"></a><span class="co"># para concatenar várias transformacoes, vamos usar function</span></span>
+<span id="cb224-12"><a href="keywordassignment.html#cb224-12" aria-hidden="true" tabindex="-1"></a>           <span class="at">control =</span> <span class="fu">list</span>(<span class="at">weighting =</span> <span class="cf">function</span>(x) </span>
+<span id="cb224-13"><a href="keywordassignment.html#cb224-13" aria-hidden="true" tabindex="-1"></a>             tm<span class="sc">::</span><span class="fu">weightTfIdf</span>(x, <span class="at">normalize =</span> T),</span>
+<span id="cb224-14"><a href="keywordassignment.html#cb224-14" aria-hidden="true" tabindex="-1"></a>             <span class="at">removePunctuation =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb224-15"><a href="keywordassignment.html#cb224-15" aria-hidden="true" tabindex="-1"></a>             <span class="at">stopwords =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span> as.matrix</span>
+<span id="cb224-16"><a href="keywordassignment.html#cb224-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Warning in TermDocumentMatrix.SimpleCorpus(x, control): custom functions are</span></span>
+<span id="cb224-17"><a href="keywordassignment.html#cb224-17" aria-hidden="true" tabindex="-1"></a><span class="do">## ignored</span></span>
+<span id="cb224-18"><a href="keywordassignment.html#cb224-18" aria-hidden="true" tabindex="-1"></a><span class="do">##     Terms</span></span>
+<span id="cb224-19"><a href="keywordassignment.html#cb224-19" aria-hidden="true" tabindex="-1"></a><span class="do">## Docs durkheim quero     elias</span></span>
+<span id="cb224-20"><a href="keywordassignment.html#cb224-20" aria-hidden="true" tabindex="-1"></a><span class="do">##    1      0.5     0 0.0000000</span></span>
+<span id="cb224-21"><a href="keywordassignment.html#cb224-21" aria-hidden="true" tabindex="-1"></a><span class="do">##    2      0.0     0 0.6666667</span></span></code></pre></div>
+<!-- ######### -->
+<div class="infobox note">
+<p><strong>Dicas TF-IDF</strong></p>
+<!-- O artigo que pensou o IDF é -->
+<ul>
+<li>JONES, Karen Spärck. <a href="https://www.cl.cam.ac.uk/archive/ksj21/ksjdigipapers/jdoc72.pdf">A statistical interpretation of term specificity and its application in retrieval</a>. Journal of Documentation. (1972)</li>
+<li>Cap. <a href="https://web.stanford.edu/~jurafsky/slp3/6.pdf">6.5 TF-IDF: Weighing terms in the vector</a> in JURAFSKI,D; MARTIN,J. Speech and Language Processing.</li>
+<li>Gerard Salton and Christopher Buckley (1988). <a href="https://www.marilia.unesp.br/Home/Instituicao/Docentes/EdbertoFerneda/MRI%2004%20-%20Salton,%20G;%20Buckley,%20C%20-%201988.pdf">Term-weighting approaches in automatic text retrieval</a>. <em>Information Processing and Management</em>, <em>24</em>/5, 513-523.</li>
+</ul>
+<p>Tutorial</p>
+<ul>
+<li>vignette (exemplo) de <a href="https://cran.r-project.org/web/packages/tidytext/vignettes/tf_idf.html">TF-IDF com o tidytext</a></li>
+<li>Análise tf-idf com livros do <a href="https://afit-r.github.io/tf-idf_analysis">Harry Potter</a> usando o Tidyverse.</li>
+</ul>
+<p>Vídeos:</p>
+<ul>
+<li>Video em português <a href="https://www.youtube.com/watch?v=udrXmqdbGvQ">Aula 5.4: Problema com Matrizes de Frequência e TF-IDF | Processamento de Língua Natural</a>.
+do curso de “Processamento de Língua Natural” (LIG948B), ministrado na Faculdade de Letras da Universidade Federal de Minas Gerais (FALE-UFMG) em Python.</li>
+<li>Video tutorial de tf-idf no R (em inglês) <a href="https://www.youtube.com/watch?v=az7yf0IfWPM&amp;list=PL8eNk_zTBST8olxIRFoo0YeXxEOkYdoxi&amp;index=5">“TF-IDF | Introduction to Text Analytics with R Part 5”</a> do Data Science Dojo, fazendo o cálculo sem pacotes.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="coocorrencia" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Colocação e Coocorrência {#colocacao}<a href="keywordassignment.html#coocorrencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><a href="https://cran.r-project.org/web/packages/tokenizers/index.html">tokenizers</a>.
+Uma de suas vantagens em relação à grande maioria dos tokenizadores é a possibilidade de criar <a href="ngrams">ngrams</a>
+de diferentes tamanhos, ao mesmo tempo, alterando apenas um parâmetro, sem demandar novas linhas de código.
+Esta facilidade se encontra também no pacote Quanteda (ambos pacotes possuem criadores em comum).
+Isto é chamado de “multi-word units” {#multiword_units}, ou “colocação” (<em>collocation</em>”) {#colocation} na linguística.
+São tokens que aparecem juntos muito frequentemente, como em nomes próprios ou junções frequentes entre substantivo e Por exemplo, “Minas Gerais”, “Machine Learning”, “ódio mortal”, “cena do crime”.
+É útil considerá-los como uma palavra só;
+O Quanteda, além de também realizar a tokenização “multi words”, oferece também as funções <a href="https://quanteda.io/reference/textstat_collocations.html"><code>textstat_collocations()</code></a> que nos retorna uma tabela com cáculo estatístico identificando colocações e a função <code>tokens_compound()</code> que adiciona um <em>underscore</em> entre as palavras da colocação, de modo que formem um único vocábulo, por exemplo, “machine_learning”, “New_York”.</p>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="keywordassignment.html#cb225-1" aria-hidden="true" tabindex="-1"></a>txt.raizesBr <span class="ot">&lt;-</span> <span class="st">&#39;A democracia no Brasil foi sempre um lamentável mal-entendido. Uma aristocracia rural e semifeudal importou-a e tratou de acomodá-la, onde fosse possível, aos seus direitos ou privilégios, os mesmos privilégios que tinham sido, no Velho Mundo, o alvo da luta da burguesia contra os aristocratas. E assim puderam incorporar à situação tradicional, ao menos como fachada ou decoração externa, alguns lemas que pareciam os mais acertados para a época e eram exaltados nos livros e discursos. É curioso notar-se que os movimentos aparentemente reformadores, no Brasil, partiram quase sempre de cima para baixo: foram de inspiração intelectual, se assim se pode dizer, tanto quanto sentimental. Nossa independência, as conquistas liberais que fizemos durante o decurso de nossa evolução política vieram quase de surpresa; a grande massa do povo recebeu-as com displicência, ou hostilidade. Não emanavam de uma predisposição espiritual e emotiva particular, de uma concepção da vida bem definida e específica, que tivesse chegado à maturidade plena. Os campeões das novas idéias esqueceram-se, com freqüência, de que as formas de vida nem sempre são expressões do arbítrio pessoal, não se &quot;fazem&quot; ou &quot;desfazem&quot; por decreto. A célebre carta de Aristides Lobo sobre o 15 de Novembro é documento flagrante do imprevisto que representou para nós, a despeito de toda a propaganda, de toda a popularidade entre os moços das academias, a realização da idéia republicana. &quot;Por ora&quot;, dizia o célebre paredro do novo regime, &quot;por ora a cor do governo é puramente militar e deverá ser assim. O fato foi deles, deles só, porque a colaboração de elemento civil foi quase nula. O povo assistiu àquilo bestializado, atônito, surpreso, sem conhecer o que significava.&#39;</span></span></code></pre></div>
+<div id="colocação-com-o-quanteda" class="section level3 hasAnchor" number="13.2.1">
+<h3><span class="header-section-number">13.2.1</span> Colocação com o Quanteda<a href="keywordassignment.html#colocação-com-o-quanteda" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="keywordassignment.html#cb226-1" aria-hidden="true" tabindex="-1"></a>corp <span class="ot">&lt;-</span> data_corpus_inaugural[<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>]</span>
+<span id="cb226-2"><a href="keywordassignment.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cols <span class="ot">&lt;-</span> <span class="fu">textstat_collocations</span>(corp, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">min_count =</span> <span class="dv">2</span>), <span class="dv">10</span>)</span>
+<span id="cb226-3"><a href="keywordassignment.html#cb226-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb226-4"><a href="keywordassignment.html#cb226-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(cols <span class="ot">&lt;-</span> quanteda<span class="sc">::</span><span class="fu">textstat_collocations</span>(txt.raizesBr, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">min_count =</span> <span class="dv">2</span>), <span class="dv">10</span>)</span>
+<span id="cb226-5"><a href="keywordassignment.html#cb226-5" aria-hidden="true" tabindex="-1"></a>quanteda<span class="sc">::</span><span class="fu">textstat_collocations</span>(txt.raizesBr, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">min_count =</span> <span class="dv">2</span>)</span></code></pre></div>
+</div>
+<div id="colocação-com-udpipe" class="section level3 hasAnchor" number="13.2.2">
+<h3><span class="header-section-number">13.2.2</span> Colocação com Udpipe<a href="keywordassignment.html#colocação-com-udpipe" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>keywords_collocation()</p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="keywordassignment.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="fu">keywords_collocation</span>()</span></code></pre></div>
+<p>Manning, C. D., Raghavan, P., &amp; Schütze, H. <a href="https://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf">Introduction to Information Retrieval</a>. Cambridge: Cambridge University Press. 2008.</p>
+</div>
+</div>
+<div id="textrank" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> TextRank<a href="keywordassignment.html#textrank" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>TextRank is an unsupervised method to perform keyword and sentence extraction. It is based on a graph where each node is a word and the edges are constructed by observing the co-occurrence of words
+inside a moving window of predefined size</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="KE.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pagerank.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper", "vk"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
